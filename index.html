@@ -1,190 +1,225 @@
+ 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boca 24/7</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boca 24/7</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f2f2;
-      color: #111;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+}
 
-    header {
-      background: #06265f;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
+header {
+  background: #06265f;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
 
-    header h1 {
-      font-size: 36px;
-      font-weight: 900;
-    }
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 900;
+}
 
-    header p {
-      margin-top: 6px;
-      font-size: 14px;
-    }
+header p {
+  margin: 6px 0 0;
+}
 
-    nav {
-      background: #041b43;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 14px 10px;
-      flex-wrap: wrap;
-    }
+nav {
+  background: #041b43;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 14px;
+  flex-wrap: wrap;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      color: #ffd400;
-    }
+nav a:hover {
+  color: #ffd400;
+}
 
-    .contenedor {
-      max-width: 1100px;
-      margin: auto;
-      padding: 25px 15px;
-    }
+.contenedor {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 15px;
+}
 
-    .titulo {
-      font-size: 26px;
-      font-weight: 900;
-      border-left: 6px solid #ffd400;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
+.titulo {
+  font-size: 26px;
+  font-weight: bold;
+  border-left: 6px solid #ffd400;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
 
-    .noticias {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.noticias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-    .card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,.12);
-      transition: .2s;
-    }
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+.fuente {
+  background: #06265f;
+  color: white;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
 
-    .fuente {
-      background: #06265f;
-      color: white;
-      padding: 10px 15px;
-      font-size: 12px;
-      font-weight: bold;
-    }
+.contenido {
+  padding: 18px;
+}
 
-    .contenido {
-      padding: 18px;
-    }
+.contenido h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
 
-    .contenido h2 {
-      font-size: 19px;
-      line-height: 1.3;
-      margin-bottom: 12px;
-    }
+.contenido p {
+  color: #666;
+  line-height: 1.5;
+}
 
-    .contenido p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.4;
-    }
+.leer {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #06265f;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .leer {
-      display: inline-block;
-      margin-top: 16px;
-      background: #06265f;
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.leer:hover {
+  background: #041b43;
+}
 
-    .leer:hover {
-      background: #041b43;
-    }
+/* NOTICIA ABIERTA */
 
-    footer {
-      margin-top: 40px;
-      background: #041b43;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      font-size: 13px;
-    }
+#noticiaCompleta {
+  display: none;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
 
-    @media (max-width: 800px) {
-      .noticias {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+#noticiaCompleta .fuente {
+  margin: -25px -25px 20px;
+  border-radius: 12px 12px 0 0;
+}
 
-    @media (max-width: 550px) {
-      .noticias {
-        grid-template-columns: 1fr;
-      }
+#noticiaCompleta h2 {
+  font-size: 28px;
+  line-height: 1.3;
+}
 
-      header h1 {
-        font-size: 29px;
-      }
-    }
-  </style>
+#noticiaCompleta p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.volver {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background: #06265f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 40px;
+  background: #041b43;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+@media (max-width: 800px) {
+  .noticias {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .noticias {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 29px;
+  }
+
+  #noticiaCompleta h2 {
+    font-size: 23px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>BOCA 24/7</h1>
-    <p>Todo Boca, todo el tiempo</p>
-  </header>
+<header>
+  <h1>BOCA 24/7</h1>
+  <p>Todo Boca, todo el tiempo</p>
+</header>
 
-  <nav>
-    <a href="./">INICIO</a>
-    <a href="./">NOTICIAS</a>
-    <a href="./">BOCA</a>
-    <a href="./">MERCADO DE PASES</a>
-  </nav>
+<nav>
+  <a href="#" onclick="mostrarInicio()">INICIO</a>
+  <a href="#" onclick="mostrarInicio()">NOTICIAS</a>
+  <a href="#" onclick="mostrarInicio()">BOCA</a>
+  <a href="#" onclick="mostrarInicio()">MERCADO DE PASES</a>
+</nav>
 
-  <main class="contenedor">
+<main class="contenedor">
+
+  <section id="inicio">
 
     <div class="titulo">
       Últimas noticias de Boca
     </div>
 
-    <section class="noticias">
+    <div class="noticias">
 
       <article class="card">
         <div class="fuente">EL DESTAPE</div>
         <div class="contenido">
-          <h2>Cuándo juegan Boca vs. San Pablo por Copa Sudamericana</h2>
+          <h2>Boca vs. San Pablo: cuándo juegan por la Copa Sudamericana</h2>
           <p>La Conmebol anunció las fechas para los cuartos de final.</p>
-          <a class="leer" target="_blank"
-          href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPa1hTREo2UUNkREVZZFZISFZTam5fdFVhd2xGM2ZxM0JnVzk5WVBtWVljdDVxTG9MOEZXbVRlNUlmS2g2dXZnbWJuaTVreGQ0Ulpnd1pfbmVRVmVuSVdGaWVES1VONTVpOU9EcklFYmdxQXlKSkF1bVVlX2Z1X0tOa3FGRE1fRVhZd0hfbE95YmpIWnAzZV96M2dOd9IBrwFBVV95cUxQRWxwRGpWYWpBeV9mMXg4eXJkLVNkU1RPb0c3X1BhRkFrNjVPQkQzbFZxa0I2ZllRU2FkazludXczMVU1Nk5OZy1tUXdwVUFOZ2p4ZmUtSDQ5S0tRN2tkd193c2F1X1d6WVgtMGZKdmxRbmxCdWFjVVZ4Vmo4ZG1VWi15VlpqS2hvcWdnUEVnckpKR2ZQWUlNbV9qNkpZX0xTc1haRnNYV05MS2JfRWdB?oc=5">
-          Leer noticia
-          </a>
+          <a class="leer" onclick="abrirNoticia(
+            'EL DESTAPE',
+            'Boca vs. San Pablo: cuándo juegan por la Copa Sudamericana',
+            'La Conmebol anunció las fechas para los cuartos de final de la Copa Sudamericana.'
+          )">Leer noticia</a>
         </div>
       </article>
 
@@ -193,10 +228,11 @@
         <div class="contenido">
           <h2>El sutil dardo de Boca Juniors en las redes</h2>
           <p>La reacción del Xeneize luego de la eliminación de River.</p>
-          <a class="leer" target="_blank"
-          href="https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQktCRXl4R0lYRWYtYXgzd0JvU3hPRWd2VzlWSkV0WFV5OEdfQk15WlpneFRITTNmWHM2emxCUnNUNXJyYmlkWEdJTXBZME1XUElOZkhVZnRtT25hM05CVHBtLWplMy01XzVLM2pwOXJSblhkUEZsZ1NQQ0NhZnIxTEUxcUFsRjc3YnFnSGkwRWhGTFE5UWdGdVAyRXFTQUViZDdlb2pUaExKRzFVbjNQM0REdk9fbEI5a2RMV19zZjJjdWNvdlphWVgzWmZlR3loSmgzeUJuMVNEc3cwc3hUUVJ0Vjk1cDBZak1Cd25UTDNyclHSAY4CQVVfeXFMTjJTX05taXVUQjlVTEQwdnREOHI0cHVoRkJmM1IzRXByblM3V21vX2w0VThRYXBJVElFbXhaRk1Qb3Z4R0RmbENMZlFmMHhMWFR6OTdoc2ZGcmJMRm9KRUlDRktmOGlWYzRVcnlqV2szTWpaVjZlcXdKU1Z5UEtmOUkzYUtrcDg3M0F0d2JXTXR5RMWmdLb1R3eTJPengtcUxYMU5BaU9aSmp2QTZPZlBxTHhhMURhVkpmRzAtMlNUVTY1d0V2TmY4eS1DNDBUVk10LVJjbmRqbDZZV3lwN0V6Vk92aHA4NlVNNVdLeUdWODdnUVh0VXZrdC1qUjVlbUpUd05CcjI5Xy1n?oc=5">
-          Leer noticia
-          </a>
+          <a class="leer" onclick="abrirNoticia(
+            'INFOBAE',
+            'El sutil dardo de Boca Juniors en las redes',
+            'Boca Juniors tuvo una particular reacción en sus redes sociales luego de la eliminación de River Plate.'
+          )">Leer noticia</a>
         </div>
       </article>
 
@@ -204,11 +240,12 @@
         <div class="fuente">TYC SPORTS</div>
         <div class="contenido">
           <h2>Boca vs. San Pablo: fecha confirmada</h2>
-          <p>Todo listo para los cuartos de final de la Copa Sudamericana.</p>
-          <a class="leer" target="_blank"
-          href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQjJZVjdyNDh0bU14dDVBSlpEX2hJb053VDVJSmhJY05yRTJKZ3BfMVNreExOb0NlcndFMlJSLWJSb0IyM0t6NXB4QnRsSWx1ckJFZ3Rfa0NWa0hia05QaGtFZDNEWVV4c2hHNHU4eWJKekNiMkxXY2FjME9vbENQQnRkOHBiRFpHSTNON3cxZXVkdHBlbk43dHF6WkQ4VHZYc0J3NWdrc0hQYlRjSDBzWUZ6ZUk5bWpOM3J1eWxZd1pmN1p4aGxKcERNVW4zemEzTVU0LUNZSXc?oc=5">
-          Leer noticia
-          </a>
+          <p>Todo listo para los cuartos de final.</p>
+          <a class="leer" onclick="abrirNoticia(
+            'TYC SPORTS',
+            'Boca vs. San Pablo: fecha confirmada',
+            'Boca ya tiene fecha confirmada para disputar los cuartos de final de la Copa Sudamericana ante San Pablo.'
+          )">Leer noticia</a>
         </div>
       </article>
 
@@ -216,15 +253,95 @@
         <div class="fuente">LA GACETA</div>
         <div class="contenido">
           <h2>La nueva camiseta de Boca que sorprende a los hinchas</h2>
-          <p>La historia detrás del diseño que generó repercusión.</p>
-          <a class="leer" target="_blank"
-          href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaXJfenBGUlZWbnE1Ymc0UW5yZ2JTTWlfSkV0WWVfMk4zWWQxamZSSnVpMFNsMDQ3RG9MVk1OTnZvVzhMUW9yRXpaNTZnU3pxc3Y0YzQtSHZnYUo5S1VaZXBCcHY4aTk1aWF5VUVIQU8yQ0hpQXdhczRlb01raUNSX3AzRFpnMi1uMEhGLWVPb2tmWjV0Ni1Wc0d1SG8tUTVuMEtqRlJ6QkhvdlNJMERScmVRaGh2SzVYc1c00gHAAUFVX3lxTE1UU0xXLWNUdWhxekVSMTZ2NkJmMkVkRDRWWTg5dF9wMmtIa2dyb2hxeUVpdTRCWWhhem9mc25lNzl1ZFU0WG5keG9QTUwyTHMtUTRwYVRIWTZEMDd0MzlOcGp5QW1mcXJRMnZ4cndySzhHQWVXMG5GXzdlcTRFRGlieGd5d1pzTEthc2ZoeE9Vd0dhUXRWUm9aTnBVV295b3pfcVBIMTZwUFFhbFNJdzdtWVBEQ2ZtZzIwOHItMllBNA?oc=5">
-          Leer noticia
-          </a>
+          <p>La historia detrás del diseño.</p>
+          <a class="leer" onclick="abrirNoticia(
+            'LA GACETA',
+            'La nueva camiseta de Boca que sorprende a los hinchas',
+            'La nueva camiseta de Boca generó repercusión entre los hinchas y tiene una historia particular detrás de su diseño.'
+          )">Leer noticia</a>
         </div>
       </article>
 
       <article class="card">
         <div class="fuente">OLÉ</div>
         <div class="contenido">
-          <
+          <h2>Boca vs. Lanús, hoy EN VIVO</h2>
+          <p>Horario, cómo ver y probables formaciones.</p>
+          <a class="leer" onclick="abrirNoticia(
+            'OLÉ',
+            'Boca vs. Lanús, hoy EN VIVO',
+            'Toda la información de Boca ante Lanús: horario, transmisión y posibles formaciones.'
+          )">Leer noticia</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="fuente">TYC SPORTS</div>
+        <div class="contenido">
+          <h2>Boca recibió una oferta por Kevin Zenón</h2>
+          <p>El jugador podría continuar su carrera en el exterior.</p>
+          <a class="leer" onclick="abrirNoticia(
+            'TYC SPORTS',
+            'Boca recibió una oferta por Kevin Zenón',
+            'Boca recibió una oferta desde el exterior por Kevin Zenón y analiza la situación del jugador.'
+          )">Leer noticia</a>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <section id="noticiaCompleta">
+
+    <div class="volver" onclick="mostrarInicio()">
+      ← Volver a noticias
+    </div>
+
+    <div class="fuente" id="fuenteNoticia"></div>
+
+    <h2 id="tituloNoticia"></h2>
+
+    <p id="textoNoticia"></p>
+
+  </section>
+
+</main>
+
+<footer>
+  BOCA 24/7 · Toda la actualidad del Xeneize
+</footer>
+
+
+<script>
+
+function abrirNoticia(fuente, titulo, texto) {
+
+  document.getElementById("inicio").style.display = "none";
+
+  document.getElementById("noticiaCompleta").style.display = "block";
+
+  document.getElementById("fuenteNoticia").innerText = fuente;
+
+  document.getElementById("tituloNoticia").innerText = titulo;
+
+  document.getElementById("textoNoticia").innerText = texto;
+
+  window.scrollTo(0,0);
+}
+
+
+function mostrarInicio() {
+
+  document.getElementById("noticiaCompleta").style.display = "none";
+
+  document.getElementById("inicio").style.display = "block";
+
+  window.scrollTo(0,0);
+}
+
+</script>
+
+</body>
+</html>
