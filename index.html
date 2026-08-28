@@ -1,4 +1,5 @@
- <!DOCTYPE html>
+ 
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -9,173 +10,217 @@
 *{box-sizing:border-box}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f2f2f2;
-  color:#111;
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f2f2f2;
+color:#111
 }
 
 header{
-  background:#06265f;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
+background:#06265f;
+color:white;
+text-align:center;
+padding:25px 15px
 }
 
 header h1{
-  margin:0;
-  font-size:36px;
-  font-weight:900;
+margin:0;
+font-size:38px;
+font-weight:900
 }
 
 header p{
-  margin:6px 0 0;
+margin:7px 0 0
 }
 
 nav{
-  background:#041b43;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:14px;
-  flex-wrap:wrap;
+background:#041b43;
+display:flex;
+justify-content:center;
+gap:25px;
+padding:14px 10px;
+flex-wrap:wrap
 }
 
 nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:14px
 }
 
 nav a:hover{
-  color:#ffd400;
+color:#ffd400
 }
 
 .contenedor{
-  max-width:1100px;
-  margin:auto;
-  padding:25px 15px;
+max-width:1100px;
+margin:auto;
+padding:25px 15px
 }
 
 .titulo{
-  font-size:26px;
-  font-weight:bold;
-  border-left:6px solid #ffd400;
-  padding-left:10px;
-  margin-bottom:20px;
+font-size:27px;
+font-weight:900;
+border-left:6px solid #ffd400;
+padding-left:10px;
+margin-bottom:20px
 }
 
 .noticias{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px
 }
 
 .card{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 3px 12px rgba(0,0,0,.12);
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 3px 12px rgba(0,0,0,.12)
 }
 
 .fuente{
-  background:#06265f;
-  color:white;
-  padding:10px 15px;
-  font-size:12px;
-  font-weight:bold;
+background:#06265f;
+color:white;
+padding:10px 15px;
+font-size:12px;
+font-weight:bold
 }
 
 .contenido{
-  padding:18px;
+padding:18px
 }
 
 .contenido h2{
-  font-size:19px;
-  line-height:1.3;
-  margin:0 0 12px;
+font-size:19px;
+line-height:1.35;
+margin:0 0 10px
 }
 
 .contenido p{
-  color:#666;
-  line-height:1.5;
+color:#666;
+font-size:14px;
+line-height:1.5
+}
+
+.fecha{
+font-size:12px;
+color:#888;
+margin-top:10px
 }
 
 .leer{
-  display:inline-block;
-  margin-top:10px;
-  padding:10px 15px;
-  background:#06265f;
-  color:white;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;
+display:inline-block;
+margin-top:15px;
+padding:10px 15px;
+background:#06265f;
+color:white;
+border-radius:6px;
+font-size:13px;
+font-weight:bold;
+cursor:pointer
 }
 
 .leer:hover{
-  background:#041b43;
+background:#041b43
 }
 
 #noticiaCompleta{
-  display:none;
-  background:white;
-  border-radius:12px;
-  padding:25px;
-  box-shadow:0 3px 12px rgba(0,0,0,.12);
+display:none;
+background:white;
+border-radius:12px;
+padding:25px;
+box-shadow:0 3px 12px rgba(0,0,0,.12)
 }
 
 #noticiaCompleta h2{
-  font-size:28px;
-  line-height:1.3;
+font-size:30px;
+line-height:1.3;
+margin:15px 0
 }
 
-#noticiaCompleta p{
-  font-size:17px;
-  line-height:1.7;
+#noticiaCompleta .texto{
+font-size:18px;
+line-height:1.8;
+color:#333
 }
 
 .volver{
-  display:inline-block;
-  margin-bottom:20px;
-  padding:10px 15px;
-  background:#06265f;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:bold;
+display:inline-block;
+padding:10px 15px;
+background:#06265f;
+color:white;
+border-radius:6px;
+font-weight:bold;
+cursor:pointer
+}
+
+.volver:hover{
+background:#041b43
+}
+
+.redes{
+margin-top:40px
+}
+
+.redes h2{
+font-size:23px;
+border-left:6px solid #ffd400;
+padding-left:10px
+}
+
+.fuente-red{
+background:white;
+margin-bottom:10px;
+padding:15px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+
+.fuente-red a{
+color:#06265f;
+font-weight:bold;
+text-decoration:none
 }
 
 footer{
-  margin-top:40px;
-  background:#041b43;
-  color:white;
-  text-align:center;
-  padding:25px;
+margin-top:40px;
+background:#041b43;
+color:white;
+text-align:center;
+padding:25px 15px;
+font-size:13px
 }
 
 .cargando{
-  text-align:center;
-  padding:30px;
+text-align:center;
+padding:30px;
+font-weight:bold
 }
 
 @media(max-width:800px){
-  .noticias{
-    grid-template-columns:repeat(2,1fr);
-  }
+.noticias{
+grid-template-columns:repeat(2,1fr)
+}
 }
 
 @media(max-width:550px){
-  .noticias{
-    grid-template-columns:1fr;
-  }
+.noticias{
+grid-template-columns:1fr
+}
 
-  header h1{
-    font-size:29px;
-  }
+header h1{
+font-size:30px
+}
 
-  #noticiaCompleta h2{
-    font-size:23px;
-  }
+#noticiaCompleta h2{
+font-size:24px
+}
+
+#noticiaCompleta .texto{
+font-size:16px
+}
 }
 </style>
 </head>
@@ -183,142 +228,191 @@ footer{
 <body>
 
 <header>
-  <h1>BOCA 24/7</h1>
-  <p>Todo Boca, todo el tiempo</p>
+<h1>BOCA 24/7</h1>
+<p>Todo Boca, todo el tiempo</p>
 </header>
 
 <nav>
-  <a href="#" onclick="mostrarInicio()">INICIO</a>
-  <a href="#" onclick="mostrarInicio()">NOTICIAS</a>
-  <a href="#" onclick="mostrarInicio()">BOCA</a>
-  <a href="#" onclick="mostrarInicio()">MERCADO DE PASES</a>
+<a href="#" onclick="mostrarInicio()">INICIO</a>
+<a href="#" onclick="mostrarInicio()">NOTICIAS</a>
+<a href="#redes">FUENTES</a>
+<a href="#" onclick="mostrarInicio()">MERCADO DE PASES</a>
 </nav>
 
 <main class="contenedor">
 
 <section id="inicio">
 
-  <div class="titulo">
-    Últimas noticias de Boca
-  </div>
+<div class="titulo">
+Últimas noticias de Boca
+</div>
 
-  <div id="listaNoticias" class="noticias">
-    <div class="cargando">
-      Cargando noticias...
-    </div>
-  </div>
+<div id="listaNoticias" class="noticias">
+<div class="cargando">Cargando noticias...</div>
+</div>
+
+<section class="redes" id="redes">
+
+<h2>Fuentes Boca 24/7</h2>
+
+<div class="fuente-red">
+<a href="https://x.com/Augustocesar22" target="_blank">
+Augusto César
+</a>
+</div>
+
+<div class="fuente-red">
+<a href="https://x.com/MonroigDiego" target="_blank">
+Diego Monroig
+</a>
+</div>
+
+<div class="fuente-red">
+<a href="https://x.com/Tato_Aguilera" target="_blank">
+Tato Aguilera
+</a>
+</div>
+
+<div class="fuente-red">
+<a href="https://x.com/JulioPavoni" target="_blank">
+Julio Pavoni
+</a>
+</div>
+
+<div class="fuente-red">
+<a href="https://x.com/ElcanaldeBoca" target="_blank">
+El Canal de Boca
+</a>
+</div>
 
 </section>
 
+</section>
+
+
 <section id="noticiaCompleta">
 
-  <div class="volver" onclick="mostrarInicio()">
-    ← Volver a noticias
-  </div>
+<div class="volver" onclick="mostrarInicio()">
+← Volver a noticias
+</div>
 
-  <div class="fuente" id="fuenteNoticia"></div>
+<div class="fuente" id="fuenteNoticia"></div>
 
-  <h2 id="tituloNoticia"></h2>
+<h2 id="tituloNoticia"></h2>
 
-  <p id="textoNoticia"></p>
+<div class="fecha" id="fechaNoticia"></div>
+
+<p class="texto" id="textoNoticia"></p>
 
 </section>
 
 </main>
 
 <footer>
-  BOCA 24/7 · Toda la actualidad del Xeneize
+BOCA 24/7 · Toda la actualidad del Xeneize
 </footer>
+
 
 <script>
 
-let noticias = [];
+let noticias=[];
 
 async function cargarNoticias(){
 
-  try{
+try{
 
-    const respuesta = await fetch("Noticias");
+const respuesta=await fetch("./Noticias");
 
-    noticias = await respuesta.json();
+if(!respuesta.ok){
+throw new Error("No se encontró Noticias");
+}
 
-    const contenedor = document.getElementById("listaNoticias");
+noticias=await respuesta.json();
 
-    contenedor.innerHTML = "";
+const lista=document.getElementById("listaNoticias");
 
-    noticias.forEach(function(noticia, indice){
+lista.innerHTML="";
 
-      const tarjeta = document.createElement("article");
+noticias.forEach(function(noticia,index){
 
-      tarjeta.className = "card";
+const tarjeta=document.createElement("article");
 
-      tarjeta.innerHTML = `
-        <div class="fuente">
-          ${noticia.fuente}
-        </div>
+tarjeta.className="card";
 
-        <div class="contenido">
+tarjeta.innerHTML=`
 
-          <h2>
-            ${noticia.titulo}
-          </h2>
+<div class="fuente">
+${noticia.fuente}
+</div>
 
-          <p>
-            ${noticia.contenido}
-          </p>
+<div class="contenido">
 
-          <span
-            class="leer"
-            onclick="abrirNoticia(${indice})">
-            Leer noticia
-          </span>
+<h2>
+${noticia.titulo}
+</h2>
 
-        </div>
-      `;
+<p>
+${noticia.contenido}
+</p>
 
-      contenedor.appendChild(tarjeta);
+<div class="fecha">
+${noticia.fecha || ""}
+</div>
 
-    });
+<span
+class="leer"
+onclick="abrirNoticia(${index})">
+Leer noticia
+</span>
 
-  }catch(error){
+</div>
+`;
 
-    document.getElementById("listaNoticias").innerHTML =
-      "<p>No se pudieron cargar las noticias.</p>";
+lista.appendChild(tarjeta);
 
-  }
+});
+
+}catch(error){
+
+document.getElementById("listaNoticias").innerHTML=`
+<div class="cargando">
+No se pudieron cargar las noticias.
+</div>
+`;
+
+}
 
 }
 
 
-function abrirNoticia(indice){
+function abrirNoticia(index){
 
-  const noticia = noticias[indice];
+const noticia=noticias[index];
 
-  document.getElementById("inicio").style.display = "none";
+document.getElementById("inicio").style.display="none";
 
-  document.getElementById("noticiaCompleta").style.display = "block";
+document.getElementById("noticiaCompleta").style.display="block";
 
-  document.getElementById("fuenteNoticia").innerText =
-    noticia.fuente;
+document.getElementById("fuenteNoticia").innerText=noticia.fuente;
 
-  document.getElementById("tituloNoticia").innerText =
-    noticia.titulo;
+document.getElementById("tituloNoticia").innerText=noticia.titulo;
 
-  document.getElementById("textoNoticia").innerText =
-    noticia.contenido;
+document.getElementById("fechaNoticia").innerText=noticia.fecha || "";
 
-  window.scrollTo(0,0);
+document.getElementById("textoNoticia").innerText=noticia.contenido;
+
+window.scrollTo(0,0);
 
 }
 
 
 function mostrarInicio(){
 
-  document.getElementById("noticiaCompleta").style.display = "none";
+document.getElementById("noticiaCompleta").style.display="none";
 
-  document.getElementById("inicio").style.display = "block";
+document.getElementById("inicio").style.display="block";
 
-  window.scrollTo(0,0);
+window.scrollTo(0,0);
 
 }
 
