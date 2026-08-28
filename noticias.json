@@ -1,38 +1,44 @@
 [
   {
-    "titulo": "Cuándo juegan Boca vs. San Pablo por Copa Sudamericana",
-    "fuente": "El Destape",
-    "contenido": "La Conmebol anunció las fechas para los cuartos de final de la Copa Sudamericana.",
-    "link": "https://news.google.com/"
+    "titulo": "Boca vs. San Pablo: todo lo que hay que saber",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "Boca Juniors se prepara para un nuevo desafío internacional. En esta nota vas a encontrar toda la información relacionada con el próximo compromiso del Xeneize, las fechas confirmadas y las novedades más importantes.",
+    "categoria": "Boca"
   },
   {
-    "titulo": "El sutil dardo de Boca Juniors en las redes",
-    "fuente": "Infobae",
-    "contenido": "Boca Juniors tuvo una particular reacción en sus redes sociales luego de la eliminación de River Plate.",
-    "link": "https://news.google.com/"
+    "titulo": "Las últimas novedades de Boca Juniors",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "El mundo Boca no se detiene. En Boca 24/7 reunimos las principales novedades del equipo, el plantel, los partidos y todo lo que interesa al hincha Xeneize.",
+    "categoria": "Noticias"
   },
   {
-    "titulo": "Boca vs. San Pablo: fecha confirmada para los cuartos",
-    "fuente": "TyC Sports",
-    "contenido": "Boca ya tiene fecha confirmada para disputar los cuartos de final de la Copa Sudamericana ante San Pablo.",
-    "link": "https://news.google.com/"
+    "titulo": "Mercado de pases: las novedades del Xeneize",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "El mercado de pases continúa siendo uno de los principales focos de atención. Boca analiza movimientos, posibles incorporaciones y las situaciones de los jugadores que podrían salir.",
+    "categoria": "Mercado de pases"
   },
   {
-    "titulo": "La nueva camiseta de Boca que sorprende a los hinchas",
-    "fuente": "La Gaceta",
-    "contenido": "La nueva camiseta de Boca generó repercusión entre los hinchas por la historia detrás de su diseño.",
-    "link": "https://news.google.com/"
+    "titulo": "Kevin Zenón y una oferta desde el exterior",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "Kevin Zenón aparece entre los nombres que generan atención en el mercado. Boca analiza las posibilidades y evalúa qué decisión tomar respecto del futuro del futbolista.",
+    "categoria": "Mercado de pases"
   },
   {
-    "titulo": "Boca vs. Lanús, hoy EN VIVO",
-    "fuente": "Olé",
-    "contenido": "Toda la información de Boca ante Lanús: horario, transmisión y posibles formaciones.",
-    "link": "https://news.google.com/"
+    "titulo": "Boca se prepara para su próximo partido",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "El equipo trabaja pensando en su próximo compromiso. Toda la información previa, las posibles formaciones y las novedades del plantel estarán disponibles en Boca 24/7.",
+    "categoria": "Partidos"
   },
   {
-    "titulo": "Boca recibió una oferta por Kevin Zenón",
-    "fuente": "TyC Sports",
-    "contenido": "Boca recibió una oferta desde el exterior por Kevin Zenón y analiza la situación del jugador.",
-    "link": "https://news.google.com/"
+    "titulo": "La actualidad del plantel Xeneize",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "contenido": "Las últimas novedades del plantel, entrenamientos, jugadores y cuerpo técnico. Todo lo que tenés que saber sobre Boca, reunido en un solo lugar.",
+    "categoria": "Boca"
   }
 ]
