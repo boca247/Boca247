@@ -1,131 +1,244 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boca 24/7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boca 24/7</title>
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:#061a43;
-  color:white;
-  font-family:Arial,sans-serif;
-}
-header{
-  background:#0b3d91;
-  padding:18px;
-  text-align:center;
-}
-header h1{
-  margin:0;
-  font-size:28px;
-}
-header p{
-  margin:6px 0 0;
-  color:#ffd700;
-}
-main{
-  max-width:850px;
-  margin:auto;
-  padding:15px;
-}
-#estado{
-  text-align:center;
-  padding:12px;
-  color:#ffd700;
-}
-.noticia{
-  background:white;
-  color:#111;
-  border-radius:12px;
-  padding:16px;
-  margin:12px 0;
-}
-.noticia h2{
-  margin:0 0 8px;
-  font-size:19px;
-}
-.noticia a{
-  color:#0645ad;
-  font-weight:bold;
-  text-decoration:none;
-}
-.fuente{
-  color:#666;
-  font-size:13px;
-}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f4;
+      color: #111;
+    }
+
+    header {
+      background: #0b2a5b;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    header p {
+      margin-top: 5px;
+      font-size: 14px;
+      opacity: .9;
+    }
+
+    nav {
+      background: #062044;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 12px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #ffd400;
+    }
+
+    .contenedor {
+      max-width: 1100px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .titulo {
+      font-size: 25px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      border-left: 6px solid #ffd400;
+      padding-left: 10px;
+    }
+
+    .principal {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,.12);
+      margin-bottom: 25px;
+    }
+
+    .principal .imagen {
+      height: 330px;
+      background:
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5)),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
+    }
+
+    .principal .contenido {
+      padding: 22px;
+    }
+
+    .principal h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .principal p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 15px;
+      background: #0b2a5b;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .noticias {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 9px rgba(0,0,0,.1);
+    }
+
+    .card .foto {
+      height: 160px;
+      background: #ddd;
+    }
+
+    .card .texto {
+      padding: 15px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #062044;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .noticias {
+        grid-template-columns: 1fr;
+      }
+
+      .principal .imagen {
+        height: 230px;
+      }
+
+      .principal h2 {
+        font-size: 23px;
+      }
+
+      nav {
+        gap: 15px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🔵🟡 BOCA 24/7</h1>
-  <p>Últimas noticias del Xeneize</p>
-</header>
+  <header>
+    <h1>BOCA 24/7</h1>
+    <p>Todo Boca, todo el tiempo</p>
+  </header>
 
-<main>
-  <div id="estado">Buscando últimas noticias...</div>
-  <div id="noticias"></div>
-</main>
+  <nav>
+    <a href="./">INICIO</a>
+    <a href="./">NOTICIAS</a>
+    <a href="./">BOCA</a>
+    <a href="./">MERCADO DE PASES</a>
+  </nav>
 
-<script>
+  <main class="contenedor">
 
-async function cargarNoticias(){
+    <div class="titulo">Últimas noticias</div>
 
-  const estado = document.getElementById("estado");
-  const contenedor = document.getElementById("noticias");
+    <section class="principal">
+      <div class="imagen"></div>
 
-  try{
+      <div class="contenido">
+        <h2>Todo Boca, en un solo lugar</h2>
 
-    const respuesta = await fetch("noticias.json?x=" + Date.now());
+        <p>
+          Las últimas noticias, novedades, mercado de pases,
+          partidos y toda la actualidad del Xeneize.
+        </p>
 
-    if(!respuesta.ok){
-      throw new Error("No se pudo cargar noticias.json");
-    }
+        <a class="boton" href="./">Ver noticias</a>
+      </div>
+    </section>
 
-    const noticias = await respuesta.json();
+    <section class="noticias">
 
-    contenedor.innerHTML = "";
+      <article class="card">
+        <div class="foto"></div>
+        <div class="texto">
+          <h3>Últimas novedades de Boca</h3>
+          <p>Enterate de todo lo que pasa alrededor del equipo.</p>
+        </div>
+      </article>
 
-    noticias.forEach(noticia => {
+      <article class="card">
+        <div class="foto"></div>
+        <div class="texto">
+          <h3>Mercado de pases</h3>
+          <p>Altas, bajas, rumores y movimientos del Xeneize.</p>
+        </div>
+      </article>
 
-      const tarjeta = document.createElement("div");
-      tarjeta.className = "noticia";
+      <article class="card">
+        <div class="foto"></div>
+        <div class="texto">
+          <h3>Próximo partido</h3>
+          <p>Información, horario y todos los detalles de Boca.</p>
+        </div>
+      </article>
 
-      tarjeta.innerHTML = `
-        <h2>${noticia.titulo}</h2>
-        <div class="fuente">${noticia.fuente}</div>
-        <br>
-        <a href="${noticia.link}" target="_blank">
-          Leer noticia →
-        </a>
-      `;
+    </section>
 
-      contenedor.appendChild(tarjeta);
+  </main>
 
-    });
-
-    estado.textContent =
-      "Actualizado automáticamente • " +
-      new Date().toLocaleTimeString("es-AR");
-
-  }catch(error){
-
-    estado.textContent =
-      "Esperando la primera actualización automática...";
-
-  }
-
-}
-
-cargarNoticias();
-
-setInterval(cargarNoticias, 5 * 60 * 1000);
-
-</script>
+  <footer>
+    BOCA 24/7 · Información y actualidad del Xeneize
+  </footer>
 
 </body>
-  </html>
+</html>
