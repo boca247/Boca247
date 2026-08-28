@@ -1,348 +1,655 @@
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boca 24/7 - Noticias</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Boca 24/7</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f5f7;
-      color: #111;
-    }
+<style>
 
-    header {
-      background: linear-gradient(135deg, #061b49, #0b3d91);
-      color: white;
-      padding: 22px 16px;
-      text-align: center;
-    }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    header h1 {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f1f3f6;
+  color:#111;
+}
 
-    header p {
-      margin-top: 6px;
-      opacity: .9;
-    }
+/* HEADER */
 
-    nav {
-      background: #063b91;
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 10px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+header{
+  background:#06245c;
+  color:white;
+  padding:20px 15px;
+  text-align:center;
+  border-bottom:6px solid #f5c400;
+}
 
-    nav button {
-      border: none;
-      background: white;
-      color: #063b91;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: bold;
-      white-space: nowrap;
-      cursor: pointer;
-    }
+.logo{
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:1px;
+}
 
-    nav button:hover {
-      background: #e7e7e7;
-    }
+.subtitulo{
+  margin-top:5px;
+  font-size:15px;
+}
 
-    main {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px 15px 50px;
-    }
+/* MENU */
 
-    .seccion {
-      margin-bottom: 35px;
-    }
+nav{
+  background:#063b91;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:10px;
+  position:sticky;
+  top:0;
+  z-index:20;
+}
 
-    .seccion h2 {
-      border-left: 6px solid #063b91;
-      padding-left: 10px;
-      margin-bottom: 15px;
-      font-size: 24px;
-    }
+nav button{
+  border:none;
+  background:white;
+  color:#063b91;
+  font-weight:bold;
+  padding:10px 16px;
+  border-radius:20px;
+  white-space:nowrap;
+  cursor:pointer;
+}
 
-    .noticias {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 16px;
-    }
+nav button:hover{
+  background:#f5c400;
+  color:#06245c;
+}
 
-    .noticia {
-      background: white;
-      border-radius: 12px;
-      padding: 18px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.08);
-      transition: transform .2s;
-    }
+/* CONTENEDOR */
 
-    .noticia:hover {
-      transform: translateY(-3px);
-    }
+main{
+  max-width:1150px;
+  margin:auto;
+  padding:20px 15px 50px;
+}
 
-    .fuente {
-      color: #063b91;
-      font-weight: bold;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
+/* DESTACADA */
 
-    .noticia h3 {
-      font-size: 20px;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
+.destacada{
+  background:linear-gradient(135deg,#06245c,#0754b8);
+  color:white;
+  border-radius:16px;
+  padding:25px;
+  margin-bottom:30px;
+  border-bottom:5px solid #f5c400;
+}
 
-    .fecha {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
+.destacada .etiqueta{
+  color:#f5c400;
+  font-weight:bold;
+  margin-bottom:10px;
+}
 
-    .contenido {
-      color: #444;
-      line-height: 1.5;
-      font-size: 15px;
-    }
+.destacada h2{
+  font-size:28px;
+  margin-bottom:12px;
+}
 
-    .fuentes-box {
-      background: #061b49;
-      color: white;
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 35px;
-    }
+.destacada p{
+  line-height:1.6;
+}
 
-    .fuentes-box h2 {
-      margin-bottom: 15px;
-    }
+/* TITULOS */
 
-    .fuentes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.titulo-seccion{
+  border-left:6px solid #f5c400;
+  padding-left:12px;
+  margin:30px 0 18px;
+  color:#06245c;
+  font-size:25px;
+}
 
-    .fuente-item {
-      background: white;
-      color: #061b49;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: bold;
-    }
+/* NOTICIAS */
 
-    .estado {
-      text-align: center;
-      padding: 30px;
-      color: #555;
-    }
+.noticias{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
 
-    footer {
-      background: #061b49;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      margin-top: 30px;
-    }
+.noticia{
+  background:white;
+  border-radius:14px;
+  padding:19px;
+  box-shadow:0 3px 12px rgba(0,0,0,.09);
+  border-top:4px solid #063b91;
+  transition:.2s;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 27px;
-      }
+.noticia:hover{
+  transform:translateY(-4px);
+  box-shadow:0 7px 18px rgba(0,0,0,.14);
+}
 
-      .noticia h3 {
-        font-size: 18px;
-      }
-    }
-  </style>
+.fuente{
+  color:#063b91;
+  font-weight:bold;
+  font-size:14px;
+  margin-bottom:7px;
+}
+
+.noticia h3{
+  font-size:20px;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+
+.fecha{
+  font-size:13px;
+  color:#777;
+  margin-bottom:12px;
+}
+
+.contenido{
+  color:#444;
+  line-height:1.55;
+  font-size:15px;
+}
+
+.leer{
+  display:inline-block;
+  margin-top:15px;
+  background:#063b91;
+  color:white;
+  padding:9px 13px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.leer:hover{
+  background:#f5c400;
+  color:#06245c;
+}
+
+/* FUENTES */
+
+.fuentes{
+  background:#06245c;
+  border-radius:15px;
+  padding:20px;
+  margin:30px 0;
+}
+
+.fuentes h2{
+  color:#f5c400;
+  margin-bottom:15px;
+}
+
+.fuentes-lista{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.fuente-item{
+  background:white;
+  color:#06245c;
+  padding:10px 14px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+/* CARGANDO */
+
+.estado{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  text-align:center;
+  color:#555;
+}
+
+/* FOOTER */
+
+footer{
+  background:#06245c;
+  color:white;
+  text-align:center;
+  padding:30px 15px;
+  border-top:6px solid #f5c400;
+}
+
+footer strong{
+  color:#f5c400;
+  font-size:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:28px;
+  }
+
+  .destacada h2{
+    font-size:23px;
+  }
+
+  .titulo-seccion{
+    font-size:22px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>BOCA 24/7</h1>
-  <p>Todo Boca. Todo el tiempo.</p>
+
+  <div class="logo">
+    BOCA 24/7
+  </div>
+
+  <div class="subtitulo">
+    Toda la información del Xeneize, las 24 horas
+  </div>
+
 </header>
 
+
 <nav>
+
   <button onclick="mostrarTodo()">Inicio</button>
-  <button onclick="mostrarCategoria('Boca')">Boca</button>
-  <button onclick="mostrarCategoria('Noticias')">Noticias</button>
-  <button onclick="mostrarCategoria('Mercado de pases')">Mercado de pases</button>
-  <button onclick="mostrarCategoria('Partidos')">Partidos</button>
-  <button onclick="mostrarCategoria('Sudamericana')">Sudamericana</button>
+
+  <button onclick="mostrarCategoria('Últimas noticias')">
+    Últimas
+  </button>
+
+  <button onclick="mostrarCategoria('Boca')">
+    Boca
+  </button>
+
+  <button onclick="mostrarCategoria('Sudamericana')">
+    Sudamericana
+  </button>
+
+  <button onclick="mostrarCategoria('Partidos')">
+    Partidos
+  </button>
+
+  <button onclick="mostrarCategoria('Mercado de pases')">
+    Mercado de pases
+  </button>
+
+  <button onclick="mostrarCategoria('Plantel')">
+    Plantel
+  </button>
+
+  <button onclick="mostrarCategoria('Lesiones')">
+    Lesiones
+  </button>
+
+  <button onclick="mostrarCategoria('Tato Aguilera')">
+    Tato
+  </button>
+
+  <button onclick="mostrarCategoria('Diego Monroig')">
+    Diego
+  </button>
+
+  <button onclick="mostrarCategoria('Augusto César')">
+    Augusto
+  </button>
+
+  <button onclick="mostrarCategoria('Canal de Boca')">
+    Canal de Boca
+  </button>
+
 </nav>
+
 
 <main>
 
-  <section class="fuentes-box">
-    <h2>Fuentes</h2>
+  <section id="destacada"></section>
 
-    <div class="fuentes">
-      <div class="fuente-item">Tato</div>
-      <div class="fuente-item">Diego</div>
-      <div class="fuente-item">Canal de Boca</div>
-      <div class="fuente-item">Boca 24/7</div>
+
+  <section class="fuentes">
+
+    <h2>Fuentes de información</h2>
+
+    <div class="fuentes-lista">
+
+      <div class="fuente-item">
+        Tato Aguilera
+      </div>
+
+      <div class="fuente-item">
+        Diego Monroig
+      </div>
+
+      <div class="fuente-item">
+        Augusto César
+      </div>
+
+      <div class="fuente-item">
+        El Canal de Boca
+      </div>
+
+      <div class="fuente-item">
+        Boca Juniors Oficial
+      </div>
+
+      <div class="fuente-item">
+        Boca 24/7
+      </div>
+
     </div>
+
   </section>
 
-  <section class="seccion">
-    <h2 id="titulo-seccion">Últimas noticias</h2>
 
-    <div id="contenedor-noticias" class="noticias">
-      <div class="estado">Cargando noticias...</div>
+  <h2 class="titulo-seccion" id="titulo">
+    Últimas noticias
+  </h2>
+
+
+  <div id="contenedor" class="noticias">
+
+    <div class="estado">
+      Cargando noticias...
     </div>
-  </section>
+
+  </div>
 
 </main>
 
+
 <footer>
+
   <strong>BOCA 24/7</strong>
-  <p>Información Xeneize las 24 horas.</p>
+
+  <p style="margin-top:8px;">
+    Información Xeneize todos los días.
+  </p>
+
 </footer>
+
 
 <script>
 
-let todasLasNoticias = [];
+let noticias = [];
 
-async function cargarNoticias() {
 
-  const contenedor = document.getElementById("contenedor-noticias");
+/* CARGAR JSON */
 
-  try {
+async function cargarNoticias(){
 
-    const respuesta = await fetch("noticias.json");
+  try{
 
-    if (!respuesta.ok) {
-      throw new Error("No se pudo cargar noticias.json");
+    const respuesta =
+      await fetch("noticias.json?"+Date.now());
+
+    if(!respuesta.ok){
+
+      throw new Error(
+        "No se pudo cargar noticias.json"
+      );
+
     }
 
-    todasLasNoticias = await respuesta.json();
+    noticias = await respuesta.json();
 
-    mostrarNoticias(todasLasNoticias);
+    mostrarDestacada();
 
-  } catch (error) {
+    mostrarNoticias(noticias);
+
+  }
+
+  catch(error){
 
     console.error(error);
 
-    contenedor.innerHTML = `
+    document.getElementById("contenedor").innerHTML = `
+
       <div class="estado">
-        No se pudieron cargar las noticias.
-        <br>
-        Revisá que el archivo noticias.json esté en el repositorio.
+
+        ❌ No se pudieron cargar las noticias.
+
+        <br><br>
+
+        Revisá que <b>noticias.json</b>
+        esté en el mismo repositorio.
+
       </div>
+
     `;
+
   }
+
 }
 
 
-function mostrarNoticias(noticias) {
+/* NOTICIA DESTACADA */
 
-  const contenedor = document.getElementById("contenedor-noticias");
+function mostrarDestacada(){
 
-  if (!noticias || noticias.length === 0) {
+  if(noticias.length === 0){
+
+    return;
+
+  }
+
+  const noticia = noticias[0];
+
+  document.getElementById("destacada").innerHTML = `
+
+    <div class="destacada">
+
+      <div class="etiqueta">
+        🔥 NOTICIA DESTACADA
+      </div>
+
+      <h2>
+        ${escapar(noticia.titulo)}
+      </h2>
+
+      <p>
+        ${escapar(noticia.contenido)}
+      </p>
+
+      <p style="margin-top:12px;">
+        <b>${escapar(noticia.fuente || "")}</b>
+        ·
+        ${escapar(noticia.fecha || "")}
+      </p>
+
+    </div>
+
+  `;
+
+}
+
+
+/* MOSTRAR NOTICIAS */
+
+function mostrarNoticias(lista){
+
+  const contenedor =
+    document.getElementById("contenedor");
+
+  if(lista.length === 0){
 
     contenedor.innerHTML = `
+
       <div class="estado">
-        No hay noticias disponibles.
+        No hay noticias en esta sección.
       </div>
+
     `;
 
     return;
+
   }
+
 
   contenedor.innerHTML = "";
 
-  noticias.forEach(noticia => {
 
-    const tarjeta = document.createElement("article");
+  lista.forEach(noticia => {
+
+    const tarjeta =
+      document.createElement("article");
 
     tarjeta.className = "noticia";
 
+
+    let boton = "";
+
+    if(noticia.link){
+
+      boton = `
+
+        <a
+          class="leer"
+          href="${escapar(noticia.link)}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Leer noticia →
+        </a>
+
+      `;
+
+    }
+
+
     tarjeta.innerHTML = `
+
       <div class="fuente">
-        ${escaparHTML(noticia.fuente || "Boca 24/7")}
+
+        ${escapar(
+          noticia.fuente || "Boca 24/7"
+        )}
+
       </div>
+
 
       <h3>
-        ${escaparHTML(noticia.titulo || "Sin título")}
+
+        ${escapar(
+          noticia.titulo || "Sin título"
+        )}
+
       </h3>
 
+
       <div class="fecha">
-        ${escaparHTML(noticia.fecha || "")}
+
+        ${escapar(
+          noticia.fecha || ""
+        )}
+
+        ${noticia.hora
+          ? " · " + escapar(noticia.hora)
+          : ""
+        }
+
       </div>
 
+
       <div class="contenido">
-        ${escaparHTML(noticia.contenido || "")}
+
+        ${escapar(
+          noticia.contenido || ""
+        )}
+
       </div>
+
+
+      ${boton}
+
     `;
+
 
     contenedor.appendChild(tarjeta);
 
   });
+
 }
 
 
-function mostrarTodo() {
+/* MOSTRAR TODO */
 
-  document.getElementById("titulo-seccion").textContent =
+function mostrarTodo(){
+
+  document.getElementById("titulo").textContent =
     "Últimas noticias";
 
-  mostrarNoticias(todasLasNoticias);
+  mostrarNoticias(noticias);
 
   window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+    top:0,
+    behavior:"smooth"
   });
+
 }
 
 
-function mostrarCategoria(categoria) {
+/* FILTRAR */
 
-  const filtradas = todasLasNoticias.filter(noticia =>
-    noticia.categoria &&
-    noticia.categoria.toLowerCase() === categoria.toLowerCase()
-  );
+function mostrarCategoria(categoria){
 
-  document.getElementById("titulo-seccion").textContent =
+  const filtradas =
+    noticias.filter(noticia =>
+
+      noticia.categoria &&
+      noticia.categoria.toLowerCase() ===
+      categoria.toLowerCase()
+
+    );
+
+
+  document.getElementById("titulo").textContent =
     categoria;
+
 
   mostrarNoticias(filtradas);
 
+
   window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+    top:0,
+    behavior:"smooth"
   });
+
 }
 
 
-function escaparHTML(texto) {
+/* SEGURIDAD HTML */
 
-  const div = document.createElement("div");
+function escapar(texto){
 
-  div.textContent = texto;
+  const div =
+    document.createElement("div");
+
+  div.textContent =
+    texto;
 
   return div.innerHTML;
+
 }
 
+
+/* INICIAR */
 
 cargarNoticias();
 
