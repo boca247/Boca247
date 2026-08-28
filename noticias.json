@@ -1,86 +1,118 @@
 [
   {
-    "titulo": "Boca vuelve a La Bombonera ante Lanús",
-    "fuente": "Boca 24/7",
+    "titulo": "Boca recibe a Lanús en La Bombonera",
+    "fuente": "TyC Sports",
     "fecha": "28 de agosto de 2026",
-    "contenido": "Boca Juniors recibe a Lanús este viernes en La Bombonera por la séptima fecha del Torneo Clausura. El partido comienza a las 21:30 y será una nueva presentación del Xeneize como local.",
-    "categoria": "Últimas noticias"
-  },
-  {
-    "titulo": "Boca vs. Lanús: todo lo que hay que saber",
-    "fuente": "Boca 24/7",
-    "fecha": "28 de agosto de 2026",
-    "contenido": "El Xeneize vuelve a jugar en La Bombonera y buscará volver al triunfo en el campeonato. Boca y Lanús llegan con siete puntos y necesitan sumar para acercarse a los puestos de clasificación.",
-    "categoria": "Partidos"
+    "hora": "21:30",
+    "categoria": "Partidos",
+    "contenido": "Boca vuelve a La Bombonera para enfrentar a Lanús por el Torneo Clausura. El Xeneize busca volver al triunfo y acercarse a los puestos de clasificación.",
+    "link": "https://www.tycsports.com/boca-juniors.html"
   },
   {
     "titulo": "La formación de Boca ante Lanús",
-    "fuente": "El Destape",
+    "fuente": "TyC Sports",
     "fecha": "28 de agosto de 2026",
-    "contenido": "Rodolfo Arruabarrena trabaja en el equipo que enfrentará a Lanús. La lesión de Tomás Aranda obliga al entrenador a realizar modificaciones en la defensa.",
-    "categoria": "Boca"
+    "hora": "18:38",
+    "categoria": "Boca",
+    "contenido": "Boca prepara tres modificaciones respecto del equipo que empató con Racing. El Xeneize afronta una nueva fecha del campeonato con varias bajas.",
+    "link": "https://www.tycsports.com/boca-juniors/la-formacion-de-boca-vs-lanus-por-el-torneo-clausura-id757385.html"
   },
   {
-    "titulo": "Tomás Aranda, baja importante para Boca",
-    "fuente": "Diego Monroig",
-    "fecha": "28 de agosto de 2026",
-    "contenido": "Tomás Aranda sufrió una lesión en el peroné derecho durante un entrenamiento y deberá ser intervenido. La recuperación demandará varios meses y representa una baja importante para Boca.",
-    "categoria": "Lesiones"
-  },
-  {
-    "titulo": "Boca recupera jugadores para el próximo compromiso",
-    "fuente": "Tato Aguilera",
-    "fecha": "28 de agosto de 2026",
-    "contenido": "Boca trabaja para recuperar futbolistas de cara a los próximos compromisos. Leandro Paredes, Leandro Lozano y Mateo Di Lollo aparecen entre los jugadores que pueden volver a estar disponibles.",
-    "categoria": "Plantel"
-  },
-  {
-    "titulo": "Boca ya tiene rival y fechas para los cuartos de Sudamericana",
+    "titulo": "Boca ya conoce las fechas contra San Pablo",
     "fuente": "Boca 24/7",
     "fecha": "28 de agosto de 2026",
-    "contenido": "Boca Juniors enfrentará a San Pablo en los cuartos de final de la Copa Sudamericana. La ida se jugará el martes 8 de septiembre en La Bombonera y la vuelta será el martes 15 de septiembre en Brasil.",
-    "categoria": "Sudamericana"
+    "hora": "Hoy",
+    "categoria": "Sudamericana",
+    "contenido": "Boca enfrentará a San Pablo en los cuartos de final de la Copa Sudamericana. La ida será el martes 8 de septiembre a las 21:30 en La Bombonera y la revancha el martes 15 de septiembre a las 21:30 en el Morumbí.",
+    "link": "https://www.tycsports.com/boca-juniors/boca-vs-san-pablo-con-fecha-confirmada-para-los-cuartos-de-final-de-la-copa-sudamericana-id757346.html"
   },
   {
-    "titulo": "San Pablo, el próximo gran desafío internacional",
+    "titulo": "San Pablo, el próximo desafío internacional",
+    "fuente": "TN",
+    "fecha": "27 de agosto de 2026",
+    "hora": "17:17",
+    "categoria": "Sudamericana",
+    "contenido": "El Xeneize abrirá la serie de cuartos en Buenos Aires y definirá una semana después en Brasil. El ganador avanzará a las semifinales.",
+    "link": "https://tn.com.ar/deportes/futbol/2026/08/27/con-la-serie-entre-boca-y-san-pablo-la-conmebol-confirmo-las-fechas-para-los-cuartos-de-final-de-la-copa-sudamericana/"
+  },
+  {
+    "titulo": "Boca entre los ocho mejores de la Sudamericana",
     "fuente": "Boca 24/7",
     "fecha": "28 de agosto de 2026",
-    "contenido": "El Xeneize ya conoce a su rival para los cuartos de final. Boca deberá superar a San Pablo para meterse entre los cuatro mejores de la Copa Sudamericana.",
-    "categoria": "Sudamericana"
+    "categoria": "Sudamericana",
+    "contenido": "Después de superar a Recoleta, Boca continúa su camino internacional y ahora deberá enfrentar a San Pablo en una serie de 180 minutos.",
+    "link": "https://www.bocajuniors.com.ar/noticias"
   },
   {
-    "titulo": "Tato Aguilera informó novedades del plantel",
+    "titulo": "Tato Aguilera y las novedades del plantel",
     "fuente": "Tato Aguilera",
     "fecha": "28 de agosto de 2026",
-    "contenido": "El periodista que sigue el día a día de Boca informó novedades relacionadas con la recuperación de futbolistas y la preparación del equipo para los próximos partidos.",
-    "categoria": "Tato"
+    "categoria": "Tato Aguilera",
+    "contenido": "La cobertura de Tato Aguilera sigue de cerca el día a día de Boca, con información sobre el plantel, entrenamientos y próximos partidos.",
+    "link": "https://x.com/Tato_Aguilera"
   },
   {
-    "titulo": "Diego Monroig y las novedades de Boca",
+    "titulo": "Diego Monroig: últimas novedades de Boca",
     "fuente": "Diego Monroig",
     "fecha": "28 de agosto de 2026",
-    "contenido": "El periodista de ESPN aportó información sobre la actualidad del plantel y la situación de los futbolistas de Boca de cara a los próximos compromisos.",
-    "categoria": "Diego"
+    "categoria": "Diego Monroig",
+    "contenido": "Información y seguimiento de la actualidad de Boca, el plantel y los próximos compromisos del Xeneize.",
+    "link": "https://x.com/MonroigDiego"
+  },
+  {
+    "titulo": "Augusto César: información exclusiva de Boca",
+    "fuente": "Augusto César",
+    "fecha": "28 de agosto de 2026",
+    "categoria": "Augusto César",
+    "contenido": "Augusto César continúa aportando información sobre la actualidad del Xeneize, el plantel y las decisiones que toma el club.",
+    "link": "https://x.com/Augustocesar22"
   },
   {
     "titulo": "Toda la actualidad desde Boca Predio",
     "fuente": "El Canal de Boca",
     "fecha": "28 de agosto de 2026",
-    "contenido": "Las novedades del entrenamiento, el plantel y la preparación del Xeneize forman parte de la cobertura diaria de Boca.",
-    "categoria": "Canal de Boca"
+    "categoria": "Canal de Boca",
+    "contenido": "El Canal de Boca reúne contenidos del club, entrenamientos, protagonistas y toda la actualidad del Xeneize.",
+    "link": "https://x.com/ElCanaldeBoca"
+  },
+  {
+    "titulo": "Las noticias oficiales del club",
+    "fuente": "Boca Juniors Oficial",
+    "fecha": "28 de agosto de 2026",
+    "categoria": "Oficial",
+    "contenido": "Información oficial de Boca Juniors sobre fútbol, plantel, partidos y actividades del club.",
+    "link": "https://www.bocajuniors.com.ar/noticias"
   },
   {
     "titulo": "Mercado de pases: Boca sigue atento",
     "fuente": "Boca 24/7",
     "fecha": "28 de agosto de 2026",
-    "contenido": "El mercado continúa siendo uno de los focos de atención del mundo Xeneize. Boca analiza alternativas y mantiene el seguimiento de distintas situaciones del plantel.",
-    "categoria": "Mercado de pases"
+    "categoria": "Mercado de pases",
+    "contenido": "El mercado continúa siendo uno de los focos de atención del mundo Boca. La dirigencia analiza alternativas y movimientos para el plantel.",
+    "link": "https://www.bocajuniors.com.ar/noticias"
   },
   {
-    "titulo": "La agenda de Boca: Lanús y después San Pablo",
+    "titulo": "La actualidad del plantel Xeneize",
     "fuente": "Boca 24/7",
     "fecha": "28 de agosto de 2026",
-    "contenido": "Boca tiene por delante una agenda cargada. Primero enfrentará a Lanús por el Torneo Clausura y posteriormente comenzará a preparar la serie de cuartos de final de la Copa Sudamericana.",
-    "categoria": "Boca"
+    "categoria": "Plantel",
+    "contenido": "Toda la información sobre jugadores, entrenamientos, posibles regresos y las novedades que rodean al plantel profesional.",
+    "link": "https://www.bocajuniors.com.ar/noticias"
+  },
+  {
+    "titulo": "Boca y una agenda cargada",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "categoria": "Boca",
+    "contenido": "El Xeneize tiene por delante una agenda exigente: Lanús por el campeonato, Copa Argentina y luego la serie internacional frente a San Pablo.",
+    "link": "https://www.tycsports.com/boca-juniors.html"
+  },
+  {
+    "titulo": "Boca ya tiene sus próximos partidos confirmados",
+    "fuente": "Boca 24/7",
+    "fecha": "28 de agosto de 2026",
+    "categoria": "Partidos",
+    "contenido": "Después del partido ante Lanús, Boca tendrá compromisos por Copa Argentina, campeonato y Copa Sudamericana.",
+    "link": "https://www.tycsports.com/boca-juniors.html"
   }
 ]
