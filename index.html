@@ -2,418 +2,345 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boca 24/7</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boca 24/7 - Noticias</title>
 
-<style>
-*{box-sizing:border-box}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f2f2f2;
-color:#111
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f5f7;
+      color: #111;
+    }
 
-header{
-background:#06265f;
-color:white;
-text-align:center;
-padding:25px 15px
-}
+    header {
+      background: linear-gradient(135deg, #061b49, #0b3d91);
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
 
-header h1{
-margin:0;
-font-size:38px;
-font-weight:900
-}
+    header h1 {
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
 
-header p{
-margin:7px 0 0
-}
+    header p {
+      margin-top: 6px;
+      opacity: .9;
+    }
 
-nav{
-background:#041b43;
-display:flex;
-justify-content:center;
-gap:25px;
-padding:14px 10px;
-flex-wrap:wrap
-}
+    nav {
+      background: #063b91;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-font-size:14px
-}
+    nav button {
+      border: none;
+      background: white;
+      color: #063b91;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+      cursor: pointer;
+    }
 
-nav a:hover{
-color:#ffd400
-}
+    nav button:hover {
+      background: #e7e7e7;
+    }
 
-.contenedor{
-max-width:1100px;
-margin:auto;
-padding:25px 15px
-}
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 15px 50px;
+    }
 
-.titulo{
-font-size:27px;
-font-weight:900;
-border-left:6px solid #ffd400;
-padding-left:10px;
-margin-bottom:20px
-}
+    .seccion {
+      margin-bottom: 35px;
+    }
 
-.noticias{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px
-}
+    .seccion h2 {
+      border-left: 6px solid #063b91;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
 
-.card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 3px 12px rgba(0,0,0,.12)
-}
+    .noticias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
 
-.fuente{
-background:#06265f;
-color:white;
-padding:10px 15px;
-font-size:12px;
-font-weight:bold
-}
+    .noticia {
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      transition: transform .2s;
+    }
 
-.contenido{
-padding:18px
-}
+    .noticia:hover {
+      transform: translateY(-3px);
+    }
 
-.contenido h2{
-font-size:19px;
-line-height:1.35;
-margin:0 0 10px
-}
+    .fuente {
+      color: #063b91;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
 
-.contenido p{
-color:#666;
-font-size:14px;
-line-height:1.5
-}
+    .noticia h3 {
+      font-size: 20px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
 
-.fecha{
-font-size:12px;
-color:#888;
-margin-top:10px
-}
+    .fecha {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
 
-.leer{
-display:inline-block;
-margin-top:15px;
-padding:10px 15px;
-background:#06265f;
-color:white;
-border-radius:6px;
-font-size:13px;
-font-weight:bold;
-cursor:pointer
-}
+    .contenido {
+      color: #444;
+      line-height: 1.5;
+      font-size: 15px;
+    }
 
-.leer:hover{
-background:#041b43
-}
+    .fuentes-box {
+      background: #061b49;
+      color: white;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 35px;
+    }
 
-#noticiaCompleta{
-display:none;
-background:white;
-border-radius:12px;
-padding:25px;
-box-shadow:0 3px 12px rgba(0,0,0,.12)
-}
+    .fuentes-box h2 {
+      margin-bottom: 15px;
+    }
 
-#noticiaCompleta h2{
-font-size:30px;
-line-height:1.3;
-margin:15px 0
-}
+    .fuentes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-#noticiaCompleta .texto{
-font-size:18px;
-line-height:1.8;
-color:#333
-}
+    .fuente-item {
+      background: white;
+      color: #061b49;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
 
-.volver{
-display:inline-block;
-padding:10px 15px;
-background:#06265f;
-color:white;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer
-}
+    .estado {
+      text-align: center;
+      padding: 30px;
+      color: #555;
+    }
 
-.volver:hover{
-background:#041b43
-}
+    footer {
+      background: #061b49;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
 
-.redes{
-margin-top:40px
-}
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 27px;
+      }
 
-.redes h2{
-font-size:23px;
-border-left:6px solid #ffd400;
-padding-left:10px
-}
-
-.fuente-red{
-background:white;
-margin-bottom:10px;
-padding:15px;
-border-radius:8px;
-box-shadow:0 2px 8px rgba(0,0,0,.08)
-}
-
-.fuente-red a{
-color:#06265f;
-font-weight:bold;
-text-decoration:none
-}
-
-footer{
-margin-top:40px;
-background:#041b43;
-color:white;
-text-align:center;
-padding:25px 15px;
-font-size:13px
-}
-
-.cargando{
-text-align:center;
-padding:30px;
-font-weight:bold
-}
-
-@media(max-width:800px){
-.noticias{
-grid-template-columns:repeat(2,1fr)
-}
-}
-
-@media(max-width:550px){
-.noticias{
-grid-template-columns:1fr
-}
-
-header h1{
-font-size:30px
-}
-
-#noticiaCompleta h2{
-font-size:24px
-}
-
-#noticiaCompleta .texto{
-font-size:16px
-}
-}
-</style>
+      .noticia h3 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-<h1>BOCA 24/7</h1>
-<p>Todo Boca, todo el tiempo</p>
+  <h1>BOCA 24/7</h1>
+  <p>Todo Boca. Todo el tiempo.</p>
 </header>
 
 <nav>
-<a href="#" onclick="mostrarInicio()">INICIO</a>
-<a href="#" onclick="mostrarInicio()">NOTICIAS</a>
-<a href="#redes">FUENTES</a>
-<a href="#" onclick="mostrarInicio()">MERCADO DE PASES</a>
+  <button onclick="mostrarTodo()">Inicio</button>
+  <button onclick="mostrarCategoria('Boca')">Boca</button>
+  <button onclick="mostrarCategoria('Noticias')">Noticias</button>
+  <button onclick="mostrarCategoria('Mercado de pases')">Mercado de pases</button>
+  <button onclick="mostrarCategoria('Partidos')">Partidos</button>
+  <button onclick="mostrarCategoria('Sudamericana')">Sudamericana</button>
 </nav>
 
-<main class="contenedor">
+<main>
 
-<section id="inicio">
+  <section class="fuentes-box">
+    <h2>Fuentes</h2>
 
-<div class="titulo">
-Últimas noticias de Boca
-</div>
+    <div class="fuentes">
+      <div class="fuente-item">Tato</div>
+      <div class="fuente-item">Diego</div>
+      <div class="fuente-item">Canal de Boca</div>
+      <div class="fuente-item">Boca 24/7</div>
+    </div>
+  </section>
 
-<div id="listaNoticias" class="noticias">
-<div class="cargando">Cargando noticias...</div>
-</div>
+  <section class="seccion">
+    <h2 id="titulo-seccion">Últimas noticias</h2>
 
-<section class="redes" id="redes">
-
-<h2>Fuentes Boca 24/7</h2>
-
-<div class="fuente-red">
-<a href="https://x.com/Augustocesar22" target="_blank">
-Augusto César
-</a>
-</div>
-
-<div class="fuente-red">
-<a href="https://x.com/MonroigDiego" target="_blank">
-Diego Monroig
-</a>
-</div>
-
-<div class="fuente-red">
-<a href="https://x.com/Tato_Aguilera" target="_blank">
-Tato Aguilera
-</a>
-</div>
-
-<div class="fuente-red">
-<a href="https://x.com/JulioPavoni" target="_blank">
-Julio Pavoni
-</a>
-</div>
-
-<div class="fuente-red">
-<a href="https://x.com/ElcanaldeBoca" target="_blank">
-El Canal de Boca
-</a>
-</div>
-
-</section>
-
-</section>
-
-
-<section id="noticiaCompleta">
-
-<div class="volver" onclick="mostrarInicio()">
-← Volver a noticias
-</div>
-
-<div class="fuente" id="fuenteNoticia"></div>
-
-<h2 id="tituloNoticia"></h2>
-
-<div class="fecha" id="fechaNoticia"></div>
-
-<p class="texto" id="textoNoticia"></p>
-
-</section>
+    <div id="contenedor-noticias" class="noticias">
+      <div class="estado">Cargando noticias...</div>
+    </div>
+  </section>
 
 </main>
 
 <footer>
-BOCA 24/7 · Toda la actualidad del Xeneize
+  <strong>BOCA 24/7</strong>
+  <p>Información Xeneize las 24 horas.</p>
 </footer>
-
 
 <script>
 
-let noticias=[];
+let todasLasNoticias = [];
 
-async function cargarNoticias(){
+async function cargarNoticias() {
 
-try{
+  const contenedor = document.getElementById("contenedor-noticias");
 
-const respuesta=await fetch("./Noticias");
+  try {
 
-if(!respuesta.ok){
-throw new Error("No se encontró Noticias");
-}
+    const respuesta = await fetch("noticias.json");
 
-noticias=await respuesta.json();
+    if (!respuesta.ok) {
+      throw new Error("No se pudo cargar noticias.json");
+    }
 
-const lista=document.getElementById("listaNoticias");
+    todasLasNoticias = await respuesta.json();
 
-lista.innerHTML="";
+    mostrarNoticias(todasLasNoticias);
 
-noticias.forEach(function(noticia,index){
+  } catch (error) {
 
-const tarjeta=document.createElement("article");
+    console.error(error);
 
-tarjeta.className="card";
-
-tarjeta.innerHTML=`
-
-<div class="fuente">
-${noticia.fuente}
-</div>
-
-<div class="contenido">
-
-<h2>
-${noticia.titulo}
-</h2>
-
-<p>
-${noticia.contenido}
-</p>
-
-<div class="fecha">
-${noticia.fecha || ""}
-</div>
-
-<span
-class="leer"
-onclick="abrirNoticia(${index})">
-Leer noticia
-</span>
-
-</div>
-`;
-
-lista.appendChild(tarjeta);
-
-});
-
-}catch(error){
-
-document.getElementById("listaNoticias").innerHTML=`
-<div class="cargando">
-No se pudieron cargar las noticias.
-</div>
-`;
-
-}
-
+    contenedor.innerHTML = `
+      <div class="estado">
+        No se pudieron cargar las noticias.
+        <br>
+        Revisá que el archivo noticias.json esté en el repositorio.
+      </div>
+    `;
+  }
 }
 
 
-function abrirNoticia(index){
+function mostrarNoticias(noticias) {
 
-const noticia=noticias[index];
+  const contenedor = document.getElementById("contenedor-noticias");
 
-document.getElementById("inicio").style.display="none";
+  if (!noticias || noticias.length === 0) {
 
-document.getElementById("noticiaCompleta").style.display="block";
+    contenedor.innerHTML = `
+      <div class="estado">
+        No hay noticias disponibles.
+      </div>
+    `;
 
-document.getElementById("fuenteNoticia").innerText=noticia.fuente;
+    return;
+  }
 
-document.getElementById("tituloNoticia").innerText=noticia.titulo;
+  contenedor.innerHTML = "";
 
-document.getElementById("fechaNoticia").innerText=noticia.fecha || "";
+  noticias.forEach(noticia => {
 
-document.getElementById("textoNoticia").innerText=noticia.contenido;
+    const tarjeta = document.createElement("article");
 
-window.scrollTo(0,0);
+    tarjeta.className = "noticia";
 
+    tarjeta.innerHTML = `
+      <div class="fuente">
+        ${escaparHTML(noticia.fuente || "Boca 24/7")}
+      </div>
+
+      <h3>
+        ${escaparHTML(noticia.titulo || "Sin título")}
+      </h3>
+
+      <div class="fecha">
+        ${escaparHTML(noticia.fecha || "")}
+      </div>
+
+      <div class="contenido">
+        ${escaparHTML(noticia.contenido || "")}
+      </div>
+    `;
+
+    contenedor.appendChild(tarjeta);
+
+  });
 }
 
 
-function mostrarInicio(){
+function mostrarTodo() {
 
-document.getElementById("noticiaCompleta").style.display="none";
+  document.getElementById("titulo-seccion").textContent =
+    "Últimas noticias";
 
-document.getElementById("inicio").style.display="block";
+  mostrarNoticias(todasLasNoticias);
 
-window.scrollTo(0,0);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
+
+function mostrarCategoria(categoria) {
+
+  const filtradas = todasLasNoticias.filter(noticia =>
+    noticia.categoria &&
+    noticia.categoria.toLowerCase() === categoria.toLowerCase()
+  );
+
+  document.getElementById("titulo-seccion").textContent =
+    categoria;
+
+  mostrarNoticias(filtradas);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+function escaparHTML(texto) {
+
+  const div = document.createElement("div");
+
+  div.textContent = texto;
+
+  return div.innerHTML;
 }
 
 
