@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boca 24/7</title>
+<style>
+:root{--blue:#061a43;--blue2:#0b3d91;--yellow:#ffd400;--bg:#07101f;--card:#0d1a2d;--muted:#91a0b7;--white:#f5f7fb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
+header{background:linear-gradient(135deg,#06215a,#0a3e91);padding:22px 18px 18px;position:sticky;top:0;z-index:5;border-bottom:3px solid var(--yellow)}
+.logo{font-weight:900;font-size:25px;letter-spacing:1px}.sub{color:#dce7ff;margin-top:5px;font-size:13px}
+nav{display:flex;gap:8px;overflow:auto;padding:12px 16px;background:#09162a;position:sticky;top:78px;z-index:4}
+nav button{white-space:nowrap;border:1px solid #29405f;background:#10223d;color:#dfe8f7;padding:9px 13px;border-radius:999px}nav button.active{background:var(--yellow);color:#06132e;font-weight:800}
+main{max-width:850px;margin:auto;padding:16px}.hero{background:linear-gradient(135deg,#0b3d91,#071a3a);border:1px solid #2b4f82;border-radius:20px;padding:18px;margin-bottom:18px}
+.hero b{color:var(--yellow)}h2{font-size:17px;margin:18px 0 10px}
+.card{background:var(--card);border:1px solid #1e3048;border-radius:17px;padding:16px;margin:10px 0}.tag{display:inline-block;padding:5px 8px;border-radius:7px;font-size:10px;font-weight:900;background:#14325b;color:#b9d3ff}.ok{background:#153f2d;color:#72e4a5}.warn{background:#4b3910;color:#ffd970}
+.title{font-size:18px;font-weight:800;line-height:1.25;margin:9px 0}.meta{font-size:12px;color:var(--muted)}.body{color:#c9d3e2;line-height:1.45;margin-top:8px}.source{margin-top:12px;color:#8fbaff;font-size:12px;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.mini{background:#0c192c;border:1px solid #1e3048;border-radius:15px;padding:14px}.mini b{display:block;margin-bottom:5px}.refresh{float:right;background:var(--yellow);border:0;border-radius:10px;padding:8px 10px;font-weight:800}
+footer{text-align:center;color:#718098;padding:25px;font-size:11px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><button class="refresh" onclick="location.reload()">Actualizar</button><div class="logo">🔵🟡 BOCA 24/7</div><div class="sub">Noticias, actualidad y fuentes verificadas de Boca Juniors</div></header>
+<nav id="nav"></nav>
+<main>
+<section class="hero"><b>🚨 AHORA</b><h1>Boca vuelve a La Bombonera</h1><div>El Xeneize recibe a Lanús este viernes 28 de agosto a las 21:30 por la fecha 7 del Torneo Clausura.</div><div class="meta" style="margin-top:10px">Fuente: TyC Sports · actualizado 27/08/2026</div></section>
+<h2>Últimas noticias</h2><div id="news"></div>
+<h2>Agenda rápida</h2><div class="grid">
+<div class="mini"><b>⚽ Boca vs. Lanús</b><span class="meta">Vie 28/08 · 21:30 · La Bombonera</span></div>
+<div class="mini"><b>🏆 Copa Argentina</b><span class="meta">Boca vs. Vélez · octavos</span></div>
+<div class="mini"><b>🏥 Enfermería</b><span class="meta">Aranda y Bareiro son bajas importantes</span></div>
+<div class="mini"><b>📢 Oficial</b><span class="meta">Enner Valencia firmó hasta 31/12/2027</span></div>
+</div>
+<footer>Las noticias muestran su fuente. Los rumores no se presentan como confirmados.</footer>
+</main>
+<script>
+const cats=["Todo","Última hora","Fútbol","Mercado","Lesiones","Reserva","Club"];
+const items=[
+{c:"Última hora",s:"EN DESARROLLO",t:"Paredes aparece entre los convocados ante Lanús",d:"El volante vuelve a estar disponible para el partido del viernes. La titularidad depende de la decisión final del cuerpo técnico.",src:"Bolavip",u:"https://bolavip.com/ar/boca/boca-hoy-convocados-vs-lanus-vuelve-leandro-paredes-aparece-matias-satas-y-mas"},
+{c:"Lesiones",s:"CONFIRMADA",t:"Adam Bareiro pasará por el quirófano",d:"El delantero paraguayo será operado por una hernia de disco lumbar y, según los reportes publicados, apunta a volver en 2027.",src:"Bolavip",u:"https://bolavip.com/ar/boca/adam-bareiro-tomo-la-decision-de-operarse-no-podra-jugar-en-boca-hasta-2027"},
+{c:"Lesiones",s:"CONFIRMADA",t:"Tomás Aranda sufrió una fractura de peroné",d:"El juvenil quedó fuera de competencia durante varios meses. La cirugía fue informada como exitosa.",src:"Vistazo",u:"https://www.vistazo.com/deportes/2026-08-26-tomas-aranda-companero-enner-valencia-boca-juniors-fractura-fuera-varios-meses-CI11191553"},
+{c:"Fútbol",s:"CONFIRMADA",t:"Boca recibe a Lanús este viernes",d:"Se juega a las 21:30 en La Bombonera por la séptima fecha del Torneo Clausura.",src:"TyC Sports",u:"https://www.tycsports.com/liga-profesional-de-futbol/argentina-torneo-clausura-2026-boca-juniors-vs-lanus-fecha-7-id757268.html"},
+{c:"Mercado",s:"CONFIRMADA",t:"El mercado argentino ya cerró",d:"Los clubes solo pueden incorporar en circunstancias específicas vinculadas a una venta al exterior.",src:"TyC Sports",u:"https://www.tycsports.com/liga-profesional-de-futbol/mercado-de-pases-argentina-julio-agosto-2026-id749495.html"},
+{c:"Club",s:"OFICIAL",t:"Enner Valencia firmó con Boca hasta 2027",d:"El club confirmó oficialmente el contrato del delantero ecuatoriano hasta el 31 de diciembre de 2027.",src:"Boca Juniors",u:"https://www.bocajuniors.com.ar/noticias/comunicado-enner-valencia"},
+{c:"Reserva",s:"OFICIAL",t:"La Reserva volvió al triunfo",d:"Boca superó 3-2 a Estudiantes en La Plata y se prendió en la lucha de arriba.",src:"Boca Juniors",u:"https://www.bocajuniors.com.ar/noticias"}
+];
+const nav=document.getElementById("nav"), box=document.getElementById("news");
+function renderNav(){nav.innerHTML=cats.map((x,i)=>`<button class="${i===0?'active':''}" onclick="filter('${x}',this)">${x}</button>`).join("")}
+function render(list){box.innerHTML=list.map(n=>`<article class="card"><span class="tag ${n.s==='CONFIRMADA'||n.s==='OFICIAL'?'ok':'warn'}">${n.s}</span><div class="title">${n.t}</div><div class="body">${n.d}</div><a class="source" href="${n.u}" target="_blank" rel="noopener">Fuente: ${n.src} ↗</a></article>`).join("")}
+function filter(c,b){document.querySelectorAll("nav button").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(c==="Todo"?items:items.filter(x=>x.c===c))}
+renderNav();render(items);
+</script>
+</body></html>
