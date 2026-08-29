@@ -14,8 +14,7 @@
     padding:0;
 }
 
-html,
-body{
+html,body{
     width:100%;
     overflow-x:hidden;
 }
@@ -40,8 +39,6 @@ header img{
     width:100%;
     height:auto;
     display:block;
-    margin:0;
-    padding:0;
 }
 
 /* MENÚ */
@@ -92,7 +89,7 @@ main{
     text-align:center;
 }
 
-/* NOTICIA DESTACADA */
+/* DESTACADA */
 
 .hero{
     background:linear-gradient(135deg,#00245f,#0756b8);
@@ -222,6 +219,93 @@ main{
     color:#666;
 }
 
+/* VIDEOS */
+
+.videos-seccion{
+    margin-top:45px;
+    margin-bottom:40px;
+}
+
+.videos-titulo{
+    color:#00245f;
+    font-size:25px;
+    border-left:7px solid #f5c400;
+    padding-left:12px;
+    margin-bottom:18px;
+}
+
+.videos-subtitulo{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.videos-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.video-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    border-top:5px solid #064aa8;
+}
+
+.video{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    background:#000;
+}
+
+.video iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.video-info{
+    padding:16px;
+}
+
+.video-info h3{
+    color:#00245f;
+    font-size:18px;
+    line-height:1.3;
+}
+
+.video-boton{
+    display:inline-block;
+    margin-top:12px;
+    background:#064aa8;
+    color:white;
+    text-decoration:none;
+    padding:9px 13px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.video-boton:hover{
+    background:#f5c400;
+    color:#00245f;
+}
+
+.canal-boton{
+    display:inline-block;
+    margin-top:20px;
+    background:#f5c400;
+    color:#00245f;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
 /* PIE */
 
 footer{
@@ -250,8 +334,13 @@ footer strong{
         font-size:23px;
     }
 
-    .seccion-titulo{
+    .seccion-titulo,
+    .videos-titulo{
         font-size:21px;
+    }
+
+    .videos-grid{
+        grid-template-columns:1fr;
     }
 
 }
@@ -272,7 +361,9 @@ footer strong{
 
 <nav>
 
-    <button onclick="inicio()">Inicio</button>
+    <button onclick="inicio()">
+        Inicio
+    </button>
 
     <button onclick="seccion('Boca')">
         Boca
@@ -337,15 +428,15 @@ footer strong{
         <div class="fuentes-lista">
 
             <span class="fuente">
-                Google Noticias
+                Boca Juniors Oficial
+            </span>
+
+            <span class="fuente">
+                El Canal de Boca
             </span>
 
             <span class="fuente">
                 TyC Sports
-            </span>
-
-            <span class="fuente">
-                Boca Juniors
             </span>
 
         </div>
@@ -371,6 +462,101 @@ footer strong{
             </div>
 
         </div>
+
+    </section>
+
+    <!-- =========================
+         EL CANAL DE BOCA
+         ========================= -->
+
+    <section class="videos-seccion">
+
+        <h2 class="videos-titulo">
+            🎥 El Canal de Boca
+        </h2>
+
+        <p class="videos-subtitulo">
+            Videos oficiales de Boca Juniors.
+        </p>
+
+        <div class="videos-grid">
+
+            <article class="video-card">
+
+                <div class="video">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/4ybOs3IFAqI"
+                        title="El Canal de Boca"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>
+                        Boca 1-0 Lanús | El Canal de Boca
+                    </h3>
+
+                    <a
+                        class="video-boton"
+                        href="https://www.youtube.com/watch?v=4ybOs3IFAqI"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Ver en YouTube
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="video-card">
+
+                <div class="video">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/mX7nqZeiHAs"
+                        title="El Canal de Boca"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+                <div class="video-info">
+
+                    <h3>
+                        Último contenido de El Canal de Boca
+                    </h3>
+
+                    <a
+                        class="video-boton"
+                        href="https://www.youtube.com/@ElCanaldeBoca/videos"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Ver canal oficial
+
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <a
+            class="canal-boton"
+            href="https://www.youtube.com/@ElCanaldeBoca/videos"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Ver todos los videos del Canal de Boca
+
+        </a>
 
     </section>
 
