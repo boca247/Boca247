@@ -1,224 +1,231 @@
-import json
-import re
+  import json
 import feedparser
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
-ARCHIVO = "noticias.json"
 
 FUENTES = [
-    ("Boca Oficial", "https://news.google.com/rss/search?q=site%3Abocajuniors.com.ar+Boca+Juniors&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Sudamericana", "https://news.google.com/rss/search?q=Boca+Juniors+Sudamericana&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Fútbol", "https://news.google.com/rss/search?q=Boca+Juniors+futbol&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Lesiones", "https://news.google.com/rss/search?q=Boca+Juniors+lesion&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Mercado de pases", "https://news.google.com/rss/search?q=Boca+Juniors+mercado+de+pases&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Reserva", "https://news.google.com/rss/search?q=Boca+Juniors+Reserva&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Básquet", "https://news.google.com/rss/search?q=Boca+Juniors+basquet&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Futsal", "https://news.google.com/rss/search?q=Boca+Juniors+futsal&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Fútbol femenino", "https://news.google.com/rss/search?q=Boca+Juniors+futbol+femenino&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Boca - Obras", "https://news.google.com/rss/search?q=Boca+Juniors+obras+Bombonera&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-
-    ("Tato Aguilera", "https://news.google.com/rss/search?q=%22Tato+Aguilera%22+Boca&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Diego Monroig", "https://news.google.com/rss/search?q=%22Diego+Monroig%22+Boca&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Augusto César", "https://news.google.com/rss/search?q=%22Augusto+C%C3%A9sar%22+Boca&hl=es-419&gl=AR&ceid=AR%3Aes-419"),
-    ("Canal de Boca", "https://news.google.com/rss/search?q=%22El+Canal+de+Boca%22&hl=es-419&gl=AR&ceid=AR%3Aes-419")
+    {
+        "nombre": "TyC Sports",
+        "rss": "https://www.tycsports.com/rss/pages/boca-juniors.xml"
+    },
+    {
+        "nombre": "Google Noticias Boca",
+        "rss": "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419"
+    }
 ]
 
 
-def limpiar(texto):
-    texto = re.sub(r"<[^>]*>", "", texto or "")
-    texto = re.sub(r"\s+", " ", texto)
-    return texto.strip()
+def hora_argentina(fecha):
+
+    argentina = timezone(
+        timedelta(hours=-3)
+    )
+
+    fecha_argentina = fecha.astimezone(
+        argentina
+    )
+
+    return fecha_argentina.strftime(
+        "%d/%m/%Y %H:%M"
+    )
 
 
-def categoria(titulo, fuente):
-    t = titulo.lower()
+def procesar_fuente(fuente):
 
-    if "sudamericana" in t:
-        return "Sudamericana"
-
-    if "básquet" in t or "basquet" in t:
-        return "Básquet"
-
-    if "futsal" in t:
-        return "Futsal"
-
-    if "femenino" in t or "gladiadoras" in t:
-        return "Fútbol femenino"
-
-    if "reserva" in t:
-        return "Reserva"
-
-    if any(x in t for x in [
-        "obra", "obras", "bombonera",
-        "infraestructura", "estadio"
-    ]):
-        return "Obras"
-
-    if any(x in t for x in [
-        "lesión", "lesionado", "lesion",
-        "fractura", "operado", "recuperación"
-    ]):
-        return "Lesiones"
-
-    if any(x in t for x in [
-        "mercado", "refuerzo", "incorporación",
-        "pase", "fichaje"
-    ]):
-        return "Mercado de pases"
-
-    if "inferiores" in t or "juvenil" in t or "quinta" in t or "sexta" in t:
-        return "Inferiores"
-
-    if "partido" in t or "vs." in t or "vs " in t:
-        return "Partidos"
-
-    if fuente in [
-        "Tato Aguilera",
-        "Diego Monroig",
-        "Augusto César"
-    ]:
-        return fuente
-
-    if fuente == "Canal de Boca":
-        return "Canal de Boca"
-
-    return "Boca"
-
-
-def obtener_noticias():
     noticias = []
 
-    for fuente, url in FUENTES:
+    try:
 
-        print("Consultando:", fuente)
+        feed = feedparser.parse(
+            fuente["rss"]
+        )
 
-        try:
-            feed = feedparser.parse(url)
+        for entrada in feed.entries[:15]:
 
-            for item in feed.entries[:15]:
+            titulo = entrada.get(
+                "title",
+                ""
+            ).strip()
 
-                titulo = limpiar(item.get("title", ""))
+            link = entrada.get(
+                "link",
+                ""
+            ).strip()
 
-                if not titulo:
-                    continue
-
-                link = item.get("link", "")
-
-                resumen = limpiar(
-                    item.get("summary", "")
-                )
-
-                if not resumen:
-                    resumen = (
-                        "Últimas novedades de Boca Juniors."
-                    )
-
-                fecha = item.get(
-                    "published",
-                    datetime.now().strftime("%d/%m/%Y")
-                )
-
-                noticia = {
-                    "titulo": titulo,
-                    "fuente": fuente,
-                    "fecha": fecha,
-                    "categoria": categoria(
-                        titulo,
-                        fuente
-                    ),
-                    "contenido": resumen[:600],
-                    "link": link
-                }
-
-                noticias.append(noticia)
-
-        except Exception as error:
-            print(
-                "Error consultando",
-                fuente,
-                ":",
-                error
+            resumen = entrada.get(
+                "summary",
+                ""
             )
+
+            resumen = resumen.replace(
+                "<p>",
+                ""
+            ).replace(
+                "</p>",
+                ""
+            ).strip()
+
+            if not titulo:
+                continue
+
+            fecha = None
+
+            if hasattr(
+                entrada,
+                "published_parsed"
+            ):
+
+                fecha = datetime(
+                    *entrada.published_parsed[:6],
+                    tzinfo=timezone.utc
+                )
+
+            elif hasattr(
+                entrada,
+                "updated_parsed"
+            ):
+
+                fecha = datetime(
+                    *entrada.updated_parsed[:6],
+                    tzinfo=timezone.utc
+                )
+
+            if fecha is None:
+
+                fecha = datetime.now(
+                    timezone.utc
+                )
+
+            fecha_arg = hora_argentina(
+                fecha
+            )
+
+            categoria = "Boca"
+
+            titulo_lower = titulo.lower()
+
+            if "sudamericana" in titulo_lower:
+
+                categoria = "Sudamericana"
+
+            elif "mercado" in titulo_lower:
+
+                categoria = "Mercado de pases"
+
+            elif "lesion" in titulo_lower:
+
+                categoria = "Lesiones"
+
+            elif "basquet" in titulo_lower:
+
+                categoria = "Básquet"
+
+            elif "futsal" in titulo_lower:
+
+                categoria = "Futsal"
+
+            elif "femenino" in titulo_lower:
+
+                categoria = "Fútbol femenino"
+
+            noticias.append({
+
+                "titulo": titulo,
+
+                "fuente": fuente["nombre"],
+
+                "contenido": resumen,
+
+                "link": link,
+
+                "fecha": fecha_arg,
+
+                "hora": fecha_arg[-5:],
+
+                "fecha_iso": fecha.isoformat(),
+
+                "categoria": categoria
+
+            })
+
+    except Exception as error:
+
+        print(
+            "Error en",
+            fuente["nombre"],
+            ":",
+            error
+        )
 
     return noticias
 
 
-def cargar_existentes():
+def actualizar():
 
-    try:
-        with open(
-            ARCHIVO,
-            "r",
-            encoding="utf-8"
-        ) as f:
-            return json.load(f)
+    todas = []
 
-    except Exception:
-        return []
+    for fuente in FUENTES:
 
+        noticias = procesar_fuente(
+            fuente
+        )
 
-def guardar(noticias):
+        todas.extend(
+            noticias
+        )
+
+    vistas = set()
+
+    noticias_finales = []
+
+    for noticia in todas:
+
+        clave = (
+            noticia["titulo"]
+            .lower()
+            .strip()
+        )
+
+        if clave in vistas:
+            continue
+
+        vistas.add(
+            clave
+        )
+
+        noticias_finales.append(
+            noticia
+        )
+
+    noticias_finales.sort(
+        key=lambda noticia:
+        noticia["fecha_iso"],
+        reverse=True
+    )
+
+    noticias_finales = (
+        noticias_finales[:40]
+    )
 
     with open(
-        ARCHIVO,
+        "noticias.json",
         "w",
         encoding="utf-8"
-    ) as f:
+    ) as archivo:
 
         json.dump(
-            noticias,
-            f,
+            noticias_finales,
+            archivo,
             ensure_ascii=False,
             indent=2
         )
 
-
-nuevas = obtener_noticias()
-anteriores = cargar_existentes()
-
-# Las nuevas primero
-todas = nuevas + anteriores
-
-# Eliminar duplicados
-unicas = {}
-
-for noticia in todas:
-
-    clave = (
-        noticia["titulo"]
-        .lower()
-        .strip()
+    print(
+        "Noticias actualizadas:",
+        len(noticias_finales)
     )
 
-    if clave not in unicas:
-        unicas[clave] = noticia
 
-# Ordenar: las nuevas quedan primero
-resultado = list(unicas.values())
+if __name__ == "__main__":
 
-# Mantener máximo 150
-resultado = resultado[:150]
-
-guardar(resultado)
-
-print(
-    "================================="
-)
-
-print(
-    "ACTUALIZACION COMPLETADA"
-)
-
-print(
-    "Noticias nuevas:",
-    len(nuevas)
-)
-
-print(
-    "Noticias totales:",
-    len(resultado)
-)
-
-print(
-    "================================="
-)
+    actualizar()
