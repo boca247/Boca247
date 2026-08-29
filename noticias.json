@@ -1,15 +1,5 @@
 [
   {
-    "titulo": "River se mete en la pelea con Boca por el sanjuanino Francisco Álvarez - Tiempo de San Juan",
-    "fuente": "Google Noticias",
-    "contenido": "River se mete en la pelea con Boca por el sanjuanino Francisco Álvarez Tiempo de San Juan",
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONFRKQTdsUFNBU3pSNy1Od2ptNUFadG4xdEwweWdmN21WQnZMQ0tCRE12cThaRlI1TXdSUVBXTFVZc3JwaWEtZTY2SVEzYVJCdmpnenp1eDg3MW5VXzBnTVFvc0pneWl6VzZqQ2hwTEgzZ1Q0cXpJMFZJV1UyV2w5MWVNajVvdE5XeXktVF9uRDNUczJBNVRRdEFsTmVCODVWWFdDbjgxX0dQcmltRlkwdk9kLVpxNC00VzBUZXBCNA?oc=5",
-    "fecha": "29/08/2026",
-    "hora": "11:01",
-    "fecha_iso": "2026-08-29T11:01:00-03:00",
-    "categoria": "Boca"
-  },
-  {
     "titulo": "Día, horario y estadio confirmado para el duelo entre Gimnasia y Boca - El Sol",
     "fuente": "Google Noticias",
     "contenido": "Día, horario y estadio confirmado para el duelo entre Gimnasia y Boca El Sol",
@@ -37,6 +27,16 @@
     "fecha": "29/08/2026",
     "hora": "09:15",
     "fecha_iso": "2026-08-29T09:15:02-03:00",
+    "categoria": "Boca"
+  },
+  {
+    "titulo": "Boca festejó el triunfo agónico con un llamativo cantito con chicana para River - MDZ Online",
+    "fuente": "Google Noticias",
+    "contenido": "Boca festejó el triunfo agónico con un llamativo cantito con chicana para River MDZ Online",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOHN1MHlfODVtYUxjUXh4QlBSZFV2ZlMyS2lFdC1oa21SU01ySHo0eTE5Z3VKMU9PSm9WYXFSZGhYODY4Vy1MQ0NlNzZRSmtlWWVLZ1RVMGd1STBFTWN1OGtqOW8waEJ0V3FMOUlEaDZWVGF1MURPMDFDYWlZQXNpelhsb295YTMtMmg0aWxyRXFaRXdfcUQ5VEpJX3BZaEt4a3hqTE1VcFlMd9IBrwFBVV95cUxPMGlJZldXaUtvU1MzZDRyQ0taV1lLNmI0S1ZTWHFkN3pwOEpSdnYxQkpyUUhZRHE0ZWFpckxORmhXM3NnMWxFTlV0UzJSZkotWldJeWM0cmNlRTM1YzFDdkdEQlpkX29xVVZXekZXVklSZ1dGLUx6a2dkNll3Uk9xcWVOU2k5eHFHUUV5eFl2UGhJVU0xYWRqZUd6Vkd5dGlNMGgyZjNPdEItcVgwV2xZ?oc=5",
+    "fecha": "29/08/2026",
+    "hora": "09:13",
+    "fecha_iso": "2026-08-29T09:13:00-03:00",
     "categoria": "Boca"
   },
   {
@@ -80,13 +80,23 @@
     "categoria": "Boca"
   },
   {
-    "titulo": "Los puntajes de Boca vs. Lanús, por el Torneo Clausura - TyC Sports",
+    "titulo": "Boca volvió a la Bombonera con triunfazo agónico ante Lanús - Olé",
     "fuente": "Google Noticias",
-    "contenido": "Los puntajes de Boca vs. Lanús, por el Torneo Clausura TyC Sports Boca volvió a la Bombonera con triunfazo agónico ante Lanús Olé “Que no nos dirija más” y “le faltó personalidad para echar a un jugador de Boca”: la furia de Lanús contra el árbitro y el VAR por no expulsar a Flores Infobae",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMFY5Q0JjSkswWjZMQnF3WE4tczFMR0RCeURhWmZKTVI1dUMwTXQwRC0tc0ZjVnp0eUZva1NDOHVWaGh0Smd5eHQwMC13aUJRQWpWM0x4cHUyTHYtRDVGdkYyaVlWVlNhemJ3LU1veEJXcUNVTEg3U29aVGFqOWZpcmZpRUpGN1Y2YWV1UV9UbzRSN29idzFxSUFKRDNvTUd0LWE1RHlGRWVIRm9NVDdEdTNHN3pnbFJ0?oc=5",
+    "contenido": "Boca volvió a la Bombonera con triunfazo agónico ante Lanús Olé Los puntajes de Boca vs. Lanús, por el Torneo Clausura TyC Sports “Que no nos dirija más” y “le faltó personalidad para echar a un jugador de Boca”: la furia de Lanús contra el árbitro y el VAR por no expulsar a Flores Infobae",
+    "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOdE13RkhSVVM2cGlWVzVsVWpxMTNTdzE0aDJoRW9NMHJvWXptRl9lTEFYOUpNN2tDelk3eF9LdjBaMkduaGpZREtGNmk1WG5yekpyQzQ0VWF6YUo2SW9aLWhROW40TWU5UUdQbVFoYjdDSVhhTEJmemdyR2hRVWQzNWd5SkNrSVNmMWJkU3NhM0t1bTNtTWdqX3pFb21Odi01eWw3XzV0aDVYSkhOOFVXcWg0M0ZnX2h6NGYtREVoX3VBbFpTMVl2QmVPY09JR2Fkc2V6S2x30gHbAUFVX3lxTE5hdFYtM0NReHVoQThMQVlJbEE0NlpaOFAwUlQ4OEpDTXFjUVplNGlvbWI3aXpDWkRiSHhINkRxdW5Cb0xOcnNuVHJwTDctbmFZZlZWM2x5WjRIanJKWFd1dU1QNWxvd3A1TlJmT2FiU1BwSXRVUlM4THFQMGRsaHhRLV9iU1J2QjRWaGVMYUJRaTJqR2dlYi10M3pwUHctNWxXOENDb1BpU3BDSXRlMDhucDY3dDI3dUQwNmQ0aHZBNmZQTjNyclhQVTFZb0RHQ3A2QTZYUkpod29rOA?oc=5",
     "fecha": "29/08/2026",
-    "hora": "00:16",
-    "fecha_iso": "2026-08-29T00:16:50-03:00",
+    "hora": "00:00",
+    "fecha_iso": "2026-08-29T00:00:35-03:00",
+    "categoria": "La Bombonera"
+  },
+  {
+    "titulo": "\"Yo pensé que River pasaba, hay un poquito de alegría igual\", Beto Márcico con Olé en la previa de Boca-Lanús - Olé",
+    "fuente": "Google Noticias",
+    "contenido": "\"Yo pensé que River pasaba, hay un poquito de alegría igual\", Beto Márcico con Olé en la previa de Boca-Lanús Olé",
+    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPNnJUejh0aGJhZ3lJeVZUblZJRUZOcWlsRFNnMVR2YlMwQVZZMmRZV2R0TEJjRlRsb1lUSDJyMnhuRUdna1BOQmJUc3dxalRTU0ZxUEJYbjROT2FUeDI4bGRSemtfWnduN2p4QjF0RmNERkUzNnpHRzlhbi04OWM4UnlwQ2hUS3hiT2VBVUdCRzd5cHZtUWpIcnRwa2JWYXBrS1EycjFVZVpBMkhMM0YzRTl5eGNLaThyTDRvaFJidXh5R0JVdEZiTQ?oc=5",
+    "fecha": "28/08/2026",
+    "hora": "23:59",
+    "fecha_iso": "2026-08-28T23:59:29-03:00",
     "categoria": "Boca"
   },
   {
@@ -130,16 +140,6 @@
     "categoria": "Boca"
   },
   {
-    "titulo": "Un ídolo de Boca apuntó contra River por el interinato de Ponzio y lanzó una picante chicana: \"Se imaginan...\" - MDZ Online",
-    "fuente": "Google Noticias",
-    "contenido": "Un ídolo de Boca apuntó contra River por el interinato de Ponzio y lanzó una picante chicana: \"Se imaginan...\" MDZ Online",
-    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPRHh6dUxDbktjZXhYMjhneGJGd0tiNGg4bE1WU0g2WWlPX3dGR1ZtbWxQWlZVbWx4VHhhSFMyWnVKOXNGaUpVSFFmazZTb3ZRVGJ0LWc5ZTBqeUtWRm1GYTFDVE00WGFuZVpRQkJCOEpPSlh0TmpXel9IMC1qZ3oxZEItRjV3RTBwWEdyQTV4TVlvUWM0ZlAyTTJSOGVIcUZNNndUZWpQcFFaNHFUOWlDRVAwcjd1WUVnV2tHNVZIdUFuRFA5TUVIZmxoTWl2ejjSAdQBQVVfeXFMT1hrU2M0Q1dmcnQyWUlXMHY4cHd6LXNzYlZ6VVBJYmhyOEt1bjFjejIzamg3QjB5SlFXVExqNEd5T1NienFrc2ZWRVZLd2JVRUZ0cW5iTnBvZlE2Rnk0NDFtOEFLc3hERlhRaTRfWnN5VzZzYk5KZkxkT2VWYnIxbGtSTG5FTGUycVJMY25PYVU1WU1HdUJ1QkpqNUREMzJkekp4emdQZmo0WklmeGgyZmc4WlRJY19CUC1tYU9hS0tuQ2wwaEd4UnNuaGs0NndVb2lrd3k?oc=5",
-    "fecha": "28/08/2026",
-    "hora": "20:42",
-    "fecha_iso": "2026-08-28T20:42:00-03:00",
-    "categoria": "Boca"
-  },
-  {
     "titulo": "Qué canal pasa Boca Juniors vs Lanús hoy: dónde ver gratis y EN VIVO la Liga Profesional - 365Scores",
     "fuente": "Google Noticias",
     "contenido": "Qué canal pasa Boca Juniors vs Lanús hoy: dónde ver gratis y EN VIVO la Liga Profesional 365Scores",
@@ -170,13 +170,13 @@
     "categoria": "Boca"
   },
   {
-    "titulo": "Tomás Aranda fue operado del peroné: cuándo volverá a jugar y la decisión de Boca Juniors sobre un posible reemplazo - Infobae",
+    "titulo": "Kevin Zenón podría irse a Atlas de México: la contraoferta de Boca - bolavip.com",
     "fuente": "Google Noticias",
-    "contenido": "Tomás Aranda fue operado del peroné: cuándo volverá a jugar y la decisión de Boca Juniors sobre un posible reemplazo Infobae",
-    "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQUXlVLTJQeWRxcjNrc3FRNkIzWjF6M2NCMG5qM2cxbWluN3FQVlN0NDY5YXJMSGpqMTRESmVJRFN2QXhaN1FnUXBmekhfZjlxYVljSTNXRGdTOWtka2hBOG9mcmFuQkdFWXFXTzhXUzhuZkVMVmxrWEhoamFGZWJNdUV4Qnh0NWdJVTliZUZHWGxOUENqYk8xNUF5UDlkWTZKX0VkOUEweXdUdDFxMk56eGtPNF9HSzVKakV3QWVBZ1NYSHpwNC1YT0o3eHpPM09vT3B5d0lDWmxLcXBRUmxFTThLSUhpYzVXSzI1OWlkREI3QdIBjAJBVV95cUxQVFRYWktBSjhoNHZudENTTmxzZDRNam5WdkVKTndxVGwwbDBEVWhTalY1SXlqcm5GRjRwc2hYckhQNkNRMmZyb21naXVzeFRsU3NybzFWOEpoZXUxMExvLWxkNUFHY3dpR1Zya2J0ZzltTkoyWDBQS0pzUXdTY01GYmlVRnBUSnpRMC1lV1lPb2EzS2RjZmdMdEhORkpOM1d2RTBCVTFoTmdkREZ3U1pzYW90N2JCQ0JXM25vQjc0cHM5cEllMEVtcFdFNUNNTE5td3lmUC1wbzFmYXJMVlM0ME5WcUNOZE8zMVprR1VCWjJ2SU9LSC1PLUJDc29rV0xTT1RBMlU5V2ZyYmw3?oc=5",
+    "contenido": "Kevin Zenón podría irse a Atlas de México: la contraoferta de Boca bolavip.com",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQOEV4RkhreHJWeG1qZ1VWV3ZocW02cnpiNFkySEF0V0k0SWxaSVd5VGUyNW1sY3VDek14VjlKUUZwSjRZREI1NjBYOTlaU1B3cVFCZ2toTlpQaThRaTBpbmFORGtCTVI0RWpHSTk1cjJNd2lpRmNiNXhsWHFEWDZBY2ZSaTBNM2d5SWZBM2VFRVY5Mm84d0d0aNIBngFBVV95cUxPX1BDMTBqZHJfZ2RwbmFnRktEbTRHT2NfMEVjVE1nZkxvdVpRRjZ3MFUyWXZYODE2RWJMdFVsRjRQTkhUeEk2Q1U5UGZVa2tlMmpReDU1dGlWWDRXcnAyWGhRQkpoVG1NYml0WjhGTDFYbG5kZWh6VjNaZUF6Ml9XZTdZSkVTcWVJeVFZZTlUWlFQV2hUa0FOVnlRbjRlUQ?oc=5",
     "fecha": "28/08/2026",
-    "hora": "14:04",
-    "fecha_iso": "2026-08-28T14:04:00-03:00",
+    "hora": "16:51",
+    "fecha_iso": "2026-08-28T16:51:38-03:00",
     "categoria": "Boca"
   },
   {
@@ -187,6 +187,16 @@
     "fecha": "28/08/2026",
     "hora": "12:31",
     "fecha_iso": "2026-08-28T12:31:49-03:00",
+    "categoria": "Boca"
+  },
+  {
+    "titulo": "La nueva camiseta de Boca que sorprende a los hinchas: qué historia hay detrás del diseño - La Gaceta",
+    "fuente": "Google Noticias",
+    "contenido": "La nueva camiseta de Boca que sorprende a los hinchas: qué historia hay detrás del diseño La Gaceta",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaXJfenBGUlZWbnE1Ymc0UW5yZ2JTTWlfSkV0WWVfMk4zWWQxamZSSnVpMFNsMDQ3RG9MVk1OTnZvVzhMUW9yRXpaNTZnU3pxc3Y0YzQtSHZnYUo5S1VaZXBCcHY4aTk1aWF5VUVIQU8yQ0hpQXdhczRlb01raUNSX3AzRFpnMi1uMEhGLWVPb2tmWjV0Ni1Wc0d1SG8tUTVuMEtqRlJ6QkhvdlNJMERScmVRaGh2SzVYc1c00gHAAUFVX3lxTE1UU0xXLWNUdWhxekVSMTZ2NkJmMkVkRDRWWTg5dF9wMmtIa2dyb2hxeUVpdTRCWWhhem9mc25lNzl1ZFU0WG5keG9QTUwyTHMtUTRwYVRIWTZEMDd0MzlOcGp5QW1mcXJRMnZ4cndySzhHQWVXMG5GXzdlcTRFRGlieGd5d1pzTEthc2ZoeE9Vd0dhUXRWUm9aTnBVV295b3pfcVBIMTZwUFFhbFNJdzdtWVBEQ2ZtZzIwOHItMllBNA?oc=5",
+    "fecha": "28/08/2026",
+    "hora": "11:06",
+    "fecha_iso": "2026-08-28T11:06:06-03:00",
     "categoria": "Boca"
   },
   {
@@ -210,6 +220,16 @@
     "categoria": "Boca"
   },
   {
+    "titulo": "Boca confirmó que Tomás Aranda fue operado con éxito tras su fractura en el peroné - Cadena 3 Argentina",
+    "fuente": "Google Noticias",
+    "contenido": "Boca confirmó que Tomás Aranda fue operado con éxito tras su fractura en el peroné Cadena 3 Argentina",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOR0g4WENWNVczWHdPWC1hWG9YcFBQWFZ1cGpSUjhfbURtX1RERGlrRmZJVXlMbHJWUWFHdGJlc3VvU2hsVnZfblM1a0ZUSW1RN2dmM3lkR0c1WndHb1hONFpPMVFNaTdjS250ZHRaaFFlUmhiN0RxeHlPYVF3SUFOS3dvSGZPQ1ZhODJQeURjMmtCNzR6a0UwVWxVbWVqR2NKanU0eWFXM0RvM3NmdlU5M3UwX1VVWU1Vbk9RRUNDVTJvMldNekpUM0hOeUF2UTTSAdQBQVVfeXFMUFBwQ2RIbll4T054bTRsdEJOanVVNTZDdE0yZVNfX0wtdXBCVGVST2ZBSG5HZTgxS3JHem9vZm5EM2M2RS1aN2ZhbzJZeGREa01BeVVwdW0zd0RyLUVHWDR6d2YyRjFoNGlTaEdhc1pvcHMxU3BiaTQ1TUtQcmUzVGN5aDdLTTYxV2g0cDZZMkNFMUp0T0FKMFhOVWVBOTU4cWVMUm1fYjRFSlBwUklGaFlmcXhWQ1p0UHZ2dV85UUJsYWc2TkQwa2N0dm5ETmlMVDB1Umo?oc=5",
+    "fecha": "28/08/2026",
+    "hora": "07:07",
+    "fecha_iso": "2026-08-28T07:07:16-03:00",
+    "categoria": "Boca"
+  },
+  {
     "titulo": "Boca presentó su nueva camiseta alternativa, inspirada en los orígenes del club y un modelo que usó Riquelme - TyC Sports",
     "fuente": "Google Noticias",
     "contenido": "Boca presentó su nueva camiseta alternativa, inspirada en los orígenes del club y un modelo que usó Riquelme TyC Sports",
@@ -217,26 +237,6 @@
     "fecha": "27/08/2026",
     "hora": "23:24",
     "fecha_iso": "2026-08-27T23:24:29-03:00",
-    "categoria": "Boca"
-  },
-  {
-    "titulo": "Boca Juniors lanzó una peculiar camiseta alternativa inspirado en los orígenes del club: la historia detrás del diseño - Infobae",
-    "fuente": "Google Noticias",
-    "contenido": "Boca Juniors lanzó una peculiar camiseta alternativa inspirado en los orígenes del club: la historia detrás del diseño Infobae",
-    "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOWktKZERRRkJBdnlGQThIVk9xMFdoNXFSM3gtZjlzVFluY25TNVk1TzVhQlpGeDk5c3liZy1uWV9hZmJOZWdNYlI0SkxKWVNMXzlJUDJ5cUxKUUZFUFp2NmRNSE1CMnc1bkUzeXB1ck5KUXBrUXBPcEc2N0ozeV85WGQwM19Xdi1qUmozZkZ2cDJibzlYcWNwa2JWLVZELWRBSDdoMXZyc3EzWXdrYTk0a08ydVVnaU85V1g3VXVJNjFuQ2htbXRQcGVGY3JfVXBnQ3JCa3o2emNHTkFTTzR6OFZiREpvdXBPcmc2ZG5uRllZRXpG0gGPAkFVX3lxTE1aUUM4QmN6SHItbERWTmg2My1RR0RXWTMyT29WZkFBZFNaUWZpRHdNODhtSUlNaGpjNThuT2VFczdrc0tyWHkzaUhyMjVMaXFKaWJmTm1nQ1VmMXF0R0JtcmJKREo4U1hMS3NXUDFtRkhVa2VMZDFKNjd3UVdOYVJGaWVRd3M3YTdIT3d2RXVFQXpEWm5JY0Q4VkwzdmZfSjliNE9jMlN2alZuNW1iZ2NFaUtucWFIUFo0UnlXQzNYMXRScTRLdUZtSWVyeko0dXFneGhDaXdGM0RqZmZPcHU2WER6TVkwcFlzclpQZXVvSGg2RHRWSGwybzBJcTd5Q3M3dW1JcXByZ2ZHSjNqYkE?oc=5",
-    "fecha": "27/08/2026",
-    "hora": "23:23",
-    "fecha_iso": "2026-08-27T23:23:00-03:00",
-    "categoria": "Boca"
-  },
-  {
-    "titulo": "Los Juveniles de Atlético reciben a Boca Juniors en el Monumental - Diario La Opinión de Rafaela",
-    "fuente": "Google Noticias",
-    "contenido": "Los Juveniles de Atlético reciben a Boca Juniors en el Monumental Diario La Opinión de Rafaela",
-    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbG9MRHhHTnpkWWl5X1hmTmVRNFF5bTBOMWZGYUdkRmtndXdQTFdBeVRfM29oLU80NnhUdE9XNHBYSnpONVlTX0ViYkxjOENMRDRhTXFJaTFWY0o0Y190WjRUOE1udk9iQmYzbWNsRXIwakpDN0tVTlZmLVhhSnl6a3h1bUtPYk8wSGFrXzRENE9QR2ZiU3JJMVBjY19YODgxQ3lzdkRBRnpGejF6VEHSAacBQVVfeXFMUEZVSGNReUlSejFPV3JYZHBwTk9JUTFvZjZBN0JPa3ROUEpzdlpVYW9vcFpQWllBSU5MakE1Wk1pQmc1NDNEaHdFSE5aRXppaEtTUnJIUzVrMi1hQVJhR25hVUt0N21Hb21KVGU3V3lZZFN4WmpYQjBjeDVpSVRHYmdpMkFTcG0zbUNfQkp1UVNwamswLVBVUG80LUZzY1hPVzdMdGdfbXM?oc=5",
-    "fecha": "27/08/2026",
-    "hora": "20:25",
-    "fecha_iso": "2026-08-27T20:25:00-03:00",
     "categoria": "Boca"
   },
   {
