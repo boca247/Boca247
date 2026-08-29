@@ -37,14 +37,14 @@ header{
 }
 
 .logo-img{
-    width:100vw;
-    height:240px;
-    object-fit:cover;
-    object-position:center;
+    width:100%;
+    height:auto;
     display:block;
     margin:0;
     padding:0;
 }
+
+/* TÍTULO */
 
 .logo{
     font-size:38px;
@@ -58,7 +58,7 @@ header p{
     font-size:15px;
 }
 
-/* MENU */
+/* MENÚ */
 
 nav{
     width:100%;
@@ -105,7 +105,7 @@ main{
     text-align:center;
 }
 
-/* NOTICIA DESTACADA */
+/* DESTACADA */
 
 .hero{
     background:linear-gradient(135deg,#00245f,#0756b8);
@@ -255,10 +255,8 @@ footer strong{
 @media(max-width:600px){
 
     .logo-img{
-        width:100vw;
-        height:220px;
-        object-fit:cover;
-        object-position:center;
+        width:100%;
+        height:auto;
     }
 
     .logo{
@@ -413,9 +411,7 @@ footer strong{
     </strong>
 
     <p style="margin-top:8px">
-
         Información Xeneize todos los días.
-
     </p>
 
 </footer>
@@ -757,6 +753,7 @@ async function cargarNoticias(){
             );
 
     }
+
     catch(error){
 
         console.error(error);
@@ -773,12 +770,6 @@ async function cargarNoticias(){
             </div>
 
         `;
-
-        document.getElementById(
-            "actualizado"
-        ).textContent =
-
-            "Esperando actualización de noticias.";
 
     }
 
