@@ -25,7 +25,9 @@ body{
     color:#111;
 }
 
-/* IMAGEN PRINCIPAL */
+/* =========================
+   IMAGEN PRINCIPAL
+   ========================= */
 
 header{
     width:100%;
@@ -41,7 +43,9 @@ header img{
     display:block;
 }
 
-/* MENÚ */
+/* =========================
+   MENU
+   ========================= */
 
 nav{
     width:100%;
@@ -70,7 +74,9 @@ nav button:hover{
     background:#f5c400;
 }
 
-/* CONTENIDO */
+/* =========================
+   CONTENIDO
+   ========================= */
 
 main{
     width:100%;
@@ -89,7 +95,9 @@ main{
     text-align:center;
 }
 
-/* DESTACADA */
+/* =========================
+   NOTICIA DESTACADA
+   ========================= */
 
 .hero{
     background:linear-gradient(135deg,#00245f,#0756b8);
@@ -116,7 +124,9 @@ main{
     line-height:1.6;
 }
 
-/* FUENTES */
+/* =========================
+   FUENTES
+   ========================= */
 
 .fuentes{
     background:#00245f;
@@ -144,7 +154,9 @@ main{
     font-weight:bold;
 }
 
-/* NOTICIAS */
+/* =========================
+   NOTICIAS
+   ========================= */
 
 .seccion{
     margin-bottom:35px;
@@ -219,7 +231,9 @@ main{
     color:#666;
 }
 
-/* VIDEOS */
+/* =========================
+   EL CANAL DE BOCA
+   ========================= */
 
 .videos-seccion{
     margin-top:45px;
@@ -306,7 +320,61 @@ main{
     font-weight:bold;
 }
 
-/* PIE */
+/* =========================
+   NUESTRO STREAMING
+   ========================= */
+
+.streaming{
+    margin-top:45px;
+    margin-bottom:45px;
+}
+
+.streaming-box{
+    background:linear-gradient(135deg,#00245f,#0756b8);
+    color:white;
+    border-radius:18px;
+    padding:30px 20px;
+    text-align:center;
+    border-bottom:6px solid #f5c400;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+}
+
+.streaming-label{
+    color:#f5c400;
+    font-size:15px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.streaming-box h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.streaming-box p{
+    font-size:16px;
+    line-height:1.5;
+    margin-bottom:20px;
+}
+
+.streaming-boton{
+    display:inline-block;
+    background:#f5c400;
+    color:#00245f;
+    padding:13px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.streaming-boton:hover{
+    background:white;
+}
+
+/* =========================
+   PIE
+   ========================= */
 
 footer{
     background:#00245f;
@@ -321,7 +389,9 @@ footer strong{
     font-size:22px;
 }
 
-/* CELULAR */
+/* =========================
+   CELULAR
+   ========================= */
 
 @media(max-width:600px){
 
@@ -341,6 +411,10 @@ footer strong{
 
     .videos-grid{
         grid-template-columns:1fr;
+    }
+
+    .streaming-box h2{
+        font-size:23px;
     }
 
 }
@@ -465,6 +539,7 @@ footer strong{
 
     </section>
 
+
     <!-- =========================
          EL CANAL DE BOCA
          ========================= -->
@@ -472,7 +547,7 @@ footer strong{
     <section class="videos-seccion">
 
         <h2 class="videos-titulo">
-            🎥 El Canal de Boca
+            El Canal de Boca
         </h2>
 
         <p class="videos-subtitulo">
@@ -496,40 +571,7 @@ footer strong{
                 <div class="video-info">
 
                     <h3>
-                        Boca 1-0 Lanús | El Canal de Boca
-                    </h3>
-
-                    <a
-                        class="video-boton"
-                        href="https://www.youtube.com/watch?v=4ybOs3IFAqI"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Ver en YouTube
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="video-card">
-
-                <div class="video">
-
-                    <iframe
-                        src="https://www.youtube.com/embed/mX7nqZeiHAs"
-                        title="El Canal de Boca"
-                        allowfullscreen>
-                    </iframe>
-
-                </div>
-
-                <div class="video-info">
-
-                    <h3>
-                        Último contenido de El Canal de Boca
+                        Contenido de El Canal de Boca
                     </h3>
 
                     <a
@@ -554,9 +596,45 @@ footer strong{
             target="_blank"
             rel="noopener noreferrer">
 
-            Ver todos los videos del Canal de Boca
+            Ver todos los videos
 
         </a>
+
+    </section>
+
+
+    <!-- =========================
+         NUESTRO STREAMING
+         ========================= -->
+
+    <section class="streaming">
+
+        <div class="streaming-box">
+
+            <div class="streaming-label">
+                NUESTRO STREAMING
+            </div>
+
+            <h2>
+                Movimiento Los Bosteros de Tucumán
+            </h2>
+
+            <p>
+                Mirá nuestro canal y acompañanos
+                en nuestros programas y transmisiones.
+            </p>
+
+            <a
+                class="streaming-boton"
+                href="https://youtube.com/@movlosbosterosdetucuman?si=XWHeckDfr7tHKsj4"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                Ver en YouTube
+
+            </a>
+
+        </div>
 
     </section>
 
@@ -573,6 +651,7 @@ footer strong{
     </p>
 
 </footer>
+
 
 <script>
 
