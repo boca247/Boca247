@@ -64,24 +64,20 @@ def limpiar_texto(texto):
     if not texto:
         return ""
 
-    # Decodificar caracteres HTML
     texto = html.unescape(texto)
 
-    # Eliminar etiquetas HTML
     texto = re.sub(
         r"<[^>]+>",
         " ",
         texto
     )
 
-    # Eliminar URLs
     texto = re.sub(
         r"https?://\S+",
         "",
         texto
     )
 
-    # Eliminar espacios repetidos
     texto = re.sub(
         r"\s+",
         " ",
@@ -91,9 +87,84 @@ def limpiar_texto(texto):
     return texto.strip()
 
 
-def crear_resena(entrada):
+def quitar_fuente_del_final(texto, fuente):
 
-    # Primero intentamos con summary
+    if not texto:
+        return ""
+
+    texto = texto.strip()
+
+    if fuente:
+
+        texto = re.sub(
+            r"\s*" +
+            re.escape(fuente) +
+            r"\s*$",
+            "",
+            texto,
+            flags=re.IGNORECASE
+        ).strip()
+
+    return texto
+
+
+def parece_titulo_repetido(titulo, resumen):
+
+    if not resumen:
+        return True
+
+    titulo_limpio = limpiar_texto(
+        titulo
+    ).lower()
+
+    resumen_limpio = limpiar_texto(
+        resumen
+    ).lower()
+
+    if not resumen_limpio:
+        return True
+
+    # Si el resumen es prácticamente
+    # igual al título, no sirve como reseña.
+
+    palabras_titulo = set(
+        titulo_limpio.split()
+    )
+
+    palabras_resumen = set(
+        resumen_limpio.split()
+    )
+
+    if not palabras_titulo:
+        return True
+
+    coincidencias = (
+        len(
+            palabras_titulo
+            .intersection(
+                palabras_resumen
+            )
+        )
+        /
+        len(palabras_titulo)
+    )
+
+    if coincidencias >= 0.80:
+        return True
+
+    if len(resumen_limpio) < 70:
+        return True
+
+    return False
+
+
+def crear_resena(
+    titulo,
+    categoria,
+    fuente,
+    entrada
+):
+
     resumen = entrada.get(
         "summary",
         ""
@@ -103,38 +174,90 @@ def crear_resena(entrada):
         resumen
     )
 
-    # Si el resumen viene vacío,
-    # intentamos con description
-    if not resumen:
+    resumen = quitar_fuente_del_final(
+        resumen,
+        fuente
+    )
 
-        resumen = entrada.get(
-            "description",
-            ""
-        )
+    if not parece_titulo_repetido(
+        titulo,
+        resumen
+    ):
 
-        resumen = limpiar_texto(
-            resumen
-        )
+        if len(resumen) > 320:
 
-    # Si todavía no tenemos resumen,
-    # usamos un texto neutro.
-    if not resumen:
+            resumen = (
+                resumen[:320]
+                .rsplit(" ", 1)[0]
+                + "..."
+            )
 
-        resumen = (
-            "Conocé todos los detalles "
-            "de esta noticia de Boca."
-        )
+        return resumen
 
-    # Evitar reseñas demasiado largas
-    if len(resumen) > 300:
 
-        resumen = (
-            resumen[:300]
-            .rsplit(" ", 1)[0]
-            + "..."
-        )
+    # =================================
+    # RESEÑA DE RESPALDO
+    # =================================
 
-    return resumen
+    textos = {
+
+        "Boca":
+            "Todas las novedades de Boca Juniors, "
+            "la actualidad del plantel y la información "
+            "más importante del mundo Xeneize.",
+
+        "Sudamericana":
+            "Toda la información de Boca Juniors "
+            "en la Copa Sudamericana, con las últimas "
+            "novedades, partidos y protagonistas.",
+
+        "Mercado de pases":
+            "Las últimas novedades del mercado de pases "
+            "de Boca Juniors: refuerzos, negociaciones, "
+            "altas y bajas.",
+
+        "Lesiones":
+            "Últimas novedades sobre el estado físico "
+            "de los jugadores de Boca Juniors y sus "
+            "respectivas recuperaciones.",
+
+        "Básquet":
+            "Toda la actualidad del básquet de Boca "
+            "Juniors, sus partidos, resultados y "
+            "protagonistas.",
+
+        "Futsal":
+            "Las últimas noticias del futsal de Boca "
+            "Juniors, partidos, resultados y novedades "
+            "del equipo.",
+
+        "Reserva":
+            "Toda la información de la Reserva de Boca "
+            "Juniors y las futuras figuras del club.",
+
+        "Fútbol femenino":
+            "Las últimas novedades del fútbol femenino "
+            "de Boca Juniors y Las Gladiadoras.",
+
+        "Inferiores":
+            "Toda la actualidad de las divisiones "
+            "juveniles e inferiores de Boca Juniors.",
+
+        "Vóley":
+            "Noticias y novedades del vóley de Boca "
+            "Juniors.",
+
+        "La Bombonera":
+            "Toda la información sobre La Bombonera, "
+            "sus novedades, obras y actualidad."
+    }
+
+
+    return textos.get(
+        categoria,
+        "Últimas novedades de Boca Juniors. "
+        "Entrá a la nota para conocer todos los detalles."
+    )
 
 
 def obtener_noticias(
@@ -144,9 +267,10 @@ def obtener_noticias(
 
     url = (
         "https://news.google.com/rss/search?"
-        "q=" + quote(busqueda) +
-        "&hl=es-419"
-        "&gl=AR"
+        "q=" +
+        quote(busqueda) +
+        "&hl=es-419" +
+        "&gl=AR" +
         "&ceid=AR:es-419"
     )
 
@@ -155,6 +279,7 @@ def obtener_noticias(
     )
 
     resultados = []
+
 
     for entrada in feed.entries[:15]:
 
@@ -173,7 +298,43 @@ def obtener_noticias(
         if not titulo:
             continue
 
-        # Obtener fecha
+
+        # =================================
+        # FUENTE
+        # =================================
+
+        fuente = ""
+
+        source = entrada.get(
+            "source"
+        )
+
+        if source:
+
+            try:
+
+                fuente = source.get(
+                    "title",
+                    ""
+                )
+
+            except Exception:
+
+                fuente = ""
+
+        if not fuente:
+
+            fuente = "Google Noticias"
+
+        fuente = limpiar_texto(
+            fuente
+        )
+
+
+        # =================================
+        # FECHA
+        # =================================
+
         fecha_iso = ""
 
         publicado = entrada.get(
@@ -197,40 +358,18 @@ def obtener_noticias(
 
                 fecha_iso = ""
 
-        # Fuente
-        fuente = ""
 
-        source = entrada.get(
-            "source"
-        )
+        # =================================
+        # RESEÑA
+        # =================================
 
-        if source:
-
-            try:
-
-                fuente = source.get(
-                    "title",
-                    ""
-                )
-
-            except Exception:
-
-                fuente = ""
-
-        if not fuente:
-
-            fuente = (
-                "Google Noticias"
-            )
-
-        fuente = limpiar_texto(
-            fuente
-        )
-
-        # Reseña limpia
         contenido = crear_resena(
+            titulo,
+            categoria,
+            fuente,
             entrada
         )
+
 
         resultados.append({
 
@@ -248,8 +387,13 @@ def obtener_noticias(
 
         })
 
+
     return resultados
 
+
+# =====================================
+# OBTENER TODAS LAS NOTICIAS
+# =====================================
 
 todas = []
 
@@ -280,10 +424,11 @@ for categoria, busquedas in CATEGORIAS.items():
 
 
 # =====================================
-# ELIMINAR NOTICIAS REPETIDAS
+# ELIMINAR REPETIDAS
 # =====================================
 
 unicas = {}
+
 
 for noticia in todas:
 
@@ -325,7 +470,7 @@ noticias_finales.sort(
 
 
 # =====================================
-# MÁXIMO DE NOTICIAS
+# MÁXIMO 100 NOTICIAS
 # =====================================
 
 noticias_finales = (
@@ -334,7 +479,7 @@ noticias_finales = (
 
 
 # =====================================
-# GUARDAR JSON
+# GUARDAR
 # =====================================
 
 with open(
@@ -370,6 +515,7 @@ print(
     "Categorías encontradas:"
 )
 
+
 categorias_encontradas = sorted(
     set(
         noticia.get(
@@ -380,6 +526,7 @@ categorias_encontradas = sorted(
     )
 )
 
+
 for categoria in categorias_encontradas:
 
     print(
@@ -387,6 +534,7 @@ for categoria in categorias_encontradas:
         + categoria
     )
 
+
 print(
     "================================="
-)
+    )
