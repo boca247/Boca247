@@ -24,17 +24,16 @@ header{
     background:linear-gradient(135deg,#001f5b,#064aa8);
     color:white;
     text-align:center;
-    padding:22px 15px;
+    padding:15px 0 22px;
     border-bottom:7px solid #f5c400;
 }
 
 .logo-img{
-    width:140px;
-    max-width:60%;
+    width:100%;
+    max-width:600px;
     height:auto;
     display:block;
-    margin:0 auto 12px;
-    border-radius:12px;
+    margin:0 auto 15px;
 }
 
 .logo{
@@ -230,7 +229,8 @@ footer strong{
 @media(max-width:600px){
 
     .logo-img{
-        width:120px;
+        width:100%;
+        max-width:100%;
     }
 
     .logo{
@@ -354,7 +354,6 @@ footer strong{
 
 let noticias = [];
 
-
 function escapar(texto){
 
     const div =
@@ -366,7 +365,6 @@ function escapar(texto){
     return div.innerHTML;
 
 }
-
 
 function mostrarFecha(noticia){
 
@@ -397,24 +395,16 @@ function mostrarFecha(noticia){
 
     }
 
-    if(noticia.fecha){
-
-        return escapar(
-            noticia.fecha
-        ) +
-        (
-            noticia.hora
-            ? " - " +
-              escapar(noticia.hora)
-            : ""
-        );
-
-    }
-
-    return "";
+    return (
+        noticia.fecha || ""
+    ) +
+    (
+        noticia.hora
+        ? " - " + noticia.hora
+        : ""
+    );
 
 }
-
 
 function crearTarjeta(noticia){
 
@@ -471,7 +461,6 @@ function crearTarjeta(noticia){
 
 }
 
-
 function mostrar(lista){
 
     const contenedor =
@@ -499,7 +488,6 @@ function mostrar(lista){
         .join("");
 
 }
-
 
 function inicio(){
 
@@ -565,7 +553,6 @@ function inicio(){
 
 }
 
-
 function seccion(categoria){
 
     const lista =
@@ -575,9 +562,9 @@ function seccion(categoria){
                 return (
                     noticia.categoria ||
                     ""
-                ).toLowerCase()
+                ).toLowerCase().trim()
                 ===
-                categoria.toLowerCase();
+                categoria.toLowerCase().trim();
 
             }
         );
@@ -594,7 +581,6 @@ function seccion(categoria){
     mostrar(lista);
 
 }
-
 
 async function cargarNoticias(){
 
@@ -665,15 +651,9 @@ async function cargarNoticias(){
 
         `;
 
-        document.getElementById(
-            "actualizado"
-        ).textContent =
-            "Esperando actualización de noticias.";
-
     }
 
 }
-
 
 cargarNoticias();
 
