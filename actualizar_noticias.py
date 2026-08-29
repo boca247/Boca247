@@ -1,159 +1,204 @@
-  import json
+import json
 import feedparser
+import re
+import html
 from datetime import datetime, timezone, timedelta
+from email.utils import parsedate_to_datetime
 
 
 FUENTES = [
     {
-        "nombre": "TyC Sports",
-        "rss": "https://www.tycsports.com/rss/pages/boca-juniors.xml"
+        "nombre": "Google Noticias",
+        "url": "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419"
     },
     {
-        "nombre": "Google Noticias Boca",
-        "rss": "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419"
+        "nombre": "TyC Sports",
+        "url": "https://www.tycsports.com/rss/pages/boca-juniors.xml"
     }
 ]
 
 
-def hora_argentina(fecha):
+def limpiar(texto):
+    if not texto:
+        return ""
 
-    argentina = timezone(
-        timedelta(hours=-3)
-    )
+    texto = html.unescape(str(texto))
+    texto = re.sub(r"<[^>]*>", " ", texto)
+    texto = re.sub(r"\s+", " ", texto).strip()
 
-    fecha_argentina = fecha.astimezone(
-        argentina
-    )
+    arreglos = {
+        "Ã¡": "á",
+        "Ã©": "é",
+        "Ã­": "í",
+        "Ã³": "ó",
+        "Ãº": "ú",
+        "Ã±": "ñ",
+        "Ã": "Á",
+        "Ã‰": "É",
+        "Ã": "Í",
+        "Ã“": "Ó",
+        "Ãš": "Ú",
+        "Ã‘": "Ñ",
+        "Â¿": "¿",
+        "Â¡": "¡",
+        "Â": "",
+        "â": "'",
+        "â": "-",
+        "â": "-",
+        "â¦": "..."
+    }
 
-    return fecha_argentina.strftime(
-        "%d/%m/%Y %H:%M"
-    )
+    for viejo, nuevo in arreglos.items():
+        texto = texto.replace(viejo, nuevo)
+
+    return texto
 
 
-def procesar_fuente(fuente):
+def obtener_fecha(entrada):
+
+    fecha = None
+
+    try:
+        if getattr(entrada, "published", ""):
+            fecha = parsedate_to_datetime(
+                entrada.published
+            )
+    except Exception:
+        pass
+
+    if fecha is None:
+        try:
+            if getattr(entrada, "updated", ""):
+                fecha = parsedate_to_datetime(
+                    entrada.updated
+                )
+        except Exception:
+            pass
+
+    if fecha is None:
+        fecha = datetime.now(timezone.utc)
+
+    if fecha.tzinfo is None:
+        fecha = fecha.replace(
+            tzinfo=timezone.utc
+        )
+
+    return fecha
+
+
+def categoria(titulo):
+
+    t = titulo.lower()
+
+    if "sudamericana" in t:
+        return "Sudamericana"
+
+    if any(x in t for x in [
+        "mercado",
+        "refuerzo",
+        "refuerzos",
+        "incorporación",
+        "incorporacion"
+    ]):
+        return "Mercado de pases"
+
+    if any(x in t for x in [
+        "lesión",
+        "lesion",
+        "desgarro",
+        "molestia"
+    ]):
+        return "Lesiones"
+
+    if "básquet" in t or "basquet" in t:
+        return "Básquet"
+
+    if "futsal" in t:
+        return "Futsal"
+
+    if "femenino" in t:
+        return "Fútbol femenino"
+
+    if "bombonera" in t:
+        return "La Bombonera"
+
+    if "reserva" in t:
+        return "Reserva"
+
+    if "inferiores" in t:
+        return "Inferiores"
+
+    return "Boca"
+
+
+def leer_fuente(fuente):
 
     noticias = []
 
     try:
 
         feed = feedparser.parse(
-            fuente["rss"]
+            fuente["url"]
         )
 
-        for entrada in feed.entries[:15]:
+        for entrada in feed.entries[:25]:
 
-            titulo = entrada.get(
-                "title",
-                ""
-            ).strip()
-
-            link = entrada.get(
-                "link",
-                ""
-            ).strip()
-
-            resumen = entrada.get(
-                "summary",
-                ""
+            titulo = limpiar(
+                entrada.get("title", "")
             )
-
-            resumen = resumen.replace(
-                "<p>",
-                ""
-            ).replace(
-                "</p>",
-                ""
-            ).strip()
 
             if not titulo:
                 continue
 
-            fecha = None
-
-            if hasattr(
-                entrada,
-                "published_parsed"
-            ):
-
-                fecha = datetime(
-                    *entrada.published_parsed[:6],
-                    tzinfo=timezone.utc
+            contenido = limpiar(
+                entrada.get(
+                    "summary",
+                    entrada.get(
+                        "description",
+                        ""
+                    )
                 )
-
-            elif hasattr(
-                entrada,
-                "updated_parsed"
-            ):
-
-                fecha = datetime(
-                    *entrada.updated_parsed[:6],
-                    tzinfo=timezone.utc
-                )
-
-            if fecha is None:
-
-                fecha = datetime.now(
-                    timezone.utc
-                )
-
-            fecha_arg = hora_argentina(
-                fecha
             )
 
-            categoria = "Boca"
+            link = entrada.get(
+                "link",
+                ""
+            )
 
-            titulo_lower = titulo.lower()
+            fecha = obtener_fecha(
+                entrada
+            )
 
-            if "sudamericana" in titulo_lower:
+            argentina = timezone(
+                timedelta(hours=-3)
+            )
 
-                categoria = "Sudamericana"
-
-            elif "mercado" in titulo_lower:
-
-                categoria = "Mercado de pases"
-
-            elif "lesion" in titulo_lower:
-
-                categoria = "Lesiones"
-
-            elif "basquet" in titulo_lower:
-
-                categoria = "Básquet"
-
-            elif "futsal" in titulo_lower:
-
-                categoria = "Futsal"
-
-            elif "femenino" in titulo_lower:
-
-                categoria = "Fútbol femenino"
+            fecha_ar = fecha.astimezone(
+                argentina
+            )
 
             noticias.append({
-
                 "titulo": titulo,
-
                 "fuente": fuente["nombre"],
-
-                "contenido": resumen,
-
+                "contenido": contenido,
                 "link": link,
-
-                "fecha": fecha_arg,
-
-                "hora": fecha_arg[-5:],
-
-                "fecha_iso": fecha.isoformat(),
-
-                "categoria": categoria
-
+                "fecha": fecha_ar.strftime(
+                    "%d/%m/%Y"
+                ),
+                "hora": fecha_ar.strftime(
+                    "%H:%M"
+                ),
+                "fecha_iso": fecha_ar.isoformat(),
+                "categoria": categoria(
+                    titulo
+                )
             })
 
     except Exception as error:
 
         print(
-            "Error en",
+            "Error:",
             fuente["nombre"],
-            ":",
             error
         )
 
@@ -166,66 +211,55 @@ def actualizar():
 
     for fuente in FUENTES:
 
-        noticias = procesar_fuente(
-            fuente
-        )
-
         todas.extend(
-            noticias
+            leer_fuente(fuente)
         )
 
-    vistas = set()
-
-    noticias_finales = []
+    unicas = {}
+    ahora = datetime.now(
+        timezone.utc
+    )
 
     for noticia in todas:
 
-        clave = (
-            noticia["titulo"]
-            .lower()
-            .strip()
-        )
+        clave = noticia[
+            "titulo"
+        ].lower().strip()
 
-        if clave in vistas:
-            continue
+        if clave not in unicas:
+            unicas[clave] = noticia
 
-        vistas.add(
-            clave
-        )
+    noticias = list(
+        unicas.values()
+    )
 
-        noticias_finales.append(
-            noticia
-        )
-
-    noticias_finales.sort(
-        key=lambda noticia:
-        noticia["fecha_iso"],
+    noticias.sort(
+        key=lambda x:
+        x["fecha_iso"],
         reverse=True
     )
 
-    noticias_finales = (
-        noticias_finales[:40]
-    )
+    noticias = noticias[:50]
 
     with open(
         "noticias.json",
         "w",
-        encoding="utf-8"
+        encoding="utf-8",
+        newline="\n"
     ) as archivo:
 
         json.dump(
-            noticias_finales,
+            noticias,
             archivo,
             ensure_ascii=False,
             indent=2
         )
 
     print(
-        "Noticias actualizadas:",
-        len(noticias_finales)
+        "Noticias guardadas:",
+        len(noticias)
     )
 
 
 if __name__ == "__main__":
-
     actualizar()
