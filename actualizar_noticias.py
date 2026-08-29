@@ -1,10 +1,9 @@
 import json
-import feedparser
 import re
 import html
+import feedparser
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
-
 
 FUENTES = [
     {
@@ -17,16 +16,17 @@ FUENTES = [
     }
 ]
 
+ARGENTINA = timezone(timedelta(hours=-3))
+
 
 def limpiar(texto):
     if not texto:
         return ""
 
     texto = html.unescape(str(texto))
-    texto = re.sub(r"<[^>]*>", " ", texto)
-    texto = re.sub(r"\s+", " ", texto).strip()
+    texto = re.sub(r"<[^>]+>", " ", texto)
 
-    arreglos = {
+    correcciones = {
         "Ã¡": "á",
         "Ã©": "é",
         "Ã­": "í",
@@ -45,13 +45,17 @@ def limpiar(texto):
         "â": "'",
         "â": "-",
         "â": "-",
-        "â¦": "..."
+        "â¦": "...",
+        "â": '"',
+        "â": '"'
     }
 
-    for viejo, nuevo in arreglos.items():
-        texto = texto.replace(viejo, nuevo)
+    for malo, bueno in correcciones.items():
+        texto = texto.replace(malo, bueno)
 
-    return texto
+    texto = re.sub(r"\s+", " ", texto)
+
+    return texto.strip()
 
 
 def obtener_fecha(entrada):
@@ -59,18 +63,32 @@ def obtener_fecha(entrada):
     fecha = None
 
     try:
-        if getattr(entrada, "published", ""):
-            fecha = parsedate_to_datetime(
-                entrada.published
-            )
+        publicada = entrada.get("published", "")
+
+        if publicada:
+            fecha = parsedate_to_datetime(publicada)
+
     except Exception:
         pass
 
     if fecha is None:
+
         try:
-            if getattr(entrada, "updated", ""):
-                fecha = parsedate_to_datetime(
-                    entrada.updated
+            actualizada = entrada.get("updated", "")
+
+            if actualizada:
+                fecha = parsedate_to_datetime(actualizada)
+
+        except Exception:
+            pass
+
+    if fecha is None:
+
+        try:
+            if entrada.get("published_parsed"):
+                fecha = datetime(
+                    *entrada.published_parsed[:6],
+                    tzinfo=timezone.utc
                 )
         except Exception:
             pass
@@ -79,30 +97,29 @@ def obtener_fecha(entrada):
         fecha = datetime.now(timezone.utc)
 
     if fecha.tzinfo is None:
-        fecha = fecha.replace(
-            tzinfo=timezone.utc
-        )
+        fecha = fecha.replace(tzinfo=timezone.utc)
 
     return fecha
 
 
-def categoria(titulo):
+def obtener_categoria(titulo):
 
-    t = titulo.lower()
+    texto = titulo.lower()
 
-    if "sudamericana" in t:
+    if "sudamericana" in texto:
         return "Sudamericana"
 
-    if any(x in t for x in [
+    if any(palabra in texto for palabra in [
         "mercado",
         "refuerzo",
         "refuerzos",
         "incorporación",
-        "incorporacion"
+        "incorporacion",
+        "fichaje"
     ]):
         return "Mercado de pases"
 
-    if any(x in t for x in [
+    if any(palabra in texto for palabra in [
         "lesión",
         "lesion",
         "desgarro",
@@ -110,22 +127,22 @@ def categoria(titulo):
     ]):
         return "Lesiones"
 
-    if "básquet" in t or "basquet" in t:
+    if "básquet" in texto or "basquet" in texto:
         return "Básquet"
 
-    if "futsal" in t:
+    if "futsal" in texto:
         return "Futsal"
 
-    if "femenino" in t:
+    if "femenino" in texto:
         return "Fútbol femenino"
 
-    if "bombonera" in t:
+    if "bombonera" in texto:
         return "La Bombonera"
 
-    if "reserva" in t:
+    if "reserva" in texto:
         return "Reserva"
 
-    if "inferiores" in t:
+    if "inferiores" in texto:
         return "Inferiores"
 
     return "Boca"
@@ -135,11 +152,11 @@ def leer_fuente(fuente):
 
     noticias = []
 
+    print("Leyendo:", fuente["nombre"])
+
     try:
 
-        feed = feedparser.parse(
-            fuente["url"]
-        )
+        feed = feedparser.parse(fuente["url"])
 
         for entrada in feed.entries[:25]:
 
@@ -163,42 +180,29 @@ def leer_fuente(fuente):
             link = entrada.get(
                 "link",
                 ""
-            )
+            ).strip()
 
-            fecha = obtener_fecha(
-                entrada
-            )
+            fecha = obtener_fecha(entrada)
 
-            argentina = timezone(
-                timedelta(hours=-3)
-            )
-
-            fecha_ar = fecha.astimezone(
-                argentina
-            )
+            fecha_argentina = fecha.astimezone(ARGENTINA)
 
             noticias.append({
                 "titulo": titulo,
-                "fuente": fuente["nombre"],
+                "fuente": limpiar(fuente["nombre"]),
                 "contenido": contenido,
                 "link": link,
-                "fecha": fecha_ar.strftime(
-                    "%d/%m/%Y"
-                ),
-                "hora": fecha_ar.strftime(
-                    "%H:%M"
-                ),
-                "fecha_iso": fecha_ar.isoformat(),
-                "categoria": categoria(
-                    titulo
-                )
+                "fecha": fecha_argentina.strftime("%d/%m/%Y"),
+                "hora": fecha_argentina.strftime("%H:%M"),
+                "fecha_iso": fecha_argentina.isoformat(),
+                "categoria": obtener_categoria(titulo)
             })
 
     except Exception as error:
 
         print(
-            "Error:",
+            "Error leyendo",
             fuente["nombre"],
+            ":",
             error
         )
 
@@ -211,31 +215,23 @@ def actualizar():
 
     for fuente in FUENTES:
 
-        todas.extend(
-            leer_fuente(fuente)
-        )
+        noticias = leer_fuente(fuente)
+
+        todas.extend(noticias)
 
     unicas = {}
-    ahora = datetime.now(
-        timezone.utc
-    )
 
     for noticia in todas:
 
-        clave = noticia[
-            "titulo"
-        ].lower().strip()
+        clave = noticia["titulo"].lower().strip()
 
         if clave not in unicas:
             unicas[clave] = noticia
 
-    noticias = list(
-        unicas.values()
-    )
+    noticias = list(unicas.values())
 
     noticias.sort(
-        key=lambda x:
-        x["fecha_iso"],
+        key=lambda noticia: noticia["fecha_iso"],
         reverse=True
     )
 
@@ -256,7 +252,7 @@ def actualizar():
         )
 
     print(
-        "Noticias guardadas:",
+        "Noticias actualizadas:",
         len(noticias)
     )
 
