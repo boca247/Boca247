@@ -1,10 +1,22 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Boca 24/7 | Todo Boca. Todo el día.</title><style>
-*{box-sizing:border-box;margin:0;padding:0}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-html{scroll-behavior:smooth}
+<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 font-family:Arial,Helvetica,sans-serif;
@@ -17,12 +29,12 @@ header{
 background:#00245f;
 color:white;
 text-align:center;
-padding:24px 15px 20px;
+padding:25px 15px 20px;
 border-bottom:5px solid #f5c400;
 }
 
 .logo{
-font-size:38px;
+font-size:40px;
 font-weight:900;
 letter-spacing:1px;
 }
@@ -84,10 +96,10 @@ font-size:13px;
 margin-bottom:20px;
 }
 
-/* ÚLTIMA HORA */
+/* ULTIMA HORA */
 
 .ultima{
-background:#fff;
+background:white;
 border-radius:18px;
 overflow:hidden;
 box-shadow:0 4px 16px rgba(0,0,0,.1);
@@ -329,133 +341,26 @@ box-shadow:0 3px 12px rgba(0,0,0,.08);
 margin-bottom:12px;
 }
 
-.llego{border-top:5px solid #1c9b45}
-.negociando{border-top:5px solid #e5b400}
-.alejo{border-top:5px solid #d32f2f}
+.llego{
+border-top:5px solid #1c9b45;
+}
+
+.negociando{
+border-top:5px solid #e5b400;
+}
+
+.alejo{
+border-top:5px solid #d32f2f;
+}
 
 .jugador{
 padding:10px 0;
 border-bottom:1px solid #eee;
+line-height:1.5;
 }
 
 .jugador:last-child{
 border-bottom:0;
-}
-
-/* BOCA EN EL NORTE */
-
-.norte{
-background:linear-gradient(135deg,#00245f,#0756b8);
-color:white;
-border-radius:20px;
-padding:25px;
-}
-
-.norte h2{
-color:#f5c400;
-margin-bottom:10px;
-}
-
-.norte p{
-line-height:1.6;
-color:#edf2fa;
-}
-
-.provincias{
-display:flex;
-flex-wrap:wrap;
-gap:9px;
-margin-top:18px;
-}
-
-.provincia{
-background:white;
-color:#00245f;
-padding:9px 13px;
-border-radius:20px;
-font-weight:bold;
-}
-
-/* MUNDO BOCA */
-
-.mundo-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:14px;
-}
-
-.mundo{
-background:white;
-border-radius:15px;
-padding:20px 12px;
-text-align:center;
-text-decoration:none;
-color:#00245f;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-border-top:5px solid #064aa8;
-}
-
-.mundo span{
-font-size:32px;
-display:block;
-margin-bottom:8px;
-}
-
-.mundo strong{
-font-size:17px;
-}
-
-/* AGENDA */
-
-.agenda{
-display:grid;
-gap:12px;
-}
-
-.evento{
-background:white;
-padding:17px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,.07);
-border-left:5px solid #064aa8;
-}
-
-.evento strong{
-color:#00245f;
-}
-
-/* HISTORIA */
-
-.historia{
-background:white;
-padding:25px;
-border-radius:18px;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-line-height:1.7;
-}
-
-.historia h2{
-color:#00245f;
-margin-bottom:12px;
-}
-
-/* UN DIA COMO HOY */
-
-.hoy{
-background:#00245f;
-color:white;
-border-radius:18px;
-padding:25px;
-border-bottom:5px solid #f5c400;
-}
-
-.hoy h2{
-color:#f5c400;
-margin-bottom:12px;
-}
-
-.hoy p{
-line-height:1.7;
 }
 
 /* NOTICIAS */
@@ -508,6 +413,94 @@ text-decoration:none;
 font-weight:bold;
 }
 
+/* AGENDA */
+
+.agenda{
+display:grid;
+gap:12px;
+}
+
+.evento{
+background:white;
+padding:17px;
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,.07);
+border-left:5px solid #064aa8;
+line-height:1.6;
+}
+
+.evento strong{
+color:#00245f;
+}
+
+/* NORTE */
+
+.norte{
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+border-radius:20px;
+padding:25px;
+}
+
+.norte h2{
+color:#f5c400;
+margin-bottom:10px;
+}
+
+.norte p{
+line-height:1.6;
+color:#edf2fa;
+}
+
+.provincias{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin-top:18px;
+}
+
+.provincia{
+background:white;
+color:#00245f;
+padding:9px 13px;
+border-radius:20px;
+font-weight:bold;
+}
+
+/* HISTORIA */
+
+.historia{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+line-height:1.7;
+}
+
+.historia h2{
+color:#00245f;
+margin-bottom:12px;
+}
+
+/* EFEMERIDE */
+
+.hoy{
+background:#00245f;
+color:white;
+border-radius:18px;
+padding:25px;
+border-bottom:5px solid #f5c400;
+}
+
+.hoy h2{
+color:#f5c400;
+margin-bottom:12px;
+}
+
+.hoy p{
+line-height:1.7;
+}
+
 /* VIDEOS */
 
 .videos-grid{
@@ -535,7 +528,7 @@ padding:15px;
 color:#00245f;
 }
 
-/* SEGUIDORES */
+/* REDES */
 
 .seguinos{
 background:#00245f;
@@ -580,23 +573,23 @@ font-size:22px;
 color:#f5c400;
 }
 
-.vacio{
-background:white;
-padding:25px;
-border-radius:12px;
-text-align:center;
-color:#666;
-}
-
 @media(max-width:600px){
 
-.logo{font-size:31px}
+.logo{
+font-size:31px;
+}
 
-.ultima-principal h2{font-size:23px}
+.ultima-principal h2{
+font-size:23px;
+}
 
-.partido h2{font-size:25px}
+.partido h2{
+font-size:25px;
+}
 
-.equipos{font-size:22px}
+.equipos{
+font-size:22px;
+}
 
 .streaming-grid{
 grid-template-columns:1fr;
@@ -611,475 +604,1026 @@ font-size:22px;
 }
 
 }
-</style></head><body><header>
+
+</style>
+</head>
+
+<body>
+
+<header>
+
 <div class="logo">BOCA 24/7</div>
-<div class="slogan">Todo Boca. Todo el día.</div>
-</header><nav>
+
+<div class="slogan">
+Todo Boca. Todo el día.
+</div>
+
+</header>
+
+
+<nav>
+
 <a href="#inicio">INICIO</a>
 <a href="#noticias">NOTICIAS</a>
-<a href="#mundo">BOCA</a>
-<a href="#streaming">STREAMING</a>
 <a href="#partidos">PARTIDOS</a>
 <a href="#mercado">MERCADO</a>
+<a href="#streaming">STREAMING</a>
+<a href="#agenda">AGENDA</a>
 <a href="#videos">VIDEOS</a>
-</nav><main id="inicio"><div class="actualizado" id="actualizado">
-Cargando información...
-</div><!-- ÚLTIMA HORA --><section class="bloque" id="noticias"><h2 class="titulo">🚨 ÚLTIMA HORA</h2><div class="ultima"><div id="principalNoticia" class="ultima-principal">
-<div class="ultima-label">🔴 ÚLTIMA HORA</div>
-<h2>Cargando noticias...</h2>
-<p>Las últimas novedades de Boca 24/7.</p>
-</div><div id="miniNoticias" class="ultima-lista"></div></div></section><!-- PRÓXIMO PARTIDO --><section class="bloque" id="partidos"><h2 class="titulo">⚽ PRÓXIMO PARTIDO</h2><div class="partido"><div class="partido-label">COPA ARGENTINA · OCTAVOS DE FINAL</div><h2>VÉLEZ 🆚 BOCA</h2><div class="equipos">
+
+</nav>
+
+
+<main id="inicio">
+
+
+<div class="actualizado" id="actualizado">
+
+Actualizado con las últimas noticias de Boca.
+
+</div>
+
+
+<!-- ULTIMA HORA -->
+
+<section class="bloque" id="noticias">
+
+<h2 class="titulo">
+🚨 ÚLTIMA HORA
+</h2>
+
+<div class="ultima">
+
+<div id="principalNoticia"
+class="ultima-principal">
+
+</div>
+
+<div id="miniNoticias"
+class="ultima-lista">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROXIMO PARTIDO -->
+
+<section class="bloque" id="partidos">
+
+<h2 class="titulo">
+⚽ PRÓXIMO PARTIDO
+</h2>
+
+<div class="partido">
+
+<div class="partido-label">
+COPA ARGENTINA · OCTAVOS DE FINAL
+</div>
+
+<h2>
+VÉLEZ 🆚 BOCA
+</h2>
+
+<div class="equipos">
 VÉLEZ SARFIELD &nbsp; VS &nbsp; BOCA JUNIORS
-</div><div class="datos-partido">
+</div>
+
+<div class="datos-partido">
+
 📅 Miércoles 2 de septiembre de 2026<br>
+
 🕐 21:15 hs<br>
+
 🏟️ Estadio Mario Alberto Kempes · Córdoba
-</div><a
+
+</div>
+
+<a
 class="boton"
 href="https://www.copaargentina.org/"
 target="_blank">
-VER PREVIA
+
+VER INFORMACIÓN OFICIAL
+
 </a>
 
-</div></section><!-- STREAMING --><section class="bloque" id="streaming"><h2 class="titulo">🎙️ BOCA 24/7 — STREAMING</h2><div class="streaming"><div class="en-vivo">🔴 ESTAMOS EN VIVO</div><h2>BOCA 24/7</h2><p>Información, opinión y toda la pasión xeneize.</p><a
+</div>
+
+</section>
+
+
+<!-- STREAMING -->
+
+<section class="bloque" id="streaming">
+
+<h2 class="titulo">
+🎙️ BOCA 24/7 — STREAMING
+</h2>
+
+<div class="streaming">
+
+<div class="en-vivo">
+🔴 BOCA 24/7
+</div>
+
+<h2>
+MOV LOS BOSTEROS DE TUCUMÁN
+</h2>
+
+<p>
+Información, opinión y toda la pasión xeneize.
+</p>
+
+<a
 class="stream-boton"
 href="https://youtube.com/@movlosbosterosdetucuman"
 target="_blank">
-▶️ VER STREAMING
+
+▶️ VER CANAL
+
 </a>
 
-<div class="streaming-grid"><div class="stream-card">
-<h3>Próximo programa</h3>
-<p>📅 Próximamente</p>
-<p>🕐 Horario a confirmar</p>
-</div><div class="stream-card">
-<h3>🎙️ Último programa</h3>
-<p>Contenido del streaming de Boca 24/7.</p><a
+<div class="streaming-grid">
+
+<div class="stream-card">
+
+<h3>
+🎙️ PRÓXIMO PROGRAMA
+</h3>
+
+<p>
+Seguí nuestras redes para conocer
+el próximo horario de transmisión.
+</p>
+
+</div>
+
+
+<div class="stream-card">
+
+<h3>
+📺 ÚLTIMOS CONTENIDOS
+</h3>
+
+<p>
+Análisis, noticias y actualidad de Boca.
+</p>
+
+<a
 class="boton"
 href="https://youtube.com/@movlosbosterosdetucuman"
 target="_blank">
-▶️ Ver completo
+
+▶️ VER VIDEOS
+
 </a>
 
-</div></div></div></section><!-- ENCUESTA --><section class="bloque"><h2 class="titulo">🗣️ LA VOZ DEL HINCHA</h2><div class="encuesta"><h2>¿Quién debe ser titular?</h2><p>Elegí tu opción y votá.</p><div class="opciones"><button class="opcion" onclick="seleccionar(0)">
-🔵 Jugador A
-</button><button class="opcion" onclick="seleccionar(1)">
-🟡 Jugador B
-</button></div><button class="votar" onclick="votar()">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ENCUESTA -->
+
+<section class="bloque">
+
+<h2 class="titulo">
+🗣️ LA VOZ DEL HINCHA
+</h2>
+
+<div class="encuesta">
+
+<h2>
+¿Quién fue la figura de Boca ante Lanús?
+</h2>
+
+<p>
+Elegí al jugador que para vos fue el mejor.
+</p>
+
+<div class="opciones">
+
+<button
+class="opcion"
+onclick="seleccionar(0)">
+
+🔵 Tomás Belmonte
+
+</button>
+
+<button
+class="opcion"
+onclick="seleccionar(1)">
+
+🟡 Álvaro Montero
+
+</button>
+
+</div>
+
+<button
+class="votar"
+onclick="votar()">
+
 VOTAR
-</button><div id="resultado" class="resultado"></div></div></section><!-- MERCADO --><section class="bloque" id="mercado"><h2 class="titulo">🔄 MERCADO DE PASES</h2><div class="mercado-grid"><div class="estado llego">
-<h3>🟢 LLEGÓ</h3><div class="jugador">
-<strong>Altas confirmadas</strong><br>
-Información oficial de Boca.
-</div></div><div class="estado negociando">
-<h3>🟡 NEGOCIANDO</h3><div class="jugador">
-<strong>Operaciones en curso</strong><br>
-Seguí las novedades.
-</div></div><div class="estado alejo">
-<h3>🔴 SE ALEJÓ</h3><div class="jugador">
-<strong>Operaciones caídas</strong><br>
-Noticias y novedades.
-</div></div></div></section><!-- BOCA EN EL NORTE --><section class="bloque"><div class="norte"><h2>📍 BOCA EN EL NORTE</h2><p>
-<strong>BOCA EN EL NOA 🇦🇷</strong><br><br>Noticias, hinchas, peñas, viajes a Buenos Aires,
-entrevistas y coberturas de todo el mundo Boca
-desde el norte argentino.
 
-</p><div class="provincias"><span class="provincia">Tucumán</span>
-<span class="provincia">Salta</span>
-<span class="provincia">Jujuy</span>
-<span class="provincia">Santiago del Estero</span>
-<span class="provincia">Catamarca</span>
-<span class="provincia">La Rioja</span>
+</button>
 
-</div></div></section><!-- MUNDO BOCA --><section class="bloque" id="mundo"><h2 class="titulo">🌎 MUNDO BOCA</h2><div class="mundo-grid"><a class="mundo" href="#noticias">
-<span>⚽</span>
-<strong>Primer equipo</strong>
-</a><a class="mundo" href="#partidos">
-<span>🏟️</span>
-<strong>La Bombonera</strong>
-</a><a class="mundo" href="#noticias">
-<span>👥</span>
-<strong>Plantel</strong>
-</a><a class="mundo" href="#noticias">
-<span>⭐</span>
-<strong>Inferiores</strong>
-</a><a class="mundo" href="#noticias">
-<span>🟦</span>
-<strong>Reserva</strong>
-</a><a class="mundo" href="#noticias">
-<span>👩⚽</span>
-<strong>Fútbol femenino</strong>
-</a><a class="mundo" href="#noticias">
-<span>🏀</span>
-<strong>Básquet</strong>
-</a><a class="mundo" href="#noticias">
-<span>⚽</span>
-<strong>Futsal</strong>
-</a></div></section><!-- AGENDA --><section class="bloque"><h2 class="titulo">📅 AGENDA</h2><div class="agenda"><div class="evento">
-<strong>02/09 · 21:15</strong><br>
-Vélez 🆚 Boca · Copa Argentina
-</div><div class="evento">
-<strong>05/09 · 16:30</strong><br>
-Gimnasia de Mendoza 🆚 Boca · Liga Profesional
-</div><div class="evento">
-<strong>08/09 · 21:30</strong><br>
-Boca 🆚 São Paulo · Copa Sudamericana
-</div></div></section><!-- HISTORIA --><section class="bloque"><div class="historia"><h2>📖 LA HISTORIA</h2><p>
-Boca Juniors fue fundado el 3 de abril de 1905
-en el barrio de La Boca, Buenos Aires.A lo largo de su historia se convirtió en uno
-de los clubes más importantes y populares del
-fútbol argentino y sudamericano.
+<div
+id="resultado"
+class="resultado">
+</div>
 
-La Bombonera, sus ídolos, sus títulos y su gente
-forman parte de una identidad que atraviesa
-generaciones.
+</div>
 
-</p></div></section><!-- UN DÍA COMO HOY --><section class="bloque"><div class="hoy"><h2>📆 UN DÍA COMO HOY</h2><p id="unDia">
+</section>
+
+
+<!-- MERCADO -->
+
+<section
+class="bloque"
+id="mercado">
+
+<h2 class="titulo">
+🔄 MERCADO DE PASES
+</h2>
+
+<div class="mercado-grid">
+
+
+<div class="estado llego">
+
+<h3>
+🟢 SITUACIÓN ACTUAL
+</h3>
+
+<div class="jugador">
+
+<strong>
+Boca continúa activo
+</strong>
+
+<br>
+
+El club busca terminar de definir
+el mercado y también analiza
+posibles movimientos de salida.
+
+</div>
+
+</div>
+
+
+<div class="estado negociando">
+
+<h3>
+🟡 KEVIN ZENÓN
+</h3>
+
+<div class="jugador">
+
+<strong>
+Atlas de México
+</strong>
+
+<br>
+
+Atlas presentó una propuesta
+para llevarse a Zenón a préstamo
+con cargo y opción de compra.
+
+</div>
+
+<div class="jugador">
+
+<strong>
+Postura de Boca
+</strong>
+
+<br>
+
+Boca no quedó conforme con
+las condiciones iniciales y
+realizó una contraoferta.
+
+</div>
+
+</div>
+
+
+<div class="estado alejo">
+
+<h3>
+🔴 SALIDAS
+</h3>
+
+<div class="jugador">
+
+<strong>
+Mercado abierto
+</strong>
+
+<br>
+
+El club analiza las propuestas
+que lleguen antes del cierre
+del mercado.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TODAS LAS NOTICIAS -->
+
+<section class="bloque">
+
+<h2 class="titulo">
+📰 TODAS LAS NOTICIAS
+</h2>
+
+<div
+id="todasNoticias"
+class="noticias-grid">
+</div>
+
+</section>
+
+
+<!-- BOCA EN EL NORTE -->
+
+<section class="bloque">
+
+<div class="norte">
+
+<h2>
+📍 BOCA EN EL NORTE
+</h2>
+
+<p>
+
+<strong>
+BOCA EN EL NOA 🇦🇷
+</strong>
+
+<br><br>
+
+Noticias, hinchas, peñas, viajes,
+entrevistas y coberturas de todo
+el mundo Boca desde el norte argentino.
+
+</p>
+
+<div class="provincias">
+
+<span class="provincia">
+Tucumán
+</span>
+
+<span class="provincia">
+Salta
+</span>
+
+<span class="provincia">
+Jujuy
+</span>
+
+<span class="provincia">
+Santiago del Estero
+</span>
+
+<span class="provincia">
+Catamarca
+</span>
+
+<span class="provincia">
+La Rioja
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AGENDA -->
+
+<section
+class="bloque"
+id="agenda">
+
+<h2 class="titulo">
+📅 AGENDA XENEIZE
+</h2>
+
+<div class="agenda">
+
+
+<div class="evento">
+
+<strong>
+02/09 · 21:15
+</strong>
+
+<br>
+
+Vélez 🆚 Boca
+
+<br>
+
+Copa Argentina · Octavos de final
+
+<br>
+
+🏟️ Mario Alberto Kempes
+
+</div>
+
+
+<div class="evento">
+
+<strong>
+05/09 · 16:30
+</strong>
+
+<br>
+
+Gimnasia de Mendoza 🆚 Boca
+
+<br>
+
+Torneo Clausura · Fecha 8
+
+<br>
+
+🏟️ Víctor Antonio Legrotaglie
+
+</div>
+
+
+<div class="evento">
+
+<strong>
+08/09
+</strong>
+
+<br>
+
+Boca 🆚 São Paulo
+
+<br>
+
+Copa Sudamericana · Cuartos de final · Ida
+
+<br>
+
+🏟️ La Bombonera
+
+</div>
+
+
+<div class="evento">
+
+<strong>
+15/09
+</strong>
+
+<br>
+
+São Paulo 🆚 Boca
+
+<br>
+
+Copa Sudamericana · Cuartos de final · Vuelta
+
+<br>
+
+🏟️ Morumbí
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- HISTORIA -->
+
+<section class="bloque">
+
+<div class="historia">
+
+<h2>
+📖 LA HISTORIA
+</h2>
+
+<p>
+
+Boca Juniors fue fundado el
+3 de abril de 1905 en el barrio
+de La Boca, Buenos Aires.
+
+<br><br>
+
+A lo largo de su historia se convirtió
+en uno de los clubes más importantes
+y populares del fútbol argentino
+y sudamericano.
+
+<br><br>
+
+La Bombonera, sus ídolos, sus títulos
+y su gente forman parte de una identidad
+que atraviesa generaciones.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- UN DIA COMO HOY -->
+
+<section class="bloque">
+
+<div class="hoy">
+
+<h2>
+📆 UN DÍA COMO HOY
+</h2>
+
+<p id="unDia">
+
 Cargando efeméride...
-</p></div></section><!-- VIDEOS --><section class="bloque" id="videos"><h2 class="titulo">📺 VIDEOS</h2><div class="videos-grid"><div class="video"><iframe
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section
+class="bloque"
+id="videos">
+
+<h2 class="titulo">
+📺 VIDEOS
+</h2>
+
+<div class="videos-grid">
+
+<div class="video">
+
+<iframe
 src="https://www.youtube.com/embed/4ybOs3IFAqI"
 title="El Canal de Boca"
 allowfullscreen>
-</iframe><h3>El Canal de Boca</h3></div></div><br><a
+</iframe>
+
+<h3>
+El Canal de Boca
+</h3>
+
+</div>
+
+</div>
+
+<br>
+
+<a
 class="boton"
 href="https://www.youtube.com/@ElCanaldeBoca/videos"
 target="_blank">
+
 ▶️ VER MÁS VIDEOS
+
 </a>
 
-</section><!-- SEGUINOS --><section class="bloque"><div class="seguinos"><h2>📱 SEGUÍ A BOCA 24/7</h2><p>
-Seguí nuestras redes y enterate primero
-de todas las noticias de Boca.
-</p><div class="redes"><a
-class="red"
-href="https://youtube.com/@movlosbosterosdetucuman"
-target="_blank">
-YouTube
-</a>
+</section>
 
-<a
-class="red"
-href="#"
-onclick="alert('Agregaremos Instagram próximamente');return false;">
-Instagram
-</a>
 
-<a
-class="red"
-href="#"
-onclick="alert('Agregaremos TikTok próximamente');return false;">
-TikTok
-</a>
+<!-- REDES -->
 
-<a
-class="red"
-href="#"
-onclick="alert('Agregaremos Facebook próximamente');return false;">
-Facebook
-</a>
+<section class="bloque">
 
-</div><p style="margin-top:20px">
-🔔 Activá las notificaciones y enterate primero
-de todas las noticias de Boca.
-</p></div></section></main><footer><strong>BOCA 24/7</strong>
-
-<p style="margin-top:8px">
-Todo Boca. Todo el día.
-</p></footer><script>
-
-let noticias=[];
-let votoSeleccionado=null;
-
-function escapar(texto){
-
-const div=document.createElement("div");
-div.textContent=texto||"";
-return div.innerHTML;
-
-}
-
-function fechaNoticia(n){
-
-if(!n.fecha_iso)return "";
-
-const f=new Date(n.fecha_iso);
-
-if(isNaN(f.getTime()))return "";
-
-return new Intl.DateTimeFormat("es-AR",{
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit",
-hour12:false
-}).format(f);
-
-}
-
-function tarjeta(n){
-
-return `
-
-<article class="card">
-
-<div class="card-fuente">
-${escapar(n.fuente||"Boca 24/7")}
-</div>
-
-<h3>
-${escapar(n.titulo||"Sin título")}
-</h3>
-
-<div class="fecha">
-${fechaNoticia(n)}
-</div>
-
-<div class="resumen">
-${escapar(n.contenido||"")}
-</div>
-
-${
-n.link
-?
-`<a class="leer" href="${escapar(n.link)}" target="_blank">
-Leer noticia
-</a>`
-:
-""
-}
-
-</article>
-
-`;
-
-}
-
-function mostrarNoticias(){
-
-if(!noticias.length){
-
-document.getElementById("principalNoticia").innerHTML=`
-<div class="ultima-label">🔴 ÚLTIMA HORA</div>
-<h2>No hay noticias disponibles.</h2>
-<p>Intentá actualizar la página.</p>
-`;
-
-return;
-
-}
-
-const principal=noticias[0];
-
-document.getElementById("principalNoticia").innerHTML=`
-
-<div class="ultima-label">🔴 ÚLTIMA HORA</div>
+<div class="seguinos">
 
 <h2>
-${escapar(principal.titulo)}
+📱 SEGUÍ A BOCA 24/7
 </h2>
 
 <p>
-${escapar(principal.contenido||"")}
+Seguí nuestras redes y enterate primero
+de todas las noticias de Boca.
+</p>
+
+<div class="redes">
+
+<a
+class="red"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank">
+
+YouTube
+
+</a>
+
+<a
+class="red"
+href="#"
+onclick="alert('Instagram próximamente');return false;">
+
+Instagram
+
+</a>
+
+<a
+class="red"
+href="#"
+onclick="alert('TikTok próximamente');return false;">
+
+TikTok
+
+</a>
+
+<a
+class="red"
+href="#"
+onclick="alert('Facebook próximamente');return false;">
+
+Facebook
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<strong>
+BOCA 24/7
+</strong>
+
+<p style="margin-top:8px">
+
+Todo Boca. Todo el día.
+
+</p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   NOTICIAS REALES
+========================= */
+
+const noticias = [
+
+{
+titulo:
+"El sutil pedido del Vasco a Riquelme sobre el cierre del mercado de pases",
+
+fuente:
+"El Intransigente",
+
+contenido:
+"Las últimas horas del mercado de pases tienen a Boca atento a posibles movimientos y negociaciones.",
+
+link:
+"https://elintransigente.com/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Mercado de Pases: Boca contraofertó por Kevin Zenón y Atlas define",
+
+fuente:
+"El Intransigente",
+
+contenido:
+"Atlas de México presentó una propuesta por Kevin Zenón. Boca no quedó conforme con las condiciones iniciales y respondió con una contraoferta.",
+
+link:
+"https://elintransigente.com/2026/08/boca-negocia-kevin-zenon-atlas/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Llegó una oferta por Kevin Zenón: qué club está interesado y cuál es la postura de Boca",
+
+fuente:
+"Planeta Boca Juniors",
+
+contenido:
+"El Atlas de México busca llevarse al mediocampista a préstamo con cargo y opción de compra. Boca pretende mejores condiciones para aceptar su salida.",
+
+link:
+"https://planetabj.com/mercado-de-pases/llego-una-oferta-por-kevin-zenon-que-club-esta-interesado-y-cual-es-la-postura-de-boca/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Boca volvió a la Bombonera con un triunfo agónico: le ganó a Lanús",
+
+fuente:
+"Olé",
+
+contenido:
+"Boca derrotó 1-0 a Lanús en La Bombonera con un gol de Tomás Belmonte sobre el final y consiguió tres puntos importantes en el Torneo Clausura.",
+
+link:
+"https://www.ole.com.ar/boca-juniors/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Los puntajes de Boca vs. Lanús",
+
+fuente:
+"TyC Sports",
+
+contenido:
+"El Xeneize consiguió una victoria agónica ante Lanús. Álvaro Montero tuvo una intervención clave antes del gol de Tomás Belmonte.",
+
+link:
+"https://www.tycsports.com/boca-juniors/puntajes-de-boca-victoria-lanus-torneo-clausura-tati-civiello-op-id757837.html",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"El grito sagrado: ¡Boooocaaaaa!",
+
+fuente:
+"TyC Sports",
+
+contenido:
+"Boca consiguió un triunfo agónico frente a Lanús y volvió a celebrar en La Bombonera.",
+
+link:
+"https://www.tycsports.com/boca-juniors/el-grito-sagrado-boooocaaaaa-op-id757858.html",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Las declaraciones de Leandro Paredes luego de la victoria ante Lanús",
+
+fuente:
+"TyC Sports",
+
+contenido:
+"Leandro Paredes habló después del triunfo de Boca ante Lanús y se refirió a su estado físico y a la actuación del equipo.",
+
+link:
+"https://www.tycsports.com/boca-juniors/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"El sincericidio de Paredes sobre su físico y el interés del Milan",
+
+fuente:
+"TyC Sports",
+
+contenido:
+"El mediocampista de Boca habló sobre su estado físico y recordó el interés que tuvo del Milan.",
+
+link:
+"https://www.tycsports.com/boca-juniors/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Uno de los borrados en Boca fue presentado como nuevo refuerzo de Racing",
+
+fuente:
+"TN",
+
+contenido:
+"Un futbolista que había quedado fuera de los planes de Boca fue presentado como nuevo refuerzo de Racing.",
+
+link:
+"https://tn.com.ar/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"El plan de Boca ante la lesión de Aranda",
+
+fuente:
+"Sitio Boca",
+
+contenido:
+"Boca analiza las alternativas que tiene ante la lesión de Aranda y la posibilidad de sumar un cupo extra para incorporar.",
+
+link:
+"https://www.sitioandino.com.ar/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"River le quiere sacar a Boca a Francisco Álvarez",
+
+fuente:
+"Fútbol Para Todos",
+
+contenido:
+"El defensor aparece en el radar de ambos grandes del fútbol argentino de cara al mercado de pases.",
+
+link:
+"https://futbolparatodos.com.ar/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Seis partidos en 20 días: la apretada agenda de Boca en septiembre",
+
+fuente:
+"Planeta Boca Juniors",
+
+contenido:
+"Boca tendrá un calendario cargado durante septiembre con partidos por el Torneo Clausura, Copa Argentina y Copa Sudamericana.",
+
+link:
+"https://planetabj.com/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Boca venció 1-0 a Lanús en la última jugada",
+
+fuente:
+"Infobae",
+
+contenido:
+"El Xeneize regresó a La Bombonera y consiguió una victoria agónica ante Lanús para meterse en zona de playoffs.",
+
+link:
+"https://www.infobae.com/deportes/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Boca Juniors venció 1-0 a Lanús y se metió en zona de playoffs",
+
+fuente:
+"El Comodorense",
+
+contenido:
+"Tomás Belmonte marcó el gol de la victoria en la última jugada del partido.",
+
+link:
+"https://www.elcomodorense.net/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Los hinchas de Boca festejaron el triunfo con una chicana para River",
+
+fuente:
+"MDZ Online",
+
+contenido:
+"El festejo xeneize tras el triunfo frente a Lanús incluyó un cantito dedicado al clásico rival.",
+
+link:
+"https://www.mdzol.com/",
+
+fecha:
+"29/08/2026"
+},
+
+
+{
+titulo:
+"Marcelo Cañete, de juvenil de Boca a rival por primera vez",
+
+fuente:
+"Olé",
+
+contenido:
+"El exjugador surgido de las inferiores de Boca enfrentó al Xeneize por primera vez a los 36 años.",
+
+link:
+"https://www.ole.com.ar/boca-juniors/",
+
+fecha:
+"29/08/2026"
+}
+
+];
+
+
+/* =========================
+MOSTRAR NOTICIA PRINCIPAL
+========================= */
+
+function mostrarNoticias(){
+
+const principal = noticias[0];
+
+document.getElementById(
+"principalNoticia"
+).innerHTML = `
+
+<div class="ultima-label">
+🔴 ÚLTIMA HORA
+</div>
+
+<h2>
+${principal.titulo}
+</h2>
+
+<p>
+${principal.contenido}
 </p>
 
 <a
 class="boton"
-href="${escapar(principal.link||"#")}"
+href="${principal.link}"
 target="_blank">
-LEER NOTICIA
-</a>
 
-`;
-
-const minis=noticias.slice(1,5);
-
-document.getElementById("miniNoticias").innerHTML=
-minis.map(n=>`
-
-<div class="mini-noticia">
-
-<strong>
-${escapar(n.fuente||"Boca 24/7")}
-</strong>
-
-<h3>
-${escapar(n.titulo||"")}
-</h3>
-
-<a
-href="${escapar(n.link||"#")}"
-target="_blank">
-Leer →
-</a>
-
-</div>
-
-`).join("");
-
-}
-
-async function cargarNoticias(){
-
-try{
-
-const respuesta=await fetch(
-"noticias.json?v="+Date.now()
-);
-
-if(!respuesta.ok)
-throw new Error("No se pudo cargar noticias.json");
-
-const datos=await respuesta.json();
-
-if(!Array.isArray(datos))
-throw new Error("Formato incorrecto");
-
-noticias=datos.sort((a,b)=>
-new Date(b.fecha_iso||0)-new Date(a.fecha_iso||0)
-);
-
-mostrarNoticias();
-
-document.getElementById("actualizado").textContent=
-"Última actualización: "+
-new Intl.DateTimeFormat("es-AR",{
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit",
-hour12:false
-}).format(new Date());
-
-}
-catch(error){
-
-console.error(error);
-
-document.getElementById("actualizado").textContent=
-"No se pudieron actualizar las noticias.";
-
-document.getElementById("principalNoticia").innerHTML=`
-
-<div class="ultima-label">⚠️ INFORMACIÓN</div>
-
-<h2>
-No se pudieron cargar las noticias.
-</h2>
-
-<p>
-Revisá que el archivo noticias.json esté en la misma carpeta que index.html.
-</p>
-
-`;
-
-}
-
-}
-
-/* ENCUESTA */
-
-function seleccionar(indice){
-
-votoSeleccionado=indice;
-
-document.querySelectorAll(".opcion")
-.forEach((boton,i)=>{
-
-boton.classList.toggle(
-"seleccionada",
-i===indice
-);
-
-});
-
-}
-
-function votar(){
-
-if(votoSeleccionado===null){
-
-alert("Elegí una opción antes de votar.");
-
-return;
-
-}
-
-let votos=JSON.parse(
-localStorage.getItem("boca247_votos")||
-'{"a":63,"b":37}'
-);
-
-if(votoSeleccionado===0)
-votos.a++;
-
-else
-votos.b++;
-
-localStorage.setItem(
-"boca247_votos",
-JSON.stringify(votos)
-);
-
-const total=votos.a+votos.b;
-
-const porcentajeA=Math.round(
-(votos.a/total)*100
-);
-
-const porcentajeB=100-porcentajeA;
-
-document.getElementById("resultado").innerHTML=`
-
-Resultado actual:<br><br>
-
-🔵 Jugador A — ${porcentajeA}%<br>
-🟡 Jugador B — ${porcentajeB}%
-
-`;
-
-}
-
-/* UN DÍA COMO HOY */
-
-function cargarUnDia(){
-
-const fecha=new Date();
-
-const dia=fecha.getDate();
-const mes=fecha.getMonth()+1;
-
-const eventos={
-
-"29-8":
-"Un día como hoy, Boca sigue construyendo su historia partido a partido. En Boca 24/7 repasamos diariamente las fechas y momentos que marcaron al Xeneize.",
-
-"30-8":
-"Un día como hoy: otra jornada para recordar la historia, los ídolos y las grandes conquistas de Boca.",
-
-"31-8":
-"Un día como hoy: Boca y su historia vuelven a ser protagonistas.",
-
-"1-9":
-"Un día como hoy: repasamos recuerdos que forman parte de la identidad xeneize."
-
-};
-
-document.getElementById("unDia").textContent=
-eventos[dia+"-"+mes]||
-"Un día como hoy en la historia de Boca: partidos, protagonistas, títulos y momentos inolvidables del Xeneize.";
-
-}
-
-cargarNoticias();
-
-cargarUnDia();
-
-setInterval(
-cargarNoticias,
-5*60*1000
-);
-
-</script></body>
-    </html>
+LEER NOT
