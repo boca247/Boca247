@@ -24,12 +24,21 @@ header{
     background:linear-gradient(135deg,#001f5b,#064aa8);
     color:white;
     text-align:center;
-    padding:25px 15px;
+    padding:22px 15px;
     border-bottom:7px solid #f5c400;
 }
 
+.logo-img{
+    width:140px;
+    max-width:60%;
+    height:auto;
+    display:block;
+    margin:0 auto 12px;
+    border-radius:12px;
+}
+
 .logo{
-    font-size:40px;
+    font-size:38px;
     font-weight:900;
     letter-spacing:2px;
 }
@@ -156,11 +165,6 @@ main{
     padding:19px;
     border-top:5px solid #064aa8;
     box-shadow:0 3px 12px rgba(0,0,0,.09);
-    transition:.2s;
-}
-
-.card:hover{
-    transform:translateY(-3px);
 }
 
 .card-fuente{
@@ -225,6 +229,10 @@ footer strong{
 
 @media(max-width:600px){
 
+    .logo-img{
+        width:120px;
+    }
+
     .logo{
         font-size:29px;
     }
@@ -246,6 +254,12 @@ footer strong{
 
 <header>
 
+    <img
+        class="logo-img"
+        src="IMG-20260829-WA0001.jpg"
+        alt="Boca 24/7"
+    >
+
     <div class="logo">
         BOCA 24/7
     </div>
@@ -260,119 +274,45 @@ footer strong{
 
     <button onclick="inicio()">Inicio</button>
 
-    <button onclick="seccion('Boca')">
-        Boca
-    </button>
+    <button onclick="seccion('Boca')">Boca</button>
 
-    <button onclick="seccion('Sudamericana')">
-        Sudamericana
-    </button>
+    <button onclick="seccion('Sudamericana')">Sudamericana</button>
 
-    <button onclick="seccion('Partidos')">
-        Partidos
-    </button>
+    <button onclick="seccion('Mercado de pases')">Mercado de pases</button>
 
-    <button onclick="seccion('Mercado de pases')">
-        Mercado de pases
-    </button>
+    <button onclick="seccion('Lesiones')">Lesiones</button>
 
-    <button onclick="seccion('Plantel')">
-        Plantel
-    </button>
+    <button onclick="seccion('Básquet')">Básquet</button>
 
-    <button onclick="seccion('Lesiones')">
-        Lesiones
-    </button>
+    <button onclick="seccion('Futsal')">Futsal</button>
 
-    <button onclick="seccion('Básquet')">
-        Básquet
-    </button>
+    <button onclick="seccion('Fútbol femenino')">Fútbol femenino</button>
 
-    <button onclick="seccion('Futsal')">
-        Futsal
-    </button>
+    <button onclick="seccion('Reserva')">Reserva</button>
 
-    <button onclick="seccion('Fútbol femenino')">
-        Fútbol femenino
-    </button>
+    <button onclick="seccion('Inferiores')">Inferiores</button>
 
-    <button onclick="seccion('Reserva')">
-        Reserva
-    </button>
-
-    <button onclick="seccion('Inferiores')">
-        Inferiores
-    </button>
-
-    <button onclick="seccion('La Bombonera')">
-        La Bombonera
-    </button>
-
-    <button onclick="seccion('Tato Aguilera')">
-        Tato Aguilera
-    </button>
-
-    <button onclick="seccion('Diego Monroig')">
-        Diego Monroig
-    </button>
-
-    <button onclick="seccion('Augusto César')">
-        Augusto César
-    </button>
-
-    <button onclick="seccion('Canal de Boca')">
-        Canal de Boca
-    </button>
-
-    <button onclick="seccion('Oficial')">
-        Boca Oficial
-    </button>
+    <button onclick="seccion('La Bombonera')">La Bombonera</button>
 
 </nav>
 
 <main>
 
     <div class="actualizado" id="actualizado">
-        Actualizando información...
+        Cargando información...
     </div>
 
     <section id="hero"></section>
 
     <section class="fuentes">
 
-        <h2>
-            Fuentes de información
-        </h2>
+        <h2>Fuentes de información</h2>
 
         <div class="fuentes-lista">
 
-            <span class="fuente">
-                Tato Aguilera
-            </span>
-
-            <span class="fuente">
-                Diego Monroig
-            </span>
-
-            <span class="fuente">
-                Augusto César
-            </span>
-
-            <span class="fuente">
-                El Canal de Boca
-            </span>
-
-            <span class="fuente">
-                Boca Juniors Oficial
-            </span>
-
-            <span class="fuente">
-                TyC Sports
-            </span>
-
-            <span class="fuente">
-                TN
-            </span>
+            <span class="fuente">Google Noticias</span>
+            <span class="fuente">TyC Sports</span>
+            <span class="fuente">Boca Juniors</span>
 
         </div>
 
@@ -402,9 +342,7 @@ footer strong{
 
 <footer>
 
-    <strong>
-        BOCA 24/7
-    </strong>
+    <strong>BOCA 24/7</strong>
 
     <p style="margin-top:8px">
         Información Xeneize todos los días.
@@ -415,115 +353,6 @@ footer strong{
 <script>
 
 let noticias = [];
-
-
-function fechaArgentina(fecha){
-
-    if(!fecha){
-        return "";
-    }
-
-    const date = new Date(fecha);
-
-    if(isNaN(date.getTime())){
-        return fecha;
-    }
-
-    return new Intl.DateTimeFormat(
-        "es-AR",
-        {
-            timeZone:"America/Argentina/Buenos_Aires",
-            day:"2-digit",
-            month:"2-digit",
-            year:"numeric",
-            hour:"2-digit",
-            minute:"2-digit",
-            hour12:false
-        }
-    ).format(date);
-
-}
-
-
-async function cargarNoticias(){
-
-    try{
-
-        const respuesta = await fetch(
-            "noticias.json?actualizacion=" +
-            Date.now()
-        );
-
-        if(!respuesta.ok){
-
-            throw new Error(
-                "No se pudo cargar noticias.json"
-            );
-
-        }
-
-        noticias = await respuesta.json();
-
-        noticias.sort(
-            function(a,b){
-
-                const fechaA =
-                    new Date(
-                        a.fecha_iso ||
-                        a.fecha ||
-                        0
-                    );
-
-                const fechaB =
-                    new Date(
-                        b.fecha_iso ||
-                        b.fecha ||
-                        0
-                    );
-
-                return fechaB - fechaA;
-
-            }
-        );
-
-        inicio();
-
-        document.getElementById(
-            "actualizado"
-        ).textContent =
-            "Última actualización: " +
-            new Intl.DateTimeFormat(
-                "es-AR",
-                {
-                    timeZone:
-                        "America/Argentina/Buenos_Aires",
-                    day:"2-digit",
-                    month:"2-digit",
-                    year:"numeric",
-                    hour:"2-digit",
-                    minute:"2-digit",
-                    hour12:false
-                }
-            ).format(new Date());
-
-    }catch(error){
-
-        document.getElementById(
-            "noticias"
-        ).innerHTML =
-
-            '<div class="vacio">' +
-            'No se pudieron cargar las noticias.' +
-            '</div>';
-
-        document.getElementById(
-            "actualizado"
-        ).textContent =
-            "No se pudo actualizar la información.";
-
-    }
-
-}
 
 
 function escapar(texto){
@@ -539,47 +368,69 @@ function escapar(texto){
 }
 
 
-function crearTarjeta(n){
+function mostrarFecha(noticia){
 
-    let boton = "";
+    if(noticia.fecha_iso){
 
-    if(n.link){
+        const fecha =
+            new Date(
+                noticia.fecha_iso
+            );
 
-        boton = `
+        if(!isNaN(fecha.getTime())){
 
-            <a
-                class="leer"
-                href="${escapar(n.link)}"
-                target="_blank"
-                rel="noopener noreferrer">
+            return new Intl.DateTimeFormat(
+                "es-AR",
+                {
+                    timeZone:
+                        "America/Argentina/Buenos_Aires",
+                    day:"2-digit",
+                    month:"2-digit",
+                    year:"numeric",
+                    hour:"2-digit",
+                    minute:"2-digit",
+                    hour12:false
+                }
+            ).format(fecha);
 
-                Leer noticia
-
-            </a>
-
-        `;
+        }
 
     }
 
-    let fechaMostrar = "";
+    if(noticia.fecha){
 
-    if(n.fecha_iso){
+        return escapar(
+            noticia.fecha
+        ) +
+        (
+            noticia.hora
+            ? " - " +
+              escapar(noticia.hora)
+            : ""
+        );
 
-        fechaMostrar =
-            fechaArgentina(n.fecha_iso);
+    }
 
-    }else{
+    return "";
 
-        fechaMostrar =
-            escapar(n.fecha || "");
+}
 
-        if(n.hora){
 
-            fechaMostrar +=
-                " - " +
-                escapar(n.hora);
+function crearTarjeta(noticia){
 
-        }
+    let boton = "";
+
+    if(noticia.link){
+
+        boton = `
+            <a
+                class="leer"
+                href="${escapar(noticia.link)}"
+                target="_blank"
+                rel="noopener noreferrer">
+                Leer noticia
+            </a>
+        `;
 
     }
 
@@ -589,25 +440,25 @@ function crearTarjeta(n){
 
             <div class="card-fuente">
                 ${escapar(
-                    n.fuente ||
+                    noticia.fuente ||
                     "Boca 24/7"
                 )}
             </div>
 
             <h3>
                 ${escapar(
-                    n.titulo ||
+                    noticia.titulo ||
                     "Sin título"
                 )}
             </h3>
 
             <div class="fecha">
-                ${fechaMostrar}
+                ${mostrarFecha(noticia)}
             </div>
 
             <div class="resumen">
                 ${escapar(
-                    n.contenido ||
+                    noticia.contenido ||
                     ""
                 )}
             </div>
@@ -633,10 +484,7 @@ function mostrar(lista){
         contenedor.innerHTML = `
 
             <div class="vacio">
-
-                Todavía no hay noticias
-                en esta sección.
-
+                No hay noticias en esta sección.
             </div>
 
         `;
@@ -675,7 +523,7 @@ function inicio(){
 
     }
 
-    const n =
+    const noticia =
         noticias[0];
 
     hero.innerHTML = `
@@ -688,14 +536,14 @@ function inicio(){
 
             <h2>
                 ${escapar(
-                    n.titulo ||
+                    noticia.titulo ||
                     "Última noticia"
                 )}
             </h2>
 
             <p>
                 ${escapar(
-                    n.contenido ||
+                    noticia.contenido ||
                     ""
                 )}
             </p>
@@ -704,7 +552,7 @@ function inicio(){
 
                 <strong>
                     ${escapar(
-                        n.fuente ||
+                        noticia.fuente ||
                         ""
                     )}
                 </strong>
@@ -715,11 +563,6 @@ function inicio(){
 
     `;
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
 }
 
 
@@ -727,20 +570,14 @@ function seccion(categoria){
 
     const lista =
         noticias.filter(
-            function(n){
+            function(noticia){
 
-                const valor =
-                    (
-                        n.categoria ||
-                        ""
-                    )
-                    .toLowerCase()
-                    .trim();
-
-                return valor ===
-                    categoria
-                    .toLowerCase()
-                    .trim();
+                return (
+                    noticia.categoria ||
+                    ""
+                ).toLowerCase()
+                ===
+                categoria.toLowerCase();
 
             }
         );
@@ -756,19 +593,89 @@ function seccion(categoria){
 
     mostrar(lista);
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+}
+
+
+async function cargarNoticias(){
+
+    try{
+
+        const respuesta =
+            await fetch(
+                "noticias.json?v=" +
+                Date.now()
+            );
+
+        if(!respuesta.ok){
+
+            throw new Error(
+                "No se pudo cargar noticias.json"
+            );
+
+        }
+
+        noticias =
+            await respuesta.json();
+
+        noticias.sort(
+            function(a,b){
+
+                return new Date(
+                    b.fecha_iso || 0
+                ) -
+                new Date(
+                    a.fecha_iso || 0
+                );
+
+            }
+        );
+
+        inicio();
+
+        document.getElementById(
+            "actualizado"
+        ).textContent =
+            "Última actualización: " +
+            new Intl.DateTimeFormat(
+                "es-AR",
+                {
+                    timeZone:
+                        "America/Argentina/Buenos_Aires",
+                    day:"2-digit",
+                    month:"2-digit",
+                    year:"numeric",
+                    hour:"2-digit",
+                    minute:"2-digit",
+                    hour12:false
+                }
+            ).format(new Date());
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        document.getElementById(
+            "noticias"
+        ).innerHTML = `
+
+            <div class="vacio">
+                No se pudieron cargar las noticias.
+            </div>
+
+        `;
+
+        document.getElementById(
+            "actualizado"
+        ).textContent =
+            "Esperando actualización de noticias.";
+
+    }
 
 }
 
 
 cargarNoticias();
-
-
-// Actualiza la página automáticamente
-// cada 5 minutos.
 
 setInterval(
     cargarNoticias,
@@ -778,4 +685,4 @@ setInterval(
 </script>
 
 </body>
-  </html>
+</html>
