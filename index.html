@@ -25,10 +25,6 @@ body{
     color:#111;
 }
 
-/* =========================
-   ENCABEZADO
-   ========================= */
-
 header{
     width:100%;
     background:#000;
@@ -40,10 +36,6 @@ header img{
     height:auto;
     display:block;
 }
-
-/* =========================
-   MENU
-   ========================= */
 
 nav{
     width:100%;
@@ -68,10 +60,6 @@ nav button{
     cursor:pointer;
 }
 
-/* =========================
-   CONTENIDO
-   ========================= */
-
 main{
     width:100%;
     max-width:1200px;
@@ -88,10 +76,6 @@ main{
     font-size:14px;
     text-align:center;
 }
-
-/* =========================
-   PROXIMO PARTIDO
-   ========================= */
 
 .proximo{
     background:linear-gradient(135deg,#00245f,#0756b8);
@@ -137,10 +121,6 @@ main{
     font-weight:bold;
 }
 
-/* =========================
-   HERO
-   ========================= */
-
 .hero{
     background:linear-gradient(135deg,#00245f,#0756b8);
     color:white;
@@ -165,10 +145,6 @@ main{
 .hero p{
     line-height:1.6;
 }
-
-/* =========================
-   FUENTES
-   ========================= */
 
 .fuentes{
     background:#00245f;
@@ -196,10 +172,6 @@ main{
     font-weight:bold;
 }
 
-/* =========================
-   TITULOS
-   ========================= */
-
 .seccion-titulo{
     color:#00245f;
     font-size:25px;
@@ -207,10 +179,6 @@ main{
     padding-left:12px;
     margin-bottom:17px;
 }
-
-/* =========================
-   NOTICIAS
-   ========================= */
 
 .seccion{
     margin-bottom:35px;
@@ -272,10 +240,6 @@ main{
     color:#666;
 }
 
-/* =========================
-   CATEGORIAS
-   ========================= */
-
 .categorias{
     margin:45px 0;
 }
@@ -288,14 +252,17 @@ main{
 
 .categoria{
     background:white;
+    border:0;
+    border-top:5px solid #064aa8;
     border-radius:15px;
     padding:22px 15px;
     text-align:center;
-    text-decoration:none;
     color:#00245f;
-    border-top:5px solid #064aa8;
     box-shadow:0 3px 12px rgba(0,0,0,.09);
     transition:.2s;
+    cursor:pointer;
+    font-family:Arial,Helvetica,sans-serif;
+    width:100%;
 }
 
 .categoria:hover{
@@ -318,10 +285,6 @@ main{
     font-size:14px;
     line-height:1.4;
 }
-
-/* =========================
-   INFO BOCA
-   ========================= */
 
 .info-boca{
     background:#00245f;
@@ -350,10 +313,6 @@ main{
     text-decoration:none;
     font-weight:bold;
 }
-
-/* =========================
-   EL CANAL DE BOCA
-   ========================= */
 
 .videos-seccion{
     margin-top:45px;
@@ -434,10 +393,6 @@ main{
     font-weight:bold;
 }
 
-/* =========================
-   NUESTRO STREAMING
-   ========================= */
-
 .streaming{
     width:100%;
     margin-top:45px;
@@ -465,10 +420,6 @@ main{
     box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-
 footer{
     background:#00245f;
     color:white;
@@ -481,10 +432,6 @@ footer strong{
     color:#f5c400;
     font-size:22px;
 }
-
-/* =========================
-   CELULAR
-   ========================= */
 
 @media(max-width:600px){
 
@@ -525,10 +472,11 @@ alt="Boca 24/7">
 
 </header>
 
-
 <nav>
 
-<button onclick="inicio()">Inicio</button>
+<button onclick="inicio()">
+Inicio
+</button>
 
 <button onclick="irA('proximo')">
 Próximo partido
@@ -556,7 +504,6 @@ Lesiones
 
 </nav>
 
-
 <main>
 
 <div
@@ -566,11 +513,6 @@ id="actualizado">
 Cargando información...
 
 </div>
-
-
-<!-- =========================
-     PROXIMO PARTIDO
-     ========================= -->
 
 <section
 class="proximo"
@@ -611,13 +553,7 @@ Ver Copa Argentina
 
 </section>
 
-
 <section id="hero"></section>
-
-
-<!-- =========================
-     FUENTES
-     ========================= -->
 
 <section class="fuentes">
 
@@ -643,11 +579,6 @@ TyC Sports
 
 </section>
 
-
-<!-- =========================
-     NOTICIAS
-     ========================= -->
-
 <section class="seccion">
 
 <h2
@@ -670,11 +601,6 @@ Cargando noticias...
 
 </section>
 
-
-<!-- =========================
-     TODO BOCA
-     ========================= -->
-
 <section
 class="categorias"
 id="categorias">
@@ -685,11 +611,9 @@ Todo Boca
 
 <div class="categorias-grid">
 
-
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+onclick="seccion('Boca')">
 
 <div class="categoria-icono">
 ⚽
@@ -703,13 +627,12 @@ Primer equipo
 Noticias y actualidad del plantel profesional.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+onclick="seccion('La Bombonera')">
 
 <div class="categoria-icono">
 🏟️
@@ -723,13 +646,12 @@ La Bombonera
 Estadio, obras y novedades.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Básquet')">
 
 <div class="categoria-icono">
 🏀
@@ -743,13 +665,12 @@ Básquet
 Noticias y actualidad del básquet xeneize.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Futsal')">
 
 <div class="categoria-icono">
 ⚽
@@ -763,13 +684,12 @@ Futsal
 Partidos, resultados y noticias.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Reserva')">
 
 <div class="categoria-icono">
 🟦
@@ -783,13 +703,12 @@ Reserva
 La actualidad de la Reserva de Boca.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Fútbol femenino')">
 
 <div class="categoria-icono">
 👩⚽
@@ -803,13 +722,12 @@ Fútbol femenino
 Noticias de Las Gladiadoras.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+onclick="seccion('Inferiores')">
 
 <div class="categoria-icono">
 ⭐
@@ -823,13 +741,12 @@ Inferiores
 Juveniles y futuras figuras de Boca.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Vóley')">
 
 <div class="categoria-icono">
 🏐
@@ -843,13 +760,12 @@ Vóley
 Noticias del vóley xeneize.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Mercado de pases')">
 
 <div class="categoria-icono">
 🔄
@@ -863,13 +779,12 @@ Mercado de pases
 Altas, bajas y novedades.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
+onclick="seccion('Lesiones')">
 
 <div class="categoria-icono">
 🩹
@@ -883,13 +798,12 @@ Lesiones
 Partes médicos y evolución.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+onclick="seccion('Boca')">
 
 <div class="categoria-icono">
 👥
@@ -903,13 +817,12 @@ Plantel
 Jugadores y cuerpo técnico.
 </p>
 
-</a>
+</button>
 
 
-<a
+<button
 class="categoria"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+onclick="seccion('Boca')">
 
 <div class="categoria-icono">
 🏆
@@ -923,17 +836,11 @@ Historia y títulos
 La historia y las conquistas del Xeneize.
 </p>
 
-</a>
-
+</button>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     INFORMACION OFICIAL
-     ========================= -->
 
 <section class="info-boca">
 
@@ -959,11 +866,6 @@ Visitar Boca Oficial
 </a>
 
 </section>
-
-
-<!-- =========================
-     EL CANAL DE BOCA
-     ========================= -->
 
 <section class="videos-seccion">
 
@@ -1010,7 +912,6 @@ Ver canal oficial
 
 </div>
 
-
 <a
 class="canal-boton"
 href="https://www.youtube.com/@ElCanaldeBoca/videos"
@@ -1021,11 +922,6 @@ Ver todos los videos
 </a>
 
 </section>
-
-
-<!-- =========================
-     NUESTRO STREAMING
-     ========================= -->
 
 <section class="streaming">
 
@@ -1049,7 +945,6 @@ alt="Movimiento Los Bosteros de Tucumán">
 
 </main>
 
-
 <footer>
 
 <strong>
@@ -1061,7 +956,6 @@ Información Xeneize todos los días.
 </p>
 
 </footer>
-
 
 <script>
 
@@ -1325,9 +1219,11 @@ document.getElementById(
 
 mostrar(lista);
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+document.getElementById(
+"noticias"
+).scrollIntoView({
+behavior:"smooth",
+block:"start"
 });
 
 }
@@ -1452,4 +1348,4 @@ cargarNoticias,
 </script>
 
 </body>
-</html>
+    </html>
