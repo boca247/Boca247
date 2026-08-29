@@ -1,4 +1,6 @@
 import json
+import re
+import html
 import feedparser
 from datetime import datetime, timezone
 from urllib.parse import quote
@@ -57,7 +59,88 @@ CATEGORIAS = {
 }
 
 
-def obtener_noticias(busqueda, categoria):
+def limpiar_texto(texto):
+
+    if not texto:
+        return ""
+
+    # Decodificar caracteres HTML
+    texto = html.unescape(texto)
+
+    # Eliminar etiquetas HTML
+    texto = re.sub(
+        r"<[^>]+>",
+        " ",
+        texto
+    )
+
+    # Eliminar URLs
+    texto = re.sub(
+        r"https?://\S+",
+        "",
+        texto
+    )
+
+    # Eliminar espacios repetidos
+    texto = re.sub(
+        r"\s+",
+        " ",
+        texto
+    )
+
+    return texto.strip()
+
+
+def crear_resena(entrada):
+
+    # Primero intentamos con summary
+    resumen = entrada.get(
+        "summary",
+        ""
+    )
+
+    resumen = limpiar_texto(
+        resumen
+    )
+
+    # Si el resumen viene vacío,
+    # intentamos con description
+    if not resumen:
+
+        resumen = entrada.get(
+            "description",
+            ""
+        )
+
+        resumen = limpiar_texto(
+            resumen
+        )
+
+    # Si todavía no tenemos resumen,
+    # usamos un texto neutro.
+    if not resumen:
+
+        resumen = (
+            "Conocé todos los detalles "
+            "de esta noticia de Boca."
+        )
+
+    # Evitar reseñas demasiado largas
+    if len(resumen) > 300:
+
+        resumen = (
+            resumen[:300]
+            .rsplit(" ", 1)[0]
+            + "..."
+        )
+
+    return resumen
+
+
+def obtener_noticias(
+    busqueda,
+    categoria
+):
 
     url = (
         "https://news.google.com/rss/search?"
@@ -67,32 +150,35 @@ def obtener_noticias(busqueda, categoria):
         "&ceid=AR:es-419"
     )
 
-    feed = feedparser.parse(url)
+    feed = feedparser.parse(
+        url
+    )
 
     resultados = []
 
-    for entrada in feed.entries[:10]:
+    for entrada in feed.entries[:15]:
 
-        titulo = entrada.get(
-            "title",
-            ""
-        ).strip()
+        titulo = limpiar_texto(
+            entrada.get(
+                "title",
+                ""
+            )
+        )
 
         link = entrada.get(
             "link",
             ""
         ).strip()
 
-        resumen = entrada.get(
-            "summary",
-            ""
-        ).strip()
+        if not titulo:
+            continue
+
+        # Obtener fecha
+        fecha_iso = ""
 
         publicado = entrada.get(
             "published_parsed"
         )
-
-        fecha_iso = ""
 
         if publicado:
 
@@ -103,31 +189,48 @@ def obtener_noticias(busqueda, categoria):
                     tzinfo=timezone.utc
                 )
 
-                fecha_iso = fecha.isoformat()
+                fecha_iso = (
+                    fecha.isoformat()
+                )
 
             except Exception:
 
                 fecha_iso = ""
 
+        # Fuente
         fuente = ""
 
-        if hasattr(
-            entrada,
+        source = entrada.get(
             "source"
-        ):
+        )
 
-            fuente = entrada.source.get(
-                "title",
-                ""
-            )
+        if source:
+
+            try:
+
+                fuente = source.get(
+                    "title",
+                    ""
+                )
+
+            except Exception:
+
+                fuente = ""
 
         if not fuente:
 
-            fuente = "Google Noticias"
+            fuente = (
+                "Google Noticias"
+            )
 
-        if not titulo:
+        fuente = limpiar_texto(
+            fuente
+        )
 
-            continue
+        # Reseña limpia
+        contenido = crear_resena(
+            entrada
+        )
 
         resultados.append({
 
@@ -135,7 +238,7 @@ def obtener_noticias(busqueda, categoria):
 
             "fuente": fuente,
 
-            "contenido": resumen,
+            "contenido": contenido,
 
             "link": link,
 
@@ -146,28 +249,6 @@ def obtener_noticias(busqueda, categoria):
         })
 
     return resultados
-
-
-def limpiar_html(texto):
-
-    reemplazos = {
-
-        "<br>": " ",
-        "<br/>": " ",
-        "<br />": " ",
-        "<p>": " ",
-        "</p>": " "
-
-    }
-
-    for viejo, nuevo in reemplazos.items():
-
-        texto = texto.replace(
-            viejo,
-            nuevo
-        )
-
-    return texto.strip()
 
 
 todas = []
@@ -184,40 +265,41 @@ for categoria, busquedas in CATEGORIAS.items():
                 categoria
             )
 
-            for noticia in noticias:
-
-                noticia["contenido"] = limpiar_html(
-                    noticia["contenido"]
-                )
-
-                todas.append(noticia)
+            todas.extend(
+                noticias
+            )
 
         except Exception as error:
 
             print(
-                "Error en",
-                categoria,
-                ":",
-                error
+                "Error en "
+                + categoria
+                + ": "
+                + str(error)
             )
 
 
-# Eliminar noticias repetidas
-# usando el título como referencia.
+# =====================================
+# ELIMINAR NOTICIAS REPETIDAS
+# =====================================
 
 unicas = {}
 
 for noticia in todas:
 
-    clave = (
-        noticia["titulo"]
+    titulo = (
+        noticia
+        .get("titulo", "")
         .lower()
         .strip()
     )
 
-    if clave not in unicas:
+    if not titulo:
+        continue
 
-        unicas[clave] = noticia
+    if titulo not in unicas:
+
+        unicas[titulo] = noticia
 
 
 noticias_finales = list(
@@ -225,23 +307,35 @@ noticias_finales = list(
 )
 
 
-# Ordenar de más nueva a más vieja.
+# =====================================
+# ORDENAR POR FECHA
+# =====================================
 
 noticias_finales.sort(
+
     key=lambda noticia:
         noticia.get(
             "fecha_iso",
             ""
         ),
+
     reverse=True
+
 )
 
 
-# Limitar cantidad para que
-# la página no se vuelva interminable.
+# =====================================
+# MÁXIMO DE NOTICIAS
+# =====================================
 
-noticias_finales = noticias_finales[:100]
+noticias_finales = (
+    noticias_finales[:100]
+)
 
+
+# =====================================
+# GUARDAR JSON
+# =====================================
 
 with open(
     "noticias.json",
@@ -258,16 +352,41 @@ with open(
 
 
 print(
-    "Noticias actualizadas:",
-    len(noticias_finales)
+    "================================="
 )
 
 print(
-    "Categorías:",
-    sorted(
-        set(
-            noticia["categoria"]
-            for noticia in noticias_finales
-        )
+    "Noticias actualizadas: "
+    + str(
+        len(noticias_finales)
     )
+)
+
+print(
+    "================================="
+)
+
+print(
+    "Categorías encontradas:"
+)
+
+categorias_encontradas = sorted(
+    set(
+        noticia.get(
+            "categoria",
+            ""
+        )
+        for noticia in noticias_finales
+    )
+)
+
+for categoria in categorias_encontradas:
+
+    print(
+        "- "
+        + categoria
+    )
+
+print(
+    "================================="
 )
