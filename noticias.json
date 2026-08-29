@@ -1,15 +1,5 @@
 [
   {
-    "titulo": "No mereció ganar pero Boca Juniors sumó 3 (está 8vo. y sueña con la Libertadores 2027) - Urgente24",
-    "fuente": "Google Noticias",
-    "contenido": "No mereció ganar pero Boca Juniors sumó 3 (está 8vo. y sueña con la Libertadores 2027) Urgente24",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxON3M3ZVB0YjcyQy1HZlN1eG9VSzZUVXlmLWM5bGMtUklUdGgtYmNaZGc2U3M5eV9vS2hUWldEeG45TkdiX3FHTUxtSXZNS0VwaXc1OFlBMGlRWWlkMm01UXZLaGF2bkxnclRaVWIxY2ptbHVCQS11ZXJSa2t1RmFNak1JZFlLQkNYZTBacnQtVDFEUWRaUXFjckZPMV83MDRPOUlrcmwyMmZsb2lER3JMbjFOOWtKVkVyTlHSAb8BQVVfeXFMUE5mUVBSVnQ0WlZ2UWFlS0g3SlZndDVzdUtSM3NFTWV0SEVERXRVWkdpb3c3UklfcjZub2NVNHRfVVhLdHdfRGQxeEFkcGhwZXVPTGRRSDk3MTR3UzM3V0I0cmFORkVBSTMwZ2FJQWw5OHNvWS1lRTNGN09RU2oySUpwVWdDSy0tSjVZZDJqLWstc2JtR0psNlE1VHA0dFBCWE5tODhXczc4RXFHUENKMlFYY1FPTHhBOVNaSUFwajg?oc=5",
-    "fecha": "29/08/2026",
-    "hora": "07:37",
-    "fecha_iso": "2026-08-29T07:37:00-03:00",
-    "categoria": "Boca"
-  },
-  {
     "titulo": "Boca Juniors venció 1-0 a Lanús en la última jugada del partido y se metió en zona de playoffs - El Comodorense",
     "fuente": "Google Noticias",
     "contenido": "Boca Juniors venció 1-0 a Lanús en la última jugada del partido y se metió en zona de playoffs El Comodorense",
@@ -28,6 +18,16 @@
     "hora": "00:56",
     "fecha_iso": "2026-08-29T00:56:12-03:00",
     "categoria": "Lesiones"
+  },
+  {
+    "titulo": "Agónica y de película: Boca rompió una racha de más de cincuenta años en su casa - El Gráfico",
+    "fuente": "Google Noticias",
+    "contenido": "Agónica y de película: Boca rompió una racha de más de cincuenta años en su casa El Gráfico",
+    "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQX3NvR2hfOFU4NFh5ZVNteEFvTUVBS3dVemRRemw3bjdId2lmVGI5VExyTU5zd2NuVXp6QzdrMWVmS1pWSDNQM0xjVWlyMGhNYVVrVG9DUDhHMWZoTnR1OUwtc3lqWDR1S2FIbl9WazZyR3FabElKZzZvRUFoUDFrb1hFMXk5aGZXYnNlR1V5Q1Z5azJYMXpOdUFvRllyNGVzNW1KOVJVTEFlQlh1VkJlZTdldmt5U0F4U0N4TzNkeXNHTWRid1pjV3dxRWdYQkx1bE5QMTZkam5WUQ?oc=5",
+    "fecha": "29/08/2026",
+    "hora": "00:46",
+    "fecha_iso": "2026-08-29T00:46:37-03:00",
+    "categoria": "Boca"
   },
   {
     "titulo": "\"Es triste\", \"le faltó personalidad\" y “que no nos dirija más”: la bronca de Lanús por la patada de Flores - TyC Sports",
@@ -70,16 +70,6 @@
     "categoria": "La Bombonera"
   },
   {
-    "titulo": "Las cargadas a River tras la eliminación de la Copa Sudamericana - Olé",
-    "fuente": "Google Noticias",
-    "contenido": "Las cargadas a River tras la eliminación de la Copa Sudamericana Olé",
-    "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQdTc2VEplOE52d1h3bks3akV3d1lqU3FZdUJFMTY3ZUVwdGV1dDNGbk9jekczY2dZSnl4T1V1TVVyaVhQazZPcVJOdlFkWUZ4QTJpSDJTY25mdGF6QUpYZldmVXZFOVNYUmdicWhIalFJYjNIOGZ2cnZ6QmFpQ25CNXlQMEJ1UUwtT1FYanFQRWkxM1hZTW85Sk9ZZGtDWjA?oc=5",
-    "fecha": "28/08/2026",
-    "hora": "23:54",
-    "fecha_iso": "2026-08-28T23:54:37-03:00",
-    "categoria": "Sudamericana"
-  },
-  {
     "titulo": "El uno por uno del triunfo agónico de Boca contra Lanús - Olé",
     "fuente": "Google Noticias",
     "contenido": "El uno por uno del triunfo agónico de Boca contra Lanús Olé",
@@ -90,13 +80,13 @@
     "categoria": "Boca"
   },
   {
-    "titulo": "River se mete en la pelea con Boca por Francisco Álvarez - TyC Sports",
+    "titulo": "River, afuera de todo: así quedó la tabla anual tras el triunfo de Boca ante Lanús - bolavip.com",
     "fuente": "Google Noticias",
-    "contenido": "River se mete en la pelea con Boca por Francisco Álvarez TyC Sports",
-    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOVV9IQTF5c2lyRmVEcUE3bXVXc1FRTlVoaVNDYTZlT3hkQm1HVEdHS0tIRnVzcXlYWG5ITU9BSHpnZjJ4bnFLV2VwMmVuZElzVTMxTkVDY3N0THRnTFdOaXltbEFqdTNKZDdGTU5KQm1JWEtNOVRiT1RoMVF1OEIydHBIMmRhYndMeEFmUy1YQTNyejJTMXpMUkRNdzFHRU5xMzVneFRPakczaFJjQ1hyLXMxaUNsdE1ZUzBJRGJzSDFVUUJiaE03b195WQ?oc=5",
+    "contenido": "River, afuera de todo: así quedó la tabla anual tras el triunfo de Boca ante Lanús bolavip.com",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONFdrWFJCdnBEQ0pXemJfR01WTEhNZFc2YjVhejctLUZTOXkybnVYSU5XaXpYX01rOEdmejc1Z3g4a2RRdXpVWU8yTFZ1al9kRmxkUjJGQWdjS3dUZVhmZEllTkMwSzV3Yjlzd0RQczROMkpaUXh3eERUQ2xId3lvdXlPVGtOOWltbUZWVlNJbGdLZklmX1ZQeVFQMEg0cnN6eEQzVDM1clhhQmhmdk1vdjhDSi1mNkR3bTRZ0gHAAUFVX3lxTE9IdTBzMkx1ejlsSUV4MFQ3cU9kdVMyVGc4MmU0eXFaMV9LTXF3THAtQ0h5Tng0SHV6ZDh2NEVmVW9qZ2JiNHdabUxMbUUxMHlLOFZkWjlERTNiYVY3cUZvV25PZTNDcjJGNEd0ZFJhQk1RT1JZQy11ZWpXLXhGX1Q3WHdYVWE0RThDN0x2bnowS0g0SnV5OW9HYTVnajVPb3BwMHlUb0d4YXlsSkJ3TUNZRndrTmFqSG1YSURkOExoSw?oc=5",
     "fecha": "28/08/2026",
-    "hora": "22:21",
-    "fecha_iso": "2026-08-28T22:21:57-03:00",
+    "hora": "23:25",
+    "fecha_iso": "2026-08-28T23:25:50-03:00",
     "categoria": "Boca"
   },
   {
@@ -160,6 +150,16 @@
     "categoria": "Boca"
   },
   {
+    "titulo": "La nueva camiseta de Boca que sorprende a los hinchas: qué historia hay detrás del diseño - La Gaceta",
+    "fuente": "Google Noticias",
+    "contenido": "La nueva camiseta de Boca que sorprende a los hinchas: qué historia hay detrás del diseño La Gaceta",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQaXJfenBGUlZWbnE1Ymc0UW5yZ2JTTWlfSkV0WWVfMk4zWWQxamZSSnVpMFNsMDQ3RG9MVk1OTnZvVzhMUW9yRXpaNTZnU3pxc3Y0YzQtSHZnYUo5S1VaZXBCcHY4aTk1aWF5VUVIQU8yQ0hpQXdhczRlb01raUNSX3AzRFpnMi1uMEhGLWVPb2tmWjV0Ni1Wc0d1SG8tUTVuMEtqRlJ6QkhvdlNJMERScmVRaGh2SzVYc1c00gHAAUFVX3lxTE1UU0xXLWNUdWhxekVSMTZ2NkJmMkVkRDRWWTg5dF9wMmtIa2dyb2hxeUVpdTRCWWhhem9mc25lNzl1ZFU0WG5keG9QTUwyTHMtUTRwYVRIWTZEMDd0MzlOcGp5QW1mcXJRMnZ4cndySzhHQWVXMG5GXzdlcTRFRGlieGd5d1pzTEthc2ZoeE9Vd0dhUXRWUm9aTnBVV295b3pfcVBIMTZwUFFhbFNJdzdtWVBEQ2ZtZzIwOHItMllBNA?oc=5",
+    "fecha": "28/08/2026",
+    "hora": "11:06",
+    "fecha_iso": "2026-08-28T11:06:06-03:00",
+    "categoria": "Boca"
+  },
+  {
     "titulo": "Ya tiene el alta: Tomás Aranda dejó la clínica después de la operación y Boca respira - Olé",
     "fuente": "Google Noticias",
     "contenido": "Ya tiene el alta: Tomás Aranda dejó la clínica después de la operación y Boca respira Olé",
@@ -178,16 +178,6 @@
     "hora": "10:28",
     "fecha_iso": "2026-08-28T10:28:01-03:00",
     "categoria": "Boca"
-  },
-  {
-    "titulo": "En la Bombonera y con un lazo histórico, se presentó la nueva camiseta alternativa de Boca - Olé",
-    "fuente": "Google Noticias",
-    "contenido": "En la Bombonera y con un lazo histórico, se presentó la nueva camiseta alternativa de Boca Olé",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOLTV1X3hsaGVNMjB5V3FzblpSZDRkNm5TNFBZaWw3WGI4R1dPenR6dFJfWGdwOW56Y1hYcmlaejdaNU82M2dYTDAyakVpQXVUX2c2SUJ6Wmh4dGczVVNxZ0w5T1BwS0c1U3JwREFLaU9nUmpCM1FiM1VNN3ROdzJOMi1OemxGbkpJVkpNVDNsdnBhWGJ4LVV4RkE4V2N3UXYyR1HSAacBQVVfeXFMTVhMcUN3YlVxSkc3VERBTTlPbk1VY3V2WnVaeG1vd0o3aUlNNy1uVE5aam1YRnhKRE5RWnVZTkJDcGRtNG51ZFNEQWg3RUxHYnFzN01MWDVaaTktOU5vOEtIek14OUNxRFYyb2R6eFBUZkdCaU9KN2VIb3FpNS0zUFk0ZjJHblB6OHYtZXExMEtDVGN0d1JfLW5PODZIdkRuTEVKNzlob2M?oc=5",
-    "fecha": "28/08/2026",
-    "hora": "09:39",
-    "fecha_iso": "2026-08-28T09:39:43-03:00",
-    "categoria": "La Bombonera"
   },
   {
     "titulo": "Boca confirmó que Tomás Aranda fue operado con éxito tras su fractura en el peroné - Cadena 3 Argentina",
@@ -248,5 +238,15 @@
     "hora": "20:21",
     "fecha_iso": "2026-08-27T20:21:00-03:00",
     "categoria": "Boca"
+  },
+  {
+    "titulo": "La cargada imperceptible de Boca a River por la eliminación de la Copa Sudamericana - TyC Sports",
+    "fuente": "Google Noticias",
+    "contenido": "La cargada imperceptible de Boca a River por la eliminación de la Copa Sudamericana TyC Sports",
+    "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNQ2ZwMS1Yb1VvNEFKTjJkeC0xUDhSbDJPTGp0TldsY185Zk9xTVlBTVZSMTcxZ29Ya0dTcDluVVhZWW1uN2lCNmhKSms4dGFUeHVNeVp3Zl94S084aW9lTmJsVVRZZzc0MmV0NkM5WWZ2cW5vUTVkLUNMZUNpMUtrRFhHZEc0cmJMVHMxWFhsUGFMQ0Mwc2s1NkNjalFoQlZUa3FVRmRIemxGUnVmdjlHcXpDMGdvVVNmSDNCQk4wVk9LVUJlQzQ1a2F4UDZac0E2THc?oc=5",
+    "fecha": "27/08/2026",
+    "hora": "17:38",
+    "fecha_iso": "2026-08-27T17:38:49-03:00",
+    "categoria": "Sudamericana"
   }
 ]
