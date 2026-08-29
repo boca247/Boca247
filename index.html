@@ -1,7 +1,12 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BOCA 24/7 | Todo Boca. Todo el día.</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
+
+<style>
 *{
   box-sizing:border-box;
   margin:0;
@@ -91,6 +96,15 @@ main{
   color:#666;
   margin-bottom:20px;
   box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.estado-carga{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  color:#555;
+  margin-bottom:20px;
 }
 
 .ultima{
@@ -211,6 +225,29 @@ main{
   text-decoration:none;
   font-weight:bold;
   font-size:13px;
+}
+
+.filtro{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+
+.filtro button{
+  border:0;
+  background:#fff;
+  color:#00245f;
+  padding:9px 14px;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 2px 7px rgba(0,0,0,.08);
+}
+
+.filtro button.activo{
+  background:#064aa8;
+  color:white;
 }
 
 .streaming{
@@ -527,6 +564,14 @@ footer strong{
   color:#f5c400;
 }
 
+.sin-noticias{
+  background:white;
+  padding:30px;
+  text-align:center;
+  border-radius:15px;
+  color:#666;
+}
+
 @media(max-width:850px){
 
   .noticias-grid{
@@ -584,10 +629,17 @@ footer strong{
     grid-template-columns:repeat(2,1fr);
   }
 }
-</style></head><body><header>
+</style>
+</head>
+
+<body>
+
+<header>
   <div class="logo">BOCA 24/7</div>
   <div class="slogan">Todo Boca. Todo el día.</div>
-</header><nav>
+</header>
+
+<nav>
   <a href="#inicio">INICIO</a>
   <a href="#noticias">NOTICIAS</a>
   <a href="#partidos">PARTIDOS</a>
@@ -595,166 +647,180 @@ footer strong{
   <a href="#streaming">STREAMING</a>
   <a href="#mundo">BOCA</a>
   <a href="#videos">VIDEOS</a>
-</nav><main id="inicio"><div class="actualizado">
-  🟢 BOCA 24/7 · Noticias cargadas · 29 de agosto de 2026
-</div><section class="bloque" id="noticias"><h2 class="titulo">🚨 ÚLTIMA HORA</h2><div class="ultima"><div class="ultima-principal"><div class="ultima-label">
-  🔴 ÚLTIMA HORA · BOCA
-</div><h2>
-  La impactante exigencia del Vasco a Riquelme sobre el cierre del Mercado de Pases
-</h2><p>
-  Las últimas novedades del mercado de pases de Boca Juniors, con refuerzos, negociaciones, altas y bajas.
-</p><a class="boton"
-href="https://news.google.com/"
-target="_blank"
-rel="noopener noreferrer">
-LEER NOTICIA
-</a>
+</nav>
 
-</div><div class="ultima-lista"><div class="mini-noticia">
-<strong>El Intransigente</strong>
-<h3>Mercado de Pases: Boca contraofertó por Kevin Zenón y Atlas define</h3>
-<a href="https://news.google.com/" target="_blank" rel="noopener noreferrer">Leer →</a>
-</div><div class="mini-noticia">
-<strong>Olé</strong>
-<h3>La emoción de Jagger Herrera por su debut en la Bombonera: “Estadio único”</h3>
-<a href="https://news.google.com/" target="_blank" rel="noopener noreferrer">Leer →</a>
-</div><div class="mini-noticia">
-<strong>TN</strong>
-<h3>Uno de los borrados en Boca fue presentado como nuevo refuerzo de Racing</h3>
-<a href="https://news.google.com/" target="_blank" rel="noopener noreferrer">Leer →</a>
-</div><div class="mini-noticia">
-<strong>TyC Sports</strong>
-<h3>Las declaraciones de Leandro Paredes luego de la agónica victoria de Boca ante Lanús</h3>
-<a href="https://news.google.com/" target="_blank" rel="noopener noreferrer">Leer →</a>
-</div></div>
+<main id="inicio">
+
+<div class="actualizado" id="estadoNoticias">
+  🟡 Cargando noticias de BOCA 24/7...
 </div>
-</section><section class="bloque"><h2 class="titulo">📰 TODAS LAS NOTICIAS</h2><div class="noticias-grid"><article class="card">
-<div class="card-fuente">El Intransigente · Mercado de pases</div>
-<h3>La impactante exigencia del Vasco a Riquelme sobre el cierre del Mercado de Pases</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.
+
+<section class="bloque" id="noticias">
+
+<h2 class="titulo">🚨 ÚLTIMA HORA</h2>
+
+<div id="ultimaHora">
+  <div class="estado-carga">
+    Cargando última hora...
+  </div>
 </div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">El Intransigente · Mercado de pases</div>
-<h3>Mercado de Pases: Boca contraofertó por Kevin Zenón y Atlas define</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Las últimas novedades de la negociación y la situación de Kevin Zenón.
+
+</section>
+
+
+<section class="bloque">
+
+<h2 class="titulo">📰 TODAS LAS NOTICIAS</h2>
+
+<div class="filtro" id="filtros">
+  <button class="activo" data-categoria="Todas">TODAS</button>
 </div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">Olé · La Bombonera</div>
-<h3>La emoción de Jagger Herrera por su debut en la Bombonera: “Estadio único”</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Toda la actualidad de La Bombonera y sus protagonistas.
+
+<div id="listaNoticias" class="noticias-grid">
+  <div class="estado-carga">
+    Cargando noticias...
+  </div>
 </div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">TN · Boca</div>
-<h3>Uno de los borrados en Boca fue presentado como nuevo refuerzo de Racing</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Todas las novedades del plantel y la actualidad del mundo Xeneize.
+
+</section>
+
+
+<section class="bloque" id="partidos">
+
+<h2 class="titulo">⚽ PRÓXIMO PARTIDO</h2>
+
+<div class="partido">
+
+<div class="partido-label">
+  AGENDA XENEIZE
 </div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">TyC Sports · Boca</div>
-<h3>Las declaraciones de Leandro Paredes luego de la agónica victoria de Boca ante Lanús</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Las palabras de Leandro Paredes después del triunfo de Boca ante Lanús.
+
+<h2>Boca Juniors</h2>
+
+<div class="equipos">
+  BOCA 🆚 LANÚS
 </div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">Olé · Inferiores</div>
-<h3>Marcelo Cañete, de juvenil de Boca a rival por primera vez a los 36</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-La historia de un exjuvenil de Boca que vuelve a enfrentar al Xeneize.
-</div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">TyC Sports · Boca</div>
-<h3>El sincericidio de Paredes sobre su físico y qué dijo sobre el intento de Milan de ficharlo</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Las declaraciones del mediocampista de Boca y sus palabras sobre el interés del Milan.
-</div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">Planeta Boca Juniors · Sudamericana</div>
-<h3>Seis partidos en 20 días: la apretada agenda de Boca en septiembre</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Toda la información sobre la agenda de Boca Juniors y sus próximos compromisos.
-</div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">Planeta Boca Juniors · Mercado de pases</div>
-<h3>Llegó una oferta por Kevin Zenón: qué club está interesado y cuál es la postura de Boca</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Las últimas novedades de la negociación por Kevin Zenón.
-</div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article><article class="card">
-<div class="card-fuente">0223 · Boca</div>
-<h3>River se lo quiere robar a Boca: el defensor que ya está en la mira de los dos gigantes</h3>
-<div class="fecha">29/08/2026</div>
-<div class="resumen">
-Un defensor aparece en el radar de ambos grandes del fútbol argentino.
-</div>
-<a class="leer" target="_blank" rel="noopener noreferrer" href="https://news.google.com/">Leer noticia</a>
-</article></div>
-</section><section class="bloque" id="partidos"><h2 class="titulo">⚽ PRÓXIMO PARTIDO</h2><div class="partido"><div class="partido-label">AGENDA XENEIZE</div><h2>Boca Juniors</h2><div class="equipos">
-BOCA 🆚 LANÚS
-</div><div class="datos-partido">
+
+<div class="datos-partido">
 <strong>Competencia:</strong> Fútbol Argentino<br>
 <strong>Fecha:</strong> Próximo compromiso<br>
 <strong>Estadio:</strong> La Bombonera
-</div></div>
-</section><section class="bloque" id="mercado"><h2 class="titulo">🔄 MERCADO DE PASES</h2><div class="mercado-grid"><div class="estado llego">
-<h3>🟢 REFUERZOS</h3><div class="jugador">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque" id="mercado">
+
+<h2 class="titulo">🔄 MERCADO DE PASES</h2>
+
+<div class="mercado-grid">
+
+<div class="estado llego">
+<h3>🟢 REFUERZOS</h3>
+
+<div class="jugador">
 <strong>Altas de Boca</strong><br>
 Seguimos las incorporaciones confirmadas.
-</div><div class="jugador">
+</div>
+
+<div class="jugador">
 <strong>Mercado Xeneize</strong><br>
 Todas las novedades del plantel.
 </div>
-</div><div class="estado negociando">
-<h3>🟡 NEGOCIACIONES</h3><div class="jugador">
+
+</div>
+
+
+<div class="estado negociando">
+
+<h3>🟡 NEGOCIACIONES</h3>
+
+<div class="jugador">
 <strong>Kevin Zenón</strong><br>
 Boca analiza ofertas y mantiene conversaciones.
-</div><div class="jugador">
+</div>
+
+<div class="jugador">
 <strong>Mercado de pases</strong><br>
 Negociaciones abiertas y posibles movimientos.
 </div>
-</div><div class="estado alejo">
-<h3>🔴 SALIDAS</h3><div class="jugador">
+
+</div>
+
+
+<div class="estado alejo">
+
+<h3>🔴 SALIDAS</h3>
+
+<div class="jugador">
 <strong>Jugadores en evaluación</strong><br>
 Altas, bajas y préstamos.
-</div><div class="jugador">
+</div>
+
+<div class="jugador">
 <strong>Últimas novedades</strong><br>
 Información del mercado Xeneize.
 </div>
-</div></div>
-</section><section class="bloque"><div class="norte"><h2>💙💛 BOCA EN EL NORTE</h2><p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque">
+
+<div class="norte">
+
+<h2>💙💛 BOCA EN EL NORTE</h2>
+
+<p>
 Toda la pasión Xeneize también se vive en el norte argentino.
 Noticias, hinchas, actividades y actualidad de Boca en nuestra región.
-</p><div class="provincias">
+</p>
+
+<div class="provincias">
+
 <div class="provincia">Tucumán</div>
 <div class="provincia">Salta</div>
 <div class="provincia">Jujuy</div>
 <div class="provincia">Santiago del Estero</div>
 <div class="provincia">Catamarca</div>
 <div class="provincia">La Rioja</div>
-</div></div>
-</section><section class="bloque" id="streaming"><h2 class="titulo">📺 STREAMING</h2><div class="streaming"><div class="streaming-imagen"><div class="streaming-contenido"><div class="en-vivo">🔴 EN VIVO</div><h2>BOCA 24/7</h2><p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque" id="streaming">
+
+<h2 class="titulo">📺 STREAMING</h2>
+
+<div class="streaming">
+
+<div class="streaming-imagen">
+
+<div class="streaming-contenido">
+
+<div class="en-vivo">
+🔴 EN VIVO
+</div>
+
+<h2>BOCA 24/7</h2>
+
+<p>
 Información, análisis y toda la actualidad del mundo Boca.
-</p><a class="stream-boton"
+</p>
+
+<a
+class="stream-boton"
 href="https://www.youtube.com/"
 target="_blank"
 rel="noopener noreferrer">
@@ -762,94 +828,495 @@ VER STREAMING
 </a>
 
 </div>
-</div><div class="streaming-info"><div class="stream-card">
+
+</div>
+
+
+<div class="streaming-info">
+
+<div class="stream-card">
+
 <h3>🎙️ INFORMACIÓN</h3>
+
 <p>
 Noticias y novedades del Xeneize durante todo el día.
 </p>
-</div><div class="stream-card">
+
+</div>
+
+
+<div class="stream-card">
+
 <h3>⚽ ANÁLISIS</h3>
+
 <p>
 Partidos, mercado de pases y actualidad del plantel.
 </p>
-</div></div></div>
-</section><section class="bloque" id="mundo"><h2 class="titulo">🌎 MUNDO BOCA</h2><div class="mundo-grid"><a class="mundo" href="#noticias">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque" id="mundo">
+
+<h2 class="titulo">🌎 MUNDO BOCA</h2>
+
+<div class="mundo-grid">
+
+<a class="mundo" href="#noticias">
 <span>📰</span>
 <strong>Noticias</strong>
-</a><a class="mundo" href="#partidos">
+</a>
+
+<a class="mundo" href="#partidos">
 <span>⚽</span>
 <strong>Partidos</strong>
-</a><a class="mundo" href="#mercado">
+</a>
+
+<a class="mundo" href="#mercado">
 <span>🔄</span>
 <strong>Mercado</strong>
-</a><a class="mundo" href="#videos">
+</a>
+
+<a class="mundo" href="#videos">
 <span>🎥</span>
 <strong>Videos</strong>
-</a></div>
-</section><section class="bloque"><h2 class="titulo">📅 AGENDA XENEIZE</h2><div class="agenda"><div class="evento">
+</a>
+
+</div>
+
+</section>
+
+
+<section class="bloque">
+
+<h2 class="titulo">📅 AGENDA XENEIZE</h2>
+
+<div class="agenda">
+
+<div class="evento">
 <strong>⚽ Boca Juniors</strong><br>
 Próximos partidos y compromisos oficiales.
-</div><div class="evento">
+</div>
+
+<div class="evento">
 <strong>🏆 Copa Sudamericana</strong><br>
 Toda la información de Boca en la competencia internacional.
-</div><div class="evento">
+</div>
+
+<div class="evento">
 <strong>🏟️ La Bombonera</strong><br>
 Noticias, novedades y actualidad del templo Xeneize.
-</div></div>
-</section><section class="bloque"><h2 class="titulo">📖 HISTORIA DE BOCA</h2><div class="historia"><h2>Club Atlético Boca Juniors</h2><p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque">
+
+<h2 class="titulo">📖 HISTORIA DE BOCA</h2>
+
+<div class="historia">
+
+<h2>Club Atlético Boca Juniors</h2>
+
+<p>
 El Club Atlético Boca Juniors es uno de los clubes más importantes y populares de la Argentina.
 Fundado el 3 de abril de 1905 en el barrio de La Boca, construyó una historia marcada por grandes
 jugadores, títulos nacionales e internacionales y una enorme identidad Xeneize.
-</p></div>
-</section><section class="bloque"><div class="hoy"><h2>📆 UN DÍA COMO HOY</h2><p>
+</p>
+
+</div>
+
+</section>
+
+
+<section class="bloque">
+
+<div class="hoy">
+
+<h2>📆 UN DÍA COMO HOY</h2>
+
+<p>
 BOCA 24/7 te acerca diariamente las principales noticias, historias y acontecimientos relacionados
 con el mundo Xeneize.
-</p></div>
-</section><section class="bloque" id="videos"><h2 class="titulo">🎥 VIDEOS</h2><div class="videos-grid"><div class="video"><iframe
+</p>
+
+</div>
+
+</section>
+
+
+<section class="bloque" id="videos">
+
+<h2 class="titulo">🎥 VIDEOS</h2>
+
+<div class="videos-grid">
+
+<div class="video">
+
+<iframe
 src="https://www.youtube.com/embed/4ybOs3IFAqI"
 title="BOCA 24/7"
 allowfullscreen>
-</iframe><h3>Últimas novedades de Boca Juniors</h3></div><div class="video"><iframe
+</iframe>
+
+<h3>
+Últimas novedades de Boca Juniors
+</h3>
+
+</div>
+
+
+<div class="video">
+
+<iframe
 src="https://www.youtube.com/embed/videoseries?list=PL"
 title="Videos de Boca"
 allowfullscreen>
-</iframe><h3>Videos y actualidad Xeneize</h3></div></div>
-</section><section class="bloque"><div class="seguinos"><h2>📲 SEGUINOS</h2><p>
+</iframe>
+
+<h3>
+Videos y actualidad Xeneize
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="bloque">
+
+<div class="seguinos">
+
+<h2>📲 SEGUINOS</h2>
+
+<p>
 Toda la información de Boca, todos los días.
-</p><div class="redes"><a class="red"
+</p>
+
+<div class="redes">
+
+<a
+class="red"
 href="https://www.instagram.com/"
 target="_blank"
 rel="noopener noreferrer">
 Instagram
 </a>
 
-<a class="red"
+<a
+class="red"
 href="https://www.facebook.com/"
 target="_blank"
 rel="noopener noreferrer">
 Facebook
 </a>
 
-<a class="red"
+<a
+class="red"
 href="https://www.youtube.com/"
 target="_blank"
 rel="noopener noreferrer">
 YouTube
 </a>
 
-<a class="red"
+<a
+class="red"
 href="https://www.tiktok.com/"
 target="_blank"
 rel="noopener noreferrer">
 TikTok
 </a>
 
-</div></div>
-</section></main><footer><strong>BOCA 24/7</strong>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<strong>BOCA 24/7</strong>
 
 <p>
 Todo Boca. Todo el día.
-</p><p>
+</p>
+
+<p>
 © 2026 BOCA 24/7
-</p></footer></body>
-   </html>
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   BOCA 24/7
+   SISTEMA AUTOMÁTICO DE NOTICIAS
+   Lee noticias.js
+   ========================================================= */
+
+let noticias = [];
+let categoriaActual = "Todas";
+
+
+/* ---------------------------------------------------------
+   ESCAPA TEXTO PARA EVITAR PROBLEMAS EN HTML
+--------------------------------------------------------- */
+
+function escapar(texto){
+
+  if(texto === null || texto === undefined){
+    return "";
+  }
+
+  return String(texto)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* ---------------------------------------------------------
+   FECHA
+--------------------------------------------------------- */
+
+function fechaBonita(fecha){
+
+  if(!fecha){
+    return "";
+  }
+
+  const d = new Date(fecha);
+
+  if(isNaN(d.getTime())){
+    return fecha;
+  }
+
+  return d.toLocaleString("es-AR",{
+    day:"2-digit",
+    month:"2-digit",
+    year:"numeric",
+    hour:"2-digit",
+    minute:"2-digit"
+  });
+
+}
+
+
+/* ---------------------------------------------------------
+   CARGAR NOTICIAS.JS
+--------------------------------------------------------- */
+
+async function cargarNoticias(){
+
+  const estado =
+    document.getElementById("estadoNoticias");
+
+  try{
+
+    const respuesta = await fetch("noticias.js?nocache=" + Date.now());
+
+    if(!respuesta.ok){
+      throw new Error("No se pudo abrir noticias.js");
+    }
+
+    const texto = await respuesta.text();
+
+    let datos;
+
+    /*
+      Tu archivo noticias.js contiene directamente un array JSON.
+      Por eso primero intentamos JSON.parse().
+    */
+
+    try{
+
+      datos = JSON.parse(texto);
+
+    }catch(error){
+
+      /*
+        Compatibilidad por si noticias.js está como:
+        const noticias = [...]
+        o
+        let noticias = [...]
+        o
+        var noticias = [...]
+      */
+
+      const inicio = texto.indexOf("[");
+
+      const fin = texto.lastIndexOf("]");
+
+      if(inicio !== -1 && fin !== -1){
+
+        const contenidoArray =
+          texto.substring(inicio,fin + 1);
+
+        datos = JSON.parse(contenidoArray);
+
+      }else{
+
+        throw new Error(
+          "El archivo noticias.js no contiene un array válido."
+        );
+
+      }
+
+    }
+
+
+    if(!Array.isArray(datos)){
+
+      throw new Error(
+        "noticias.js no contiene una lista de noticias."
+      );
+
+    }
+
+
+    noticias = datos
+      .filter(n => n && n.titulo)
+      .sort((a,b)=>{
+
+        const fechaA =
+          new Date(a.fecha_iso || 0).getTime();
+
+        const fechaB =
+          new Date(b.fecha_iso || 0).getTime();
+
+        return fechaB - fechaA;
+
+      });
+
+
+    estado.innerHTML =
+      "🟢 BOCA 24/7 · " +
+      noticias.length +
+      " noticias cargadas · " +
+      new Date().toLocaleDateString("es-AR");
+
+
+    crearFiltros();
+
+    mostrarUltimaHora();
+
+    mostrarNoticias();
+
+
+  }catch(error){
+
+    console.error(error);
+
+    estado.innerHTML =
+      "🔴 Error al cargar las noticias";
+
+    document.getElementById("ultimaHora").innerHTML = `
+      <div class="sin-noticias">
+        <strong>No se pudieron cargar las noticias.</strong>
+        <br><br>
+        Verificá que <strong>noticias.js</strong> esté en la misma carpeta que este HTML.
+      </div>
+    `;
+
+    document.getElementById("listaNoticias").innerHTML = `
+      <div class="sin-noticias">
+        No se pudieron cargar las noticias.
+      </div>
+    `;
+
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   FILTROS
+--------------------------------------------------------- */
+
+function crearFiltros(){
+
+  const contenedor =
+    document.getElementById("filtros");
+
+  const categorias = [
+    "Todas",
+    ...new Set(
+      noticias
+        .map(n => n.categoria)
+        .filter(Boolean)
+    )
+  ];
+
+  contenedor.innerHTML = "";
+
+  categorias.forEach(categoria => {
+
+    const boton =
+      document.createElement("button");
+
+    boton.textContent =
+      categoria;
+
+    boton.dataset.categoria =
+      categoria;
+
+    if(categoria === "Todas"){
+      boton.classList.add("activo");
+    }
+
+    boton.addEventListener("click",()=>{
+
+      categoriaActual =
+        categoria;
+
+      document
+        .querySelectorAll("#filtros button")
+        .forEach(b=>{
+          b.classList.remove("activo");
+        });
+
+      boton.classList.add("activo");
+
+      mostrarNoticias();
+
+    });
+
+    contenedor.appendChild(boton);
+
+  });
+
+}
+
+
+/* ---------------------------------------------------------
+   ÚLTIMA HORA
+--------------------------------------------------------- */
+
+function mostrarUltimaHora(){
+
+  const contenedor =
+    document.getElementById("ultimaHora");
+
+  if(!noticias.length){
+
+    contenedor.innerHTML =
+      `<div class="sin-noticia
