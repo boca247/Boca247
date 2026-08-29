@@ -26,13 +26,11 @@ body{
 }
 
 /* =========================
-   IMAGEN PRINCIPAL
+   ENCABEZADO
    ========================= */
 
 header{
     width:100%;
-    margin:0;
-    padding:0;
     background:#000;
     border-bottom:5px solid #f5c400;
 }
@@ -70,10 +68,6 @@ nav button{
     cursor:pointer;
 }
 
-nav button:hover{
-    background:#f5c400;
-}
-
 /* =========================
    CONTENIDO
    ========================= */
@@ -96,7 +90,55 @@ main{
 }
 
 /* =========================
-   NOTICIA DESTACADA
+   PROXIMO PARTIDO
+   ========================= */
+
+.proximo{
+    background:linear-gradient(135deg,#00245f,#0756b8);
+    color:white;
+    border-radius:18px;
+    padding:25px 18px;
+    margin-bottom:30px;
+    text-align:center;
+    border-bottom:6px solid #f5c400;
+}
+
+.proximo-label{
+    color:#f5c400;
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.proximo h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.proximo-vs{
+    font-size:25px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.proximo-info{
+    line-height:1.7;
+    font-size:16px;
+}
+
+.proximo-boton{
+    display:inline-block;
+    margin-top:18px;
+    background:#f5c400;
+    color:#00245f;
+    padding:11px 18px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* =========================
+   HERO
    ========================= */
 
 .hero{
@@ -155,12 +197,8 @@ main{
 }
 
 /* =========================
-   NOTICIAS
+   TITULOS
    ========================= */
-
-.seccion{
-    margin-bottom:35px;
-}
 
 .seccion-titulo{
     color:#00245f;
@@ -168,6 +206,14 @@ main{
     border-left:7px solid #f5c400;
     padding-left:12px;
     margin-bottom:17px;
+}
+
+/* =========================
+   NOTICIAS
+   ========================= */
+
+.seccion{
+    margin-bottom:35px;
 }
 
 .grid{
@@ -218,17 +264,91 @@ main{
     font-weight:bold;
 }
 
-.leer:hover{
-    background:#f5c400;
-    color:#00245f;
-}
-
 .vacio{
     background:white;
     border-radius:12px;
     padding:25px;
     text-align:center;
     color:#666;
+}
+
+/* =========================
+   CATEGORIAS
+   ========================= */
+
+.categorias{
+    margin:45px 0;
+}
+
+.categorias-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+.categoria{
+    background:white;
+    border-radius:15px;
+    padding:22px 15px;
+    text-align:center;
+    text-decoration:none;
+    color:#00245f;
+    border-top:5px solid #064aa8;
+    box-shadow:0 3px 12px rgba(0,0,0,.09);
+    transition:.2s;
+}
+
+.categoria:hover{
+    transform:translateY(-3px);
+    border-top-color:#f5c400;
+}
+
+.categoria-icono{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.categoria h3{
+    font-size:19px;
+    margin-bottom:6px;
+}
+
+.categoria p{
+    color:#666;
+    font-size:14px;
+    line-height:1.4;
+}
+
+/* =========================
+   INFO BOCA
+   ========================= */
+
+.info-boca{
+    background:#00245f;
+    color:white;
+    border-radius:18px;
+    padding:25px 18px;
+    margin:40px 0;
+}
+
+.info-boca h2{
+    color:#f5c400;
+    margin-bottom:15px;
+}
+
+.info-boca p{
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.info-boton{
+    display:inline-block;
+    background:#f5c400;
+    color:#00245f;
+    padding:10px 15px;
+    border-radius:9px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* =========================
@@ -290,7 +410,6 @@ main{
 .video-info h3{
     color:#00245f;
     font-size:18px;
-    line-height:1.3;
 }
 
 .video-boton{
@@ -302,11 +421,6 @@ main{
     padding:9px 13px;
     border-radius:8px;
     font-weight:bold;
-}
-
-.video-boton:hover{
-    background:#f5c400;
-    color:#00245f;
 }
 
 .canal-boton{
@@ -338,22 +452,21 @@ main{
     margin-bottom:18px;
 }
 
+.streaming-enlace{
+    display:block;
+    width:100%;
+}
+
 .streaming-placa{
     width:100%;
-    display:block;
     height:auto;
+    display:block;
     border-radius:16px;
     box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-.streaming-enlace{
-    display:block;
-    width:100%;
-    text-decoration:none;
-}
-
 /* =========================
-   PIE
+   FOOTER
    ========================= */
 
 footer{
@@ -375,11 +488,6 @@ footer strong{
 
 @media(max-width:600px){
 
-    header img{
-        width:100%;
-        height:auto;
-    }
-
     .hero h2{
         font-size:23px;
     }
@@ -390,13 +498,16 @@ footer strong{
         font-size:21px;
     }
 
-    .videos-grid{
-        grid-template-columns:1fr;
+    .proximo h2{
+        font-size:24px;
     }
 
-    .streaming-placa{
-        width:100%;
-        border-radius:12px;
+    .proximo-vs{
+        font-size:21px;
+    }
+
+    .categorias-grid{
+        grid-template-columns:1fr 1fr;
     }
 
 }
@@ -408,217 +519,546 @@ footer strong{
 
 <header>
 
-    <img
-        src="IMG-20260829-WA0001.jpg"
-        alt="Boca 24/7"
-    >
+<img
+src="IMG-20260829-WA0001.jpg"
+alt="Boca 24/7">
 
 </header>
 
+
 <nav>
 
-    <button onclick="inicio()">Inicio</button>
+<button onclick="inicio()">Inicio</button>
 
-    <button onclick="seccion('Boca')">
-        Boca
-    </button>
+<button onclick="irA('proximo')">
+Próximo partido
+</button>
 
-    <button onclick="seccion('Sudamericana')">
-        Sudamericana
-    </button>
+<button onclick="irA('categorias')">
+Todo Boca
+</button>
 
-    <button onclick="seccion('Mercado de pases')">
-        Mercado de pases
-    </button>
+<button onclick="seccion('Boca')">
+Boca
+</button>
 
-    <button onclick="seccion('Lesiones')">
-        Lesiones
-    </button>
+<button onclick="seccion('Sudamericana')">
+Sudamericana
+</button>
 
-    <button onclick="seccion('Básquet')">
-        Básquet
-    </button>
+<button onclick="seccion('Mercado de pases')">
+Mercado de pases
+</button>
 
-    <button onclick="seccion('Futsal')">
-        Futsal
-    </button>
-
-    <button onclick="seccion('Fútbol femenino')">
-        Fútbol femenino
-    </button>
-
-    <button onclick="seccion('Reserva')">
-        Reserva
-    </button>
-
-    <button onclick="seccion('Inferiores')">
-        Inferiores
-    </button>
-
-    <button onclick="seccion('La Bombonera')">
-        La Bombonera
-    </button>
+<button onclick="seccion('Lesiones')">
+Lesiones
+</button>
 
 </nav>
 
+
 <main>
 
-    <div
-        class="actualizado"
-        id="actualizado">
+<div
+class="actualizado"
+id="actualizado">
 
-        Cargando información...
+Cargando información...
 
-    </div>
-
-    <section id="hero"></section>
-
-    <section class="fuentes">
-
-        <h2>
-            Fuentes de información
-        </h2>
-
-        <div class="fuentes-lista">
-
-            <span class="fuente">
-                Boca Juniors Oficial
-            </span>
-
-            <span class="fuente">
-                El Canal de Boca
-            </span>
-
-            <span class="fuente">
-                TyC Sports
-            </span>
-
-        </div>
-
-    </section>
-
-    <section class="seccion">
-
-        <h2
-            class="seccion-titulo"
-            id="titulo">
-
-            Últimas noticias
-
-        </h2>
-
-        <div
-            id="noticias"
-            class="grid">
-
-            <div class="vacio">
-                Cargando noticias...
-            </div>
-
-        </div>
-
-    </section>
+</div>
 
 
-    <!-- =========================
-         EL CANAL DE BOCA
-         ========================= -->
+<!-- =========================
+     PROXIMO PARTIDO
+     ========================= -->
 
-    <section class="videos-seccion">
+<section
+class="proximo"
+id="proximo">
 
-        <h2 class="videos-titulo">
-            El Canal de Boca
-        </h2>
+<div class="proximo-label">
+PRÓXIMO PARTIDO
+</div>
 
-        <p class="videos-subtitulo">
-            Videos oficiales de Boca Juniors.
-        </p>
+<h2>
+Copa Argentina
+</h2>
 
-        <div class="videos-grid">
+<div class="proximo-vs">
+VÉLEZ 🆚 BOCA
+</div>
 
-            <article class="video-card">
+<div class="proximo-info">
 
-                <div class="video">
+📅 Miércoles 2 de septiembre de 2026<br>
 
-                    <iframe
-                        src="https://www.youtube.com/embed/4ybOs3IFAqI"
-                        title="El Canal de Boca"
-                        allowfullscreen>
-                    </iframe>
+🕘 21:15 hs<br>
 
-                </div>
+🏟️ Estadio Mario Alberto Kempes<br>
 
-                <div class="video-info">
+🏆 Octavos de final
 
-                    <h3>
-                        Contenido de El Canal de Boca
-                    </h3>
+</div>
 
-                    <a
-                        class="video-boton"
-                        href="https://www.youtube.com/@ElCanaldeBoca/videos"
-                        target="_blank"
-                        rel="noopener noreferrer">
+<a
+class="proximo-boton"
+href="https://www.copaargentina.org/"
+target="_blank">
 
-                        Ver canal oficial
+Ver Copa Argentina
 
-                    </a>
+</a>
 
-                </div>
-
-            </article>
-
-        </div>
-
-        <a
-            class="canal-boton"
-            href="https://www.youtube.com/@ElCanaldeBoca/videos"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            Ver todos los videos
-
-        </a>
-
-    </section>
+</section>
 
 
-    <!-- =========================
-         NUESTRO STREAMING
-         ========================= -->
+<section id="hero"></section>
 
-    <section class="streaming">
 
-        <h2 class="streaming-titulo">
-            Nuestro streaming
-        </h2>
+<!-- =========================
+     FUENTES
+     ========================= -->
 
-        <a
-            class="streaming-enlace"
-            href="https://youtube.com/@movlosbosterosdetucuman?si=XWHeckDfr7tHKsj4"
-            target="_blank"
-            rel="noopener noreferrer">
+<section class="fuentes">
 
-            <img
-                class="streaming-placa"
-                src="IMG-20260829-WA0003.jpg"
-                alt="Movimiento Los Bosteros de Tucumán">
+<h2>
+Fuentes de información
+</h2>
 
-        </a>
+<div class="fuentes-lista">
 
-    </section>
+<span class="fuente">
+Boca Juniors Oficial
+</span>
+
+<span class="fuente">
+El Canal de Boca
+</span>
+
+<span class="fuente">
+TyC Sports
+</span>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NOTICIAS
+     ========================= -->
+
+<section class="seccion">
+
+<h2
+class="seccion-titulo"
+id="titulo">
+
+Últimas noticias
+
+</h2>
+
+<div
+id="noticias"
+class="grid">
+
+<div class="vacio">
+Cargando noticias...
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TODO BOCA
+     ========================= -->
+
+<section
+class="categorias"
+id="categorias">
+
+<h2 class="seccion-titulo">
+Todo Boca
+</h2>
+
+<div class="categorias-grid">
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+<div class="categoria-icono">
+⚽
+</div>
+
+<h3>
+Primer equipo
+</h3>
+
+<p>
+Noticias y actualidad del plantel profesional.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+<div class="categoria-icono">
+🏟️
+</div>
+
+<h3>
+La Bombonera
+</h3>
+
+<p>
+Estadio, obras y novedades.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+🏀
+</div>
+
+<h3>
+Básquet
+</h3>
+
+<p>
+Noticias y actualidad del básquet xeneize.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+⚽
+</div>
+
+<h3>
+Futsal
+</h3>
+
+<p>
+Partidos, resultados y noticias.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+🟦
+</div>
+
+<h3>
+Reserva
+</h3>
+
+<p>
+La actualidad de la Reserva de Boca.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+👩⚽
+</div>
+
+<h3>
+Fútbol femenino
+</h3>
+
+<p>
+Noticias de Las Gladiadoras.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+<div class="categoria-icono">
+⭐
+</div>
+
+<h3>
+Inferiores
+</h3>
+
+<p>
+Juveniles y futuras figuras de Boca.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+🏐
+</div>
+
+<h3>
+Vóley
+</h3>
+
+<p>
+Noticias del vóley xeneize.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+🔄
+</div>
+
+<h3>
+Mercado de pases
+</h3>
+
+<p>
+Altas, bajas y novedades.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
+
+<div class="categoria-icono">
+🩹
+</div>
+
+<h3>
+Lesiones
+</h3>
+
+<p>
+Partes médicos y evolución.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+<div class="categoria-icono">
+👥
+</div>
+
+<h3>
+Plantel
+</h3>
+
+<p>
+Jugadores y cuerpo técnico.
+</p>
+
+</a>
+
+
+<a
+class="categoria"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+<div class="categoria-icono">
+🏆
+</div>
+
+<h3>
+Historia y títulos
+</h3>
+
+<p>
+La historia y las conquistas del Xeneize.
+</p>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     INFORMACION OFICIAL
+     ========================= -->
+
+<section class="info-boca">
+
+<h2>
+Información oficial de Boca
+</h2>
+
+<p>
+Accedé directamente al sitio oficial
+del Club Atlético Boca Juniors para
+consultar noticias, deportes, obras,
+La Bombonera y toda la información
+institucional.
+</p>
+
+<a
+class="info-boton"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+Visitar Boca Oficial
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     EL CANAL DE BOCA
+     ========================= -->
+
+<section class="videos-seccion">
+
+<h2 class="videos-titulo">
+El Canal de Boca
+</h2>
+
+<p class="videos-subtitulo">
+Videos oficiales de Boca Juniors.
+</p>
+
+<div class="videos-grid">
+
+<article class="video-card">
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/4ybOs3IFAqI"
+title="El Canal de Boca"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-info">
+
+<h3>
+Contenido de El Canal de Boca
+</h3>
+
+<a
+class="video-boton"
+href="https://www.youtube.com/@ElCanaldeBoca/videos"
+target="_blank">
+
+Ver canal oficial
+
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+
+<a
+class="canal-boton"
+href="https://www.youtube.com/@ElCanaldeBoca/videos"
+target="_blank">
+
+Ver todos los videos
+
+</a>
+
+</section>
+
+
+<!-- =========================
+     NUESTRO STREAMING
+     ========================= -->
+
+<section class="streaming">
+
+<h2 class="streaming-titulo">
+Nuestro streaming
+</h2>
+
+<a
+class="streaming-enlace"
+href="https://youtube.com/@movlosbosterosdetucuman?si=XWHeckDfr7tHKsj4"
+target="_blank">
+
+<img
+class="streaming-placa"
+src="IMG-20260829-WA0003.jpg"
+alt="Movimiento Los Bosteros de Tucumán">
+
+</a>
+
+</section>
 
 </main>
 
+
 <footer>
 
-    <strong>
-        BOCA 24/7
-    </strong>
+<strong>
+BOCA 24/7
+</strong>
 
-    <p style="margin-top:8px">
-        Información Xeneize todos los días.
-    </p>
+<p style="margin-top:8px">
+Información Xeneize todos los días.
+</p>
 
 </footer>
 
@@ -630,355 +1070,373 @@ let noticias = [];
 
 function escapar(texto){
 
-    const div =
-        document.createElement("div");
+const div =
+document.createElement("div");
 
-    div.textContent =
-        texto || "";
+div.textContent =
+texto || "";
 
-    return div.innerHTML;
+return div.innerHTML;
 
 }
 
 
 function mostrarFecha(noticia){
 
-    if(noticia.fecha_iso){
+if(noticia.fecha_iso){
 
-        const fecha =
-            new Date(
-                noticia.fecha_iso
-            );
+const fecha =
+new Date(noticia.fecha_iso);
 
-        if(!isNaN(fecha.getTime())){
+if(!isNaN(fecha.getTime())){
 
-            return new Intl.DateTimeFormat(
-                "es-AR",
-                {
-                    timeZone:
-                        "America/Argentina/Buenos_Aires",
+return new Intl.DateTimeFormat(
+"es-AR",
+{
+timeZone:
+"America/Argentina/Buenos_Aires",
 
-                    day:"2-digit",
-                    month:"2-digit",
-                    year:"numeric",
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
 
-                    hour:"2-digit",
-                    minute:"2-digit",
+hour:"2-digit",
+minute:"2-digit",
 
-                    hour12:false
-                }
-            ).format(fecha);
+hour12:false
+}
+).format(fecha);
 
-        }
+}
 
-    }
+}
 
-    return (
-        noticia.fecha || ""
-    ) +
-    (
-        noticia.hora
-        ? " - " + noticia.hora
-        : ""
-    );
+return (
+noticia.fecha || ""
+) +
+(
+noticia.hora
+? " - " + noticia.hora
+: ""
+);
 
 }
 
 
 function crearTarjeta(noticia){
 
-    let boton = "";
+let boton = "";
 
-    if(noticia.link){
+if(noticia.link){
 
-        boton = `
+boton = `
 
-            <a
-                class="leer"
-                href="${escapar(noticia.link)}"
-                target="_blank"
-                rel="noopener noreferrer">
+<a
+class="leer"
+href="${escapar(noticia.link)}"
+target="_blank">
 
-                Leer noticia
+Leer noticia
 
-            </a>
+</a>
 
-        `;
+`;
 
-    }
+}
 
-    return `
+return `
 
-        <article class="card">
+<article class="card">
 
-            <div class="card-fuente">
+<div class="card-fuente">
 
-                ${escapar(
-                    noticia.fuente ||
-                    "Boca 24/7"
-                )}
+${escapar(
+noticia.fuente ||
+"Boca 24/7"
+)}
 
-            </div>
+</div>
 
-            <h3>
+<h3>
 
-                ${escapar(
-                    noticia.titulo ||
-                    "Sin título"
-                )}
+${escapar(
+noticia.titulo ||
+"Sin título"
+)}
 
-            </h3>
+</h3>
 
-            <div class="fecha">
+<div class="fecha">
 
-                ${mostrarFecha(noticia)}
+${mostrarFecha(noticia)}
 
-            </div>
+</div>
 
-            <div class="resumen">
+<div class="resumen">
 
-                ${escapar(
-                    noticia.contenido ||
-                    ""
-                )}
+${escapar(
+noticia.contenido ||
+""
+)}
 
-            </div>
+</div>
 
-            ${boton}
+${boton}
 
-        </article>
+</article>
 
-    `;
+`;
 
 }
 
 
 function mostrar(lista){
 
-    const contenedor =
-        document.getElementById(
-            "noticias"
-        );
+const contenedor =
+document.getElementById(
+"noticias"
+);
 
-    if(!lista.length){
+if(!lista.length){
 
-        contenedor.innerHTML = `
+contenedor.innerHTML = `
 
-            <div class="vacio">
+<div class="vacio">
 
-                No hay noticias en esta sección.
+No hay noticias en esta sección.
 
-            </div>
+</div>
 
-        `;
+`;
 
-        return;
+return;
 
-    }
+}
 
-    contenedor.innerHTML =
-        lista
-        .map(crearTarjeta)
-        .join("");
+contenedor.innerHTML =
+lista
+.map(crearTarjeta)
+.join("");
 
 }
 
 
 function inicio(){
 
-    document.getElementById(
-        "titulo"
-    ).textContent =
-        "Últimas noticias";
+document.getElementById(
+"titulo"
+).textContent =
+"Últimas noticias";
 
-    mostrar(noticias);
+mostrar(noticias);
 
-    const hero =
-        document.getElementById(
-            "hero"
-        );
+const hero =
+document.getElementById(
+"hero"
+);
 
-    if(!noticias.length){
+if(!noticias.length){
 
-        hero.innerHTML = "";
+hero.innerHTML = "";
 
-        return;
+return;
 
-    }
+}
 
-    const noticia =
-        noticias[0];
+const noticia =
+noticias[0];
 
-    hero.innerHTML = `
+hero.innerHTML = `
 
-        <div class="hero">
+<div class="hero">
 
-            <div class="hero-label">
-                NOTICIA DESTACADA
-            </div>
+<div class="hero-label">
+NOTICIA DESTACADA
+</div>
 
-            <h2>
+<h2>
 
-                ${escapar(
-                    noticia.titulo ||
-                    "Última noticia"
-                )}
+${escapar(
+noticia.titulo ||
+"Última noticia"
+)}
 
-            </h2>
+</h2>
 
-            <p>
+<p>
 
-                ${escapar(
-                    noticia.contenido ||
-                    ""
-                )}
+${escapar(
+noticia.contenido ||
+""
+)}
 
-            </p>
+</p>
 
-            <p style="margin-top:12px">
+<p style="margin-top:12px">
 
-                <strong>
+<strong>
 
-                    ${escapar(
-                        noticia.fuente ||
-                        ""
-                    )}
+${escapar(
+noticia.fuente ||
+""
+)}
 
-                </strong>
+</strong>
 
-            </p>
+</p>
 
-        </div>
+</div>
 
-    `;
+`;
 
 }
 
 
 function seccion(categoria){
 
-    const lista =
-        noticias.filter(
-            function(noticia){
+const lista =
+noticias.filter(
+function(noticia){
 
-                const valor =
-                    (
-                        noticia.categoria ||
-                        ""
-                    )
-                    .toLowerCase()
-                    .trim();
+const valor =
+(
+noticia.categoria ||
+""
+)
+.toLowerCase()
+.trim();
 
-                return valor ===
-                    categoria
-                    .toLowerCase()
-                    .trim();
+return valor ===
+categoria
+.toLowerCase()
+.trim();
 
-            }
-        );
+}
+);
 
-    document.getElementById(
-        "titulo"
-    ).textContent =
-        categoria;
+document.getElementById(
+"titulo"
+).textContent =
+categoria;
 
-    document.getElementById(
-        "hero"
-    ).innerHTML = "";
+document.getElementById(
+"hero"
+).innerHTML = "";
 
-    mostrar(lista);
+mostrar(lista);
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+function irA(id){
+
+const elemento =
+document.getElementById(id);
+
+if(elemento){
+
+elemento.scrollIntoView({
+behavior:"smooth"
+});
+
+}
 
 }
 
 
 async function cargarNoticias(){
 
-    try{
+try{
 
-        const respuesta =
-            await fetch(
-                "noticias.json?v=" +
-                Date.now()
-            );
+const respuesta =
+await fetch(
+"noticias.json?v=" +
+Date.now()
+);
 
-        if(!respuesta.ok){
+if(!respuesta.ok){
 
-            throw new Error(
-                "No se pudo cargar noticias.json"
-            );
+throw new Error(
+"No se pudo cargar noticias.json"
+);
 
-        }
+}
 
-        noticias =
-            await respuesta.json();
+noticias =
+await respuesta.json();
 
-        if(!Array.isArray(noticias)){
+if(!Array.isArray(noticias)){
 
-            noticias = [];
+noticias = [];
 
-        }
+}
 
-        noticias.sort(
-            function(a,b){
+noticias.sort(
+function(a,b){
 
-                return new Date(
-                    b.fecha_iso || 0
-                )
-                -
-                new Date(
-                    a.fecha_iso || 0
-                );
+return new Date(
+b.fecha_iso || 0
+)
+-
+new Date(
+a.fecha_iso || 0
+);
 
-            }
-        );
+}
+);
 
-        inicio();
+inicio();
 
-        document.getElementById(
-            "actualizado"
-        ).textContent =
+document.getElementById(
+"actualizado"
+).textContent =
 
-            "Última actualización: " +
+"Última actualización: " +
 
-            new Intl.DateTimeFormat(
-                "es-AR",
-                {
-                    timeZone:
-                        "America/Argentina/Buenos_Aires",
+new Intl.DateTimeFormat(
+"es-AR",
+{
+timeZone:
+"America/Argentina/Buenos_Aires",
 
-                    day:"2-digit",
-                    month:"2-digit",
-                    year:"numeric",
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
 
-                    hour:"2-digit",
-                    minute:"2-digit",
+hour:"2-digit",
+minute:"2-digit",
 
-                    hour12:false
-                }
-            ).format(
-                new Date()
-            );
+hour12:false
+}
+).format(
+new Date()
+);
 
-    }
+}
 
-    catch(error){
+catch(error){
 
-        console.error(error);
+console.error(error);
 
-        document.getElementById(
-            "noticias"
-        ).innerHTML = `
+document.getElementById(
+"noticias"
+).innerHTML = `
 
-            <div class="vacio">
+<div class="vacio">
 
-                No se pudieron cargar
-                las noticias.
+No se pudieron cargar
+las noticias.
 
-            </div>
+</div>
 
-        `;
+`;
 
-    }
+}
 
 }
 
@@ -987,11 +1445,11 @@ cargarNoticias();
 
 
 setInterval(
-    cargarNoticias,
-    5 * 60 * 1000
+cargarNoticias,
+5 * 60 * 1000
 );
 
 </script>
 
 </body>
-    </html>        
+</html>
