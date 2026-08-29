@@ -2,7 +2,7 @@ name: Actualizar noticias Boca 24/7
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
 
   workflow_dispatch:
 
