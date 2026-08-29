@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,11 +8,15 @@
 <title>Boca 24/7 | Todo Boca</title>
 
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+}
+
+html,body{
+    width:100%;
+    overflow-x:hidden;
 }
 
 body{
@@ -21,25 +26,28 @@ body{
 }
 
 header{
-    background:linear-gradient(135deg,#001f5b,#064aa8);
+    width:100%;
+    background:#001f5b;
     color:white;
     text-align:center;
-    padding:15px 0 22px;
+    padding:0 0 22px;
     border-bottom:7px solid #f5c400;
 }
 
 .logo-img{
-    width:100%;
-    max-width:600px;
+    width:100vw;
+    max-width:none;
     height:auto;
     display:block;
-    margin:0 auto 15px;
+    margin:0;
+    padding:0;
 }
 
 .logo{
     font-size:38px;
     font-weight:900;
     letter-spacing:2px;
+    margin-top:15px;
 }
 
 header p{
@@ -48,6 +56,7 @@ header p{
 }
 
 nav{
+    width:100%;
     background:#003b8f;
     display:flex;
     gap:8px;
@@ -228,11 +237,6 @@ footer strong{
 
 @media(max-width:600px){
 
-    .logo-img{
-        width:100%;
-        max-width:100%;
-    }
-
     .logo{
         font-size:29px;
     }
@@ -244,9 +248,7 @@ footer strong{
     .seccion-titulo{
         font-size:21px;
     }
-
 }
-
 </style>
 </head>
 
@@ -273,25 +275,15 @@ footer strong{
 <nav>
 
     <button onclick="inicio()">Inicio</button>
-
     <button onclick="seccion('Boca')">Boca</button>
-
     <button onclick="seccion('Sudamericana')">Sudamericana</button>
-
     <button onclick="seccion('Mercado de pases')">Mercado de pases</button>
-
     <button onclick="seccion('Lesiones')">Lesiones</button>
-
     <button onclick="seccion('Básquet')">Básquet</button>
-
     <button onclick="seccion('Futsal')">Futsal</button>
-
     <button onclick="seccion('Fútbol femenino')">Fútbol femenino</button>
-
     <button onclick="seccion('Reserva')">Reserva</button>
-
     <button onclick="seccion('Inferiores')">Inferiores</button>
-
     <button onclick="seccion('La Bombonera')">La Bombonera</button>
 
 </nav>
@@ -309,26 +301,20 @@ footer strong{
         <h2>Fuentes de información</h2>
 
         <div class="fuentes-lista">
-
             <span class="fuente">Google Noticias</span>
             <span class="fuente">TyC Sports</span>
             <span class="fuente">Boca Juniors</span>
-
         </div>
 
     </section>
 
     <section class="seccion">
 
-        <h2
-            class="seccion-titulo"
-            id="titulo">
+        <h2 class="seccion-titulo" id="titulo">
             Últimas noticias
         </h2>
 
-        <div
-            id="noticias"
-            class="grid">
+        <div id="noticias" class="grid">
 
             <div class="vacio">
                 Cargando noticias...
@@ -363,7 +349,6 @@ function escapar(texto){
         texto || "";
 
     return div.innerHTML;
-
 }
 
 function mostrarFecha(noticia){
@@ -371,9 +356,7 @@ function mostrarFecha(noticia){
     if(noticia.fecha_iso){
 
         const fecha =
-            new Date(
-                noticia.fecha_iso
-            );
+            new Date(noticia.fecha_iso);
 
         if(!isNaN(fecha.getTime())){
 
@@ -390,9 +373,7 @@ function mostrarFecha(noticia){
                     hour12:false
                 }
             ).format(fecha);
-
         }
-
     }
 
     return (
@@ -403,7 +384,6 @@ function mostrarFecha(noticia){
         ? " - " + noticia.hora
         : ""
     );
-
 }
 
 function crearTarjeta(noticia){
@@ -421,7 +401,6 @@ function crearTarjeta(noticia){
                 Leer noticia
             </a>
         `;
-
     }
 
     return `
@@ -458,35 +437,28 @@ function crearTarjeta(noticia){
         </article>
 
     `;
-
 }
 
 function mostrar(lista){
 
     const contenedor =
-        document.getElementById(
-            "noticias"
-        );
+        document.getElementById("noticias");
 
     if(!lista.length){
 
         contenedor.innerHTML = `
-
             <div class="vacio">
                 No hay noticias en esta sección.
             </div>
-
         `;
 
         return;
-
     }
 
     contenedor.innerHTML =
         lista
         .map(crearTarjeta)
         .join("");
-
 }
 
 function inicio(){
@@ -499,16 +471,12 @@ function inicio(){
     mostrar(noticias);
 
     const hero =
-        document.getElementById(
-            "hero"
-        );
+        document.getElementById("hero");
 
     if(!noticias.length){
 
         hero.innerHTML = "";
-
         return;
-
     }
 
     const noticia =
@@ -550,7 +518,6 @@ function inicio(){
         </div>
 
     `;
-
 }
 
 function seccion(categoria){
@@ -579,7 +546,6 @@ function seccion(categoria){
     ).innerHTML = "";
 
     mostrar(lista);
-
 }
 
 async function cargarNoticias(){
@@ -597,7 +563,6 @@ async function cargarNoticias(){
             throw new Error(
                 "No se pudo cargar noticias.json"
             );
-
         }
 
         noticias =
@@ -652,7 +617,6 @@ async function cargarNoticias(){
         `;
 
     }
-
 }
 
 cargarNoticias();
