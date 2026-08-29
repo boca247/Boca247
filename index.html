@@ -1,224 +1,729 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Boca Noticias</title>
+<title>BOCA 24/7</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f4f4;
-      color: #111;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#07122f;
+  color:#fff;
+}
 
-    header {
-      background: #0b2a5b;
-      color: white;
-      padding: 22px 16px;
-      text-align: center;
-      border-bottom: 5px solid #f5c400;
-    }
+header{
+  background:linear-gradient(135deg,#00184d,#003b91);
+  padding:25px 18px 18px;
+  text-align:center;
+  border-bottom:4px solid #f5c400;
+}
 
-    header h1 {
-      font-size: 30px;
-      margin-bottom: 6px;
-    }
+.logo{
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:1px;
+}
 
-    header p {
-      font-size: 14px;
-      opacity: 0.9;
-    }
+.subtitulo{
+  margin-top:5px;
+  font-size:15px;
+  color:#ddd;
+}
 
-    .container {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      padding: 18px 12px 40px;
-    }
+nav{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+}
 
-    .estado {
-      background: white;
-      border-radius: 12px;
-      padding: 14px;
-      margin-bottom: 18px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      font-size: 14px;
-    }
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
+  padding:9px 12px;
+  border-radius:6px;
+  background:rgba(255,255,255,.08);
+}
 
-    .noticias {
-      display: grid;
-      gap: 15px;
-    }
+nav a:hover{
+  background:#f5c400;
+  color:#07122f;
+}
 
-    .noticia {
-      background: white;
-      border-radius: 14px;
-      padding: 18px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-    }
+.contenedor{
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:20px 15px 50px;
+}
 
-    .noticia h2 {
-      color: #0b2a5b;
-      font-size: 21px;
-      line-height: 1.25;
-      margin-bottom: 9px;
-    }
+.titulo{
+  font-size:25px;
+  font-weight:900;
+  margin:15px 0;
+  border-left:5px solid #f5c400;
+  padding-left:10px;
+}
 
-    .fuente {
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 12px;
-    }
+.ultima{
+  background:#fff;
+  color:#111;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
 
-    .contenido {
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 15px;
-    }
+.noticia-principal{
+  min-height:350px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:25px;
+  background:
+  linear-gradient(transparent,rgba(0,0,0,.9)),
+  url("images/noticias.jpg") center/cover;
+}
 
-    .boton {
-      display: inline-block;
-      background: #0b2a5b;
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: bold;
-    }
+.etiqueta{
+  display:inline-block;
+  width:max-content;
+  background:#d71920;
+  color:#fff;
+  padding:6px 10px;
+  border-radius:5px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
 
-    .boton:hover {
-      background: #17478f;
-    }
+.noticia-principal h2{
+  font-size:30px;
+  max-width:850px;
+  margin-bottom:8px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px 15px;
-      color: #777;
-      font-size: 13px;
-    }
+.meta{
+  color:#ddd;
+  font-size:13px;
+}
 
-    .cargando {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-    }
+.noticias-pequenas{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  padding:15px;
+}
 
-    .error {
-      background: #fff0f0;
-      color: #a00000;
-      border: 1px solid #ffcccc;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: center;
-    }
-  </style>
+.noticia{
+  background:#fff;
+  color:#111;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.noticia img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+}
+
+.noticia-contenido{
+  padding:13px;
+}
+
+.noticia h3{
+  font-size:17px;
+  line-height:1.25;
+  margin-bottom:8px;
+}
+
+.noticia small{
+  color:#777;
+}
+
+.partido{
+  margin-top:30px;
+  background:linear-gradient(135deg,#002267,#004aad);
+  border-radius:16px;
+  padding:28px 20px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+.equipos{
+  font-size:28px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.datos-partido{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+  margin:20px 0;
+  color:#eee;
+}
+
+.boton{
+  display:inline-block;
+  padding:12px 20px;
+  background:#f5c400;
+  color:#07122f;
+  text-decoration:none;
+  border-radius:7px;
+  font-weight:900;
+}
+
+.streaming{
+  margin-top:30px;
+  background:#050505;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+  border:2px solid #d71920;
+}
+
+.streaming h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.en-vivo{
+  color:#ff3131;
+  font-weight:900;
+  font-size:15px;
+  margin:12px 0;
+}
+
+.video{
+  width:100%;
+  max-width:900px;
+  aspect-ratio:16/9;
+  margin:20px auto;
+  border-radius:12px;
+  overflow:hidden;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-image:url("images/streaming.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.video a{
+  background:#d71920;
+  color:#fff;
+  padding:16px 28px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:900;
+}
+
+.programa{
+  margin-top:20px;
+  padding:18px;
+  background:#171717;
+  border-radius:10px;
+}
+
+.programa h3{
+  margin-bottom:10px;
+}
+
+.hincha{
+  margin-top:30px;
+  background:#fff;
+  color:#111;
+  border-radius:15px;
+  padding:25px;
+}
+
+.opciones{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin:20px 0;
+}
+
+.opcion{
+  border:2px solid #ddd;
+  border-radius:10px;
+  padding:18px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.opcion:hover{
+  border-color:#003b91;
+}
+
+.resultado{
+  margin-top:12px;
+}
+
+.barra{
+  height:14px;
+  background:#ddd;
+  border-radius:10px;
+  overflow:hidden;
+  margin:6px 0 12px;
+}
+
+.barra div{
+  height:100%;
+  width:63%;
+  background:#003b91;
+}
+
+.mercado{
+  margin-top:30px;
+}
+
+.jugadores{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.jugador{
+  background:#fff;
+  color:#111;
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.estado{
+  font-weight:900;
+  margin-top:10px;
+}
+
+.llego{color:#159447;}
+.negociando{color:#c99800;}
+.alejo{color:#d71920;}
+
+.noa{
+  margin-top:30px;
+  background:linear-gradient(135deg,#00184d,#062b70);
+  padding:28px;
+  border-radius:15px;
+}
+
+.provincias{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.provincia{
+  background:rgba(255,255,255,.1);
+  padding:10px 14px;
+  border-radius:7px;
+}
+
+.redes{
+  margin-top:30px;
+  text-align:center;
+  background:#fff;
+  color:#111;
+  padding:30px 20px;
+  border-radius:15px;
+}
+
+.redes a{
+  display:inline-block;
+  margin:8px;
+  padding:11px 16px;
+  background:#07122f;
+  color:#fff;
+  text-decoration:none;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+.notificacion{
+  margin-top:20px;
+  font-weight:bold;
+}
+
+footer{
+  background:#020817;
+  text-align:center;
+  padding:25px 15px;
+  color:#aaa;
+  font-size:13px;
+}
+
+@media(max-width:800px){
+  .noticias-pequenas{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .jugadores{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:550px){
+  .logo{
+    font-size:29px;
+  }
+
+  .noticias-pequenas{
+    grid-template-columns:1fr;
+  }
+
+  .jugadores{
+    grid-template-columns:1fr;
+  }
+
+  .noticia-principal{
+    min-height:300px;
+  }
+
+  .noticia-principal h2{
+    font-size:23px;
+  }
+
+  .equipos{
+    font-size:22px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>🔵🟡 BOCA NOTICIAS</h1>
-    <p>Las últimas noticias del Xeneize</p>
-  </header>
+<header>
 
-  <main class="container">
+  <div class="logo">BOCA 24/7</div>
+  <div class="subtitulo">Todo Boca. Todo el día.</div>
 
-    <div class="estado" id="estado">
-      Actualizando noticias...
+  <nav>
+    <a href="#inicio">INICIO</a>
+    <a href="#noticias">NOTICIAS</a>
+    <a href="#boca">BOCA</a>
+    <a href="#streaming">STREAMING</a>
+    <a href="#partidos">PARTIDOS</a>
+    <a href="#mercado">MERCADO</a>
+    <a href="#videos">VIDEOS</a>
+  </nav>
+
+</header>
+
+<main class="contenedor" id="inicio">
+
+<section id="noticias">
+
+  <div class="titulo">🔴 ÚLTIMA HORA</div>
+
+  <div class="ultima">
+
+    <div class="noticia-principal">
+
+      <span class="etiqueta">ÚLTIMA HORA</span>
+
+      <h2>BOCA YA TIENE TODO LISTO PARA SU PRÓXIMO PARTIDO</h2>
+
+      <div class="meta">
+        Hace 8 minutos · Primera
+      </div>
+
     </div>
 
-    <section class="noticias" id="noticias">
-      <div class="cargando">
-        Cargando noticias de Boca...
-      </div>
-    </section>
+    <div class="noticias-pequenas">
 
-  </main>
+      <article class="noticia">
+        <img src="images/noticia-1.jpg" alt="Noticias de Boca">
+        <div class="noticia-contenido">
+          <h3>Las últimas novedades del plantel Xeneize</h3>
+          <small>Hace 20 minutos · Boca</small>
+        </div>
+      </article>
 
-  <footer>
-    Boca Noticias · Información del mundo Xeneize
-  </footer>
+      <article class="noticia">
+        <img src="images/noticia-2.jpg" alt="Boca Juniors">
+        <div class="noticia-contenido">
+          <h3>Todo preparado para el próximo desafío</h3>
+          <small>Hace 35 minutos · Primera</small>
+        </div>
+      </article>
 
-  <script>
+      <article class="noticia">
+        <img src="images/noticia-3.jpg" alt="Boca">
+        <div class="noticia-contenido">
+          <h3>Mercado de pases: las novedades de Boca</h3>
+          <small>Hace 1 hora · Mercado</small>
+        </div>
+      </article>
 
-    const noticias = [
-      {
-        titulo: "Boca se prepara para su próximo desafío",
-        fuente: "Boca Noticias",
-        contenido: "El equipo Xeneize continúa trabajando y se prepara para sus próximos compromisos.",
-        link: "https://www.google.com/search?q=Boca+Juniors+ultimas+noticias"
-      },
-      {
-        titulo: "Todas las novedades del mundo Boca",
-        fuente: "Noticias Boca Juniors",
-        contenido: "Mercado de pases, partidos, resultados, declaraciones y toda la actualidad del Xeneize.",
-        link: "https://www.google.com/search?q=Boca+Juniors+ultimas+noticias"
-      },
-      {
-        titulo: "Boca Juniors: últimas noticias",
-        fuente: "Actualidad Xeneize",
-        contenido: "Enterate de las principales novedades de Boca y seguí toda la información del club.",
-        link: "https://www.google.com/search?q=Boca+Juniors+ultimas+noticias"
-      }
-    ];
+    </div>
 
-    function mostrarNoticias() {
+  </div>
 
-      const contenedor = document.getElementById("noticias");
-      const estado = document.getElementById("estado");
+</section>
 
-      contenedor.innerHTML = "";
 
-      noticias.forEach(noticia => {
+<section id="partidos" class="partido">
 
-        const tarjeta = document.createElement("article");
+  <div class="titulo">⚽ PRÓXIMO PARTIDO</div>
 
-        tarjeta.className = "noticia";
+  <div class="equipos">
+    BOCA JUNIORS 🆚 RIVAL
+  </div>
 
-        tarjeta.innerHTML = `
-          <h2>${noticia.titulo}</h2>
+  <div class="datos-partido">
+    <div>📅 Fecha</div>
+    <div>🕐 Hora</div>
+    <div>🏟️ Estadio</div>
+  </div>
 
-          <div class="fuente">
-            Fuente: ${noticia.fuente}
-          </div>
+  <a class="boton" href="#">
+    VER PREVIA
+  </a>
 
-          <div class="contenido">
-            ${noticia.contenido}
-          </div>
+</section>
 
-          <a
-            class="boton"
-            href="${noticia.link}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Leer más
-          </a>
-        `;
 
-        contenedor.appendChild(tarjeta);
+<section id="streaming" class="streaming">
 
-      });
+  <h2>🎙️ BOCA 24/7 — STREAMING</h2>
 
-      estado.textContent =
-        "Última actualización: " +
-        new Date().toLocaleString("es-AR");
+  <div class="en-vivo">🔴 ESTAMOS EN VIVO</div>
 
+  <div class="video">
+    <a href="#" id="streamingLink">
+      ▶️ VER STREAMING
+    </a>
+  </div>
+
+  <div class="programa">
+    <h3>Próximo programa</h3>
+    <p>📅 Día</p>
+    <p>🕐 Hora</p>
+  </div>
+
+  <div class="programa" id="videos">
+    <h3>🎙️ ÚLTIMO PROGRAMA</h3>
+    <br>
+    <a class="boton" href="#">
+      ▶️ Ver completo
+    </a>
+  </div>
+
+</section>
+
+
+<section id="boca" class="hincha">
+
+  <div class="titulo">🗣️ LA VOZ DEL HINCHA</div>
+
+  <h2>¿QUIÉN DEBE SER TITULAR?</h2>
+
+  <div class="opciones">
+
+    <div class="opcion">
+      🔵 Jugador A
+    </div>
+
+    <div class="opcion">
+      🟡 Jugador B
+    </div>
+
+  </div>
+
+  <a href="#" class="boton">
+    VOTAR
+  </a>
+
+  <div class="resultado">
+    <p>A — 63%</p>
+    <div class="barra">
+      <div></div>
+    </div>
+
+    <p>B — 37%</p>
+    <div class="barra">
+      <div style="width:37%;"></div>
+    </div>
+  </div>
+
+</section>
+
+
+<section id="mercado" class="mercado">
+
+  <div class="titulo">🔄 MERCADO DE PASES</div>
+
+  <div class="jugadores">
+
+    <div class="jugador">
+      <h3>Jugador</h3>
+      <p>Delantero</p>
+      <div class="estado llego">🟢 LLEGÓ</div>
+    </div>
+
+    <div class="jugador">
+      <h3>Jugador</h3>
+      <p>Volante</p>
+      <div class="estado negociando">🟡 NEGOCIANDO</div>
+    </div>
+
+    <div class="jugador">
+      <h3>Jugador</h3>
+      <p>Defensor</p>
+      <div class="estado alejo">🔴 SE ALEJÓ</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="noa">
+
+  <div class="titulo">📍 BOCA EN EL NORTE</div>
+
+  <h2>BOCA EN EL NOA 🇦🇷</h2>
+
+  <p style="margin-top:10px;">
+    Noticias y contenido de los hinchas de Boca en todo el Norte Argentino.
+  </p>
+
+  <div class="provincias">
+    <div class="provincia">Tucumán</div>
+    <div class="provincia">Salta</div>
+    <div class="provincia">Jujuy</div>
+    <div class="provincia">Santiago del Estero</div>
+    <div class="provincia">Catamarca</div>
+    <div class="provincia">La Rioja</div>
+  </div>
+
+  <p style="margin-top:20px;">
+    Peñas · Hinchas · Viajes a Buenos Aires · Entrevistas · Coberturas
+  </p>
+
+</section>
+
+
+<section class="redes">
+
+  <div class="titulo">📱 SEGUÍ A BOCA 24/7</div>
+
+  <a href="#">Instagram</a>
+  <a href="#">TikTok</a>
+  <a href="#">YouTube</a>
+  <a href="#">Facebook</a>
+
+  <div class="notificacion">
+    🔔 Activá las notificaciones y enterate primero de todas las noticias de Boca.
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  BOCA 24/7 · Todo Boca. Todo el día.
+</footer>
+
+
+<script>
+
+/*
+  ACTUALIZACIÓN AUTOMÁTICA
+
+  Este bloque queda preparado para conectar
+  el archivo de noticias que ya tenés en el repositorio.
+*/
+
+async function actualizarNoticias(){
+
+  try{
+
+    const respuesta = await fetch("noticias.json");
+
+    if(!respuesta.ok){
+      return;
     }
 
-    mostrarNoticias();
+    const datos = await respuesta.json();
 
-  </script>
+    if(!Array.isArray(datos) || datos.length === 0){
+      return;
+    }
+
+    const principal = document.querySelector(".noticia-principal h2");
+    const meta = document.querySelector(".noticia-principal .meta");
+
+    if(datos[0].titulo){
+      principal.textContent = datos[0].titulo;
+    }
+
+    if(datos[0].fecha || datos[0].fuente){
+
+      const fecha = datos[0].fecha || "Última hora";
+      const fuente = datos[0].fuente || "Boca";
+
+      meta.textContent = fecha + " · " + fuente;
+    }
+
+    const tarjetas = document.querySelectorAll(".noticia");
+
+    datos.slice(1,4).forEach((noticia,index)=>{
+
+      if(!tarjetas[index]) return;
+
+      const titulo = tarjetas[index].querySelector("h3");
+      const small = tarjetas[index].querySelector("small");
+
+      if(noticia.titulo){
+        titulo.textContent = noticia.titulo;
+      }
+
+      small.textContent =
+        (noticia.fecha || "Última hora") +
+        " · " +
+        (noticia.fuente || "Boca");
+
+    });
+
+  }catch(error){
+
+    console.log("Noticias todavía no conectadas:",error);
+
+  }
+
+}
+
+
+/*
+  Actualiza al abrir la página
+  y vuelve a comprobar cada 5 minutos.
+*/
+
+actualizarNoticias();
+
+setInterval(actualizarNoticias,300000);
+
+</script>
 
 </body>
 </html>
