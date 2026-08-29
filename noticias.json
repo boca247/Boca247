@@ -1,364 +1,45 @@
-import json
-import re
-import html
-import feedparser
-from datetime import datetime, timezone
-from email.utils import parsedate_to_datetime
+name: Actualizar noticias Boca 24/7
 
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
-FUENTES = [
-    {
-        "nombre": "Google Noticias",
-        "rss": "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419"
-    },
-    {
-        "nombre": "TyC Sports",
-        "rss": "https://www.tycsports.com/rss/pages/boca-juniors.xml"
-    }
-]
+permissions:
+  contents: write
 
+jobs:
 
-def limpiar_texto(texto):
+  actualizar:
 
-    if not texto:
-        return ""
+    runs-on: ubuntu-latest
 
-    texto = html.unescape(str(texto))
+    steps:
 
-    texto = re.sub(
-        r"<[^>]+>",
-        " ",
-        texto
-    )
+      - name: Descargar repositorio
+        uses: actions/checkout@v5
 
-    reemplazos = {
-        "Ã¡": "á",
-        "Ã©": "é",
-        "Ã­": "í",
-        "Ã³": "ó",
-        "Ãº": "ú",
-        "Ã±": "ñ",
-        "Ã": "Á",
-        "Ã‰": "É",
-        "Ã": "Í",
-        "Ã“": "Ó",
-        "Ãš": "Ú",
-        "Ã‘": "Ñ",
-        "Â¿": "¿",
-        "Â¡": "¡",
-        "Â": "",
-        "â": "'",
-        "â": "-",
-        "â": "-",
-        "â¦": "...",
-        "â": '"',
-        "â": '"'
-    }
+      - name: Configurar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
 
-    for malo, bueno in reemplazos.items():
-        texto = texto.replace(
-            malo,
-            bueno
-        )
+      - name: Instalar dependencias
+        run: |
+          pip install feedparser
 
-    texto = re.sub(
-        r"\s+",
-        " ",
-        texto
-    )
+      - name: Actualizar noticias
+        run: |
+          python actualizar_noticias.py
 
-    return texto.strip()
+      - name: Guardar noticias
+        run: |
 
+          git config user.name "Boca 24/7 Bot"
+          git config user.email "boca247-bot@users.noreply.github.com"
 
-def obtener_fecha(entrada):
+          git add noticias.json
 
-    fecha = None
+          git diff --cached --quiet || git commit -m "Noticias actualizadas automáticamente"
 
-    if hasattr(
-        entrada,
-        "published"
-    ):
-
-        try:
-            fecha = parsedate_to_datetime(
-                entrada.published
-            )
-        except Exception:
-            pass
-
-    if fecha is None and hasattr(
-        entrada,
-        "updated"
-    ):
-
-        try:
-            fecha = parsedate_to_datetime(
-                entrada.updated
-            )
-        except Exception:
-            pass
-
-    if fecha is None and hasattr(
-        entrada,
-        "published_parsed"
-    ):
-
-        try:
-            fecha = datetime(
-                *entrada.published_parsed[:6],
-                tzinfo=timezone.utc
-            )
-        except Exception:
-            pass
-
-    if fecha is None:
-
-        fecha = datetime.now(
-            timezone.utc
-        )
-
-    if fecha.tzinfo is None:
-
-        fecha = fecha.replace(
-            tzinfo=timezone.utc
-        )
-
-    return fecha
-
-
-def categoria_noticia(titulo):
-
-    texto = titulo.lower()
-
-    if "sudamericana" in texto:
-        return "Sudamericana"
-
-    if (
-        "mercado" in texto
-        or "refuerzo" in texto
-        or "refuerzos" in texto
-        or "incorporación" in texto
-        or "incorporacion" in texto
-        or "fichaje" in texto
-    ):
-        return "Mercado de pases"
-
-    if (
-        "lesión" in texto
-        or "lesion" in texto
-        or "desgarro" in texto
-        or "molestia" in texto
-    ):
-        return "Lesiones"
-
-    if (
-        "básquet" in texto
-        or "basquet" in texto
-    ):
-        return "Básquet"
-
-    if "futsal" in texto:
-        return "Futsal"
-
-    if (
-        "femenino" in texto
-        or "fútbol femenino" in texto
-        or "futbol femenino" in texto
-    ):
-        return "Fútbol femenino"
-
-    if "bombonera" in texto:
-        return "La Bombonera"
-
-    if "reserva" in texto:
-        return "Reserva"
-
-    if "inferiores" in texto:
-        return "Inferiores"
-
-    return "Boca"
-
-
-def procesar_fuente(fuente):
-
-    resultado = []
-
-    print(
-        "Leyendo:",
-        fuente["nombre"]
-    )
-
-    try:
-
-        feed = feedparser.parse(
-            fuente["rss"]
-        )
-
-        for entrada in feed.entries[:20]:
-
-            titulo = limpiar_texto(
-                entrada.get(
-                    "title",
-                    ""
-                )
-            )
-
-            link = entrada.get(
-                "link",
-                ""
-            ).strip()
-
-            resumen = limpiar_texto(
-                entrada.get(
-                    "summary",
-                    entrada.get(
-                        "description",
-                        ""
-                    )
-                )
-            )
-
-            if not titulo:
-                continue
-
-            fecha = obtener_fecha(
-                entrada
-            )
-
-            fecha_argentina = fecha.astimezone(
-                timezone.utc
-            )
-
-            fecha_iso = (
-                fecha_argentina
-                .isoformat()
-            )
-
-            fecha_mostrar = (
-                fecha_argentina
-                .strftime(
-                    "%d/%m/%Y"
-                )
-            )
-
-            hora_mostrar = (
-                fecha_argentina
-                .strftime(
-                    "%H:%M"
-                )
-            )
-
-            resultado.append({
-
-                "titulo": titulo,
-
-                "fuente": limpiar_texto(
-                    fuente["nombre"]
-                ),
-
-                "contenido": resumen,
-
-                "link": link,
-
-                "fecha": fecha_mostrar,
-
-                "hora": hora_mostrar,
-
-                "fecha_iso": fecha_iso,
-
-                "categoria":
-                    categoria_noticia(
-                        titulo
-                    )
-            })
-
-    except Exception as error:
-
-        print(
-            "Error:",
-            error
-        )
-
-    return resultado
-
-
-def actualizar():
-
-    todas = []
-
-    for fuente in FUENTES:
-
-        noticias = procesar_fuente(
-            fuente
-        )
-
-        todas.extend(
-            noticias
-        )
-
-    unicas = {}
-
-    for noticia in todas:
-
-        clave = (
-            noticia["titulo"]
-            .lower()
-            .strip()
-        )
-
-        if clave not in unicas:
-            unicas[clave] = noticia
-
-    noticias = list(
-        unicas.values()
-    )
-
-    noticias.sort(
-        key=lambda x:
-            x.get(
-                "fecha_iso",
-                ""
-            ),
-        reverse=True
-    )
-
-    noticias = noticias[:50]
-
-    with open(
-        "noticias.json",
-        "w",
-        encoding="utf-8",
-        newline="\n"
-    ) as archivo:
-
-        json.dump(
-            noticias,
-            archivo,
-            ensure_ascii=False,
-            indent=2
-        )
-
-    print(
-        "--------------------------------"
-    )
-
-    print(
-        "NOTICIAS ACTUALIZADAS:"
-    )
-
-    print(
-        len(noticias)
-    )
-
-    print(
-        "Archivo: noticias.json"
-    )
-
-    print(
-        "--------------------------------"
-    )
-
-
-if __name__ == "__main__":
-
-    actualizar()
+          git push   
