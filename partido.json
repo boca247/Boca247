@@ -1,0 +1,16 @@
+{
+  "estado": "FINAL",
+  "local": "Boca Juniors",
+  "visitante": "Lanús",
+  "resultado": "1-0",
+  "competencia": "Torneo Clausura",
+  "minuto": "Finalizado",
+  "incidencias": [
+    {
+      "minuto": "90+3'",
+      "tipo": "gol",
+      "jugador": "Tomás Belmonte",
+      "detalle": "Boca Juniors"
+    }
+  ]
+}
