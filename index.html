@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,746 +9,725 @@
 <style>
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#eef1f6;
-    color:#111;
-    overflow-x:hidden;
+font-family:Arial,Helvetica,sans-serif;
+background:#eef1f6;
+color:#111;
+overflow-x:hidden;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 header{
-    background:#00245f;
-    color:#fff;
-    text-align:center;
-    padding:24px 15px 20px;
-    border-bottom:5px solid #f5c400;
+background:#00245f;
+color:white;
+text-align:center;
+padding:25px 15px 20px;
+border-bottom:5px solid #f5c400;
 }
 
 .logo{
-    font-size:40px;
-    font-weight:900;
-    letter-spacing:1px;
+font-size:40px;
+font-weight:900;
+letter-spacing:1px;
 }
 
 .slogan{
-    margin-top:5px;
-    font-size:16px;
-    color:#f5c400;
-    font-weight:bold;
+margin-top:5px;
+font-size:16px;
+font-weight:bold;
+color:#f5c400;
 }
 
-/* =========================
-   MENU
-========================= */
-
 nav{
-    position:sticky;
-    top:0;
-    z-index:9999;
-    background:#003b8f;
-    display:flex;
-    gap:10px;
-    padding:10px;
-    overflow-x:auto;
-    box-shadow:0 3px 10px rgba(0,0,0,.2);
+position:sticky;
+top:0;
+z-index:9999;
+display:flex;
+gap:10px;
+padding:10px;
+overflow-x:auto;
+background:#003b8f;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
 }
 
 nav::-webkit-scrollbar{
-    display:none;
+display:none;
 }
 
 nav a{
-    background:#fff;
-    color:#00245f;
-    text-decoration:none;
-    padding:11px 18px;
-    border-radius:25px;
-    font-weight:bold;
-    white-space:nowrap;
-    font-size:14px;
+background:white;
+color:#00245f;
+text-decoration:none;
+padding:11px 18px;
+border-radius:25px;
+font-weight:bold;
+font-size:14px;
+white-space:nowrap;
 }
 
-/* =========================
-   CONTENEDOR
-========================= */
-
 main{
-    max-width:1200px;
-    margin:auto;
-    padding:20px 15px 60px;
+max-width:1200px;
+margin:auto;
+padding:20px 15px 60px;
 }
 
 .bloque{
-    margin-bottom:42px;
+margin-bottom:42px;
 }
 
 .titulo{
-    font-size:27px;
-    color:#00245f;
-    border-left:7px solid #f5c400;
-    padding-left:13px;
-    margin-bottom:18px;
+font-size:27px;
+color:#00245f;
+border-left:7px solid #f5c400;
+padding-left:13px;
+margin-bottom:18px;
 }
 
 .actualizado{
-    background:#fff;
-    padding:12px;
-    border-radius:12px;
-    text-align:center;
-    color:#666;
-    font-size:13px;
-    margin-bottom:20px;
+background:white;
+padding:12px;
+border-radius:12px;
+text-align:center;
+color:#666;
+font-size:13px;
+margin-bottom:20px;
 }
 
 /* =========================
-   ULTIMA HORA
+ULTIMA HORA
 ========================= */
 
 .ultima{
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.12);
 }
 
 .ultima-principal{
-    background:linear-gradient(135deg,#00245f,#0756b8);
-    color:#fff;
-    padding:28px;
-    border-bottom:6px solid #f5c400;
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+padding:28px;
+border-bottom:6px solid #f5c400;
 }
 
 .ultima-label{
-    color:#f5c400;
-    font-weight:bold;
-    margin-bottom:12px;
-    font-size:14px;
+color:#f5c400;
+font-weight:bold;
+margin-bottom:12px;
+font-size:14px;
 }
 
 .ultima-principal h2{
-    font-size:30px;
-    line-height:1.25;
-    margin-bottom:12px;
+font-size:30px;
+line-height:1.25;
+margin-bottom:12px;
 }
 
 .ultima-principal p{
-    line-height:1.6;
-    color:#e8edf7;
-    font-size:16px;
+line-height:1.6;
+color:#e8edf7;
+font-size:16px;
 }
 
 .ultima-lista{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    background:#ddd;
-    gap:1px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+background:#ddd;
+gap:1px;
 }
 
 .mini-noticia{
-    background:#fff;
-    padding:20px;
+background:white;
+padding:20px;
 }
 
 .mini-noticia strong{
-    color:#064aa8;
-    font-size:13px;
+color:#064aa8;
+font-size:13px;
+text-transform:uppercase;
 }
 
 .mini-noticia h3{
-    margin-top:8px;
-    font-size:18px;
-    line-height:1.35;
+margin-top:8px;
+font-size:18px;
+line-height:1.35;
 }
 
 .mini-noticia a{
-    display:inline-block;
-    margin-top:14px;
-    color:#064aa8;
-    font-weight:bold;
-    text-decoration:none;
-    font-size:16px;
+display:inline-block;
+margin-top:14px;
+color:#064aa8;
+font-weight:bold;
+text-decoration:none;
+font-size:16px;
 }
 
 /* =========================
-   BOTONES
+BOTONES
 ========================= */
 
 .boton{
-    display:inline-block;
-    margin-top:20px;
-    padding:13px 20px;
-    border-radius:10px;
-    background:#f5c400;
-    color:#00245f;
-    font-weight:900;
-    text-decoration:none;
+display:inline-block;
+margin-top:20px;
+padding:13px 20px;
+border-radius:10px;
+background:#f5c400;
+color:#00245f;
+font-weight:900;
+text-decoration:none;
+cursor:pointer;
 }
 
 /* =========================
-   PARTIDO
+PARTIDO
 ========================= */
 
 .partido{
-    background:linear-gradient(135deg,#00245f,#0756b8);
-    color:#fff;
-    border-radius:22px;
-    padding:30px 18px;
-    text-align:center;
-    border-bottom:7px solid #f5c400;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+border-radius:22px;
+padding:30px 18px;
+text-align:center;
+border-bottom:7px solid #f5c400;
+box-shadow:0 5px 20px rgba(0,0,0,.12);
 }
 
 .partido-label{
-    color:#f5c400;
-    font-weight:bold;
-    font-size:14px;
+color:#f5c400;
+font-weight:bold;
+font-size:14px;
 }
 
 .partido h2{
-    font-size:32px;
-    margin:12px 0 20px;
+font-size:32px;
+margin:12px 0 20px;
 }
 
 .equipos{
-    font-size:25px;
-    font-weight:900;
-    margin-bottom:18px;
+font-size:25px;
+font-weight:900;
+margin-bottom:18px;
 }
 
 .datos-partido{
-    line-height:1.9;
-    font-size:17px;
+line-height:1.9;
+font-size:17px;
 }
 
 /* =========================
-   STREAMING
+STREAMING
 ========================= */
 
 .streaming{
-    background:#111;
-    color:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    border-bottom:7px solid #f5c400;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+background:#111;
+color:white;
+border-radius:22px;
+overflow:hidden;
+border-bottom:7px solid #f5c400;
+box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-/* IMAGEN DEL STREAMING */
-
 .streaming-imagen{
-    width:100%;
-    display:block;
-    background:#f5c400;
+width:100%;
+background:#f5c400;
 }
 
 .streaming-imagen img{
-    width:100%;
-    height:auto;
-    display:block;
-    object-fit:cover;
+width:100%;
+height:auto;
+display:block;
 }
 
-/* CONTENIDO STREAMING */
-
 .streaming-contenido{
-    padding:28px 22px 30px;
-    text-align:center;
+padding:28px 22px 30px;
+text-align:center;
 }
 
 .en-vivo{
-    display:inline-block;
-    background:#e00000;
-    padding:9px 17px;
-    border-radius:25px;
-    font-weight:bold;
-    margin-bottom:14px;
+display:inline-block;
+background:#e00000;
+padding:9px 17px;
+border-radius:25px;
+font-weight:bold;
+margin-bottom:14px;
 }
 
 .streaming h2{
-    font-size:30px;
-    margin-bottom:10px;
+font-size:30px;
+margin-bottom:10px;
 }
 
 .streaming-descripcion{
-    color:#ccc;
-    font-size:17px;
-    line-height:1.5;
+color:#ccc;
+font-size:17px;
+line-height:1.5;
 }
 
 .stream-boton{
-    display:inline-block;
-    margin:20px 0 25px;
-    background:#f5c400;
-    color:#00245f;
-    padding:14px 24px;
-    border-radius:11px;
-    font-weight:900;
-    text-decoration:none;
-    font-size:17px;
+display:inline-block;
+margin:20px 0 25px;
+background:#f5c400;
+color:#00245f;
+padding:14px 24px;
+border-radius:11px;
+font-weight:900;
+text-decoration:none;
+font-size:17px;
 }
 
 .streaming-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 }
 
 .stream-card{
-    background:#242424;
-    padding:20px;
-    border-radius:15px;
-    text-align:left;
+background:#242424;
+padding:20px;
+border-radius:15px;
+text-align:left;
 }
 
 .stream-card h3{
-    color:#f5c400;
-    margin-bottom:10px;
-    font-size:20px;
+color:#f5c400;
+margin-bottom:10px;
+font-size:20px;
 }
 
 .stream-card p{
-    color:#ddd;
-    line-height:1.5;
+color:#ddd;
+line-height:1.5;
 }
 
 /* =========================
-   ENCUESTA
+ENCUESTA
 ========================= */
 
 .encuesta{
-    background:#fff;
-    padding:28px;
-    border-radius:20px;
-    box-shadow:0 4px 16px rgba(0,0,0,.08);
+background:white;
+padding:28px;
+border-radius:20px;
+box-shadow:0 4px 16px rgba(0,0,0,.08);
 }
 
 .encuesta h2{
-    color:#00245f;
-    font-size:28px;
-    margin-bottom:8px;
+color:#00245f;
+font-size:28px;
+margin-bottom:8px;
 }
 
 .encuesta > p{
-    color:#666;
-    margin-bottom:20px;
-    font-size:16px;
+color:#666;
+margin-bottom:20px;
 }
 
 .opciones{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 }
 
 .opcion{
-    border:3px solid #1768b5;
-    background:#fff;
-    color:#00245f;
-    padding:17px;
-    border-radius:12px;
-    font-weight:900;
-    cursor:pointer;
-    font-size:17px;
+border:3px solid #1768b5;
+background:white;
+color:#00245f;
+padding:17px;
+border-radius:12px;
+font-weight:900;
+cursor:pointer;
+font-size:17px;
 }
 
 .opcion.seleccionada{
-    background:#1768b5;
-    color:#fff;
+background:#1768b5;
+color:white;
 }
 
 .votar{
-    margin-top:18px;
-    width:100%;
-    border:0;
-    background:#f5c400;
-    color:#00245f;
-    padding:15px;
-    border-radius:11px;
-    font-weight:900;
-    cursor:pointer;
-    font-size:17px;
+margin-top:18px;
+width:100%;
+border:0;
+background:#f5c400;
+color:#00245f;
+padding:15px;
+border-radius:11px;
+font-weight:900;
+cursor:pointer;
+font-size:17px;
 }
 
 .resultado{
-    margin-top:18px;
-    font-weight:bold;
-    color:#00245f;
-    line-height:1.8;
+margin-top:18px;
+font-weight:bold;
+color:#00245f;
+line-height:1.8;
 }
 
 /* =========================
-   MERCADO
+MERCADO
 ========================= */
 
 .mercado-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
 }
 
 .estado{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 3px 13px rgba(0,0,0,.08);
+background:white;
+border-radius:16px;
+padding:20px;
+box-shadow:0 3px 13px rgba(0,0,0,.08);
 }
 
 .estado h3{
-    margin-bottom:14px;
+margin-bottom:14px;
 }
 
 .llego{
-    border-top:6px solid #1c9b45;
+border-top:6px solid #1c9b45;
 }
 
 .negociando{
-    border-top:6px solid #e5b400;
+border-top:6px solid #e5b400;
 }
 
 .alejo{
-    border-top:6px solid #d32f2f;
+border-top:6px solid #d32f2f;
 }
 
 .jugador{
-    padding:11px 0;
-    border-bottom:1px solid #eee;
-    line-height:1.5;
-}
-
-.jugador:last-child{
-    border-bottom:0;
+padding:11px 0;
+border-bottom:1px solid #eee;
+line-height:1.5;
 }
 
 /* =========================
-   BOCA EN EL NORTE
+BOCA EN EL NORTE
 ========================= */
 
 .norte{
-    background:linear-gradient(135deg,#00245f,#0756b8);
-    color:#fff;
-    border-radius:22px;
-    padding:28px;
-    box-shadow:0 5px 18px rgba(0,0,0,.12);
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+border-radius:22px;
+padding:28px;
+box-shadow:0 5px 18px rgba(0,0,0,.12);
 }
 
 .norte h2{
-    color:#f5c400;
-    margin-bottom:12px;
+color:#f5c400;
+margin-bottom:12px;
 }
 
 .norte p{
-    line-height:1.7;
-    color:#edf2fa;
+line-height:1.7;
+color:#edf2fa;
 }
 
 .provincias{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
 }
 
 .provincia{
-    background:#fff;
-    color:#00245f;
-    padding:10px 14px;
-    border-radius:22px;
-    font-weight:bold;
+background:white;
+color:#00245f;
+padding:10px 14px;
+border-radius:22px;
+font-weight:bold;
 }
 
 /* =========================
-   MUNDO BOCA
+MUNDO BOCA
 ========================= */
 
 .mundo-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
 }
 
 .mundo{
-    background:#fff;
-    border-radius:16px;
-    padding:22px 12px;
-    text-align:center;
-    text-decoration:none;
-    color:#00245f;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    border-top:5px solid #064aa8;
+background:white;
+border-radius:16px;
+padding:22px 12px;
+text-align:center;
+text-decoration:none;
+color:#00245f;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+border-top:5px solid #064aa8;
 }
 
 .mundo span{
-    font-size:32px;
-    display:block;
-    margin-bottom:9px;
+font-size:32px;
+display:block;
+margin-bottom:9px;
 }
 
 .mundo strong{
-    font-size:17px;
+font-size:17px;
 }
 
 /* =========================
-   AGENDA
+AGENDA
 ========================= */
 
 .agenda{
-    display:grid;
-    gap:13px;
+display:grid;
+gap:13px;
 }
 
 .evento{
-    background:#fff;
-    padding:18px;
-    border-radius:13px;
-    box-shadow:0 3px 10px rgba(0,0,0,.07);
-    border-left:6px solid #064aa8;
-    line-height:1.5;
+background:white;
+padding:18px;
+border-radius:13px;
+box-shadow:0 3px 10px rgba(0,0,0,.07);
+border-left:6px solid #064aa8;
+line-height:1.5;
 }
 
 .evento strong{
-    color:#00245f;
+color:#00245f;
 }
 
 /* =========================
-   HISTORIA
+HISTORIA
 ========================= */
 
 .historia{
-    background:#fff;
-    padding:27px;
-    border-radius:20px;
-    box-shadow:0 3px 13px rgba(0,0,0,.08);
-    line-height:1.75;
+background:white;
+padding:27px;
+border-radius:20px;
+box-shadow:0 3px 13px rgba(0,0,0,.08);
+line-height:1.75;
 }
 
 .historia h2{
-    color:#00245f;
-    margin-bottom:13px;
+color:#00245f;
+margin-bottom:13px;
 }
 
 /* =========================
-   UN DIA COMO HOY
+UN DIA COMO HOY
 ========================= */
 
 .hoy{
-    background:#00245f;
-    color:#fff;
-    border-radius:20px;
-    padding:28px;
-    border-bottom:7px solid #f5c400;
+background:#00245f;
+color:white;
+border-radius:20px;
+padding:28px;
+border-bottom:7px solid #f5c400;
 }
 
 .hoy h2{
-    color:#f5c400;
-    margin-bottom:14px;
-    font-size:28px;
+color:#f5c400;
+margin-bottom:14px;
+font-size:28px;
 }
 
 .hoy p{
-    line-height:1.75;
-    font-size:18px;
+line-height:1.75;
+font-size:18px;
 }
 
 /* =========================
-   NOTICIAS COMPLETAS
+TODAS LAS NOTICIAS
 ========================= */
 
 .noticias-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
 }
 
 .card{
-    background:#fff;
-    border-radius:16px;
-    padding:20px;
-    border-top:6px solid #064aa8;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+background:white;
+border-radius:16px;
+padding:20px;
+border-top:6px solid #064aa8;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .card-fuente{
-    color:#064aa8;
-    font-weight:bold;
-    font-size:13px;
-    text-transform:uppercase;
+color:#064aa8;
+font-weight:bold;
+font-size:13px;
+text-transform:uppercase;
 }
 
 .card h3{
-    font-size:19px;
-    line-height:1.35;
-    margin:9px 0;
+font-size:19px;
+line-height:1.35;
+margin:9px 0;
 }
 
 .fecha{
-    color:#777;
-    font-size:12px;
-    margin-bottom:11px;
+color:#777;
+font-size:12px;
+margin-bottom:11px;
 }
 
 .resumen{
-    color:#444;
-    line-height:1.55;
+color:#444;
+line-height:1.55;
 }
 
 .leer{
-    display:inline-block;
-    margin-top:15px;
-    background:#064aa8;
-    color:#fff;
-    padding:10px 14px;
-    border-radius:9px;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+margin-top:15px;
+background:#064aa8;
+color:white;
+padding:10px 14px;
+border-radius:9px;
+text-decoration:none;
+font-weight:bold;
 }
 
 /* =========================
-   VIDEOS
+VIDEOS
 ========================= */
 
 .videos-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
 }
 
 .video{
-    background:#fff;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+background:white;
+border-radius:16px;
+overflow:hidden;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
 .video iframe{
-    width:100%;
-    aspect-ratio:16/9;
-    border:0;
-    display:block;
+width:100%;
+aspect-ratio:16/9;
+border:0;
+display:block;
 }
 
 .video h3{
-    padding:16px;
-    color:#00245f;
+padding:16px;
+color:#00245f;
 }
 
 /* =========================
-   REDES
+REDES
 ========================= */
 
 .seguinos{
-    background:#00245f;
-    color:#fff;
-    padding:32px 20px;
-    border-radius:22px;
-    text-align:center;
+background:#00245f;
+color:white;
+padding:32px 20px;
+border-radius:22px;
+text-align:center;
 }
 
 .seguinos h2{
-    color:#f5c400;
-    margin-bottom:11px;
+color:#f5c400;
+margin-bottom:11px;
 }
 
 .redes{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:20px;
 }
 
 .red{
-    background:#fff;
-    color:#00245f;
-    padding:12px 18px;
-    border-radius:22px;
-    font-weight:bold;
-    text-decoration:none;
+background:white;
+color:#00245f;
+padding:12px 18px;
+border-radius:22px;
+font-weight:bold;
+text-decoration:none;
 }
 
 /* =========================
-   FOOTER
+FOOTER
 ========================= */
 
 footer{
-    background:#001b47;
-    color:#fff;
-    text-align:center;
-    padding:30px 15px;
-    border-top:6px solid #f5c400;
+background:#001b47;
+color:white;
+text-align:center;
+padding:30px 15px;
+border-top:6px solid #f5c400;
 }
 
 footer strong{
-    font-size:23px;
-    color:#f5c400;
+font-size:23px;
+color:#f5c400;
 }
 
 /* =========================
-   MOBILE
+MOBILE
 ========================= */
 
 @media(max-width:700px){
 
-    .logo{
-        font-size:32px;
-    }
+.logo{
+font-size:32px;
+}
 
-    .titulo{
-        font-size:23px;
-    }
+.titulo{
+font-size:23px;
+}
 
-    .ultima-principal h2{
-        font-size:24px;
-    }
+.ultima-principal h2{
+font-size:24px;
+}
 
-    .partido h2{
-        font-size:27px;
-    }
+.partido h2{
+font-size:27px;
+}
 
-    .equipos{
-        font-size:20px;
-        line-height:1.5;
-    }
+.equipos{
+font-size:20px;
+line-height:1.5;
+}
 
-    .streaming-grid{
-        grid-template-columns:1fr;
-    }
+.streaming-grid{
+grid-template-columns:1fr;
+}
 
-    .opciones{
-        grid-template-columns:1fr;
-    }
+.opciones{
+grid-template-columns:1fr;
+}
 
-    .mercado-grid{
-        grid-template-columns:1fr;
-    }
+.mercado-grid{
+grid-template-columns:1fr;
+}
 
-    .mundo-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.mundo-grid{
+grid-template-columns:repeat(2,1fr);
+}
 
-    .streaming-contenido{
-        padding:24px 18px 28px;
-    }
+.streaming-contenido{
+padding:24px 18px 28px;
+}
 
-    .streaming h2{
-        font-size:25px;
-    }
+.streaming h2{
+font-size:25px;
+}
 
-    .hoy p{
-        font-size:17px;
-    }
+.hoy p{
+font-size:17px;
+}
 
 }
 
@@ -758,1375 +736,911 @@ footer strong{
 
 <body>
 
-<!-- =========================
-     CABECERA
-========================= -->
-
 <header>
 
-    <div class="logo">
-        BOCA 24/7
-    </div>
+<div class="logo">
+BOCA 24/7
+</div>
 
-    <div class="slogan">
-        Todo Boca. Todo el día.
-    </div>
+<div class="slogan">
+Todo Boca. Todo el día.
+</div>
 
 </header>
 
-
-<!-- =========================
-     MENU
-========================= -->
-
 <nav>
 
-    <a href="#inicio">INICIO</a>
-
-    <a href="#noticias">NOTICIAS</a>
-
-    <a href="#partidos">PARTIDOS</a>
-
-    <a href="#mercado">MERCADO</a>
-
-    <a href="#streaming">STREAMING</a>
-
-    <a href="#videos">VIDEOS</a>
-
-    <a href="#mundo">BOCA</a>
+<a href="#inicio">INICIO</a>
+<a href="#noticias">NOTICIAS</a>
+<a href="#partidos">PARTIDOS</a>
+<a href="#mercado">MERCADO</a>
+<a href="#streaming">STREAMING</a>
+<a href="#videos">VIDEOS</a>
+<a href="#mundo">BOCA</a>
 
 </nav>
 
-
 <main id="inicio">
 
-
-<!-- =========================
-     ACTUALIZACION
-========================= -->
-
 <div class="actualizado" id="actualizado">
-    Última actualización: cargando...
+Cargando noticias...
 </div>
 
 
 <!-- =========================
-     ULTIMA HORA
+ULTIMA HORA
 ========================= -->
 
 <section class="bloque" id="noticias">
 
-    <h2 class="titulo">
-        🚨 ÚLTIMA HORA
-    </h2>
+<h2 class="titulo">
+🚨 ÚLTIMA HORA
+</h2>
 
-    <div class="ultima">
+<div class="ultima">
 
-        <div class="ultima-principal" id="principalNoticia">
+<div class="ultima-principal" id="principalNoticia">
 
-            <div class="ultima-label">
-                🔴 ÚLTIMA HORA
-            </div>
+<div class="ultima-label">
+🔴 ÚLTIMA HORA
+</div>
 
-            <h2>
-                Boca le ganó 1-0 a Lanús sobre el final
-            </h2>
+<h2>
+Cargando noticias...
+</h2>
 
-            <p>
-                Tomás Belmonte marcó en la última jugada y Boca consiguió una victoria agónica en La Bombonera.
-            </p>
+<p>
+Buscando las últimas novedades de Boca.
+</p>
 
-            <a
-                class="boton"
-                href="https://www.bocajuniors.com.ar/noticias/con-el-grito-final"
-                target="_blank"
-                rel="noopener">
-                LEER NOTICIA
-            </a>
+</div>
 
-        </div>
+<div class="ultima-lista" id="miniNoticias">
 
+</div>
 
-        <div class="ultima-lista">
-
-
-            <div class="mini-noticia">
-
-                <strong>
-                    BOCA JUNIORS
-                </strong>
-
-                <h3>
-                    Paredes y Belmonte hablaron después del triunfo ante Lanús
-                </h3>
-
-                <a
-                    href="https://www.bocajuniors.com.ar/noticias/estoy-en-el-lugar-que-amo"
-                    target="_blank"
-                    rel="noopener">
-                    Leer →
-                </a>
-
-            </div>
-
-
-            <div class="mini-noticia">
-
-                <strong>
-                    TYCSports
-                </strong>
-
-                <h3>
-                    Paredes habló de su físico y de su continuidad en Boca
-                </h3>
-
-                <a
-                    href="https://www.tycsports.com/boca-juniors/el-sincericidio-de-paredes-sobre-su-fisico-y-que-dijo-sobre-el-intento-de-milan-de-ficharlo-id757885.html"
-                    target="_blank"
-                    rel="noopener">
-                    Leer →
-                </a>
-
-            </div>
-
-
-            <div class="mini-noticia">
-
-                <strong>
-                    DIARIO XENEIZE
-                </strong>
-
-                <h3>
-                    Boca volvió al triunfo ante Lanús con gol agónico de Belmonte
-                </h3>
-
-                <a
-                    href="https://www.diarioxeneize.com/a-lo-boca-2/"
-                    target="_blank"
-                    rel="noopener">
-                    Leer →
-                </a>
-
-            </div>
-
-
-            <div class="mini-noticia">
-
-                <strong>
-                    CADENA 3
-                </strong>
-
-                <h3>
-                    Vélez prepara su plantel para enfrentar a Boca
-                </h3>
-
-                <a
-                    href="https://www.cadena3.com/amp/noticia/deportes/velez-refuerza-su-ataque-con-la-llegada-de-ronaldo-martinez-antes-del-choque-con-boca_588755"
-                    target="_blank"
-                    rel="noopener">
-                    Leer →
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     PROXIMO PARTIDO
+PARTIDO
 ========================= -->
 
 <section class="bloque" id="partidos">
 
-    <h2 class="titulo">
-        ⚽ PRÓXIMO PARTIDO
-    </h2>
+<h2 class="titulo">
+⚽ PRÓXIMO PARTIDO
+</h2>
 
-    <div class="partido">
+<div class="partido">
 
-        <div class="partido-label">
-            COPA ARGENTINA · OCTAVOS DE FINAL
-        </div>
+<div class="partido-label">
+COPA ARGENTINA · OCTAVOS DE FINAL
+</div>
 
-        <h2>
-            VÉLEZ 🆚 BOCA
-        </h2>
+<h2>
+VÉLEZ 🆚 BOCA
+</h2>
 
-        <div class="equipos">
-            VÉLEZ SARSFIELD &nbsp; VS &nbsp; BOCA JUNIORS
-        </div>
+<div class="equipos">
+VÉLEZ SARSFIELD &nbsp; VS &nbsp; BOCA JUNIORS
+</div>
 
-        <div class="datos-partido">
+<div class="datos-partido">
 
-            📅 Miércoles 2 de septiembre de 2026
-            <br>
+📅 Miércoles 2 de septiembre de 2026
+<br>
 
-            🕐 21:15 hs
-            <br>
+🕐 21:15 hs
+<br>
 
-            🏟️ Estadio Mario Alberto Kempes · Córdoba
+🏟️ Estadio Mario Alberto Kempes · Córdoba
 
-        </div>
+</div>
 
-        <a
-            class="boton"
-            href="https://www.copaargentina.org/es/partido/3708_Velez-vs-Boca.html"
-            target="_blank"
-            rel="noopener">
+<a
+class="boton"
+href="https://www.copaargentina.org/es/partido/3708_Velez-vs-Boca.html"
+target="_blank"
+rel="noopener">
 
-            VER PARTIDO
+VER PARTIDO
 
-        </a>
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     STREAMING
+STREAMING
 ========================= -->
 
 <section class="bloque" id="streaming">
 
-    <h2 class="titulo">
-        🎙️ BOCA 24/7 — STREAMING
-    </h2>
+<h2 class="titulo">
+🎙️ BOCA 24/7 — STREAMING
+</h2>
+
+<div class="streaming">
+
+<div class="streaming-imagen">
+
+<img
+src="IMG-20260829-WA0003.jpg"
+alt="Los Bosteros de Tucumán - Boca 24/7 Streaming">
+
+</div>
 
 
-    <div class="streaming">
+<div class="streaming-contenido">
+
+<div class="en-vivo">
+🔴 BOCA 24/7
+</div>
+
+<h2>
+Información, opinión y pasión xeneize
+</h2>
+
+<p class="streaming-descripcion">
+Todo el mundo Boca desde Tucumán.
+</p>
+
+<a
+class="stream-boton"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank"
+rel="noopener">
+
+▶️ VER CANAL
+
+</a>
 
 
-        <!--
-        CAMBIÁ SOLAMENTE EL NOMBRE DEL ARCHIVO
-        SI TU IMAGEN DE GITHUB TIENE OTRO NOMBRE.
-        -->
+<div class="streaming-grid">
 
-        <div class="streaming-imagen">
+<div class="stream-card">
 
-            <img
-                id="imagenStreaming"
-                src="streaming.jpg"
-                alt="Los Bosteros de Tucumán - Streaming Boca 24/7">
+<h3>
+🎙️ Próximo programa
+</h3>
 
-        </div>
+<p>
+Próximamente
+</p>
 
+<p>
+Horario a confirmar
+</p>
 
-        <div class="streaming-contenido">
-
-            <div class="en-vivo">
-                🔴 BOCA 24/7
-            </div>
-
-            <h2>
-                Información, opinión y pasión xeneize
-            </h2>
-
-            <p class="streaming-descripcion">
-                Todo el mundo Boca desde Tucumán.
-            </p>
+</div>
 
 
-            <a
-                class="stream-boton"
-                href="https://youtube.com/@movlosbosterosdetucuman"
-                target="_blank"
-                rel="noopener">
+<div class="stream-card">
 
-                ▶️ VER CANAL
+<h3>
+📺 Último programa
+</h3>
 
-            </a>
+<p>
+Mirá el contenido disponible en nuestro canal.
+</p>
 
+<a
+class="boton"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank"
+rel="noopener">
 
-            <div class="streaming-grid">
+VER YOUTUBE
 
+</a>
 
-                <div class="stream-card">
+</div>
 
-                    <h3>
-                        🎙️ Próximo programa
-                    </h3>
+</div>
 
-                    <p>
-                        Próximamente
-                    </p>
+</div>
 
-                    <p>
-                        Horario a confirmar
-                    </p>
-
-                </div>
-
-
-                <div class="stream-card">
-
-                    <h3>
-                        📺 Último programa
-                    </h3>
-
-                    <p>
-                        Mirá el contenido disponible en nuestro canal.
-                    </p>
-
-                    <a
-                        class="boton"
-                        href="https://youtube.com/@movlosbosterosdetucuman"
-                        target="_blank"
-                        rel="noopener">
-
-                        VER YOUTUBE
-
-                    </a>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     ENCUESTA
+ENCUESTA
 ========================= -->
 
 <section class="bloque">
 
-    <h2 class="titulo">
-        🗣️ LA VOZ DEL HINCHA
-    </h2>
+<h2 class="titulo">
+🗣️ LA VOZ DEL HINCHA
+</h2>
 
+<div class="encuesta">
 
-    <div class="encuesta">
+<h2>
+¿Quién debe ser titular?
+</h2>
 
-        <h2>
-            ¿Quién debe ser titular?
-        </h2>
+<p>
+Elegí tu opción y votá.
+</p>
 
-        <p>
-            Elegí tu opción y votá.
-        </p>
+<div class="opciones">
 
+<button
+class="opcion"
+onclick="seleccionar(0)">
 
-        <div class="opciones">
+🔵 Alan Velasco
 
+</button>
 
-            <button
-                class="opcion"
-                onclick="seleccionar(0)">
+<button
+class="opcion"
+onclick="seleccionar(1)">
 
-                🔵 Alan Velasco
+🟡 Kevin Zenón
 
-            </button>
+</button>
 
+</div>
 
-            <button
-                class="opcion"
-                onclick="seleccionar(1)">
+<button
+class="votar"
+onclick="votar()">
 
-                🟡 Kevin Zenón
+VOTAR
 
-            </button>
+</button>
 
+<div
+id="resultado"
+class="resultado">
+</div>
 
-        </div>
-
-
-        <button
-            class="votar"
-            onclick="votar()">
-
-            VOTAR
-
-        </button>
-
-
-        <div
-            id="resultado"
-            class="resultado">
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     MERCADO
+MERCADO
 ========================= -->
 
-<section class="bloque" id="mercado">
+<section
+class="bloque"
+id="mercado">
 
-    <h2 class="titulo">
-        🔄 MERCADO DE PASES
-    </h2>
+<h2 class="titulo">
+🔄 MERCADO DE PASES
+</h2>
 
+<div class="mercado-grid">
 
-    <div class="mercado-grid">
+<div class="estado llego">
 
+<h3>
+🟢 LLEGÓ
+</h3>
 
-        <div class="estado llego">
+<div class="jugador">
 
-            <h3>
-                🟢 LLEGÓ
-            </h3>
+<strong>
+Altas confirmadas
+</strong>
 
-            <div class="jugador">
+<br>
 
-                <strong>
-                    Altas confirmadas
-                </strong>
+Información oficial de Boca.
 
-                <br>
+</div>
 
-                Información oficial del mercado de Boca.
-
-            </div>
-
-        </div>
-
-
-        <div class="estado negociando">
-
-            <h3>
-                🟡 NEGOCIANDO
-            </h3>
-
-            <div class="jugador">
-
-                <strong>
-                    Operaciones en curso
-                </strong>
-
-                <br>
-
-                Seguí todas las novedades.
-
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="estado alejo">
+<div class="estado negociando">
 
-            <h3>
-                🔴 SE ALEJÓ
-            </h3>
+<h3>
+🟡 NEGOCIANDO
+</h3>
 
-            <div class="jugador">
+<div class="jugador">
 
-                <strong>
-                    Operaciones caídas
-                </strong>
+<strong>
+Operaciones en curso
+</strong>
 
-                <br>
+<br>
 
-                Noticias y novedades.
+Seguí las novedades.
 
-            </div>
+</div>
 
-        </div>
+</div>
 
 
-    </div>
+<div class="estado alejo">
+
+<h3>
+🔴 SE ALEJÓ
+</h3>
+
+<div class="jugador">
+
+<strong>
+Operaciones caídas
+</strong>
+
+<br>
+
+Noticias y novedades.
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- =========================
-     BOCA EN EL NORTE
+BOCA EN EL NORTE
 ========================= -->
 
 <section class="bloque">
 
-    <div class="norte">
+<div class="norte">
 
-        <h2>
-            📍 BOCA EN EL NORTE
-        </h2>
+<h2>
+📍 BOCA EN EL NORTE
+</h2>
 
-        <p>
+<p>
 
-            <strong>
-                BOCA EN EL NOA 🇦🇷
-            </strong>
+<strong>
+BOCA EN EL NOA 🇦🇷
+</strong>
 
-            <br><br>
+<br><br>
 
-            Noticias, hinchas, peñas, viajes a Buenos Aires,
-            entrevistas y coberturas de todo el mundo Boca
-            desde el norte argentino.
+Noticias, hinchas, peñas, viajes a Buenos Aires,
+entrevistas y coberturas de todo el mundo Boca
+desde el norte argentino.
 
-        </p>
+</p>
 
+<div class="provincias">
 
-        <div class="provincias">
+<span class="provincia">
+Tucumán
+</span>
 
-            <span class="provincia">
-                Tucumán
-            </span>
+<span class="provincia">
+Salta
+</span>
 
-            <span class="provincia">
-                Salta
-            </span>
+<span class="provincia">
+Jujuy
+</span>
 
-            <span class="provincia">
-                Jujuy
-            </span>
+<span class="provincia">
+Santiago del Estero
+</span>
 
-            <span class="provincia">
-                Santiago del Estero
-            </span>
+<span class="provincia">
+Catamarca
+</span>
 
-            <span class="provincia">
-                Catamarca
-            </span>
+<span class="provincia">
+La Rioja
+</span>
 
-            <span class="provincia">
-                La Rioja
-            </span>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     MUNDO BOCA
+MUNDO BOCA
 ========================= -->
 
 <section class="bloque" id="mundo">
 
-    <h2 class="titulo">
-        🌎 MUNDO BOCA
-    </h2>
+<h2 class="titulo">
+🌎 MUNDO BOCA
+</h2>
 
+<div class="mundo-grid">
 
-    <div class="mundo-grid">
+<a class="mundo" href="#noticias">
+<span>⚽</span>
+<strong>Primer equipo</strong>
+</a>
 
+<a class="mundo" href="#partidos">
+<span>🏟️</span>
+<strong>La Bombonera</strong>
+</a>
 
-        <a class="mundo" href="#noticias">
+<a class="mundo" href="#noticias">
+<span>👥</span>
+<strong>Plantel</strong>
+</a>
 
-            <span>⚽</span>
+<a class="mundo" href="#noticias">
+<span>⭐</span>
+<strong>Inferiores</strong>
+</a>
 
-            <strong>
-                Primer equipo
-            </strong>
+<a class="mundo" href="#noticias">
+<span>🟦</span>
+<strong>Reserva</strong>
+</a>
 
-        </a>
+<a class="mundo" href="#noticias">
+<span>👩⚽</span>
+<strong>Fútbol femenino</strong>
+</a>
 
+<a class="mundo" href="#noticias">
+<span>🏀</span>
+<strong>Básquet</strong>
+</a>
 
-        <a class="mundo" href="#partidos">
+<a class="mundo" href="#noticias">
+<span>⚽</span>
+<strong>Futsal</strong>
+</a>
 
-            <span>🏟️</span>
-
-            <strong>
-                La Bombonera
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>👥</span>
-
-            <strong>
-                Plantel
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>⭐</span>
-
-            <strong>
-                Inferiores
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>🟦</span>
-
-            <strong>
-                Reserva
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>👩⚽</span>
-
-            <strong>
-                Fútbol femenino
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>🏀</span>
-
-            <strong>
-                Básquet
-            </strong>
-
-        </a>
-
-
-        <a class="mundo" href="#noticias">
-
-            <span>⚽</span>
-
-            <strong>
-                Futsal
-            </strong>
-
-        </a>
-
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     AGENDA
+AGENDA
 ========================= -->
 
 <section class="bloque">
 
-    <h2 class="titulo">
-        📅 AGENDA
-    </h2>
+<h2 class="titulo">
+📅 AGENDA
+</h2>
 
+<div class="agenda">
 
-    <div class="agenda">
+<div class="evento">
 
+<strong>
+02/09 · 21:15
+</strong>
 
-        <div class="evento">
+<br>
 
-            <strong>
-                02/09 · 21:15
-            </strong>
+Vélez 🆚 Boca · Copa Argentina
 
-            <br>
+</div>
 
-            Vélez 🆚 Boca · Copa Argentina
+<div class="evento">
 
-        </div>
+<strong>
+05/09 · 16:30
+</strong>
 
+<br>
 
-        <div class="evento">
+Gimnasia de Mendoza 🆚 Boca · Liga Profesional
 
-            <strong>
-                05/09
-            </strong>
+</div>
 
-            <br>
+<div class="evento">
 
-            Gimnasia de Mendoza 🆚 Boca · Liga Profesional
+<strong>
+16/09
+</strong>
 
-        </div>
+<br>
 
+São Paulo 🆚 Boca · Copa Sudamericana
 
-        <div class="evento">
+</div>
 
-            <strong>
-                09/09
-            </strong>
-
-            <br>
-
-            Boca 🆚 São Paulo · Copa Sudamericana
-
-        </div>
-
-
-        <div class="evento">
-
-            <strong>
-                16/09
-            </strong>
-
-            <br>
-
-            São Paulo 🆚 Boca · Copa Sudamericana
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     HISTORIA
+HISTORIA
 ========================= -->
 
 <section class="bloque">
 
-    <div class="historia">
+<div class="historia">
 
-        <h2>
-            📖 LA HISTORIA
-        </h2>
+<h2>
+📖 LA HISTORIA
+</h2>
 
-        <p>
+<p>
 
-            Boca Juniors fue fundado el 3 de abril de 1905
-            en el barrio de La Boca, Buenos Aires.
+Boca Juniors fue fundado el 3 de abril de 1905
+en el barrio de La Boca, Buenos Aires.
 
-            <br><br>
+<br><br>
 
-            A lo largo de su historia se convirtió en uno
-            de los clubes más importantes y populares del
-            fútbol argentino y sudamericano.
+A lo largo de su historia se convirtió en uno
+de los clubes más importantes y populares del
+fútbol argentino y sudamericano.
 
-            <br><br>
+<br><br>
 
-            La Bombonera, sus ídolos, sus títulos y su gente
-            forman parte de una identidad que atraviesa
-            generaciones.
+La Bombonera, sus ídolos, sus títulos y su gente
+forman parte de una identidad que atraviesa
+generaciones.
 
-        </p>
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     UN DIA COMO HOY
+UN DIA COMO HOY
 ========================= -->
 
 <section class="bloque">
 
-    <div class="hoy">
+<div class="hoy">
 
-        <h2>
-            📆 UN DÍA COMO HOY
-        </h2>
+<h2>
+📆 UN DÍA COMO HOY
+</h2>
 
-        <p id="unDia">
-            Cargando efeméride...
-        </p>
+<p id="unDia">
+Cargando efeméride...
+</p>
 
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     NOTICIAS
+TODAS LAS NOTICIAS
 ========================= -->
 
 <section class="bloque">
 
-    <h2 class="titulo">
-        📰 TODAS LAS NOTICIAS
-    </h2>
+<h2 class="titulo">
+📰 TODAS LAS NOTICIAS
+</h2>
 
+<div
+class="noticias-grid"
+id="todasNoticias">
 
-    <div class="noticias-grid">
+<div class="card">
 
+<h3>
+Cargando noticias...
+</h3>
 
-        <article class="card">
+<p class="resumen">
+Estamos buscando las últimas noticias de Boca.
+</p>
 
-            <div class="card-fuente">
-                BOCA JUNIORS
-            </div>
+</div>
 
-            <h3>
-                Con el grito final: Boca le ganó 1-0 a Lanús
-            </h3>
-
-            <div class="fecha">
-                29/08/2026
-            </div>
-
-            <div class="resumen">
-
-                Tomás Belmonte marcó en la última jugada
-                del partido y Boca volvió al triunfo en
-                La Bombonera.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.bocajuniors.com.ar/noticias/con-el-grito-final"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-fuente">
-                BOCA JUNIORS
-            </div>
-
-            <h3>
-                "Estoy en el lugar que amo"
-            </h3>
-
-            <div class="fecha">
-                29/08/2026
-            </div>
-
-            <div class="resumen">
-
-                Leandro Paredes y Tomás Belmonte hablaron
-                después del triunfo frente a Lanús.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.bocajuniors.com.ar/noticias/estoy-en-el-lugar-que-amo"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-fuente">
-                TYCSports
-            </div>
-
-            <h3>
-                El sincericidio de Paredes sobre su físico
-            </h3>
-
-            <div class="fecha">
-                29/08/2026
-            </div>
-
-            <div class="resumen">
-
-                El capitán habló después del triunfo de Boca
-                y llevó tranquilidad sobre su continuidad.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.tycsports.com/boca-juniors/el-sincericidio-de-paredes-sobre-su-fisico-y-que-dijo-sobre-el-intento-de-milan-de-ficharlo-id757885.html"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-fuente">
-                DIARIO XENEIZE
-            </div>
-
-            <h3>
-                ¡A lo Boca! El análisis del triunfo ante Lanús
-            </h3>
-
-            <div class="fecha">
-                29/08/2026
-            </div>
-
-            <div class="resumen">
-
-                El Xeneize consiguió una victoria agónica
-                en La Bombonera.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.diarioxeneize.com/a-lo-boca-2/"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-fuente">
-                CADENA 3
-            </div>
-
-            <h3>
-                Vélez refuerza su ataque antes de enfrentar a Boca
-            </h3>
-
-            <div class="fecha">
-                29/08/2026
-            </div>
-
-            <div class="resumen">
-
-                El equipo de Guillermo Barros Schelotto
-                se prepara para el partido de Copa Argentina.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.cadena3.com/amp/noticia/deportes/velez-refuerza-su-ataque-con-la-llegada-de-ronaldo-martinez-antes-del-choque-con-boca_588755"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-        <article class="card">
-
-            <div class="card-fuente">
-                COPA ARGENTINA
-            </div>
-
-            <h3>
-                Vélez - Boca: información oficial del partido
-            </h3>
-
-            <div class="fecha">
-                26/08/2026
-            </div>
-
-            <div class="resumen">
-
-                El partido se jugará el miércoles 2 de septiembre
-                a las 21:15 en el estadio Mario Alberto Kempes.
-
-            </div>
-
-            <a
-                class="leer"
-                href="https://www.copaargentina.org/es/news/11959_Venta-de-entradas-para-Velez-Boca.html"
-                target="_blank"
-                rel="noopener">
-
-                Leer noticia →
-
-            </a>
-
-        </article>
-
-
-    </div>
+</div>
 
 </section>
 
 
 <!-- =========================
-     VIDEOS
+VIDEOS
 ========================= -->
 
-<section class="bloque" id="videos">
+<section
+class="bloque"
+id="videos">
 
-    <h2 class="titulo">
-        📺 VIDEOS
-    </h2>
+<h2 class="titulo">
+📺 VIDEOS
+</h2>
 
+<div class="videos-grid">
 
-    <div class="videos-grid">
+<div class="video">
 
+<iframe
+src="https://www.youtube.com/embed/4ybOs3IFAqI"
+title="El Canal de Boca"
+allowfullscreen>
+</iframe>
 
-        <div class="video">
+<h3>
+El Canal de Boca
+</h3>
 
-            <iframe
-                src="https://www.youtube.com/embed/4ybOs3IFAqI"
-                title="El Canal de Boca"
-                allowfullscreen>
-            </iframe>
+</div>
 
-            <h3>
-                El Canal de Boca
-            </h3>
+</div>
 
-        </div>
+<a
+class="boton"
+href="https://www.youtube.com/@ElCanaldeBoca/videos"
+target="_blank"
+rel="noopener">
 
+▶️ VER MÁS VIDEOS
 
-    </div>
-
-
-    <a
-        class="boton"
-        href="https://www.youtube.com/@ElCanaldeBoca/videos"
-        target="_blank"
-        rel="noopener">
-
-        ▶️ VER MÁS VIDEOS
-
-    </a>
+</a>
 
 </section>
 
 
 <!-- =========================
-     REDES
+REDES
 ========================= -->
 
 <section class="bloque">
 
-    <div class="seguinos">
+<div class="seguinos">
 
-        <h2>
-            📱 SEGUÍ A BOCA 24/7
-        </h2>
+<h2>
+📱 SEGUÍ A BOCA 24/7
+</h2>
 
-        <p>
-            Seguí nuestras redes y enterate primero
-            de todas las noticias de Boca.
-        </p>
+<p>
+Seguí nuestras redes y enterate primero
+de todas las noticias de Boca.
+</p>
 
+<div class="redes">
 
-        <div class="redes">
+<a
+class="red"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank"
+rel="noopener">
 
+YouTube
 
-            <a
-                class="red"
-                href="https://youtube.com/@movlosbosterosdetucuman"
-                target="_blank"
-                rel="noopener">
+</a>
 
-                YouTube
+<a
+class="red"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank"
+rel="noopener">
 
-            </a>
+Los Bosteros de Tucumán
 
+</a>
 
-            <a
-                class="red"
-                href="https://youtube.com/@movlosbosterosdetucuman"
-                target="_blank"
-                rel="noopener">
+</div>
 
-                Los Bosteros de Tucumán
+<p style="margin-top:20px">
 
-            </a>
+🔔 Activá las notificaciones y enterate primero
+de todas las noticias.
 
+</p>
 
-        </div>
-
-
-        <p style="margin-top:20px">
-
-            🔔 Activá las notificaciones y enterate primero
-            de todas las noticias.
-
-        </p>
-
-    </div>
+</div>
 
 </section>
-
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    <strong>
-        BOCA 24/7
-    </strong>
+<strong>
+BOCA 24/7
+</strong>
 
-    <p style="margin-top:8px">
-        Todo Boca. Todo el día.
-    </p>
+<p style="margin-top:8px">
+Todo Boca. Todo el día.
+</p>
 
 </footer>
 
 
 <script>
 
-/* ==========================================
-   ENCUESTA VELASCO VS ZENÓN
-========================================== */
+/* ==================================================
+NOTICIAS
+================================================== */
 
-let votoSeleccionado = null;
+let noticias = [];
 
 
-function seleccionar(indice){
+function escapar(texto){
 
-    votoSeleccionado = indice;
+const div = document.createElement("div");
 
-    document
-        .querySelectorAll(".opcion")
-        .forEach((boton,i)=>{
+div.textContent = texto || "";
 
-            boton.classList.toggle(
-                "seleccionada",
-                i === indice
-            );
-
-        });
+return div.innerHTML;
 
 }
 
 
-function votar(){
+function urlSegura(url){
 
-    if(votoSeleccionado === null){
+if(!url){
+return "#";
+}
 
-        alert("Elegí entre Alan Velasco y Kevin Zenón.");
+try{
 
-        return;
+const u = new URL(url);
 
-    }
+if(
+u.protocol === "https:" ||
+u.protocol === "http:"
+){
 
+return u.href;
 
-    let votos = JSON.parse(
-        localStorage.getItem("boca247_votos") ||
-        '{"velasco":63,"zenon":37}'
-    );
+}
 
+return "#";
 
-    if(votoSeleccionado === 0){
+}catch(e){
 
-        votos.velasco++;
+return "#";
 
-    }else{
-
-        votos.zenon++;
-
-    }
-
-
-    localStorage.setItem(
-        "boca247_votos",
-        JSON.stringify(votos)
-    );
-
-
-    const total =
-        votos.velasco +
-        votos.zenon;
-
-
-    const porcentajeVelasco =
-        Math.round(
-            (votos.velasco / total) * 100
-        );
-
-
-    const porcentajeZenon =
-        100 - porcentajeVelasco;
-
-
-    document.getElementById("resultado").innerHTML = `
-
-        Resultado actual:
-
-        <br><br>
-
-        🔵 Alan Velasco —
-        ${porcentajeVelasco}%
-
-        <br>
-
-        🟡 Kevin Zenón —
-        ${porcentajeZenon}%
-
-    `;
+}
 
 }
 
 
-/* ==========================================
-   UN DÍA COMO HOY
-========================================== */
+function fechaNoticia(fecha){
 
-function cargarUnDia(){
+if(!fecha){
+return "";
+}
 
-    const fecha = new Date();
+const f = new Date(fecha);
 
-    const dia = fecha.getDate();
+if(isNaN(f.getTime())){
+return "";
+}
 
-    const mes = fecha.getMonth() + 1;
-
-
-    const eventos = {
-
-        "29-8":
-        "El 29 de agosto es una nueva jornada para repasar la historia del Xeneize, sus protagonistas y los momentos que quedaron para siempre en la memoria de los hinchas.",
-
-        "30-8":
-        "Un día como hoy: otra jornada para recordar la historia, los ídolos y las grandes conquistas de Boca.",
-
-        "31-8":
-        "Un día como hoy: Boca y su historia vuelven a ser protagonistas.",
-
-        "1-9":
-        "Un día como hoy: repasamos recuerdos que forman parte de la identidad xeneize.",
-
-        "2-9":
-        "Un día como hoy, Boca vuelve a ser protagonista con un nuevo desafío por la Copa Argentina."
-
-    };
-
-
-    document.getElementById("unDia").textContent =
-        eventos[dia + "-" + mes] ||
-        "Un día como hoy en la historia de Boca: partidos, protagonistas, títulos y momentos inolvidables del Xeneize.";
+return new Intl.DateTimeFormat(
+"es-AR",
+{
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
+hour:"2-digit",
+minute:"2-digit",
+hour12:false
+}
+).format(f);
 
 }
 
 
-/* ==========================================
-   FECHA DE ACTUALIZACIÓN
-========================================== */
+/* ==================================================
+MOSTRAR NOTICIAS
+================================================== */
 
-function actualizarHora(){
+function mostrarNoticias(){
 
-    const ahora = new Date();
+if(!noticias.length){
 
+document.getElementById(
+"principalNoticia"
+).innerHTML = `
 
-    document.getElementById("actualizado").textContent =
+<div class="ultima-label">
+⚠️ INFORMACIÓN
+</div>
 
-        "Última actualización: " +
+<h2>
+No hay noticias disponibles.
+</h2>
 
-        new Intl.DateTimeFormat(
-            "es-AR",
-            {
-                day:"2-digit",
-                month:"2-digit",
-                year:"numeric",
-                hour:"2-digit",
-                minute:"2-digit",
-                hour12:false
-            }
-        ).format(ahora);
+<p>
+Intentá actualizar la página.
+</p>
+
+`;
+
+return;
 
 }
 
 
-/* ==========================================
-   IMAGEN STREAMING
-   BUSCA AUTOMÁTICAMENTE EL ARCHIVO
-========================================== */
+/* NOTICIA PRINCIPAL */
 
-const posiblesImagenes = [
+const principal = noticias[0];
 
-    "streaming.jpg",
-    "streaming.png",
-    "Streaming.jpg",
-    "Streaming.png",
+document.getElementById(
+"principalNoticia"
+).innerHTML = `
 
-    "imagen-streaming.jpg",
-    "imagen-streaming.png",
+<div class="ultima-label">
+🔴 ÚLTIMA HORA
+</div>
 
-    "imagen_streaming.jpg",
-    "imagen_streaming.png",
+<h2>
+${escapar(principal.titulo)}
+</h2>
 
-    "streaming-boca.jpg",
-    "streaming-boca.png",
+<p>
+${escapar(principal.contenido)}
+</p>
 
-    "boca-streaming.jpg",
-    "boca-streaming.png",
+<a
+class="boton"
+href="${urlSegura(principal.link)}"
+target="_blank"
+rel="noopener">
 
-    "los-bosteros.jpg",
-    "los-bosteros.png",
+LEER NOTICIA
 
-    "losbosteros.jpg",
-    "losbosteros.png",
+</a>
 
-    "flyer-streaming.jpg",
-    "flyer-streaming.png"
-
-];
+`;
 
 
-let imagenActual = 0;
+/* MINI NOTICIAS */
+
+const minis = noticias.slice(1,5);
+
+document.getElementById(
+"miniNoticias"
+).innerHTML = minis.map(n => `
+
+<div class="mini-noticia">
+
+<strong>
+${escapar(n.fuente || "Boca 24/7")}
+</strong>
+
+<h3>
+${escapar(n.titulo)}
+</h3>
+
+<a
+href="${urlSegura(n.link)}"
+target="_blank"
+rel="noopener">
+
+Leer →
+
+</a>
+
+</div>
+
+`).join("");
 
 
-const imagenStreaming =
-    document.getElementById("imagenStreaming");
+/* TODAS LAS NOTICIAS */
 
+const todas = noticias.slice(0,12);
 
-imagenStreaming.onerror = function(){
+document.getElementById(
+"todasNoticias"
+).innerHTML = todas.map(n => `
 
-    imagenActual++;
+<article class="card">
 
-
-    if(
-        imagenActual <
-        posiblesImagenes.length
-    ){
-
-        imagenStreaming.src =
-            posiblesImagenes[imagenActual];
-
-    }
-
-};
-
-
-imagenStreaming.src =
-    posiblesImagenes[0];
-
-
-/* ==========================================
-   INICIAR
-========================================== */
-
-cargarUnDia();
-
-actualizarHora();
-
-
-setInterval(
-    actualizarHora,
-    60000
-);
-
-</script>
-
-</body>
-</html>
+<div class="card-fuente">
+${escapar(n.fuente || "Boca 24/7")}
+    </div>
