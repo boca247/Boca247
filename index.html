@@ -240,7 +240,10 @@ text-align:center;
 color:#666;
 }
 
-/* MUNDO BOCA */
+
+/* =========================
+   MUNDO BOCA
+========================= */
 
 .mundo{
 margin:45px 0;
@@ -266,74 +269,222 @@ box-shadow:0 3px 12px rgba(0,0,0,.09);
 }
 
 .mundo-icono{
-font-size:35px;
+font-size:32px;
 margin-bottom:10px;
 }
 
 .mundo-card h3{
 color:#00245f;
 font-size:20px;
-margin-bottom:9px;
+margin-bottom:10px;
 }
 
 .mundo-card p{
 color:#555;
-line-height:1.5;
+line-height:1.55;
 }
 
 .mundo-dato{
-font-size:25px;
+font-size:23px;
 font-weight:bold;
 color:#064aa8;
-margin:12px 0;
+margin:10px 0;
 }
 
+
+/* =========================
+   ENCUESTA
+========================= */
+
 .encuesta{
+margin-top:20px;
 background:linear-gradient(135deg,#00245f,#0756b8);
 color:white;
 border-radius:18px;
 padding:24px;
-margin-top:20px;
-border-bottom:5px solid #f5c400;
+border-bottom:6px solid #f5c400;
 }
 
 .encuesta h3{
 color:#f5c400;
-margin-bottom:12px;
+font-size:22px;
+margin-bottom:10px;
+}
+
+.encuesta p{
+line-height:1.5;
 }
 
 .opciones{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
 gap:10px;
-margin-top:15px;
+margin-top:17px;
 }
 
 .opcion{
-border:2px solid white;
+border:0;
 background:white;
 color:#00245f;
-padding:11px;
+padding:12px;
 border-radius:9px;
 font-weight:bold;
 cursor:pointer;
 }
 
-.voto{
-margin-top:15px;
-font-weight:bold;
+.opcion:hover{
+background:#f5c400;
+}
+
+.resultado{
+margin-top:18px;
 display:none;
 }
 
-/* TODO BOCA */
+.barra{
+height:10px;
+background:#fff;
+border-radius:10px;
+overflow:hidden;
+margin-top:5px;
+margin-bottom:8px;
+}
 
-.menu-secciones{
+.barra span{
+display:block;
+height:100%;
+background:#f5c400;
+width:0%;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia{
+margin:45px 0;
+}
+
+.historia-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:16px;
 }
 
-.menu-card{
+.historia-card{
+background:white;
+padding:20px;
+border-radius:15px;
+border-top:5px solid #064aa8;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.historia-año{
+font-size:25px;
+font-weight:bold;
+color:#064aa8;
+margin-bottom:8px;
+}
+
+.historia-card h3{
+color:#00245f;
+margin-bottom:7px;
+}
+
+.historia-card p{
+color:#555;
+line-height:1.5;
+}
+
+
+/* =========================
+   AGENDA
+========================= */
+
+.agenda{
+margin:45px 0;
+}
+
+.agenda-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:16px;
+}
+
+.agenda-card{
+background:white;
+border-radius:15px;
+padding:20px;
+border-left:6px solid #064aa8;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.agenda-fecha{
+color:#064aa8;
+font-weight:bold;
+font-size:15px;
+}
+
+.agenda-card h3{
+color:#00245f;
+margin:8px 0;
+font-size:20px;
+}
+
+.agenda-card p{
+color:#555;
+line-height:1.5;
+}
+
+
+/* =========================
+   UN DIA COMO HOY
+========================= */
+
+.hoy{
+margin:45px 0;
+}
+
+.hoy-box{
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+padding:25px;
+border-radius:18px;
+border-bottom:6px solid #f5c400;
+}
+
+.hoy-fecha{
+color:#f5c400;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.hoy-box h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.hoy-box p{
+line-height:1.6;
+}
+
+
+/* =========================
+   TODO BOCA
+========================= */
+
+.categorias{
+margin:45px 0;
+}
+
+.categorias-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+}
+
+.categoria{
 background:white;
 border:0;
 border-top:5px solid #064aa8;
@@ -342,117 +493,90 @@ padding:22px 15px;
 text-align:center;
 color:#00245f;
 box-shadow:0 3px 12px rgba(0,0,0,.09);
-cursor:pointer;
 transition:.2s;
+cursor:pointer;
+font-family:Arial,Helvetica,sans-serif;
+width:100%;
 }
 
-.menu-card:hover{
+.categoria:hover{
 transform:translateY(-3px);
 border-top-color:#f5c400;
 }
 
-.menu-icono{
-font-size:36px;
+.categoria-icono{
+font-size:34px;
 margin-bottom:10px;
 }
 
-.menu-card h3{
+.categoria h3{
 font-size:19px;
-margin-bottom:7px;
+margin-bottom:6px;
 }
 
-.menu-card p{
+.categoria p{
+color:#666;
 font-size:14px;
-color:#666;
 line-height:1.4;
 }
 
-.panel{
-display:none;
-background:white;
+
+/* =========================
+   INFO BOCA
+========================= */
+
+.info-boca{
+background:#00245f;
+color:white;
 border-radius:18px;
-padding:25px;
-margin-bottom:35px;
-box-shadow:0 3px 12px rgba(0,0,0,.09);
-border-top:6px solid #064aa8;
+padding:25px 18px;
+margin:40px 0;
 }
 
-.panel.activo{
-display:block;
+.info-boca h2{
+color:#f5c400;
+margin-bottom:15px;
 }
 
-.panel h2{
+.info-boca p{
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.info-boton{
+display:inline-block;
+background:#f5c400;
 color:#00245f;
-margin-bottom:12px;
-font-size:27px;
+padding:10px 15px;
+border-radius:9px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.panel p{
-line-height:1.65;
-color:#444;
-}
 
-.info-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-top:20px;
-}
+/* =========================
+   VIDEOS
+========================= */
 
-.info-card{
-background:#f3f4f7;
-padding:18px;
-border-radius:12px;
-}
-
-.info-card strong{
-display:block;
-color:#00245f;
-font-size:18px;
-margin-bottom:7px;
-}
-
-/* GALERIAS */
-
-.galeria{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.galeria-item{
-background:white;
-border-top:5px solid #064aa8;
-border-radius:15px;
-padding:25px;
-text-align:center;
-box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-.galeria-item span{
-font-size:45px;
-display:block;
-margin-bottom:10px;
-}
-
-.galeria-item h3{
-color:#00245f;
-margin-bottom:7px;
-}
-
-.galeria-item p{
-color:#666;
-line-height:1.4;
-}
-
-/* VIDEOS */
-
-.video-seccion{
+.videos-seccion{
 margin-top:45px;
-margin-bottom:45px;
+margin-bottom:40px;
 }
 
-.video-grid{
+.videos-titulo{
+color:#00245f;
+font-size:25px;
+border-left:7px solid #f5c400;
+padding-left:12px;
+margin-bottom:18px;
+}
+
+.videos-subtitulo{
+color:#666;
+margin-bottom:20px;
+}
+
+.videos-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
@@ -502,7 +626,21 @@ border-radius:8px;
 font-weight:bold;
 }
 
-/* STREAMING */
+.canal-boton{
+display:inline-block;
+margin-top:20px;
+background:#f5c400;
+color:#00245f;
+text-decoration:none;
+padding:12px 18px;
+border-radius:10px;
+font-weight:bold;
+}
+
+
+/* =========================
+   STREAMING
+========================= */
 
 .streaming{
 width:100%;
@@ -531,7 +669,10 @@ border-radius:16px;
 box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 background:#00245f;
@@ -546,6 +687,11 @@ color:#f5c400;
 font-size:22px;
 }
 
+
+/* =========================
+   CELULAR
+========================= */
+
 @media(max-width:600px){
 
 .hero h2{
@@ -553,6 +699,7 @@ font-size:23px;
 }
 
 .seccion-titulo,
+.videos-titulo,
 .streaming-titulo{
 font-size:21px;
 }
@@ -565,12 +712,8 @@ font-size:24px;
 font-size:21px;
 }
 
-.menu-secciones{
+.categorias-grid{
 grid-template-columns:1fr 1fr;
-}
-
-.mundo-grid{
-grid-template-columns:1fr;
 }
 
 }
@@ -580,6 +723,7 @@ grid-template-columns:1fr;
 
 <body>
 
+
 <header>
 
 <img
@@ -588,9 +732,12 @@ alt="Boca 24/7">
 
 </header>
 
+
 <nav>
 
-<button onclick="inicio()">Inicio</button>
+<button onclick="inicio()">
+Inicio
+</button>
 
 <button onclick="irA('proximo')">
 Próximo partido
@@ -600,7 +747,19 @@ Próximo partido
 Mundo Boca
 </button>
 
-<button onclick="irA('todo-boca')">
+<button onclick="irA('agenda')">
+Agenda
+</button>
+
+<button onclick="irA('historia')">
+Historia
+</button>
+
+<button onclick="irA('hoy')">
+Un día como hoy
+</button>
+
+<button onclick="irA('categorias')">
 Todo Boca
 </button>
 
@@ -608,21 +767,11 @@ Todo Boca
 Videos
 </button>
 
-<button onclick="irA('camisetas')">
-Camisetas
-</button>
-
-<button onclick="irA('fotos')">
-Fotos
-</button>
-
-<button onclick="irA('historia')">
-Historia
-</button>
-
 </nav>
 
+
 <main>
+
 
 <div
 class="actualizado"
@@ -632,6 +781,8 @@ Cargando información...
 
 </div>
 
+
+<!-- PROXIMO PARTIDO -->
 
 <section
 class="proximo"
@@ -673,6 +824,8 @@ Ver Copa Argentina
 <section id="hero"></section>
 
 
+<!-- FUENTES -->
+
 <section class="fuentes">
 
 <h2>
@@ -693,14 +846,12 @@ El Canal de Boca
 TyC Sports
 </span>
 
-<span class="fuente">
-Olé
-</span>
-
 </div>
 
 </section>
 
+
+<!-- NOTICIAS -->
 
 <section class="seccion">
 
@@ -735,7 +886,7 @@ id="mundo">
 </h2>
 
 <p class="mundo-intro">
-Todo lo que un hincha quiere saber, incluso cuando no hay partido.
+Contenido especial para seguir viviendo Boca todos los días.
 </p>
 
 <div class="mundo-grid">
@@ -752,11 +903,11 @@ Agenda Xeneize
 </h3>
 
 <p>
-Próximo partido oficial:
+Próximo partido oficial.
 </p>
 
 <div class="mundo-dato">
-Vélez 🆚 Boca
+VÉLEZ 🆚 BOCA
 </div>
 
 <p>
@@ -781,28 +932,7 @@ BOCA 1 - 0 LANÚS
 </div>
 
 <p>
-Victoria agónica en La Bombonera con gol de Tomás Belmonte sobre el final.
-</p>
-
-</div>
-
-
-<div class="mundo-card">
-
-<div class="mundo-icono">
-👕
-</div>
-
-<h3>
-Camiseta del día
-</h3>
-
-<div class="mundo-dato">
-1996
-</div>
-
-<p>
-Una época inolvidable de la historia Xeneize y el comienzo de una nueva era.
+Victoria de Boca ante Lanús.
 </p>
 
 </div>
@@ -819,11 +949,11 @@ Una época inolvidable de la historia Xeneize y el comienzo de una nueva era.
 </h3>
 
 <div class="mundo-dato">
-JUAN ROMÁN RIQUELME
+RIQUELME
 </div>
 
 <p>
-Uno de los grandes símbolos de Boca y protagonista de una época histórica del club.
+Uno de los máximos símbolos de la historia Xeneize.
 </p>
 
 </div>
@@ -849,25 +979,10 @@ Boca Juniors fue fundado el 3 de abril de 1905.
 
 </div>
 
-
-<div class="mundo-card">
-
-<div class="mundo-icono">
-🏟️
 </div>
 
-<h3>
-Hace un año en Boca
-</h3>
 
-<p>
-Esta tarjeta queda preparada para que posteriormente carguemos automáticamente hechos históricos según la fecha.
-</p>
-
-</div>
-
-</div>
-
+<!-- ENCUESTA -->
 
 <div class="encuesta">
 
@@ -884,34 +999,75 @@ Esta tarjeta queda preparada para que posteriormente carguemos automáticamente 
 <button
 class="opcion"
 onclick="votar('Riquelme')">
+
 Riquelme
+
 </button>
 
 <button
 class="opcion"
 onclick="votar('Maradona')">
+
 Maradona
+
 </button>
 
 <button
 class="opcion"
-onclick="votar('Manteca')">
+onclick="votar('Manteca Martínez')">
+
 Manteca Martínez
+
 </button>
 
 <button
 class="opcion"
 onclick="votar('Otro')">
+
 Otro
+
 </button>
 
 </div>
+
 
 <div
-class="voto"
-id="voto">
+class="resultado"
+id="resultado">
 
-¡Voto registrado! 💙💛
+<p id="textoVoto"></p>
+
+<div>
+Riquelme
+</div>
+
+<div class="barra">
+<span id="barraRiquelme"></span>
+</div>
+
+<div>
+Maradona
+</div>
+
+<div class="barra">
+<span id="barraMaradona"></span>
+</div>
+
+<div>
+Manteca Martínez
+</div>
+
+<div class="barra">
+<span id="barraManteca"></span>
+</div>
+
+<div>
+Otro
+</div>
+
+<div class="barra">
+<span id="barraOtro"></span>
+</div>
 
 </div>
 
@@ -920,358 +1076,89 @@ id="voto">
 </section>
 
 
-<!-- TODO BOCA -->
+<!-- AGENDA -->
 
 <section
-class="seccion"
-id="todo-boca">
+class="agenda"
+id="agenda">
 
 <h2 class="seccion-titulo">
-⚽ Todo Boca
+🗓️ Agenda Xeneize
 </h2>
 
-<div class="menu-secciones">
+<div class="agenda-grid">
 
 
-<button class="menu-card"
-onclick="mostrarPanel('futbol')">
+<div class="agenda-card">
 
-<div class="menu-icono">⚽</div>
+<div class="agenda-fecha">
+02 SEPTIEMBRE · 21:15
+</div>
 
-<h3>Primer equipo</h3>
-
-<p>
-Plantel profesional y actualidad.
-</p>
-
-</button>
-
-
-<button class="menu-card"
-onclick="mostrarPanel('reserva')">
-
-<div class="menu-icono">🟦</div>
-
-<h3>Reserva</h3>
+<h3>
+Vélez 🆚 Boca
+</h3>
 
 <p>
-Las futuras figuras.
+Copa Argentina · Octavos de final.
 </p>
 
-</button>
+</div>
 
 
-<button class="menu-card"
-onclick="mostrarPanel('inferiores')">
+<div class="agenda-card">
 
-<div class="menu-icono">⭐</div>
+<div class="agenda-fecha">
+PRÓXIMAMENTE
+</div>
 
-<h3>Inferiores</h3>
+<h3>
+Próximos partidos
+</h3>
 
 <p>
-El semillero Xeneize.
+Esta sección se puede ir actualizando con las próximas fechas.
 </p>
 
-</button>
+</div>
 
-
-<button class="menu-card"
-onclick="mostrarPanel('femenino')">
-
-<div class="menu-icono">👩⚽</div>
-
-<h3>Fútbol femenino</h3>
-
-<p>
-Las Gladiadoras.
-</p>
-
-</button>
-
-
-<button class="menu-card"
-onclick="mostrarPanel('futsal')">
-
-<div class="menu-icono">⚽</div>
-
-<h3>Futsal</h3>
-
-<p>
-Toda la actualidad.
-</p>
-
-</button>
-
-
-<button class="menu-card"
-onclick="mostrarPanel('basquet')">
-
-<div class="menu-icono">🏀</div>
-
-<h3>Básquet</h3>
-
-<p>
-El básquet Xeneize.
-</p>
-
-</button>
-
-
-<button class="menu-card"
-onclick="mostrarPanel('voley')">
-
-<div class="menu-icono">🏐</div>
-
-<h3>Vóley</h3>
-
-<p>
-Noticias y resultados.
-</p>
-
-</button>
-
-
-<button class="menu-card"
-onclick="mostrarPanel('bombonera')">
-
-<div class="menu-icono">🏟️</div>
-
-<h3>La Bombonera</h3>
-
-<p>
-Historia y momentos.
-</p>
-
-</button>
 
 </div>
 
 </section>
 
 
-<section class="panel" id="futbol">
-
-<h2>⚽ Primer equipo</h2>
-
-<p>
-Toda la actualidad del plantel profesional de Boca Juniors.
-</p>
-
-<div class="info-grid">
-
-<div class="info-card">
-<strong>Plantel</strong>
-Jugadores y cuerpo técnico.
-</div>
-
-<div class="info-card">
-<strong>Partidos</strong>
-Resultados y próximos encuentros.
-</div>
-
-<div class="info-card">
-<strong>Noticias</strong>
-Las últimas novedades.
-</div>
-
-</div>
-
-</section>
-
-
-<section class="panel" id="reserva">
-
-<h2>🟦 Reserva</h2>
-
-<p>
-Información de la Reserva, sus partidos,
-resultados y futuras figuras.
-</p>
-
-</section>
-
-
-<section class="panel" id="inferiores">
-
-<h2>⭐ Inferiores</h2>
-
-<p>
-Las categorías juveniles y los jugadores que buscan
-llegar al primer equipo.
-</p>
-
-</section>
-
-
-<section class="panel" id="femenino">
-
-<h2>👩⚽ Fútbol femenino</h2>
-
-<p>
-Todo sobre Las Gladiadoras, sus partidos,
-resultados y protagonistas.
-</p>
-
-</section>
-
-
-<section class="panel" id="futsal">
-
-<h2>⚽ Futsal</h2>
-
-<p>
-Noticias, partidos y resultados del futsal Xeneize.
-</p>
-
-</section>
-
-
-<section class="panel" id="basquet">
-
-<h2>🏀 Básquet</h2>
-
-<p>
-Toda la actualidad del básquet de Boca.
-</p>
-
-</section>
-
-
-<section class="panel" id="voley">
-
-<h2>🏐 Vóley</h2>
-
-<p>
-Noticias y resultados del vóley Xeneize.
-</p>
-
-</section>
-
-
-<section class="panel" id="bombonera">
-
-<h2>🏟️ La Bombonera</h2>
-
-<p>
-El templo del pueblo Xeneize. La Bombonera,
-inaugurada en 1940, se convirtió en uno de los
-grandes símbolos de Boca Juniors.
-</p>
-
-<div class="info-grid">
-
-<div class="info-card">
-<strong>Nombre</strong>
-Estadio Alberto J. Armando.
-</div>
-
-<div class="info-card">
-<strong>Dirección</strong>
-Brandsen 805, Buenos Aires.
-</div>
-
-<div class="info-card">
-<strong>Inauguración</strong>
-25 de mayo de 1940.
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CAMISETAS -->
+<!-- UN DIA COMO HOY -->
 
 <section
-class="seccion"
-id="camisetas">
+class="hoy"
+id="hoy">
 
 <h2 class="seccion-titulo">
-👕 Camisetas
+📅 Un día como hoy
 </h2>
 
-<div class="galeria">
+<div class="hoy-box">
 
-<div class="galeria-item">
-<span>👕</span>
-<h3>Primeros modelos</h3>
+<div
+class="hoy-fecha"
+id="fechaHoy">
+
+HOY EN LA HISTORIA DE BOCA
+
+</div>
+
+<h3>
+Un día Xeneize
+</h3>
+
 <p>
-Los primeros años de la identidad Xeneize.
+La historia de Boca está llena de partidos,
+títulos, jugadores y momentos inolvidables.
+Esta sección queda preparada para mostrar
+automáticamente el acontecimiento correspondiente
+a cada fecha.
 </p>
-</div>
-
-<div class="galeria-item">
-<span>💙💛</span>
-<h3>La franja dorada</h3>
-<p>
-El símbolo que se convirtió en parte de la identidad de Boca.
-</p>
-</div>
-
-<div class="galeria-item">
-<span>🏆</span>
-<h3>Camisetas históricas</h3>
-<p>
-Modelos asociados a grandes equipos y conquistas.
-</p>
-</div>
-
-<div class="galeria-item">
-<span>👕</span>
-<h3>Actualidad</h3>
-<p>
-Las camisetas de las últimas temporadas.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOTOS -->
-
-<section
-class="seccion"
-id="fotos">
-
-<h2 class="seccion-titulo">
-📸 Fotos
-</h2>
-
-<div class="galeria">
-
-<div class="galeria-item">
-<span>🏟️</span>
-<h3>La Bombonera</h3>
-<p>
-El templo Xeneize.
-</p>
-</div>
-
-<div class="galeria-item">
-<span>⚽</span>
-<h3>Partidos</h3>
-<p>
-Momentos dentro de la cancha.
-</p>
-</div>
-
-<div class="galeria-item">
-<span>👑</span>
-<h3>Ídolos</h3>
-<p>
-Los grandes protagonistas de la historia.
-</p>
-</div>
-
-<div class="galeria-item">
-<span>💙💛</span>
-<h3>La hinchada</h3>
-<p>
-La pasión del pueblo Xeneize.
-</p>
-</div>
 
 </div>
 
@@ -1281,46 +1168,351 @@ La pasión del pueblo Xeneize.
 <!-- HISTORIA -->
 
 <section
-class="seccion"
+class="historia"
 id="historia">
 
 <h2 class="seccion-titulo">
-🏆 Historia
+🏆 Historia de Boca
 </h2>
 
-<div class="info-grid">
+<div class="historia-grid">
 
-<div class="info-card">
-<strong>1905</strong>
-Nace el Club Atlético Boca Juniors.
+
+<div class="historia-card">
+
+<div class="historia-año">
+1905
 </div>
 
-<div class="info-card">
-<strong>1910</strong>
-Comienza a consolidarse la identidad visual del club.
-</div>
+<h3>
+Fundación
+</h3>
 
-<div class="info-card">
-<strong>1913</strong>
-Boca debuta en Primera División.
-</div>
-
-<div class="info-card">
-<strong>1940</strong>
-Se inaugura La Bombonera.
-</div>
-
-<div class="info-card">
-<strong>1992</strong>
-Boca vuelve a ser campeón local después de 11 años.
-</div>
-
-<div class="info-card">
-<strong>La era dorada</strong>
-Una etapa histórica de títulos nacionales e internacionales.
-</div>
+<p>
+El Club Atlético Boca Juniors nació el 3 de abril de 1905.
+</p>
 
 </div>
+
+
+<div class="historia-card">
+
+<div class="historia-año">
+1913
+</div>
+
+<h3>
+Primera División
+</h3>
+
+<p>
+Boca comenzó su participación en la máxima categoría del fútbol argentino.
+</p>
+
+</div>
+
+
+<div class="historia-card">
+
+<div class="historia-año">
+1940
+</div>
+
+<h3>
+La Bombonera
+</h3>
+
+<p>
+El 25 de mayo de 1940 se inauguró el estadio de Brandsen.
+</p>
+
+</div>
+
+
+<div class="historia-card">
+
+<div class="historia-año">
+1977
+</div>
+
+<h3>
+Primera Libertadores
+</h3>
+
+<p>
+Boca consiguió su primera Copa Libertadores.
+</p>
+
+</div>
+
+
+<div class="historia-card">
+
+<div class="historia-año">
+1978
+</div>
+
+<h3>
+Primera Intercontinental
+</h3>
+
+<p>
+Boca conquistó por primera vez la Copa Intercontinental.
+</p>
+
+</div>
+
+
+<div class="historia-card">
+
+<div class="historia-año">
+2000
+</div>
+
+<h3>
+Una época dorada
+</h3>
+
+<p>
+Boca volvió a conquistar la Copa Libertadores y la Intercontinental.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- TODO BOCA -->
+
+<section
+class="categorias"
+id="categorias">
+
+<h2 class="seccion-titulo">
+Todo Boca
+</h2>
+
+<div class="categorias-grid">
+
+
+<button
+class="categoria"
+onclick="seccion('Boca')">
+
+<div class="categoria-icono">
+⚽
+</div>
+
+<h3>
+Primer equipo
+</h3>
+
+<p>
+Noticias y actualidad del plantel profesional.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('La Bombonera')">
+
+<div class="categoria-icono">
+🏟️
+</div>
+
+<h3>
+La Bombonera
+</h3>
+
+<p>
+Estadio, obras y novedades.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Básquet')">
+
+<div class="categoria-icono">
+🏀
+</div>
+
+<h3>
+Básquet
+</h3>
+
+<p>
+Noticias y actualidad del básquet.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Futsal')">
+
+<div class="categoria-icono">
+⚽
+</div>
+
+<h3>
+Futsal
+</h3>
+
+<p>
+Partidos, resultados y noticias.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Reserva')">
+
+<div class="categoria-icono">
+🟦
+</div>
+
+<h3>
+Reserva
+</h3>
+
+<p>
+La actualidad de la Reserva.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Fútbol femenino')">
+
+<div class="categoria-icono">
+👩⚽
+</div>
+
+<h3>
+Fútbol femenino
+</h3>
+
+<p>
+Las Gladiadoras.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Inferiores')">
+
+<div class="categoria-icono">
+⭐
+</div>
+
+<h3>
+Inferiores
+</h3>
+
+<p>
+Juveniles y futuras figuras.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Vóley')">
+
+<div class="categoria-icono">
+🏐
+</div>
+
+<h3>
+Vóley
+</h3>
+
+<p>
+Noticias del vóley.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Mercado de pases')">
+
+<div class="categoria-icono">
+🔄
+</div>
+
+<h3>
+Mercado de pases
+</h3>
+
+<p>
+Altas, bajas y novedades.
+</p>
+
+</button>
+
+
+<button
+class="categoria"
+onclick="seccion('Lesiones')">
+
+<div class="categoria-icono">
+🩹
+</div>
+
+<h3>
+Lesiones
+</h3>
+
+<p>
+Partes médicos y evolución.
+</p>
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- INFORMACION OFICIAL -->
+
+<section class="info-boca">
+
+<h2>
+Información oficial de Boca
+</h2>
+
+<p>
+Accedé al sitio oficial del Club Atlético Boca Juniors
+para consultar información institucional y deportiva.
+</p>
+
+<a
+class="info-boton"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
+
+Visitar Boca Oficial
+
+</a>
 
 </section>
 
@@ -1328,14 +1520,18 @@ Una etapa histórica de títulos nacionales e internacionales.
 <!-- VIDEOS -->
 
 <section
-class="video-seccion"
+class="videos-seccion"
 id="videos">
 
-<h2 class="seccion-titulo">
-🎥 Videos
+<h2 class="videos-titulo">
+El Canal de Boca
 </h2>
 
-<div class="video-grid">
+<p class="videos-subtitulo">
+Videos oficiales de Boca Juniors.
+</p>
+
+<div class="videos-grid">
 
 <article class="video-card">
 
@@ -1352,7 +1548,7 @@ allowfullscreen>
 <div class="video-info">
 
 <h3>
-El Canal de Boca
+Contenido de El Canal de Boca
 </h3>
 
 <a
@@ -1360,7 +1556,7 @@ class="video-boton"
 href="https://www.youtube.com/@ElCanaldeBoca/videos"
 target="_blank">
 
-Ver más videos
+Ver canal oficial
 
 </a>
 
@@ -1370,6 +1566,16 @@ Ver más videos
 
 </div>
 
+
+<a
+class="canal-boton"
+href="https://www.youtube.com/@ElCanaldeBoca/videos"
+target="_blank">
+
+Ver todos los videos
+
+</a>
+
 </section>
 
 
@@ -1378,7 +1584,7 @@ Ver más videos
 <section class="streaming">
 
 <h2 class="streaming-titulo">
-🎙️ Nuestro streaming
+Nuestro streaming
 </h2>
 
 <a
@@ -1394,6 +1600,7 @@ alt="Movimiento Los Bosteros de Tucumán">
 </a>
 
 </section>
+
 
 </main>
 
@@ -1415,6 +1622,10 @@ Información Xeneize todos los días.
 
 let noticias=[];
 
+
+/* =========================
+   NOTICIAS
+========================= */
 
 function escapar(texto){
 
@@ -1533,7 +1744,8 @@ ${boton}
 
 function mostrar(lista){
 
-const contenedor=document.getElementById("noticias");
+const contenedor=
+document.getElementById("noticias");
 
 if(!lista.length){
 
@@ -1620,6 +1832,36 @@ noticia.fuente ||
 }
 
 
+function seccion(categoria){
+
+const lista=
+noticias.filter(function(noticia){
+
+const valor=
+(noticia.categoria || "")
+.toLowerCase()
+.trim();
+
+return valor===
+categoria.toLowerCase().trim();
+
+});
+
+document.getElementById("titulo").textContent=
+categoria;
+
+document.getElementById("hero").innerHTML="";
+
+mostrar(lista);
+
+document.getElementById("noticias").scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+
+
 function irA(id){
 
 const elemento=document.getElementById(id);
@@ -1627,31 +1869,6 @@ const elemento=document.getElementById(id);
 if(elemento){
 
 elemento.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-}
-
-
-function mostrarPanel(id){
-
-const paneles=document.querySelectorAll(".panel");
-
-paneles.forEach(function(panel){
-
-panel.classList.remove("activo");
-
-});
-
-const panel=document.getElementById(id);
-
-if(panel){
-
-panel.classList.add("activo");
-
-panel.scrollIntoView({
 behavior:"smooth",
 block:"start"
 });
@@ -1661,28 +1878,114 @@ block:"start"
 }
 
 
-function votar(opcion){
+/* =========================
+   ENCUESTA
+========================= */
 
-const mensaje=document.getElementById("voto");
+function obtenerVotos(){
 
-mensaje.style.display="block";
-
-mensaje.textContent=
-"Votaste por "+opcion+" 💙💛";
-
-localStorage.setItem(
-"boca247_voto",
-opcion
+return JSON.parse(
+localStorage.getItem("boca247_encuesta") ||
+'{"Riquelme":0,"Maradona":0,"Manteca Martínez":0,"Otro":0}'
 );
 
 }
 
 
+function votar(opcion){
+
+let votos=obtenerVotos();
+
+if(localStorage.getItem("boca247_ya_voto")){
+
+document.getElementById("textoVoto").textContent=
+"Ya registraste tu voto en este dispositivo.";
+
+mostrarResultados(votos);
+
+return;
+
+}
+
+votos[opcion]=(votos[opcion] || 0)+1;
+
+localStorage.setItem(
+"boca247_encuesta",
+JSON.stringify(votos)
+);
+
+localStorage.setItem(
+"boca247_ya_voto",
+"1"
+);
+
+document.getElementById("textoVoto").textContent=
+"¡Voto registrado por "+opcion+"! 💙💛";
+
+mostrarResultados(votos);
+
+}
+
+
+function mostrarResultados(votos){
+
+const total=
+Object.values(votos).reduce(
+function(a,b){return a+b;},
+0
+);
+
+if(total===0){
+
+return;
+
+}
+
+document.getElementById("resultado").style.display="block";
+
+document.getElementById("barraRiquelme").style.width=
+((votos.Riquelme/total)*100)+"%";
+
+document.getElementById("barraMaradona").style.width=
+((votos.Maradona/total)*100)+"%";
+
+document.getElementById("barraManteca").style.width=
+((votos["Manteca Martínez"]/total)*100)+"%";
+
+document.getElementById("barraOtro").style.width=
+((votos.Otro/total)*100)+"%";
+
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+const hoy=new Date();
+
+document.getElementById("fechaHoy").textContent=
+"HOY · "+
+new Intl.DateTimeFormat(
+"es-AR",
+{
+day:"2-digit",
+month:"long",
+year:"numeric"
+}
+).format(hoy);
+
+
+/* =========================
+   CARGAR NOTICIAS
+========================= */
+
 async function cargarNoticias(){
 
 try{
 
-const respuesta=await fetch(
+const respuesta=
+await fetch(
 "noticias.json?v="+Date.now()
 );
 
@@ -1694,4 +1997,88 @@ throw new Error(
 
 }
 
-noticias=a
+noticias=await respuesta.json();
+
+if(!Array.isArray(noticias)){
+
+noticias=[];
+
+}
+
+noticias.sort(function(a,b){
+
+return new Date(
+b.fecha_iso || 0
+)
+-
+new Date(
+a.fecha_iso || 0
+);
+
+});
+
+inicio();
+
+document.getElementById("actualizado").textContent=
+
+"Última actualización: "+
+
+new Intl.DateTimeFormat(
+"es-AR",
+{
+timeZone:"America/Argentina/Buenos_Aires",
+day:"2-digit",
+month:"2-digit",
+year:"numeric",
+hour:"2-digit",
+minute:"2-digit",
+hour12:false
+}
+).format(new Date());
+
+}
+
+catch(error){
+
+console.error(error);
+
+document.getElementById("noticias").innerHTML=`
+
+<div class="vacio">
+
+No se pudieron cargar
+las noticias.
+
+</div>
+
+`;
+
+}
+
+}
+
+
+cargarNoticias();
+
+
+setInterval(
+cargarNoticias,
+5*60*1000
+);
+
+
+/* Mostrar resultados si ya votó */
+
+if(localStorage.getItem("boca247_ya_voto")){
+
+document.getElementById("textoVoto").textContent=
+"Ya registraste tu voto en este dispositivo.";
+
+mostrarResultados(obtenerVotos());
+
+}
+
+</script>
+
+</body>
+</html>
