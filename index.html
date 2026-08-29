@@ -9,453 +9,569 @@
 <style>
 
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html,body{
-    width:100%;
-    overflow-x:hidden;
+width:100%;
+overflow-x:hidden;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f3f4f7;
-    color:#111;
+font-family:Arial,Helvetica,sans-serif;
+background:#f3f4f7;
+color:#111;
 }
 
 header{
-    width:100%;
-    background:#000;
-    border-bottom:5px solid #f5c400;
+width:100%;
+background:#000;
+border-bottom:5px solid #f5c400;
 }
 
 header img{
-    width:100%;
-    height:auto;
-    display:block;
+width:100%;
+height:auto;
+display:block;
 }
 
 nav{
-    width:100%;
-    background:#003b8f;
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding:11px;
-    position:sticky;
-    top:0;
-    z-index:100;
+width:100%;
+background:#003b8f;
+display:flex;
+gap:8px;
+overflow-x:auto;
+padding:11px;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav button{
-    border:0;
-    background:white;
-    color:#00265f;
-    font-weight:bold;
-    padding:10px 15px;
-    border-radius:22px;
-    white-space:nowrap;
-    cursor:pointer;
+border:0;
+background:white;
+color:#00265f;
+font-weight:bold;
+padding:10px 15px;
+border-radius:22px;
+white-space:nowrap;
+cursor:pointer;
 }
 
 main{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:20px 15px 50px;
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:20px 15px 50px;
 }
 
 .actualizado{
-    background:white;
-    padding:12px 15px;
-    border-radius:10px;
-    margin-bottom:20px;
-    color:#555;
-    font-size:14px;
-    text-align:center;
+background:white;
+padding:12px 15px;
+border-radius:10px;
+margin-bottom:20px;
+color:#555;
+font-size:14px;
+text-align:center;
 }
 
 .proximo{
-    background:linear-gradient(135deg,#00245f,#0756b8);
-    color:white;
-    border-radius:18px;
-    padding:25px 18px;
-    margin-bottom:30px;
-    text-align:center;
-    border-bottom:6px solid #f5c400;
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+border-radius:18px;
+padding:25px 18px;
+margin-bottom:30px;
+text-align:center;
+border-bottom:6px solid #f5c400;
 }
 
 .proximo-label{
-    color:#f5c400;
-    font-weight:bold;
-    font-size:14px;
-    margin-bottom:10px;
+color:#f5c400;
+font-weight:bold;
+font-size:14px;
+margin-bottom:10px;
 }
 
 .proximo h2{
-    font-size:28px;
-    margin-bottom:12px;
+font-size:28px;
+margin-bottom:12px;
 }
 
 .proximo-vs{
-    font-size:25px;
-    font-weight:bold;
-    margin:15px 0;
+font-size:25px;
+font-weight:bold;
+margin:15px 0;
 }
 
 .proximo-info{
-    line-height:1.7;
-    font-size:16px;
+line-height:1.7;
+font-size:16px;
 }
 
 .proximo-boton{
-    display:inline-block;
-    margin-top:18px;
-    background:#f5c400;
-    color:#00245f;
-    padding:11px 18px;
-    border-radius:9px;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+margin-top:18px;
+background:#f5c400;
+color:#00245f;
+padding:11px 18px;
+border-radius:9px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .hero{
-    background:linear-gradient(135deg,#00245f,#0756b8);
-    color:white;
-    padding:28px;
-    border-radius:18px;
-    border-bottom:6px solid #f5c400;
-    margin-bottom:28px;
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+padding:28px;
+border-radius:18px;
+border-bottom:6px solid #f5c400;
+margin-bottom:28px;
 }
 
 .hero-label{
-    color:#f5c400;
-    font-weight:bold;
-    margin-bottom:10px;
+color:#f5c400;
+font-weight:bold;
+margin-bottom:10px;
 }
 
 .hero h2{
-    font-size:29px;
-    line-height:1.25;
-    margin-bottom:12px;
+font-size:29px;
+line-height:1.25;
+margin-bottom:12px;
 }
 
 .hero p{
-    line-height:1.6;
+line-height:1.6;
 }
 
 .fuentes{
-    background:#00245f;
-    padding:20px;
-    border-radius:16px;
-    margin-bottom:30px;
+background:#00245f;
+padding:20px;
+border-radius:16px;
+margin-bottom:30px;
 }
 
 .fuentes h2{
-    color:#f5c400;
-    margin-bottom:15px;
+color:#f5c400;
+margin-bottom:15px;
 }
 
 .fuentes-lista{
-    display:flex;
-    flex-wrap:wrap;
-    gap:9px;
+display:flex;
+flex-wrap:wrap;
+gap:9px;
 }
 
 .fuente{
-    background:white;
-    color:#00245f;
-    padding:9px 14px;
-    border-radius:20px;
-    font-weight:bold;
-}
-
-.seccion-titulo{
-    color:#00245f;
-    font-size:25px;
-    border-left:7px solid #f5c400;
-    padding-left:12px;
-    margin-bottom:17px;
+background:white;
+color:#00245f;
+padding:9px 14px;
+border-radius:20px;
+font-weight:bold;
 }
 
 .seccion{
-    margin-bottom:35px;
+margin-bottom:40px;
+}
+
+.seccion-titulo{
+color:#00245f;
+font-size:25px;
+border-left:7px solid #f5c400;
+padding-left:12px;
+margin-bottom:18px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:19px;
-    border-top:5px solid #064aa8;
-    box-shadow:0 3px 12px rgba(0,0,0,.09);
+background:white;
+border-radius:15px;
+padding:19px;
+border-top:5px solid #064aa8;
+box-shadow:0 3px 12px rgba(0,0,0,.09);
 }
 
 .card-fuente{
-    color:#064aa8;
-    font-size:14px;
-    font-weight:bold;
+color:#064aa8;
+font-size:14px;
+font-weight:bold;
 }
 
 .card h3{
-    font-size:20px;
-    line-height:1.3;
-    margin:8px 0;
+font-size:20px;
+line-height:1.3;
+margin:8px 0;
 }
 
 .fecha{
-    color:#777;
-    font-size:13px;
-    margin-bottom:11px;
+color:#777;
+font-size:13px;
+margin-bottom:11px;
 }
 
 .resumen{
-    color:#444;
-    line-height:1.55;
+color:#444;
+line-height:1.55;
 }
 
 .leer{
-    display:inline-block;
-    margin-top:15px;
-    background:#064aa8;
-    color:white;
-    padding:9px 13px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
+display:inline-block;
+margin-top:15px;
+background:#064aa8;
+color:white;
+padding:9px 13px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
 }
 
 .vacio{
-    background:white;
-    border-radius:12px;
-    padding:25px;
-    text-align:center;
-    color:#666;
+background:white;
+border-radius:12px;
+padding:25px;
+text-align:center;
+color:#666;
 }
 
-.categorias{
-    margin:45px 0;
+/* MUNDO BOCA */
+
+.mundo{
+margin:45px 0;
 }
 
-.categorias-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:16px;
+.mundo-intro{
+color:#666;
+margin-bottom:20px;
 }
 
-.categoria{
-    background:white;
-    border:0;
-    border-top:5px solid #064aa8;
-    border-radius:15px;
-    padding:22px 15px;
-    text-align:center;
-    color:#00245f;
-    box-shadow:0 3px 12px rgba(0,0,0,.09);
-    transition:.2s;
-    cursor:pointer;
-    font-family:Arial,Helvetica,sans-serif;
-    width:100%;
+.mundo-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:17px;
 }
 
-.categoria:hover{
-    transform:translateY(-3px);
-    border-top-color:#f5c400;
+.mundo-card{
+background:white;
+border-radius:16px;
+padding:20px;
+border-top:5px solid #064aa8;
+box-shadow:0 3px 12px rgba(0,0,0,.09);
 }
 
-.categoria-icono{
-    font-size:34px;
-    margin-bottom:10px;
+.mundo-icono{
+font-size:35px;
+margin-bottom:10px;
 }
 
-.categoria h3{
-    font-size:19px;
-    margin-bottom:6px;
+.mundo-card h3{
+color:#00245f;
+font-size:20px;
+margin-bottom:9px;
 }
 
-.categoria p{
-    color:#666;
-    font-size:14px;
-    line-height:1.4;
+.mundo-card p{
+color:#555;
+line-height:1.5;
 }
 
-.info-boca{
-    background:#00245f;
-    color:white;
-    border-radius:18px;
-    padding:25px 18px;
-    margin:40px 0;
+.mundo-dato{
+font-size:25px;
+font-weight:bold;
+color:#064aa8;
+margin:12px 0;
 }
 
-.info-boca h2{
-    color:#f5c400;
-    margin-bottom:15px;
+.encuesta{
+background:linear-gradient(135deg,#00245f,#0756b8);
+color:white;
+border-radius:18px;
+padding:24px;
+margin-top:20px;
+border-bottom:5px solid #f5c400;
 }
 
-.info-boca p{
-    line-height:1.6;
-    margin-bottom:15px;
+.encuesta h3{
+color:#f5c400;
+margin-bottom:12px;
 }
 
-.info-boton{
-    display:inline-block;
-    background:#f5c400;
-    color:#00245f;
-    padding:10px 15px;
-    border-radius:9px;
-    text-decoration:none;
-    font-weight:bold;
+.opciones{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
+margin-top:15px;
 }
 
-.videos-seccion{
-    margin-top:45px;
-    margin-bottom:40px;
+.opcion{
+border:2px solid white;
+background:white;
+color:#00245f;
+padding:11px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.videos-titulo{
-    color:#00245f;
-    font-size:25px;
-    border-left:7px solid #f5c400;
-    padding-left:12px;
-    margin-bottom:18px;
+.voto{
+margin-top:15px;
+font-weight:bold;
+display:none;
 }
 
-.videos-subtitulo{
-    color:#666;
-    margin-bottom:20px;
+/* TODO BOCA */
+
+.menu-secciones{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
 }
 
-.videos-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
+.menu-card{
+background:white;
+border:0;
+border-top:5px solid #064aa8;
+border-radius:15px;
+padding:22px 15px;
+text-align:center;
+color:#00245f;
+box-shadow:0 3px 12px rgba(0,0,0,.09);
+cursor:pointer;
+transition:.2s;
+}
+
+.menu-card:hover{
+transform:translateY(-3px);
+border-top-color:#f5c400;
+}
+
+.menu-icono{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.menu-card h3{
+font-size:19px;
+margin-bottom:7px;
+}
+
+.menu-card p{
+font-size:14px;
+color:#666;
+line-height:1.4;
+}
+
+.panel{
+display:none;
+background:white;
+border-radius:18px;
+padding:25px;
+margin-bottom:35px;
+box-shadow:0 3px 12px rgba(0,0,0,.09);
+border-top:6px solid #064aa8;
+}
+
+.panel.activo{
+display:block;
+}
+
+.panel h2{
+color:#00245f;
+margin-bottom:12px;
+font-size:27px;
+}
+
+.panel p{
+line-height:1.65;
+color:#444;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.info-card{
+background:#f3f4f7;
+padding:18px;
+border-radius:12px;
+}
+
+.info-card strong{
+display:block;
+color:#00245f;
+font-size:18px;
+margin-bottom:7px;
+}
+
+/* GALERIAS */
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.galeria-item{
+background:white;
+border-top:5px solid #064aa8;
+border-radius:15px;
+padding:25px;
+text-align:center;
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+.galeria-item span{
+font-size:45px;
+display:block;
+margin-bottom:10px;
+}
+
+.galeria-item h3{
+color:#00245f;
+margin-bottom:7px;
+}
+
+.galeria-item p{
+color:#666;
+line-height:1.4;
+}
+
+/* VIDEOS */
+
+.video-seccion{
+margin-top:45px;
+margin-bottom:45px;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
 }
 
 .video-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.10);
-    border-top:5px solid #064aa8;
+background:white;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 3px 12px rgba(0,0,0,.10);
+border-top:5px solid #064aa8;
 }
 
 .video{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-    background:#000;
+position:relative;
+width:100%;
+padding-top:56.25%;
+background:#000;
 }
 
 .video iframe{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border:0;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:0;
 }
 
 .video-info{
-    padding:16px;
+padding:16px;
 }
 
 .video-info h3{
-    color:#00245f;
-    font-size:18px;
+color:#00245f;
+font-size:18px;
 }
 
 .video-boton{
-    display:inline-block;
-    margin-top:12px;
-    background:#064aa8;
-    color:white;
-    text-decoration:none;
-    padding:9px 13px;
-    border-radius:8px;
-    font-weight:bold;
+display:inline-block;
+margin-top:12px;
+background:#064aa8;
+color:white;
+text-decoration:none;
+padding:9px 13px;
+border-radius:8px;
+font-weight:bold;
 }
 
-.canal-boton{
-    display:inline-block;
-    margin-top:20px;
-    background:#f5c400;
-    color:#00245f;
-    text-decoration:none;
-    padding:12px 18px;
-    border-radius:10px;
-    font-weight:bold;
-}
+/* STREAMING */
 
 .streaming{
-    width:100%;
-    margin-top:45px;
-    margin-bottom:45px;
+width:100%;
+margin-top:45px;
+margin-bottom:45px;
 }
 
 .streaming-titulo{
-    color:#00245f;
-    font-size:25px;
-    border-left:7px solid #f5c400;
-    padding-left:12px;
-    margin-bottom:18px;
+color:#00245f;
+font-size:25px;
+border-left:7px solid #f5c400;
+padding-left:12px;
+margin-bottom:18px;
 }
 
 .streaming-enlace{
-    display:block;
-    width:100%;
+display:block;
+width:100%;
 }
 
 .streaming-placa{
-    width:100%;
-    height:auto;
-    display:block;
-    border-radius:16px;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+width:100%;
+height:auto;
+display:block;
+border-radius:16px;
+box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
 
+/* FOOTER */
+
 footer{
-    background:#00245f;
-    color:white;
-    text-align:center;
-    padding:30px 15px;
-    border-top:7px solid #f5c400;
+background:#00245f;
+color:white;
+text-align:center;
+padding:30px 15px;
+border-top:7px solid #f5c400;
 }
 
 footer strong{
-    color:#f5c400;
-    font-size:22px;
+color:#f5c400;
+font-size:22px;
 }
 
 @media(max-width:600px){
 
-    .hero h2{
-        font-size:23px;
-    }
+.hero h2{
+font-size:23px;
+}
 
-    .seccion-titulo,
-    .videos-titulo,
-    .streaming-titulo{
-        font-size:21px;
-    }
+.seccion-titulo,
+.streaming-titulo{
+font-size:21px;
+}
 
-    .proximo h2{
-        font-size:24px;
-    }
+.proximo h2{
+font-size:24px;
+}
 
-    .proximo-vs{
-        font-size:21px;
-    }
+.proximo-vs{
+font-size:21px;
+}
 
-    .categorias-grid{
-        grid-template-columns:1fr 1fr;
-    }
+.menu-secciones{
+grid-template-columns:1fr 1fr;
+}
+
+.mundo-grid{
+grid-template-columns:1fr;
+}
 
 }
 
@@ -474,32 +590,34 @@ alt="Boca 24/7">
 
 <nav>
 
-<button onclick="inicio()">
-Inicio
-</button>
+<button onclick="inicio()">Inicio</button>
 
 <button onclick="irA('proximo')">
 Próximo partido
 </button>
 
-<button onclick="irA('categorias')">
+<button onclick="irA('mundo')">
+Mundo Boca
+</button>
+
+<button onclick="irA('todo-boca')">
 Todo Boca
 </button>
 
-<button onclick="seccion('Boca')">
-Boca
+<button onclick="irA('videos')">
+Videos
 </button>
 
-<button onclick="seccion('Sudamericana')">
-Sudamericana
+<button onclick="irA('camisetas')">
+Camisetas
 </button>
 
-<button onclick="seccion('Mercado de pases')">
-Mercado de pases
+<button onclick="irA('fotos')">
+Fotos
 </button>
 
-<button onclick="seccion('Lesiones')">
-Lesiones
+<button onclick="irA('historia')">
+Historia
 </button>
 
 </nav>
@@ -513,6 +631,7 @@ id="actualizado">
 Cargando información...
 
 </div>
+
 
 <section
 class="proximo"
@@ -533,11 +652,8 @@ VÉLEZ 🆚 BOCA
 <div class="proximo-info">
 
 📅 Miércoles 2 de septiembre de 2026<br>
-
 🕘 21:15 hs<br>
-
 🏟️ Estadio Mario Alberto Kempes<br>
-
 🏆 Octavos de final
 
 </div>
@@ -553,7 +669,9 @@ Ver Copa Argentina
 
 </section>
 
+
 <section id="hero"></section>
+
 
 <section class="fuentes">
 
@@ -575,9 +693,14 @@ El Canal de Boca
 TyC Sports
 </span>
 
+<span class="fuente">
+Olé
+</span>
+
 </div>
 
 </section>
+
 
 <section class="seccion">
 
@@ -586,7 +709,6 @@ class="seccion-titulo"
 id="titulo">
 
 Últimas noticias
-
 </h2>
 
 <div
@@ -601,239 +723,323 @@ Cargando noticias...
 
 </section>
 
+
+<!-- MUNDO BOCA -->
+
 <section
-class="categorias"
-id="categorias">
+class="mundo"
+id="mundo">
 
 <h2 class="seccion-titulo">
-Todo Boca
+🔥 Mundo Boca 24/7
 </h2>
 
-<div class="categorias-grid">
+<p class="mundo-intro">
+Todo lo que un hincha quiere saber, incluso cuando no hay partido.
+</p>
 
-<button
-class="categoria"
-onclick="seccion('Boca')">
+<div class="mundo-grid">
 
-<div class="categoria-icono">
-⚽
+
+<div class="mundo-card">
+
+<div class="mundo-icono">
+🗓️
 </div>
 
 <h3>
-Primer equipo
+Agenda Xeneize
 </h3>
 
 <p>
-Noticias y actualidad del plantel profesional.
+Próximo partido oficial:
 </p>
 
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('La Bombonera')">
-
-<div class="categoria-icono">
-🏟️
+<div class="mundo-dato">
+Vélez 🆚 Boca
 </div>
 
-<h3>
-La Bombonera
-</h3>
-
 <p>
-Estadio, obras y novedades.
+Miércoles 2 de septiembre · 21:15 hs
 </p>
 
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Básquet')">
-
-<div class="categoria-icono">
-🏀
 </div>
 
-<h3>
-Básquet
-</h3>
 
-<p>
-Noticias y actualidad del básquet xeneize.
-</p>
+<div class="mundo-card">
 
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Futsal')">
-
-<div class="categoria-icono">
-⚽
-</div>
-
-<h3>
-Futsal
-</h3>
-
-<p>
-Partidos, resultados y noticias.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Reserva')">
-
-<div class="categoria-icono">
-🟦
-</div>
-
-<h3>
-Reserva
-</h3>
-
-<p>
-La actualidad de la Reserva de Boca.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Fútbol femenino')">
-
-<div class="categoria-icono">
-👩⚽
-</div>
-
-<h3>
-Fútbol femenino
-</h3>
-
-<p>
-Noticias de Las Gladiadoras.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Inferiores')">
-
-<div class="categoria-icono">
-⭐
-</div>
-
-<h3>
-Inferiores
-</h3>
-
-<p>
-Juveniles y futuras figuras de Boca.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Vóley')">
-
-<div class="categoria-icono">
-🏐
-</div>
-
-<h3>
-Vóley
-</h3>
-
-<p>
-Noticias del vóley xeneize.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Mercado de pases')">
-
-<div class="categoria-icono">
-🔄
-</div>
-
-<h3>
-Mercado de pases
-</h3>
-
-<p>
-Altas, bajas y novedades.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Lesiones')">
-
-<div class="categoria-icono">
-🩹
-</div>
-
-<h3>
-Lesiones
-</h3>
-
-<p>
-Partes médicos y evolución.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Boca')">
-
-<div class="categoria-icono">
-👥
-</div>
-
-<h3>
-Plantel
-</h3>
-
-<p>
-Jugadores y cuerpo técnico.
-</p>
-
-</button>
-
-
-<button
-class="categoria"
-onclick="seccion('Boca')">
-
-<div class="categoria-icono">
+<div class="mundo-icono">
 🏆
 </div>
 
 <h3>
-Historia y títulos
+Último resultado
+</h3>
+
+<div class="mundo-dato">
+BOCA 1 - 0 LANÚS
+</div>
+
+<p>
+Victoria agónica en La Bombonera con gol de Tomás Belmonte sobre el final.
+</p>
+
+</div>
+
+
+<div class="mundo-card">
+
+<div class="mundo-icono">
+👕
+</div>
+
+<h3>
+Camiseta del día
+</h3>
+
+<div class="mundo-dato">
+1996
+</div>
+
+<p>
+Una época inolvidable de la historia Xeneize y el comienzo de una nueva era.
+</p>
+
+</div>
+
+
+<div class="mundo-card">
+
+<div class="mundo-icono">
+👑
+</div>
+
+<h3>
+Ídolo del día
+</h3>
+
+<div class="mundo-dato">
+JUAN ROMÁN RIQUELME
+</div>
+
+<p>
+Uno de los grandes símbolos de Boca y protagonista de una época histórica del club.
+</p>
+
+</div>
+
+
+<div class="mundo-card">
+
+<div class="mundo-icono">
+💡
+</div>
+
+<h3>
+Dato Xeneize
+</h3>
+
+<div class="mundo-dato">
+1905
+</div>
+
+<p>
+Boca Juniors fue fundado el 3 de abril de 1905.
+</p>
+
+</div>
+
+
+<div class="mundo-card">
+
+<div class="mundo-icono">
+🏟️
+</div>
+
+<h3>
+Hace un año en Boca
 </h3>
 
 <p>
-La historia y las conquistas del Xeneize.
+Esta tarjeta queda preparada para que posteriormente carguemos automáticamente hechos históricos según la fecha.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="encuesta">
+
+<h3>
+📣 ENCUESTA XENEIZE
+</h3>
+
+<p>
+¿Quién fue el mejor número 10 de la historia de Boca?
+</p>
+
+<div class="opciones">
+
+<button
+class="opcion"
+onclick="votar('Riquelme')">
+Riquelme
+</button>
+
+<button
+class="opcion"
+onclick="votar('Maradona')">
+Maradona
+</button>
+
+<button
+class="opcion"
+onclick="votar('Manteca')">
+Manteca Martínez
+</button>
+
+<button
+class="opcion"
+onclick="votar('Otro')">
+Otro
+</button>
+
+</div>
+
+<div
+class="voto"
+id="voto">
+
+¡Voto registrado! 💙💛
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TODO BOCA -->
+
+<section
+class="seccion"
+id="todo-boca">
+
+<h2 class="seccion-titulo">
+⚽ Todo Boca
+</h2>
+
+<div class="menu-secciones">
+
+
+<button class="menu-card"
+onclick="mostrarPanel('futbol')">
+
+<div class="menu-icono">⚽</div>
+
+<h3>Primer equipo</h3>
+
+<p>
+Plantel profesional y actualidad.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('reserva')">
+
+<div class="menu-icono">🟦</div>
+
+<h3>Reserva</h3>
+
+<p>
+Las futuras figuras.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('inferiores')">
+
+<div class="menu-icono">⭐</div>
+
+<h3>Inferiores</h3>
+
+<p>
+El semillero Xeneize.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('femenino')">
+
+<div class="menu-icono">👩⚽</div>
+
+<h3>Fútbol femenino</h3>
+
+<p>
+Las Gladiadoras.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('futsal')">
+
+<div class="menu-icono">⚽</div>
+
+<h3>Futsal</h3>
+
+<p>
+Toda la actualidad.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('basquet')">
+
+<div class="menu-icono">🏀</div>
+
+<h3>Básquet</h3>
+
+<p>
+El básquet Xeneize.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('voley')">
+
+<div class="menu-icono">🏐</div>
+
+<h3>Vóley</h3>
+
+<p>
+Noticias y resultados.
+</p>
+
+</button>
+
+
+<button class="menu-card"
+onclick="mostrarPanel('bombonera')">
+
+<div class="menu-icono">🏟️</div>
+
+<h3>La Bombonera</h3>
+
+<p>
+Historia y momentos.
 </p>
 
 </button>
@@ -842,42 +1048,294 @@ La historia y las conquistas del Xeneize.
 
 </section>
 
-<section class="info-boca">
 
-<h2>
-Información oficial de Boca
-</h2>
+<section class="panel" id="futbol">
+
+<h2>⚽ Primer equipo</h2>
 
 <p>
-Accedé directamente al sitio oficial
-del Club Atlético Boca Juniors para
-consultar noticias, deportes, obras,
-La Bombonera y toda la información
-institucional.
+Toda la actualidad del plantel profesional de Boca Juniors.
 </p>
 
-<a
-class="info-boton"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
+<div class="info-grid">
 
-Visitar Boca Oficial
+<div class="info-card">
+<strong>Plantel</strong>
+Jugadores y cuerpo técnico.
+</div>
 
-</a>
+<div class="info-card">
+<strong>Partidos</strong>
+Resultados y próximos encuentros.
+</div>
+
+<div class="info-card">
+<strong>Noticias</strong>
+Las últimas novedades.
+</div>
+
+</div>
 
 </section>
 
-<section class="videos-seccion">
 
-<h2 class="videos-titulo">
-El Canal de Boca
-</h2>
+<section class="panel" id="reserva">
 
-<p class="videos-subtitulo">
-Videos oficiales de Boca Juniors.
+<h2>🟦 Reserva</h2>
+
+<p>
+Información de la Reserva, sus partidos,
+resultados y futuras figuras.
 </p>
 
-<div class="videos-grid">
+</section>
+
+
+<section class="panel" id="inferiores">
+
+<h2>⭐ Inferiores</h2>
+
+<p>
+Las categorías juveniles y los jugadores que buscan
+llegar al primer equipo.
+</p>
+
+</section>
+
+
+<section class="panel" id="femenino">
+
+<h2>👩⚽ Fútbol femenino</h2>
+
+<p>
+Todo sobre Las Gladiadoras, sus partidos,
+resultados y protagonistas.
+</p>
+
+</section>
+
+
+<section class="panel" id="futsal">
+
+<h2>⚽ Futsal</h2>
+
+<p>
+Noticias, partidos y resultados del futsal Xeneize.
+</p>
+
+</section>
+
+
+<section class="panel" id="basquet">
+
+<h2>🏀 Básquet</h2>
+
+<p>
+Toda la actualidad del básquet de Boca.
+</p>
+
+</section>
+
+
+<section class="panel" id="voley">
+
+<h2>🏐 Vóley</h2>
+
+<p>
+Noticias y resultados del vóley Xeneize.
+</p>
+
+</section>
+
+
+<section class="panel" id="bombonera">
+
+<h2>🏟️ La Bombonera</h2>
+
+<p>
+El templo del pueblo Xeneize. La Bombonera,
+inaugurada en 1940, se convirtió en uno de los
+grandes símbolos de Boca Juniors.
+</p>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>Nombre</strong>
+Estadio Alberto J. Armando.
+</div>
+
+<div class="info-card">
+<strong>Dirección</strong>
+Brandsen 805, Buenos Aires.
+</div>
+
+<div class="info-card">
+<strong>Inauguración</strong>
+25 de mayo de 1940.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CAMISETAS -->
+
+<section
+class="seccion"
+id="camisetas">
+
+<h2 class="seccion-titulo">
+👕 Camisetas
+</h2>
+
+<div class="galeria">
+
+<div class="galeria-item">
+<span>👕</span>
+<h3>Primeros modelos</h3>
+<p>
+Los primeros años de la identidad Xeneize.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>💙💛</span>
+<h3>La franja dorada</h3>
+<p>
+El símbolo que se convirtió en parte de la identidad de Boca.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>🏆</span>
+<h3>Camisetas históricas</h3>
+<p>
+Modelos asociados a grandes equipos y conquistas.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>👕</span>
+<h3>Actualidad</h3>
+<p>
+Las camisetas de las últimas temporadas.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOTOS -->
+
+<section
+class="seccion"
+id="fotos">
+
+<h2 class="seccion-titulo">
+📸 Fotos
+</h2>
+
+<div class="galeria">
+
+<div class="galeria-item">
+<span>🏟️</span>
+<h3>La Bombonera</h3>
+<p>
+El templo Xeneize.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>⚽</span>
+<h3>Partidos</h3>
+<p>
+Momentos dentro de la cancha.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>👑</span>
+<h3>Ídolos</h3>
+<p>
+Los grandes protagonistas de la historia.
+</p>
+</div>
+
+<div class="galeria-item">
+<span>💙💛</span>
+<h3>La hinchada</h3>
+<p>
+La pasión del pueblo Xeneize.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- HISTORIA -->
+
+<section
+class="seccion"
+id="historia">
+
+<h2 class="seccion-titulo">
+🏆 Historia
+</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>1905</strong>
+Nace el Club Atlético Boca Juniors.
+</div>
+
+<div class="info-card">
+<strong>1910</strong>
+Comienza a consolidarse la identidad visual del club.
+</div>
+
+<div class="info-card">
+<strong>1913</strong>
+Boca debuta en Primera División.
+</div>
+
+<div class="info-card">
+<strong>1940</strong>
+Se inaugura La Bombonera.
+</div>
+
+<div class="info-card">
+<strong>1992</strong>
+Boca vuelve a ser campeón local después de 11 años.
+</div>
+
+<div class="info-card">
+<strong>La era dorada</strong>
+Una etapa histórica de títulos nacionales e internacionales.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section
+class="video-seccion"
+id="videos">
+
+<h2 class="seccion-titulo">
+🎥 Videos
+</h2>
+
+<div class="video-grid">
 
 <article class="video-card">
 
@@ -894,7 +1352,7 @@ allowfullscreen>
 <div class="video-info">
 
 <h3>
-Contenido de El Canal de Boca
+El Canal de Boca
 </h3>
 
 <a
@@ -902,7 +1360,7 @@ class="video-boton"
 href="https://www.youtube.com/@ElCanaldeBoca/videos"
 target="_blank">
 
-Ver canal oficial
+Ver más videos
 
 </a>
 
@@ -912,21 +1370,15 @@ Ver canal oficial
 
 </div>
 
-<a
-class="canal-boton"
-href="https://www.youtube.com/@ElCanaldeBoca/videos"
-target="_blank">
-
-Ver todos los videos
-
-</a>
-
 </section>
+
+
+<!-- STREAMING -->
 
 <section class="streaming">
 
 <h2 class="streaming-titulo">
-Nuestro streaming
+🎙️ Nuestro streaming
 </h2>
 
 <a
@@ -945,6 +1397,7 @@ alt="Movimiento Los Bosteros de Tucumán">
 
 </main>
 
+
 <footer>
 
 <strong>
@@ -957,18 +1410,17 @@ Información Xeneize todos los días.
 
 </footer>
 
+
 <script>
 
-let noticias = [];
+let noticias=[];
 
 
 function escapar(texto){
 
-const div =
-document.createElement("div");
+const div=document.createElement("div");
 
-div.textContent =
-texto || "";
+div.textContent=texto || "";
 
 return div.innerHTML;
 
@@ -979,24 +1431,19 @@ function mostrarFecha(noticia){
 
 if(noticia.fecha_iso){
 
-const fecha =
-new Date(noticia.fecha_iso);
+const fecha=new Date(noticia.fecha_iso);
 
 if(!isNaN(fecha.getTime())){
 
 return new Intl.DateTimeFormat(
 "es-AR",
 {
-timeZone:
-"America/Argentina/Buenos_Aires",
-
+timeZone:"America/Argentina/Buenos_Aires",
 day:"2-digit",
 month:"2-digit",
 year:"numeric",
-
 hour:"2-digit",
 minute:"2-digit",
-
 hour12:false
 }
 ).format(fecha);
@@ -1007,10 +1454,10 @@ hour12:false
 
 return (
 noticia.fecha || ""
-) +
+)+
 (
 noticia.hora
-? " - " + noticia.hora
+? " - "+noticia.hora
 : ""
 );
 
@@ -1019,11 +1466,11 @@ noticia.hora
 
 function crearTarjeta(noticia){
 
-let boton = "";
+let boton="";
 
 if(noticia.link){
 
-boton = `
+boton=`
 
 <a
 class="leer"
@@ -1086,19 +1533,14 @@ ${boton}
 
 function mostrar(lista){
 
-const contenedor =
-document.getElementById(
-"noticias"
-);
+const contenedor=document.getElementById("noticias");
 
 if(!lista.length){
 
-contenedor.innerHTML = `
+contenedor.innerHTML=`
 
 <div class="vacio">
-
 No hay noticias en esta sección.
-
 </div>
 
 `;
@@ -1107,40 +1549,32 @@ return;
 
 }
 
-contenedor.innerHTML =
-lista
-.map(crearTarjeta)
-.join("");
+contenedor.innerHTML=
+lista.map(crearTarjeta).join("");
 
 }
 
 
 function inicio(){
 
-document.getElementById(
-"titulo"
-).textContent =
+document.getElementById("titulo").textContent=
 "Últimas noticias";
 
 mostrar(noticias);
 
-const hero =
-document.getElementById(
-"hero"
-);
+const hero=document.getElementById("hero");
 
 if(!noticias.length){
 
-hero.innerHTML = "";
+hero.innerHTML="";
 
 return;
 
 }
 
-const noticia =
-noticias[0];
+const noticia=noticias[0];
 
-hero.innerHTML = `
+hero.innerHTML=`
 
 <div class="hero">
 
@@ -1186,53 +1620,9 @@ noticia.fuente ||
 }
 
 
-function seccion(categoria){
-
-const lista =
-noticias.filter(
-function(noticia){
-
-const valor =
-(
-noticia.categoria ||
-""
-)
-.toLowerCase()
-.trim();
-
-return valor ===
-categoria
-.toLowerCase()
-.trim();
-
-}
-);
-
-document.getElementById(
-"titulo"
-).textContent =
-categoria;
-
-document.getElementById(
-"hero"
-).innerHTML = "";
-
-mostrar(lista);
-
-document.getElementById(
-"noticias"
-).scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-
-
 function irA(id){
 
-const elemento =
-document.getElementById(id);
+const elemento=document.getElementById(id);
 
 if(elemento){
 
@@ -1245,14 +1635,55 @@ behavior:"smooth"
 }
 
 
+function mostrarPanel(id){
+
+const paneles=document.querySelectorAll(".panel");
+
+paneles.forEach(function(panel){
+
+panel.classList.remove("activo");
+
+});
+
+const panel=document.getElementById(id);
+
+if(panel){
+
+panel.classList.add("activo");
+
+panel.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+}
+
+}
+
+
+function votar(opcion){
+
+const mensaje=document.getElementById("voto");
+
+mensaje.style.display="block";
+
+mensaje.textContent=
+"Votaste por "+opcion+" 💙💛";
+
+localStorage.setItem(
+"boca247_voto",
+opcion
+);
+
+}
+
+
 async function cargarNoticias(){
 
 try{
 
-const respuesta =
-await fetch(
-"noticias.json?v=" +
-Date.now()
+const respuesta=await fetch(
+"noticias.json?v="+Date.now()
 );
 
 if(!respuesta.ok){
@@ -1263,89 +1694,4 @@ throw new Error(
 
 }
 
-noticias =
-await respuesta.json();
-
-if(!Array.isArray(noticias)){
-
-noticias = [];
-
-}
-
-noticias.sort(
-function(a,b){
-
-return new Date(
-b.fecha_iso || 0
-)
--
-new Date(
-a.fecha_iso || 0
-);
-
-}
-);
-
-inicio();
-
-document.getElementById(
-"actualizado"
-).textContent =
-
-"Última actualización: " +
-
-new Intl.DateTimeFormat(
-"es-AR",
-{
-timeZone:
-"America/Argentina/Buenos_Aires",
-
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-
-hour:"2-digit",
-minute:"2-digit",
-
-hour12:false
-}
-).format(
-new Date()
-);
-
-}
-
-catch(error){
-
-console.error(error);
-
-document.getElementById(
-"noticias"
-).innerHTML = `
-
-<div class="vacio">
-
-No se pudieron cargar
-las noticias.
-
-</div>
-
-`;
-
-}
-
-}
-
-
-cargarNoticias();
-
-
-setInterval(
-cargarNoticias,
-5 * 60 * 1000
-);
-
-</script>
-
-</body>
-    </html>
+noticias=a
