@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 
 API_KEY = os.environ.get("API_FOOTBALL_KEY")
 
@@ -11,29 +11,29 @@ HEADERS = {
     "x-apisports-key": API_KEY
 }
 
-# Boca Juniors - ID de API-Football
 BOCA_ID = 1941
 
 
-def api_get(endpoint, params=None):
-    response = requests.get(
+def consultar(endpoint, parametros):
+
+    respuesta = requests.get(
         BASE_URL + endpoint,
         headers=HEADERS,
-        params=params,
+        params=parametros,
         timeout=30
     )
 
-    response.raise_for_status()
+    respuesta.raise_for_status()
 
-    data = response.json()
+    datos = respuesta.json()
 
-    if data.get("errors"):
-        raise Exception(str(data["errors"]))
+    if datos.get("errors"):
+        raise Exception(str(datos["errors"]))
 
-    return data.get("response", [])
+    return datos.get("response", [])
 
 
-def guardar(datos):
+def guardar_partido(datos):
 
     with open(
         "partido.json",
@@ -51,33 +51,29 @@ def guardar(datos):
 
 def obtener_partido():
 
-    ahora = datetime.now(
-        timezone.utc
-    )
+    ahora = datetime.now(timezone.utc)
 
-    fecha_desde = (
-        ahora - timedelta(days=2)
+    desde = (
+        ahora - timedelta(days=3)
     ).strftime("%Y-%m-%d")
 
-    fecha_hasta = (
+    hasta = (
         ahora + timedelta(days=7)
     ).strftime("%Y-%m-%d")
 
-
-    partidos = api_get(
+    partidos = consultar(
         "/fixtures",
         {
             "team": BOCA_ID,
-            "from": fecha_desde,
-            "to": fecha_hasta,
+            "from": desde,
+            "to": hasta,
             "season": 2026
         }
     )
 
-
     if not partidos:
 
-        guardar({
+        guardar_partido({
             "estado": "SIN PARTIDO",
             "local": "Boca Juniors",
             "visitante": "",
@@ -87,12 +83,17 @@ def obtener_partido():
             "incidencias": []
         })
 
-        print("No se encontró partido.")
+        print("No se encontraron partidos.")
         return
 
+    partidos.sort(
+        key=lambda partido:
+        partido["fixture"]["date"]
+    )
 
-    # Buscar primero un partido en vivo
-    partido = None
+    partido_en_vivo = None
+    partido_finalizado = None
+    partido_proximo = None
 
     estados_vivo = [
         "1H",
@@ -103,120 +104,135 @@ def obtener_partido():
         "P"
     ]
 
-    for p in partidos:
-
-        estado = p["fixture"]["status"]["short"]
-
-        if estado in estados_vivo:
-            partido = p
-            break
-
-
-    # Si no hay partido en vivo,
-    # buscar el más reciente o próximo
-    if partido is None:
-
-        partidos_ordenados = sorted(
-            partidos,
-            key=lambda x: x["fixture"]["date"]
-        )
-
-        finalizados = [
-            p for p in partidos_ordenados
-            if p["fixture"]["status"]["short"]
-            in ["FT", "AET", "PEN"]
-        ]
-
-        if finalizados:
-
-            partido = finalizados[-1]
-
-        else:
-
-            partido = partidos_ordenados[0]
-
-
-    fixture_id = partido["fixture"]["id"]
-
-    fixture = partido["fixture"]
-
-    teams = partido["teams"]
-
-    goals = partido["goals"]
-
-    status = fixture["status"]
-
-
-    local = teams["home"]["name"]
-
-    visitante = teams["away"]["name"]
-
-
-    resultado_local = goals["home"]
-
-    resultado_visitante = goals["away"]
-
-
-    if resultado_local is None:
-        resultado_local = 0
-
-    if resultado_visitante is None:
-        resultado_visitante = 0
-
-
-    estado_api = status["short"]
-
     estados_finales = [
         "FT",
         "AET",
         "PEN"
     ]
 
+    for partido in partidos:
 
-    if estado_api in estados_finales:
+        estado = partido[
+            "fixture"
+        ][
+            "status"
+        ][
+            "short"
+        ]
 
-        estado = "FINAL"
+        if estado in estados_vivo:
 
-    elif estado_api in estados_vivo:
+            partido_en_vivo = partido
+            break
 
-        estado = "EN VIVO"
+        if estado in estados_finales:
+
+            partido_finalizado = partido
+
+        elif partido_proximo is None:
+
+            partido_proximo = partido
+
+    if partido_en_vivo:
+
+        partido = partido_en_vivo
+
+    elif partido_proximo:
+
+        partido = partido_proximo
+
+    elif partido_finalizado:
+
+        partido = partido_finalizado
 
     else:
 
-        estado = "PRÓXIMO"
+        partido = partidos[-1]
 
+    fixture_id = partido[
+        "fixture"
+    ][
+        "id"
+    ]
 
-    minuto = status.get(
+    local = partido[
+        "teams"
+    ][
+        "home"
+    ][
+        "name"
+    ]
+
+    visitante = partido[
+        "teams"
+    ][
+        "away"
+    ][
+        "name"
+    ]
+
+    goles_local = partido[
+        "goals"
+    ][
+        "home"
+    ]
+
+    goles_visitante = partido[
+        "goals"
+    ][
+        "away"
+    ]
+
+    estado_api = partido[
+        "fixture"
+    ][
+        "status"
+    ][
+        "short"
+    ]
+
+    minuto = partido[
+        "fixture"
+    ][
+        "status"
+    ].get(
         "elapsed"
     )
 
-    if estado == "EN VIVO" and minuto:
+    if estado_api in estados_vivo:
 
-        minuto_texto = (
-            str(minuto) + "'"
-        )
+        estado = "EN VIVO"
+
+    elif estado_api in estados_finales:
+
+        estado = "FINAL"
+
+    else:
+
+        estado = "PROXIMO"
+
+    if minuto:
+
+        minuto_texto = str(minuto) + "'"
 
     else:
 
         minuto_texto = ""
 
-
-    competencia = (
-        partido["league"]["name"]
-    )
-
+    competencia = partido[
+        "league"
+    ][
+        "name"
+    ]
 
     incidencias = []
 
-
-    # Obtener eventos del partido
-    eventos = api_get(
+    eventos = consultar(
         "/fixtures/events",
         {
             "fixture": fixture_id
         }
     )
-
 
     for evento in eventos:
 
@@ -225,130 +241,113 @@ def obtener_partido():
             ""
         )
 
-        detalle = evento.get(
-            "detail",
-            ""
-        )
-
-        minuto_evento = evento.get(
-            "time",
-            {}
-        ).get(
-            "elapsed"
-        )
-
-        extra = evento.get(
-            "time",
-            {}
-        ).get(
-            "extra"
-        )
-
         jugador = evento.get(
             "player",
             {}
         ).get(
-            "name"
+            "name",
+            ""
         )
 
+        equipo = evento.get(
+            "team",
+            {}
+        ).get(
+            "name",
+            ""
+        )
+
+        tiempo = evento.get(
+            "time",
+            {}
+        )
+
+        minuto_evento = tiempo.get(
+            "elapsed"
+        )
+
+        adicional = tiempo.get(
+            "extra"
+        )
 
         if minuto_evento is None:
 
             minuto_evento = ""
 
-
-        if extra:
-
-            minuto_evento = (
-                f"{minuto_evento}+{extra}'"
-            )
-
-        elif minuto_evento:
+        elif adicional:
 
             minuto_evento = (
-                f"{minuto_evento}'"
+                str(minuto_evento)
+                + "+"
+                + str(adicional)
+                + "'"
             )
 
+        else:
 
-        # GOLES
+            minuto_evento = (
+                str(minuto_evento)
+                + "'"
+            )
+
         if tipo == "Goal":
 
             incidencias.append({
                 "minuto": minuto_evento,
                 "tipo": "gol",
-                "jugador": jugador or "",
-                "detalle": detalle or ""
+                "jugador": jugador,
+                "detalle": equipo
             })
 
+        elif tipo == "Card":
 
-        # TARJETA AMARILLA
-        elif tipo == "Card" and (
-            "Yellow" in detalle
-            or "yellow" in detalle
-        ):
-
-            incidencias.append({
-                "minuto": minuto_evento,
-                "tipo": "amarilla",
-                "jugador": jugador or "",
-                "detalle": detalle
-            })
-
-
-        # TARJETA ROJA
-        elif tipo == "Card" and (
-            "Red" in detalle
-            or "red" in detalle
-        ):
-
-            incidencias.append({
-                "minuto": minuto_evento,
-                "tipo": "roja",
-                "jugador": jugador or "",
-                "detalle": detalle
-            })
-
-
-        # CAMBIOS
-        elif tipo == "subst":
-
-            jugador_sale = (
-                evento.get(
-                    "player",
-                    {}
-                ).get(
-                    "name"
-                )
+            detalle = evento.get(
+                "detail",
+                ""
             )
 
-            jugador_entra = (
-                evento.get(
-                    "assist",
-                    {}
-                ).get(
-                    "name"
-                )
+            detalle_lower = detalle.lower()
+
+            if "yellow" in detalle_lower:
+
+                incidencias.append({
+                    "minuto": minuto_evento,
+                    "tipo": "amarilla",
+                    "jugador": jugador,
+                    "detalle": equipo
+                })
+
+            elif "red" in detalle_lower:
+
+                incidencias.append({
+                    "minuto": minuto_evento,
+                    "tipo": "roja",
+                    "jugador": jugador,
+                    "detalle": equipo
+                })
+
+        elif tipo == "subst":
+
+            jugador_sale = jugador
+
+            jugador_entra = evento.get(
+                "assist",
+                {}
+            ).get(
+                "name",
+                ""
             )
 
             incidencias.append({
                 "minuto": minuto_evento,
                 "tipo": "cambio",
-                "jugador": jugador_entra or "",
+                "jugador": jugador_entra,
                 "detalle":
-                    "Entra: " +
-                    str(jugador_entra or "") +
-                    " | Sale: " +
-                    str(jugador_sale or "")
+                    "Entra: "
+                    + jugador_entra
+                    + " | Sale: "
+                    + jugador_sale
             })
-
-
-    # Orden cronológico
-    incidencias.sort(
-        key=lambda x: str(
-            x.get("minuto", "")
-        )
-    )
-
 
     datos = {
 
@@ -361,7 +360,9 @@ def obtener_partido():
         "visitante": visitante,
 
         "resultado":
-            f"{resultado_local}-{resultado_visitante}",
+            str(goles_local or 0)
+            + "-"
+            + str(goles_visitante or 0),
 
         "competencia": competencia,
 
@@ -371,28 +372,16 @@ def obtener_partido():
 
     }
 
+    guardar_partido(datos)
 
-    guardar(datos)
-
-
-    print(
-        "Partido actualizado:",
-        local,
-        resultado_local,
-        "-",
-        resultado_visitante,
-        visitante
-    )
-
-    print(
-        "Estado:",
-        estado
-    )
-
-    print(
-        "Incidencias:",
-        len(incidencias)
-    )
+    print("PARTIDO ACTUALIZADO")
+    print(local)
+    print(goles_local or 0)
+    print("-")
+    print(goles_visitante or 0)
+    print(visitante)
+    print("Estado:", estado)
+    print("Incidencias:", len(incidencias))
 
 
 if __name__ == "__main__":
@@ -400,7 +389,7 @@ if __name__ == "__main__":
     if not API_KEY:
 
         raise Exception(
-            "No existe el secreto API_FOOTBALL_KEY"
+            "Falta configurar API_FOOTBALL_KEY"
         )
 
     obtener_partido()
