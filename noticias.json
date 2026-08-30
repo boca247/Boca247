@@ -8,14 +8,6 @@
     "fecha_iso": "2026-08-30T17:55:00+00:00"
   },
   {
-    "titulo": "Boca afronta una agenda apretadísima en septiembre, con seis partidos en 20 días - El Intransigente",
-    "fuente": "El Intransigente",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
-    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBVZmNqWGpyNGE4R1JLMFM5UUJTbldMX0NNMFZWWHJPdzJ2S1VvMXhjVlg4Z1J0NkpDTGd3ZEpTYUxGQ1RXSk5MMVFxSF9xZnJIekJoTzZYY3M0UzlTa2czbllsV2wyLXgyWlo2WlNEZmo?oc=5",
-    "categoria": "Sudamericana",
-    "fecha_iso": "2026-08-30T17:47:03+00:00"
-  },
-  {
     "titulo": "Arruabarrena reveló qué pasará con Bianco en Boca y habló de Paredes - El Intransigente",
     "fuente": "El Intransigente",
     "contenido": "Toda la información de la Reserva de Boca Juniors y las futuras figuras del club.",
@@ -24,11 +16,19 @@
     "fecha_iso": "2026-08-30T17:45:51+00:00"
   },
   {
+    "titulo": "Copa Sudamericana: cómo comprar entradas para Boca vs. San Pablo en la Bombonera - Perfil",
+    "fuente": "Perfil",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQLUxXcGh5TUN0Z2g0YnpDa3c4eEZOT1haWjU5TE05LVdMOVluWWd0dlctenpBNlNfckk3Vkk2UExZUGQyc2hwaS1sV2UzV3llU2tRT2VjY3JZUERyUGVzMjRibzBsUUVMZ1lYU0NBdl9SQjVTWEF4bEV0M2hRVnN0a0ZweS1tNWp2Y29jOG9ZejRQYmVpYm00QVBiSkx1TzBMLXJVdnJfTDhfSVp1UEstUGlDc19qUnJVRUZiNS12VGjSAcYBQVVfeXFMUElhcHFOYk9SNXB4RnVGTGQtVUs4RHg0bG9TbFpNSWF6a2NRMm5oQk50TzFtM1E3RlZiUHJXemdPRW15c3hSSkdIeXJJUlhNM1p2U2JsTjI1SDVlYnY3NlFaQmZXcEtLZWNSSVBXRWhBVjNDQ0VWN0haekRnQ3dwd1preVRZd1pMb241bzVXczZVQWt5cEJPMWU0QWhFaXJlODZMQjl2MmdsbkN3bDBPakN4NjlUSmZHazJlRF95azNzV21WbWNn?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-30T17:34:42+00:00"
+  },
+  {
     "titulo": "Con el nuevo sistema, Boca anunció cómo será la venta de entradas contra San Pablo - TyC Sports",
     "fuente": "TyC Sports",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNenU5MHJTUWpsRHBRU01YRUkxNG1HZFZfU0VQYTIwUXRYb2gtM1hrQ1daUHdGVlZLcUNHb0tOblUzVDVwTFdIcGFUTlU4bjB6Y0ctenpSaW4xUWIzRVpFMnBYcUlvN1o5Y1dWcl9KNF92bGVMNlE2ZXlUNFJodGYxdFdvZ2hoSmF4ZnhXMGxoVmNiRm9Tc2F4VUp5MG93eWl6M1ZBa2R2UTA2eFZNMWlhOXM5RGF1djBQaVB5RkFKY0FHOEE0LXhoSHBtaw?oc=5",
-    "categoria": "La Bombonera",
+    "categoria": "Sudamericana",
     "fecha_iso": "2026-08-30T16:42:01+00:00"
   },
   {
@@ -66,9 +66,9 @@
   {
     "titulo": "Boca anunció cómo será la venta de entradas para el partido ante San Pablo - Olé",
     "fuente": "Olé",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
     "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNZThMUnVHZ3I5dkM3X2pBQW90NWhYZ1FGUkI4d3VERVhwb3Z6Uy1JclhuVVctMnozWkFQaDY0MTFoc3EzSE5NVzJ5a2VZUUkwV0l2UEdTSnR0dXNhUi15eE01QXFaZGcxb1RWNFdyam54REpCcmprMm5Kc0QxbF9Lam9HcUV6SDMyaVZ0NU5JaDlERWRhSWVQN0hEYjNORVFjWTFHZU8yY1NvTWctWThveTk0VEU3a1Vab2xWRUJxZ0Fhd3pObDQ1Tk9uRWtxeFgzdmfSAdcBQVVfeXFMT181MUQwRHJRUXFuV1BJcnBwcXVEbE51V0VDWGRqcm9fUFZ4SVVtSVpRdDdXYVdpdmVUNElZRmR0V3BJMWN0SlVlV0hmT2FRUkgyMTdobGEtTXJfWmR5dllTYkxFcGo2bms3MG9PWkE2ek9xVUhLSUd0Sm53aC1kY21TUlRYQlllS01MdkxhYVJyRmZQYXFGdmx4NkZ0cTZRSnFyWXhNNnlqQkI0ZFZCa2xlbDFHdnBWMHU4UUtDeElPNTFrQ01GZWxCWjJJeG9VWEZrcHA5d0U?oc=5",
-    "categoria": "Sudamericana",
+    "categoria": "La Bombonera",
     "fecha_iso": "2026-08-30T15:17:58+00:00"
   },
   {
@@ -126,14 +126,6 @@
     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPS2Q1M092VGg4dWNhYkx1b1dwV3k4ZjRINnM0ZzVXWnh3QkFBWHRfb2ZyRGxtZlVpM0MtSVh3OTZBSjRUbExKaUVoeHJXSDRHck5NUlRQTFZaSDJIVUxPRjJsc3FsZlAtS091a09rQWR2ck9IOUE5LUt4X0l3dHZVRTlyblV6QlBrOEdoYkQ3MmduZkdldEZiVC1nUF85TGxhNWU5UWFQMnlzX3FsWVE?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-30T11:50:00+00:00"
-  },
-  {
-    "titulo": "¿Y ahora? River quiere calmar la crisis con un refuerzo que también quiere Boca - Planeta Boca Juniors",
-    "fuente": "Planeta Boca Juniors",
-    "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOU2h4WExvM2lobTh0cFFteHVYRFd6SFpBdHIxNlFyV19WVVNnckhxeVVveGQyZThCSUlhSy1PRWh3OWY5V2dZbS1Da3liRHQzeF9GSDdXX0hYd3BzTXVkZXhHNTAyY2RVWkp5a3hLTTc0MGNWS3p5SGhsOUlXWlk0SWVhdU11b0dnTWduQUFub3ROZ3g0OEZTS1Zsam1JMDdiSWVnd3hhZGpIVmNfaGNqamprUk5yNU1S0gG8AUFVX3lxTE9zZUd4YkxFTjE3cG9zUG01eDJOdDVZNlZzR0pheXYtLW1mN0gycG1NUFhkVHQ0NGE2NlAwSlZOWXppcjhIZjBXQWhydHMzaWVyMi1YdU1Rd3dEcGNLWGxNMEd2UmM2dFJvMlo4TDJkOVZRc1R3NGJjeUVEMzlxMGx5eVd1SUZEZXZDcnNzTG51My01dWE1UUxzWUx3YjRCQmNxNGxIaHU1MVZUUWFpSGdFODRrMHBEUDRKNnl4?oc=5",
-    "categoria": "Mercado de pases",
-    "fecha_iso": "2026-08-30T11:40:51+00:00"
   },
   {
     "titulo": "River sin copas y Boca en Sudamericana: así quedó la tabla anual tras los empates de Vélez e Independiente ... - bolavip.com",
@@ -216,14 +208,6 @@
     "fecha_iso": "2026-08-29T12:13:00+00:00"
   },
   {
-    "titulo": "No mereció ganar pero Boca Juniors sumó 3 (está 8vo. y sueña con la Libertadores 2027) - Urgente24",
-    "fuente": "Urgente24",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxON3M3ZVB0YjcyQy1HZlN1eG9VSzZUVXlmLWM5bGMtUklUdGgtYmNaZGc2U3M5eV9vS2hUWldEeG45TkdiX3FHTUxtSXZNS0VwaXc1OFlBMGlRWWlkMm01UXZLaGF2bkxnclRaVWIxY2ptbHVCQS11ZXJSa2t1RmFNak1JZFlLQkNYZTBacnQtVDFEUWRaUXFjckZPMV83MDRPOUlrcmwyMmZsb2lER3JMbjFOOWtKVkVyTlHSAb8BQVVfeXFMUE5mUVBSVnQ0WlZ2UWFlS0g3SlZndDVzdUtSM3NFTWV0SEVERXRVWkdpb3c3UklfcjZub2NVNHRfVVhLdHdfRGQxeEFkcGhwZXVPTGRRSDk3MTR3UzM3V0I0cmFORkVBSTMwZ2FJQWw5OHNvWS1lRTNGN09RU2oySUpwVWdDSy0tSjVZZDJqLWstc2JtR0psNlE1VHA0dFBCWE5tODhXczc4RXFHUENKMlFYY1FPTHhBOVNaSUFwajg?oc=5",
-    "categoria": "La Bombonera",
-    "fecha_iso": "2026-08-29T10:37:00+00:00"
-  },
-  {
     "titulo": "Una jugadora de Boca y la Selección Argentina se aleja del fútbol para priorizar su salud mental - Olé",
     "fuente": "Olé",
     "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
@@ -280,14 +264,6 @@
     "fecha_iso": "2026-08-29T02:40:06+00:00"
   },
   {
-    "titulo": "En su vuelta a la Bombonera, Boca logró un triunfo agónico 1-0 ante Lanús y se metió en puestos de clasificación a playoffs - TN",
-    "fuente": "TN",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
-    "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORDBYRzd5N2JIWFVYYU5JYmw1VVlJTjFuamlWVF9mdlBCMDI4dGNqRzVkU3lvLTNqS0tueHpqaWpuekFiTmdWaHBMTXRCQkJLdGJNVkpzdkNxb19yV1NFWmt5R2pDNjdIZmlDeEZhdzBKZlo3ZHNEYnVBdWJTaVEwcHNGOHZ1TkJXU1diZUE2elpMUlZpSzBhMmFPVXpoUjFxeEFrX0hTSmxqanoxMEJXaGNmamhoUjdsa1ZCTE5xTkJzVVdRMjA2ZWFZdW96UXAxV09XalUxa2VkMkd4SkZyeFlsOEPSAfgBQVVfeXFMT2pxeFlFQWZQbUxJNHJwNkxaUG1BcTUzaTVwcUVZNm1OVFJSSEhvOWtyNVFyc3REOEVCazdrT3ZZOG5vczFXcFNVQ3FPQklSeW8zWWVJNTFxWk50clFmWmhId083UWs3N0EtVTlTYVlpczVRVndJcHhSS1VvX1ZpM21yVmttVW9kMmJjTGl0X1ZuR2tSLUFDaXh6OU81a3pZdk1RYXpaRFFKb25HTmx3VXAwcjVVSmxUcTlFZS1MWENfRTlMODVHZUNyNUpYZ2FFU0RzTG83eFlsRHllLW9MM09LeEIyZDFMMzBWR2lPd1FYeE5KUE1qZXc?oc=5",
-    "categoria": "La Bombonera",
-    "fecha_iso": "2026-08-29T02:35:00+00:00"
-  },
-  {
     "titulo": "Con la Copa Argentina y la Sudamericana a la vista, cuáles son los próximos partidos de Boca - Olé",
     "fuente": "Olé",
     "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
@@ -342,6 +318,14 @@
     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQnJFWHNaZGVDVEFSRWVMZFVVYVRMRHhkNnlkS0ZVdmdCbG4tbWUzWHZpOWZ4VW1MbVBUZzBwMlc4dVNJTUxqc2duZlRxQ1RkVFVYaXhCNlZxRHJsbC1WYmxKNzhoc0lhamFEQ1FNdE1nYnlxOWp0cGloS1FBa3A1aG1UN0NrZVpTaVZEeFVrNEUzNHhwcGstbnRmbE5GcUVaUTlQSmVWNUxnOTFzT3Y1bQ?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-28T22:46:00+00:00"
+  },
+  {
+    "titulo": "Video: así está el césped de la Bombonera a 35 días del último partido de Boca como local - TN",
+    "fuente": "TN",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNMVFsRnNqenY4NjJIZE5XaE5QNDBUUHVKMjFLYno2YlRaSmJDSE1ZWWN6YTRVYl9nc0dIeUt6b0JKRTZ6YkdJTTM4WFF1cURXQ3hSSkVWS2VPWnF3S0dGdFdnSGlYbXUwZjFHMU1rRDNhVmN6aHJGbEdoalp0Q1F2MjNhWnBzVURmcHV4bFppUDM4aTVFNzdVVDl6YU4wSllJV081R01ZSWZJMmM3bE9VRGxKWWVOcnhuamxLaXpkUnJ5ck5UX1BDbWpDRUtfZ2PSAeMBQVVfeXFMT2JvcTJ3OTBxLWxuZDF4NUhYNTZscWZUU1NFcjM1TTh6YTlFWkxCM0RyS0U1TFc2UWRLdWVYM1BBWnVzX1dGQllRcmtCZDZIWWd0Vm03Nks4ZXVGTjdBbGJCaS0yWl9hdFdoLUpqT0lCcndvOVdSX3dLOTBjQUs5R2x6QlZra0puN243WTFpUkJFQjNfeDl4bFE3T0tkZENxbGhocUt1cGNzQ3Bkd0cza2JRczNPTmI0TGtFUnBaajNxYWljbkNvNmNadm42dVdGZ3dJWjhGRHk2bnRUNkRjODRQTnc?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-28T22:37:35+00:00"
   },
   {
     "titulo": "Familia xeneize: el hijo de Enner Valencia debutó en las inferiores de Boca - Planeta Boca Juniors",
@@ -536,6 +520,14 @@
     "fecha_iso": "2026-08-27T16:42:40+00:00"
   },
   {
+    "titulo": "Boca vs. San Pablo, con fecha confirmada para los cuartos de final de la Copa Sudamericana - TyC Sports",
+    "fuente": "TyC Sports",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQjJZVjdyNDh0bU14dDVBSlpEX2hJb053VDVJSmhJY05yRTJKZ3BfMVNreExOb0NlcndFMlJSLWJSb0IyM0t6NXB4QnRsSWx1ckJFZ3Rfa0NWa0hia05QaGtFZDNEWVV4c2hHNHU4eWJKekNiMkxXY2FjME9vbENQQnRkOHBiRFpHSTNON3cxZXVkdHBlbk43dHF6WkQ4VHZYc0J3NWdrc0hQYlRjSDBzWUZ6ZUk5bWpOM3J1eWxZd1pmN1p4aGxKcERNVW4zemEzTVU0LUNZSXc?oc=5",
+    "categoria": "Sudamericana",
+    "fecha_iso": "2026-08-27T15:56:09+00:00"
+  },
+  {
     "titulo": "Cómo quedó el cuadro de Boca en la Copa Sudamericana y ¿hay motivos para ilusionarse? - Planeta Boca Juniors",
     "fuente": "Planeta Boca Juniors",
     "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
@@ -622,6 +614,14 @@
     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbExJU0NnZ3RlMmZLX1VvYlJjUG9IbzloUzk4SHRUdkYyT3BNMUdSUzl4RmhzcmFZMjBDcXVNMlVla2h2OTRvaHlaWmEzZlZqTjRzWXFiVmJjM1pGREVHREJHSDJYQkprbmNwODRZVmxLRXM5dEN5RHZBMkZheWxCblAyaTB6UTQxSUZOTEI2R0pLWFQ1VGhPMHlraVd2LW1TbHdCR2FHMWJTZkhy?oc=5",
     "categoria": "Reserva",
     "fecha_iso": "2026-08-26T20:24:27+00:00"
+  },
+  {
+    "titulo": "Tras la grave lesión de Tomás Aranda, ¿Boca puede sumar un refuerzo aun con el mercado de pases cerrado? - MDZ Online",
+    "fuente": "MDZ Online",
+    "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
+    "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQaGJJeHNZLXdsLUFLWURTSk8yMjRqV1RJVFFVb3JlXy1JanpucEtIUExnT2FXRC16c2JXc1FnZjdpZV9ERGpBT1VWWTA3YjBQTTBEYzV3d0Z3cXRyazlSbDdoZjBoV2RJSlh6WXV0SjBzOWNKMmd1QU8wU2pJMm1Vc1JYbWlQQlUxZjBORzlKZnRyczEwejJwZ3VFcUpXX2R0RGlBRGZ6YVlrZUhHQUEzMHY5VDlaZmhNNXU1MlZkNHRGMkVJTzN4bTU3Z9IB0AFBVV95cUxPNllseUhUZWpKRHNlWUJHMTR5SThOa2pjd3Y4b2pycGIyZmNHTFpnYTA5TjJtUm40Q19QazA0X3hoSmFGUGZMeXZBUjBmYXpVRnZzNHRIZ2J0U0lBUGF5U0YxZWR5SW5ySTVYYS1EU1pDSS1BU1Nkazlya29DZ2JKRW5YajZoOVpvaFAteWZnMmx5S0t2NUEwUEhTSWZYbGpRVEFua3JNdjlhcE5HX0dKdlpXRWtmdVFqZW4waVh0eUltX1h6M2tsWVM4X2l0ckZu?oc=5",
+    "categoria": "Mercado de pases",
+    "fecha_iso": "2026-08-26T19:49:00+00:00"
   },
   {
     "titulo": "Quién es Lautaro Bianco, la joya que Boca subirá de Reserva para reemplazar a Tomás Aranda - TyC Sports",
