@@ -4,17 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
+<title>Noticias de Boca | Todo Boca</title>
 
-<meta name="description" content="BOCA 24/7 - Noticias, partidos, mercado de pases, streaming y toda la actualidad de Boca Juniors.">
+<meta name="description" content="Noticias, partidos, mercado de pases, streaming y toda la actualidad de Boca Juniors.">
 <meta name="theme-color" content="#00245f">
 
 <style>
-
-/* =========================================================
-   BOCA 24/7
-   DISEÑO COMPLETO
-========================================================= */
 
 *{
     margin:0;
@@ -33,29 +28,24 @@ body{
     overflow-x:hidden;
 }
 
-a{
-    color:inherit;
-}
-
 img{
     max-width:100%;
+}
+
+a{
+    color:inherit;
 }
 
 button{
     font-family:inherit;
 }
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root{
     --azul:#00245f;
     --azul2:#003b8f;
     --azul3:#0756b8;
     --amarillo:#f5c400;
-    --blanco:#ffffff;
-    --negro:#0a0a0a;
+    --blanco:#fff;
     --gris:#eef2f7;
     --gris2:#667085;
     --rojo:#df1720;
@@ -64,9 +54,33 @@ button{
     --sombra:0 8px 30px rgba(0,36,95,.10);
 }
 
-/* =========================================================
+
+/* =====================================================
+   PORTADA SUPERIOR
+===================================================== */
+
+.portada-superior{
+    width:100%;
+    margin:0;
+    padding:0;
+    background:#00183f;
+    overflow:hidden;
+}
+
+.portada-superior img{
+    width:100%;
+    height:auto;
+    min-height:190px;
+    max-height:520px;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
 header{
     background:
@@ -74,35 +88,28 @@ header{
         linear-gradient(135deg,#00183f,#003b91);
     color:white;
     text-align:center;
-    padding:30px 15px 25px;
+    padding:24px 15px;
     border-bottom:5px solid var(--amarillo);
 }
 
 .logo{
-    font-size:46px;
+    font-size:38px;
     line-height:1;
     font-weight:1000;
     letter-spacing:2px;
 }
 
 .slogan{
-    margin-top:8px;
+    margin-top:7px;
     color:var(--amarillo);
-    font-size:17px;
+    font-size:15px;
     font-weight:800;
 }
 
-.header-line{
-    width:80px;
-    height:4px;
-    background:var(--amarillo);
-    margin:16px auto 0;
-    border-radius:10px;
-}
 
-/* =========================================================
+/* =====================================================
    MENU
-========================================================= */
+===================================================== */
 
 nav{
     position:sticky;
@@ -139,9 +146,10 @@ nav a:hover{
     color:var(--azul);
 }
 
-/* =========================================================
+
+/* =====================================================
    CONTENEDOR
-========================================================= */
+===================================================== */
 
 main{
     width:100%;
@@ -177,81 +185,13 @@ main{
     font-size:13px;
 }
 
-/* =========================================================
-   PORTADA
-========================================================= */
 
-.portada{
-    position:relative;
-    width:100%;
-    border-radius:22px;
-    overflow:hidden;
-    background:#001b47;
-    box-shadow:var(--sombra);
-    margin-bottom:25px;
-}
-
-.portada img{
-    width:100%;
-    height:460px;
-    object-fit:cover;
-    display:block;
-}
-
-.portada-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:35px;
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,15,45,.95),
-            rgba(0,15,45,.20) 70%,
-            transparent
-        );
-    color:white;
-}
-
-.portada-label{
-    display:inline-block;
-    width:max-content;
-    background:var(--rojo);
-    padding:8px 13px;
-    border-radius:6px;
-    font-size:12px;
-    font-weight:1000;
-    margin-bottom:12px;
-}
-
-.portada h1{
-    max-width:900px;
-    font-size:38px;
-    line-height:1.1;
-    margin-bottom:12px;
-}
-
-.portada p{
-    max-width:850px;
-    color:#e8edf7;
-    font-size:17px;
-    line-height:1.5;
-}
-
-.portada-meta{
-    margin-top:12px;
-    color:#ddd;
-    font-size:13px;
-}
-
-/* =========================================================
-   NOTICIAS
-========================================================= */
+/* =====================================================
+   ULTIMA HORA
+===================================================== */
 
 .ultima{
-    background:white;
+    background:#fff;
     border-radius:20px;
     overflow:hidden;
     box-shadow:var(--sombra);
@@ -260,7 +200,6 @@ main{
 .noticias-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:0;
 }
 
 .noticia-card{
@@ -310,9 +249,10 @@ main{
     font-weight:900;
 }
 
-/* =========================================================
-   SECCION NOTICIAS DESARROLLADAS
-========================================================= */
+
+/* =====================================================
+   NOTICIAS DESARROLLADAS
+===================================================== */
 
 .noticias-completas{
     display:grid;
@@ -365,13 +305,10 @@ main{
     font-weight:900;
 }
 
-.btn-azul:hover{
-    background:var(--azul3);
-}
 
-/* =========================================================
+/* =====================================================
    PARTIDO
-========================================================= */
+===================================================== */
 
 .partido{
     background:
@@ -419,9 +356,10 @@ main{
     font-weight:1000;
 }
 
-/* =========================================================
+
+/* =====================================================
    STREAMING
-========================================================= */
+===================================================== */
 
 .streaming{
     background:#080808;
@@ -440,7 +378,7 @@ main{
 .streaming-imagen img{
     width:100%;
     height:auto;
-    min-height:300px;
+    min-height:220px;
     max-height:600px;
     object-fit:cover;
     display:block;
@@ -481,7 +419,7 @@ main{
 
 .stream-btn{
     display:inline-block;
-    padding:14px 22px;
+    padding:14px 24px;
     border-radius:10px;
     text-decoration:none;
     font-weight:1000;
@@ -490,11 +428,6 @@ main{
 .youtube{
     background:#ff0000;
     color:white;
-}
-
-.canal{
-    background:var(--amarillo);
-    color:var(--azul);
 }
 
 .streaming-grid{
@@ -522,9 +455,10 @@ main{
     line-height:1.55;
 }
 
-/* =========================================================
-   CANAL DE BOCA
-========================================================= */
+
+/* =====================================================
+   CANAL
+===================================================== */
 
 .canal-boca{
     background:linear-gradient(135deg,#001b47,#003b91);
@@ -568,9 +502,10 @@ main{
     font-size:14px;
 }
 
-/* =========================================================
+
+/* =====================================================
    ENCUESTA
-========================================================= */
+===================================================== */
 
 .encuesta{
     background:#fff;
@@ -646,9 +581,10 @@ main{
     background:var(--azul3);
 }
 
-/* =========================================================
+
+/* =====================================================
    MERCADO
-========================================================= */
+===================================================== */
 
 .mercado-grid{
     display:grid;
@@ -689,9 +625,10 @@ main{
     border-bottom:0;
 }
 
-/* =========================================================
-   BOCA EN EL NOA
-========================================================= */
+
+/* =====================================================
+   BOCA EN EL NORTE
+===================================================== */
 
 .norte{
     background:
@@ -729,9 +666,10 @@ main{
     font-weight:1000;
 }
 
-/* =========================================================
+
+/* =====================================================
    FUENTES
-========================================================= */
+===================================================== */
 
 .fuentes{
     display:grid;
@@ -761,9 +699,10 @@ main{
     line-height:1.4;
 }
 
-/* =========================================================
+
+/* =====================================================
    MUNDO BOCA
-========================================================= */
+===================================================== */
 
 .mundo-grid{
     display:grid;
@@ -792,9 +731,10 @@ main{
     font-size:16px;
 }
 
-/* =========================================================
+
+/* =====================================================
    AGENDA
-========================================================= */
+===================================================== */
 
 .agenda{
     display:grid;
@@ -813,9 +753,10 @@ main{
     color:var(--azul);
 }
 
-/* =========================================================
+
+/* =====================================================
    VIDEOS
-========================================================= */
+===================================================== */
 
 .videos-grid{
     display:grid;
@@ -851,9 +792,10 @@ main{
     line-height:1.4;
 }
 
-/* =========================================================
+
+/* =====================================================
    REDES
-========================================================= */
+===================================================== */
 
 .seguinos{
     background:var(--azul);
@@ -891,9 +833,10 @@ main{
     font-weight:1000;
 }
 
-/* =========================================================
+
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
     background:#00132f;
@@ -913,9 +856,10 @@ footer p{
     color:#98a2b3;
 }
 
-/* =========================================================
+
+/* =====================================================
    RESPONSIVE
-========================================================= */
+===================================================== */
 
 @media(max-width:900px){
 
@@ -946,28 +890,28 @@ footer p{
         padding:15px 10px 50px;
     }
 
+    .portada-superior img{
+        width:100%;
+        height:auto;
+        min-height:160px;
+        max-height:none;
+        object-fit:cover;
+    }
+
+    header{
+        padding:20px 10px;
+    }
+
     .logo{
-        font-size:34px;
+        font-size:30px;
+    }
+
+    .slogan{
+        font-size:13px;
     }
 
     .titulo{
         font-size:22px;
-    }
-
-    .portada img{
-        height:360px;
-    }
-
-    .portada-overlay{
-        padding:22px;
-    }
-
-    .portada h1{
-        font-size:27px;
-    }
-
-    .portada p{
-        font-size:14px;
     }
 
     .noticias-grid{
@@ -1014,37 +958,59 @@ footer p{
 </style>
 </head>
 
+
 <body>
 
-<!-- ======================================================
+
+<!-- =====================================================
+     PORTADA SUPERIOR
+     IMAGEN A ANCHO COMPLETO
+===================================================== -->
+
+<div class="portada-superior">
+
+    <img
+        src="IMG-20260829-WA0001.jpg"
+        alt="Portada">
+
+</div>
+
+
+<!-- =====================================================
      HEADER
-====================================================== -->
+===================================================== -->
 
 <header>
 
-    <div class="logo">BOCA 24/7</div>
-
-    <div class="slogan">
-        Todo Boca. Todo el día.
+    <div class="logo">
+        Noticias de Boca
     </div>
 
-    <div class="header-line"></div>
+    <div class="slogan">
+        Toda la actualidad xeneize en un solo lugar
+    </div>
 
 </header>
 
 
-<!-- ======================================================
+<!-- =====================================================
      MENU
-====================================================== -->
+===================================================== -->
 
 <nav>
 
     <a href="#inicio">INICIO</a>
+
     <a href="#noticias">NOTICIAS</a>
-    <a href="#boca">BOCA</a>
+
+    <a href="#boca">CANALES</a>
+
     <a href="#streaming">STREAMING</a>
+
     <a href="#partidos">PARTIDOS</a>
+
     <a href="#mercado">MERCADO</a>
+
     <a href="#videos">VIDEOS</a>
 
 </nav>
@@ -1053,56 +1019,18 @@ footer p{
 <main id="inicio">
 
 
-<!-- ======================================================
+<!-- =====================================================
      ACTUALIZACION
-====================================================== -->
+===================================================== -->
 
 <div class="actualizado" id="actualizado">
     🔄 Actualizando información...
 </div>
 
 
-<!-- ======================================================
-     PORTADA
-====================================================== -->
-
-<section class="bloque">
-
-    <div class="portada">
-
-        <img
-            src="IMG-20260829-WA0001.jpg"
-            alt="BOCA 24/7">
-
-        <div class="portada-overlay">
-
-            <div class="portada-label">
-                🔴 ÚLTIMA HORA
-            </div>
-
-            <h1>
-                Boca volvió al triunfo y ya piensa en su próximo desafío
-            </h1>
-
-            <p>
-                El Xeneize derrotó 1-0 a Lanús con un gol de Tomás Belmonte
-                en la última jugada y ahora prepara su próximo compromiso.
-            </p>
-
-            <div class="portada-meta">
-                Fútbol · Boca Juniors · Última hora
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
+<!-- =====================================================
      ULTIMA HORA
-====================================================== -->
+===================================================== -->
 
 <section class="bloque" id="noticias">
 
@@ -1113,6 +1041,7 @@ footer p{
     <div class="ultima">
 
         <div class="noticias-grid">
+
 
             <article class="noticia-card">
 
@@ -1203,6 +1132,7 @@ footer p{
 
             </article>
 
+
         </div>
 
     </div>
@@ -1210,9 +1140,9 @@ footer p{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      NOTICIAS DESARROLLADAS
-====================================================== -->
+===================================================== -->
 
 <section class="bloque">
 
@@ -1333,9 +1263,9 @@ footer p{
             </div>
 
             <p>
-                BOCA 24/7 reúne información de fútbol, inferiores, básquet,
-                vóley, mercado de pases, partidos y todo el contenido que
-                genera la comunidad xeneize.
+                Noticias de fútbol, inferiores, básquet, vóley,
+                mercado de pases, partidos y todo el contenido
+                relacionado con Boca Juniors.
             </p>
 
             <a
@@ -1348,14 +1278,15 @@ footer p{
 
         </article>
 
+
     </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      PROXIMO PARTIDO
-====================================================== -->
+===================================================== -->
 
 <section class="bloque" id="partidos">
 
@@ -1374,15 +1305,17 @@ footer p{
         </h2>
 
         <div class="equipos">
-            VÉLEZ SARSFIELD &nbsp; VS &nbsp; BOCA JUNIORS
+            VÉLEZ SARSFIELD VS BOCA JUNIORS
         </div>
 
         <div class="datos-partido">
 
             📅 Miércoles 2 de septiembre de 2026
+
             <br>
 
             🕐 21:15 hs
+
             <br>
 
             🏟️ Estadio Mario Alberto Kempes · Córdoba
@@ -1404,23 +1337,24 @@ footer p{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      STREAMING
-====================================================== -->
+===================================================== -->
 
 <section class="bloque" id="streaming">
 
     <h2 class="titulo">
-        🎙️ BOCA 24/7 — STREAMING
+        🎙️ STREAMING
     </h2>
 
     <div class="streaming">
+
 
         <div class="streaming-imagen">
 
             <img
                 src="IMG-20260829-WA0003.jpg"
-                alt="Canal de Boca 24/7 - Los Bosteros de Tucumán">
+                alt="Los Bosteros de Tucumán">
 
         </div>
 
@@ -1448,15 +1382,9 @@ footer p{
                     href="https://youtube.com/@movlosbosterosdetucuman"
                     target="_blank"
                     rel="noopener">
-                    ▶️ VER CANAL
-                </a>
 
-                <a
-                    class="stream-btn canal"
-                    href="https://youtube.com/@movlosbosterosdetucuman"
-                    target="_blank"
-                    rel="noopener">
-                    🎙️ BOCA 24/7
+                    ▶️ VER CANAL EN YOUTUBE
+
                 </a>
 
             </div>
@@ -1489,19 +1417,12 @@ footer p{
                     </h3>
 
                     <p>
-                        Mirá el contenido disponible en nuestro canal
-                        y seguí toda la actualidad xeneize.
+                        Mirá todos nuestros contenidos,
+                        entrevistas y análisis en YouTube.
                     </p>
 
-                    <a
-                        class="btn-amarillo"
-                        href="https://youtube.com/@movlosbosterosdetucuman"
-                        target="_blank"
-                        rel="noopener">
-                        VER COMPLETO
-                    </a>
-
                 </div>
+
 
             </div>
 
@@ -1512,14 +1433,14 @@ footer p{
 </section>
 
 
-<!-- ======================================================
-     CANAL DE BOCA
-====================================================== -->
+<!-- =====================================================
+     CANALES
+===================================================== -->
 
 <section class="bloque" id="boca">
 
     <h2 class="titulo">
-        📺 CANALES Y CONTENIDO DE BOCA
+        📺 CANALES DE BOCA
     </h2>
 
     <div class="canal-boca">
@@ -1529,10 +1450,10 @@ footer p{
         </h2>
 
         <p>
-            Accedé desde BOCA 24/7 a los principales canales y fuentes
-            de información xeneize. La página oficial de Boca, contenidos,
-            noticias y nuestro propio streaming.
+            Accedé desde este sitio a los principales canales
+            y fuentes de información xeneize.
         </p>
+
 
         <div class="canal-grid">
 
@@ -1552,7 +1473,9 @@ footer p{
                     href="https://www.bocajuniors.com.ar/"
                     target="_blank"
                     rel="noopener">
+
                     SITIO OFICIAL
+
                 </a>
 
             </div>
@@ -1561,11 +1484,11 @@ footer p{
             <div class="canal-item">
 
                 <h3>
-                    📺 CANAL DE BOCA
+                    📺 CANAL OFICIAL
                 </h3>
 
                 <p>
-                    Accedé al contenido audiovisual oficial del mundo Boca.
+                    Contenido audiovisual oficial de Boca Juniors.
                 </p>
 
                 <a
@@ -1573,7 +1496,9 @@ footer p{
                     href="https://www.youtube.com/@BocaJuniors"
                     target="_blank"
                     rel="noopener">
+
                     VER CANAL
+
                 </a>
 
             </div>
@@ -1582,11 +1507,11 @@ footer p{
             <div class="canal-item">
 
                 <h3>
-                    🎙️ BOCA 24/7
+                    🎙️ STREAMING
                 </h3>
 
                 <p>
-                    Nuestro espacio de streaming desde Tucumán.
+                    Nuestro espacio de información y opinión desde Tucumán.
                 </p>
 
                 <a
@@ -1594,10 +1519,13 @@ footer p{
                     href="https://youtube.com/@movlosbosterosdetucuman"
                     target="_blank"
                     rel="noopener">
+
                     VER STREAMING
+
                 </a>
 
             </div>
+
 
         </div>
 
@@ -1606,9 +1534,9 @@ footer p{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      ENCUESTA
-====================================================== -->
+===================================================== -->
 
 <section class="bloque">
 
@@ -1647,7 +1575,9 @@ footer p{
         <button
             class="votar"
             onclick="votarEncuesta()">
+
             VOTAR
+
         </button>
 
 
@@ -1678,9 +1608,9 @@ footer p{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      MERCADO
-====================================================== -->
+===================================================== -->
 
 <section class="bloque" id="mercado">
 
@@ -1698,19 +1628,28 @@ footer p{
             </h3>
 
             <div class="jugador">
+
                 <strong>
                     Altas confirmadas
                 </strong>
+
                 <br>
+
                 Información oficial de incorporaciones.
+
             </div>
 
+
             <div class="jugador">
+
                 <strong>
                     Refuerzos
                 </strong>
+
                 <br>
+
                 Seguí todas las novedades del plantel.
+
             </div>
 
         </div>
@@ -1723,19 +1662,28 @@ footer p{
             </h3>
 
             <div class="jugador">
+
                 <strong>
                     Operaciones en análisis
                 </strong>
+
                 <br>
+
                 Rumores y negociaciones del mercado.
+
             </div>
 
+
             <div class="jugador">
+
                 <strong>
                     Posibles incorporaciones
                 </strong>
+
                 <br>
+
                 Información a confirmar oficialmente.
+
             </div>
 
         </div>
@@ -1748,33 +1696,43 @@ footer p{
             </h3>
 
             <div class="jugador">
+
                 <strong>
                     Operaciones caídas
                 </strong>
+
                 <br>
+
                 Negociaciones que no llegaron a buen puerto.
+
             </div>
 
+
             <div class="jugador">
+
                 <strong>
                     Salidas
                 </strong>
+
                 <br>
+
                 Toda la información del mercado.
+
             </div>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ======================================================
-     BOCA EN EL NORTE
-====================================================== -->
+<!-- =====================================================
+     BOCA EN EL NOA
+===================================================== -->
 
-<section class="bloque">
+<section class="bloque" id="noa">
 
     <div class="norte">
 
@@ -1783,14 +1741,14 @@ footer p{
         </h2>
 
         <p>
-            BOCA EN EL NOA es nuestro espacio para contar la pasión
-            xeneize desde el Norte Argentino.
+            BOCA EN EL NOA es nuestro espacio para contar
+            la pasión xeneize desde el Norte Argentino.
         </p>
 
         <p>
             Peñas, hinchas, viajes a Buenos Aires, entrevistas,
-            coberturas, historias y todo lo que vive el hincha de Boca
-            desde nuestra región.
+            coberturas, historias y todo lo que vive el hincha
+            de Boca desde nuestra región.
         </p>
 
 
@@ -1827,9 +1785,9 @@ footer p{
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      FUENTES
-====================================================== -->
+===================================================== -->
 
 <section class="bloque">
 
@@ -1907,14 +1865,15 @@ footer p{
 
         </a>
 
+
     </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      MUNDO BOCA
-====================================================== -->
+===================================================== -->
 
 <section class="bloque">
 
@@ -2008,14 +1967,15 @@ footer p{
 
         </a>
 
+
     </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      AGENDA
-====================================================== -->
+===================================================== -->
 
 <section class="bloque">
 
@@ -2024,6 +1984,7 @@ footer p{
     </h2>
 
     <div class="agenda">
+
 
         <div class="evento">
 
@@ -2045,7 +2006,7 @@ footer p{
         <div class="evento">
 
             <strong>
-                🎙️ BOCA 24/7
+                🎙️ Streaming
             </strong>
 
             <br>
@@ -2058,7 +2019,7 @@ footer p{
         <div class="evento">
 
             <strong>
-                📢 BOCA 24/7
+                📢 Noticias
             </strong>
 
             <br>
@@ -2067,14 +2028,15 @@ footer p{
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      VIDEOS
-====================================================== -->
+===================================================== -->
 
 <section class="bloque" id="videos">
 
@@ -2089,7 +2051,7 @@ footer p{
 
             <iframe
                 src="https://www.youtube.com/embed?listType=user_uploads&list=movlosbosterosdetucuman"
-                title="BOCA 24/7"
+                title="Streaming"
                 loading="lazy"
                 allowfullscreen>
             </iframe>
@@ -2097,11 +2059,11 @@ footer p{
             <div class="video-info">
 
                 <h3>
-                    BOCA 24/7 — Últimos contenidos
+                    Últimos contenidos
                 </h3>
 
                 <p>
-                    Mirá nuestros programas, entrevistas y análisis.
+                    Programas, entrevistas y análisis.
                 </p>
 
             </div>
@@ -2111,42 +2073,46 @@ footer p{
 
         <div class="video-card">
 
-            <iframe
-                src="https://www.youtube.com/embed/videoseries?list=UU"
-                title="Canal de Boca"
-                loading="lazy"
-                allowfullscreen>
-            </iframe>
-
             <div class="video-info">
 
                 <h3>
-                    Canal de Boca
+                    Canal oficial de Boca
                 </h3>
 
                 <p>
-                    Contenido audiovisual relacionado con el mundo xeneize.
+                    Accedé al canal oficial para ver sus últimos videos.
                 </p>
+
+                <a
+                    class="btn-amarillo"
+                    href="https://www.youtube.com/@BocaJuniors"
+                    target="_blank"
+                    rel="noopener">
+
+                    VER CANAL
+
+                </a>
 
             </div>
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ======================================================
-     SEGUI A BOCA 24/7
-====================================================== -->
+<!-- =====================================================
+     REDES
+===================================================== -->
 
 <section class="bloque">
 
     <div class="seguinos">
 
         <h2>
-            📱 SEGUÍ A BOCA 24/7
+            📱 SEGUÍ LAS NOTICIAS
         </h2>
 
         <p>
@@ -2158,39 +2124,19 @@ footer p{
 
             <a
                 class="red"
-                href="#"
-                target="_blank">
-                Instagram
-            </a>
-
-            <a
-                class="red"
-                href="#"
-                target="_blank">
-                TikTok
-            </a>
-
-            <a
-                class="red"
                 href="https://youtube.com/@movlosbosterosdetucuman"
                 target="_blank"
                 rel="noopener">
-                YouTube
-            </a>
 
-            <a
-                class="red"
-                href="#"
-                target="_blank">
-                Facebook
+                YouTube
+
             </a>
 
         </div>
 
 
         <p style="margin-top:22px;">
-            🔔 Activá las notificaciones y enterate primero de todas
-            las noticias de Boca.
+            🔔 Enterate primero de todas las novedades.
         </p>
 
     </div>
@@ -2201,19 +2147,15 @@ footer p{
 </main>
 
 
-<!-- ======================================================
+<!-- =====================================================
      FOOTER
-====================================================== -->
+===================================================== -->
 
 <footer>
 
     <strong>
-        BOCA 24/7
+        TODO BOCA
     </strong>
-
-    <p>
-        Todo Boca. Todo el día.
-    </p>
 
     <p>
         Noticias · Streaming · Partidos · Mercado · Videos
@@ -2222,15 +2164,16 @@ footer p{
 </footer>
 
 
-<!-- ======================================================
+<!-- =====================================================
      JAVASCRIPT
-====================================================== -->
+===================================================== -->
 
 <script>
 
-/* =========================================================
-   FECHA Y ACTUALIZACION
-========================================================= */
+
+/* =====================================================
+   ACTUALIZACION
+===================================================== */
 
 function actualizarHora(){
 
@@ -2271,9 +2214,9 @@ actualizarHora();
 setInterval(actualizarHora,60000);
 
 
-/* =========================================================
+/* =====================================================
    ENCUESTA
-========================================================= */
+===================================================== */
 
 let seleccion = -1;
 
@@ -2295,6 +2238,7 @@ function seleccionar(numero){
 
 }
 
+
 function votarEncuesta(){
 
     if(seleccion === -1){
@@ -2314,19 +2258,12 @@ function votarEncuesta(){
 
     resultado.style.display = "block";
 
-    resultado.scrollIntoView({
-        behavior:"smooth",
-        block:"nearest"
-    });
-
 }
 
 
-/* =========================================================
-   NOTICIAS AUTOMATICAS
-   Si existe noticias.json en el repositorio,
-   se intenta cargar automáticamente.
-========================================================= */
+/* =====================================================
+   NOTICIAS JSON
+===================================================== */
 
 async function cargarNoticias(){
 
@@ -2341,7 +2278,7 @@ async function cargarNoticias(){
         if(!respuesta.ok){
 
             console.log(
-                "noticias.json todavía no disponible."
+                "noticias.json no disponible."
             );
 
             return;
@@ -2351,8 +2288,10 @@ async function cargarNoticias(){
         const datos =
             await respuesta.json();
 
-        if(!Array.isArray(datos) ||
-           datos.length === 0){
+        if(
+            !Array.isArray(datos) ||
+            datos.length === 0
+        ){
 
             return;
 
@@ -2381,32 +2320,9 @@ setInterval(
 );
 
 
-/* =========================================================
-   LINKS EXTERNOS
-========================================================= */
-
-document.querySelectorAll(
-    'a[target="_blank"]'
-).forEach(function(enlace){
-
-    enlace.addEventListener(
-        "click",
-        function(){
-
-            console.log(
-                "Abriendo:",
-                enlace.href
-            );
-
-        }
-    );
-
-});
-
-
-/* =========================================================
-   EFECTO SUAVE EN MENU
-========================================================= */
+/* =====================================================
+   MENU SUAVE
+===================================================== */
 
 document.querySelectorAll(
     'nav a[href^="#"]'
@@ -2433,6 +2349,7 @@ document.querySelectorAll(
     );
 
 });
+
 
 </script>
 
