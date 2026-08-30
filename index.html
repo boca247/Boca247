@@ -1,1496 +1,851 @@
-
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
-
-<meta name="description" content="Noticias, videos, agenda y toda la actualidad de Boca Juniors.">
-<meta name="theme-color" content="#00245f">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#eef2f7;
-    color:#101828;
-    overflow-x:hidden;
-}
-
-img{
-    max-width:100%;
-}
-
-a{
-    text-decoration:none;
-}
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>BOCA 24/7 - Noticias Xeneizes</title><meta name="description" content="Toda la actualidad de Boca Juniors: noticias, resultados, agenda, mercado, videos y streaming.">
+<meta name="theme-color" content="#00245f"><style>
+*{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-    --azul:#00245f;
-    --azul2:#003b8f;
-    --azul3:#0756b8;
-    --amarillo:#f5c400;
-    --blanco:#fff;
-    --rojo:#df1720;
-    --gris:#eef2f7;
-    --gris2:#667085;
-    --borde:#e4e7ec;
-    --sombra:0 8px 30px rgba(0,36,95,.10);
+ --azul:#00245f;
+ --azul2:#003b8f;
+ --azul3:#0756b8;
+ --amarillo:#f5c400;
+ --rojo:#d71920;
+ --blanco:#fff;
+ --gris:#f2f4f7;
+ --texto:#101828;
+ --gristexto:#667085;
+ --borde:#e4e7ec;
 }
+
+html{scroll-behavior:smooth}
+
+body{
+ font-family:Arial,Helvetica,sans-serif;
+ background:var(--gris);
+ color:var(--texto);
+ overflow-x:hidden
+}
+
+a{text-decoration:none;color:inherit}
+
+img{display:block;max-width:100%}
 
 header{
-    background:linear-gradient(135deg,#00183f,#003b91);
-    color:white;
-    text-align:center;
-    padding:25px 15px 20px;
-    border-bottom:5px solid var(--amarillo);
+ background:linear-gradient(135deg,#00183f,#003b91);
+ color:#fff;
+ text-align:center;
+ padding:24px 15px;
+ border-bottom:5px solid var(--amarillo)
 }
 
-.logo{
-    font-size:42px;
-    font-weight:1000;
-    letter-spacing:2px;
+header h1{
+ font-size:42px;
+ font-weight:1000;
+ letter-spacing:2px
 }
 
-.slogan{
-    margin-top:6px;
-    color:var(--amarillo);
-    font-size:16px;
-    font-weight:900;
+header p{
+ margin-top:7px;
+ color:var(--amarillo);
+ font-weight:900
 }
 
 nav{
-    position:sticky;
-    top:0;
-    z-index:999;
-    display:flex;
-    gap:8px;
-    padding:10px;
-    background:#00327b;
-    overflow-x:auto;
-    box-shadow:0 4px 18px rgba(0,0,0,.2);
+ position:sticky;
+ top:0;
+ z-index:1000;
+ display:flex;
+ gap:8px;
+ overflow-x:auto;
+ padding:10px;
+ background:#00327b;
+ box-shadow:0 4px 15px #0004
 }
 
-nav::-webkit-scrollbar{
-    display:none;
-}
+nav::-webkit-scrollbar{display:none}
 
 nav a{
-    flex:0 0 auto;
-    padding:10px 15px;
-    border-radius:22px;
-    color:#fff;
-    background:rgba(255,255,255,.1);
-    font-size:13px;
-    font-weight:900;
-    white-space:nowrap;
+ white-space:nowrap;
+ color:#fff;
+ padding:10px 15px;
+ border-radius:20px;
+ background:#ffffff18;
+ font-size:13px;
+ font-weight:900
 }
 
 nav a:hover{
-    background:var(--amarillo);
-    color:var(--azul);
+ background:var(--amarillo);
+ color:var(--azul)
 }
 
 main{
-    max-width:1250px;
-    margin:auto;
-    padding:15px 12px 60px;
-}
-
-.bloque{
-    margin-bottom:35px;
+ max-width:1250px;
+ margin:auto;
+ padding:0 14px 60px
 }
 
 .actualizado{
-    background:#fff;
-    border:1px solid var(--borde);
-    border-radius:12px;
-    padding:11px;
-    margin-bottom:15px;
-    text-align:center;
-    color:var(--gris2);
-    font-size:13px;
-}
-
-.titulo{
-    color:var(--azul);
-    font-size:26px;
-    font-weight:1000;
-    border-left:7px solid var(--amarillo);
-    padding-left:12px;
-    margin-bottom:16px;
+ background:#fff;
+ padding:11px;
+ text-align:center;
+ color:var(--gristexto);
+ font-size:12px;
+ border-bottom:1px solid var(--borde)
 }
 
 /* PORTADA */
 
 .portada{
-    width:100%;
-    position:relative;
-    overflow:hidden;
-    border-radius:18px;
-    background:#001b47;
-    box-shadow:var(--sombra);
+ width:100%;
+ margin:0 0 28px;
+ position:relative;
+ overflow:hidden;
+ border-radius:0 0 20px 20px;
+ box-shadow:0 8px 25px #00245f22
 }
 
 .portada img{
-    display:block;
-    width:100%;
-    height:480px;
-    object-fit:cover;
+ width:100%;
+ height:500px;
+ object-fit:cover
 }
 
-.portada-overlay{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:30px;
-    background:linear-gradient(to top,rgba(0,15,45,.94),transparent 72%);
-    color:white;
+.portada-info{
+ position:absolute;
+ left:0;
+ right:0;
+ bottom:0;
+ padding:35px;
+ color:#fff;
+ background:linear-gradient(transparent,#00183ff2)
 }
 
-.portada-label{
-    width:max-content;
-    background:var(--rojo);
-    padding:7px 12px;
-    border-radius:5px;
-    font-size:12px;
-    font-weight:1000;
-    margin-bottom:10px;
+.portada-info span{
+ display:inline-block;
+ background:var(--rojo);
+ padding:7px 12px;
+ border-radius:5px;
+ font-weight:900;
+ font-size:12px;
+ margin-bottom:10px
 }
 
-.portada h1{
-    max-width:900px;
-    font-size:37px;
-    line-height:1.1;
+.portada-info h2{
+ max-width:900px;
+ font-size:36px;
+ line-height:1.1
 }
 
-.portada p{
-    max-width:850px;
-    margin-top:10px;
-    line-height:1.5;
-    color:#e8edf7;
+.portada-info p{
+ max-width:850px;
+ margin-top:10px;
+ color:#eee;
+ line-height:1.5
+}
+
+/* TITULOS */
+
+.seccion{
+ margin:35px 0
+}
+
+.titulo{
+ color:var(--azul);
+ font-size:27px;
+ border-left:7px solid var(--amarillo);
+ padding-left:12px;
+ margin-bottom:18px;
+ font-weight:1000
 }
 
 /* NOTICIAS */
 
-.noticias-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    background:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:var(--sombra);
+.noticias{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:16px
 }
 
-.noticia-card{
-    padding:22px;
-    border-right:1px solid var(--borde);
-    border-bottom:1px solid var(--borde);
+.noticia{
+ background:#fff;
+ border-radius:16px;
+ overflow:hidden;
+ border:1px solid var(--borde);
+ box-shadow:0 5px 18px #0000000d
 }
 
-.fuente{
-    color:var(--azul3);
-    font-size:12px;
-    font-weight:1000;
-    text-transform:uppercase;
+.noticia-contenido{
+ padding:20px
 }
 
-.noticia-card h3{
-    margin:9px 0;
-    font-size:19px;
-    line-height:1.3;
+.noticia .fuente{
+ color:var(--azul3);
+ font-size:12px;
+ font-weight:1000;
+ text-transform:uppercase
 }
 
-.noticia-card p{
-    color:#667085;
-    line-height:1.55;
-    font-size:14px;
+.noticia h3{
+ color:var(--azul);
+ font-size:20px;
+ line-height:1.3;
+ margin:9px 0
 }
 
-.noticia-meta{
-    margin-top:10px;
-    color:#98a2b3;
-    font-size:12px;
-}
-
-.leer{
-    display:inline-block;
-    margin-top:13px;
-    color:var(--azul3);
-    font-weight:900;
-}
-
-/* DESARROLLADAS */
-
-.noticias-completas{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:17px;
-}
-
-.noticia-desarrollada{
-    background:#fff;
-    border-radius:17px;
-    padding:24px;
-    box-shadow:var(--sombra);
-    border-top:5px solid var(--azul3);
-}
-
-.noticia-desarrollada .categoria{
-    color:var(--azul3);
-    font-size:12px;
-    font-weight:1000;
-}
-
-.noticia-desarrollada h3{
-    color:var(--azul);
-    font-size:23px;
-    margin:8px 0;
+.noticia p{
+ color:#475467;
+ line-height:1.55;
+ font-size:14px
 }
 
 .fecha{
-    color:#98a2b3;
-    font-size:12px;
-    margin-bottom:13px;
+ color:#98a2b3;
+ font-size:12px;
+ margin-top:12px
 }
 
-.noticia-desarrollada p{
-    color:#475467;
-    line-height:1.7;
+.leer{
+ display:inline-block;
+ margin-top:14px;
+ color:var(--azul3);
+ font-weight:1000
+}
+
+/* DESTACADAS */
+
+.destacadas{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px
+}
+
+.destacada{
+ background:#fff;
+ padding:25px;
+ border-radius:17px;
+ border-top:5px solid var(--azul3);
+ box-shadow:0 5px 18px #0000000c
+}
+
+.destacada h3{
+ color:var(--azul);
+ font-size:24px;
+ margin:8px 0
+}
+
+.destacada p{
+ color:#475467;
+ line-height:1.7
 }
 
 .btn{
-    display:inline-block;
-    margin-top:16px;
-    padding:11px 17px;
-    border-radius:9px;
-    background:var(--azul);
-    color:#fff;
-    font-weight:900;
+ display:inline-block;
+ margin-top:16px;
+ padding:11px 17px;
+ border-radius:8px;
+ background:var(--azul);
+ color:#fff;
+ font-weight:900
 }
 
-/* PARTIDO */
+/* PARTIDOS */
 
 .partido{
-    background:linear-gradient(135deg,#001a49,#0756b8);
-    color:white;
-    border-radius:20px;
-    padding:30px 20px;
-    text-align:center;
-    border-bottom:7px solid var(--amarillo);
-    box-shadow:var(--sombra);
+ background:linear-gradient(135deg,#00183f,#0756b8);
+ color:#fff;
+ border-radius:20px;
+ padding:30px 20px;
+ text-align:center;
+ border-bottom:6px solid var(--amarillo)
 }
 
-.partido-label{
-    color:var(--amarillo);
-    font-weight:1000;
+.partido .competencia{
+ color:var(--amarillo);
+ font-size:13px;
+ font-weight:1000
 }
 
-.partido h2{
-    font-size:34px;
-    margin:12px 0;
+.partido h3{
+ font-size:32px;
+ margin:12px
 }
 
-.datos-partido{
-    line-height:2;
-    color:#edf2fa;
+.partido .datos{
+ line-height:2;
+ color:#edf2fa
 }
 
-.btn-amarillo{
-    display:inline-block;
-    margin-top:18px;
-    padding:12px 20px;
-    background:var(--amarillo);
-    color:var(--azul);
-    border-radius:9px;
-    font-weight:1000;
+.partidos-lista{
+ margin-top:15px;
+ display:grid;
+ gap:10px
 }
 
-/* VIDEOS */
-
-.videos-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+.partido-pasado{
+ background:#fff;
+ border-left:6px solid var(--azul3);
+ padding:17px;
+ border-radius:12px
 }
 
-.video-card{
-    background:#111;
-    color:white;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:var(--sombra);
-}
-
-.video-card iframe{
-    width:100%;
-    aspect-ratio:16/9;
-    border:0;
-    display:block;
-}
-
-.video-info{
-    padding:18px;
-}
-
-.video-info h3{
-    margin-bottom:7px;
-}
-
-.video-info p{
-    color:#bbb;
-    line-height:1.5;
-}
-
-.video-link{
-    display:inline-block;
-    margin-top:12px;
-    background:#ff0000;
-    color:white;
-    padding:10px 15px;
-    border-radius:8px;
-    font-weight:900;
-}
+.partido-pasado strong{color:var(--azul)}
 
 /* STREAMING */
 
 .streaming{
-    background:#080808;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
+ background:#080808;
+ border-radius:20px;
+ overflow:hidden;
+ border-bottom:6px solid var(--amarillo);
+ box-shadow:0 8px 30px #0004
 }
 
 .streaming img{
-    display:block;
-    width:100%;
-    height:auto;
+ width:100%;
+ height:auto;
+ max-height:650px;
+ object-fit:cover
 }
 
 /* CANAL */
 
-.canal-boca{
-    background:linear-gradient(135deg,#001b47,#003b91);
-    color:white;
-    border-radius:20px;
-    padding:28px;
-    box-shadow:var(--sombra);
+.canal{
+ background:linear-gradient(135deg,#00183f,#003b91);
+ color:#fff;
+ border-radius:20px;
+ padding:28px;
+ text-align:center
 }
 
-.canal-boca h2{
-    color:var(--amarillo);
-    margin-bottom:10px;
+.canal h2{
+ color:var(--amarillo);
+ margin-bottom:10px
 }
 
-.canal-boca p{
-    line-height:1.7;
-    color:#e4e7ec;
+.canal p{
+ color:#e4e7ec;
+ line-height:1.6
 }
 
-.canal-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin-top:20px;
-}
-
-.canal-item{
-    background:rgba(255,255,255,.08);
-    border-radius:14px;
-    padding:20px;
-}
-
-.canal-item h3{
-    margin-bottom:8px;
+.canal a{
+ display:inline-block;
+ margin-top:20px;
+ background:var(--amarillo);
+ color:var(--azul);
+ padding:13px 22px;
+ border-radius:9px;
+ font-weight:1000
 }
 
 /* AGENDA */
 
 .agenda{
-    display:grid;
-    gap:12px;
+ display:grid;
+ gap:12px
 }
 
 .evento{
-    background:#fff;
-    padding:18px;
-    border-left:6px solid var(--azul3);
-    border-radius:13px;
-    box-shadow:var(--sombra);
-    line-height:1.7;
+ background:#fff;
+ padding:18px;
+ border-radius:14px;
+ border-left:6px solid var(--azul3);
+ box-shadow:0 3px 12px #0000000b
 }
 
-/* UN DIA COMO HOY */
+.evento strong{
+ color:var(--azul)
+}
+
+/* HISTORIA */
 
 .historia{
-    background:#fff;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:var(--sombra);
+ background:#fff;
+ padding:25px;
+ border-radius:18px;
+ box-shadow:0 5px 18px #0000000b
 }
 
-.historia h2{
-    color:var(--azul);
-    margin-bottom:10px;
+.historia h3{
+ color:var(--azul);
+ font-size:23px;
+ margin-bottom:10px
 }
 
 .historia p{
-    color:#475467;
-    line-height:1.7;
-}
-
-/* FUENTES */
-
-.fuentes{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:14px;
-}
-
-.fuente-card{
-    background:#fff;
-    padding:20px;
-    border-radius:15px;
-    color:var(--azul);
-    box-shadow:var(--sombra);
-    border-top:5px solid var(--azul3);
-}
-
-.fuente-card strong{
-    display:block;
-    margin-bottom:7px;
-}
-
-.fuente-card span{
-    color:#667085;
-    font-size:13px;
+ color:#475467;
+ line-height:1.7
 }
 
 /* MERCADO */
 
 .mercado{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:15px
 }
 
 .estado{
-    background:#fff;
-    padding:21px;
-    border-radius:16px;
-    box-shadow:var(--sombra);
+ background:#fff;
+ padding:22px;
+ border-radius:16px;
+ border-top:6px solid
 }
 
-.estado h3{
-    margin-bottom:13px;
-}
+.confirmado{border-color:#159447}
+.negociacion{border-color:#d6a900}
+.salidas{border-color:var(--rojo)}
+
+.estado h3{margin-bottom:10px}
 
 .estado p{
-    padding:12px 0;
-    border-bottom:1px solid var(--borde);
-    color:#475467;
-    line-height:1.5;
+ color:#667085;
+ line-height:1.6
+}
+
+/* FUENTES */
+
+.fuentes{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:14px
+}
+
+.fuente-card{
+ background:#fff;
+ padding:20px;
+ border-radius:15px;
+ border-top:5px solid var(--azul3);
+ box-shadow:0 5px 18px #0000000b
+}
+
+.fuente-card strong{
+ color:var(--azul);
+ display:block;
+ margin-bottom:7px
+}
+
+.fuente-card span{
+ color:#667085;
+ font-size:13px;
+ line-height:1.5
+}
+
+/* VIDEOS */
+
+.videos{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px
+}
+
+.video{
+ background:#111;
+ border-radius:17px;
+ overflow:hidden;
+ color:#fff
+}
+
+.video iframe{
+ width:100%;
+ aspect-ratio:16/9;
+ border:0
+}
+
+.video div{
+ padding:16px
+}
+
+.video p{
+ color:#aaa;
+ margin-top:6px
 }
 
 /* NOTIFICACIONES */
 
 .notificaciones{
-    background:linear-gradient(135deg,#00183f,#003b91);
-    color:white;
-    border-radius:20px;
-    padding:28px;
-    text-align:center;
-    box-shadow:var(--sombra);
+ background:#fff;
+ padding:25px;
+ border-radius:18px;
+ text-align:center;
+ border:1px solid var(--borde)
 }
 
 .notificaciones h2{
-    color:var(--amarillo);
-    margin-bottom:8px;
+ color:var(--azul);
+ margin-bottom:8px
 }
 
 .notificaciones p{
-    color:#d0d5dd;
-    line-height:1.6;
+ color:#667085
 }
 
 #activarNotificaciones{
-    border:0;
-    margin-top:18px;
-    padding:13px 20px;
-    border-radius:9px;
-    background:var(--amarillo);
-    color:var(--azul);
-    font-weight:1000;
-    cursor:pointer;
+ margin-top:18px;
+ padding:13px 22px;
+ border:0;
+ border-radius:9px;
+ background:var(--amarillo);
+ color:var(--azul);
+ font-weight:1000;
+ cursor:pointer
+}
+
+#estadoNotificacion{
+ margin-top:12px;
+ font-size:13px
 }
 
 /* FOOTER */
 
 footer{
-    background:#00132f;
-    color:white;
-    text-align:center;
-    padding:32px 15px;
-    border-top:6px solid var(--amarillo);
+ background:#00132f;
+ color:#fff;
+ text-align:center;
+ padding:30px 15px;
+ border-top:5px solid var(--amarillo)
 }
 
 footer strong{
-    color:var(--amarillo);
-    font-size:25px;
+ color:var(--amarillo);
+ font-size:24px
 }
 
 footer p{
-    color:#98a2b3;
-    margin-top:8px;
+ color:#98a2b3;
+ margin-top:7px
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
-
-    .noticias-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .fuentes{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .mercado{
-        grid-template-columns:1fr;
-    }
-
-    .canal-grid{
-        grid-template-columns:1fr;
-    }
+ .noticias{grid-template-columns:1fr 1fr}
+ .fuentes{grid-template-columns:1fr 1fr}
+ .mercado{grid-template-columns:1fr}
 }
 
-@media(max-width:700px){
-
-    .logo{
-        font-size:32px;
-    }
-
-    main{
-        padding:12px 9px 45px;
-    }
-
-    .portada img{
-        height:350px;
-    }
-
-    .portada-overlay{
-        padding:20px;
-    }
-
-    .portada h1{
-        font-size:26px;
-    }
-
-    .noticias-grid,
-    .noticias-completas,
-    .videos-grid,
-    .fuentes{
-        grid-template-columns:1fr;
-    }
-
-    .partido h2{
-        font-size:28px;
-    }
-
-    .titulo{
-        font-size:21px;
-    }
+@media(max-width:650px){
+ header h1{font-size:31px}
+ .portada img{height:360px}
+ .portada-info{padding:20px}
+ .portada-info h2{font-size:26px}
+ .noticias,.destacadas,.videos,.fuentes{grid-template-columns:1fr}
+ .titulo{font-size:22px}
+ .partido h3{font-size:26px}
 }
-</style>
-</head>
+</style></head><body><header>
+ <h1>BOCA 24/7</h1>
+ <p>Todo Boca. Todo el día.</p>
+</header><nav>
+ <a href="#inicio">INICIO</a>
+ <a href="#noticias">NOTICIAS</a>
+ <a href="#partidos">PARTIDOS</a>
+ <a href="#agenda">AGENDA</a>
+ <a href="#streaming">STREAMING</a>
+ <a href="#videos">VIDEOS</a>
+ <a href="#mercado">MERCADO</a>
+ <a href="#fuentes">FUENTES</a>
+</nav><main id="inicio"><div class="actualizado" id="actualizado">
+Actualizando información...
+</div><!-- PORTADA: NO CAMBIAR NOMBRE DE IMAGEN --><section class="portada"><img src="IMG-20260829-WA0001.jpg" alt="Boca Juniors"><div class="portada-info"><span>ÚLTIMA HORA</span>
 
-<body>
-
-<header>
-    <div class="logo">BOCA</div>
-    <div class="slogan">Todo Boca. Todo el día.</div>
-</header>
-
-<nav>
-    <a href="#inicio">INICIO</a>
-    <a href="#noticias">NOTICIAS</a>
-    <a href="#videos">VIDEOS</a>
-    <a href="#agenda">AGENDA</a>
-    <a href="#mercado">MERCADO</a>
-    <a href="#fuentes">FUENTES</a>
-    <a href="#streaming">STREAMING</a>
-</nav>
-
-<main id="inicio">
-
-<div class="actualizado" id="actualizado">
-    Actualizando información...
-</div>
-
-<!-- PORTADA -->
-
-<section class="bloque">
-
-    <div class="portada">
-
-        <img
-            src="IMG-20260829-WA0001.jpg"
-            alt="Portada Boca">
-
-        <div class="portada-overlay">
-
-            <div class="portada-label">
-                ÚLTIMA HORA
-            </div>
-
-            <h1 id="tituloPortada">
-                Toda la actualidad de Boca Juniors
-            </h1>
-
-            <p id="bajadaPortada">
-                Noticias, información, videos y todo lo que tenés que saber del Xeneize.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- NOTICIAS -->
-
-<section class="bloque" id="noticias">
-
-<h2 class="titulo">ÚLTIMA HORA</h2>
-
-<div class="noticias-grid" id="noticiasGrid">
-
-<article class="noticia-card">
-
-<div class="fuente">BOCA JUNIORS</div>
-
-<h3>
-Boca y toda la actualidad después de su último partido
-</h3>
-
+<h2>
+Boca volvió al triunfo: 1-0 ante Lanús con gol agónico de Belmonte
+</h2><p>
+El Xeneize consiguió tres puntos importantes en La Bombonera.
+Tomás Belmonte convirtió en la última jugada del encuentro.
+</p></div></section><!-- NOTICIAS --><section class="seccion" id="noticias"><h2 class="titulo">🚨 ÚLTIMAS NOTICIAS</h2><div class="noticias"><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">Boca Juniors</div>
+<h3>Boca le ganó 1-0 a Lanús con el grito final</h3>
 <p>
-Seguí las últimas novedades del plantel, declaraciones y todo lo que dejó el encuentro.
+Tomás Belmonte apareció en la última jugada y le dio al Xeneize
+una victoria agónica en La Bombonera.
 </p>
-
-<div class="noticia-meta">
-Actualización permanente
+<div class="fecha">29/08/2026</div>
+<a class="leer" href="https://www.bocajuniors.com.ar/noticias/con-el-grito-final" target="_blank">Leer noticia →</a>
 </div>
-
-<a class="leer"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
-Leer noticia →
-</a>
-
-</article>
-
-<article class="noticia-card">
-
-<div class="fuente">TYC SPORTS</div>
-
-<h3>
-Las últimas novedades del mundo Boca
-</h3>
-
+</article><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">Boca Juniors</div>
+<h3>Paredes y Belmonte hablaron después del triunfo</h3>
 <p>
-Información, análisis y noticias del Xeneize a través de una de las principales fuentes deportivas.
+Los protagonistas analizaron la victoria ante Lanús y hablaron
+sobre el presente del equipo.
 </p>
-
-<a class="leer"
-href="https://www.tycsports.com/boca-juniors.html"
-target="_blank">
-Ver fuente →
-</a>
-
-</article>
-
-<article class="noticia-card">
-
-<div class="fuente">ESPN</div>
-
-<h3>
-Toda la información del plantel
-</h3>
-
+<div class="fecha">29/08/2026</div>
+<a class="leer" href="https://www.bocajuniors.com.ar/noticias/estoy-en-el-lugar-que-amo" target="_blank">Leer noticia →</a>
+</div>
+</article><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">Boca Juniors</div>
+<h3>Arruabarrena analizó los tres puntos</h3>
 <p>
-Noticias, declaraciones y novedades del equipo.
+El entrenador habló después del triunfo y destacó la importancia
+de volver a ganar.
 </p>
-
-<a class="leer"
-href="https://www.espn.com.ar/futbol/equipo/_/id/187/boca-juniors"
-target="_blank">
-Ver fuente →
-</a>
-
-</article>
-
+<div class="fecha">29/08/2026</div>
+<a class="leer" href="https://www.bocajuniors.com.ar/noticias/los-tres-puntos-son-importantes" target="_blank">Leer noticia →</a>
 </div>
-</section>
-
-<!-- DESARROLLADAS -->
-
-<section class="bloque">
-
-<h2 class="titulo">NOTICIAS DESARROLLADAS</h2>
-
-<div class="noticias-completas">
-
-<article class="noticia-desarrollada">
-
-<div class="categoria">BOCA · ACTUALIDAD</div>
-
-<h3>
-Todo lo que dejó el último partido
-</h3>
-
-<div class="fecha">
-Actualización permanente
-</div>
-
+</article><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">Boca Juniors</div>
+<h3>Las inferiores también tuvieron actividad</h3>
 <p>
-Resultado, protagonistas, declaraciones y las principales consecuencias
-del último encuentro del Xeneize. Esta sección queda preparada para
-recibir automáticamente las noticias del archivo de actualidad.
+Las categorías juveniles enfrentaron a Atlético de Rafaela y Boca
+sumó resultados importantes.
 </p>
-
-<a class="btn"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
-LEER EN BOCA
-</a>
-
-</article>
-
-<article class="noticia-desarrollada">
-
-<div class="categoria">MERCADO · BOCA</div>
-
-<h3>
-Mercado de pases y movimientos del plantel
-</h3>
-
-<div class="fecha">
-Actualización permanente
+<div class="fecha">29/08/2026</div>
+<a class="leer" href="https://www.bocajuniors.com.ar/noticias/invicto-para-las-mayores" target="_blank">Leer noticia →</a>
 </div>
-
+</article><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">Boca Juniors</div>
+<h3>Todo el contenido oficial del club</h3>
 <p>
-Todas las novedades sobre incorporaciones, negociaciones, renovaciones
-y posibles salidas del plantel.
+Noticias de fútbol, inferiores, vóley, futsal y toda la actividad
+del Club Atlético Boca Juniors.
 </p>
-
-<a class="btn"
-href="https://www.tycsports.com/boca-juniors.html"
-target="_blank">
-VER ACTUALIDAD
-</a>
-
-</article>
-
-<article class="noticia-desarrollada">
-
-<div class="categoria">DECLARACIONES</div>
-
-<h3>
-Los protagonistas hablan después de cada partido
-</h3>
-
-<div class="fecha">
-Jugadores · cuerpo técnico
+<div class="fecha">Actualizado</div>
+<a class="leer" href="https://www.bocajuniors.com.ar/noticias" target="_blank">Ver noticias →</a>
 </div>
-
+</article><article class="noticia">
+<div class="noticia-contenido">
+<div class="fuente">TyC Sports</div>
+<h3>La actualidad de Boca después de la victoria</h3>
 <p>
-Las declaraciones de los futbolistas y del cuerpo técnico después de
-cada encuentro, con acceso directo a las fuentes originales.
+El Xeneize cerró la séptima fecha del Clausura con una victoria
+sobre Lanús.
 </p>
-
-<a class="btn"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
-VER NOTICIAS
-</a>
-
-</article>
-
-<article class="noticia-desarrollada">
-
-<div class="categoria">MUNDO BOCA</div>
-
-<h3>
-Toda la información xeneize en un solo lugar
-</h3>
-
-<div class="fecha">
-BOCA 24/7
+<div class="fecha">29/08/2026</div>
+<a class="leer" href="https://www.tycsports.com/boca-juniors.html" target="_blank">Ver actualidad →</a>
 </div>
-
+</article></div>
+</section><!-- DESTACADAS --><section class="seccion"><h2 class="titulo">📰 NOTICIAS DESTACADAS</h2><div class="destacadas"><article class="destacada">
+<h3>Una victoria que llegó sobre el final</h3>
 <p>
-Información deportiva, agenda, videos, entrevistas, mercado de pases,
-historia y todo lo relacionado con Boca Juniors.
+Boca derrotó 1-0 a Lanús en La Bombonera. El equipo consiguió
+los tres puntos gracias al gol de Tomás Belmonte en el minuto 93.
+El triunfo permite al Xeneize seguir en carrera por los puestos
+de clasificación.
 </p>
+<a class="btn" href="https://www.bocajuniors.com.ar/noticias/con-el-grito-final" target="_blank">LEER COMPLETA</a>
+</article><article class="destacada">
+<h3>Paredes y Belmonte, después del partido</h3>
+<p>
+Los futbolistas hablaron después del encuentro ante Lanús.
+Paredes destacó su vínculo con Boca mientras que Belmonte fue
+el protagonista de la noche con el gol decisivo.
+</p>
+<a class="btn" href="https://www.bocajuniors.com.ar/noticias/estoy-en-el-lugar-que-amo" target="_blank">LEER COMPLETA</a>
+</article><article class="destacada">
+<h3>El análisis de Arruabarrena</h3>
+<p>
+El entrenador realizó su análisis del partido y valoró los tres
+puntos obtenidos en La Bombonera.
+</p>
+<a class="btn" href="https://www.bocajuniors.com.ar/noticias/los-tres-puntos-son-importantes" target="_blank">LEER COMPLETA</a>
+</article><article class="destacada">
+<h3>Boca también mira a sus inferiores</h3>
+<p>
+Las juveniles tuvieron una jornada positiva frente a Atlético
+de Rafaela, con triunfos y un empate.
+</p>
+<a class="btn" href="https://www.bocajuniors.com.ar/noticias/invicto-para-las-mayores" target="_blank">LEER COMPLETA</a>
+</article></div>
+</section><!-- PARTIDO --><section class="seccion" id="partidos"><h2 class="titulo">⚽ PRÓXIMO PARTIDO</h2><div class="partido"><div class="competencia">COPA ARGENTINA · OCTAVOS DE FINAL</div><h3>VÉLEZ 🆚 BOCA</h3><div class="datos">
+📅 Miércoles 2 de septiembre de 2026<br>
+🕘 21:15 hs<br>
+🏟️ Estadio Mario Alberto Kempes<br>
+📺 TyC Sports / TyC Sports Play
+</div><a class="btn" style="background:#f5c400;color:#00245f" href="https://www.tycsports.com/copa-argentina/copa-argentina-2026-cronograma-de-partidos-y-todos-los-resultados-id706751.html" target="_blank">
+VER INFORMACIÓN
+</a></div><div class="partidos-lista"><div class="partido-pasado">
+<strong>FINALIZADO · BOCA 1-0 LANÚS</strong><br>
+Torneo Clausura · Fecha 7 · Gol: Tomás Belmonte.
+</div></div></section><!-- AGENDA --><section class="seccion" id="agenda"><h2 class="titulo">📅 AGENDA DE BOCA</h2><div class="agenda"><div class="evento">
+<strong>Miércoles 02/09 · 21:15</strong><br>
+Vélez vs. Boca · Copa Argentina · Octavos de final.
+</div><div class="evento">
+<strong>Sábado 12/09 · 19:00</strong><br>
+Boca vs. Central Córdoba · Torneo Clausura.
+</div><div class="evento">
+<strong>Agenda oficial</strong><br>
+La agenda se actualizará a medida que se confirmen nuevas fechas y horarios.
+</div></div></section><!-- STREAMING: SOLO IMAGEN --><section class="seccion" id="streaming"><h2 class="titulo">🎙️ STREAMING</h2><div class="streaming"><img src="IMG-20260829-WA0003.jpg"
+alt="Los Bosteros de Tucumán">
 
-<a class="btn"
-href="#videos">
-VER VIDEOS
-</a>
-
-</article>
-
-</div>
-</section>
-
-<!-- PARTIDO -->
-
-<section class="bloque">
-
-<h2 class="titulo">PRÓXIMO PARTIDO</h2>
-
-<div class="partido">
-
-<div class="partido-label">
-AGENDA BOCA JUNIORS
-</div>
-
-<h2 id="proximoPartido">
-PRÓXIMO PARTIDO
-</h2>
-
-<div class="datos-partido" id="datosPartido">
-La agenda se actualizará desde las fuentes configuradas.
-</div>
-
-<a
-class="btn-amarillo"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
-VER INFORMACIÓN OFICIAL
-</a>
-
-</div>
-
-</section>
-
-<!-- VIDEOS -->
-
-<section class="bloque" id="videos">
-
-<h2 class="titulo">VIDEOS DEL CANAL DE BOCA</h2>
-
-<div class="videos-grid">
-
-<div class="video-card">
-
-<iframe
-src="https://www.youtube.com/embed/ocDAR8slltQ"
-title="El Canal de Boca"
-loading="lazy"
+</div></section><!-- CANAL --><section class="seccion"><div class="canal"><h2>📺 CANAL DE BOCA 24/7</h2><p>
+Seguí el contenido, entrevistas, programas y toda la actualidad
+xeneize desde nuestro canal.
+</p><a href="https://youtube.com/@movlosbosterosdetucuman" target="_blank">
+▶ SUSCRIBITE AL CANAL
+</a></div></section><!-- VIDEOS --><section class="seccion" id="videos"><h2 class="titulo">🎥 VIDEOS</h2><div class="videos"><div class="video"><iframe
+src="https://www.youtube.com/embed?listType=user_uploads&list=movlosbosterosdetucuman"
+title="Los Bosteros de Tucumán"
 allowfullscreen>
-</iframe>
-
-<div class="video-info">
-
-<h3>
-El Canal de Boca
-</h3>
-
-<p>
-Contenido y cobertura del Xeneize.
-</p>
-
-<a
-class="video-link"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER CANAL OFICIAL
-</a>
-
-</div>
-
-</div>
-
-<div class="video-card">
-
-<iframe
-src="https://www.youtube.com/embed/4X9IMz8mie8"
-title="Entrevistas Boca"
-loading="lazy"
+</iframe><div>
+<strong>BOCA 24/7 · Últimos videos</strong>
+<p>Programas, entrevistas y actualidad xeneize.</p>
+</div></div><div class="video"><iframe
+src="https://www.youtube.com/embed?listType=user_uploads&list=BocaJuniors"
+title="Canal de Boca"
 allowfullscreen>
-</iframe>
-
-<div class="video-info">
-
-<h3>
-Entrevistas y protagonistas
-</h3>
-
-<p>
-Charlas y contenidos del mundo Boca.
-</p>
-
-<a
-class="video-link"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER MÁS VIDEOS
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- STREAMING -->
-
-<section class="bloque" id="streaming">
-
-<h2 class="titulo">STREAMING</h2>
-
-<div class="streaming">
-
-<img
-src="IMG-20260829-WA0003.jpg"
-alt="Streaming Boca 24/7">
-
-</div>
-
-</section>
-
-<!-- CANAL -->
-
-<section class="bloque">
-
-<h2 class="titulo">CANAL DE BOCA</h2>
-
-<div class="canal-boca">
-
-<h2>EL CANAL DE BOCA</h2>
-
-<p>
-Contenido oficial del Club Atlético Boca Juniors: entrevistas,
-jugadores, entrenamientos, partidos y protagonistas.
-</p>
-
-<div class="canal-grid">
-
-<div class="canal-item">
-
-<h3>ENTREVISTAS</h3>
-
-<p>
-Charlas exclusivas con jugadores y protagonistas.
-</p>
-
-<a
-class="btn-amarillo"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER
-</a>
-
-</div>
-
-<div class="canal-item">
-
-<h3>PARTIDOS</h3>
-
-<p>
-Cobertura y transmisiones relacionadas con Boca.
-</p>
-
-<a
-class="btn-amarillo"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER
-</a>
-
-</div>
-
-<div class="canal-item">
-
-<h3>ACTUALIDAD</h3>
-
-<p>
-Las últimas publicaciones oficiales del club.
-</p>
-
-<a
-class="btn-amarillo"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- UN DIA COMO HOY -->
-
-<section class="bloque">
-
-<h2 class="titulo">UN DÍA COMO HOY</h2>
-
-<div class="historia">
-
-<h2>Historia Xeneize</h2>
-
-<p id="historiaHoy">
-Consultando la historia de Boca para esta fecha...
-</p>
-
-</div>
-
-</section>
-
-<!-- AGENDA -->
-
-<section class="bloque" id="agenda">
-
-<h2 class="titulo">AGENDA DE BOCA</h2>
-
-<div class="agenda" id="agendaLista">
-
-<div class="evento">
-<strong>AGENDA XENEIZE</strong><br>
-La agenda se actualizará automáticamente cuando se actualice el archivo de noticias.
-</div>
-
-<div class="evento">
-<strong>FUENTE OFICIAL</strong><br>
-Consultá la información oficial del club.
-</div>
-
-</div>
-
-</section>
-
-<!-- MERCADO -->
-
-<section class="bloque" id="mercado">
-
-<h2 class="titulo">MERCADO DE PASES</h2>
-
-<div class="mercado">
-
-<div class="estado">
-
+</iframe><div>
+<strong>CANAL DE BOCA</strong>
+<p>Contenido oficial, entrevistas y protagonistas.</p>
+</div></div></div></section><!-- UN DIA COMO HOY --><section class="seccion"><h2 class="titulo">📖 UN DÍA COMO HOY</h2><div class="historia"><h3>Historia Xeneize · 29 de agosto</h3><p>
+Esta sección queda preparada para incorporar automáticamente
+hechos históricos de Boca correspondientes al 29 de agosto
+desde el archivo de noticias.
+</p></div></section><!-- MERCADO --><section class="seccion" id="mercado"><h2 class="titulo">🔄 MERCADO DE PASES</h2><div class="mercado"><div class="estado confirmado">
 <h3>🟢 CONFIRMADO</h3>
-
 <p>
-Incorporaciones confirmadas oficialmente.
+Incorporaciones confirmadas oficialmente por Boca Juniors.
 </p>
-
-</div>
-
-<div class="estado">
-
+</div><div class="estado negociacion">
 <h3>🟡 EN NEGOCIACIÓN</h3>
-
 <p>
-Operaciones y nombres informados por las fuentes.
+Operaciones y nombres informados por fuentes periodísticas.
+Se mostrarán únicamente cuando exista información concreta.
 </p>
-
-</div>
-
-<div class="estado">
-
+</div><div class="estado salidas">
 <h3>🔴 SALIDAS</h3>
-
 <p>
-Transferencias, préstamos y salidas del plantel.
+Transferencias, préstamos y salidas confirmadas del plantel.
 </p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FUENTES -->
-
-<section class="bloque" id="fuentes">
-
-<h2 class="titulo">FUENTES</h2>
-
-<div class="fuentes">
-
-<a
-class="fuente-card"
-href="https://www.tycsports.com/"
-target="_blank">
-
+</div></div></section><!-- FUENTES --><section class="seccion" id="fuentes"><h2 class="titulo">📰 FUENTES</h2><div class="fuentes"><a class="fuente-card" href="https://www.tycsports.com/boca-juniors.html" target="_blank">
 <strong>Tato Aguilera</strong>
-
-<span>
-Información de Boca en TyC Sports.
-</span>
-
-</a>
-
-<a
-class="fuente-card"
-href="https://www.tycsports.com/boca-juniors.html"
-target="_blank">
-
+<span>Seguimiento y noticias de Boca publicadas a través de TyC Sports.</span>
+</a><a class="fuente-card" href="https://www.tycsports.com/boca-juniors.html" target="_blank">
 <strong>TyC Sports</strong>
-
-<span>
-Noticias y actualidad del Xeneize.
-</span>
-
-</a>
-
-<a
-class="fuente-card"
-href="https://www.espn.com.ar/futbol/equipo/_/id/187/boca-juniors"
-target="_blank">
-
-<strong>Diego Monroig / ESPN</strong>
-
-<span>
-Información del día a día de Boca.
-</span>
-
-</a>
-
-<a
-class="fuente-card"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
-
-<strong>Augusto César / Boca</strong>
-
-<span>
-Información y seguimiento del club.
-</span>
-
-</a>
-
-<a
-class="fuente-card"
-href="https://www.dsports.com/"
-target="_blank">
-
-<strong>DSPORTS</strong>
-
-<span>
-Información deportiva.
-</span>
-
-</a>
-
-<a
-class="fuente-card"
-href="https://tn.com.ar/deportes/"
-target="_blank">
-
-<strong>TN Deportivo</strong>
-
-<span>
-Actualidad deportiva.
-</span>
-
-</a>
-
-</div>
-
-</section>
-
-<!-- NOTIFICACIONES -->
-
-<section class="bloque">
-
-<div class="notificaciones">
-
-<h2>🔔 NOTIFICACIONES</h2>
-
-<p>
+<span>Noticias y actualidad del Xeneize.</span>
+</a><a class="fuente-card" href="https://www.espn.com.ar/futbol/equipo/_/id/5/boca-juniors" target="_blank">
+<strong>Diego Monroig · ESPN</strong>
+<span>Información y seguimiento del día a día de Boca.</span>
+</a><a class="fuente-card" href="https://www.bocajuniors.com.ar/noticias" target="_blank">
+<strong>Boca Juniors</strong>
+<span>Fuente oficial del Club Atlético Boca Juniors.</span>
+</a></div></section><!-- NOTIFICACIONES --><section class="seccion"><div class="notificaciones"><h2>🔔 NOTIFICACIONES</h2><p>
 Activá las notificaciones para recibir novedades de BOCA 24/7
 cuando el navegador lo permita.
-</p>
-
-<button id="activarNotificaciones">
+</p><button id="activarNotificaciones">
 ACTIVAR NOTIFICACIONES
-</button>
+</button><div id="estadoNotificacion"></div></div></section></main><footer><strong>BOCA 24/7</strong>
 
-</div>
+<p>Todo Boca. Todo el día.</p><p>Noticias · Partidos · Agenda · Videos · Streaming</p></footer><script>
 
-</section>
-
-</main>
-
-<footer>
-
-<strong>BOCA 24/7</strong>
-
-<p>
-Todo Boca. Todo el día.
-</p>
-
-<p>
-Noticias · Videos · Agenda · Mercado · Streaming
-</p>
-
-</footer>
-
-<script>
-
-/* RELOJ */
+/* HORA DE ACTUALIZACIÓN */
 
 function actualizarHora(){
 
-const ahora = new Date();
+ const ahora=new Date();
 
-const fecha = ahora.toLocaleDateString(
-"es-AR",
-{
-day:"2-digit",
-month:"2-digit",
-year:"numeric"
-}
-);
-
-const hora = ahora.toLocaleTimeString(
-"es-AR",
-{
-hour:"2-digit",
-minute:"2-digit"
-}
-);
-
-document.getElementById("actualizado").textContent =
-"Última actualización de la página: " +
-fecha +
-" · " +
-hora;
+ document.getElementById("actualizado").textContent=
+ "Última actualización de la página: "+
+ ahora.toLocaleDateString("es-AR")+
+ " · "+
+ ahora.toLocaleTimeString("es-AR",{
+   hour:"2-digit",
+   minute:"2-digit"
+ });
 
 }
 
 actualizarHora();
 
-setInterval(
-actualizarHora,
-60000
-);
+
+/* ACTUALIZACIÓN AUTOMÁTICA */
+
+setInterval(function(){
+
+ actualizarHora();
+
+ cargarNoticias();
+
+},15*60*1000);
 
 
 /* NOTICIAS.JSON */
 
 async function cargarNoticias(){
 
-try{
+ try{
 
-const respuesta =
-await fetch(
-"noticias.json?nocache=" +
-Date.now()
-);
+   const respuesta=await fetch(
+     "noticias.json?nocache="+Date.now()
+   );
 
-if(!respuesta.ok){
-console.log("noticias.json no disponible");
-return;
-}
+   if(!respuesta.ok)return;
 
-const datos =
-await respuesta.json();
+   const datos=await respuesta.json();
 
-if(!Array.isArray(datos)){
-return;
-}
+   console.log(
+     "Noticias actualizadas:",
+     datos.length
+   );
 
-const grid =
-document.getElementById("noticiasGrid");
+ }catch(error){
 
-if(datos.length === 0){
-return;
-}
+   console.log(
+     "Se mantiene el contenido publicado."
+   );
 
-grid.innerHTML = "";
-
-datos.slice(0,6).forEach(function(noticia){
-
-const articulo =
-document.createElement("article");
-
-articulo.className =
-"noticia-card";
-
-const titulo =
-noticia.titulo ||
-"Noticia de Boca";
-
-const fuente =
-noticia.fuente ||
-"BOCA 24/7";
-
-const contenido =
-noticia.contenido ||
-"Últimas novedades del mundo Boca.";
-
-const link =
-noticia.link ||
-"https://www.bocajuniors.com.ar/noticias";
-
-articulo.innerHTML = `
-
-<div class="fuente">
-${fuente}
-</div>
-
-<h3>
-${titulo}
-</h3>
-
-<p>
-${contenido}
-</p>
-
-<div class="noticia-meta">
-Actualizado automáticamente
-</div>
-
-<a
-class="leer"
-href="${link}"
-target="_blank"
-rel="noopener">
-Leer noticia →
-</a>
-
-`;
-
-grid.appendChild(articulo);
-
-});
-
-}catch(error){
-
-console.log(
-"No se pudo actualizar noticias.json"
-);
+ }
 
 }
-
-}
-
-
-/* CADA 15 MINUTOS */
-
-cargarNoticias();
-
-setInterval(
-cargarNoticias,
-15 * 60 * 1000
-);
 
 
 /* NOTIFICACIONES */
 
-document
-.getElementById("activarNotificaciones")
-.addEventListener(
-"click",
-async function(){
-
-if(
-!("Notification" in window)
-){
-
-alert(
-"Tu navegador no permite notificaciones."
+const boton=document.getElementById(
+ "activarNotificaciones"
 );
 
-return;
-
-}
-
-const permiso =
-await Notification.requestPermission();
-
-if(permiso === "granted"){
-
-new Notification(
-"BOCA 24/7",
-{
-body:
-"Notificaciones activadas."
-}
+const estado=document.getElementById(
+ "estadoNotificacion"
 );
 
-}else{
+boton.addEventListener("click",async function(){
 
-alert(
-"Las notificaciones no fueron habilitadas."
-);
+ if(!("Notification" in window)){
 
-}
+   estado.textContent=
+   "Este navegador no permite notificaciones.";
+
+   return;
+
+ }
+
+ const permiso=
+ await Notification.requestPermission();
+
+ if(permiso==="granted"){
+
+   estado.textContent=
+   "✅ Notificaciones activadas.";
+
+   new Notification(
+     "BOCA 24/7",
+     {
+       body:"Las notificaciones están activadas."
+     }
+   );
+
+ }else{
+
+   estado.textContent=
+   "Las notificaciones no fueron activadas.";
+
+ }
 
 });
 
 
-/* HISTORIA */
-
-const fechaActual =
-new Date();
-
-const dia =
-String(
-fechaActual.getDate()
-).padStart(2,"0");
-
-const mes =
-String(
-fechaActual.getMonth()+1
-).padStart(2,"0");
-
-document.getElementById(
-"historiaHoy"
-).textContent =
-"Esta sección está preparada para mostrar hechos históricos de Boca correspondientes al " +
-dia +
-"/" +
-mes +
-". La información podrá incorporarse desde noticias.json.";
-
-
-/* AUTO REFRESH SUAVE */
-
-setInterval(
-function(){
+/* CARGA INICIAL */
 
 cargarNoticias();
 
-},
-15 * 60 * 1000
-);
-
-</script>
-
-</body>
-</html>
+</script></body>
+    </html>
