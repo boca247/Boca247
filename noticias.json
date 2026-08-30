@@ -136,6 +136,14 @@
     "fecha_iso": "2026-08-29T13:37:29+00:00"
   },
   {
+    "titulo": "Boca festejó el triunfo agónico con un llamativo cantito con chicana para River - MDZ Online",
+    "fuente": "MDZ Online",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOHN1MHlfODVtYUxjUXh4QlBSZFV2ZlMyS2lFdC1oa21SU01ySHo0eTE5Z3VKMU9PSm9WYXFSZGhYODY4Vy1MQ0NlNzZRSmtlWWVLZ1RVMGd1STBFTWN1OGtqOW8waEJ0V3FMOUlEaDZWVGF1MURPMDFDYWlZQXNpelhsb295YTMtMmg0aWxyRXFaRXdfcUQ5VEpJX3BZaEt4a3hqTE1VcFlMd9IBrwFBVV95cUxPMGlJZldXaUtvU1MzZDRyQ0taV1lLNmI0S1ZTWHFkN3pwOEpSdnYxQkpyUUhZRHE0ZWFpckxORmhXM3NnMWxFTlV0UzJSZkotWldJeWM0cmNlRTM1YzFDdkdEQlpkX29xVVZXekZXVklSZ1dGLUx6a2dkNll3Uk9xcWVOU2k5eHFHUUV5eFl2UGhJVU0xYWRqZUd6Vkd5dGlNMGgyZjNPdEItcVgwV2xZ?oc=5",
+    "categoria": "Sudamericana",
+    "fecha_iso": "2026-08-29T12:13:00+00:00"
+  },
+  {
     "titulo": "Una jugadora de Boca y la Selección Argentina se aleja del fútbol para priorizar su salud mental - Olé",
     "fuente": "Olé",
     "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
@@ -382,14 +390,6 @@
     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOOHdJU3BBMExMTTFET2c3MXZ1VFNsQ0xkQm5oWjE2Z3pubGRicngtbkZoQ0QyQkxZQ1FKMjJNSFpHZUo3eFZZNC0teHJMRkFxdDBLMHF6NEFNVWVHbVhyTGE2czlQaFlIbzBHTlpyYWRTel83aFlXTlF3NERQTDJabmtiZkJucU52RDltcVZLLVZiZ0VNVkwyZnJSaWF6OVcyd2Zpd2l4ajE0RnY1M2s5RGhiZVE5TG9EWjdDNQ?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-28T11:04:57+00:00"
-  },
-  {
-    "titulo": "El complicado panorama de los centrales de Boca - TyC Sports",
-    "fuente": "TyC Sports",
-    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
-    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNeDVCVFJTLWRzZTlQRXNrSnJIdFdMYWR2aFlEUVRGTEVpbW9FSmw5WVBhcnV2WjZnU3JOdUpyeUgxclFxZGJKVkNKbnllQ2lJTmJtUzBvZkRNQVFMZWpnVlYxakVzZWZfRjUxMDV3ZExqS1JOT25RSGpXWEhWazg2YUFSc1p4SmhRU2F0enhhQllRTHJ1eDdtV2lPNkhZZlh2cDhFYThqWUtucHdoLWpn?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-28T10:10:26+00:00"
   },
   {
     "titulo": "Boca campeón con presencia tandilense entre las titulares - El diario de Tandil",
@@ -696,8 +696,8 @@
     "fecha_iso": "2026-08-25T07:00:00+00:00"
   },
   {
-    "titulo": "Boca informó dos nuevas salidas en el mercado de pases: de quiénes se trata - DSports",
-    "fuente": "DSports",
+    "titulo": "Boca informó dos nuevas salidas en el mercado de pases: de quiénes se trata - dsports",
+    "fuente": "dsports",
     "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
     "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZUdBYWNmWllRdlRXb2dCWnB1UFhtT1FtMzl1SnZrRnoyRmhKbWxDSWRIMkIyNlQ2N2NIZzhvdjJmMFRwa1hLQXJEY1RGQ2l6SHhDT09JMFVqMDU1RTZyN3kzTU1aY3lNWm8zbEtncFFXLVdXOGtZa3V2d1FTTE1rS2NjUEtudlA5VHl1akpCVldnYW5pNVEyZXRwTlRsMnQwcl9sZHZUUFo4VDQweXk2NlNEUUZjRnVLdi13aUxhUE1KYVM4dXZBX3d30gHPAUFVX3lxTE9ZTjRxN2R0Yk9WQ0dSQ0kyZ1pvOGVHeUptdTZMajlySUtuMEtwNTRPX1Vzc0dQTHNtWnU3Mk43NllpdXRBNjRiaDN0cmJVRFh5ZkRHbkM3RkZtWmpVTWRCVUU1RXRVaHJ2UDZISTF4NWlsZUFlMzJLcHJSS3U4RVRkbU1teEFuMjVOb2pMam1XaDF2SVhxQTNTQ0N1UG02RFZjSVdIUm9sZk1tajZoMEFCN2hmZ2pGaVZuRmY1UUU2Sjk2QnFwUXMyWktNaXBsMA?oc=5",
     "categoria": "Mercado de pases",
