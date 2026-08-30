@@ -34,10 +34,6 @@ button{font-family:inherit}
 --sombra:0 8px 30px rgba(0,36,95,.12)
 }
 
-/* =========================
-   BARRA SUPERIOR
-========================= */
-
 .topbar{
 background:#00152f;
 color:#fff;
@@ -47,13 +43,7 @@ justify-content:space-between;
 font-size:12px
 }
 
-.topbar strong{
-color:var(--amarillo)
-}
-
-/* =========================
-   HEADER
-========================= */
+.topbar strong{color:var(--amarillo)}
 
 header{
 background:linear-gradient(135deg,#00183f,#003b91);
@@ -111,10 +101,6 @@ font-size:11px;
 font-weight:1000
 }
 
-/* =========================
-   NAVEGACIÓN
-========================= */
-
 nav{
 position:sticky;
 top:0;
@@ -132,9 +118,7 @@ gap:7px;
 overflow-x:auto
 }
 
-.nav::-webkit-scrollbar{
-display:none
-}
+.nav::-webkit-scrollbar{display:none}
 
 .nav a{
 flex:0 0 auto;
@@ -151,10 +135,6 @@ font-weight:900
 background:var(--amarillo);
 color:var(--azul)
 }
-
-/* =========================
-   CONTENIDO
-========================= */
 
 main{
 max-width:1280px;
@@ -183,10 +163,6 @@ border-radius:5px;
 font-size:10px
 }
 
-/* =========================
-   PORTADA
-========================= */
-
 .hero-grid{
 display:grid;
 grid-template-columns:2fr 1fr;
@@ -194,7 +170,7 @@ gap:18px
 }
 
 .hero{
-min-height:430px;
+min-height:500px;
 border-radius:24px;
 padding:34px;
 display:flex;
@@ -254,18 +230,14 @@ border:0;
 cursor:pointer
 }
 
-.btn:hover{
-background:var(--azul3)
-}
+.btn:hover{background:var(--azul3)}
 
 .btn-amarillo{
 background:var(--amarillo);
 color:var(--azul)
 }
 
-.btn-rojo{
-background:var(--rojo)
-}
+.btn-rojo{background:var(--rojo)}
 
 .side{
 display:grid;
@@ -298,13 +270,7 @@ color:var(--gris);
 font-size:13px
 }
 
-/* =========================
-   SECCIONES
-========================= */
-
-section{
-margin-top:42px
-}
+section{margin-top:42px}
 
 .titulo{
 color:var(--azul);
@@ -320,10 +286,6 @@ color:var(--gris);
 font-size:13px;
 margin:0 0 17px 20px
 }
-
-/* =========================
-   CARDS
-========================= */
 
 .grid3{
 display:grid;
@@ -361,10 +323,6 @@ font-size:11px;
 color:#98a2b3;
 margin-top:11px
 }
-
-/* =========================
-   PARTIDO
-========================= */
 
 .partido{
 background:linear-gradient(135deg,#001a49,#0756b8);
@@ -432,10 +390,6 @@ font-size:19px;
 color:var(--amarillo)
 }
 
-/* =========================
-   LISTAS
-========================= */
-
 .lista{
 display:grid;
 gap:12px
@@ -449,17 +403,8 @@ padding:17px;
 box-shadow:0 4px 15px rgba(0,0,0,.06)
 }
 
-.linea strong{
-color:var(--azul)
-}
-
-.linea small{
-color:var(--gris)
-}
-
-/* =========================
-   MERCADO
-========================= */
+.linea strong{color:var(--azul)}
+.linea small{color:var(--gris)}
 
 .mercado{
 display:grid;
@@ -479,27 +424,15 @@ color:var(--azul);
 margin-bottom:12px
 }
 
-.llegadas{
-border-top:6px solid var(--verde)
-}
-
-.negociacion{
-border-top:6px solid #d6a900
-}
-
-.salidas{
-border-top:6px solid var(--rojo)
-}
+.llegadas{border-top:6px solid var(--verde)}
+.negociacion{border-top:6px solid #d6a900}
+.salidas{border-top:6px solid var(--rojo)}
 
 .movimiento{
 padding:12px 0;
 border-bottom:1px solid #e4e7ec;
 font-size:13px
 }
-
-/* =========================
-   ENCUESTAS
-========================= */
 
 .encuesta-grid{
 display:grid;
@@ -535,9 +468,7 @@ font-weight:900;
 color:var(--azul)
 }
 
-.opcion:hover{
-background:var(--amarillo)
-}
+.opcion:hover{background:var(--amarillo)}
 
 .resultado-encuesta{
 margin-top:15px;
@@ -559,10 +490,6 @@ height:100%;
 width:72%;
 background:var(--azul3)
 }
-
-/* =========================
-   VIDEOS
-========================= */
 
 .videos{
 display:grid;
@@ -587,13 +514,9 @@ justify-content:center;
 font-size:55px
 }
 
-.video-body{
-padding:18px
-}
+.video-body{padding:18px}
 
-.video-body h3{
-font-size:19px
-}
+.video-body h3{font-size:19px}
 
 .video-body p{
 font-size:13px;
@@ -601,26 +524,23 @@ color:#bbb;
 margin-top:6px
 }
 
-/* =========================
-   FOTOS
-========================= */
-
 .fotos{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px
+grid-template-columns:repeat(3,1fr);
+gap:14px
 }
 
 .foto{
-aspect-ratio:1.3;
+aspect-ratio:1.45;
 border-radius:16px;
-padding:15px;
+padding:17px;
 display:flex;
 align-items:flex-end;
 position:relative;
 overflow:hidden;
 color:#fff;
 font-weight:1000;
+font-size:17px;
 box-shadow:var(--sombra);
 background-size:cover;
 background-position:center
@@ -633,7 +553,7 @@ linear-gradient(
 rgba(0,18,48,.9),
 rgba(0,18,48,.08)
 ),
-url("IMG-20260829-WA0001.jpg")
+url("IMG-20260830-WA0003.jpg")
 }
 
 .foto-2{
@@ -643,7 +563,7 @@ linear-gradient(
 rgba(0,18,48,.9),
 rgba(0,18,48,.08)
 ),
-url("IMG-20260829-WA0003.jpg")
+url("IMG-20260830-WA0004.jpg")
 }
 
 .foto-3{
@@ -653,17 +573,7 @@ linear-gradient(
 rgba(0,18,48,.9),
 rgba(0,18,48,.08)
 ),
-url("IMG-20260829-WA0001.jpg")
-}
-
-.foto-4{
-background-image:
-linear-gradient(
-0deg,
-rgba(0,18,48,.9),
-rgba(0,18,48,.08)
-),
-url("IMG-20260829-WA0003.jpg")
+url("IMG-20260830-WA0006.jpg")
 }
 
 .foto span{
@@ -673,9 +583,11 @@ right:12px;
 font-size:24px
 }
 
-/* =========================
-   HISTORIA
-========================= */
+.protagonistas{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px
+}
 
 .historia{
 background:linear-gradient(135deg,#001b47,#003b91);
@@ -685,9 +597,7 @@ border-radius:23px;
 box-shadow:var(--sombra)
 }
 
-.historia h2{
-color:var(--amarillo)
-}
+.historia h2{color:var(--amarillo)}
 
 .timeline{
 display:grid;
@@ -715,10 +625,6 @@ color:#e1eaf7;
 margin-top:5px
 }
 
-/* =========================
-   FUENTES
-========================= */
-
 .fuentes{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -744,46 +650,35 @@ color:var(--gris);
 margin-top:4px
 }
 
-/* =========================
-   STREAMING
-========================= */
-
 .streaming{
-background:
+background-image:
 linear-gradient(
 0deg,
-rgba(0,0,0,.82),
-rgba(0,0,0,.35)
+rgba(0,0,0,.85),
+rgba(0,0,0,.28)
 ),
 url("IMG-20260829-WA0003.jpg");
 
 background-size:cover;
 background-position:center;
-
 color:#fff;
 border-radius:23px;
 padding:40px 30px;
-min-height:250px;
+min-height:300px;
 display:flex;
 flex-direction:column;
 justify-content:flex-end;
-
 box-shadow:0 10px 30px rgba(0,0,0,.25);
 border-bottom:7px solid var(--amarillo)
 }
 
-.streaming h2{
-font-size:30px
-}
+.streaming h2{font-size:30px}
 
 .streaming p{
-color:#ccc;
-margin-top:7px
+color:#eee;
+margin-top:7px;
+font-size:15px
 }
-
-/* =========================
-   NOTIFICACIONES
-========================= */
 
 .notificaciones{
 background:var(--azul);
@@ -794,18 +689,12 @@ text-align:center;
 box-shadow:var(--sombra)
 }
 
-.notificaciones h2{
-color:var(--amarillo)
-}
+.notificaciones h2{color:var(--amarillo)}
 
 .notificaciones p{
 color:#d8e3f3;
 margin-top:6px
 }
-
-/* =========================
-   FOOTER
-========================= */
 
 footer{
 background:#00132f;
@@ -826,10 +715,6 @@ font-size:12px;
 margin-top:7px
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media(max-width:950px){
 
 .hero-grid,
@@ -839,7 +724,8 @@ grid-template-columns:1fr
 
 .grid3,
 .mercado,
-.fuentes{
+.fuentes,
+.protagonistas{
 grid-template-columns:1fr 1fr
 }
 
@@ -855,21 +741,14 @@ grid-template-columns:1fr 1fr
 
 @media(max-width:650px){
 
-.topbar{
-display:none
-}
+.topbar{display:none}
 
 .header{
 padding:17px 11px
 }
 
-.logo h1{
-font-size:24px
-}
-
-.logo p{
-font-size:11px
-}
+.logo h1{font-size:24px}
+.logo p{font-size:11px}
 
 .escudo{
 width:50px;
@@ -887,23 +766,21 @@ padding:14px 10px 50px
 }
 
 .hero{
-min-height:370px;
-padding:23px
+min-height:420px;
+padding:23px;
+border-radius:19px
 }
 
-.hero h2{
-font-size:37px
-}
+.hero h2{font-size:37px}
 
-.titulo{
-font-size:22px
-}
+.titulo{font-size:22px}
 
 .grid3,
 .grid2,
 .mercado,
 .videos,
 .fuentes,
+.protagonistas,
 .timeline,
 .fotos{
 grid-template-columns:1fr
@@ -913,18 +790,14 @@ grid-template-columns:1fr
 grid-template-columns:repeat(2,1fr)
 }
 
-.partido{
-padding:21px
-}
+.partido{padding:21px}
 
 .streaming{
-min-height:220px;
+min-height:260px;
 padding:25px 20px
 }
 
-.streaming h2{
-font-size:25px
-}
+.streaming h2{font-size:25px}
 
 }
 
@@ -933,19 +806,10 @@ font-size:25px
 
 <body>
 
-<!-- =========================
-     TOP
-========================= -->
-
 <div class="topbar">
 <span>BOCA 24/7 · Todo Boca. Todo el día.</span>
 <strong>PORTAL XENEIZE</strong>
 </div>
-
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -977,11 +841,6 @@ Noticias · Pasión · Comunidad Xeneize
 
 </header>
 
-
-<!-- =========================
-     NAV
-========================= -->
-
 <nav>
 
 <div class="nav">
@@ -1001,13 +860,7 @@ Noticias · Pasión · Comunidad Xeneize
 
 </nav>
 
-
 <main id="inicio">
-
-
-<!-- =========================
-     TICKER
-========================= -->
 
 <div class="ticker">
 
@@ -1019,11 +872,6 @@ historia, videos y pasión xeneize.
 </span>
 
 </div>
-
-
-<!-- =========================
-     HERO
-========================= -->
 
 <div class="hero-grid">
 
@@ -1050,7 +898,6 @@ VER LAS NOTICIAS
 
 </article>
 
-
 <div class="side">
 
 <div class="mini">
@@ -1072,7 +919,6 @@ VER PARTIDO
 </a>
 
 </div>
-
 
 <div class="mini">
 
@@ -1098,11 +944,6 @@ VER HISTORIA
 
 </div>
 
-
-<!-- =========================
-     NOTICIAS
-========================= -->
-
 <section id="noticias">
 
 <h2 class="titulo">
@@ -1113,9 +954,7 @@ VER HISTORIA
 Información xeneize y fuentes periodísticas.
 </p>
 
-
 <div class="grid3">
-
 
 <article class="card">
 
@@ -1138,7 +977,6 @@ BOCA 24/7
 </div>
 
 </article>
-
 
 <article class="card">
 
@@ -1164,7 +1002,6 @@ VER INFORMACIÓN
 
 </article>
 
-
 <article class="card">
 
 <div class="fuente">
@@ -1189,15 +1026,9 @@ BOCA OFICIAL
 
 </article>
 
-
 </div>
 
 </section>
-
-
-<!-- =========================
-     PARTIDOS
-========================= -->
 
 <section id="partidos">
 
@@ -1208,7 +1039,6 @@ PARTIDO CENTER
 <p class="subtitulo">
 Próximo partido y espacio preparado para información en vivo.
 </p>
-
 
 <div class="partido">
 
@@ -1223,7 +1053,6 @@ COPA ARGENTINA
 </span>
 
 </div>
-
 
 <div class="resultado">
 
@@ -1244,7 +1073,6 @@ Resultado pendiente
 </small>
 
 </div>
-
 
 <div class="datos-partido">
 
@@ -1274,17 +1102,11 @@ Estadísticas
 
 </section>
 
-
-<!-- =========================
-     AGENDA
-========================= -->
-
 <section id="agenda">
 
 <h2 class="titulo">
 AGENDA XENEIZE
 </h2>
-
 
 <div class="lista">
 
@@ -1302,7 +1124,6 @@ Copa Argentina · 21:15
 
 </div>
 
-
 <div class="linea">
 
 <strong>
@@ -1317,7 +1138,6 @@ para goles, cambios, tarjetas y acontecimientos.
 </small>
 
 </div>
-
 
 <div class="linea">
 
@@ -1337,20 +1157,13 @@ Posesión, remates, tiros al arco, córners y tarjetas.
 
 </section>
 
-
-<!-- =========================
-     MERCADO
-========================= -->
-
 <section id="mercado">
 
 <h2 class="titulo">
 MERCADO DE PASES
 </h2>
 
-
 <div class="mercado">
-
 
 <div class="mercado-box llegadas">
 
@@ -1370,7 +1183,6 @@ Incorporaciones confirmadas oficialmente.
 
 </div>
 
-
 <div class="movimiento">
 
 <strong>
@@ -1384,7 +1196,6 @@ Información del mercado xeneize.
 </div>
 
 </div>
-
 
 <div class="mercado-box negociacion">
 
@@ -1404,7 +1215,6 @@ Negociaciones informadas por fuentes periodísticas.
 
 </div>
 
-
 <div class="movimiento">
 
 <strong>
@@ -1418,7 +1228,6 @@ Seguimiento de las operaciones.
 </div>
 
 </div>
-
 
 <div class="mercado-box salidas">
 
@@ -1438,7 +1247,6 @@ Ventas, préstamos y salidas.
 
 </div>
 
-
 <div class="movimiento">
 
 <strong>
@@ -1453,15 +1261,9 @@ Información oficial y periodística.
 
 </div>
 
-
 </div>
 
 </section>
-
-
-<!-- =========================
-     HINCHAS
-========================= -->
 
 <section id="hinchas">
 
@@ -1473,9 +1275,7 @@ OPINIÓN DE LOS HINCHAS
 La voz de la comunidad xeneize.
 </p>
 
-
 <div class="encuesta-grid">
-
 
 <div class="encuesta">
 
@@ -1486,7 +1286,6 @@ ENCUESTA DEL MOMENTO
 <h3>
 ¿Cómo llega Boca al próximo partido?
 </h3>
-
 
 <div class="opciones">
 
@@ -1510,7 +1309,6 @@ Pierde
 
 </div>
 
-
 <div
 id="resultadoEncuesta"
 class="resultado-encuesta">
@@ -1520,7 +1318,6 @@ Elegí una opción para votar.
 </div>
 
 </div>
-
 
 <div class="encuesta">
 
@@ -1556,11 +1353,6 @@ con resultados reales de la comunidad.
 
 </section>
 
-
-<!-- =========================
-     VIDEOS
-========================= -->
-
 <section id="videos">
 
 <h2 class="titulo">
@@ -1571,9 +1363,7 @@ VIDEOS DEL MOMENTO
 Contenido del mundo Boca.
 </p>
 
-
 <div class="videos">
-
 
 <div class="video">
 
@@ -1603,7 +1393,6 @@ VER CANAL
 
 </div>
 
-
 <div class="video">
 
 <div class="video-thumb">
@@ -1631,15 +1420,9 @@ VER STREAMING
 
 </div>
 
-
 </div>
 
 </section>
-
-
-<!-- =========================
-     FOTOS
-========================= -->
 
 <section id="fotos">
 
@@ -1648,73 +1431,38 @@ FOTOS DEL MOMENTO
 </h2>
 
 <p class="subtitulo">
-Partidos · entrenamientos · jugadores · Bombonera.
+Partidos · entrenamientos · Bombonera.
 </p>
-
 
 <div class="fotos">
 
-
 <div class="foto foto-1">
 
-<span>
-📸
-</span>
+<span>📸</span>
 
-<strong>
 ÚLTIMO PARTIDO
-</strong>
 
 </div>
-
 
 <div class="foto foto-2">
 
-<span>
-📸
-</span>
+<span>📸</span>
 
-<strong>
 ENTRENAMIENTO
-</strong>
 
 </div>
-
 
 <div class="foto foto-3">
 
-<span>
-📸
-</span>
+<span>📸</span>
 
-<strong>
-JUGADORES
-</strong>
-
-</div>
-
-
-<div class="foto foto-4">
-
-<span>
-📸
-</span>
-
-<strong>
 LA BOMBONERA
-</strong>
 
 </div>
-
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     ENTREVISTAS
-========================= -->
 
 <section>
 
@@ -1722,9 +1470,7 @@ LA BOMBONERA
 ENTREVISTAS Y PROTAGONISTAS
 </h2>
 
-
-<div class="grid3">
-
+<div class="protagonistas">
 
 <div class="card">
 
@@ -1743,7 +1489,6 @@ después de cada encuentro.
 
 </div>
 
-
 <div class="card">
 
 <div class="fuente">
@@ -1760,7 +1505,6 @@ del cuerpo técnico.
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -1779,22 +1523,15 @@ protagonistas de Boca.
 
 </div>
 
-
 </div>
 
 </section>
-
-
-<!-- =========================
-     HISTORIA
-========================= -->
 
 <section id="historia">
 
 <h2 class="titulo">
 HISTORIA XENEIZE
 </h2>
-
 
 <div class="historia">
 
@@ -1809,9 +1546,7 @@ títulos, ídolos y momentos inolvidables.
 
 </p>
 
-
 <div class="timeline">
-
 
 <div class="ano">
 
@@ -1825,7 +1560,6 @@ títulos, ídolos y momentos inolvidables.
 
 </div>
 
-
 <div class="ano">
 
 <strong>
@@ -1833,12 +1567,11 @@ títulos, ídolos y momentos inolvidables.
 </strong>
 
 <p>
-La histórica gira europea lleva
-el nombre de Boca al mundo.
+La histórica gira europea lleva el nombre
+de Boca al mundo.
 </p>
 
 </div>
-
 
 <div class="ano">
 
@@ -1851,7 +1584,6 @@ Se inaugura La Bombonera.
 </p>
 
 </div>
-
 
 <div class="ano">
 
@@ -1866,35 +1598,28 @@ generaciones xeneizes.
 
 </div>
 
-
 </div>
 
-
 <br>
-
 
 <a
 class="btn btn-amarillo"
 href="https://www.bocajuniors.com.ar/historias"
 target="_blank">
+
 HISTORIA OFICIAL
+
 </a>
 
 </div>
 
 </section>
 
-
-<!-- =========================
-     UN DÍA COMO HOY
-========================= -->
-
 <section>
 
 <h2 class="titulo">
 UN DÍA COMO HOY
 </h2>
-
 
 <div class="card">
 
@@ -1907,324 +1632,15 @@ EFEMÉRIDES XENEIZES
 </h3>
 
 <p>
-
 Cada día esta sección podrá mostrar acontecimientos
 históricos, cumpleaños, títulos, partidos memorables
 y protagonistas correspondientes a la fecha.
-
 </p>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     STREAMING
-========================= -->
 
 <section id="streaming">
 
-<h2 class="titulo">
-BOCA 24/7 · STREAMING
-</h2>
-
-
-<div class="streaming">
-
-<h2>
-Los Bosteros de Tucumán
-</h2>
-
-<p>
-Información, opinión y pasión xeneize desde Tucumán.
-</p>
-
-<a
-class="btn btn-amarillo"
-href="https://youtube.com/@movlosbosterosdetucuman"
-target="_blank">
-▶ NUESTRO STREAMING
-</a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     FUENTES
-========================= -->
-
-<section>
-
-<h2 class="titulo">
-FUENTES XENEIZES
-</h2>
-
-
-<div class="fuentes">
-
-
-<div class="fuente-box">
-
-<h3>
-Boca Juniors
-</h3>
-
-<p>
-Fuente oficial del club.
-</p>
-
-<a
-class="btn"
-href="https://www.bocajuniors.com.ar/"
-target="_blank">
-VISITAR
-</a>
-
-</div>
-
-
-<div class="fuente-box">
-
-<h3>
-Tato Aguilera
-</h3>
-
-<p>
-Información periodística.
-</p>
-
-<a
-class="btn"
-href="https://x.com/Tato_Aguilera"
-target="_blank">
-VER EN X
-</a>
-
-</div>
-
-
-<div class="fuente-box">
-
-<h3>
-Augusto César
-</h3>
-
-<p>
-Actualidad de Boca.
-</p>
-
-<a
-class="btn"
-href="https://x.com/Augustocesar22"
-target="_blank">
-VER EN X
-</a>
-
-</div>
-
-
-<div class="fuente-box">
-
-<h3>
-El Canal de Boca
-</h3>
-
-<p>
-Contenido oficial.
-</p>
-
-<a
-class="btn"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-YOUTUBE
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     NOTIFICACIONES
-========================= -->
-
-<section>
-
-<div class="notificaciones">
-
-<h2>
-🔔 NOTIFICACIONES BOCA 24/7
-</h2>
-
-<p>
-
-Activá las notificaciones para recibir novedades
-cuando el navegador lo permita.
-
-</p>
-
-<button
-class="btn btn-amarillo"
-onclick="activarNotificaciones()">
-
-ACTIVAR NOTIFICACIONES
-
-</button>
-
-<div
-id="estadoNotificacion"
-style="margin-top:12px">
-</div>
-
-</div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<strong>
-BOCA 24/7
-</strong>
-
-<p>
-Todo Boca. Todo el día.
-</p>
-
-<p>
-Noticias · Partidos · Agenda · Mercado · Hinchas · Historia · Videos · Streaming
-</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   ENCUESTA
-========================= */
-
-function votar(opcion){
-
-let votos=JSON.parse(
-localStorage.getItem("boca247_votos") ||
-'{"Gana Boca":0,"Empata":0,"Pierde":0}'
-);
-
-votos[opcion]++;
-
-localStorage.setItem(
-"boca247_votos",
-JSON.stringify(votos)
-);
-
-let total=
-votos["Gana Boca"]+
-votos["Empata"]+
-votos["Pierde"];
-
-document.getElementById(
-"resultadoEncuesta"
-).textContent=
-"Votaste: "+
-opcion+
-" · "+
-total+
-" voto(s) registrados en este dispositivo.";
-
-}
-
-
-/* =========================
-   NOTIFICACIONES
-========================= */
-
-async function activarNotificaciones(){
-
-const estado=
-document.getElementById(
-"estadoNotificacion"
-);
-
-if(!("Notification" in window)){
-
-estado.textContent=
-"Este navegador no permite notificaciones.";
-
-return;
-
-}
-
-if(Notification.permission==="granted"){
-
-estado.textContent=
-"Las notificaciones ya están activadas.";
-
-return;
-
-}
-
-if(Notification.permission!=="denied"){
-
-const permiso=
-await Notification.requestPermission();
-
-estado.textContent=
-permiso==="granted"
-?
-"Notificaciones activadas."
-:
-"No se activaron las notificaciones.";
-
-}else{
-
-estado.textContent=
-"Las notificaciones están bloqueadas en el navegador.";
-
-}
-
-}
-
-
-/* =========================
-   FECHA AUTOMÁTICA
-========================= */
-
-function actualizarFecha(){
-
-const fecha=new Date();
-
-const opciones={
-day:"2-digit",
-month:"long"
-};
-
-document.getElementById(
-"fechaHistoria"
-).textContent=
-fecha
-.toLocaleDateString("es-AR",opciones)
-.toUpperCase();
-
-}
-
-actualizarFecha();
-
-</script>
-
-</body>
-</html>
+<h2 class="
