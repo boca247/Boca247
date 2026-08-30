@@ -1,328 +1,420 @@
-// ======================================================
-// BOCA 24/7 - APP.JS
-// Motor principal de la página
-// ======================================================
+/* =====================================================
+   BOCA 24/7
+   SISTEMA PRINCIPAL
+===================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-  iniciarMenu();
-  cargarNoticias();
-  iniciarBuscador();
-  iniciarEncuesta();
-  actualizarFecha();
-  iniciarBotonArriba();
-});
+const newsGrid = document.getElementById("newsGrid");
+const reloadNews = document.getElementById("reloadNews");
+const loadMore = document.getElementById("loadMore");
+const tickerText = document.getElementById("tickerText");
 
-// ======================================================
-// MENÚ / NAVEGACIÓN
-// ======================================================
 
-function iniciarMenu() {
-  const enlaces = document.querySelectorAll("nav a");
+/* =====================================================
+   NOTICIAS DE RESPALDO
 
-  enlaces.forEach((enlace) => {
-    enlace.addEventListener("click", () => {
-      enlaces.forEach((item) => item.classList.remove("activo"));
-      enlace.classList.add("activo");
-    });
-  });
-}
+   Si noticias.json falla, la web NO queda en blanco.
+===================================================== */
 
-// ======================================================
-// NOTICIAS
-// ======================================================
+const noticiasRespaldo = [
 
-async function cargarNoticias() {
-  const contenedor =
-    document.getElementById("listaNoticias") ||
-    document.querySelector(".grid3");
+    {
+        titulo: "Boca volvió al triunfo ante Lanús",
+        fuente: "BOCA 24/7",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+        "Boca Juniors volvió a ganar en La Bombonera. El Xeneize se impuso por 1-0 ante Lanús y consiguió tres puntos importantes en el Torneo Clausura.",
+        link:
+        "https://www.bocajuniors.com.ar/noticias"
+    },
 
-  if (!contenedor) return;
+    {
+        titulo: "Estoy en el lugar que amo",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+        "Leandro Paredes y Tomás Belmonte hablaron con la prensa después del triunfo de Boca ante Lanús y analizaron el encuentro.",
+        link:
+        "https://www.bocajuniors.com.ar/noticias"
+    },
 
-  try {
-    const respuesta = await fetch("noticias.json", {
-      cache: "no-store"
-    });
+    {
+        titulo: "Los tres puntos son importantes",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+        "El plantel Xeneize destacó la importancia de volver a sumar de a tres y continuar trabajando para los próximos compromisos.",
+        link:
+        "https://www.bocajuniors.com.ar/noticias"
+    },
 
-    if (!respuesta.ok) {
-      throw new Error("No se pudo cargar noticias.json");
+    {
+        titulo: "Boca presentó su nueva camiseta alternativa",
+        fuente: "BOCA 24/7",
+        categoria: "Club",
+        fecha: "28 de agosto de 2026",
+        contenido:
+        "La nueva camiseta alternativa de Boca recupera elementos relacionados con los primeros años de la institución y presenta una estética inspirada en la historia del club.",
+        link:
+        "https://www.bocajuniors.com.ar/"
+    },
+
+    {
+        titulo: "Comunicado: Juan Barinaga",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+        "Boca publicó información oficial relacionada con Juan Barinaga dentro de las novedades del plantel profesional.",
+        link:
+        "https://www.bocajuniors.com.ar/noticias"
+    },
+
+    {
+        titulo: "La Octava en la cima",
+        fuente: "Boca Juniors",
+        categoria: "Juveniles",
+        fecha: "30 de agosto de 2026",
+        contenido:
+        "Las divisiones juveniles continúan siendo protagonistas y la Octava de Boca se mantiene en la parte alta de su competencia.",
+        link:
+        "https://www.bocajuniors.com.ar/noticias"
     }
 
-    const noticias = await respuesta.json();
+];
 
-    if (!Array.isArray(noticias) || noticias.length === 0) {
-      mostrarEstadoNoticias(contenedor, "No hay noticias disponibles.");
-      return;
+
+/* =====================================================
+   ESCAPAR HTML
+===================================================== */
+
+function escaparHTML(texto){
+
+    if(texto === undefined || texto === null){
+        return "";
     }
 
-    contenedor.innerHTML = "";
-
-    noticias.forEach((noticia, indice) => {
-      const articulo = crearNoticia(noticia, indice);
-      contenedor.appendChild(articulo);
-    });
-
-  } catch (error) {
-    console.error("Error cargando noticias:", error);
-
-    mostrarEstadoNoticias(
-      contenedor,
-      "Las noticias no pudieron cargarse en este momento."
-    );
-  }
+    return String(texto)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
 }
 
-// ======================================================
-// CREAR TARJETA DE NOTICIA
-// ======================================================
 
-function crearNoticia(noticia, indice) {
-  const articulo = document.createElement("article");
+/* =====================================================
+   CREAR TARJETA DE NOTICIA
+===================================================== */
 
-  articulo.className = "card noticia-card";
+function crearNoticia(noticia,index){
 
-  const titulo =
-    noticia.titulo ||
-    noticia.title ||
-    "Noticia de Boca";
+    const imagenes = [
+        "IMG-20260830-WA0003.jpg",
+        "IMG-20260830-WA0004.jpg",
+        "IMG-20260830-WA0006.jpg"
+    ];
 
-  const fuente =
-    noticia.fuente ||
-    noticia.fuente_nombre ||
-    noticia.source ||
-    "BOCA 24/7";
+    const imagen = imagenes[index % imagenes.length];
 
-  const contenido =
-    noticia.contenido ||
-    noticia.descripcion ||
-    noticia.description ||
-    "Toda la información de Boca Juniors.";
+    return `
 
-  const link =
-    noticia.link ||
-    noticia.url ||
-    "#";
+        <article class="news-card">
 
-  const imagen =
-    noticia.imagen ||
-    noticia.image ||
-    noticia.foto ||
-    "";
-
-  const fecha =
-    noticia.fecha ||
-    noticia.date ||
-    "";
-
-  articulo.innerHTML = `
-    ${
-      imagen
-        ? `
-          <div class="noticia-imagen">
-            <img
-              src="${escaparHTML(imagen)}"
-              alt="${escaparHTML(titulo)}"
-              loading="${indice < 3 ? "eager" : "lazy"}"
-              onerror="this.parentElement.classList.add('sin-imagen')"
+            <div
+                class="news-image"
+                style="
+                background-image:
+                linear-gradient(
+                    0deg,
+                    rgba(0,20,55,.9),
+                    rgba(0,20,55,.1)
+                ),
+                url('${imagen}');
+                "
             >
-          </div>
-        `
-        : ""
-    }
 
-    <div class="noticia-contenido">
+                <span>
+                    ${escaparHTML(
+                        noticia.categoria || "BOCA"
+                    ).toUpperCase()}
+                </span>
 
-      <div class="fuente">
-        ${escaparHTML(fuente)}
-      </div>
-
-      <h3>
-        ${escaparHTML(titulo)}
-      </h3>
-
-      <p>
-        ${escaparHTML(contenido)}
-      </p>
-
-      ${
-        fecha
-          ? `
-            <div class="fecha">
-              ${escaparHTML(fecha)}
             </div>
-          `
-          : ""
-      }
 
-      ${
-        link && link !== "#"
-          ? `
-            <a
-              class="btn"
-              href="${escaparHTML(link)}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LEER NOTICIA
-            </a>
-          `
-          : ""
-      }
+            <div class="news-content">
 
-    </div>
-  `;
+                <span class="category">
+                    ${escaparHTML(
+                        noticia.fuente || "BOCA 24/7"
+                    )}
+                </span>
 
-  return articulo;
+                <h3>
+                    ${escaparHTML(
+                        noticia.titulo
+                    )}
+                </h3>
+
+                <p>
+                    ${escaparHTML(
+                        noticia.contenido ||
+                        "Toda la información de Boca Juniors."
+                    )}
+                </p>
+
+                <span class="news-date">
+                    ${escaparHTML(
+                        noticia.fecha || ""
+                    )}
+                </span>
+
+                ${
+                    noticia.link
+                    ?
+                    `
+                    <a
+                        href="${escaparHTML(noticia.link)}"
+                        target="_blank"
+                        rel="noopener"
+                        class="news-read"
+                    >
+                        LEER MÁS →
+                    </a>
+                    `
+                    :
+                    ""
+                }
+
+            </div>
+
+        </article>
+
+    `;
 }
 
-// ======================================================
-// ESTADO DE NOTICIAS
-// ======================================================
 
-function mostrarEstadoNoticias(contenedor, mensaje) {
-  contenedor.innerHTML = `
-    <article class="card">
-      <div class="fuente">BOCA 24/7</div>
-      <h3>${escaparHTML(mensaje)}</h3>
-      <p>
-        Estamos preparando la información para mostrarla
-        nuevamente.
-      </p>
-    </article>
-  `;
+/* =====================================================
+   MOSTRAR NOTICIAS
+===================================================== */
+
+function mostrarNoticias(lista){
+
+    if(!newsGrid){
+        return;
+    }
+
+    if(!Array.isArray(lista) || lista.length === 0){
+
+        newsGrid.innerHTML = `
+            <article class="news-card">
+                <div class="news-content">
+                    <span class="category">
+                        BOCA 24/7
+                    </span>
+
+                    <h3>
+                        No hay noticias disponibles.
+                    </h3>
+
+                    <p>
+                        Revisá noticias.json.
+                    </p>
+                </div>
+            </article>
+        `;
+
+        return;
+    }
+
+
+    newsGrid.innerHTML =
+        lista
+        .map((noticia,index) =>
+            crearNoticia(noticia,index)
+        )
+        .join("");
+
 }
 
-// ======================================================
-// BUSCADOR
-// ======================================================
 
-function iniciarBuscador() {
-  const buscador =
-    document.getElementById("buscadorNoticias");
+/* =====================================================
+   CARGAR JSON
+===================================================== */
 
-  const contenedor =
-    document.getElementById("listaNoticias") ||
-    document.querySelector(".grid3");
+async function cargarNoticias(){
 
-  if (!buscador || !contenedor) return;
+    if(reloadNews){
 
-  buscador.addEventListener("input", () => {
-    const texto =
-      buscador.value
-        .toLowerCase()
-        .trim();
+        reloadNews.disabled = true;
+        reloadNews.textContent = "CARGANDO...";
+    }
 
-    const noticias =
-      contenedor.querySelectorAll(".noticia-card");
+    try{
 
-    noticias.forEach((noticia) => {
-      const contenido =
-        noticia.textContent.toLowerCase();
+        const respuesta =
+            await fetch(
+                "noticias.json?version=" +
+                Date.now()
+            );
 
-      noticia.style.display =
-        contenido.includes(texto)
-          ? ""
-          : "none";
-    });
-  });
+
+        if(!respuesta.ok){
+            throw new Error(
+                "No se pudo cargar noticias.json"
+            );
+        }
+
+
+        const datos =
+            await respuesta.json();
+
+
+        if(Array.isArray(datos)){
+
+            mostrarNoticias(datos);
+
+            if(datos[0] && tickerText){
+
+                tickerText.textContent =
+                    datos[0].titulo;
+            }
+
+        }else{
+
+            mostrarNoticias(noticiasRespaldo);
+
+        }
+
+    }catch(error){
+
+        console.warn(
+            "Se utilizaron noticias de respaldo:",
+            error
+        );
+
+        mostrarNoticias(noticiasRespaldo);
+
+        if(tickerText){
+
+            tickerText.textContent =
+                noticiasRespaldo[0].titulo;
+
+        }
+
+    }finally{
+
+        if(reloadNews){
+
+            reloadNews.disabled = false;
+            reloadNews.textContent = "ACTUALIZAR";
+
+        }
+
+    }
+
 }
 
-// ======================================================
-// ENCUESTA
-// ======================================================
 
-function iniciarEncuesta() {
-  const opciones =
-    document.querySelectorAll(".opcion");
+/* =====================================================
+   ENCUESTA
+===================================================== */
 
-  const resultado =
-    document.getElementById("resultadoEncuesta");
+function vote(opcion){
 
-  if (!opciones.length || !resultado) return;
+    const resultado =
+        document.getElementById("pollResult");
 
-  opciones.forEach((opcion) => {
-    opcion.addEventListener("click", () => {
+    if(!resultado){
+        return;
+    }
 
-      opciones.forEach((item) => {
-        item.classList.remove("seleccionada");
-      });
+    resultado.innerHTML =
+        `Tu voto: <strong>${escaparHTML(opcion)}</strong>. Gracias por participar.`;
 
-      opcion.classList.add("seleccionada");
-
-      resultado.innerHTML = `
-        Votaste:
-        <strong>${escaparHTML(opcion.textContent.trim())}</strong>
-        · Gracias por participar.
-      `;
-    });
-  });
 }
 
-// ======================================================
-// FECHA ACTUAL
-// ======================================================
 
-function actualizarFecha() {
-  const elemento =
-    document.getElementById("fechaHistoria");
+/* =====================================================
+   BOTÓN ACTUALIZAR
+===================================================== */
 
-  if (!elemento) return;
+if(reloadNews){
 
-  const fecha = new Date();
+    reloadNews.addEventListener(
+        "click",
+        cargarNoticias
+    );
 
-  const meses = [
-    "ENERO",
-    "FEBRERO",
-    "MARZO",
-    "ABRIL",
-    "MAYO",
-    "JUNIO",
-    "JULIO",
-    "AGOSTO",
-    "SEPTIEMBRE",
-    "OCTUBRE",
-    "NOVIEMBRE",
-    "DICIEMBRE"
-  ];
-
-  elemento.textContent =
-    `${fecha.getDate()} DE ${meses[fecha.getMonth()]}`;
 }
 
-// ======================================================
-// BOTÓN VOLVER ARRIBA
-// ======================================================
 
-function iniciarBotonArriba() {
-  const boton =
-    document.getElementById("volverArriba");
+/* =====================================================
+   BOTÓN VER MÁS
+===================================================== */
 
-  if (!boton) return;
+if(loadMore){
 
-  boton.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
+    loadMore.addEventListener(
+        "click",
+        () => {
+
+            cargarNoticias();
+
+            loadMore.textContent =
+                "NOTICIAS ACTUALIZADAS";
+
+            setTimeout(() => {
+
+                loadMore.textContent =
+                    "VER MÁS NOTICIAS";
+
+            },2500);
+
+        }
+    );
+
 }
 
-// ======================================================
-// ESCAPAR HTML
-// ======================================================
 
-function escaparHTML(texto) {
-  return String(texto)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+/* =====================================================
+   FECHA
+===================================================== */
+
+function actualizarFecha(){
+
+    const fecha =
+        new Date();
+
+    const opciones = {
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+    };
+
+    document.title =
+        "BOCA 24/7 | " +
+        fecha.toLocaleDateString(
+            "es-AR",
+            opciones
+        );
+
 }
 
-// ======================================================
-// UTILIDAD GLOBAL
-// ======================================================
 
-window.Boca247 = {
-  recargarNoticias: cargarNoticias
-};
+/* =====================================================
+   ARRANQUE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        cargarNoticias();
+
+        actualizarFecha();
+
+    }
+);
