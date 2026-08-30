@@ -2,802 +2,1225 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="theme-color" content="#00245f">
-<meta name="description" content="BOCA 24/7 - Todo Boca. Todo el día. Noticias, partidos, agenda, mercado, hinchas, historia, videos y streaming.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#001b4d">
+<meta name="description" content="BOCA 24/7 - Noticias, partidos, mercado, historia, videos y toda la pasión Xeneize.">
 <title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+:root{
+  --azul:#001b4d;
+  --azul2:#003b82;
+  --azul3:#005bbb;
+  --amarillo:#f5c400;
+  --amarillo2:#ffd72e;
+  --blanco:#ffffff;
+  --negro:#07111f;
+  --gris:#667085;
+  --gris2:#f2f4f7;
+  --gris3:#d0d5dd;
+  --rojo:#d71920;
+  --verde:#159447;
+  --sombra:0 10px 35px rgba(0,27,77,.13);
+  --radio:18px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#eef2f7;
-color:#101828;
-line-height:1.5
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f6f9;
+  color:#111827;
+  line-height:1.5;
 }
 
-a{text-decoration:none;color:inherit}
-button{font-family:inherit}
-
-:root{
---azul:#00245f;
---azul2:#003b8f;
---azul3:#0756b8;
---amarillo:#f5c400;
---blanco:#fff;
---gris:#667085;
---gris2:#eef2f7;
---rojo:#df1720;
---verde:#159447;
---sombra:0 8px 30px rgba(0,36,95,.12)
+a{
+  color:inherit;
+  text-decoration:none;
 }
+
+button{
+  font-family:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+/* =========================
+   BARRA SUPERIOR
+========================= */
 
 .topbar{
-background:#00152f;
-color:#fff;
-padding:7px 5%;
-display:flex;
-justify-content:space-between;
-font-size:12px
+  background:#000f2d;
+  color:white;
+  min-height:36px;
+  padding:8px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
 }
 
-.topbar strong{color:var(--amarillo)}
+.topbar strong{
+  color:var(--amarillo);
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-background:linear-gradient(135deg,#00183f,#003b91);
-color:#fff;
-border-bottom:5px solid var(--amarillo)
+  background:
+    radial-gradient(circle at 80% 20%,rgba(0,91,187,.55),transparent 35%),
+    linear-gradient(135deg,#00122f,#003c87);
+  color:white;
+  border-bottom:5px solid var(--amarillo);
 }
 
 .header{
-max-width:1280px;
-margin:auto;
-padding:24px 18px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px
+  max-width:1320px;
+  margin:auto;
+  min-height:125px;
+  padding:22px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:14px
+.marca{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 .escudo{
-width:65px;
-height:65px;
-border-radius:50%;
-background:var(--amarillo);
-border:4px solid #fff;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:var(--azul);
-font-size:12px;
-font-weight:1000
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:var(--amarillo);
+  border:4px solid white;
+  color:var(--azul);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:12px;
+  font-weight:1000;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-.logo h1{
-font-size:32px;
-line-height:1
+.marca h1{
+  font-size:38px;
+  line-height:1;
+  letter-spacing:-1px;
 }
 
-.logo p{
-margin-top:5px;
-font-size:13px;
-color:#dce8fa
+.marca p{
+  color:#d9e5f5;
+  margin-top:6px;
+  font-size:13px;
 }
 
-.en-vivo{
-background:var(--rojo);
-padding:10px 15px;
-border-radius:30px;
-font-size:11px;
-font-weight:1000
+.estado{
+  background:var(--rojo);
+  border-radius:40px;
+  padding:11px 16px;
+  font-size:11px;
+  font-weight:1000;
+  box-shadow:0 5px 15px rgba(0,0,0,.18);
 }
+
+/* =========================
+   NAV
+========================= */
 
 nav{
-position:sticky;
-top:0;
-z-index:100;
-background:#00327b;
-box-shadow:0 4px 18px rgba(0,0,0,.22)
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#003477;
+  box-shadow:0 4px 20px rgba(0,0,0,.22);
 }
 
 .nav{
-max-width:1280px;
-margin:auto;
-padding:9px 12px;
-display:flex;
-gap:7px;
-overflow-x:auto
+  max-width:1320px;
+  margin:auto;
+  display:flex;
+  gap:7px;
+  padding:9px 12px;
+  overflow-x:auto;
 }
 
-.nav::-webkit-scrollbar{display:none}
+.nav::-webkit-scrollbar{
+  display:none;
+}
 
 .nav a{
-flex:0 0 auto;
-color:#fff;
-background:rgba(255,255,255,.1);
-border:1px solid rgba(255,255,255,.13);
-padding:10px 14px;
-border-radius:30px;
-font-size:12px;
-font-weight:900
+  flex:0 0 auto;
+  color:white;
+  font-size:11px;
+  font-weight:1000;
+  padding:10px 14px;
+  border-radius:30px;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.12);
+  transition:.2s;
 }
 
 .nav a:hover{
-background:var(--amarillo);
-color:var(--azul)
+  background:var(--amarillo);
+  color:var(--azul);
 }
+
+/* =========================
+   CONTENEDOR
+========================= */
 
 main{
-max-width:1280px;
-margin:auto;
-padding:20px 15px 70px
+  max-width:1320px;
+  margin:auto;
+  padding:20px 15px 70px;
 }
 
+/* =========================
+   TICKER
+========================= */
+
 .ticker{
-background:#fff;
-border:1px solid #e4e7ec;
-border-radius:13px;
-padding:11px 14px;
-display:flex;
-align-items:center;
-gap:10px;
-box-shadow:var(--sombra);
-font-size:13px;
-margin-bottom:20px
+  background:white;
+  border:1px solid #e4e7ec;
+  border-radius:12px;
+  min-height:48px;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:var(--sombra);
+  margin-bottom:20px;
+  font-size:13px;
 }
 
 .ticker b{
-background:var(--rojo);
-color:#fff;
-padding:5px 8px;
-border-radius:5px;
-font-size:10px
+  background:var(--rojo);
+  color:white;
+  padding:5px 9px;
+  border-radius:5px;
+  font-size:10px;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:18px
+/* =========================
+   PORTADA NUEVA
+========================= */
+
+.portada{
+  position:relative;
+  min-height:610px;
+  border-radius:25px;
+  overflow:hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,12,35,.96) 0%,
+      rgba(0,18,48,.72) 40%,
+      rgba(0,18,48,.15) 100%
+    ),
+    url("IMG-20260829-WA0001.jpg") center/cover no-repeat;
+  box-shadow:0 15px 45px rgba(0,20,60,.25);
+  display:flex;
+  align-items:flex-end;
 }
 
-.hero{
-min-height:500px;
-border-radius:24px;
-padding:34px;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-position:relative;
-overflow:hidden;
-color:#fff;
-box-shadow:var(--sombra);
-
-background-image:
-linear-gradient(
-0deg,
-rgba(0,18,48,.96),
-rgba(0,18,48,.12)
-),
-url("IMG-20260829-WA0001.jpg");
-
-background-size:cover;
-background-position:center
+.portada-contenido{
+  width:100%;
+  max-width:900px;
+  padding:45px;
+  color:white;
 }
 
-.etiqueta{
-width:max-content;
-background:var(--amarillo);
-color:var(--azul);
-padding:7px 10px;
-border-radius:6px;
-font-size:11px;
-font-weight:1000;
-margin-bottom:12px
+.portada-tag{
+  display:inline-block;
+  background:var(--amarillo);
+  color:var(--azul);
+  padding:8px 13px;
+  border-radius:5px;
+  font-size:11px;
+  font-weight:1000;
+  margin-bottom:16px;
 }
 
-.hero h2{
-font-size:clamp(34px,5vw,58px);
-line-height:1.02
+.portada h2{
+  font-size:clamp(44px,7vw,82px);
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:18px;
 }
 
-.hero p{
-max-width:750px;
-margin:13px 0;
-color:#e5edf9;
-font-size:16px
+.portada h2 span{
+  color:var(--amarillo);
+}
+
+.portada p{
+  max-width:720px;
+  color:#e7edf7;
+  font-size:17px;
+  margin-bottom:20px;
+}
+
+.portada-botones{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .btn{
-display:inline-block;
-width:max-content;
-margin-top:12px;
-padding:11px 16px;
-border-radius:9px;
-background:var(--azul);
-color:#fff;
-font-size:11px;
-font-weight:1000;
-border:0;
-cursor:pointer
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  padding:12px 18px;
+  border-radius:9px;
+  border:0;
+  background:var(--azul);
+  color:white;
+  font-size:11px;
+  font-weight:1000;
+  cursor:pointer;
+  transition:.2s;
 }
 
-.btn:hover{background:var(--azul3)}
+.btn:hover{
+  transform:translateY(-1px);
+  background:var(--azul3);
+}
 
 .btn-amarillo{
-background:var(--amarillo);
-color:var(--azul)
+  background:var(--amarillo);
+  color:var(--azul);
 }
 
-.btn-rojo{background:var(--rojo)}
-
-.side{
-display:grid;
-gap:14px
+.btn-amarillo:hover{
+  background:var(--amarillo2);
+  color:var(--azul);
 }
 
-.mini{
-background:#fff;
-border-radius:18px;
-padding:21px;
-border-left:5px solid var(--azul3);
-box-shadow:var(--sombra)
+.btn-rojo{
+  background:var(--rojo);
 }
 
-.fuente{
-font-size:11px;
-font-weight:1000;
-text-transform:uppercase;
-color:var(--azul3)
+/* =========================
+   DESTACADOS
+========================= */
+
+.destacados{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:15px;
+  margin-top:18px;
 }
 
-.mini h3{
-color:var(--azul);
-font-size:21px;
-margin:5px 0
+.destacado{
+  min-height:190px;
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--sombra);
+  border-top:5px solid var(--azul3);
 }
 
-.mini p{
-color:var(--gris);
-font-size:13px
+.destacado.principal{
+  background:linear-gradient(135deg,#001b4d,#0756b8);
+  color:white;
+  border-top-color:var(--amarillo);
 }
 
-section{margin-top:42px}
+.destacado .tag{
+  font-size:10px;
+  font-weight:1000;
+  color:var(--azul3);
+}
+
+.destacado.principal .tag{
+  color:var(--amarillo);
+}
+
+.destacado h3{
+  margin:7px 0;
+  color:var(--azul);
+  font-size:22px;
+}
+
+.destacado.principal h3{
+  color:white;
+}
+
+.destacado p{
+  color:var(--gris);
+  font-size:13px;
+}
+
+.destacado.principal p{
+  color:#dce7f5;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+  margin-top:45px;
+}
 
 .titulo{
-color:var(--azul);
-font-size:27px;
-font-weight:1000;
-border-left:7px solid var(--amarillo);
-padding-left:13px;
-margin-bottom:8px
+  display:flex;
+  align-items:center;
+  gap:11px;
+  color:var(--azul);
+  font-size:28px;
+  font-weight:1000;
+  margin-bottom:5px;
+}
+
+.titulo:before{
+  content:"";
+  width:7px;
+  height:31px;
+  background:var(--amarillo);
+  border-radius:3px;
 }
 
 .subtitulo{
-color:var(--gris);
-font-size:13px;
-margin:0 0 17px 20px
+  color:var(--gris);
+  font-size:13px;
+  margin:0 0 18px 19px;
 }
 
-.grid3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
+/* =========================
+   NOTICIAS
+========================= */
+
+.noticias-grid{
+  display:grid;
+  grid-template-columns:1.7fr 1fr 1fr;
+  gap:17px;
 }
 
-.grid2{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px
+.noticia{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--sombra);
 }
 
-.card{
-background:#fff;
-border-radius:18px;
-padding:22px;
-box-shadow:var(--sombra);
-border-top:5px solid var(--azul3)
+.noticia-imagen{
+  height:210px;
+  background:
+    linear-gradient(135deg,#005bbb,#001b4d);
+  display:flex;
+  align-items:flex-end;
+  padding:17px;
+  color:white;
+  font-weight:1000;
+  font-size:13px;
 }
 
-.card h3{
-color:var(--azul);
-font-size:20px;
-margin:7px 0
+.noticia.grande .noticia-imagen{
+  height:300px;
+  font-size:21px;
 }
 
-.card p{
-color:#475467;
-font-size:14px
+.noticia-contenido{
+  padding:19px;
+}
+
+.categoria{
+  color:var(--azul3);
+  font-size:10px;
+  font-weight:1000;
+  text-transform:uppercase;
+}
+
+.noticia h3{
+  color:var(--azul);
+  font-size:20px;
+  line-height:1.2;
+  margin:7px 0;
+}
+
+.noticia.grande h3{
+  font-size:28px;
+}
+
+.noticia p{
+  color:var(--gris);
+  font-size:13px;
 }
 
 .fecha{
-font-size:11px;
-color:#98a2b3;
-margin-top:11px
+  color:#98a2b3;
+  font-size:10px;
+  margin-top:12px;
 }
+
+/* =========================
+   NOTICIAS LISTA
+========================= */
+
+.lista-noticias{
+  margin-top:18px;
+  display:grid;
+  gap:10px;
+}
+
+.noticia-linea{
+  background:white;
+  border-left:5px solid var(--azul3);
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.noticia-linea strong{
+  color:var(--azul);
+}
+
+.noticia-linea small{
+  color:var(--gris);
+}
+
+/* =========================
+   PARTIDO
+========================= */
 
 .partido{
-background:linear-gradient(135deg,#001a49,#0756b8);
-color:#fff;
-border-radius:23px;
-padding:28px;
-border-bottom:7px solid var(--amarillo);
-box-shadow:var(--sombra)
+  background:
+    radial-gradient(circle at 50% 20%,rgba(0,91,187,.5),transparent 40%),
+    linear-gradient(135deg,#001333,#003f91);
+  color:white;
+  border-radius:24px;
+  padding:30px;
+  border-bottom:7px solid var(--amarillo);
+  box-shadow:var(--sombra);
 }
 
-.partido-top{
-display:flex;
-justify-content:space-between;
-gap:10px
+.partido-cabecera{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
 }
 
 .pill{
-background:rgba(255,255,255,.12);
-border:1px solid rgba(255,255,255,.18);
-padding:6px 10px;
-border-radius:8px;
-font-size:10px;
-font-weight:900
+  padding:7px 11px;
+  border-radius:7px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.15);
+  font-size:10px;
+  font-weight:1000;
 }
 
-.resultado{
-text-align:center;
-padding:24px 0
+.pill.amarillo{
+  background:var(--amarillo);
+  color:var(--azul);
 }
 
-.resultado small{
-font-size:12px;
-color:#dce8fa
+.partido-centro{
+  text-align:center;
+  padding:30px 0;
 }
 
-.resultado h3{
-font-size:22px;
-margin-top:5px
+.partido-centro small{
+  color:#dbe7f7;
+  font-size:12px;
 }
 
-.resultado strong{
-display:block;
-font-size:52px;
-line-height:1.1;
-color:var(--amarillo)
+.equipos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  margin:15px 0;
 }
 
-.datos-partido{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:10px
+.equipo{
+  font-size:29px;
+  font-weight:1000;
 }
 
-.dato{
-background:rgba(255,255,255,.1);
-border-radius:12px;
-padding:12px;
-text-align:center;
-font-size:11px
+.vs{
+  color:var(--amarillo);
+  font-size:17px;
+  font-weight:1000;
 }
 
-.dato strong{
-display:block;
-font-size:19px;
-color:var(--amarillo)
+.contadores{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
 }
 
-.lista{
-display:grid;
-gap:12px
+.contador{
+  background:rgba(255,255,255,.09);
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  font-size:11px;
 }
 
-.linea{
-background:#fff;
-border-left:6px solid var(--azul3);
-border-radius:14px;
-padding:17px;
-box-shadow:0 4px 15px rgba(0,0,0,.06)
+.contador strong{
+  display:block;
+  color:var(--amarillo);
+  font-size:22px;
 }
 
-.linea strong{color:var(--azul)}
-.linea small{color:var(--gris)}
+/* =========================
+   AGENDA
+========================= */
+
+.agenda{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.agenda-card{
+  background:white;
+  border-radius:17px;
+  padding:22px;
+  box-shadow:var(--sombra);
+  border-top:5px solid var(--azul3);
+}
+
+.agenda-fecha{
+  color:var(--azul3);
+  font-size:11px;
+  font-weight:1000;
+}
+
+.agenda-card h3{
+  color:var(--azul);
+  font-size:20px;
+  margin:6px 0;
+}
+
+.agenda-card p{
+  color:var(--gris);
+  font-size:13px;
+}
+
+/* =========================
+   MERCADO
+========================= */
 
 .mercado{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
 
-.mercado-box{
-background:#fff;
-padding:22px;
-border-radius:18px;
-box-shadow:var(--sombra)
+.mercado-card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:var(--sombra);
 }
 
-.mercado-box h3{
-color:var(--azul);
-margin-bottom:12px
+.mercado-card h3{
+  color:var(--azul);
+  margin-bottom:12px;
 }
 
-.llegadas{border-top:6px solid var(--verde)}
-.negociacion{border-top:6px solid #d6a900}
-.salidas{border-top:6px solid var(--rojo)}
+.mercado-card.llegadas{
+  border-top:6px solid var(--verde);
+}
+
+.mercado-card.negociacion{
+  border-top:6px solid #d4a900;
+}
+
+.mercado-card.salidas{
+  border-top:6px solid var(--rojo);
+}
 
 .movimiento{
-padding:12px 0;
-border-bottom:1px solid #e4e7ec;
-font-size:13px
+  padding:12px 0;
+  border-bottom:1px solid #e4e7ec;
+  font-size:13px;
 }
 
-.encuesta-grid{
-display:grid;
-grid-template-columns:2fr 1fr;
-gap:18px
+.movimiento:last-child{
+  border-bottom:0;
+}
+
+.movimiento strong{
+  color:var(--azul);
+}
+
+/* =========================
+   HINCHAS
+========================= */
+
+.hinchas{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:17px;
 }
 
 .encuesta{
-background:#fff;
-padding:24px;
-border-radius:18px;
-box-shadow:var(--sombra)
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:var(--sombra);
 }
 
 .encuesta h3{
-color:var(--azul);
-margin-bottom:12px
+  color:var(--azul);
+  font-size:21px;
+  margin:6px 0 15px;
 }
 
 .opciones{
-display:flex;
-flex-wrap:wrap;
-gap:9px
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
 }
 
 .opcion{
-border:1px solid #dfe4ea;
-background:#f8fafc;
-padding:11px 15px;
-border-radius:9px;
-cursor:pointer;
-font-weight:900;
-color:var(--azul)
+  border:1px solid var(--gris3);
+  background:#f8fafc;
+  color:var(--azul);
+  padding:11px 15px;
+  border-radius:9px;
+  font-weight:1000;
+  cursor:pointer;
 }
 
-.opcion:hover{background:var(--amarillo)}
+.opcion:hover{
+  background:var(--amarillo);
+}
 
 .resultado-encuesta{
-margin-top:15px;
-font-size:13px;
-color:var(--gris)
+  margin-top:16px;
+  color:var(--gris);
+  font-size:13px;
 }
 
-.barra{
-height:9px;
-background:#e7ebf1;
-border-radius:99px;
-overflow:hidden;
-margin:8px 0 14px
+.termometro{
+  margin-top:18px;
+  height:11px;
+  border-radius:20px;
+  background:#e7ebf1;
+  overflow:hidden;
 }
 
-.barra span{
-display:block;
-height:100%;
-width:72%;
-background:var(--azul3)
+.termometro span{
+  display:block;
+  width:72%;
+  height:100%;
+  background:var(--azul3);
 }
+
+/* =========================
+   VIDEOS
+========================= */
 
 .videos{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:18px
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
 
 .video{
-background:#111;
-border-radius:18px;
-overflow:hidden;
-color:#fff;
-box-shadow:var(--sombra)
+  background:#07111f;
+  color:white;
+  border-radius:19px;
+  overflow:hidden;
+  box-shadow:var(--sombra);
 }
 
 .video-thumb{
-aspect-ratio:16/9;
-background:linear-gradient(135deg,#0756b8,#00132f);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:55px
+  min-height:240px;
+  background:
+    linear-gradient(135deg,#0756b8,#00122e);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:65px;
 }
 
-.video-body{padding:18px}
+.video-body{
+  padding:20px;
+}
 
-.video-body h3{font-size:19px}
+.video-body h3{
+  font-size:21px;
+}
 
 .video-body p{
-font-size:13px;
-color:#bbb;
-margin-top:6px
+  color:#b8c1cf;
+  font-size:13px;
+  margin:5px 0;
 }
 
+/* =========================
+   FOTOS
+========================= */
+
 .fotos{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
 }
 
 .foto{
-aspect-ratio:1.45;
-border-radius:16px;
-padding:17px;
-display:flex;
-align-items:flex-end;
-position:relative;
-overflow:hidden;
-color:#fff;
-font-weight:1000;
-font-size:17px;
-box-shadow:var(--sombra);
-background-size:cover;
-background-position:center
+  min-height:250px;
+  border-radius:18px;
+  overflow:hidden;
+  position:relative;
+  padding:20px;
+  display:flex;
+  align-items:flex-end;
+  color:white;
+  font-weight:1000;
+  box-shadow:var(--sombra);
+  background-size:cover;
+  background-position:center;
 }
 
-.foto-1{
-background-image:
-linear-gradient(
-0deg,
-rgba(0,18,48,.9),
-rgba(0,18,48,.08)
-),
-url("IMG-20260830-WA0003.jpg")
+.foto1{
+  background-image:
+    linear-gradient(0deg,rgba(0,15,40,.9),rgba(0,15,40,.1)),
+    url("IMG-20260830-WA0003.jpg");
 }
 
-.foto-2{
-background-image:
-linear-gradient(
-0deg,
-rgba(0,18,48,.9),
-rgba(0,18,48,.08)
-),
-url("IMG-20260830-WA0004.jpg")
+.foto2{
+  background-image:
+    linear-gradient(0deg,rgba(0,15,40,.9),rgba(0,15,40,.1)),
+    url("IMG-20260830-WA0004.jpg");
 }
 
-.foto-3{
-background-image:
-linear-gradient(
-0deg,
-rgba(0,18,48,.9),
-rgba(0,18,48,.08)
-),
-url("IMG-20260830-WA0006.jpg")
+.foto3{
+  background-image:
+    linear-gradient(0deg,rgba(0,15,40,.9),rgba(0,15,40,.1)),
+    url("IMG-20260830-WA0006.jpg");
 }
 
 .foto span{
-position:absolute;
-top:12px;
-right:12px;
-font-size:24px
+  position:absolute;
+  top:14px;
+  right:15px;
+  font-size:24px;
 }
+
+/* =========================
+   PROTAGONISTAS
+========================= */
 
 .protagonistas{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
+
+.protagonista{
+  background:white;
+  border-radius:18px;
+  padding:23px;
+  box-shadow:var(--sombra);
+  border-top:5px solid var(--azul3);
+}
+
+.protagonista .categoria{
+  margin-bottom:5px;
+}
+
+.protagonista h3{
+  color:var(--azul);
+  font-size:20px;
+}
+
+.protagonista p{
+  color:var(--gris);
+  font-size:13px;
+  margin-top:6px;
+}
+
+/* =========================
+   HISTORIA
+========================= */
 
 .historia{
-background:linear-gradient(135deg,#001b47,#003b91);
-color:#fff;
-padding:30px;
-border-radius:23px;
-box-shadow:var(--sombra)
+  background:
+    radial-gradient(circle at 90% 20%,rgba(0,91,187,.55),transparent 35%),
+    linear-gradient(135deg,#001331,#003b82);
+  color:white;
+  border-radius:24px;
+  padding:32px;
+  box-shadow:var(--sombra);
 }
 
-.historia h2{color:var(--amarillo)}
+.historia h2{
+  color:var(--amarillo);
+  font-size:34px;
+}
+
+.historia-intro{
+  color:#dbe6f5;
+  margin-top:5px;
+}
 
 .timeline{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin-top:20px
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:23px;
 }
 
 .ano{
-background:rgba(255,255,255,.09);
-border:1px solid rgba(255,255,255,.13);
-border-radius:14px;
-padding:17px
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:14px;
+  padding:18px;
 }
 
 .ano strong{
-display:block;
-font-size:25px;
-color:var(--amarillo)
+  color:var(--amarillo);
+  font-size:26px;
 }
 
 .ano p{
-font-size:12px;
-color:#e1eaf7;
-margin-top:5px
+  color:#dbe6f5;
+  font-size:12px;
+  margin-top:4px;
 }
 
-.fuentes{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:13px
+/* =========================
+   EFEMERIDES
+========================= */
+
+.efemeride{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:var(--sombra);
+  border-left:6px solid var(--amarillo);
 }
 
-.fuente-box{
-background:#fff;
-padding:19px;
-border-radius:16px;
-box-shadow:var(--sombra);
-border-top:5px solid var(--amarillo)
+.efemeride h3{
+  color:var(--azul);
+  font-size:25px;
 }
 
-.fuente-box h3{
-color:var(--azul);
-font-size:17px
+.efemeride p{
+  color:var(--gris);
+  font-size:14px;
+  margin-top:6px;
 }
 
-.fuente-box p{
-font-size:12px;
-color:var(--gris);
-margin-top:4px
-}
+/* =========================
+   STREAMING
+========================= */
 
 .streaming{
-background-image:
-linear-gradient(
-0deg,
-rgba(0,0,0,.85),
-rgba(0,0,0,.28)
-),
-url("IMG-20260829-WA0003.jpg");
-
-background-size:cover;
-background-position:center;
-color:#fff;
-border-radius:23px;
-padding:40px 30px;
-min-height:300px;
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-border-bottom:7px solid var(--amarillo)
+  min-height:360px;
+  border-radius:24px;
+  overflow:hidden;
+  padding:35px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  color:white;
+  background:
+    linear-gradient(0deg,rgba(0,10,30,.94),rgba(0,10,30,.18)),
+    url("IMG-20260829-WA0003.jpg") center/cover no-repeat;
+  box-shadow:var(--sombra);
+  border-bottom:7px solid var(--amarillo);
 }
 
-.streaming h2{font-size:30px}
+.streaming h2{
+  font-size:35px;
+}
 
 .streaming p{
-color:#eee;
-margin-top:7px;
-font-size:15px
+  color:#e0e8f3;
+  margin:6px 0 15px;
 }
+
+/* =========================
+   FUENTES
+========================= */
+
+.fuentes{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.fuente-card{
+  background:white;
+  border-radius:17px;
+  padding:20px;
+  box-shadow:var(--sombra);
+  border-top:5px solid var(--amarillo);
+}
+
+.fuente-card h3{
+  color:var(--azul);
+  font-size:18px;
+}
+
+.fuente-card p{
+  color:var(--gris);
+  font-size:12px;
+  margin-top:4px;
+}
+
+/* =========================
+   NOTIFICACIONES
+========================= */
 
 .notificaciones{
-background:var(--azul);
-color:#fff;
-padding:28px;
-border-radius:22px;
-text-align:center;
-box-shadow:var(--sombra)
+  background:var(--azul);
+  color:white;
+  text-align:center;
+  padding:30px;
+  border-radius:22px;
+  box-shadow:var(--sombra);
 }
 
-.notificaciones h2{color:var(--amarillo)}
+.notificaciones h2{
+  color:var(--amarillo);
+  font-size:28px;
+}
 
 .notificaciones p{
-color:#d8e3f3;
-margin-top:6px
+  color:#dce6f4;
+  margin:5px 0 15px;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer{
-background:#00132f;
-color:#fff;
-text-align:center;
-padding:40px 15px;
-border-top:6px solid var(--amarillo)
+  background:#000d25;
+  color:white;
+  text-align:center;
+  padding:42px 15px;
+  border-top:6px solid var(--amarillo);
 }
 
 footer strong{
-font-size:28px;
-color:var(--amarillo)
+  color:var(--amarillo);
+  font-size:30px;
 }
 
 footer p{
-color:#98a2b3;
-font-size:12px;
-margin-top:7px
+  color:#98a2b3;
+  font-size:12px;
+  margin-top:5px;
 }
 
-@media(max-width:950px){
+/* =========================
+   RESPONSIVE
+========================= */
 
-.hero-grid,
-.encuesta-grid{
-grid-template-columns:1fr
+@media(max-width:1050px){
+
+.destacados{
+  grid-template-columns:1fr 1fr;
 }
 
-.grid3,
+.destacado.principal{
+  grid-column:1/-1;
+}
+
+.noticias-grid{
+  grid-template-columns:1fr 1fr;
+}
+
+.noticia.grande{
+  grid-column:1/-1;
+}
+
+.fuentes{
+  grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:800px){
+
+.header{
+  min-height:105px;
+}
+
+.marca h1{
+  font-size:29px;
+}
+
+.escudo{
+  width:60px;
+  height:60px;
+}
+
+.portada{
+  min-height:530px;
+}
+
+.portada-contenido{
+  padding:30px;
+}
+
+.portada h2{
+  font-size:52px;
+}
+
+.agenda,
 .mercado,
-.fuentes,
-.protagonistas{
-grid-template-columns:1fr 1fr
+.protagonistas,
+.fotos{
+  grid-template-columns:1fr 1fr;
+}
+
+.hinchas{
+  grid-template-columns:1fr;
 }
 
 .timeline{
-grid-template-columns:1fr 1fr
-}
-
-.fotos{
-grid-template-columns:1fr 1fr
+  grid-template-columns:1fr 1fr;
 }
 
 }
 
-@media(max-width:650px){
+@media(max-width:600px){
 
-.topbar{display:none}
+.topbar{
+  display:none;
+}
 
 .header{
-padding:17px 11px
+  padding:16px 11px;
 }
 
-.logo h1{font-size:24px}
-.logo p{font-size:11px}
+.marca{
+  gap:9px;
+}
+
+.marca h1{
+  font-size:23px;
+}
+
+.marca p{
+  font-size:10px;
+}
 
 .escudo{
-width:50px;
-height:50px;
-font-size:9px
+  width:50px;
+  height:50px;
+  font-size:9px;
 }
 
-.en-vivo{
-font-size:9px;
-padding:8px 10px
+.estado{
+  font-size:8px;
+  padding:8px 9px;
 }
 
 main{
-padding:14px 10px 50px
+  padding:12px 9px 50px;
 }
 
-.hero{
-min-height:420px;
-padding:23px;
-border-radius:19px
+.ticker{
+  font-size:11px;
 }
 
-.hero h2{font-size:37px}
+.portada{
+  min-height:480px;
+  border-radius:19px;
+  background:
+    linear-gradient(0deg,rgba(0,12,35,.96),rgba(0,18,48,.12)),
+    url("IMG-20260829-WA0001.jpg") center/cover no-repeat;
+}
 
-.titulo{font-size:22px}
+.portada-contenido{
+  padding:24px 21px;
+}
 
-.grid3,
-.grid2,
+.portada h2{
+  font-size:43px;
+  letter-spacing:-2px;
+}
+
+.portada p{
+  font-size:14px;
+}
+
+.destacados,
+.noticias-grid,
+.agenda,
 .mercado,
 .videos,
-.fuentes,
+.fotos,
 .protagonistas,
-.timeline,
-.fotos{
-grid-template-columns:1fr
+.fuentes{
+  grid-template-columns:1fr;
 }
 
-.datos-partido{
-grid-template-columns:repeat(2,1fr)
+.destacado.principal,
+.noticia.grande{
+  grid-column:auto;
 }
 
-.partido{padding:21px}
+.titulo{
+  font-size:22px;
+}
+
+.titulo:before{
+  height:25px;
+}
+
+.equipos{
+  gap:12px;
+}
+
+.equipo{
+  font-size:22px;
+}
+
+.contadores{
+  grid-template-columns:1fr 1fr;
+}
+
+.partido{
+  padding:22px 16px;
+}
+
+.timeline{
+  grid-template-columns:1fr;
+}
+
+.historia{
+  padding:24px 18px;
+}
 
 .streaming{
-min-height:260px;
-padding:25px 20px
+  min-height:300px;
+  padding:24px 19px;
 }
 
-.streaming h2{font-size:25px}
+.streaming h2{
+  font-size:27px;
+}
 
 }
 
@@ -806,841 +1229,128 @@ padding:25px 20px
 
 <body>
 
+<!-- =========================
+     BARRA SUPERIOR
+========================= -->
+
 <div class="topbar">
-<span>BOCA 24/7 · Todo Boca. Todo el día.</span>
-<strong>PORTAL XENEIZE</strong>
+  <span>BOCA 24/7 · Todo Boca. Todo el día.</span>
+  <strong>PORTAL XENEIZE</strong>
 </div>
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-<div class="header">
+  <div class="header">
 
-<div class="logo">
+    <div class="marca">
 
-<div class="escudo">
-CABJ<br>24/7
-</div>
+      <div class="escudo">
+        CABJ<br>24/7
+      </div>
 
-<div>
+      <div>
+        <h1>BOCA 24/7</h1>
+        <p>Noticias · Pasión · Comunidad Xeneize</p>
+      </div>
 
-<h1>BOCA 24/7</h1>
+    </div>
 
-<p>
-Noticias · Pasión · Comunidad Xeneize
-</p>
+    <div class="estado">
+      ● INFORMACIÓN XENEIZE
+    </div>
 
-</div>
-
-</div>
-
-<div class="en-vivo">
-● INFORMACIÓN XENEIZE
-</div>
-
-</div>
+  </div>
 
 </header>
 
+<!-- =========================
+     NAVEGACIÓN
+========================= -->
+
 <nav>
 
-<div class="nav">
+  <div class="nav">
 
-<a href="#inicio">INICIO</a>
-<a href="#noticias">NOTICIAS</a>
-<a href="#partidos">PARTIDOS</a>
-<a href="#agenda">AGENDA</a>
-<a href="#mercado">MERCADO</a>
-<a href="#hinchas">HINCHAS</a>
-<a href="#videos">VIDEOS</a>
-<a href="#fotos">FOTOS</a>
-<a href="#historia">HISTORIA</a>
-<a href="#streaming">STREAMING</a>
+    <a href="#inicio">INICIO</a>
+    <a href="#noticias">NOTICIAS</a>
+    <a href="#partidos">PARTIDOS</a>
+    <a href="#agenda">AGENDA</a>
+    <a href="#mercado">MERCADO</a>
+    <a href="#hinchas">HINCHAS</a>
+    <a href="#videos">VIDEOS</a>
+    <a href="#fotos">FOTOS</a>
+    <a href="#entrevistas">ENTREVISTAS</a>
+    <a href="#historia">HISTORIA</a>
+    <a href="#streaming">STREAMING</a>
 
-</div>
+  </div>
 
 </nav>
 
 <main id="inicio">
 
+<!-- =========================
+     TICKER
+========================= -->
+
 <div class="ticker">
 
-<b>BOCA 24/7</b>
+  <b>BOCA 24/7</b>
 
-<span>
-Todo Boca. Todo el día. Noticias, partidos, opinión,
-historia, videos y pasión xeneize.
-</span>
-
-</div>
-
-<div class="hero-grid">
-
-<article class="hero">
-
-<div class="etiqueta">
-BIENVENIDOS
-</div>
-
-<h2>
-Todo Boca.<br>
-Todo el día.
-</h2>
-
-<p>
-El portal xeneize para seguir las noticias, partidos,
-mercado, opinión de los hinchas, historia,
-videos y nuestro streaming.
-</p>
-
-<a class="btn btn-amarillo" href="#noticias">
-VER LAS NOTICIAS
-</a>
-
-</article>
-
-<div class="side">
-
-<div class="mini">
-
-<div class="fuente">
-PRÓXIMO PARTIDO
-</div>
-
-<h3>
-Vélez vs. Boca
-</h3>
-
-<p>
-02/09 · Copa Argentina · 21:15
-</p>
-
-<a class="btn" href="#partidos">
-VER PARTIDO
-</a>
+  <span>
+    Todo Boca. Todo el día. Noticias, partidos, mercado,
+    opinión, historia, videos y pasión Xeneize.
+  </span>
 
 </div>
 
-<div class="mini">
+<!-- =========================
+     PORTADA
+========================= -->
 
-<div class="fuente">
-UN DÍA COMO HOY
-</div>
+<section style="margin-top:0">
 
-<h3>
-Historia Xeneize
-</h3>
+  <div class="portada">
 
-<p>
-Efemérides, ídolos y grandes momentos de Boca.
-</p>
+    <div class="portada-contenido">
 
-<a class="btn" href="#historia">
-VER HISTORIA
-</a>
+      <div class="portada-tag">
+        PORTAL XENEIZE
+      </div>
 
-</div>
+      <h2>
+        TODO BOCA.<br>
+        TODO EL <span>DÍA.</span>
+      </h2>
 
-</div>
+      <p>
+        Noticias, partidos, mercado de pases, información,
+        historia, videos, entrevistas y toda la pasión
+        de Boca Juniors en un solo lugar.
+      </p>
 
-</div>
+      <div class="portada-botones">
 
-<section id="noticias">
+        <a class="btn btn-amarillo" href="#noticias">
+          VER ÚLTIMAS NOTICIAS
+        </a>
 
-<h2 class="titulo">
-ÚLTIMAS NOTICIAS
-</h2>
+        <a class="btn" href="#partidos">
+          PRÓXIMO PARTIDO
+        </a>
 
-<p class="subtitulo">
-Información xeneize y fuentes periodísticas.
-</p>
+      </div>
 
-<div class="grid3">
+    </div>
 
-<article class="card">
-
-<div class="fuente">
-ACTUALIDAD
-</div>
-
-<h3>
-La actualidad de Boca
-</h3>
-
-<p>
-Seguimiento del plantel, entrenamientos,
-cuerpo técnico, jugadores y todas las novedades
-del Xeneize.
-</p>
-
-<div class="fecha">
-BOCA 24/7
-</div>
-
-</article>
-
-<article class="card">
-
-<div class="fuente">
-TATO AGUILERA
-</div>
-
-<h3>
-Información del día a día
-</h3>
-
-<p>
-Seguimiento periodístico del mercado,
-plantel y actualidad de Boca Juniors.
-</p>
-
-<a
-class="btn"
-href="https://www.tycsports.com/autor/leandro-aguilera.html"
-target="_blank">
-VER INFORMACIÓN
-</a>
-
-</article>
-
-<article class="card">
-
-<div class="fuente">
-BOCA JUNIORS
-</div>
-
-<h3>
-Información oficial
-</h3>
-
-<p>
-Noticias, comunicados, actividades
-y publicaciones oficiales del club.
-</p>
-
-<a
-class="btn"
-href="https://www.bocajuniors.com.ar/noticias"
-target="_blank">
-BOCA OFICIAL
-</a>
-
-</article>
-
-</div>
+  </div>
 
 </section>
 
-<section id="partidos">
-
-<h2 class="titulo">
-PARTIDO CENTER
-</h2>
-
-<p class="subtitulo">
-Próximo partido y espacio preparado para información en vivo.
-</p>
-
-<div class="partido">
-
-<div class="partido-top">
-
-<span class="pill">
-PRÓXIMO PARTIDO
-</span>
-
-<span class="pill">
-COPA ARGENTINA
-</span>
-
-</div>
-
-<div class="resultado">
-
-<small>
-02 DE SEPTIEMBRE · 21:15
-</small>
-
-<h3>
-VÉLEZ &nbsp; VS &nbsp; BOCA
-</h3>
-
-<strong>
-—
-</strong>
-
-<small>
-Resultado pendiente
-</small>
-
-</div>
-
-<div class="datos-partido">
-
-<div class="dato">
-<strong>—</strong>
-Minuto
-</div>
-
-<div class="dato">
-<strong>—</strong>
-Goles
-</div>
-
-<div class="dato">
-<strong>—</strong>
-Tarjetas
-</div>
-
-<div class="dato">
-<strong>—</strong>
-Estadísticas
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="agenda">
-
-<h2 class="titulo">
-AGENDA XENEIZE
-</h2>
-
-<div class="lista">
-
-<div class="linea">
-
-<strong>
-02 SEP · VÉLEZ — BOCA
-</strong>
-
-<br>
-
-<small>
-Copa Argentina · 21:15
-</small>
-
-</div>
-
-<div class="linea">
-
-<strong>
-MINUTO A MINUTO
-</strong>
-
-<br>
-
-<small>
-Durante los partidos esta sección queda preparada
-para goles, cambios, tarjetas y acontecimientos.
-</small>
-
-</div>
-
-<div class="linea">
-
-<strong>
-ESTADÍSTICAS EN VIVO
-</strong>
-
-<br>
-
-<small>
-Posesión, remates, tiros al arco, córners y tarjetas.
-</small>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="mercado">
-
-<h2 class="titulo">
-MERCADO DE PASES
-</h2>
-
-<div class="mercado">
-
-<div class="mercado-box llegadas">
-
-<h3>
-🟢 LLEGADAS
-</h3>
-
-<div class="movimiento">
-
-<strong>
-Refuerzos confirmados
-</strong>
-
-<br>
-
-Incorporaciones confirmadas oficialmente.
-
-</div>
-
-<div class="movimiento">
-
-<strong>
-Altas
-</strong>
-
-<br>
-
-Información del mercado xeneize.
-
-</div>
-
-</div>
-
-<div class="mercado-box negociacion">
-
-<h3>
-🟡 EN NEGOCIACIÓN
-</h3>
-
-<div class="movimiento">
-
-<strong>
-Operaciones
-</strong>
-
-<br>
-
-Negociaciones informadas por fuentes periodísticas.
-
-</div>
-
-<div class="movimiento">
-
-<strong>
-Tato Aguilera
-</strong>
-
-<br>
-
-Seguimiento de las operaciones.
-
-</div>
-
-</div>
-
-<div class="mercado-box salidas">
-
-<h3>
-🔴 SALIDAS
-</h3>
-
-<div class="movimiento">
-
-<strong>
-Transferencias
-</strong>
-
-<br>
-
-Ventas, préstamos y salidas.
-
-</div>
-
-<div class="movimiento">
-
-<strong>
-Seguimiento
-</strong>
-
-<br>
-
-Información oficial y periodística.
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="hinchas">
-
-<h2 class="titulo">
-OPINIÓN DE LOS HINCHAS
-</h2>
-
-<p class="subtitulo">
-La voz de la comunidad xeneize.
-</p>
-
-<div class="encuesta-grid">
-
-<div class="encuesta">
-
-<div class="fuente">
-ENCUESTA DEL MOMENTO
-</div>
-
-<h3>
-¿Cómo llega Boca al próximo partido?
-</h3>
-
-<div class="opciones">
-
-<button
-class="opcion"
-onclick="votar('Gana Boca')">
-Gana Boca
-</button>
-
-<button
-class="opcion"
-onclick="votar('Empata')">
-Empata
-</button>
-
-<button
-class="opcion"
-onclick="votar('Pierde')">
-Pierde
-</button>
-
-</div>
-
-<div
-id="resultadoEncuesta"
-class="resultado-encuesta">
-
-Elegí una opción para votar.
-
-</div>
-
-</div>
-
-<div class="encuesta">
-
-<div class="fuente">
-TERMÓMETRO XENEIZE
-</div>
-
-<h3>
-¿Cómo está la hinchada?
-</h3>
-
-<p>
-Optimismo
-<strong style="float:right">
-72%
-</strong>
-</p>
-
-<div class="barra">
-<span></span>
-</div>
-
-<p style="color:#667085;font-size:13px">
-
-El termómetro queda preparado para conectarse
-con resultados reales de la comunidad.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="videos">
-
-<h2 class="titulo">
-VIDEOS DEL MOMENTO
-</h2>
-
-<p class="subtitulo">
-Contenido del mundo Boca.
-</p>
-
-<div class="videos">
-
-<div class="video">
-
-<div class="video-thumb">
-▶
-</div>
-
-<div class="video-body">
-
-<h3>
-El Canal de Boca
-</h3>
-
-<p>
-Entrevistas, jugadores, conferencias
-y contenido oficial.
-</p>
-
-<a
-class="btn btn-rojo"
-href="https://www.youtube.com/@ElCanaldeBoca"
-target="_blank">
-VER CANAL
-</a>
-
-</div>
-
-</div>
-
-<div class="video">
-
-<div class="video-thumb">
-▶
-</div>
-
-<div class="video-body">
-
-<h3>
-Los Bosteros de Tucumán
-</h3>
-
-<p>
-Streaming, opinión y pasión xeneize desde Tucumán.
-</p>
-
-<a
-class="btn btn-amarillo"
-href="https://youtube.com/@movlosbosterosdetucuman"
-target="_blank">
-VER STREAMING
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="fotos">
-
-<h2 class="titulo">
-FOTOS DEL MOMENTO
-</h2>
-
-<p class="subtitulo">
-Partidos · entrenamientos · Bombonera.
-</p>
-
-<div class="fotos">
-
-<div class="foto foto-1">
-
-<span>📸</span>
-
-ÚLTIMO PARTIDO
-
-</div>
-
-<div class="foto foto-2">
-
-<span>📸</span>
-
-ENTRENAMIENTO
-
-</div>
-
-<div class="foto foto-3">
-
-<span>📸</span>
-
-LA BOMBONERA
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="titulo">
-ENTREVISTAS Y PROTAGONISTAS
-</h2>
-
-<div class="protagonistas">
-
-<div class="card">
-
-<div class="fuente">
-JUGADORES
-</div>
-
-<h3>
-Entrevistas post partido
-</h3>
-
-<p>
-Espacio para entrevistas a los jugadores
-después de cada encuentro.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="fuente">
-CUERPO TÉCNICO
-</div>
-
-<h3>
-Conferencias
-</h3>
-
-<p>
-Conferencias de prensa y declaraciones
-del cuerpo técnico.
-</p>
-
-</div>
-
-<div class="card">
-
-<div class="fuente">
-ÍDOLOS
-</div>
-
-<h3>
-Voces históricas
-</h3>
-
-<p>
-Entrevistas y recuerdos de grandes
-protagonistas de Boca.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="historia">
-
-<h2 class="titulo">
-HISTORIA XENEIZE
-</h2>
-
-<div class="historia">
-
-<h2>
-1905 → HOY
-</h2>
-
-<p style="color:#dce7f7;margin-top:5px">
-
-Más de un siglo de historia, identidad,
-títulos, ídolos y momentos inolvidables.
-
-</p>
-
-<div class="timeline">
-
-<div class="ano">
-
-<strong>
-1905
-</strong>
-
-<p>
-3 de abril. Fundación de Boca Juniors.
-</p>
-
-</div>
-
-<div class="ano">
-
-<strong>
-1925
-</strong>
-
-<p>
-La histórica gira europea lleva el nombre
-de Boca al mundo.
-</p>
-
-</div>
-
-<div class="ano">
-
-<strong>
-1940
-</strong>
-
-<p>
-Se inaugura La Bombonera.
-</p>
-
-</div>
-
-<div class="ano">
-
-<strong>
-HOY
-</strong>
-
-<p>
-La historia continúa con nuevas
-generaciones xeneizes.
-</p>
-
-</div>
-
-</div>
-
-<br>
-
-<a
-class="btn btn-amarillo"
-href="https://www.bocajuniors.com.ar/historias"
-target="_blank">
-
-HISTORIA OFICIAL
-
-</a>
-
-</div>
-
-</section>
-
-<section>
-
-<h2 class="titulo">
-UN DÍA COMO HOY
-</h2>
-
-<div class="card">
-
-<div class="fuente">
-EFEMÉRIDES XENEIZES
-</div>
-
-<h3 id="fechaHistoria">
-30 DE AGOSTO
-</h3>
-
-<p>
-Cada día esta sección podrá mostrar acontecimientos
-históricos, cumpleaños, títulos, partidos memorables
-y protagonistas correspondientes a la fecha.
-</p>
-
-</div>
-
-</section>
-
-<section id="streaming">
-
-<h2 class="
+<!-- =========================
+     DESTACADOS
+==============
