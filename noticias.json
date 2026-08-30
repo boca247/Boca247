@@ -1,5 +1,13 @@
 [
   {
+    "titulo": "Así está la Tabla Anual del fútbol argentino, con las clasificaciones a las copas Libertadores y Sudamericana - La Nación",
+    "fuente": "La Nación",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOUTZjVHVEOGktRld1OWNuWHdJa3hMUkI0TFVKbzF0TWdXZDlnZzhKOGs2TUJkLTVEQWotRGw3bnRkeGJ4UWxNOVdENmZHUVk0YmJGQVdEQWdMTWxaaTdNVE5uSl9xVEJWUnVxaGhtODQzeDV1X1JMZ3JnQTZxa2gtMExodjdQQURsa0QtSzN2WDJldTJybFV5YXUtRU5GWjJaYUZfTmotekstc2EwUnpuZ3hXQUc4Sm9mS2ltOFFmb1dwVC11NTRRRVo2UEJ5bExaZ1dCLVFRRllaT0dnZ1lvMWh3ZjNsU1k?oc=5",
+    "categoria": "Sudamericana",
+    "fecha_iso": "2026-08-30T17:55:00+00:00"
+  },
+  {
     "titulo": "Boca afronta una agenda apretadísima en septiembre, con seis partidos en 20 días - El Intransigente",
     "fuente": "El Intransigente",
     "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
@@ -48,14 +56,6 @@
     "fecha_iso": "2026-08-30T16:11:58+00:00"
   },
   {
-    "titulo": "Ezequiel Sosa reveló más refuerzos para Boca: «Dos jugadores» - El Intransigente",
-    "fuente": "El Intransigente",
-    "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
-    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPQ2dvbkx5bmp0VHFHYmNrc3NFbUJqWENQTXRqZWFVQWh1azRJV1hyZzVOdW9PcjhDSWczRHRUUVk1a3ZibjVmV2ttY1JWbndXVFlDS2JlVUc4VVl0RG5qSk5FUlVFZ3ZpLWlPVWlfRXpJQWhoMzdXeHZXUnN4elV4UjB3QzFZU1Zrb1JQcG5HT2xaSGNlUWVLU05BZw?oc=5",
-    "categoria": "Mercado de pases",
-    "fecha_iso": "2026-08-30T15:32:01+00:00"
-  },
-  {
     "titulo": "Boca hoy: la dura seguidilla de partidos, el posible equipo contra Vélez y más - bolavip.com",
     "fuente": "bolavip.com",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -86,6 +86,14 @@
     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONGs3ZFdCN3JieDBUZU5oY2h1R3dwVE85WGZvNzczaVNGR3VqdjVOV1ZiZnZCUmk3MXkxWFRuMjMtSVN1SV9JRXJpWG1jNXdmQzVySHkwNVQ3cy16NjRZT0pld1dYQ0dFS0ZVNi01TTloUmVnSmJOLWU5aTZ0MkowSFE2LXhxV3h4d3FIbFp3a1lUdkRGZE5WM2hnYjhkbVnSAaQBQVVfeXFMT3VWVHVBaHBKM3hoVHZkNzFYZmRzMUpCSmw1djdFRkdsUmdhTFlNcVRodUE0MVM2NzFMd3NEU1dfWmdhby1GM0JZSF9hZnZNaEEtd2REaDQydUdmV1FHVDBaTmVsOFJObTFodldWNHZOZk5XNHBoY21GM1FuMmpSdGN1bWVZbmlDZWxyelRTN19DbzBFelBhUWl6S3BTcWdJdXo4WjE?oc=5",
     "categoria": "La Bombonera",
     "fecha_iso": "2026-08-30T14:30:52+00:00"
+  },
+  {
+    "titulo": "Marcelo Cañete, de juvenil de Boca a rival por primera vez a los 36: la \"competencia\" con Román, Paredes y Aranda, y el sueño de Recoleta - Olé",
+    "fuente": "Olé",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeVpvdmQtQjlISWZYZW9jQTlqMjhOUzViMUE2ZENES1I1U0RZWXZ0T1IyTnpVX1JoemhmdFhmTG9RbW5oanF6VVNDR0dEMGF0QnlJZmxMcXN3QjRYQWpBbjk4cXZRbGlhc3RNV1Z5M3dmWjZoUEJPZ1ZlM2JRbDhOTV9jVGlSb0poNGZaTUZraWlJYUdGRGVLUGsxb2NGWGR3MGJXb1NIUdIBrAFBVV95cUxPSnZJQVg0bmR1T3hPbUYwd0tMWjh5Q2JrQU9qQllRSG1ieDV6b0pkXzZ5Qzl1dENCVXhwb3JqZ2xYSUhwSFU0LS1UMldUdWFsY1NhN1ByY0lpVHRWcTZXd1h4NXVLSUkzMjFNZVN0S3hEM1lsTDlIVjJ5LTAxZWhQQlpvb2FQZ2c0cEhoektDU1dRdklKb0N1N0dIWG4zUXg0TXZ2d2ZOT3ZNOXRu?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-30T14:06:19+00:00"
   },
   {
     "titulo": "Quién es Bianco, la nueva joya de Boca que entrena con Primera tras la lesión de Aranda - TyC Sports",
@@ -128,22 +136,6 @@
     "fecha_iso": "2026-08-30T11:40:51+00:00"
   },
   {
-    "titulo": "La rompió el viernes ante Boca pese a la caída en la Bombonera y un día después ¡lo vendieron a Europa! - MDZ Online",
-    "fuente": "MDZ Online",
-    "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQYU5hcVcxa1preWhMellsNmxmeklxYWpDUGpRbVZvS2xIaFI0VmhHWFZCTHVRMXZOMWx5QWhCc3Bod2phUEQ5X2h2QW5tZ3BycWxpdDRiQ0hmMWpVZFY4bEJFeUFWYl91SzdHS2dQVUdjMXA4MldPemRteVJhaHE1ZmpVSVJ1UUhDV2dwcW0wcDduNUpCdHRDdmdMOWp6QkxWQWNDMlA2NVVnNlhPZGJLVmJqV2xSVzY2UGxiVHVsZDdHbEZKQ2ZRMdIBzgFBVV95cUxPTGlHelJkTHM5cEVmUzJlLVdMVFZwSmJPa0dxM2ZtaC1PTU9jUlVIcFUxdm5PcnpyQm9SYlQ4TlhEZUVSdlh4dV9YYVJzTGF3YzA1NFItRzNyWkdYT1NMSmxDT2lzWlVCbGowc29Rdkd3Q3BFdThRbjJ6a3JuT1FvcHF3cW5OWVQ0Qjg5Q2hLNHhlbG1taEMzN1hVamF1b1k0U05yMDNoYnJRM0h4UldKNFN1bkRXX1hXeVB3OWVrbVRjS2RWQkpnRklieTVyZw?oc=5",
-    "categoria": "Mercado de pases",
-    "fecha_iso": "2026-08-30T11:18:00+00:00"
-  },
-  {
-    "titulo": "Marcelo Cañete, de juvenil de Boca a rival por primera vez a los 36: la \"competencia\" con Román, Paredes y Aranda, y el sueño de Recoleta - Olé",
-    "fuente": "Olé",
-    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
-    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNeVpvdmQtQjlISWZYZW9jQTlqMjhOUzViMUE2ZENES1I1U0RZWXZ0T1IyTnpVX1JoemhmdFhmTG9RbW5oanF6VVNDR0dEMGF0QnlJZmxMcXN3QjRYQWpBbjk4cXZRbGlhc3RNV1Z5M3dmWjZoUEJPZ1ZlM2JRbDhOTV9jVGlSb0poNGZaTUZraWlJYUdGRGVLUGsxb2NGWGR3MGJXb1NIUdIBrAFBVV95cUxPSnZJQVg0bmR1T3hPbUYwd0tMWjh5Q2JrQU9qQllRSG1ieDV6b0pkXzZ5Qzl1dENCVXhwb3JqZ2xYSUhwSFU0LS1UMldUdWFsY1NhN1ByY0lpVHRWcTZXd1h4NXVLSUkzMjFNZVN0S3hEM1lsTDlIVjJ5LTAxZWhQQlpvb2FQZ2c0cEhoektDU1dRdklKb0N1N0dIWG4zUXg0TXZ2d2ZOT3ZNOXRu?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-30T10:02:50+00:00"
-  },
-  {
     "titulo": "River sin copas y Boca en Sudamericana: así quedó la tabla anual tras los empates de Vélez e Independiente ... - bolavip.com",
     "fuente": "bolavip.com",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -168,14 +160,6 @@
     "fecha_iso": "2026-08-29T22:37:33+00:00"
   },
   {
-    "titulo": "La tremenda seguidilla de partidos de Boca en 23 días: rivales, días y detalles - DeporTV",
-    "fuente": "DeporTV",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
-    "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQRGRlU3dSRWV5LUF5bnZSRVJHU3kyOEZGTTZ6YWZ2RUxJV0V3SDdmdjNnLUhQWEV2VGZVeW1GQjBTS0U3a25LWFZPVXN1R19IN1pxcHZhR05yV1RlQTJfX190OXhZTll4aF9zOXVvQ1QxZG52NEpYeE5zSTVYSVRnVUItSlJObm5oSHdmTjRaV2JtM09xb0s5R20wMW1ZN3JqR0FXZW5XTGx5Nm5NX0w4VnpJUTd0M0JYR3ptNE1NVTNqWGswYW80RUlrZGxyT3FUclltVF9jSkFLZ0dmcTFKbjlKcVdOdHc?oc=5",
-    "categoria": "Sudamericana",
-    "fecha_iso": "2026-08-29T22:30:00+00:00"
-  },
-  {
     "titulo": "Cómo escaló Boca en la tabla anual tras el empate de Vélez y la derrota de Central - Olé",
     "fuente": "Olé",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -184,20 +168,20 @@
     "fecha_iso": "2026-08-29T21:57:02+00:00"
   },
   {
-    "titulo": "Boca Juniors está analizando la posibilidad de traer a un jugador por la lesión de Tomás Aranda - Futbolargentino.com",
-    "fuente": "Futbolargentino.com",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZWRLQTI4MC1jVFRveTdtSUo5LUtLV0E1bGh4T0VEd0tIVGRJeWFuNnFzRXFUbFFlaDlLOUM3Um5xUEpfWDdBQTlBY2ZEXzkzN2ItaTR3NWtzN3Fkd0tmem04LVhkUU13bVBIV19sZlA4ZlkyWVd1a2lDcGJSRFdvUnA2TGJ5VFY3QzZwZTgxd0Q5UHVtX0g2VE01bGVQN0g0MnlwS0JmUldNTVpL?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-29T21:42:28+00:00"
-  },
-  {
     "titulo": "La nueva joya de Boca Predio que Arruabarrena subió a Primera tras la lesión de Aranda - Olé",
     "fuente": "Olé",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQmFzV1hqMUdnMWt0Rm5wQVN5M1prSzJEMU9SYmF6b3N1SGl0d1hGRXp3NUIyRUwxOFp1cHdwVHBuV1RPc1AyVVVrMzBrX2lJbWREX0VxaUJ1aWdZVEdZc1FWRktOdFJGYUNMN2N0Mjl0dU9mVkJuWENuMWFkZnduN3ZjZWhydy1oWnd5d1NzVkkxR0stUEZhVmZNTGZuV1YteU5MUHhucWJrOFRpRjhnUlRuVmlnOV9B0gG-AUFVX3lxTE8xS21WODNELUZxMTFqS0dHYzRDMFJId2VYb3FDRlY1Tk9nYVp6b1hLTXdia1ZCTlMzdXNnZzBZak1EQzBibWhid1VWZ21jWVhoZXpLa2UyeS1nQlpaM3BzdUJaYVFwcTBlRlZzNjdNTFVjR2p0azFUZGV0Z0lWenBXVy0xd2dscXZqcFQwTW90Ni1xRFZreXN3akw0d3kybU9QMG9sX0dhWXpwcGx2QnFLVnBzTVM0azE1eGd2ZGc?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-29T21:10:25+00:00"
+  },
+  {
+    "titulo": "JUGADORES DE LANÚS HABLARON LUEGO DEL PARTIDO ANTE BOCA JUNIORS - Club Atlético Lanús",
+    "fuente": "Club Atlético Lanús",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQaDR5MjRxaDV2MHZSRWZWaUtEZ040TDhCVzJVMThkTWlGQ3lpemVtS2VDSElzT2VUU3owWmY2anZvcnUwRFlQMjFuWkZXbmttaHN4MEM5Wmo3WHdoSFlkd3lQYlJNUENvMFZMWFN6T1d6RlNadFJXWmRPRk1oMVk0aGZyTWwxdU1ZX2F2WDVzWQ?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-29T19:18:39+00:00"
   },
   {
     "titulo": "El sincericidio de Paredes sobre su físico y qué dijo sobre el intento de Milan de ficharlo - TyC Sports",
@@ -288,14 +272,6 @@
     "fecha_iso": "2026-08-29T03:00:35+00:00"
   },
   {
-    "titulo": "La ley del ex de Totos los partidos: Boca ganó agónicamente en su vuelta a La Bombonera - El Gráfico",
-    "fuente": "El Gráfico",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
-    "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUXdHNndGTGl5QU1jakgtS1YzZWhUd0lyUXpheWtQM2hVcUtFOHVrRnowRWIzakdXWTF6Q0FXaDhfSWtGN1JrcDdEQS1YSndUdkZFbTVQVFRKbzlkeWF0b1pTY0V0YkV5OWJ4NW80cUsxM0dCMDdZMEdHVkpMd0VOV0hxNEo3c2JSMi15bzVMZXhxMjBfUl9UYnpual9fRkNjVGZHVkVFMzR3a0ZUaHRlV2lkX25qTFU1Qkw5cmFFVnRKcHA2a18zZUZtb2c5Z0Z3YV9qY251Qy1TMUhMOVhpejFR?oc=5",
-    "categoria": "La Bombonera",
-    "fecha_iso": "2026-08-29T02:41:35+00:00"
-  },
-  {
     "titulo": "Los puntajes de Boca vs. Lanús por el Torneo Clausura 2026: jugador x jugador - Planeta Boca Juniors",
     "fuente": "Planeta Boca Juniors",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -320,20 +296,28 @@
     "fecha_iso": "2026-08-29T02:25:14+00:00"
   },
   {
-    "titulo": "Jugador x jugador: los puntajes de Boca tras el triunfo ante Lanús por el Clausura - bolavip.com",
-    "fuente": "bolavip.com",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
-    "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNenRaRUppZVpOSlpRQ2VEQkdVT0Z0VUNMVExpVGFNa0R6T0otTHRmcUp4MEs3SU1FQWN1Z0RWbnUxQnFDMGwzcjNkTU1Ma3pEWVBTUkYtOXpBSE50YnYxNFF1UE14NHBPWUw4bE9GanBZNEh6T0VTMVpLYlNhZDY0dGtnbWdHamNrWV9uSmtNXzVzM3lQMlpuTXJWczVNam82bGJRQ3E1bW9Ba0HSAbABQVVfeXFMTzlQR1BlMlhSRVpsZnoyWWszZ0xVQXMwZjcyV3d5aWJsdmstLVF0STVWYmtyb2dLTlRQQ0tiUUpFR2o1M25iMEMzMnFkaXoxWUVtUXB2czhGMEJ3UDJySng4NzZMbllpLUd5bkEyVVRTZUNQaGZNcEhuZEZETExiajN5Y3ZyOTFrb3VycDJwQUhIODI1dlVIRDgxTFpLVVVNTTBmX1pBV3EwYXE0cENudEI?oc=5",
-    "categoria": "La Bombonera",
-    "fecha_iso": "2026-08-29T02:24:59+00:00"
-  },
-  {
     "titulo": "Boca volvió a La Bombonera y el césped dejó una señal impensada - El Intransigente",
     "fuente": "El Intransigente",
     "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wdmxFcVlfb0VjUkdtcEpnTEdESUhldkt0T1JsYWpRNndTeWNNamtDNHQteDJFTzhsU18tVk5OeldmRXlEZTI5M2FGV2hLcldZS1Z1ZmxWN3E0aENZVldYOTNSaGE2bWhYTHc?oc=5",
     "categoria": "La Bombonera",
     "fecha_iso": "2026-08-29T02:17:01+00:00"
+  },
+  {
+    "titulo": "Central Córdoba visitará a Boca en La Bombonera | Cuándo juegan y a qué hora - Nuevo Diario Web",
+    "fuente": "Nuevo Diario Web",
+    "contenido": "Central Córdoba visitará a Boca en La Bombonera | Cuándo juegan y a qué hora",
+    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPY05GWDIzRHVsdXlBcWR2b0xSczVmb1JfUlliTUk1OFFySjdtLWMwVEQwNVRiSWc1UXlXOEcwOXBDU19vamRXUDF1NDY4UW1hdk5rVmRIQW5jdTVjNFV4VHU0cTYzRmZqaFlaYVBLRVhHeU1qMzlYNkQyRGd0OFZvN3VFcW5kbnlMMW9UNXZoRkhVMnFrRGh1RzBPSW1kd3lCZWQxWFdaX1RtSjkwbUpSYkZFUWw1YXpYRmUyOWRNbGdmaDRJMzhxTURjWVo0bkpNUVVKcQ?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-29T01:06:50+00:00"
+  },
+  {
+    "titulo": "La decisión de Boca tras la lesión de Aranda: ¿habrá nuevo refuerzo? - El Intransigente",
+    "fuente": "El Intransigente",
+    "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
+    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1aLTY2OXdzU0V0T0Z1aGFYa1Y2b3NfOHA5cFE1Z29Xdjl2amc5MzgyX1RlUWNKZUM1dExQcFVDalh4ZjRVMUxNc0ZRbUh2UHZMRkVFNmdqbUM1c0dxRXVfUGtKZkZmT1dyd0E?oc=5",
+    "categoria": "Mercado de pases",
+    "fecha_iso": "2026-08-29T00:26:35+00:00"
   },
   {
     "titulo": "Boca Juniors vs. Lanús por el Torneo Clausura: Transmisión EN VIVO - Futbolargentino.com",
@@ -398,6 +382,14 @@
     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQWDRzOWdpaEtDRkM5OGdZUkM3UEc3aWdIR1ZtdkNrbnI0Y2FGU1hJUXBvaGpxVTJXVjU0cGs2UnE0RlBxRFYxZjY2Q1FWLVlzTWhSVVU5cUZaVFJJOGFqS1cyOVAzVEdrWkZXdWR5dzVIRl90MENJQXFhX3pJOUljUWEzTDRLZ1R0dVhKXzBBLTUzRXF3RHVLTGZkNDMwZlZhb3ozRFpwbXJoRHlFOFBOMXh3c25MdVFqUFlPV0k1LVdabDl0dUpB?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-28T16:56:06+00:00"
+  },
+  {
+    "titulo": "Boca confirmó que Tomás Aranda fue operado con éxito tras su fractura en el peroné - Cadena 3 Argentina",
+    "fuente": "Cadena 3 Argentina",
+    "contenido": "Boca confirmó que Tomás Aranda fue operado con éxito tras su fractura en el peroné",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOR0g4WENWNVczWHdPWC1hWG9YcFBQWFZ1cGpSUjhfbURtX1RERGlrRmZJVXlMbHJWUWFHdGJlc3VvU2hsVnZfblM1a0ZUSW1RN2dmM3lkR0c1WndHb1hONFpPMVFNaTdjS250ZHRaaFFlUmhiN0RxeHlPYVF3SUFOS3dvSGZPQ1ZhODJQeURjMmtCNzR6a0UwVWxVbWVqR2NKanU0eWFXM0RvM3NmdlU5M3UwX1VVWU1Vbk9RRUNDVTJvMldNekpUM0hOeUF2UTTSAdQBQVVfeXFMUFBwQ2RIbll4T054bTRsdEJOanVVNTZDdE0yZVNfX0wtdXBCVGVST2ZBSG5HZTgxS3JHem9vZm5EM2M2RS1aN2ZhbzJZeGREa01BeVVwdW0zd0RyLUVHWDR6d2YyRjFoNGlTaEdhc1pvcHMxU3BiaTQ1TUtQcmUzVGN5aDdLTTYxV2g0cDZZMkNFMUp0T0FKMFhOVWVBOTU4cWVMUm1fYjRFSlBwUklGaFlmcXhWQ1p0UHZ2dV85UUJsYWc2TkQwa2N0dm5ETmlMVDB1Umo?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-28T16:50:18+00:00"
   },
   {
     "titulo": "Fiebre xeneize en San Juan: casi 1.800 chicos se prueban para cumplir el sueño de jugar en Boca Juniors - Diario 13 San Juan",
@@ -798,5 +790,13 @@
     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNLVMxMjBIMTZrNGlhVDAwSFVMSWx2SVVTTzJvSkN3X2dJRUtuU0o2SkgtRWFTX0RObWpTclhIcnBiV2dyZzhJMXljTE04cFE0bm93bzVYREFlNVI4VFhxN3ZwdjAwN2Rqdmp3dnoyaHpnYVMwNWl2Uk0yR0pvWTJPU2Y5bldKSkpzTEFneVl4elBiUHp6TDJBcEEzR1hSZ2_SAaQBQVVfeXFMTUFrZEVZZ0c0WkQ1ZjI4c25KRVFoV2pyWnNNMU5icENVNGowM3k5NEVEZzFNSFI1MTY5eHlkYnprSElRZGVOYzI5SnV2VmxUTjdXRW5oTFNLOWdHSHd3Ty1HV2lVd0tqSlhfU2pPWmRsRC1xbHoybGc5MC1IMVVLWTdJRkNkNl9vTmtjcnM3eFZaWTdTdFBWUEQtZHNGQ2ppWW5xaXY?oc=5",
     "categoria": "Mercado de pases",
     "fecha_iso": "2026-08-24T13:11:43+00:00"
+  },
+  {
+    "titulo": "Alarma en Boca por las lesiones: los jugadores que podrían perderse una seguidilla de partidos clave - TN",
+    "fuente": "TN",
+    "contenido": "Últimas novedades sobre el estado físico de los jugadores de Boca Juniors y sus respectivas recuperaciones.",
+    "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPYlVtZWNtVXE5X19nZzdick1xalZXRl9mVDJPNU5VSXZaN1VETnZjLW5kLUlveml4amJGN20tSUJOZGV3Z0dGUHRKRW44cDZaWjRDVWM3dXJzbDFUM1JCMXg1TEtTZzlEZmN0cVFqVFRMX2VjblZ0QlJmb3dZUUhSNm13T3lCeC1fQ3JqMm1XYmlCTmNINHoxS0E3MkNtN0taN0d2bTRPbWVQY0RENDhFME5EV3dNdjN6TXR3Q0VtTTJFTktXbFYyeEV5bTdNYy1PWk9WVjBhQm9NU0R0aEZTZlRVbUpzMDFRSGpzTXJZQkRPTHU2ejg1V9IBjAJBVV95cUxQV3hiSXdJZ241Z2xqMm1teVA4NWVmYUxWNlFNUDZMZWhfRWppeU1HbDlEZDdQVHpoS1UydFp1bm5GMElNVHpEZ3NyTkNJSWlFSk5FRV9LeC1nekNLT2lzU1lETk9IWHRndTVEVGFxZW4tR3pXaVJzWXZSaUk4QlA0bVRxZWoyQkQxb3NseU9IV1ltb2xxMnFFVW5Ob1dfSGE1RzMyYlZJYmY3WTNzbUhQaTRva0tyTjR6WjMzdUVfWjNYNEJvc2ZKT2E5VHQ1WjFUeFpCaTRHeWVneUowWUtSdlZyRE1aWXp6WU9NS2sxUFEtMkVENW1ub1lXMjFkYnlSTlpHODRIVzVqR1Q4?oc=5",
+    "categoria": "Lesiones",
+    "fecha_iso": "2026-08-24T11:25:08+00:00"
   }
 ]
