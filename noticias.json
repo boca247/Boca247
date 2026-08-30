@@ -1,5 +1,13 @@
 [
   {
+    "titulo": "Cuando estrena Boca la nueva camiseta alternativa inspirada en sus orígenes - LA17",
+    "fuente": "LA17",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPS2Q1M092VGg4dWNhYkx1b1dwV3k4ZjRINnM0ZzVXWnh3QkFBWHRfb2ZyRGxtZlVpM0MtSVh3OTZBSjRUbExKaUVoeHJXSDRHck5NUlRQTFZaSDJIVUxPRjJsc3FsZlAtS091a09rQWR2ck9IOUE5LUt4X0l3dHZVRTlyblV6QlBrOEdoYkQ3MmduZkdldEZiVC1nUF85TGxhNWU5UWFQMnlzX3FsWVE?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-30T11:50:00+00:00"
+  },
+  {
     "titulo": "Las 6 mayores traiciones en la historia del fútbol: los fichajes más polémicos - DSports",
     "fuente": "DSports",
     "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
@@ -70,14 +78,6 @@
     "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1lNnlfVl9GbHVDOUJFQldGdTNqQVZ6WGlzU2czejhSdG5ndzIzTVZSQ3JMWEx3cUkzcTdXSERjWkZ5djhqeFVOemkxV29WNVVlcWxwWHdpamZjb2ZydldKb0pzeDlQRXhFOUNiT081MTI3UnZkeEE?oc=5",
     "categoria": "Mercado de pases",
     "fecha_iso": "2026-08-29T22:26:57+00:00"
-  },
-  {
-    "titulo": "Arruabarrena elogió a Lautaro Bianco tras subirlo a Primera por la lesión de Aranda: “Espero sacarle provecho” - bolavip.com",
-    "fuente": "bolavip.com",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNR2g0ZGpWN192SDRyN2t3M2dZVVFwWWw0ZE5nRmxIckFwY3oweDV4TTZidXV5WEdWVHhhMjRGSmxpYzBoQlVqbEE5cDkxNHZNZFEyd2VCeC1qV211X24wbXpFZ3ZKdFdwaTJGQm9pUUJwYk5BN2FRTFZtb0FIVDhneEVHbjg2VXlteThuUW1FVGlXbmN1blNCOFJUcW5qdGZhR0FST0w3Yk1sSEE2OE5EeG9zZXEzdS1YMXh5bTBISllJMDJzbVk1OV9lcEhaUUM10gHWAUFVX3lxTE1LRkZnZFZod0swVkZxYzBSX0R6cEVqclhFSnpJVjRpOUxlVkxWLUtsTVVGd01mekFZekE0dG1WajJVVGVRTDZiVUtxcFRjWWE4ekxqSEZJcHpBYV9IQjJISFRmeWNjYTJiQllyMmQtOF8yYmlnc3QyZUJTQlROSXhEM3VDZXJsTFRQUy00bTEweTVIR0stYnRaaTRUdUwweWJtX0ZCdVhUbHNzY0hmYlVjQnBBZDd6MEFNNFhZVi1KQkd0ZVpYLU5QLW5seXhteXZaeTRMZXc?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-29T22:17:59+00:00"
   },
   {
     "titulo": "La nueva joya de Boca Predio que Arruabarrena subió a Primera tras la lesión de Aranda - Olé",
@@ -296,6 +296,14 @@
     "fecha_iso": "2026-08-28T21:38:48+00:00"
   },
   {
+    "titulo": "Todo lo que hay que saber de las nuevas reglas para socios y abonados en la vuelta de Boca a su cancha - Olé",
+    "fuente": "Olé",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQb1A2eXZJNFphd1EySVMxRjlUUW1EaFIwNjg5MFh3QkJhMzkycjZlVnRsTVJtSWhQUzRIc3JiNzIyVXVZeE5EV1BXSnQ0TVItWDJCRklUTkNtTUVMT3UtNGpRMGlEUjBKaTh1U3JkNmFyTlZ1VzNMeFFaMVZ2ckJ5ak1lUGNXOUladldyWWJZWURnb2xOX1J4OGt3czZhZWtBUVdYTlJFU0U4YkNxSjZNM19SRk5jRER3V3dTZlFIQTR2SzNTR2VfMlhpV2dTQlHSAdQBQVVfeXFMT1NHUFZXZ0lTRlhoM3JVaVdpTXB5VEhDWXhKdjVLakptLUR1WGRPdkRfbmxjdHpTVnZ0cEpVTGtPVWhuZGNSOHlZM2dtZE4tdWo5YTk1LVJvM1hhUV9LYnBqTEhrOTYwSHRDRUEtR2xVZ0xmdVBnTkQ0YTFoR19yaHVZejdETG1ncml4ZnVCRnlld0ZHeE43UTBqdktEc0NocEp4aVA0OHpNRkUyMDgtSllqQnJ3TUlMZ3hDTm92M3lxT19DYTJNdW9GanNxMlhiTWhETkg?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-28T21:27:09+00:00"
+  },
+  {
     "titulo": "La gastada de Boca a River en redes por la eliminación en la Copa Sudamericana - Planeta Boca Juniors",
     "fuente": "Planeta Boca Juniors",
     "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
@@ -326,6 +334,14 @@
     "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQWDRzOWdpaEtDRkM5OGdZUkM3UEc3aWdIR1ZtdkNrbnI0Y2FGU1hJUXBvaGpxVTJXVjU0cGs2UnE0RlBxRFYxZjY2Q1FWLVlzTWhSVVU5cUZaVFJJOGFqS1cyOVAzVEdrWkZXdWR5dzVIRl90MENJQXFhX3pJOUljUWEzTDRLZ1R0dVhKXzBBLTUzRXF3RHVLTGZkNDMwZlZhb3ozRFpwbXJoRHlFOFBOMXh3c25MdVFqUFlPV0k1LVdabDl0dUpB?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-28T16:56:06+00:00"
+  },
+  {
+    "titulo": "Comunicado: Gonzalo Gelini - Boca Juniors",
+    "fuente": "Boca Juniors",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1ocFQybm05STN1eXlfaDhZUXp6T3NTT2dVSnR5Nk13UVFjbUV3YmQ2aTh3RG01bXIyVEZWN1dyLUM0TnRpWVV4U05VOFZWb0dXcU8zUTNoNXBYUEFCdFRrRk91NzlqcXgtT2xfaXotd2RjR28?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-28T15:31:49+00:00"
   },
   {
     "titulo": "La vuelta de Boca a la Bombonera: qué se hizo en la cancha y cómo estará el campo ante Lanús - Olé",
@@ -414,14 +430,6 @@
     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBVaUIwVWJGcDlmYXJ2ZFpkNllWeGlYa0JOZVgxT1llclJGTUU4QWVkdWI2QkZ3MmhycEp1bF9GWFRlX3Fvci1WWXdEZ2M5TVNIX0JhT3Bqd3VKWHRvZ2RSUF8wNnV6cTJFRDNfWUhsWHJhSnpu?oc=5",
     "categoria": "La Bombonera",
     "fecha_iso": "2026-08-28T07:00:00+00:00"
-  },
-  {
-    "titulo": "Boca Juniors lanza su nueva camiseta alternativa en un evento especial en La Bombonera - Cadena 3 Argentina",
-    "fuente": "Cadena 3 Argentina",
-    "contenido": "Boca Juniors lanza su nueva camiseta alternativa en un evento especial en La Bombonera",
-    "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWXFrd1BWcUpUdTB4YklDemNxMkN4clhXZjJoLUgxRGVQY2NTdHRHUGIzQ2NMZ21YS2FlMVEyeUZpZFpBcmpfcWN0Z0pqVWxvNEdBcU9OUnFjZTgtMDBPNUxadnR6Wm9SOHFaUmdwTlVRTWZqU0hiSXAzT252QnIycUstQjloekg2WkJPQXZkdWlPQmhIaFJHRUhHZTVmSUJ5Y29JaEp1YVlZQzRNekcwQi1WQUlIelJnS3h5ek9qRFJScFIySkV2b1ZTM2Zpb3fSAdQBQVVfeXFMUEZsYU1hRnhsWEk3TEVranF3dlRNLWhHb3VKYjdQSWs1YkxPLVA3UXdqYkNVSUZ0Zk15RXJYQkx3TkUwNTB4NFQtWkJrbkZoVVdKejg4MHM5UGZ1S0JMQ2JpQUxQb2tSamN4dk9Zblc2eW8zbXU3SlB0YXphNlFvQVZYSkplMmx6WTFMVDJfemNFaGRpMnNhcFBhM1R4YVpYZnVxeE52cC01REllM2dNSVlqckxZUjJCXzJ3djhKUmFNTnR6NFJIWlBrdGlBNklmWHpWaWs?oc=5",
-    "categoria": "La Bombonera",
-    "fecha_iso": "2026-08-28T03:07:57+00:00"
   },
   {
     "titulo": "Boca Juniors busca nuevos talentos en San Juan y evaluó a 1.800 chicos - DameNoticias",
@@ -790,13 +798,5 @@
     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNR25qbE5QeEVnVWhlMllPb1RiZ1pYSGVNVU41dUNvZDlVSmFlNTlMdnlhQlRzRnoxeWctOWJnaU45QlR1TVFTXy1FN003RzlySGQybGNCLVE0bkVvaW9BWm9IT0VqRmpQVHoxa2FhMFRqc0EyeXJWWVpyX01EV3RCMlFB?oc=5",
     "categoria": "Fútbol femenino",
     "fecha_iso": "2026-08-22T22:43:00+00:00"
-  },
-  {
-    "titulo": "Boca Juniors llega a Río Gallegos para buscar nuevos talentos de las categorías juveniles - La Opinión Austral",
-    "fuente": "La Opinión Austral",
-    "contenido": "Boca Juniors llega a Río Gallegos para buscar nuevos talentos de las categorías juveniles",
-    "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQWkZFd202UWE3TW1kSy1DVW9fZi1qN2pSNGM4S3pJZmt2Mi1uSTFpNlptWlZ3ZUpYcC1yVjBVamc0WXR1ekJWbnZ3aUhjcUxhSklMTFJBV056OGJqTWZCLTVTUGlWRTZHSWRZSXpsRjBwNXZ3ZEFJbmV0ZVpGUXY0MjNhRThRYk43RzJGVTlUMWtRUlFqdVpmYVkxSVZuM05FcXpwcS1rQ3VlY1BJSXQxSlNCRGU5Z1doTm1XLXhNZ1BSZ2dyeHRsSUxuUHQxd0VGZXhGMWIxdXBNRjg?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-22T21:38:06+00:00"
   }
 ]
