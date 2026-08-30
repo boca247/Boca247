@@ -10,14 +10,17 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+
 body{
 font-family:Arial,Helvetica,sans-serif;
 background:#eef2f7;
 color:#101828;
 line-height:1.5
 }
+
 a{text-decoration:none;color:inherit}
 button{font-family:inherit}
+
 :root{
 --azul:#00245f;
 --azul2:#003b8f;
@@ -31,7 +34,10 @@ button{font-family:inherit}
 --sombra:0 8px 30px rgba(0,36,95,.12)
 }
 
-/* HEADER */
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
 .topbar{
 background:#00152f;
 color:#fff;
@@ -40,7 +46,14 @@ display:flex;
 justify-content:space-between;
 font-size:12px
 }
-.topbar strong{color:var(--amarillo)}
+
+.topbar strong{
+color:var(--amarillo)
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
 background:linear-gradient(135deg,#00183f,#003b91);
@@ -98,7 +111,10 @@ font-size:11px;
 font-weight:1000
 }
 
-/* NAV */
+/* =========================
+   NAVEGACIÓN
+========================= */
+
 nav{
 position:sticky;
 top:0;
@@ -116,7 +132,9 @@ gap:7px;
 overflow-x:auto
 }
 
-.nav::-webkit-scrollbar{display:none}
+.nav::-webkit-scrollbar{
+display:none
+}
 
 .nav a{
 flex:0 0 auto;
@@ -134,7 +152,10 @@ background:var(--amarillo);
 color:var(--azul)
 }
 
-/* MAIN */
+/* =========================
+   CONTENIDO
+========================= */
+
 main{
 max-width:1280px;
 margin:auto;
@@ -162,7 +183,10 @@ border-radius:5px;
 font-size:10px
 }
 
-/* HERO */
+/* =========================
+   PORTADA
+========================= */
+
 .hero-grid{
 display:grid;
 grid-template-columns:2fr 1fr;
@@ -176,11 +200,21 @@ padding:34px;
 display:flex;
 flex-direction:column;
 justify-content:flex-end;
-background:
-linear-gradient(135deg,rgba(0,27,67,.98),rgba(0,82,180,.9)),
-radial-gradient(circle at top right,#f5c400,transparent 30%);
+position:relative;
+overflow:hidden;
 color:#fff;
-box-shadow:var(--sombra)
+box-shadow:var(--sombra);
+
+background-image:
+linear-gradient(
+0deg,
+rgba(0,18,48,.96),
+rgba(0,18,48,.12)
+),
+url("IMG-20260829-WA0001.jpg");
+
+background-size:cover;
+background-position:center
 }
 
 .etiqueta{
@@ -220,14 +254,18 @@ border:0;
 cursor:pointer
 }
 
-.btn:hover{background:var(--azul3)}
+.btn:hover{
+background:var(--azul3)
+}
 
 .btn-amarillo{
 background:var(--amarillo);
 color:var(--azul)
 }
 
-.btn-rojo{background:var(--rojo)}
+.btn-rojo{
+background:var(--rojo)
+}
 
 .side{
 display:grid;
@@ -260,8 +298,13 @@ color:var(--gris);
 font-size:13px
 }
 
-/* SECCIONES */
-section{margin-top:42px}
+/* =========================
+   SECCIONES
+========================= */
+
+section{
+margin-top:42px
+}
 
 .titulo{
 color:var(--azul);
@@ -278,7 +321,10 @@ font-size:13px;
 margin:0 0 17px 20px
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+========================= */
+
 .grid3{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -316,7 +362,10 @@ color:#98a2b3;
 margin-top:11px
 }
 
-/* PARTIDO */
+/* =========================
+   PARTIDO
+========================= */
+
 .partido{
 background:linear-gradient(135deg,#001a49,#0756b8);
 color:#fff;
@@ -383,7 +432,10 @@ font-size:19px;
 color:var(--amarillo)
 }
 
-/* LISTAS */
+/* =========================
+   LISTAS
+========================= */
+
 .lista{
 display:grid;
 gap:12px
@@ -397,10 +449,18 @@ padding:17px;
 box-shadow:0 4px 15px rgba(0,0,0,.06)
 }
 
-.linea strong{color:var(--azul)}
-.linea small{color:var(--gris)}
+.linea strong{
+color:var(--azul)
+}
 
-/* MERCADO */
+.linea small{
+color:var(--gris)
+}
+
+/* =========================
+   MERCADO
+========================= */
+
 .mercado{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -414,11 +474,22 @@ border-radius:18px;
 box-shadow:var(--sombra)
 }
 
-.mercado-box h3{color:var(--azul);margin-bottom:12px}
+.mercado-box h3{
+color:var(--azul);
+margin-bottom:12px
+}
 
-.llegadas{border-top:6px solid var(--verde)}
-.negociacion{border-top:6px solid #d6a900}
-.salidas{border-top:6px solid var(--rojo)}
+.llegadas{
+border-top:6px solid var(--verde)
+}
+
+.negociacion{
+border-top:6px solid #d6a900
+}
+
+.salidas{
+border-top:6px solid var(--rojo)
+}
 
 .movimiento{
 padding:12px 0;
@@ -426,7 +497,10 @@ border-bottom:1px solid #e4e7ec;
 font-size:13px
 }
 
-/* ENCUESTAS */
+/* =========================
+   ENCUESTAS
+========================= */
+
 .encuesta-grid{
 display:grid;
 grid-template-columns:2fr 1fr;
@@ -486,7 +560,10 @@ width:72%;
 background:var(--azul3)
 }
 
-/* VIDEOS */
+/* =========================
+   VIDEOS
+========================= */
+
 .videos{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -510,15 +587,24 @@ justify-content:center;
 font-size:55px
 }
 
-.video-body{padding:18px}
-.video-body h3{font-size:19px}
+.video-body{
+padding:18px
+}
+
+.video-body h3{
+font-size:19px
+}
+
 .video-body p{
 font-size:13px;
 color:#bbb;
 margin-top:6px
 }
 
-/* FOTOS */
+/* =========================
+   FOTOS
+========================= */
+
 .fotos{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -535,13 +621,50 @@ position:relative;
 overflow:hidden;
 color:#fff;
 font-weight:1000;
-background:linear-gradient(135deg,#003a86,#0872d1);
-box-shadow:var(--sombra)
+box-shadow:var(--sombra);
+background-size:cover;
+background-position:center
 }
 
-.foto:nth-child(2){background:linear-gradient(135deg,#001a49,#0063bb)}
-.foto:nth-child(3){background:linear-gradient(135deg,#0756b8,#00245f)}
-.foto:nth-child(4){background:linear-gradient(135deg,#00245f,#0b78d1)}
+.foto-1{
+background-image:
+linear-gradient(
+0deg,
+rgba(0,18,48,.9),
+rgba(0,18,48,.08)
+),
+url("IMG-20260829-WA0001.jpg")
+}
+
+.foto-2{
+background-image:
+linear-gradient(
+0deg,
+rgba(0,18,48,.9),
+rgba(0,18,48,.08)
+),
+url("IMG-20260829-WA0003.jpg")
+}
+
+.foto-3{
+background-image:
+linear-gradient(
+0deg,
+rgba(0,18,48,.9),
+rgba(0,18,48,.08)
+),
+url("IMG-20260829-WA0001.jpg")
+}
+
+.foto-4{
+background-image:
+linear-gradient(
+0deg,
+rgba(0,18,48,.9),
+rgba(0,18,48,.08)
+),
+url("IMG-20260829-WA0003.jpg")
+}
 
 .foto span{
 position:absolute;
@@ -550,7 +673,10 @@ right:12px;
 font-size:24px
 }
 
-/* HISTORIA */
+/* =========================
+   HISTORIA
+========================= */
+
 .historia{
 background:linear-gradient(135deg,#001b47,#003b91);
 color:#fff;
@@ -559,7 +685,9 @@ border-radius:23px;
 box-shadow:var(--sombra)
 }
 
-.historia h2{color:var(--amarillo)}
+.historia h2{
+color:var(--amarillo)
+}
 
 .timeline{
 display:grid;
@@ -587,7 +715,10 @@ color:#e1eaf7;
 margin-top:5px
 }
 
-/* FUENTES */
+/* =========================
+   FUENTES
+========================= */
+
 .fuentes{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -613,20 +744,47 @@ color:var(--gris);
 margin-top:4px
 }
 
-/* STREAMING */
+/* =========================
+   STREAMING
+========================= */
+
 .streaming{
-background:#090909;
+background:
+linear-gradient(
+0deg,
+rgba(0,0,0,.82),
+rgba(0,0,0,.35)
+),
+url("IMG-20260829-WA0003.jpg");
+
+background-size:cover;
+background-position:center;
+
 color:#fff;
 border-radius:23px;
-padding:30px;
+padding:40px 30px;
+min-height:250px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+
 box-shadow:0 10px 30px rgba(0,0,0,.25);
 border-bottom:7px solid var(--amarillo)
 }
 
-.streaming h2{font-size:30px}
-.streaming p{color:#ccc;margin-top:7px}
+.streaming h2{
+font-size:30px
+}
 
-/* NOTIFICACIONES */
+.streaming p{
+color:#ccc;
+margin-top:7px
+}
+
+/* =========================
+   NOTIFICACIONES
+========================= */
+
 .notificaciones{
 background:var(--azul);
 color:#fff;
@@ -636,13 +794,19 @@ text-align:center;
 box-shadow:var(--sombra)
 }
 
-.notificaciones h2{color:var(--amarillo)}
+.notificaciones h2{
+color:var(--amarillo)
+}
+
 .notificaciones p{
 color:#d8e3f3;
 margin-top:6px
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer{
 background:#00132f;
 color:#fff;
@@ -662,54 +826,166 @@ font-size:12px;
 margin-top:7px
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media(max-width:950px){
-.hero-grid,.encuesta-grid{grid-template-columns:1fr}
-.grid3,.mercado,.fuentes{grid-template-columns:1fr 1fr}
-.timeline{grid-template-columns:1fr 1fr}
-.fotos{grid-template-columns:1fr 1fr}
+
+.hero-grid,
+.encuesta-grid{
+grid-template-columns:1fr
+}
+
+.grid3,
+.mercado,
+.fuentes{
+grid-template-columns:1fr 1fr
+}
+
+.timeline{
+grid-template-columns:1fr 1fr
+}
+
+.fotos{
+grid-template-columns:1fr 1fr
+}
+
 }
 
 @media(max-width:650px){
-.topbar{display:none}
-.header{padding:17px 11px}
-.logo h1{font-size:24px}
-.logo p{font-size:11px}
-.escudo{width:50px;height:50px;font-size:9px}
-.en-vivo{font-size:9px;padding:8px 10px}
-main{padding:14px 10px 50px}
-.hero{min-height:370px;padding:23px}
-.hero h2{font-size:37px}
-.titulo{font-size:22px}
-.grid3,.grid2,.mercado,.videos,.fuentes,.timeline,.fotos{grid-template-columns:1fr}
-.datos-partido{grid-template-columns:repeat(2,1fr)}
-.partido{padding:21px}
+
+.topbar{
+display:none
 }
+
+.header{
+padding:17px 11px
+}
+
+.logo h1{
+font-size:24px
+}
+
+.logo p{
+font-size:11px
+}
+
+.escudo{
+width:50px;
+height:50px;
+font-size:9px
+}
+
+.en-vivo{
+font-size:9px;
+padding:8px 10px
+}
+
+main{
+padding:14px 10px 50px
+}
+
+.hero{
+min-height:370px;
+padding:23px
+}
+
+.hero h2{
+font-size:37px
+}
+
+.titulo{
+font-size:22px
+}
+
+.grid3,
+.grid2,
+.mercado,
+.videos,
+.fuentes,
+.timeline,
+.fotos{
+grid-template-columns:1fr
+}
+
+.datos-partido{
+grid-template-columns:repeat(2,1fr)
+}
+
+.partido{
+padding:21px
+}
+
+.streaming{
+min-height:220px;
+padding:25px 20px
+}
+
+.streaming h2{
+font-size:25px
+}
+
+}
+
 </style>
 </head>
 
 <body>
+
+<!-- =========================
+     TOP
+========================= -->
 
 <div class="topbar">
 <span>BOCA 24/7 · Todo Boca. Todo el día.</span>
 <strong>PORTAL XENEIZE</strong>
 </div>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
 <div class="header">
+
 <div class="logo">
-<div class="escudo">CABJ<br>24/7</div>
+
+<div class="escudo">
+CABJ<br>24/7
+</div>
+
 <div>
+
 <h1>BOCA 24/7</h1>
-<p>Noticias · Pasión · Comunidad Xeneize</p>
+
+<p>
+Noticias · Pasión · Comunidad Xeneize
+</p>
+
 </div>
+
 </div>
-<div class="en-vivo">● INFORMACIÓN XENEIZE</div>
+
+<div class="en-vivo">
+● INFORMACIÓN XENEIZE
 </div>
+
+</div>
+
 </header>
 
+
+<!-- =========================
+     NAV
+========================= -->
+
 <nav>
+
 <div class="nav">
+
 <a href="#inicio">INICIO</a>
 <a href="#noticias">NOTICIAS</a>
 <a href="#partidos">PARTIDOS</a>
@@ -720,458 +996,1235 @@ main{padding:14px 10px 50px}
 <a href="#fotos">FOTOS</a>
 <a href="#historia">HISTORIA</a>
 <a href="#streaming">STREAMING</a>
+
 </div>
+
 </nav>
+
 
 <main id="inicio">
 
+
+<!-- =========================
+     TICKER
+========================= -->
+
 <div class="ticker">
+
 <b>BOCA 24/7</b>
-<span>Todo Boca. Todo el día. Noticias, partidos, opinión, historia, videos y pasión xeneize.</span>
+
+<span>
+Todo Boca. Todo el día. Noticias, partidos, opinión,
+historia, videos y pasión xeneize.
+</span>
+
 </div>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="hero-grid">
 
 <article class="hero">
-<div class="etiqueta">BIENVENIDOS</div>
-<h2>Todo Boca.<br>Todo el día.</h2>
+
+<div class="etiqueta">
+BIENVENIDOS
+</div>
+
+<h2>
+Todo Boca.<br>
+Todo el día.
+</h2>
+
 <p>
-El portal xeneize para seguir las noticias, partidos, mercado,
-opinión de los hinchas, historia, videos y nuestro streaming.
+El portal xeneize para seguir las noticias, partidos,
+mercado, opinión de los hinchas, historia,
+videos y nuestro streaming.
 </p>
-<a class="btn btn-amarillo" href="#noticias">VER LAS NOTICIAS</a>
+
+<a class="btn btn-amarillo" href="#noticias">
+VER LAS NOTICIAS
+</a>
+
 </article>
+
 
 <div class="side">
 
 <div class="mini">
-<div class="fuente">PRÓXIMO PARTIDO</div>
-<h3>Vélez vs. Boca</h3>
-<p>02/09 · Copa Argentina · 21:15</p>
-<a class="btn" href="#partidos">VER PARTIDO</a>
+
+<div class="fuente">
+PRÓXIMO PARTIDO
 </div>
+
+<h3>
+Vélez vs. Boca
+</h3>
+
+<p>
+02/09 · Copa Argentina · 21:15
+</p>
+
+<a class="btn" href="#partidos">
+VER PARTIDO
+</a>
+
+</div>
+
 
 <div class="mini">
-<div class="fuente">UN DÍA COMO HOY</div>
-<h3>Historia Xeneize</h3>
-<p>Efemérides, ídolos y grandes momentos de Boca.</p>
-<a class="btn" href="#historia">VER HISTORIA</a>
+
+<div class="fuente">
+UN DÍA COMO HOY
+</div>
+
+<h3>
+Historia Xeneize
+</h3>
+
+<p>
+Efemérides, ídolos y grandes momentos de Boca.
+</p>
+
+<a class="btn" href="#historia">
+VER HISTORIA
+</a>
+
 </div>
 
 </div>
+
 </div>
 
+
+<!-- =========================
+     NOTICIAS
+========================= -->
 
 <section id="noticias">
 
-<h2 class="titulo">ÚLTIMAS NOTICIAS</h2>
-<p class="subtitulo">Información xeneize y fuentes periodísticas.</p>
+<h2 class="titulo">
+ÚLTIMAS NOTICIAS
+</h2>
+
+<p class="subtitulo">
+Información xeneize y fuentes periodísticas.
+</p>
+
 
 <div class="grid3">
 
-<article class="card">
-<div class="fuente">ACTUALIDAD</div>
-<h3>La actualidad de Boca</h3>
-<p>
-Seguimiento del plantel, entrenamientos, cuerpo técnico,
-jugadores y todas las novedades del Xeneize.
-</p>
-<div class="fecha">BOCA 24/7</div>
-</article>
 
 <article class="card">
-<div class="fuente">TATO AGUILERA</div>
-<h3>Información del día a día</h3>
+
+<div class="fuente">
+ACTUALIDAD
+</div>
+
+<h3>
+La actualidad de Boca
+</h3>
+
 <p>
-Seguimiento periodístico del mercado, plantel y actualidad
-de Boca Juniors.
+Seguimiento del plantel, entrenamientos,
+cuerpo técnico, jugadores y todas las novedades
+del Xeneize.
 </p>
-<a class="btn" href="https://www.tycsports.com/autor/leandro-aguilera.html" target="_blank">
+
+<div class="fecha">
+BOCA 24/7
+</div>
+
+</article>
+
+
+<article class="card">
+
+<div class="fuente">
+TATO AGUILERA
+</div>
+
+<h3>
+Información del día a día
+</h3>
+
+<p>
+Seguimiento periodístico del mercado,
+plantel y actualidad de Boca Juniors.
+</p>
+
+<a
+class="btn"
+href="https://www.tycsports.com/autor/leandro-aguilera.html"
+target="_blank">
 VER INFORMACIÓN
 </a>
+
 </article>
+
 
 <article class="card">
-<div class="fuente">BOCA JUNIORS</div>
-<h3>Información oficial</h3>
+
+<div class="fuente">
+BOCA JUNIORS
+</div>
+
+<h3>
+Información oficial
+</h3>
+
 <p>
-Noticias, comunicados, actividades y publicaciones oficiales
-del club.
+Noticias, comunicados, actividades
+y publicaciones oficiales del club.
 </p>
-<a class="btn" href="https://www.bocajuniors.com.ar/noticias" target="_blank">
+
+<a
+class="btn"
+href="https://www.bocajuniors.com.ar/noticias"
+target="_blank">
 BOCA OFICIAL
 </a>
+
 </article>
 
+
 </div>
+
 </section>
 
 
+<!-- =========================
+     PARTIDOS
+========================= -->
+
 <section id="partidos">
 
-<h2 class="titulo">PARTIDO CENTER</h2>
-<p class="subtitulo">Próximo partido y espacio preparado para información en vivo.</p>
+<h2 class="titulo">
+PARTIDO CENTER
+</h2>
+
+<p class="subtitulo">
+Próximo partido y espacio preparado para información en vivo.
+</p>
+
 
 <div class="partido">
 
 <div class="partido-top">
-<span class="pill">PRÓXIMO PARTIDO</span>
-<span class="pill">COPA ARGENTINA</span>
+
+<span class="pill">
+PRÓXIMO PARTIDO
+</span>
+
+<span class="pill">
+COPA ARGENTINA
+</span>
+
 </div>
+
 
 <div class="resultado">
-<small>02 DE SEPTIEMBRE · 21:15</small>
-<h3>VÉLEZ &nbsp; VS &nbsp; BOCA</h3>
-<strong>—</strong>
-<small>Resultado pendiente</small>
+
+<small>
+02 DE SEPTIEMBRE · 21:15
+</small>
+
+<h3>
+VÉLEZ &nbsp; VS &nbsp; BOCA
+</h3>
+
+<strong>
+—
+</strong>
+
+<small>
+Resultado pendiente
+</small>
+
 </div>
+
 
 <div class="datos-partido">
-<div class="dato"><strong>—</strong>Minuto</div>
-<div class="dato"><strong>—</strong>Goles</div>
-<div class="dato"><strong>—</strong>Tarjetas</div>
-<div class="dato"><strong>—</strong>Estadísticas</div>
+
+<div class="dato">
+<strong>—</strong>
+Minuto
+</div>
+
+<div class="dato">
+<strong>—</strong>
+Goles
+</div>
+
+<div class="dato">
+<strong>—</strong>
+Tarjetas
+</div>
+
+<div class="dato">
+<strong>—</strong>
+Estadísticas
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 
+<!-- =========================
+     AGENDA
+========================= -->
+
 <section id="agenda">
 
-<h2 class="titulo">AGENDA XENEIZE</h2>
+<h2 class="titulo">
+AGENDA XENEIZE
+</h2>
+
 
 <div class="lista">
 
 <div class="linea">
-<strong>02 SEP · VÉLEZ — BOCA</strong><br>
-<small>Copa Argentina · 21:15</small>
-</div>
 
-<div class="linea">
-<strong>MINUTO A MINUTO</strong><br>
-<small>
-Durante los partidos esta sección queda preparada para goles,
-cambios, tarjetas y acontecimientos.
-</small>
-</div>
-
-<div class="linea">
-<strong>ESTADÍSTICAS EN VIVO</strong><br>
-<small>
-Posesión, remates, tiros al arco, córners y tarjetas.
-</small>
-</div>
-
-</div>
-</section>
-
-
-<section id="mercado">
-
-<h2 class="titulo">MERCADO DE PASES</h2>
-
-<div class="mercado">
-
-<div class="mercado-box llegadas">
-<h3>🟢 LLEGADAS</h3>
-<div class="movimiento">
-<strong>Refuerzos confirmados</strong><br>
-Incorporaciones confirmadas oficialmente.
-</div>
-<div class="movimiento">
-<strong>Altas</strong><br>
-Información del mercado xeneize.
-</div>
-</div>
-
-<div class="mercado-box negociacion">
-<h3>🟡 EN NEGOCIACIÓN</h3>
-<div class="movimiento">
-<strong>Operaciones</strong><br>
-Negociaciones informadas por fuentes periodísticas.
-</div>
-<div class="movimiento">
-<strong>Tato Aguilera</strong><br>
-Seguimiento de las operaciones.
-</div>
-</div>
-
-<div class="mercado-box salidas">
-<h3>🔴 SALIDAS</h3>
-<div class="movimiento">
-<strong>Transferencias</strong><br>
-Ventas, préstamos y salidas.
-</div>
-<div class="movimiento">
-<strong>Seguimiento</strong><br>
-Información oficial y periodística.
-</div>
-</div>
-
-</div>
-</section>
-
-
-<section id="hinchas">
-
-<h2 class="titulo">OPINIÓN DE LOS HINCHAS</h2>
-<p class="subtitulo">La voz de la comunidad xeneize.</p>
-
-<div class="encuesta-grid">
-
-<div class="encuesta">
-<div class="fuente">ENCUESTA DEL MOMENTO</div>
-<h3>¿Cómo llega Boca al próximo partido?</h3>
-
-<div class="opciones">
-<button class="opcion" onclick="votar('Gana Boca')">Gana Boca</button>
-<button class="opcion" onclick="votar('Empata')">Empata</button>
-<button class="opcion" onclick="votar('Pierde')">Pierde</button>
-</div>
-
-<div id="resultadoEncuesta" class="resultado-encuesta">
-Elegí una opción para votar.
-</div>
-</div>
-
-<div class="encuesta">
-<div class="fuente">TERMÓMETRO XENEIZE</div>
-<h3>¿Cómo está la hinchada?</h3>
-
-<p>Optimismo <strong style="float:right">72%</strong></p>
-<div class="barra"><span></span></div>
-
-<p style="color:#667085;font-size:13px">
-El termómetro queda preparado para conectarse
-con resultados reales de la comunidad.
-</p>
-</div>
-
-</div>
-</section>
-
-
-<section id="videos">
-
-<h2 class="titulo">VIDEOS DEL MOMENTO</h2>
-<p class="subtitulo">Contenido del mundo Boca.</p>
-
-<div class="videos">
-
-<div class="video">
-<div class="video-thumb">▶</div>
-<div class="video-body">
-<h3>El Canal de Boca</h3>
-<p>Entrevistas, jugadores, conferencias y contenido oficial.</p>
-<a class="btn btn-rojo" href="https://www.youtube.com/@ElCanaldeBoca" target="_blank">
-VER CANAL
-</a>
-</div>
-</div>
-
-<div class="video">
-<div class="video-thumb">▶</div>
-<div class="video-body">
-<h3>Los Bosteros de Tucumán</h3>
-<p>Streaming, opinión y pasión xeneize desde Tucumán.</p>
-<a class="btn btn-amarillo" href="https://youtube.com/@movlosbosterosdetucuman" target="_blank">
-VER STREAMING
-</a>
-</div>
-</div>
-
-</div>
-</section>
-
-
-<section id="fotos">
-
-<h2 class="titulo">FOTOS DEL MOMENTO</h2>
-<p class="subtitulo">Partidos · entrenamientos · jugadores · Bombonera.</p>
-
-<div class="fotos">
-
-<div class="foto">
-<span>📸</span>
-Último partido
-</div>
-
-<div class="foto">
-<span>📸</span>
-Entrenamiento
-</div>
-
-<div class="foto">
-<span>📸</span>
-Jugadores
-</div>
-
-<div class="foto">
-<span>📸</span>
-La Bombonera
-</div>
-
-</div>
-</section>
-
-
-<section>
-
-<h2 class="titulo">ENTREVISTAS Y PROTAGONISTAS</h2>
-
-<div class="grid3">
-
-<div class="card">
-<div class="fuente">JUGADORES</div>
-<h3>Entrevistas post partido</h3>
-<p>
-Espacio para entrevistas a los jugadores después de cada encuentro.
-</p>
-</div>
-
-<div class="card">
-<div class="fuente">CUERPO TÉCNICO</div>
-<h3>Conferencias</h3>
-<p>
-Conferencias de prensa y declaraciones del cuerpo técnico.
-</p>
-</div>
-
-<div class="card">
-<div class="fuente">ÍDOLOS</div>
-<h3>Voces históricas</h3>
-<p>
-Entrevistas y recuerdos de grandes protagonistas de Boca.
-</p>
-</div>
-
-</div>
-</section>
-
-
-<section id="historia">
-
-<h2 class="titulo">HISTORIA XENEIZE</h2>
-
-<div class="historia">
-
-<h2>1905 → HOY</h2>
-
-<p style="color:#dce7f7;margin-top:5px">
-Más de un siglo de historia, identidad, títulos, ídolos
-y momentos inolvidables.
-</p>
-
-<div class="timeline">
-
-<div class="ano">
-<strong>1905</strong>
-<p>
-3 de abril. Fundación de Boca Juniors.
-</p>
-</div>
-
-<div class="ano">
-<strong>1925</strong>
-<p>
-La histórica gira europea lleva el nombre de Boca al mundo.
-</p>
-</div>
-
-<div class="ano">
-<strong>1940</strong>
-<p>
-Se inaugura La Bombonera.
-</p>
-</div>
-
-<div class="ano">
-<strong>HOY</strong>
-<p>
-La historia continúa con nuevas generaciones xeneizes.
-</p>
-</div>
-
-</div>
+<strong>
+02 SEP · VÉLEZ — BOCA
+</strong>
 
 <br>
 
-<a class="btn btn-amarillo"
+<small>
+Copa Argentina · 21:15
+</small>
+
+</div>
+
+
+<div class="linea">
+
+<strong>
+MINUTO A MINUTO
+</strong>
+
+<br>
+
+<small>
+Durante los partidos esta sección queda preparada
+para goles, cambios, tarjetas y acontecimientos.
+</small>
+
+</div>
+
+
+<div class="linea">
+
+<strong>
+ESTADÍSTICAS EN VIVO
+</strong>
+
+<br>
+
+<small>
+Posesión, remates, tiros al arco, córners y tarjetas.
+</small>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MERCADO
+========================= -->
+
+<section id="mercado">
+
+<h2 class="titulo">
+MERCADO DE PASES
+</h2>
+
+
+<div class="mercado">
+
+
+<div class="mercado-box llegadas">
+
+<h3>
+🟢 LLEGADAS
+</h3>
+
+<div class="movimiento">
+
+<strong>
+Refuerzos confirmados
+</strong>
+
+<br>
+
+Incorporaciones confirmadas oficialmente.
+
+</div>
+
+
+<div class="movimiento">
+
+<strong>
+Altas
+</strong>
+
+<br>
+
+Información del mercado xeneize.
+
+</div>
+
+</div>
+
+
+<div class="mercado-box negociacion">
+
+<h3>
+🟡 EN NEGOCIACIÓN
+</h3>
+
+<div class="movimiento">
+
+<strong>
+Operaciones
+</strong>
+
+<br>
+
+Negociaciones informadas por fuentes periodísticas.
+
+</div>
+
+
+<div class="movimiento">
+
+<strong>
+Tato Aguilera
+</strong>
+
+<br>
+
+Seguimiento de las operaciones.
+
+</div>
+
+</div>
+
+
+<div class="mercado-box salidas">
+
+<h3>
+🔴 SALIDAS
+</h3>
+
+<div class="movimiento">
+
+<strong>
+Transferencias
+</strong>
+
+<br>
+
+Ventas, préstamos y salidas.
+
+</div>
+
+
+<div class="movimiento">
+
+<strong>
+Seguimiento
+</strong>
+
+<br>
+
+Información oficial y periodística.
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HINCHAS
+========================= -->
+
+<section id="hinchas">
+
+<h2 class="titulo">
+OPINIÓN DE LOS HINCHAS
+</h2>
+
+<p class="subtitulo">
+La voz de la comunidad xeneize.
+</p>
+
+
+<div class="encuesta-grid">
+
+
+<div class="encuesta">
+
+<div class="fuente">
+ENCUESTA DEL MOMENTO
+</div>
+
+<h3>
+¿Cómo llega Boca al próximo partido?
+</h3>
+
+
+<div class="opciones">
+
+<button
+class="opcion"
+onclick="votar('Gana Boca')">
+Gana Boca
+</button>
+
+<button
+class="opcion"
+onclick="votar('Empata')">
+Empata
+</button>
+
+<button
+class="opcion"
+onclick="votar('Pierde')">
+Pierde
+</button>
+
+</div>
+
+
+<div
+id="resultadoEncuesta"
+class="resultado-encuesta">
+
+Elegí una opción para votar.
+
+</div>
+
+</div>
+
+
+<div class="encuesta">
+
+<div class="fuente">
+TERMÓMETRO XENEIZE
+</div>
+
+<h3>
+¿Cómo está la hinchada?
+</h3>
+
+<p>
+Optimismo
+<strong style="float:right">
+72%
+</strong>
+</p>
+
+<div class="barra">
+<span></span>
+</div>
+
+<p style="color:#667085;font-size:13px">
+
+El termómetro queda preparado para conectarse
+con resultados reales de la comunidad.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     VIDEOS
+========================= -->
+
+<section id="videos">
+
+<h2 class="titulo">
+VIDEOS DEL MOMENTO
+</h2>
+
+<p class="subtitulo">
+Contenido del mundo Boca.
+</p>
+
+
+<div class="videos">
+
+
+<div class="video">
+
+<div class="video-thumb">
+▶
+</div>
+
+<div class="video-body">
+
+<h3>
+El Canal de Boca
+</h3>
+
+<p>
+Entrevistas, jugadores, conferencias
+y contenido oficial.
+</p>
+
+<a
+class="btn btn-rojo"
+href="https://www.youtube.com/@ElCanaldeBoca"
+target="_blank">
+VER CANAL
+</a>
+
+</div>
+
+</div>
+
+
+<div class="video">
+
+<div class="video-thumb">
+▶
+</div>
+
+<div class="video-body">
+
+<h3>
+Los Bosteros de Tucumán
+</h3>
+
+<p>
+Streaming, opinión y pasión xeneize desde Tucumán.
+</p>
+
+<a
+class="btn btn-amarillo"
+href="https://youtube.com/@movlosbosterosdetucuman"
+target="_blank">
+VER STREAMING
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOTOS
+========================= -->
+
+<section id="fotos">
+
+<h2 class="titulo">
+FOTOS DEL MOMENTO
+</h2>
+
+<p class="subtitulo">
+Partidos · entrenamientos · jugadores · Bombonera.
+</p>
+
+
+<div class="fotos">
+
+
+<div class="foto foto-1">
+
+<span>
+📸
+</span>
+
+<strong>
+ÚLTIMO PARTIDO
+</strong>
+
+</div>
+
+
+<div class="foto foto-2">
+
+<span>
+📸
+</span>
+
+<strong>
+ENTRENAMIENTO
+</strong>
+
+</div>
+
+
+<div class="foto foto-3">
+
+<span>
+📸
+</span>
+
+<strong>
+JUGADORES
+</strong>
+
+</div>
+
+
+<div class="foto foto-4">
+
+<span>
+📸
+</span>
+
+<strong>
+LA BOMBONERA
+</strong>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ENTREVISTAS
+========================= -->
+
+<section>
+
+<h2 class="titulo">
+ENTREVISTAS Y PROTAGONISTAS
+</h2>
+
+
+<div class="grid3">
+
+
+<div class="card">
+
+<div class="fuente">
+JUGADORES
+</div>
+
+<h3>
+Entrevistas post partido
+</h3>
+
+<p>
+Espacio para entrevistas a los jugadores
+después de cada encuentro.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="fuente">
+CUERPO TÉCNICO
+</div>
+
+<h3>
+Conferencias
+</h3>
+
+<p>
+Conferencias de prensa y declaraciones
+del cuerpo técnico.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="fuente">
+ÍDOLOS
+</div>
+
+<h3>
+Voces históricas
+</h3>
+
+<p>
+Entrevistas y recuerdos de grandes
+protagonistas de Boca.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HISTORIA
+========================= -->
+
+<section id="historia">
+
+<h2 class="titulo">
+HISTORIA XENEIZE
+</h2>
+
+
+<div class="historia">
+
+<h2>
+1905 → HOY
+</h2>
+
+<p style="color:#dce7f7;margin-top:5px">
+
+Más de un siglo de historia, identidad,
+títulos, ídolos y momentos inolvidables.
+
+</p>
+
+
+<div class="timeline">
+
+
+<div class="ano">
+
+<strong>
+1905
+</strong>
+
+<p>
+3 de abril. Fundación de Boca Juniors.
+</p>
+
+</div>
+
+
+<div class="ano">
+
+<strong>
+1925
+</strong>
+
+<p>
+La histórica gira europea lleva
+el nombre de Boca al mundo.
+</p>
+
+</div>
+
+
+<div class="ano">
+
+<strong>
+1940
+</strong>
+
+<p>
+Se inaugura La Bombonera.
+</p>
+
+</div>
+
+
+<div class="ano">
+
+<strong>
+HOY
+</strong>
+
+<p>
+La historia continúa con nuevas
+generaciones xeneizes.
+</p>
+
+</div>
+
+
+</div>
+
+
+<br>
+
+
+<a
+class="btn btn-amarillo"
 href="https://www.bocajuniors.com.ar/historias"
 target="_blank">
 HISTORIA OFICIAL
 </a>
 
 </div>
+
 </section>
 
+
+<!-- =========================
+     UN DÍA COMO HOY
+========================= -->
 
 <section>
 
-<h2 class="titulo">UN DÍA COMO HOY</h2>
+<h2 class="titulo">
+UN DÍA COMO HOY
+</h2>
+
 
 <div class="card">
 
-<div class="fuente">EFEMÉRIDES XENEIZES</div>
+<div class="fuente">
+EFEMÉRIDES XENEIZES
+</div>
 
-<h3 id="fechaHistoria">30 DE AGOSTO</h3>
+<h3 id="fechaHistoria">
+30 DE AGOSTO
+</h3>
 
 <p>
-Cada día esta sección podrá mostrar acontecimientos históricos,
-cumpleaños, títulos, partidos memorables y protagonistas
-correspondientes a la fecha.
+
+Cada día esta sección podrá mostrar acontecimientos
+históricos, cumpleaños, títulos, partidos memorables
+y protagonistas correspondientes a la fecha.
+
 </p>
 
 </div>
+
 </section>
 
 
+<!-- =========================
+     STREAMING
+========================= -->
+
 <section id="streaming">
 
-<h2 class="titulo">BOCA 24/7 · STREAMING</h2>
+<h2 class="titulo">
+BOCA 24/7 · STREAMING
+</h2>
+
 
 <div class="streaming">
 
-<h2>Los Bosteros de Tucumán</h2>
+<h2>
+Los Bosteros de Tucumán
+</h2>
 
 <p>
 Información, opinión y pasión xeneize desde Tucumán.
 </p>
 
-<a class="btn btn-amarillo"
+<a
+class="btn btn-amarillo"
 href="https://youtube.com/@movlosbosterosdetucuman"
 target="_blank">
 ▶ NUESTRO STREAMING
 </a>
 
 </div>
+
 </section>
 
 
+<!-- =========================
+     FUENTES
+========================= -->
+
 <section>
 
-<h2 class="titulo">FUENTES XENEIZES</h2>
+<h2 class="titulo">
+FUENTES XENEIZES
+</h2>
+
 
 <div class="fuentes">
 
+
 <div class="fuente-box">
-<h3>Boca Juniors</h3>
-<p>Fuente oficial del club.</p>
-<a class="btn" href="https://www.bocajuniors.com.ar/" target="_blank">
+
+<h3>
+Boca Juniors
+</h3>
+
+<p>
+Fuente oficial del club.
+</p>
+
+<a
+class="btn"
+href="https://www.bocajuniors.com.ar/"
+target="_blank">
 VISITAR
 </a>
+
 </div>
 
+
 <div class="fuente-box">
-<h3>Tato Aguilera</h3>
-<p>Información periodística.</p>
-<a class="btn" href="https://x.com/Tato_Aguilera" target="_blank">
+
+<h3>
+Tato Aguilera
+</h3>
+
+<p>
+Información periodística.
+</p>
+
+<a
+class="btn"
+href="https://x.com/Tato_Aguilera"
+target="_blank">
 VER EN X
 </a>
+
 </div>
 
+
 <div class="fuente-box">
-<h3>Augusto César</h3>
-<p>Actualidad de Boca.</p>
-<a class="btn" href="https://x.com/Augustocesar22" t
+
+<h3>
+Augusto César
+</h3>
+
+<p>
+Actualidad de Boca.
+</p>
+
+<a
+class="btn"
+href="https://x.com/Augustocesar22"
+target="_blank">
+VER EN X
+</a>
+
+</div>
+
+
+<div class="fuente-box">
+
+<h3>
+El Canal de Boca
+</h3>
+
+<p>
+Contenido oficial.
+</p>
+
+<a
+class="btn"
+href="https://www.youtube.com/@ElCanaldeBoca"
+target="_blank">
+YOUTUBE
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NOTIFICACIONES
+========================= -->
+
+<section>
+
+<div class="notificaciones">
+
+<h2>
+🔔 NOTIFICACIONES BOCA 24/7
+</h2>
+
+<p>
+
+Activá las notificaciones para recibir novedades
+cuando el navegador lo permita.
+
+</p>
+
+<button
+class="btn btn-amarillo"
+onclick="activarNotificaciones()">
+
+ACTIVAR NOTIFICACIONES
+
+</button>
+
+<div
+id="estadoNotificacion"
+style="margin-top:12px">
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<strong>
+BOCA 24/7
+</strong>
+
+<p>
+Todo Boca. Todo el día.
+</p>
+
+<p>
+Noticias · Partidos · Agenda · Mercado · Hinchas · Historia · Videos · Streaming
+</p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   ENCUESTA
+========================= */
+
+function votar(opcion){
+
+let votos=JSON.parse(
+localStorage.getItem("boca247_votos") ||
+'{"Gana Boca":0,"Empata":0,"Pierde":0}'
+);
+
+votos[opcion]++;
+
+localStorage.setItem(
+"boca247_votos",
+JSON.stringify(votos)
+);
+
+let total=
+votos["Gana Boca"]+
+votos["Empata"]+
+votos["Pierde"];
+
+document.getElementById(
+"resultadoEncuesta"
+).textContent=
+"Votaste: "+
+opcion+
+" · "+
+total+
+" voto(s) registrados en este dispositivo.";
+
+}
+
+
+/* =========================
+   NOTIFICACIONES
+========================= */
+
+async function activarNotificaciones(){
+
+const estado=
+document.getElementById(
+"estadoNotificacion"
+);
+
+if(!("Notification" in window)){
+
+estado.textContent=
+"Este navegador no permite notificaciones.";
+
+return;
+
+}
+
+if(Notification.permission==="granted"){
+
+estado.textContent=
+"Las notificaciones ya están activadas.";
+
+return;
+
+}
+
+if(Notification.permission!=="denied"){
+
+const permiso=
+await Notification.requestPermission();
+
+estado.textContent=
+permiso==="granted"
+?
+"Notificaciones activadas."
+:
+"No se activaron las notificaciones.";
+
+}else{
+
+estado.textContent=
+"Las notificaciones están bloqueadas en el navegador.";
+
+}
+
+}
+
+
+/* =========================
+   FECHA AUTOMÁTICA
+========================= */
+
+function actualizarFecha(){
+
+const fecha=new Date();
+
+const opciones={
+day:"2-digit",
+month:"long"
+};
+
+document.getElementById(
+"fechaHistoria"
+).textContent=
+fecha
+.toLocaleDateString("es-AR",opciones)
+.toUpperCase();
+
+}
+
+actualizarFecha();
+
+</script>
+
+</body>
+</html>
