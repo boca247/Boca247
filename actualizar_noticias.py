@@ -2,14 +2,19 @@ import json
 import re
 import html
 import feedparser
+
 from datetime import datetime, timezone
 from urllib.parse import quote
 
 
+# ============================================================
+# CONFIGURACIÓN DE BÚSQUEDAS
+# ============================================================
+
 CATEGORIAS = {
 
     "Boca": [
-        "Boca Juniors noticias"
+        "Boca Juniors"
     ],
 
     "Sudamericana": [
@@ -17,8 +22,7 @@ CATEGORIAS = {
     ],
 
     "Mercado de pases": [
-        "Boca Juniors mercado de pases",
-        "Boca Juniors refuerzos"
+        "Boca Juniors mercado de pases"
     ],
 
     "Lesiones": [
@@ -50,17 +54,32 @@ CATEGORIAS = {
     ],
 
     "La Bombonera": [
-        "Boca Juniors La Bombonera"
+        "Boca Juniors Bombonera"
     ]
 }
 
+
+# ============================================================
+# CANTIDAD MÁXIMA
+# ============================================================
+
+MAX_NOTICIAS_POR_BUSQUEDA = 20
+
+MAX_NOTICIAS_FINALES = 80
+
+
+# ============================================================
+# LIMPIAR TEXTO
+# ============================================================
 
 def limpiar_texto(texto):
 
     if not texto:
         return ""
 
-    texto = html.unescape(str(texto))
+    texto = html.unescape(
+        str(texto)
+    )
 
     texto = re.sub(
         r"<[^>]+>",
@@ -83,113 +102,145 @@ def limpiar_texto(texto):
     return texto.strip()
 
 
-def quitar_fuente_del_titulo(titulo):
+# ============================================================
+# NORMALIZAR TEXTO PARA COMPARAR
+# ============================================================
 
-    titulo = limpiar_texto(titulo)
+def normalizar_texto(texto):
 
-    # Google News suele agregar:
-    # " - Nombre del medio"
-
-    titulo = re.sub(
-        r"\s+-\s+[^-]+$",
-        "",
-        titulo
-    )
-
-    return titulo.strip()
-
-
-def clave_noticia(titulo):
-
-    titulo = quitar_fuente_del_titulo(
-        titulo
-    )
-
-    titulo = titulo.lower()
+    texto = limpiar_texto(
+        texto
+    ).lower()
 
     reemplazos = {
+
         "á": "a",
         "é": "e",
         "í": "i",
         "ó": "o",
         "ú": "u",
-        "ü": "u"
+        "ü": "u",
+        "ñ": "n"
     }
 
-    for viejo, nuevo in reemplazos.items():
+    for original, nuevo in reemplazos.items():
 
-        titulo = titulo.replace(
-            viejo,
+        texto = texto.replace(
+            original,
             nuevo
         )
 
-    titulo = re.sub(
+    texto = re.sub(
         r"[^a-z0-9\s]",
         " ",
-        titulo
+        texto
     )
 
-    titulo = re.sub(
+    texto = re.sub(
         r"\s+",
         " ",
+        texto
+    )
+
+    return texto.strip()
+
+
+# ============================================================
+# NORMALIZAR TÍTULO
+# ============================================================
+
+def normalizar_titulo(titulo):
+
+    titulo = normalizar_texto(
         titulo
     )
 
-    return titulo.strip()
+    # Quitar fuentes habituales al final.
+    # Ejemplo:
+    #
+    # Boca confirmó la salida de Zeballos - Todo Jujuy
+    #
+    # queda:
+    #
+    # boca confirmo la salida de zeballos
+
+    titulo = re.sub(
+        r"\s+-\s+[^-]+$",
+        "",
+        titulo
+    ).strip()
+
+    return titulo
 
 
-def parece_titulo_repetido(
-    titulo,
-    resumen
-):
+# ============================================================
+# EXTRAER FUENTE
+# ============================================================
 
-    if not resumen:
-        return True
+def obtener_fuente(entrada):
 
-    titulo_limpio =
-        limpiar_texto(titulo).lower()
+    fuente = ""
 
-    resumen_limpio =
-        limpiar_texto(resumen).lower()
-
-    if not resumen_limpio:
-        return True
-
-    palabras_titulo = set(
-        titulo_limpio.split()
+    source = entrada.get(
+        "source"
     )
 
-    palabras_resumen = set(
-        resumen_limpio.split()
-    )
+    if source:
 
-    if not palabras_titulo:
-        return True
+        try:
 
-    coincidencias = (
-        len(
-            palabras_titulo.intersection(
-                palabras_resumen
+            fuente = source.get(
+                "title",
+                ""
             )
-        )
-        /
-        len(palabras_titulo)
+
+        except Exception:
+            
+
+            fuente = ""
+
+    if not fuente:
+
+        fuente = "Google Noticias"
+
+    return limpiar_texto(
+        fuente
+    )
+    # ============================================================
+# OBTENER FECHA
+# ============================================================
+
+def obtener_fecha(entrada):
+
+    publicado = entrada.get(
+        "published_parsed"
     )
 
-    if coincidencias >= 0.80:
-        return True
+    if publicado:
 
-    if len(resumen_limpio) < 70:
-        return True
+        try:
 
-    return False
+            fecha = datetime(
+                *publicado[:6],
+                tzinfo=timezone.utc
+            )
+
+            return fecha.isoformat()
+
+        except Exception:
+
+            pass
+
+    return ""
 
 
-def crear_resena(
-    titulo,
-    categoria,
-    fuente,
-    entrada
+# ============================================================
+# CREAR RESUMEN
+# ============================================================
+
+def crear_resumen(
+    entrada,
+    categoria
 ):
 
     resumen = entrada.get(
@@ -201,89 +252,83 @@ def crear_resena(
         resumen
     )
 
-    if fuente:
+    if len(resumen) > 350:
 
-        resumen = re.sub(
-            r"\s*" +
-            re.escape(fuente) +
-            r"\s*$",
-            "",
-            resumen,
-            flags=re.IGNORECASE
-        ).strip()
+        resumen = (
+            resumen[:350]
+            .rsplit(" ", 1)[0]
+            + "..."
+        )
 
-    if not parece_titulo_repetido(
-        titulo,
-        resumen
-    ):
+    # Google News muchas veces entrega
+    # un resumen prácticamente vacío.
+    # En ese caso usamos uno propio.
 
-        if len(resumen) > 320:
+    if len(resumen) < 60:
 
-            resumen = (
-                resumen[:320]
-                .rsplit(" ", 1)[0]
-                + "..."
-            )
+        respaldos = {
 
-        return resumen
+            "Boca":
+                "Todas las novedades de Boca Juniors, "
+                "la actualidad del plantel y la información "
+                "más importante del mundo Xeneize.",
 
-    textos = {
+            "Sudamericana":
+                "Toda la información de Boca Juniors "
+                "en la Copa Sudamericana, sus partidos, "
+                "protagonistas y últimas novedades.",
 
-        "Boca":
-            "Todas las novedades de Boca Juniors, "
-            "la actualidad del plantel y la información "
-            "más importante del mundo Xeneize.",
+            "Mercado de pases":
+                "Las últimas novedades del mercado de pases "
+                "de Boca Juniors: refuerzos, negociaciones, "
+                "altas y bajas.",
 
-        "Sudamericana":
-            "Toda la información de Boca Juniors "
-            "en la Copa Sudamericana, con las últimas "
-            "novedades, partidos y protagonistas.",
+            "Lesiones":
+                "Últimas novedades sobre el estado físico "
+                "de los jugadores de Boca Juniors y sus "
+                "respectivas recuperaciones.",
 
-        "Mercado de pases":
-            "Las últimas novedades del mercado de pases "
-            "de Boca Juniors: refuerzos, negociaciones, "
-            "altas y bajas.",
+            "Básquet":
+                "Toda la actualidad del básquet de Boca "
+                "Juniors, sus partidos, resultados y "
+                "protagonistas.",
 
-        "Lesiones":
-            "Últimas novedades sobre el estado físico "
-            "de los jugadores de Boca Juniors.",
+            "Futsal":
+                "Las últimas noticias del futsal de Boca "
+                "Juniors, partidos, resultados y novedades.",
 
-        "Básquet":
-            "Toda la actualidad del básquet de Boca "
-            "Juniors, sus partidos, resultados y "
-            "protagonistas.",
+            "Reserva":
+                "Toda la información de la Reserva de Boca "
+                "Juniors y las futuras figuras del club.",
 
-        "Futsal":
-            "Las últimas noticias del futsal de Boca "
-            "Juniors, partidos, resultados y novedades.",
+            "Fútbol femenino":
+                "Las últimas novedades del fútbol femenino "
+                "de Boca Juniors y Las Gladiadoras.",
 
-        "Reserva":
-            "Toda la información de la Reserva de Boca "
-            "Juniors y las futuras figuras del club.",
+            "Inferiores":
+                "Toda la actualidad de las divisiones "
+                "juveniles e inferiores de Boca Juniors.",
 
-        "Fútbol femenino":
-            "Las últimas novedades del fútbol femenino "
-            "de Boca Juniors y Las Gladiadoras.",
+            "Vóley":
+                "Noticias y novedades del vóley de Boca "
+                "Juniors.",
 
-        "Inferiores":
-            "Toda la actualidad de las divisiones "
-            "juveniles e inferiores de Boca Juniors.",
+            "La Bombonera":
+                "Toda la información sobre La Bombonera, "
+                "sus novedades, obras y actualidad."
+        }
 
-        "Vóley":
-            "Noticias y novedades del vóley de Boca "
-            "Juniors.",
+        return respaldos.get(
+            categoria,
+            "Últimas novedades de Boca Juniors."
+        )
 
-        "La Bombonera":
-            "Toda la información sobre La Bombonera, "
-            "sus novedades, obras y actualidad."
-    }
+    return resumen
 
-    return textos.get(
-        categoria,
-        "Últimas novedades de Boca Juniors. "
-        "Entrá a la nota para conocer todos los detalles."
-    )
 
+# ============================================================
+# OBTENER NOTICIAS DE UNA BÚSQUEDA
+# ============================================================
 
 def obtener_noticias(
     busqueda,
@@ -299,24 +344,26 @@ def obtener_noticias(
         "&ceid=AR:es-419"
     )
 
-    feed = feedparser.parse(url)
+    print(
+        "Buscando: "
+        + busqueda
+    )
+
+    feed = feedparser.parse(
+        url
+    )
 
     resultados = []
 
-    for entrada in feed.entries[:10]:
+    for entrada in feed.entries[
+        :MAX_NOTICIAS_POR_BUSQUEDA
+    ]:
 
-        titulo_original = limpiar_texto(
+        titulo = limpiar_texto(
             entrada.get(
                 "title",
                 ""
             )
-        )
-
-        if not titulo_original:
-            continue
-
-        titulo = quitar_fuente_del_titulo(
-            titulo_original
         )
 
         link = entrada.get(
@@ -324,57 +371,23 @@ def obtener_noticias(
             ""
         ).strip()
 
-        fuente = ""
+        if not titulo:
+            continue
 
-        source = entrada.get(
-            "source"
-        )
+        if not link:
+            continue
 
-        if source:
-
-            try:
-                fuente = source.get(
-                    "title",
-                    ""
-                )
-            except Exception:
-                fuente = ""
-
-        if not fuente:
-            fuente = "Google Noticias"
-
-        fuente = limpiar_texto(
-            fuente
-        )
-
-        fecha_iso = ""
-
-        publicado = entrada.get(
-            "published_parsed"
-        )
-
-        if publicado:
-
-            try:
-
-                fecha = datetime(
-                    *publicado[:6],
-                    tzinfo=timezone.utc
-                )
-
-                fecha_iso = (
-                    fecha.isoformat()
-                )
-
-            except Exception:
-
-                fecha_iso = ""
-
-        contenido = crear_resena(
-            titulo,
-            categoria,
-            fuente,
+        fuente = obtener_fuente(
             entrada
+        )
+
+        fecha_iso = obtener_fecha(
+            entrada
+        )
+
+        contenido = crear_resumen(
+            entrada,
+            categoria
         )
 
         resultados.append({
@@ -390,19 +403,223 @@ def obtener_noticias(
             "categoria": categoria,
 
             "fecha_iso": fecha_iso
-
         })
 
     return resultados
 
 
-# =====================================
-# OBTENER NOTICIAS
-# =====================================
+# ============================================================
+# CLAVE ÚNICA DE UNA NOTICIA
+# ============================================================
+
+def clave_noticia(noticia):
+
+    titulo = normalizar_titulo(
+        noticia.get(
+            "titulo",
+            ""
+        )
+    )
+
+    if not titulo:
+        return ""
+
+    return titulo
+
+
+# ============================================================
+# CALCULAR SIMILITUD ENTRE TÍTULOS
+# ============================================================
+
+def similitud_titulos(
+    titulo1,
+    titulo2
+):
+
+    palabras1 = set(
+        normalizar_titulo(
+            titulo1
+        ).split()
+    )
+
+    palabras2 = set(
+        normalizar_titulo(
+            titulo2
+        ).split()
+    )
+
+    if not palabras1 or not palabras2:
+        return 0
+
+    interseccion = (
+        palabras1
+        .intersection(
+            palabras2
+        )
+    )
+
+    union = (
+        palabras1
+        .union(
+            palabras2
+        )
+    )
+
+    if not union:
+        return 0
+
+    return (
+        len(interseccion)
+        /
+        len(union)
+        )
+    # ============================================================
+# ELIMINAR NOTICIAS DUPLICADAS O MUY PARECIDAS
+# ============================================================
+
+def eliminar_duplicadas(lista):
+
+    resultado = []
+
+    claves = set()
+
+    for noticia in lista:
+
+        titulo = noticia.get(
+            "titulo",
+            ""
+        ).strip()
+
+        if not titulo:
+            continue
+
+
+        # ----------------------------------------------------
+        # DUPLICADO EXACTO NORMALIZADO
+        # ----------------------------------------------------
+
+        clave = clave_noticia(
+            noticia
+        )
+
+        if not clave:
+            continue
+
+        if clave in claves:
+            continue
+
+
+        # ----------------------------------------------------
+        # DUPLICADO MUY PARECIDO
+        # ----------------------------------------------------
+
+        repetida = False
+
+        for existente in resultado:
+
+            titulo_existente = existente.get(
+                "titulo",
+                ""
+            )
+
+            similitud = similitud_titulos(
+                titulo,
+                titulo_existente
+            )
+
+            # 75% o más de palabras compartidas
+            # significa que probablemente es
+            # la misma noticia publicada por
+            # otra fuente.
+
+            if similitud >= 0.75:
+
+                repetida = True
+                break
+
+
+        if repetida:
+            continue
+
+
+        claves.add(
+            clave
+        )
+
+        resultado.append(
+            noticia
+        )
+
+
+    return resultado
+
+
+# ============================================================
+# ORDENAR POR FECHA
+# ============================================================
+
+def ordenar_por_fecha(lista):
+
+    def fecha_para_ordenar(noticia):
+
+        fecha = noticia.get(
+            "fecha_iso",
+            ""
+        )
+
+        if not fecha:
+            return datetime(
+                1970,
+                1,
+                1,
+                tzinfo=timezone.utc
+            )
+
+        try:
+
+            return datetime.fromisoformat(
+                fecha.replace(
+                    "Z",
+                    "+00:00"
+                )
+            )
+
+        except Exception:
+
+            return datetime(
+                1970,
+                1,
+                1,
+                tzinfo=timezone.utc
+            )
+
+
+    return sorted(
+        lista,
+        key=fecha_para_ordenar,
+        reverse=True
+    )
+
+
+# ============================================================
+# COMENZAR RECOLECCIÓN
+# ============================================================
 
 todas = []
 
+print("")
+print("============================================")
+print("       BOCA 24/7 - ACTUALIZANDO NOTICIAS")
+print("============================================")
+print("")
+
+
 for categoria, busquedas in CATEGORIAS.items():
+
+    print(
+        "Categoría: "
+        + categoria
+    )
 
     for busqueda in busquedas:
 
@@ -417,73 +634,65 @@ for categoria, busquedas in CATEGORIAS.items():
                 noticias
             )
 
+            print(
+                "  Noticias encontradas: "
+                + str(
+                    len(noticias)
+                )
+            )
+
         except Exception as error:
 
             print(
-                "Error en "
-                + categoria
-                + ": "
+                "  ERROR: "
                 + str(error)
             )
 
 
-# =====================================
-# ELIMINAR DUPLICADOS
-# =====================================
-
-unicas = {}
-
-for noticia in todas:
-
-    clave = clave_noticia(
-        noticia.get(
-            "titulo",
-            ""
-        )
+print("")
+print(
+    "Total antes de eliminar repetidas: "
+    + str(
+        len(todas)
     )
-
-    if not clave:
-        continue
-
-    if clave not in unicas:
-
-        unicas[clave] = noticia
-
-
-noticias_finales = list(
-    unicas.values()
 )
 
 
-# =====================================
-# ORDENAR POR FECHA
-# =====================================
+# ============================================================
+# ELIMINAR DUPLICADAS
+# ============================================================
 
-noticias_finales.sort(
-
-    key=lambda noticia:
-        noticia.get(
-            "fecha_iso",
-            ""
-        ),
-
-    reverse=True
-
+noticias_finales = eliminar_duplicadas(
+    todas
 )
 
 
-# =====================================
-# MÁXIMO 60
-# =====================================
-
-noticias_finales = (
-    noticias_finales[:60]
+print(
+    "Total después de eliminar repetidas: "
+    + str(
+        len(noticias_finales)
+    )
 )
 
 
-# =====================================
-# GUARDAR
-# =====================================
+# ============================================================
+# ORDENAR
+# ============================================================
+
+noticias_finales = ordenar_por_fecha(
+    noticias_finales
+)
+
+
+# ============================================================
+# LIMITAR CANTIDAD
+# ============================================================
+
+noticias_finales = noticias_finales[
+    :MAX_NOTICIAS_FINALES
+]# ============================================================
+# GUARDAR NOTICIAS.JSON
+# ============================================================
 
 with open(
     "noticias.json",
@@ -499,41 +708,60 @@ with open(
     )
 
 
-print(
-    "================================="
-)
+# ============================================================
+# INFORMACIÓN FINAL
+# ============================================================
+
+print("")
+print("============================================")
+print("        ACTUALIZACIÓN COMPLETADA")
+print("============================================")
 
 print(
-    "BOCA 24/7"
-)
-
-print(
-    "Noticias únicas: "
+    "Noticias guardadas: "
     + str(
         len(noticias_finales)
     )
 )
 
-print(
-    "================================="
-)
+print("Archivo generado: noticias.json")
 
-categorias_encontradas = sorted(
-    set(
-        noticia.get(
+print("============================================")
+print("")
+
+
+# ============================================================
+# MOSTRAR LAS PRIMERAS NOTICIAS
+# ============================================================
+
+for numero, noticia in enumerate(
+    noticias_finales[:10],
+    start=1
+):
+
+    print(
+        str(numero)
+        + ". "
+        + noticia.get(
+            "titulo",
+            ""
+        )
+    )
+
+    print(
+        "   Fuente: "
+        + noticia.get(
+            "fuente",
+            ""
+        )
+    )
+
+    print(
+        "   Categoría: "
+        + noticia.get(
             "categoria",
             ""
         )
-        for noticia in noticias_finales
-    )
-)
-
-for categoria in categorias_encontradas:
-
-    print(
-        "- " + categoria
     )
 
-print(
-    "================================="
-    )
+    print("")
