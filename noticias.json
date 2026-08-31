@@ -448,14 +448,6 @@
     "fecha_iso": "2026-08-28T12:09:00+00:00"
   },
   {
-    "titulo": "Copa Libertadores Femenina 2025: Boca Juniors vs Alianza Lima en Telefe - Panorama Directo",
-    "fuente": "Panorama Directo",
-    "contenido": "Copa Libertadores Femenina 2025: Boca Juniors vs Alianza Lima en Telefe",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQc1Nxb0RjdHYxUHNrM1pUS1hvTEhTZV8tWFBrdXg3MmFLUlI5R25FOS10WXJTcUdnT2E1X0RLVDktaV9QaUZWT1RDaUVqc3MzZ2VqRlhzcl9oNkZISnRDc3Rkb0U4cnJfVmZJQ3U5YXFNaktqMUR0c3BUTUVKa19DQklIa0U?oc=5",
-    "categoria": "Fútbol femenino",
-    "fecha_iso": "2026-08-28T10:55:00+00:00"
-  },
-  {
     "titulo": "Boca campeón con presencia tandilense entre las titulares - El diario de Tandil",
     "fuente": "El diario de Tandil",
     "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
@@ -468,6 +460,14 @@
     "fuente": "Club Atlético Lanús",
     "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBVaUIwVWJGcDlmYXJ2ZFpkNllWeGlYa0JOZVgxT1llclJGTUU4QWVkdWI2QkZ3MmhycEp1bF9GWFRlX3Fvci1WWXdEZ2M5TVNIX0JhT3Bqd3VKWHRvZ2RSUF8wNnV6cTJFRDNfWUhsWHJhSnpu?oc=5",
+    "categoria": "La Bombonera",
+    "fecha_iso": "2026-08-28T07:00:00+00:00"
+  },
+  {
+    "titulo": "A qué hora juega Boca vs. Lanús en el Torneo Clausura 2026 y dónde ver - ESPN Argentina",
+    "fuente": "ESPN Argentina",
+    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWEYyMFU0S2RzS0o4cnJ4WVlwRFJ6djNiNU05Y2R2NjZnLXRxbVNSTDJMTGczY2dzVktIeE5SVHRkWlFtLWtBdHEyeHFPb1RaWjRLQ1NOdzZiRmRTZnRaTkZzNF9HdE5JRWdJdVNRQWlJQ3BVZVViLUdEeU5WYS10Q1ppZElaTS11czdJaUhFSjY0bTU3UEpoVU1Qc1JVV3o5TlBiVXNlU0E2bVJDNkROWnZrNU1MUG9UU0E?oc=5",
     "categoria": "La Bombonera",
     "fecha_iso": "2026-08-28T07:00:00+00:00"
   },
@@ -640,6 +640,14 @@
     "fecha_iso": "2026-08-26T17:22:00+00:00"
   },
   {
+    "titulo": "Lamentable noticia en Boca Juniors: Tomás Aranda sufrió una grave lesión - DSports",
+    "fuente": "DSports",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxON0RhcTRqWUNXMkJRTUM1LXdiajB2M3NvazFFMl9jckNTNGw0R1dHdE1FVFlYVFgzbE44SGNuaVVwMVp2Z1Vld2p3ZExYa1lsTEhwemhMS0RaeXhLeVJfbjkySXA5Y0NpREVTLVh4bU5IV2I5bFM1UDhINXBlQzFTdE5qLXkyTUxCdmZGTmJBcTJBMTg0aEJvVEgwNkhVNk9PWWJNWG9MUC0yWkJKbkNaVlZuTXRVOW5TVzJCYlZWRHI3dGtYdXfSAcsBQVVfeXFMUHFZRDMyQ0dmY1pGd1lQMTN0dnZKWWZqTzFfeEVvSU1xR0ZGUDBTNnlqb2hRZk5SMjVybWdTLXVPOXZpaEM0enZzb1dfVk9XS0ZRZl9VSm9UdG5JVmIwN0pQX3kzUUxxVllUeDVMREtkeFhIQUg5TVRZOF9obFg0TDc5YVItM3pNcHRxNGJvWE5YMDR4djAtdFFSOXdBdE9XNG1icUtsVFY5UkEwYkpjaGxtOGEtaVFuekpQTFhWaVRKdTBTV2l5bU9SNWs?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-26T15:45:46+00:00"
+  },
+  {
     "titulo": "Boca realizará una prueba de captación de jóvenes futbolistas en Pilar - diarioresumen.com.ar",
     "fuente": "diarioresumen.com.ar",
     "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
@@ -726,14 +734,6 @@
     "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNN3FhN1dsVWsyTDRKaEVxTy1nRkcwSUhTMk9HdUFYaVBmLXhpQU1BUkNrZUd4aTVJR1V5RmlTemQ1N0V0cURkRktCTkFrcURlZnhZbGR5T3pqM0tnbVd2V0gxcS1abE5KeVA3NWdKaHNDZmpod2NKeVBSUEptNVR4VEJDY2tmSmV2MDZxYXBBVWlqQUg2aEt3?oc=5",
     "categoria": "Mercado de pases",
     "fecha_iso": "2026-08-25T07:00:00+00:00"
-  },
-  {
-    "titulo": "Del Bicentenario a La Bombonera: Boca prueba juveniles sanjuaninos esta semana - San Juan 8",
-    "fuente": "San Juan 8",
-    "contenido": "Del Bicentenario a La Bombonera: Boca prueba juveniles sanjuaninos esta semana",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEhKZmM3Ym5GSHg3andPWTFCNUJHUHJGQWhIQmc3R09jMVNWS3ZBSk03UkVFR0FBUV9IZFhvZl91Yy15eFI1aFBsVmkyQVBtb1hGenBGbk55dEVTRUJiY3RhaGNoYlByOGpyV3d4ZnY2eXp0Yi0zTEUwaDc4VlJSUTdfdHFhWThGMDlSSWx0OVNTT09CeWMxUlpDcW9teVc0RHlFelJVN0pzaktmNUJiVzVTMUhaSXFE?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-24T23:13:27+00:00"
   },
   {
     "titulo": "Boca confirmó que se desprendió de dos jugadores en el mercado de pases: “Les deseamos lo mejor” - TN",
