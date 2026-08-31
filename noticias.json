@@ -112,14 +112,6 @@
     "fecha_iso": "2026-08-30T18:52:01+00:00"
   },
   {
-    "titulo": "Arruabarrena reveló qué pasará con Bianco en Boca y habló de Paredes - El Intransigente",
-    "fuente": "El Intransigente",
-    "contenido": "Toda la información de la Reserva de Boca Juniors y las futuras figuras del club.",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBvSUwxdy1JZVl1OEg3U0xfVGc3U21BQkVrZW1FNDhSVGJ3eXN2S195VzhhMVNOYnpBaEhiOERzTnVIZEpLNlhkNC1pQW83bE5LeDZCczhGTUh5X2YzZHozb3pIc3c2bmZfRWtiQVlBeFBaa3BNY0liSjFORnM?oc=5",
-    "categoria": "Reserva",
-    "fecha_iso": "2026-08-30T18:52:01+00:00"
-  },
-  {
     "titulo": "Paredes volvió en Boca, reveló cómo detalles de su estado físico y despejó dudas de su futuro: \"Estoy en el lugar que quiero\" - Diario Río Negro",
     "fuente": "Diario Río Negro",
     "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
@@ -440,6 +432,14 @@
     "fecha_iso": "2026-08-28T12:09:00+00:00"
   },
   {
+    "titulo": "Copa Libertadores Femenina 2025: Boca Juniors vs Alianza Lima en Telefe - Panorama Directo",
+    "fuente": "Panorama Directo",
+    "contenido": "Copa Libertadores Femenina 2025: Boca Juniors vs Alianza Lima en Telefe",
+    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQc1Nxb0RjdHYxUHNrM1pUS1hvTEhTZV8tWFBrdXg3MmFLUlI5R25FOS10WXJTcUdnT2E1X0RLVDktaV9QaUZWT1RDaUVqc3MzZ2VqRlhzcl9oNkZISnRDc3Rkb0U4cnJfVmZJQ3U5YXFNaktqMUR0c3BUTUVKa19DQklIa0U?oc=5",
+    "categoria": "Fútbol femenino",
+    "fecha_iso": "2026-08-28T10:55:00+00:00"
+  },
+  {
     "titulo": "A qué hora juega Boca vs. Lanús en el Torneo Clausura 2026 y dónde ver - ESPN Argentina",
     "fuente": "ESPN Argentina",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -616,12 +616,12 @@
     "fecha_iso": "2026-08-26T17:22:00+00:00"
   },
   {
-    "titulo": "Paredes y los pibes: la foto que refleja la marca registrada del Boca del Vasco - Olé",
-    "fuente": "Olé",
+    "titulo": "Lamentable noticia en Boca Juniors: Tomás Aranda sufrió una grave lesión - DSports",
+    "fuente": "DSports",
     "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
-    "link": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQQlFwUFk5QW5seGNJTGZJNVBPTExUWC1TUjNPT2hpUU81Wk9Jbm1aVDljb1R0Y2NWYkhXNUFPRUQ2VWk1Z3lnRkNneUlHRGRVUTBWWi1VQWlNZkZkZXZ3a0c3cVpuYlVXcGpOOVpwQUE0WGFyMzE1R3BRZklZZGFxMjJkVmRVampJVnJtU3pwMlpjZUhSQWtCVXI4b1RDZnFGY2dfUFdHdnpLNFFxYmRIYWYtTEdWRnRabWVjSFFaX0JfU05UckdiWERpNWZJaTRNR0dFZVo4U0V2d2R2TGc1dGxvNk1VXy1IcUEtRUp5M1lfUTFpQlB1TmpnVG15U3o2NUNHZ1I0VndnVFZhd0tod3BjaUFNT19ITGdhUThJd3o0YURZMTVoetIBrgJBVV95cUxOR28wQ3JxTzNRa3FFNzlPV3lySWZ6X28weUhjN1hkLXh1a3NSbGw4QnNFbHlqVnZmZVF6QzZlTWdkaHp5RE5DY0JHN01vY2pBaDdyWHU4WDNVZTI0NS1iQlJkakJFbVhqd0FDUE1fRUQwMnhONGZWVTZKZzVGOURZUUcwcGlDSUxrS05nOTY1XzJFYTVzSkdQUlVDOHVscDUwSHZzNnlnRzJPSUVfeDJGTUV3Z1V3VVNwWUFOWVZ4OFEybHdYSGUxNEZoN0tUWVJCSnpraVNFVTYzNWc5a3lTQ2ZiTWxRSF9QZy1MTzh0b3hDM3lqM19NaGk2eHpNcVViRXg2MlFpU1NSbEhfbkdFMzQ3VzZ4QWQycHhwSi14Yl8wX0ZTVVNqY2FCeDdKQQ?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxON0RhcTRqWUNXMkJRTUM1LXdiajB2M3NvazFFMl9jckNTNGw0R1dHdE1FVFlYVFgzbE44SGNuaVVwMVp2Z1Vld2p3ZExYa1lsTEhwemhMS0RaeXhLeVJfbjkySXA5Y0NpREVTLVh4bU5IV2I5bFM1UDhINXBlQzFTdE5qLXkyTUxCdmZGTmJBcTJBMTg0aEJvVEgwNkhVNk9PWWJNWG9MUC0yWkJKbkNaVlZuTXRVOW5TVzJCYlZWRHI3dGtYdXfSAcsBQVVfeXFMUHFZRDMyQ0dmY1pGd1lQMTN0dnZKWWZqTzFfeEVvSU1xR0ZGUDBTNnlqb2hRZk5SMjVybWdTLXVPOXZpaEM0enZzb1dfVk9XS0ZRZl9VSm9UdG5JVmIwN0pQX3kzUUxxVllUeDVMREtkeFhIQUg5TVRZOF9obFg0TDc5YVItM3pNcHRxNGJvWE5YMDR4djAtdFFSOXdBdE9XNG1icUtsVFY5UkEwYkpjaGxtOGEtaVFuekpQTFhWaVRKdTBTV2l5bU9SNWs?oc=5",
     "categoria": "Inferiores",
-    "fecha_iso": "2026-08-26T13:26:26+00:00"
+    "fecha_iso": "2026-08-26T15:45:46+00:00"
   },
   {
     "titulo": "Boca realizará una prueba de captación de jóvenes futbolistas en Pilar - diarioresumen.com.ar",
