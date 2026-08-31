@@ -29,7 +29,9 @@ button {
     margin: auto;
 }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .site-header {
     background: #001b4d;
@@ -112,7 +114,9 @@ button {
     border-radius: 50%;
 }
 
-/* NAV */
+/* =====================================================
+   NAV
+===================================================== */
 
 .main-nav {
     background: white;
@@ -144,7 +148,9 @@ button {
     color: white;
 }
 
-/* TICKER */
+/* =====================================================
+   TICKER
+===================================================== */
 
 .breaking-bar {
     background: #ffd400;
@@ -172,7 +178,9 @@ button {
     text-overflow: ellipsis;
 }
 
-/* HERO */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero-section {
     width: min(1180px, calc(100% - 32px));
@@ -187,8 +195,12 @@ button {
     position: relative;
     min-height: 480px;
     background:
-        linear-gradient(120deg, rgba(0,24,70,.98), rgba(0,35,100,.45)),
-        radial-gradient(circle at 70% 30%, #174c9d, #001332 65%);
+        linear-gradient(
+            120deg,
+            rgba(0,24,70,.88),
+            rgba(0,35,100,.45)
+        ),
+        url("IMG-20260830-WA0003.jpg") center/cover no-repeat;
     overflow: hidden;
 }
 
@@ -277,7 +289,9 @@ button {
     color: rgba(255,255,255,.75);
 }
 
-/* BUTTONS */
+/* =====================================================
+   BUTTONS
+===================================================== */
 
 .primary-button,
 .outline-button {
@@ -308,7 +322,9 @@ button {
     color: #001f5b;
 }
 
-/* QUICK LINKS */
+/* =====================================================
+   QUICK LINKS
+===================================================== */
 
 .quick-links {
     width: min(1180px, calc(100% - 32px));
@@ -336,7 +352,9 @@ button {
     font-size: 12px;
 }
 
-/* SECTIONS */
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section {
     width: min(1180px, calc(100% - 32px));
@@ -364,7 +382,9 @@ button {
     margin-top: 9px;
 }
 
-/* NEWS */
+/* =====================================================
+   NEWS
+===================================================== */
 
 .news-grid {
     display: grid;
@@ -376,6 +396,12 @@ button {
     background: white;
     border: 1px solid #e1e6ed;
     overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,20,55,.10);
 }
 
 .news-image {
@@ -386,27 +412,53 @@ button {
     color: white;
     font-size: 11px;
     font-weight: 900;
-    background:
-        linear-gradient(180deg, transparent, rgba(0,15,45,.85)),
-        linear-gradient(135deg, #06499b, #001a48);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
+.news-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 35%,
+        rgba(0,15,45,.9)
+    );
+}
+
+.news-image span {
+    position: relative;
+    z-index: 2;
+}
+
+/* IMÁGENES REALES */
+
 .image-bombonera {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,15,45,.85)),
-        radial-gradient(circle at 50% 20%, #e9c56b, #00458b 45%, #00183d);
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
+}
+
+.image-training {
+    background-image:
+        url("IMG-20260830-WA0004.jpg");
+}
+
+.image-camiseta {
+    background-image:
+        url("IMG-20260830-WA0006.jpg");
 }
 
 .image-paredes {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,15,45,.9)),
-        linear-gradient(135deg, #153c7b, #0070b9);
+    background-image:
+        url("IMG-20260830-WA0004.jpg");
 }
 
 .image-team {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,15,45,.9)),
-        linear-gradient(135deg, #092d62, #416eac);
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
 }
 
 .news-content {
@@ -445,7 +497,9 @@ button {
     margin-top: 30px;
 }
 
-/* MATCH */
+/* =====================================================
+   PARTIDOS
+===================================================== */
 
 .match-card {
     background: #001b4d;
@@ -548,7 +602,9 @@ button {
     color: #747e8c;
 }
 
-/* MARKET */
+/* =====================================================
+   MERCADO
+===================================================== */
 
 .market-grid,
 .fan-grid {
@@ -589,7 +645,9 @@ button {
     font-size: 10px;
 }
 
-/* FANS */
+/* =====================================================
+   HINCHAS
+===================================================== */
 
 .poll-card,
 .fan-card {
@@ -629,14 +687,18 @@ button {
     color: #687385;
 }
 
-.thermo-head {
+.thermometer {
+    margin-top: 20px;
+}
+
+.thermometer > div:first-child {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
     font-weight: 900;
 }
 
-.thermo-head strong {
+.thermometer > div:first-child strong {
     color: #0052aa;
 }
 
@@ -654,7 +716,9 @@ button {
     background: #0052aa;
 }
 
-/* VIDEOS */
+/* =====================================================
+   VIDEOS
+===================================================== */
 
 .video-grid {
     display: grid;
@@ -666,6 +730,12 @@ button {
     background: white;
     border: 1px solid #e0e5eb;
     overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(0,20,55,.10);
 }
 
 .video-cover {
@@ -676,43 +746,52 @@ button {
     position: relative;
     color: white;
     overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .video-cover::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, transparent, rgba(0,10,30,.8));
+    background: linear-gradient(
+        180deg,
+        rgba(0,20,55,.05),
+        rgba(0,10,30,.85)
+    );
 }
 
+/* PORTADAS DE VIDEO */
+
 .video-lanus {
-    background:
-        linear-gradient(135deg, #0054a6, #00163a);
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
 }
 
 .video-belmonte {
-    background:
-        linear-gradient(135deg, #0b397c, #d0a928);
+    background-image:
+        url("IMG-20260830-WA0004.jpg");
 }
 
 .video-paredes {
-    background:
-        linear-gradient(135deg, #001f5b, #1685c9);
+    background-image:
+        url("IMG-20260830-WA0004.jpg");
 }
 
 .video-canal {
-    background:
-        linear-gradient(135deg, #172c51, #0060a8);
+    background-image:
+        url("IMG-20260830-WA0006.jpg");
 }
 
 .video-predio {
-    background:
-        linear-gradient(135deg, #0a326d, #4b719e);
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
 }
 
 .video-tucuman {
-    background:
-        linear-gradient(135deg, #001c4f, #005da8);
+    background-image:
+        url("IMG-20260830-WA0006.jpg");
 }
 
 .video-cover > span {
@@ -737,13 +816,15 @@ button {
     font-size: 22px;
     position: relative;
     z-index: 3;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
 }
 
 .video-info {
     padding: 22px;
 }
 
-.video-info small {
+.video-info small,
+.video-info > span {
     font-size: 10px;
     font-weight: 900;
     color: #0052a4;
@@ -768,7 +849,9 @@ button {
     color: #003f89;
 }
 
-/* PHOTOS */
+/* =====================================================
+   FOTOS
+===================================================== */
 
 .photo-grid {
     display: grid;
@@ -783,34 +866,53 @@ button {
     padding: 20px;
     color: white;
     font-weight: 900;
-    background:
-        linear-gradient(180deg, transparent, rgba(0,20,55,.9)),
-        linear-gradient(135deg, #003a82, #061d45);
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 30%,
+        rgba(0,20,55,.9)
+    );
+}
+
+.photo-card span {
+    position: relative;
+    z-index: 2;
 }
 
 .photo-one {
     grid-row: span 2;
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
 }
 
 .photo-two {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,20,55,.9)),
-        linear-gradient(135deg, #144b8f, #00183d);
+    background-image:
+        url("IMG-20260830-WA0004.jpg");
 }
 
 .photo-three {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,20,55,.9)),
-        linear-gradient(135deg, #0a5d9e, #001c46);
+    background-image:
+        url("IMG-20260830-WA0006.jpg");
 }
 
 .photo-four {
-    background:
-        linear-gradient(180deg, transparent, rgba(0,20,55,.9)),
-        linear-gradient(135deg, #002961, #526b91);
+    background-image:
+        url("IMG-20260830-WA0003.jpg");
 }
 
-/* HISTORY */
+/* =====================================================
+   HISTORIA
+===================================================== */
 
 .history {
     background: #001b4d;
@@ -856,13 +958,22 @@ button {
     font-size: 13px;
 }
 
-/* STREAMING */
+/* =====================================================
+   STREAMING
+===================================================== */
 
 .streaming-card {
     background:
-        linear-gradient(120deg, #00163f, #003f86);
+        linear-gradient(
+            120deg,
+            rgba(0,22,63,.92),
+            rgba(0,63,134,.88)
+        ),
+        url("IMG-20260830-WA0006.jpg") center/cover no-repeat;
     padding: 60px;
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .streaming-card h2 {
@@ -881,7 +992,9 @@ button {
     color: #001b4d;
 }
 
-/* SOURCES */
+/* =====================================================
+   FUENTES
+===================================================== */
 
 .sources-grid {
     display: grid;
@@ -893,6 +1006,12 @@ button {
     background: white;
     padding: 25px;
     border: 1px solid #e0e5eb;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sources-grid a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,20,55,.08);
 }
 
 .sources-grid strong {
@@ -906,7 +1025,9 @@ button {
     margin-top: 5px;
 }
 
-/* SUBSCRIBE */
+/* =====================================================
+   NEWSLETTER
+===================================================== */
 
 .subscribe-section {
     background: #00225e;
@@ -927,7 +1048,9 @@ button {
     color: rgba(255,255,255,.7);
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
     background: #000d27;
@@ -967,7 +1090,35 @@ footer small {
     color: rgba(255,255,255,.4);
 }
 
-/* MOBILE */
+/* =====================================================
+   EFECTOS GENERALES
+===================================================== */
+
+.news-card,
+.video-card,
+.sources-grid a,
+.market-card,
+.poll-card,
+.fan-card,
+.fixtures article {
+    border-radius: 4px;
+}
+
+.primary-button,
+.outline-button,
+.poll-options button,
+.yellow-button {
+    transition: all .2s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -1003,7 +1154,6 @@ footer small {
     .photo-one {
         grid-row: span 1;
     }
-
 }
 
 @media (max-width: 650px) {
@@ -1101,5 +1251,4 @@ footer small {
         flex-direction: column;
         align-items: flex-start;
     }
-
-  }
+}
