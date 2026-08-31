@@ -90,9 +90,9 @@
   {
     "titulo": "Atlético volvió a medirse con Boca en Juveniles tras 10 años - Diario Castellanos",
     "fuente": "Diario Castellanos",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
     "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNQmkwR3RTekFKcnYzMi1PRG9GaFJWdm55QnBXd0JXNnd3UHB1TGF4M2d5YnVYTW9zVE5wM0lFUTRaVm1oMlZOTDA1VEFVbm9KV3c1b1hreXBjMlNCTXFxSGhHMnJOOG15dUM0Yk1SNnpfdEExTkpxTFNtUkNBMG55bVZjaWMxWi1WcTJwOUpnUnFTaGFBVEdOZmdmaGM3RDFTaWg3QkpmR1AxbHZmSEU5Y1VpTGQxUFhz?oc=5",
-    "categoria": "Boca",
+    "categoria": "Inferiores",
     "fecha_iso": "2026-08-30T20:45:32+00:00"
   },
   {
@@ -150,14 +150,6 @@
     "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9ESjZqakxHOGVfVUFBMFdyR2wxUzdLUTNaM1N3RXh1VWtNZnZGVWVLQkRPSDY3VUdobjlJR2lBeXBacW5VT2FrSjVuZElkV3FQTzBmdHZFV0hobWtBZUt4U3FmVVlOSzF3dGROM0xGV05wcFlSekgw?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-30T16:57:03+00:00"
-  },
-  {
-    "titulo": "Sao Paulo cortó una larga racha antes de enfrentar a Boca en la Copa Sudamericana: los detalles - Planeta Boca Juniors",
-    "fuente": "Planeta Boca Juniors",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxObDRvNVY5RVZJTndjR21zVGhFZWVhUzNRd1ZBQkZjU3B0NW04UVB6bXNaN3kwSDd2MUItb3AxNUswR3dtbkhaQkJZSVB0T1ZXNFZPZEEteXNiR0wwREN4cUlCLXZmUW9QcVpaUTB5N1hJSlg5U1FuMGctOUdDNlBQM1lzVGFfQW1BSEJUVXFjM1pKczczTllNM2NnX2NLSmtZYXNicXVtcEhPOVM4dDF5Yi1GX2xnNUE2cGVhbWlVb0pnWHR6b2RQaXh30gHOAUFVX3lxTE82eVZRX0wzQjZwUTdld0JJV3R1dUFUNVY2Y3Y0d1N2b3laRVI4d2lpY0RBVVVOLW1Ca1FLbFVRbWlpR3hTeGtSMFNoSXczanU3QVB1dEc3TUVmUkNReTVrSDNsLTVHUzYyeTBtMUNNdkRRMmNKdHdKOTBuN0plWXVjcnM4QVBvMVBDb3h0Y2JMblJhOG9TcDJ2QkNNVmdHZlJFT2VCYXE0dFZlcGVZTzk1c0NrdFJ1ajRpNDRsdVhxajNtLS1DdlRBZWhJTlR3?oc=5",
-    "categoria": "Sudamericana",
-    "fecha_iso": "2026-08-30T16:43:09+00:00"
   },
   {
     "titulo": "Con el nuevo sistema, Boca anunció cómo será la venta de entradas contra San Pablo - TyC Sports",
@@ -432,6 +424,14 @@
     "fecha_iso": "2026-08-28T15:04:09+00:00"
   },
   {
+    "titulo": "Boca Juniors recibe a Lanús, en partido por el grupo \"A\" - Diario Democracia",
+    "fuente": "Diario Democracia",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZnQybjNlRkxPQjJxQlJybWd4SHpualdPNmxWX1M5cnJvN3UwaDRiSGhLYWIydUFxZWpUbGpKbVBwbEJzUmNXOHd3YVRiNWozbDFOTWlPQjdzbE5HNDBqMzRvbTFVaFkxR1c2VGJjbFFURlpJb2RONnFRRDd1YlBDV3UyWjUwek9XTm1jXzlESDJfX3Q3RllwbEpfRGRRNklmdXRhWDRRTzhPNjZHLU9NS05n?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-28T13:34:29+00:00"
+  },
+  {
     "titulo": "Quién es Facundo \"Jagger\" Herrera: altura y de qué juega el futbolista de Boca surgido de las Inferiores - El Destape",
     "fuente": "El Destape",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -534,6 +534,14 @@
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeEIzQVlhTGRRWFQ3NXBjT3RlN0dIaHFDWm9tUS1BWVZ3ZUlrYTVtZzQxQ01lUWZFcEQzcFFieVRiaHE5MGluMFUweW51UDBvNk1mWDBkcS1MVGtjRUNkN21RQnhYSU4teko3ZExqWXV5RXRvdDFqcHE2bXR5OTRmZ3dHcVJSUklMQkZvN0dFVmg3b1h0N0dabE1YVdIBoAFBVV95cUxONVZseXhvMWJmbkxqVHR5QkxtQ2FMYlQzTlF0ZnY3VjFWSkxrNU5aSjk5QXNQX3IzVnZpaGpwQ3NBMktGRWN1eTQ2VVdzMUJJc0NfT25hLVZ3bjlyNTBIcEZBSlc5TDFXeWJVZjdiblhyTk13UkxLaG54YTRMbkM3WEVqVzFaanctRVdfQS1US1JOaWdrOEdjTTlHLTFFLUJ0?oc=5",
     "categoria": "Inferiores",
     "fecha_iso": "2026-08-27T21:26:20+00:00"
+  },
+  {
+    "titulo": "Cuándo y a qué hora juega Boca sus partidos contra San Pablo en los cuartos de final de la Copa Sudamericana - TN",
+    "fuente": "TN",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxPdUs4SlFoUGdMVEVIQmlMM2dMdEpqRm5HazlFRkIzUlg4UUhQSTZHOGJoTExqTzhGMkx5ZENpcDhackNSREI0XzRGUnQxdTFYd1dXS01zdEVZUWRvZE1IRzB1Mkx6ZFFQeGpwNXJKb3h1Vk5fS09pci02eWRMSGRvalRLa3JINkozNUJhelgyaEZNTGU3bzdyM2tYZTB4RTVBcVFIYm5PZl9VSjhRNS1yMjNPeEpNT1lyd0JkZWtJaFVqUUlQSVdjU0YtR0FnS3dtZE0wTVNNMGU3REt4YmlNVTE2VkRWSHd4RGk3Y0JTUVpMTW9sd0HSAYoCQVVfeXFMUDRVdTlqc0gyeE5RWmdncDY1SThFcjY3LThkbXNlQmZlOG9UZ1JuU3doY3lBc2MyQUlJeHJSWTlkbkllc1F4cXI4TVdMVFlFSGZuaW9veGtjbGhRci1PQVdRUW1uUjJpWjB3SEZMMlBzVE9USkRRWlRhVkwzZUxTNnY4R0g3UlZNNXhzd3pUNjZHdS1rcGFnYjJLNU5wNmNrZVRlZ1N6aF9JOXJpZnJqbHo3ZjFqdjZfenJ0WlNkUnRFNDlmdmRoMXNtMVRaNkZ5MUViQW1JSDZtLW55TUVyelFMN2N5YU00bzNPS1lJLVVJdFdTT2xPTkVXVDRjYlYzN05yb1d5MWxsbkE?oc=5",
+    "categoria": "Sudamericana",
+    "fecha_iso": "2026-08-27T20:17:41+00:00"
   },
   {
     "titulo": "Quién es Matías Satas, el defensor juvenil que Arruabarrena convoca ante Lanús - Planeta Boca Juniors",
@@ -766,14 +774,6 @@
     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOek05Z3p4TXFXb1g4UEVNejJkb1hkVlRJcnVQNHREd3VHYWlPam1vMFloeWRkbkFCSnp2R3NBRXFhc3JHanV3VFppbGVIaWh3NDVkVV9mSkdIZGlQZEFKQ2d1TEdjVkQ2YUVaQjdqRVg4ek9sOEFMLXpienhPSWJrV1JkS1FLQzBRX3pwR21kazRtYjBpTWwxUWZpWkhkOEgyZVA1VmNuc2FWbHlSSFNxQzlXd1FZbm0wNkotd2tRTkNsMC1IMnN1WW5ONjVQZw?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-24T02:50:27+00:00"
-  },
-  {
-    "titulo": "Bajas de Boca Juniors para enfrentar a Racing Club: lesionados y sancionados - 365Scores",
-    "fuente": "365Scores",
-    "contenido": "Últimas novedades sobre el estado físico de los jugadores de Boca Juniors y sus respectivas recuperaciones.",
-    "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE91Uk91OUVOazhsUjRXUFNQbGNYZnBqLXN5M0s3MjlLZVZXa20yVml2VlhQNEtJbGo5cGxpdkxMdEtjSnhJcDFMRXNMczFINnNvMXlvUVVMVndUbEgySkQzUk4tMG80RUVRak9JMHdhU1Y1aW4tWUE?oc=5",
-    "categoria": "Lesiones",
-    "fecha_iso": "2026-08-23T15:00:00+00:00"
   },
   {
     "titulo": "Boca y Banfield no se sacaron ventaja pero mandan - DeporTV",
