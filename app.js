@@ -1,51 +1,103 @@
-/* =====================================================
-   BOCA 24/7
-   SISTEMA PRINCIPAL
-   VERSIÓN CON API AUTOMÁTICA
-===================================================== */
-
 const newsGrid = document.getElementById("newsGrid");
 const reloadNews = document.getElementById("reloadNews");
 const loadMore = document.getElementById("loadMore");
 const tickerText = document.getElementById("tickerText");
 
-let todasLasNoticias = [];
-let cantidadMostrada = 12;
-
 
 /* =====================================================
-   CONFIGURACIÓN
-===================================================== */
-
-const API_NOTICIAS = "/api/noticias";
-const ACTUALIZACION_AUTOMATICA = 5 * 60 * 1000;
-
-
-/* =====================================================
-   NOTICIAS DE RESPALDO
+   NOTICIAS ACTUALES DE RESPALDO
 ===================================================== */
 
 const noticiasRespaldo = [
+
     {
-        titulo: "Boca volvió al triunfo ante Lanús",
-        fuente: "BOCA 24/7",
-        categoria: "Fútbol",
-        fecha: "29 de agosto de 2026",
+        titulo: "La Octava en la cima",
+        fuente: "Boca Juniors",
+        categoria: "Juveniles",
+        fecha: "30 de agosto de 2026",
         contenido:
-            "Boca Juniors volvió a ganar en La Bombonera y consiguió tres puntos importantes.",
+            "La Octava de Boca continúa en la parte alta de su competencia.",
         link:
             "https://www.bocajuniors.com.ar/noticias"
     },
+
     {
         titulo: "Comunicado: Juan Barinaga",
         fuente: "Boca Juniors",
-        categoria: "Club",
+        categoria: "Fútbol",
         fecha: "29 de agosto de 2026",
+        contenido:
+            "Boca publicó información oficial relacionada con Juan Barinaga.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias"
+    },
+
+    {
+        titulo: "Invicto para las mayores",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+            "Las categorías mayores continúan con buenos resultados.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias"
+    },
+
+    {
+        titulo: "Estoy en el lugar que amo",
+        fuente: "Boca Juniors",
+        categoria: "Entrevistas",
+        fecha: "29 de agosto de 2026",
+        contenido:
+            "Leandro Paredes y Tomás Belmonte hablaron con la prensa tras el triunfo ante Lanús.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias/estoy-en-el-lugar-que-amo"
+    },
+
+    {
+        titulo: "Los tres puntos son importantes",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+            "El Vasco Arruabarrena analizó la victoria de Boca frente a Lanús.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias/los-tres-puntos-son-importantes"
+    },
+
+    {
+        titulo: "Con el grito final",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "29 de agosto de 2026",
+        contenido:
+            "Boca le ganó 1-0 a Lanús con un gol de Tomás Belmonte en la última jugada.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias/con-el-grito-final"
+    },
+
+    {
+        titulo: "Mantiene el puntaje ideal",
+        fuente: "Boca Juniors",
+        categoria: "Vóley",
+        fecha: "29 de agosto de 2026",
+        contenido:
+            "Boca superó 3-0 a Gimnasia de La Plata en el Metro de vóley femenino.",
+        link:
+            "https://www.bocajuniors.com.ar/noticias/mantiene-el-puntaje-ideal"
+    },
+
+    {
+        titulo: "Comunicado: Gonzalo Gelini",
+        fuente: "Boca Juniors",
+        categoria: "Fútbol",
+        fecha: "28 de agosto de 2026",
         contenido:
             "Información oficial del Club Atlético Boca Juniors.",
         link:
             "https://www.bocajuniors.com.ar/noticias"
     }
+
 ];
 
 
@@ -69,237 +121,73 @@ function escaparHTML(texto) {
 
 
 /* =====================================================
-   LIMPIAR DESCRIPCIONES DE GOOGLE NEWS
-===================================================== */
-
-function limpiarDescripcion(texto) {
-
-    if (!texto) {
-        return "";
-    }
-
-    const temporal = document.createElement("div");
-
-    temporal.innerHTML = String(texto);
-
-    const limpio = temporal.textContent || temporal.innerText || "";
-
-    return limpio
-        .replace(/\s+/g, " ")
-        .trim();
-}
-
-
-/* =====================================================
-   OBTENER FECHA
-===================================================== */
-
-function obtenerFecha(noticia) {
-
-    if (noticia.fecha) {
-        const fecha = new Date(noticia.fecha);
-
-        if (!isNaN(fecha.getTime())) {
-            return fecha;
-        }
-    }
-
-    if (noticia.publicado) {
-        const fecha = new Date(noticia.publicado);
-
-        if (!isNaN(fecha.getTime())) {
-            return fecha;
-        }
-    }
-
-    return new Date(0);
-}
-
-
-/* =====================================================
-   FORMATEAR FECHA
-===================================================== */
-
-function formatearFecha(noticia) {
-
-    const fecha = obtenerFecha(noticia);
-
-    if (fecha.getTime() === 0) {
-        return noticia.fecha || "";
-    }
-
-    return fecha.toLocaleString("es-AR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit"
-    });
-}
-
-
-/* =====================================================
-   CATEGORÍA AUTOMÁTICA
-===================================================== */
-
-function obtenerCategoria(noticia) {
-
-    const texto = (
-        (noticia.titulo || "") +
-        " " +
-        (noticia.contenido || "") +
-        " " +
-        (noticia.descripcion || "")
-    ).toLowerCase();
-
-    if (
-        texto.includes("mercado") ||
-        texto.includes("refuerzo") ||
-        texto.includes("pase") ||
-        texto.includes("transferencia") ||
-        texto.includes("vendido")
-    ) {
-        return "Mercado";
-    }
-
-    if (
-        texto.includes("lesión") ||
-        texto.includes("lesionado") ||
-        texto.includes("médico")
-    ) {
-        return "Parte médico";
-    }
-
-    if (
-        texto.includes("juvenil") ||
-        texto.includes("predio") ||
-        texto.includes("reserva")
-    ) {
-        return "Juveniles";
-    }
-
-    if (
-        texto.includes("camiseta") ||
-        texto.includes("club") ||
-        texto.includes("comunicado")
-    ) {
-        return "Club";
-    }
-
-    return "Fútbol";
-}
-
-
-/* =====================================================
-   IMÁGENES DISPONIBLES
-===================================================== */
-
-const imagenesBoca = [
-    "/IMG-20260830-WA0002.jpg",
-    "/IMG-20260830-WA0004.jpg",
-    "/IMG-20260830-WA0006.jpg",
-    "/IMG-20260829-WA0001.jpg",
-    "/IMG-20260829-WA0003.jpg"
-];
-
-
-/* =====================================================
-   CREAR TARJETA
+   CREAR NOTICIA
 ===================================================== */
 
 function crearNoticia(noticia, index) {
 
-    const titulo =
-        noticia.titulo ||
-        "Última noticia de Boca";
+    const fondos = [
+        "image-bombonera",
+        "image-paredes",
+        "image-team"
+    ];
 
-    const fuente =
-        noticia.fuente ||
-        "BOCA 24/7";
-
-    const descripcionOriginal =
-        noticia.contenido ||
-        noticia.descripcion ||
-        "Toda la información de Boca Juniors.";
-
-    const descripcion =
-        limpiarDescripcion(descripcionOriginal);
-
-    const categoria =
-        noticia.categoria ||
-        obtenerCategoria(noticia);
-
-    const fecha =
-        formatearFecha(noticia);
-
-    const link =
-        noticia.link ||
-        "#";
-
-    const imagen =
-        noticia.imagen ||
-        imagenesBoca[index % imagenesBoca.length];
-
+    const fondo =
+        fondos[index % fondos.length];
 
     return `
+
         <article class="news-card">
 
-            <div
-                class="news-image"
-                style="
-                    background-image:
-                    linear-gradient(
-                        0deg,
-                        rgba(0,20,55,.92),
-                        rgba(0,20,55,.10)
-                    ),
-                    url('${escaparHTML(imagen)}');
-                "
-            >
+            <div class="news-image ${fondo}">
 
                 <span>
-                    ${escaparHTML(categoria).toUpperCase()}
+                    ${escaparHTML(
+                        noticia.categoria || "BOCA"
+                    ).toUpperCase()}
                 </span>
 
             </div>
 
-
             <div class="news-content">
 
                 <span class="category">
-                    ${escaparHTML(fuente)}
+                    ${escaparHTML(
+                        noticia.fuente || "BOCA 24/7"
+                    )}
                 </span>
 
-
                 <h3>
-                    ${escaparHTML(titulo)}
+                    ${escaparHTML(
+                        noticia.titulo
+                    )}
                 </h3>
-
 
                 <p>
                     ${escaparHTML(
-                        descripcion ||
+                        noticia.contenido ||
                         "Toda la información de Boca Juniors."
                     )}
                 </p>
 
-
                 <span class="news-date">
-                    ${escaparHTML(fecha)}
+                    ${escaparHTML(
+                        noticia.fecha || ""
+                    )}
                 </span>
 
-
                 ${
-                    link !== "#"
+                    noticia.link
                     ?
                     `
                     <a
-                        href="${escaparHTML(link)}"
+                        href="${escaparHTML(noticia.link)}"
                         target="_blank"
-                        rel="noopener noreferrer"
-                        class="news-read"
-                    >
-                        LEER MÁS →
+                        rel="noopener"
+                        class="news-read">
+
+                        LEER NOTICIA →
+
                     </a>
                     `
                     :
@@ -309,6 +197,7 @@ function crearNoticia(noticia, index) {
             </div>
 
         </article>
+
     `;
 }
 
@@ -323,11 +212,11 @@ function mostrarNoticias(lista) {
         return;
     }
 
-
     if (!Array.isArray(lista) || lista.length === 0) {
 
         newsGrid.innerHTML = `
             <article class="news-card">
+
                 <div class="news-content">
 
                     <span class="category">
@@ -335,63 +224,33 @@ function mostrarNoticias(lista) {
                     </span>
 
                     <h3>
-                        No hay noticias disponibles
+                        No hay noticias disponibles.
                     </h3>
 
                     <p>
-                        Estamos intentando actualizar la información.
+                        Intentá actualizar nuevamente.
                     </p>
 
                 </div>
+
             </article>
         `;
 
         return;
     }
 
-
-    const visibles =
-        lista.slice(0, cantidadMostrada);
-
-
     newsGrid.innerHTML =
-        visibles
+        lista
             .map((noticia, index) =>
                 crearNoticia(noticia, index)
             )
             .join("");
 
-
-    actualizarBotonVerMas(lista.length);
-
 }
 
 
 /* =====================================================
-   BOTÓN VER MÁS
-===================================================== */
-
-function actualizarBotonVerMas(total) {
-
-    if (!loadMore) {
-        return;
-    }
-
-    if (cantidadMostrada >= total) {
-
-        loadMore.style.display = "none";
-
-    } else {
-
-        loadMore.style.display = "";
-        loadMore.textContent = "VER MÁS NOTICIAS";
-
-    }
-}
-
-
-/* =====================================================
-   CARGAR NOTICIAS DESDE API
+   CARGAR NOTICIAS
 ===================================================== */
 
 async function cargarNoticias() {
@@ -399,128 +258,64 @@ async function cargarNoticias() {
     if (reloadNews) {
 
         reloadNews.disabled = true;
-        reloadNews.textContent = "ACTUALIZANDO...";
-    }
+        reloadNews.textContent = "CARGANDO...";
 
+    }
 
     try {
 
         const respuesta =
             await fetch(
-                API_NOTICIAS +
-                "?t=" +
-                Date.now(),
-                {
-                    cache: "no-store"
-                }
+                "noticias.json?v=" +
+                Date.now()
             );
-
 
         if (!respuesta.ok) {
-
             throw new Error(
-                "La API respondió con error " +
-                respuesta.status
+                "No se pudo cargar noticias.json"
             );
         }
-
 
         const datos =
             await respuesta.json();
 
-
-        let noticias = [];
-
-
-        if (Array.isArray(datos)) {
-
-            noticias = datos;
-
-        } else if (
-            datos &&
-            Array.isArray(datos.noticias)
-        ) {
-
-            noticias = datos.noticias;
-
-        }
-
-
-        if (!noticias.length) {
-
-            throw new Error(
-                "La API no devolvió noticias."
-            );
-        }
-
-
-        noticias =
-            noticias
-                .filter(noticia =>
-                    noticia &&
-                    noticia.titulo
-                )
-                .sort(
-                    (a, b) =>
-                        obtenerFecha(b) -
-                        obtenerFecha(a)
-                );
-
-
-        todasLasNoticias = noticias;
-
-
-        cantidadMostrada = 12;
-
-
-        mostrarNoticias(
-            todasLasNoticias
-        );
-
-
         if (
-            tickerText &&
-            todasLasNoticias[0]
+            Array.isArray(datos) &&
+            datos.length > 0
         ) {
 
-            tickerText.textContent =
-                todasLasNoticias[0].titulo;
+            mostrarNoticias(datos);
+
+            if (
+                datos[0] &&
+                tickerText
+            ) {
+
+                tickerText.textContent =
+                    datos[0].titulo;
+
+            }
+
+        } else {
+
+            mostrarNoticias(
+                noticiasRespaldo
+            );
 
         }
-
-
-        console.log(
-            "BOCA 24/7:",
-            todasLasNoticias.length,
-            "noticias cargadas desde la API."
-        );
-
 
     } catch (error) {
 
-        console.error(
-            "Error cargando API:",
+        console.warn(
+            "Usando noticias de respaldo:",
             error
         );
-
-
-        todasLasNoticias =
-            noticiasRespaldo;
-
-
-        cantidadMostrada =
-            noticiasRespaldo.length;
-
 
         mostrarNoticias(
             noticiasRespaldo
         );
 
-
-        if (
-            tickerText &&
-            noticiasRespaldo[0]
-        ) {
+        if (tickerText) {
 
             tickerText.textContent =
                 noticiasRespaldo[0].titulo;
@@ -537,57 +332,6 @@ async function cargarNoticias() {
         }
 
     }
-}
-
-
-/* =====================================================
-   VER MÁS
-===================================================== */
-
-if (loadMore) {
-
-    loadMore.addEventListener(
-        "click",
-        () => {
-
-            cantidadMostrada += 12;
-
-
-            mostrarNoticias(
-                todasLasNoticias
-            );
-
-
-            if (
-                cantidadMostrada >=
-                todasLasNoticias.length
-            ) {
-
-                loadMore.style.display =
-                    "none";
-
-            }
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   BOTÓN ACTUALIZAR
-===================================================== */
-
-if (reloadNews) {
-
-    reloadNews.addEventListener(
-        "click",
-        async () => {
-
-            await cargarNoticias();
-
-        }
-    );
 
 }
 
@@ -603,26 +347,68 @@ function vote(opcion) {
             "pollResult"
         );
 
-
     if (!resultado) {
         return;
     }
-
 
     resultado.innerHTML =
         `
         Tu voto:
         <strong>
             ${escaparHTML(opcion)}
-        </strong>.
-        Gracias por participar.
+        </strong>
+        · Gracias por participar.
         `;
 
 }
 
 
 /* =====================================================
-   FECHA Y TÍTULO
+   BOTÓN ACTUALIZAR
+===================================================== */
+
+if (reloadNews) {
+
+    reloadNews.addEventListener(
+        "click",
+        cargarNoticias
+    );
+
+}
+
+
+/* =====================================================
+   BOTÓN VER MÁS
+===================================================== */
+
+if (loadMore) {
+
+    loadMore.addEventListener(
+        "click",
+        () => {
+
+            mostrarNoticias(
+                noticiasRespaldo
+            );
+
+            loadMore.textContent =
+                "NOTICIAS CARGADAS";
+
+            setTimeout(() => {
+
+                loadMore.textContent =
+                    "VER MÁS NOTICIAS";
+
+            }, 2500);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   FECHA DEL SITIO
 ===================================================== */
 
 function actualizarFecha() {
@@ -630,43 +416,18 @@ function actualizarFecha() {
     const fecha =
         new Date();
 
-
-    const opciones = {
-
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-
-    };
-
-
     document.title =
-        "BOCA 24/7 | " +
+        "BOCA 24/7 | Todo Boca · " +
         fecha.toLocaleDateString(
             "es-AR",
-            opciones
+            {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            }
         );
 
 }
-
-
-/* =====================================================
-   ACTUALIZACIÓN AUTOMÁTICA
-===================================================== */
-
-setInterval(
-    () => {
-
-        console.log(
-            "Actualización automática de noticias..."
-        );
-
-
-        cargarNoticias();
-
-    },
-    ACTUALIZACION_AUTOMATICA
-);
 
 
 /* =====================================================
@@ -677,9 +438,9 @@ document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        actualizarFecha();
-
         cargarNoticias();
+
+        actualizarFecha();
 
     }
 );
