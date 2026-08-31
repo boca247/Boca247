@@ -56,14 +56,6 @@
     "fecha_iso": "2026-08-31T08:54:20+00:00"
   },
   {
-    "titulo": "No es el Napoli: Boca y Zeballos, cerca de cerrar el pase al Calcio - Olé",
-    "fuente": "Olé",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQOUFPR0RzTUVyT3dYQWRzRGYyaC0ySVNyNHhSalktVzNTMW9POHJvWTZYT19wZy13UExEdVNDdWQyTjZkYzlxMG42d0JOT0cyanRxNUNjemxybjFhYWxQQ1h5MVN0blpSVUZTZGttNU1GMnAtQXhlYXAyd212Tnd4UFNlNFBhUTIyQ1RkckttSHFGcmozV0lEQXhWOXNFU3JibWZhcNIBqgFBVV95cUxPZ2tyeGdETGJaWHZhSVRzSDliS3FVQWhFMnNqZkRBeEI0c0RWTWR6V1dXWXBMOThGYnpyY2FNV1JFcjlzVFAtbk9NcWNDRXMxYk9CTG4zOElWRFhHUlZOeE9SWi14NHhTckxHR3VsSnBGRmxHY1k2cDZPLVlwNVgwSWtNV1VqYUVlb0RtYVljMktuSzBJNVBuMHhMd1ZkcnVpS2h1NV9QcTdJdw?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-31T00:12:01+00:00"
-  },
-  {
     "titulo": "El llamativo posteo de Palacios que sorprende a Boca: \"Cargo dos lobos conmigo\" - TyC Sports",
     "fuente": "TyC Sports",
     "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
@@ -296,6 +288,14 @@
     "fecha_iso": "2026-08-29T22:37:33+00:00"
   },
   {
+    "titulo": "Cómo escaló Boca en la tabla anual tras el empate de Vélez y la derrota de Central - Olé",
+    "fuente": "Olé",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZFQwczhMb3FuWjdzcXNPQ1pLdXVYTmpiUmlFM2hwOHFtNFpLLWhIMFdpSGF0NHQ4RXA2ODBrZWJ1ZFhyV2V6alRDQ2J5T2t4ZHN3N0dTd2poMUNkX2EtdzJtcllGYU92WDc3MnJLckZLTVljTDdQa1lGU2lyRUNpZkEwN1c3d1Z2YXZsclVuYkQyaVlxZWl30gGcAUFVX3lxTE02VXd3WDZabnRqZVpiYVk5UDVnNXZlSDNCTUZ3T0YxR3BKYkpFdDhud2xKNmszUndTN0h5T2I2ZUxMdVZHSDVYNmxpcEpScy1SRjNpdWEzMXZlSGhKYlRDUnd5YkNiTGIzbWQySE1xNmNzSG9FTVY2SkZhbjRjekVXUldhczRSUGw2Y3FzdmJuUTBQY3hhbDI5Y19qNw?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-29T21:57:02+00:00"
+  },
+  {
     "titulo": "JUGADORES DE LANÚS HABLARON LUEGO DEL PARTIDO ANTE BOCA JUNIORS - Club Atlético Lanús",
     "fuente": "Club Atlético Lanús",
     "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
@@ -360,6 +360,22 @@
     "fecha_iso": "2026-08-29T04:35:04+00:00"
   },
   {
+    "titulo": "En su regreso a La Bombonera, Boca Juniors venció 1-0 a Lanús en la última jugada del partido y se metió en zona de playoffs - Infobae",
+    "fuente": "Infobae",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYW1oal9KbzUwcmI4MEJObVlJR3hLSEtZbkJlYlpqaU1BREQ5VVVEcmlsRUY2TmxYdmt0YzBlME9oTEsyWVN4bEUzUkhUMFNaaDV6b2M1YlVyeXh2M1FlblBrX2t3bUI3cDNhenZ2cDF2am5PNHY2bWRENmR3MU02Yk1JeTlkZUZBU0ZqdGVtZEpBU01iTTVXbVdER19GNERPVUZvbDRzZnNXbnpYdVI2TzR2NHphUzh0Ty1BdTVrUlM3Xzl3d0RSOTdITWpVMUhFWWtpX9IB7wFBVV95cUxNemtwb1V5RWFNc2VLNG9VeUw2bUxDRDBGQkFkNXZ4MGpEVDFMVTc1Y0hjclRQdjYwTlQzc0Y1bTM1eHN1ZUlob0xTM0pmODAtbUlvbFRQRExRNWUwRl9DOGpPaXlPdWV0VUpYeWZqaGRiVnNrZlF1d0o1OFJJem0xdTVabDA0TXhudW1yVjdaYUQwZ3p1RE9XMjJaT1daLUdqb1hLVGJDT2hTVVFGcW40N0pjZXUxRWd1M1VXQkxWQ2JjeWhtaXI2eTIwa1BHWlZPS21KSk5mUUVjNDIzVXgyX2ZNTGRIVHVSSEtMdzh4QQ?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-29T03:47:00+00:00"
+  },
+  {
+    "titulo": "Los puntajes de Boca vs. Lanús, por el Torneo Clausura - TyC Sports",
+    "fuente": "TyC Sports",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMFY5Q0JjSkswWjZMQnF3WE4tczFMR0RCeURhWmZKTVI1dUMwTXQwRC0tc0ZjVnp0eUZva1NDOHVWaGh0Smd5eHQwMC13aUJRQWpWM0x4cHUyTHYtRDVGdkYyaVlWVlNhemJ3LU1veEJXcUNVTEg3U29aVGFqOWZpcmZpRUpGN1Y2YWV1UV9UbzRSN29idzFxSUFKRDNvTUd0LWE1RHlGRWVIRm9NVDdEdTNHN3pnbFJ0?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-29T03:16:50+00:00"
+  },
+  {
     "titulo": "Boca volvió a la Bombonera con triunfazo agónico ante Lanús - Olé",
     "fuente": "Olé",
     "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
@@ -400,6 +416,14 @@
     "fecha_iso": "2026-08-29T02:17:01+00:00"
   },
   {
+    "titulo": "Video: los mejores momentos del Boca-Lanús - Olé",
+    "fuente": "Olé",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTTlDY01vS014Y296WU4tWkZvM0V5bTd3WXNrX2tKZERudXlrYTRzYmdvZ0Vod3FpRjJyRkJvTUVMcFBzSGxuWGNNbEw1cnpnVk14TlNVbUNYQWVPSlRwT1RfZWFBeTdmb0NSdERVYlh1Qk1YbWdfdF80cEFoMEIyRUdjR3dVdFBTSnFVd002amVDN1QwdS1mRUpjRzA3UlNIcWRMZWdB0gGrAUFVX3lxTE9KR1ZVWVN5TTZhTE5QQkJjYU40RGtLajgzazZxb1ZDUEQ0NlVtRGZlTTFhaUZiaUJ3U3RHeXBIb0laWXByckYzYnJsZDBvWTAtODlTWjhldVplWGdYSDhZVDc5eWQ0aksxUWpNemc5Y283R1k4RXFhdUFhQkU0cG1CbHVZbmdYeHRHQ0NHOXlvQ1FVaE12a2VsdHZKUWVLUDVMdEZQaWRhSEVjWQ?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-29T02:02:48+00:00"
+  },
+  {
     "titulo": "Central Córdoba visitará a Boca en La Bombonera | Cuándo juegan y a qué hora - Nuevo Diario Web",
     "fuente": "Nuevo Diario Web",
     "contenido": "Central Córdoba visitará a Boca en La Bombonera | Cuándo juegan y a qué hora",
@@ -430,14 +454,6 @@
     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPQnJFWHNaZGVDVEFSRWVMZFVVYVRMRHhkNnlkS0ZVdmdCbG4tbWUzWHZpOWZ4VW1MbVBUZzBwMlc4dVNJTUxqc2duZlRxQ1RkVFVYaXhCNlZxRHJsbC1WYmxKNzhoc0lhamFEQ1FNdE1nYnlxOWp0cGloS1FBa3A1aG1UN0NrZVpTaVZEeFVrNEUzNHhwcGstbnRmbE5GcUVaUTlQSmVWNUxnOTFzT3Y1bQ?oc=5",
     "categoria": "Boca",
     "fecha_iso": "2026-08-28T22:46:00+00:00"
-  },
-  {
-    "titulo": "Los pibes del club copan la formación titular de Boca para recibir a Lanús - MejorInformado.com",
-    "fuente": "MejorInformado.com",
-    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOZW5qUF9TZGZVTXM4VDZFalVfNGFDN2JickZkSDU1STNCN2c5S1MxMXExWWxlQTVid0huNHVnMy1oQjFPa0FLenhkT0hpbUxKUFdPRUJVT0pqMGxTdmx0VXF5cVpLd0MxUkdNdEdpX21OcVFJWFRESkI2MkZfREt5T0NMZ3o4NXVOeERTR2kwWGFkdDBCN0J3Z0Q2dzY2LThLWks3WHh6TGpZLXc2VVkwU1BPU1pGc2dkNDhSejZiTXZCVlk?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-28T22:29:03+00:00"
   },
   {
     "titulo": "Familia xeneize: el hijo de Enner Valencia debutó en las inferiores de Boca - Planeta Boca Juniors",
@@ -512,14 +528,6 @@
     "fecha_iso": "2026-08-28T10:55:00+00:00"
   },
   {
-    "titulo": "A qué hora juega Boca vs. Lanús en el Torneo Clausura 2026 y dónde ver - ESPN Argentina",
-    "fuente": "ESPN Argentina",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNWEYyMFU0S2RzS0o4cnJ4WVlwRFJ6djNiNU05Y2R2NjZnLXRxbVNSTDJMTGczY2dzVktIeE5SVHRkWlFtLWtBdHEyeHFPb1RaWjRLQ1NOdzZiRmRTZnRaTkZzNF9HdE5JRWdJdVNRQWlJQ3BVZVViLUdEeU5WYS10Q1ppZElaTS11czdJaUhFSjY0bTU3UEpoVU1Qc1JVV3o5TlBiVXNlU0E2bVJDNkROWnZrNU1MUG9UU0E?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-28T07:00:00+00:00"
-  },
-  {
     "titulo": "Boca campeón con presencia tandilense entre las titulares - El diario de Tandil",
     "fuente": "El diario de Tandil",
     "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
@@ -582,6 +590,14 @@
     "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQb2tZOXdFUkxJSm50WmJlMFRPMDdSbmRDZkN2djRHRnBvOEJxd0w2aTFQYlNOZDJCdVFCUnRkS21PLUpoZzVSU1phQUFTMFktS1J5RDNBYWllQTVfNV96SnhPbG1BWFdPeS11S2dWUzgtVWphaDFKR0xncm1RSG5DUnVXcXozTVA3aTMta09LdVpvWENJT2hTZGdhWTBSaUxKa2g1MHQ3S3ozeHJSX240SlBFYXlUTGZ2b0tVaGpFaWRlM0JyMVc0d0VGZzFpR3lrcDRsTXRKd3FtVXBMdEJrWGIwY3g0NGpUNTJwYVJOeWs4M29ROFhveHZHMXJ3aDhBMkhmU2ZJOVEyRndXVzV6WDJBQQ?oc=5",
     "categoria": "Inferiores",
     "fecha_iso": "2026-08-27T23:04:59+00:00"
+  },
+  {
+    "titulo": "El debut del hijo de Enner Valencia en las Inferiores de Boca - Olé",
+    "fuente": "Olé",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQeEIzQVlhTGRRWFQ3NXBjT3RlN0dIaHFDWm9tUS1BWVZ3ZUlrYTVtZzQxQ01lUWZFcEQzcFFieVRiaHE5MGluMFUweW51UDBvNk1mWDBkcS1MVGtjRUNkN21RQnhYSU4teko3ZExqWXV5RXRvdDFqcHE2bXR5OTRmZ3dHcVJSUklMQkZvN0dFVmg3b1h0N0dabE1YVdIBoAFBVV95cUxONVZseXhvMWJmbkxqVHR5QkxtQ2FMYlQzTlF0ZnY3VjFWSkxrNU5aSjk5QXNQX3IzVnZpaGpwQ3NBMktGRWN1eTQ2VVdzMUJJc0NfT25hLVZ3bjlyNTBIcEZBSlc5TDFXeWJVZjdiblhyTk13UkxLaG54YTRMbkM3WEVqVzFaanctRVdfQS1US1JOaWdrOEdjTTlHLTFFLUJ0?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-27T21:26:20+00:00"
   },
   {
     "titulo": "Quién es Matías Satas, el defensor juvenil que Arruabarrena convoca ante Lanús - Planeta Boca Juniors",
@@ -648,6 +664,14 @@
     "fecha_iso": "2026-08-26T22:04:33+00:00"
   },
   {
+    "titulo": "Lautaro Bianco le dedicó unas palabras a Tomás Aranda tras el triunfo ante Estudiantes - TyC Sports",
+    "fuente": "TyC Sports",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdmhXNExMWFZNNzNzb0cxOWZmWTJKaEhEX0R0UXFGcXc4WE5fMlVSVkJfOFJwWGc1eE8zNTBENEJzWC1mZGJFYXJyUUs0SENkQ0dSTmw0cXN6c05OZU9aWHNhcnl6cTU2N1dDR0ZtaUxZX0lmR1JTZzVRbk1Ga0tFS0VQWFJiTmNxMGttV29vNml3WVdObE0waWRWMTFKWHA1ZC1tTFc2QkZBTndyNkRTUzRUYjBVWWVMS0c1ZXRXNFBaM2ZSYkZlUFJBb0RDY3VxRkNqbkFxd2NTOUVFSGc?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-26T20:49:54+00:00"
+  },
+  {
     "titulo": "La Reserva de Estudiantes cayó ante Boca y perdió el invicto en City Bell - Infocielo",
     "fuente": "Infocielo",
     "contenido": "Toda la información de la Reserva de Boca Juniors y las futuras figuras del club.",
@@ -672,14 +696,6 @@
     "fecha_iso": "2026-08-26T17:22:00+00:00"
   },
   {
-    "titulo": "Paredes y los pibes: la foto que refleja la marca registrada del Boca del Vasco - Olé",
-    "fuente": "Olé",
-    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
-    "link": "https://news.google.com/rss/articles/CBMiqAJBVV95cUxQQlFwUFk5QW5seGNJTGZJNVBPTExUWC1TUjNPT2hpUU81Wk9Jbm1aVDljb1R0Y2NWYkhXNUFPRUQ2VWk1Z3lnRkNneUlHRGRVUTBWWi1VQWlNZkZkZXZ3a0c3cVpuYlVXcGpOOVpwQUE0WGFyMzE1R3BRZklZZGFxMjJkVmRVampJVnJtU3pwMlpjZUhSQWtCVXI4b1RDZnFGY2dfUFdHdnpLNFFxYmRIYWYtTEdWRnRabWVjSFFaX0JfU05UckdiWERpNWZJaTRNR0dFZVo4U0V2d2R2TGc1dGxvNk1VXy1IcUEtRUp5M1lfUTFpQlB1TmpnVG15U3o2NUNHZ1I0VndnVFZhd0tod3BjaUFNT19ITGdhUThJd3o0YURZMTVoetIBrgJBVV95cUxOR28wQ3JxTzNRa3FFNzlPV3lySWZ6X28weUhjN1hkLXh1a3NSbGw4QnNFbHlqVnZmZVF6QzZlTWdkaHp5RE5DY0JHN01vY2pBaDdyWHU4WDNVZTI0NS1iQlJkakJFbVhqd0FDUE1fRUQwMnhONGZWVTZKZzVGOURZUUcwcGlDSUxrS05nOTY1XzJFYTVzSkdQUlVDOHVscDUwSHZzNnlnRzJPSUVfeDJGTUV3Z1V3VVNwWUFOWVZ4OFEybHdYSGUxNEZoN0tUWVJCSnpraVNFVTYzNWc5a3lTQ2ZiTWxRSF9QZy1MTzh0b3hDM3lqM19NaGk2eHpNcVViRXg2MlFpU1NSbEhfbkdFMzQ3VzZ4QWQycHhwSi14Yl8wX0ZTVVNqY2FCeDdKQQ?oc=5",
-    "categoria": "Inferiores",
-    "fecha_iso": "2026-08-26T13:26:26+00:00"
-  },
-  {
     "titulo": "Boca realizará una prueba de captación de jóvenes futbolistas en Pilar - diarioresumen.com.ar",
     "fuente": "diarioresumen.com.ar",
     "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
@@ -694,6 +710,14 @@
     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPeEFfbUpvTGROZmw4TDFBajIxdTNNZ2pxX0VQRDFJd3FwRFdpc090VVFzNDJ2N3JPZ3ZZUTdka1NlVFNjZjZqR0pxNVRwaC1kallhcmxuRVVxeFA0TWVRVi1pTWVCcm4tNjdWVFQxcFVGV0ZMcU5MTWJ4U0xTOUt3Mmh1ZmFLNGF5S05pdWE4OFQ?oc=5",
     "categoria": "Mercado de pases",
     "fecha_iso": "2026-08-26T11:33:42+00:00"
+  },
+  {
+    "titulo": "Quién es Matías Satas, el juvenil que quiso Barcelona y Arruabarrena convocaría en Boca para enfrentar a Lanús - bolavip.com",
+    "fuente": "bolavip.com",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPdWxZOFRveFdMQndUWXQ4azU3NzVFUFFQMzlEZXhkRDF5WGppMUtPSTBjalBjM19tV3dueTQ3TEdGZlRMcjAtOHB5OVo3d25TWE1yaHlmSFRtZzV0bE1DRzhCQVhFOU02QkNFajJmMVpkTHlOclRFaHlWNlhJLU9QaDEwQThQT3NXQmZWcGprakxBUFd4ekVLZVV2TXlZckxhQWpESDIwa2VRR2NHR2E0d3NtQmRVQjRRS2N0cjd1dlQtY2trU1JobXZJT2tISWRNZDAw0gHYAUFVX3lxTE1pVmhWaE12VU16RUJTQ2RxbS15dGtDNnJ0TEp4SGxBVkpGTG9vUm9aay04VWZrQzB6U1JQRXROaTVNb3VNanRXdUlvZllfZWpES0VJZkJTVmxOQjItczVqRjJPVTBFOGdvYnI4MVpxNVJxek1COUdSN2llQ0JKR09vUUhzM3FFYU5HVjJFVnAzazFjWnd1c0EyaFRfcjA0SzB0NGpwcDZxc1BJZm40aEpiZFl1bUViVGhVcEtrOVNQd0xDRTQ0UEVmRWRRNndrQkh4Si1KcWUtTQ?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-25T22:59:06+00:00"
   },
   {
     "titulo": "El trasfondo del cierre del mercado de pases de Boca: la postura dirigencial y un sondeo tras el pedido del Vasco - Olé",
@@ -774,29 +798,5 @@
     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPTzNyRHdMSV9EcjVfai02MThiWEFuMnc4TkpTWV9ERl9iN1JfemRQcFJ2Y2pESTlvTUMxWHNJV2ljRDZYcWV4b1cyVHpoR245U0ZOTlB5VUppdlhmdVN0UE5lcHpyOHJwNGxGNm0yX1NtaGFWSXFmTWIxTVBkOXlKaDBuekR6cFRraVZ3aWc5cXRqSXVQd3FIeTN2R2tzODhDWjBQb3FJZEoxNENsRm9peNIBsAFBVV95cUxPTzNyRHdMSV9EcjVfai02MThiWEFuMnc4TkpTWV9ERl9iN1JfemRQcFJ2Y2pESTlvTUMxWHNJV2ljRDZYcWV4b1cyVHpoR245U0ZOTlB5VUppdlhmdVN0UE5lcHpyOHJwNGxGNm0yX1NtaGFWSXFmTWIxTVBkOXlKaDBuekR6cFRraVZ3aWc5cXRqSXVQd3FIeTN2R2tzODhDWjBQb3FJZEoxNENsRm9peA?oc=5",
     "categoria": "Lesiones",
     "fecha_iso": "2026-08-24T14:27:36+00:00"
-  },
-  {
-    "titulo": "Alarma en Boca por las lesiones: los jugadores que podrían perderse una seguidilla de partidos clave - TN",
-    "fuente": "TN",
-    "contenido": "Últimas novedades sobre el estado físico de los jugadores de Boca Juniors y sus respectivas recuperaciones.",
-    "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPYlVtZWNtVXE5X19nZzdick1xalZXRl9mVDJPNU5VSXZaN1VETnZjLW5kLUlveml4amJGN20tSUJOZGV3Z0dGUHRKRW44cDZaWjRDVWM3dXJzbDFUM1JCMXg1TEtTZzlEZmN0cVFqVFRMX2VjblZ0QlJmb3dZUUhSNm13T3lCeC1fQ3JqMm1XYmlCTmNINHoxS0E3MkNtN0taN0d2bTRPbWVQY0RENDhFME5EV3dNdjN6TXR3Q0VtTTJFTktXbFYyeEV5bTdNYy1PWk9WVjBhQm9NU0R0aEZTZlRVbUpzMDFRSGpzTXJZQkRPTHU2ejg1V9IBjAJBVV95cUxQV3hiSXdJZ241Z2xqMm1teVA4NWVmYUxWNlFNUDZMZWhfRWppeU1HbDlEZDdQVHpoS1UydFp1bm5GMElNVHpEZ3NyTkNJSWlFSk5FRV9LeC1nekNLT2lzU1lETk9IWHRndTVEVGFxZW4tR3pXaVJzWXZSaUk4QlA0bVRxZWoyQkQxb3NseU9IV1ltb2xxMnFFVW5Ob1dfSGE1RzMyYlZJYmY3WTNzbUhQaTRva0tyTjR6WjMzdUVfWjNYNEJvc2ZKT2E5VHQ1WjFUeFpCaTRHeWVneUowWUtSdlZyRE1aWXp6WU9NS2sxUFEtMkVENW1ub1lXMjFkYnlSTlpHODRIVzVqR1Q4?oc=5",
-    "categoria": "Lesiones",
-    "fecha_iso": "2026-08-24T11:25:08+00:00"
-  },
-  {
-    "titulo": "Racing - Boca: empate justo y un puntito para cada uno - Olé",
-    "fuente": "Olé",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbFlCVzZtZzRLNXpTQ2pxamFod2c1alJLcnJORGR4eEJOb0JhbnpqaEl2NmxKNnZITUlkWWxYOXl6MWlvVmNJaUVpTGZqNUdaNmlzOWFoakJiejIwT0hBVVNKaEZrcmNjZnRXWC1KRS1jT0x1elhHdVZNMHJQdmxUa0hmanFtd3BZUk1jUk1vb2Y5N3RHVjg2RVpLYkZiYk9jbzI2a3VlbjQ1TlhBeHBKWlJRX1h6NG1n0gG-AUFVX3lxTE5yUkhhNk5uZFVpellEdkMtVDlUVVVjcWZobDJGS2VIR2ZyeG1QNTBUeU8zbkdJYnhHb3BpMGxMZmlSZ2t1MWh5U1lGZEdOdjhJNU9QdEc4NTZGQ2hVM2Z5ZEJuekxVcFdua2k3RGFhY1Z5aXRldlByMzFhbkk1el9UWmdEVkZHTGpxOWRKblgwZVdEdnZsOWg3bUdlcFhhVTA2Nmh6SW5pRjd4OU5yc09RdDIyVEJFMlF2Ump4TXc?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-24T02:50:19+00:00"
-  },
-  {
-    "titulo": "Boca Juniors y Racing Club empataron 1-1 en Avellaneda por el clásico de la fecha 6 del Torneo Clausura - Infobae",
-    "fuente": "Infobae",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQMXAxeWpfRjUwNE1YT042cHUySHdud3R5TS1VVFFJeExON0tnWG5vbWJXODVJNE1SWWFYNzViY0kzR0xPOE5oSUtJWW84Ylpic1FBYks2X2N1eS1CVDZZUkJyNWhkUXJNeGNVaHJtTE1SNGhkNkIzMWVzV3lKZEhfcWZyRjFnQXNqRUdiRktfMTJNcEVRdTIwQzJzOGpHMU5FZVJMWTBWZUFWb3QxeTNmREFvR0ExbkVMaFVMN1JsTEpVY0lfSkNqbDY3aXhVckRObk42YUpOaWNSMGVoQTZkUdIB-wFBVV95cUxOTWZTbFh3RldETGNQVXo4MDBYT3JNMUVhLTNYTklaWXJ2SHdMYi00aG4wbUFxNDVMMGh3OHBkczNYUURjak1hWm12NjNTZ2NqdXpNU1lfWlRJNUhvc3RTVll0N29HX2FwT05MOV9XZWh3YjdWU1NLM3ZneXhvNllCRVNEOXZ4eFJjclJ6cmE2TkJKaGVsRWFFR1k3OUhLMHpqQVlSVmdEV0xCOThOQWdWNzFWZWs1eTYxX0Y2ekRDcFd3RGZxV0Z4V1FuUENFZ1BNMWFid0xwd1NHZXhTZVVtYV9QRjhUWldqUVRfcEpSbkVpaTF4cF90TnZMRQ?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-23T21:00:00+00:00"
   }
 ]
