@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+  export default async function handler(req, res) {
   try {
     const url =
       "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419";
