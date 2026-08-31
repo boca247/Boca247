@@ -15,6 +15,7 @@
 <body>
 
 <header class="site-header">
+
     <div class="top-line">
         <div class="container top-content">
             <span>BOCA 24/7</span>
@@ -23,25 +24,35 @@
     </div>
 
     <div class="header-main container">
+
         <a href="#inicio" class="brand">
+
             <div class="brand-shield">
                 CABJ
                 <small>24/7</small>
             </div>
+
             <div>
                 <h1>BOCA <span>24/7</span></h1>
                 <p>Noticias · Pasión · Comunidad Xeneize</p>
             </div>
+
         </a>
+
         <div class="header-status">
             <span class="status-dot"></span>
             INFORMACIÓN XENEIZE
         </div>
+
     </div>
+
 </header>
 
+
 <nav class="main-nav">
+
     <div class="container nav-inner">
+
         <a href="#inicio">Inicio</a>
         <a href="#noticias">Noticias</a>
         <a href="#partidos">Partidos</a>
@@ -55,203 +66,712 @@
         <a href="#hinchas">Hinchas</a>
         <a href="#fotos">Fotos</a>
         <a href="#historia">Historia</a>
+
     </div>
+
 </nav>
+
 
 <main id="inicio">
 
+
 <section class="breaking-bar">
+
     <strong>ÚLTIMO</strong>
+
     <div id="tickerText">
         Toda la actualidad de Boca Juniors en BOCA 24/7.
     </div>
+
 </section>
+
 
 <section class="hero-section">
+
     <article class="hero-main">
+
         <div class="hero-overlay"></div>
+
         <div class="hero-content">
-            <span class="category yellow">BOCA 24/7</span>
-            <h2>Todo Boca.<br>Todo el día.</h2>
-            <p>Noticias, partidos, resultados, mercado de pases, Boca Predio, obras, videos, entrevistas y toda la pasión Xeneize.</p>
-            <a href="#noticias" class="primary-button">VER ÚLTIMAS NOTICIAS</a>
+
+            <span class="category yellow">
+                BOCA 24/7
+            </span>
+
+            <h2>
+                Todo Boca.<br>
+                Todo el día.
+            </h2>
+
+            <p>
+                Noticias, partidos, resultados, mercado de pases,
+                Boca Predio, obras, videos, entrevistas y toda
+                la pasión Xeneize.
+            </p>
+
+            <a href="#noticias" class="primary-button">
+                VER ÚLTIMAS NOTICIAS
+            </a>
+
         </div>
+
     </article>
 
+
     <aside class="hero-side">
+
         <article class="side-news">
-            <span class="category">ACTUALIDAD</span>
-            <h3>Boca y toda su actualidad en un solo lugar</h3>
-            <p>Información del plantel, protagonistas, disciplinas y novedades institucionales.</p>
-            <a href="#noticias">VER NOTICIAS →</a>
+
+            <span class="category">
+                ACTUALIDAD
+            </span>
+
+            <h3>
+                Boca y toda su actualidad en un solo lugar
+            </h3>
+
+            <p>
+                Información del plantel, protagonistas,
+                disciplinas y novedades institucionales.
+            </p>
+
+            <a href="#noticias">
+                VER NOTICIAS →
+            </a>
+
         </article>
+
 
         <article class="side-news blue-card">
-            <span class="category yellow-text">BOCA 24/7</span>
-            <h3>La voz del hincha también tiene su lugar</h3>
-            <p>Opiniones, encuestas y participación de la comunidad Xeneize.</p>
-            <a href="#hinchas">PARTICIPAR →</a>
+
+            <span class="category yellow-text">
+                BOCA 24/7
+            </span>
+
+            <h3>
+                La voz del hincha también tiene su lugar
+            </h3>
+
+            <p>
+                Opiniones, encuestas y participación de
+                la comunidad Xeneize.
+            </p>
+
+            <a href="#hinchas">
+                PARTICIPAR →
+            </a>
+
         </article>
+
     </aside>
+
 </section>
 
+
 <section class="quick-links">
+
     <a href="#noticias">
         <strong>NOTICIAS</strong>
         <span>Fútbol y todas las disciplinas</span>
     </a>
+
     <a href="#partidos">
         <strong>PARTIDOS</strong>
         <span>Resultados y próximos encuentros</span>
     </a>
+
     <a href="#videos">
         <strong>VIDEOS</strong>
         <span>Resúmenes y entrevistas</span>
     </a>
+
     <a href="#streaming">
         <strong>STREAMING</strong>
         <span>Los Bosteros de Tucumán</span>
     </a>
+
 </section>
 
-<!-- ================= NOTICIAS ================= -->
+
+<!-- =====================================================
+     NOTICIAS
+===================================================== -->
+
 <section id="noticias" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">ACTUALIDAD XENEIZE</span>
-            <h2>Últimas noticias</h2>
-            <p>Información de Boca Juniors y todas sus disciplinas.</p>
+
+            <span class="eyebrow">
+                ACTUALIDAD XENEIZE
+            </span>
+
+            <h2>
+                Últimas noticias
+            </h2>
+
+            <p>
+                Información de Boca Juniors y todas sus disciplinas.
+            </p>
+
         </div>
-        <button class="outline-button" id="reloadNews">ACTUALIZAR</button>
+
+        <button class="outline-button" id="reloadNews">
+            ACTUALIZAR
+        </button>
+
     </div>
 
-    <div id="newsGrid" class="news-grid grid-noticias">
-        <!-- Carga dinámica vía app.js -->
+
+    <div class="news-categories">
+
+        <button onclick="filtrarNoticias('Todas')">TODAS</button>
+        <button onclick="filtrarNoticias('Fútbol')">FÚTBOL</button>
+        <button onclick="filtrarNoticias('Reserva')">RESERVA</button>
+        <button onclick="filtrarNoticias('Juveniles')">JUVENILES</button>
+        <button onclick="filtrarNoticias('Femenino')">FEMENINO</button>
+        <button onclick="filtrarNoticias('Básquet')">BÁSQUET</button>
+        <button onclick="filtrarNoticias('Vóley')">VÓLEY</button>
+        <button onclick="filtrarNoticias('Futsal')">FUTSAL</button>
+        <button onclick="filtrarNoticias('Institucional')">INSTITUCIONAL</button>
+
     </div>
+
+
+    <div id="newsGrid" class="news-grid">
+        <!-- Se inyecta dinámicamente mediante app.js -->
+    </div>
+
 </section>
 
-<!-- ================= PARTIDOS ================= -->
+
+<!-- =====================================================
+     PARTIDOS
+===================================================== -->
+
 <section id="partidos" class="section">
-    <!-- Carga dinámica del partido Boca vs Lanús vía app.js -->
-</section>
 
-<!-- ================= TABLA ================= -->
-<section id="tabla" class="section">
-    <!-- Carga dinámica de posiciones vía app.js -->
-</section>
-
-<!-- ================= AGENDA ================= -->
-<section id="agenda" class="section">
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">AGENDA XENEIZE</span>
-            <h2>Agenda de Boca</h2>
-            <p>Próximos compromisos y actividades.</p>
+
+            <span class="eyebrow">
+                FÚTBOL
+            </span>
+
+            <h2>
+                Partidos
+            </h2>
+
+            <p>
+                Resultados y próximos encuentros de Boca.
+            </p>
+
         </div>
+
     </div>
+
+    <div id="partidosContainer">
+        <!-- Render dinámico de tarjetas de partidos -->
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TABLA
+===================================================== -->
+
+<section id="tabla" class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                TORNEO
+            </span>
+
+            <h2>
+                Tabla de posiciones
+            </h2>
+
+            <p>
+                Seguimiento de la posición de Boca.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-wrapper" id="tablaContainer">
+        <!-- Render dinámico de la tabla -->
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AGENDA
+===================================================== -->
+
+<section id="agenda" class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                AGENDA XENEIZE
+            </span>
+
+            <h2>
+                Agenda de Boca
+            </h2>
+
+            <p>
+                Próximos compromisos y actividades.
+            </p>
+
+        </div>
+
+    </div>
+
+
     <div class="agenda-grid">
+
         <article class="agenda-card">
             <span>FÚTBOL</span>
             <strong>PRÓXIMO PARTIDO</strong>
-            <p>Boca Juniors vs. Próximo rival</p>
+            <p>Boca Juniors<br>vs. próximo rival</p>
             <small>Fecha y horario a confirmar</small>
         </article>
+
+        <article class="agenda-card">
+            <span>JUVENILES</span>
+            <strong>BOCA PREDIO</strong>
+            <p>Actividad de las divisiones juveniles.</p>
+            <small>Consultar programación</small>
+        </article>
+
+        <article class="agenda-card">
+            <span>FEMENINO</span>
+            <strong>FÚTBOL FEMENINO</strong>
+            <p>Próximos compromisos de Las Gladiadoras.</p>
+            <small>Consultar programación</small>
+        </article>
+
+        <article class="agenda-card">
+            <span>DISCIPLINAS</span>
+            <strong>BÁSQUET · VÓLEY · FUTSAL</strong>
+            <p>Toda la actividad deportiva del club.</p>
+            <small>Agenda Xeneize</small>
+        </article>
+
     </div>
+
 </section>
 
-<!-- ================= MERCADO ================= -->
+
+<!-- =====================================================
+     MERCADO
+===================================================== -->
+
 <section id="mercado" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">MERCADO DE PASES</span>
-            <h2>Mercado Xeneize</h2>
-            <p>Altas, bajas y negociaciones.</p>
+
+            <span class="eyebrow">
+                MERCADO DE PASES
+            </span>
+
+            <h2>
+                Mercado Xeneize
+            </h2>
+
+            <p>
+                Altas, bajas y negociaciones.
+            </p>
+
         </div>
+
     </div>
+
+
     <div class="market-grid">
+
         <article class="market-card arrivals">
             <div class="market-title"><span>●</span> LLEGADAS</div>
             <h3>Altas</h3>
             <p>Información sobre incorporaciones confirmadas oficialmente.</p>
             <small>CONFIRMADO</small>
         </article>
+
+        <article class="market-card negotiations">
+            <div class="market-title"><span>●</span> NEGOCIACIONES</div>
+            <h3>Operaciones</h3>
+            <p>Seguimiento de nombres y negociaciones informadas por fuentes confiables.</p>
+            <small>EN SEGUIMIENTO</small>
+        </article>
+
+        <article class="market-card departures">
+            <div class="market-title"><span>●</span> SALIDAS</div>
+            <h3>Bajas</h3>
+            <p>Transferencias, préstamos y movimientos del plantel.</p>
+            <small>INFORMACIÓN</small>
+        </article>
+
     </div>
+
 </section>
 
-<!-- ================= OBRAS ================= -->
+
+<!-- =====================================================
+     OBRAS
+===================================================== -->
+
 <section id="obras" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">INFRAESTRUCTURA</span>
-            <h2>Obras y remodelaciones</h2>
-            <p>Seguimiento de las obras del mundo Boca.</p>
+
+            <span class="eyebrow">
+                INFRAESTRUCTURA
+            </span>
+
+            <h2>
+                Obras y remodelaciones
+            </h2>
+
+            <p>
+                Seguimiento de las obras del mundo Boca.
+            </p>
+
         </div>
+
     </div>
+
+
     <div class="works-grid">
+
         <article class="work-card">
+            <div class="work-image bombonera-work"><span>BOMBONERA</span></div>
             <div class="work-content">
                 <h3>La Bombonera</h3>
                 <p>Información sobre proyectos, mejoras y remodelaciones del estadio.</p>
             </div>
         </article>
+
+        <article class="work-card">
+            <div class="work-image puerta3"><span>PUERTA 3</span></div>
+            <div class="work-content">
+                <h3>Puerta 3</h3>
+                <p>Seguimiento de trabajos y mejoras en los accesos.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image puerta21"><span>PUERTA 21</span></div>
+            <div class="work-content">
+                <h3>Puerta 21</h3>
+                <p>Información y novedades relacionadas con el estadio.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image casa-amarilla"><span>CASA AMARILLA</span></div>
+            <div class="work-content">
+                <h3>Casa Amarilla</h3>
+                <p>Obras y mejoras en instalaciones del club.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image predio-work"><span>PREDIO</span></div>
+            <div class="work-content">
+                <h3>Predio de Ezeiza</h3>
+                <p>Infraestructura, instalaciones y mejoras del predio.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image bombonerita"><span>BOMBONERITA</span></div>
+            <div class="work-content">
+                <h3>Bombonerita</h3>
+                <p>Novedades de las instalaciones del básquet Xeneize.</p>
+            </div>
+        </article>
+
     </div>
+
 </section>
 
-<!-- ================= BOCA PREDIO ================= -->
+
+<!-- =====================================================
+     BOCA PREDIO
+===================================================== -->
+
 <section id="predio" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">ENTRENAMIENTO</span>
-            <h2>Boca Predio</h2>
-            <p>El día a día en el centro de entrenamiento de Ezeiza.</p>
+
+            <span class="eyebrow">
+                CENTRO DE ENTRENAMIENTO
+            </span>
+
+            <h2>
+                Boca Predio
+            </h2>
+
+            <p>
+                El trabajo diario en Ezeiza, formación y juveniles.
+            </p>
+
         </div>
+
     </div>
+
+    <div class="works-grid">
+
+        <article class="work-card">
+            <div class="work-image predio-work"><span>EZEIZA</span></div>
+            <div class="work-content">
+                <h3>Evolución y Entrenamientos</h3>
+                <p>Seguimiento diario de los trabajos del plantel profesional en Ezeiza.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image training"><span>JUVENILES</span></div>
+            <div class="work-content">
+                <h3>Cantera Xeneize</h3>
+                <p>El desarrollo de las divisiones inferiores del club.</p>
+            </div>
+        </article>
+
+    </div>
+
 </section>
 
-<!-- ================= VIDEOS / RESÚMENES ================= -->
+
+<!-- =====================================================
+     VIDEOS
+===================================================== -->
+
 <section id="videos" class="section">
-    <!-- Carga dinámica de resúmenes y entrevistas Boca vs Lanús vía app.js -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                MULTIMEDIA
+            </span>
+
+            <h2>
+                Videos y Resúmenes
+            </h2>
+
+            <p>
+                Compactos de partidos, goles, conferencias y entrevistas.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="videosGrid" class="news-grid">
+        <!-- Render dinámico desde app.js -->
+    </div>
+
 </section>
 
-<!-- ================= STREAMING ================= -->
+
+<!-- =====================================================
+     STREAMING
+===================================================== -->
+
 <section id="streaming" class="section">
-    <!-- Carga dinámica del streaming 'Los Bosteros de Tucumán' vía app.js -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                EN VIVO
+            </span>
+
+            <h2>
+                Streaming Xeneize
+            </h2>
+
+            <p>
+                Los Bosteros de Tucumán y transmisiones de la comunidad.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="streamingContainer">
+        <!-- Render dinámico desde app.js -->
+    </div>
+
 </section>
 
-<!-- ================= HINCHAS ================= -->
+
+<!-- =====================================================
+     HINCHAS
+===================================================== -->
+
 <section id="hinchas" class="section">
-    <!-- Carga dinámica de la sección 'El Hincha' vía app.js -->
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="eyebrow">
+                COMUNIDAD
+            </span>
+
+            <h2>
+                El Hincha Xeneize
+            </h2>
+
+            <p>
+                La voz de la hinchada, filiales y comunidad bostera.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div id="hinchaContainer">
+        <!-- Render dinámico desde app.js -->
+    </div>
+
 </section>
 
-<!-- ================= FOTOS ================= -->
+
+<!-- =====================================================
+     FOTOS
+===================================================== -->
+
 <section id="fotos" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">GALERÍA</span>
-            <h2>Fotos Xeneizes</h2>
-            <p>Las mejores imágenes del partido y la hinchada.</p>
+
+            <span class="eyebrow">
+                GALERÍA
+            </span>
+
+            <h2>
+                Fotos Xeneizes
+            </h2>
+
+            <p>
+                Imágenes de la hinchada, La Bombonera y partidos.
+            </p>
+
         </div>
+
     </div>
+
+    <div class="works-grid">
+
+        <article class="work-card">
+            <div class="work-image image-bombonera"><span>ESTADIO</span></div>
+            <div class="work-content">
+                <h3>La Bombonera de Noche</h3>
+                <p>Las mejores postales del Alberto J. Armando.</p>
+            </div>
+        </article>
+
+        <article class="work-card">
+            <div class="work-image image-camiseta"><span>COLORES</span></div>
+            <div class="work-content">
+                <h3>Pasión Azul y Oro</h3>
+                <p>La hinchada más grande del mundo en imágenes.</p>
+            </div>
+        </article>
+
+    </div>
+
 </section>
 
-<!-- ================= HISTORIA ================= -->
+
+<!-- =====================================================
+     HISTORIA
+===================================================== -->
+
 <section id="historia" class="section">
+
     <div class="section-heading">
+
         <div>
-            <span class="eyebrow">GLORIA XENEIZE</span>
-            <h2>Historia de Boca</h2>
-            <p>Hitos, títulos y leyendas del club más grande.</p>
+
+            <span class="eyebrow">
+                GLORIA XENEIZE
+            </span>
+
+            <h2>
+                Historia de Boca
+            </h2>
+
+            <p>
+                Los hitos, ídolos y copas que hacen gigante a este club.
+            </p>
+
         </div>
+
     </div>
+
+    <div class="market-grid">
+
+        <article class="market-card arrivals">
+            <div class="market-title"><span>★</span> TÍTULOS</div>
+            <h3>Rey de Copas</h3>
+            <p>Repaso por las 6 Copas Libertadores, las 3 Intercontinentales y todos los logros.</p>
+        </article>
+
+        <article class="market-card negotiations">
+            <div class="market-title"><span>★</span> LEYENDAS</div>
+            <h3>Nuestros Ídolos</h3>
+            <p>Historias de los hombres que dejaron la vida por la camiseta xeneize.</p>
+        </article>
+
+    </div>
+
 </section>
 
 </main>
 
-<footer style="text-align:center; padding:20px; color:#888; background:#001328; font-size:12px;">
-    <p>BOCA 24/7 · Todos los derechos reservados</p>
+
+<footer class="site-footer" style="background:#000b14; border-top:1px solid #002244; padding:30px 0; text-align:center; color:#888;">
+
+    <div class="container">
+
+        <p style="margin-bottom:10px; font-weight:bold; color:#f39c12;">BOCA 24/7</p>
+        <p style="font-size:13px;">Toda la información del Club Atlético Boca Juniors al instante.</p>
+        <p style="font-size:11px; margin-top:15px; color:#555;">© BOCA 24/7 — Todos los derechos reservados.</p>
+
+    </div>
+
 </footer>
 
+
 <script src="app.js"></script>
+
 </body>
     </html>
+
     
