@@ -3,775 +3,1394 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#00245f">
 
-<meta name="theme-color" content="#001f5b">
-<meta name="description" content="BOCA 24/7 - Toda la actualidad Xeneize: noticias, partidos, tabla, agenda, mercado, obras, Boca Predio, videos, streaming, fotos e historia.">
+<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
-<title>BOCA 24/7 | Todo Boca</title>
+<style>
+:root{
+    --azul:#00245f;
+    --azul2:#0047a8;
+    --amarillo:#f5c400;
+    --fondo:#eef1f5;
+    --blanco:#ffffff;
+    --texto:#101828;
+    --gris:#667085;
+    --borde:#e4e7ec;
+}
 
-<link rel="stylesheet" href="styles.css">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--fondo);
+    color:var(--texto);
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--azul);
+    box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+
+.header-top{
+    max-width:1250px;
+    margin:auto;
+    min-height:82px;
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-boca{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:4px solid var(--amarillo);
+    background:var(--azul);
+    color:var(--amarillo);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:900;
+    font-size:15px;
+}
+
+.logo-text{
+    color:white;
+    font-size:29px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo-text span{
+    color:var(--amarillo);
+}
+
+.logo-sub{
+    color:#d8e3f5;
+    font-size:12px;
+    margin-top:3px;
+}
+
+.live{
+    color:white;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.live-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#36d399;
+    box-shadow:0 0 0 4px rgba(54,211,153,.15);
+}
+
+/* ================= NAV ================= */
+
+.nav{
+    background:#001a46;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.nav::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-inner{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+}
+
+.nav button{
+    flex:0 0 auto;
+    border:0;
+    background:transparent;
+    color:white;
+    padding:15px 17px;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.nav button:hover,
+.nav button.active{
+    background:var(--amarillo);
+    color:var(--azul);
+}
+
+/* ================= CONTENEDOR ================= */
+
+.container{
+    width:min(1250px,100%);
+    margin:auto;
+    padding:24px 18px 50px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    border-radius:22px;
+    overflow:hidden;
+    min-height:330px;
+    padding:35px;
+    display:flex;
+    align-items:flex-end;
+    position:relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,36,95,.98),
+            rgba(0,36,95,.75),
+            rgba(0,36,95,.35)
+        );
+    box-shadow:0 8px 28px rgba(0,0,0,.18);
+    margin-bottom:28px;
+}
+
+.hero::after{
+    content:"BOCA";
+    position:absolute;
+    right:30px;
+    top:30px;
+    font-size:90px;
+    font-weight:900;
+    color:rgba(255,255,255,.06);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    color:white;
+}
+
+.hero-label{
+    display:inline-block;
+    background:var(--amarillo);
+    color:var(--azul);
+    padding:7px 11px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:14px;
+}
+
+.hero h1{
+    font-size:40px;
+    line-height:1.08;
+    margin-bottom:12px;
+}
+
+.hero p{
+    color:#e5ecf7;
+    font-size:15px;
+    line-height:1.5;
+}
+
+/* ================= BARRA INFO ================= */
+
+.info-bar{
+    background:white;
+    border-radius:14px;
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:28px;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.info-left{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:#344054;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.refresh{
+    color:var(--gris);
+    font-size:12px;
+}
+
+/* ================= TITULOS ================= */
+
+.section-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin:30px 0 16px;
+}
+
+.section-head h2{
+    color:var(--azul);
+    font-size:25px;
+}
+
+.section-head h2::before{
+    content:"";
+    display:inline-block;
+    width:5px;
+    height:23px;
+    background:var(--amarillo);
+    margin-right:10px;
+    vertical-align:-3px;
+    border-radius:3px;
+}
+
+/* ================= BUSCADOR ================= */
+
+.search{
+    display:flex;
+    gap:8px;
+    margin-bottom:22px;
+}
+
+.search input{
+    width:100%;
+    border:1px solid var(--borde);
+    background:white;
+    border-radius:10px;
+    padding:13px 15px;
+    outline:none;
+    font-size:14px;
+}
+
+.search input:focus{
+    border-color:var(--azul2);
+}
+
+/* ================= GRID ================= */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.news-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid var(--borde);
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+    transition:transform .2s,box-shadow .2s;
+}
+
+.news-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 9px 25px rgba(0,0,0,.12);
+}
+
+.news-image{
+    height:175px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--azul2)
+        );
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--amarillo);
+    font-weight:900;
+    font-size:25px;
+}
+
+.news-body{
+    padding:17px;
+}
+
+.news-source{
+    color:var(--azul2);
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:8px;
+}
+
+.news-title{
+    font-size:18px;
+    line-height:1.28;
+    margin-bottom:10px;
+}
+
+.news-description{
+    color:#667085;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.news-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-top:15px;
+    padding-top:12px;
+    border-top:1px solid var(--borde);
+}
+
+.news-date{
+    color:#98a2b3;
+    font-size:11px;
+}
+
+.read{
+    color:var(--azul);
+    font-size:12px;
+    font-weight:900;
+    text-decoration:none;
+}
+
+.read:hover{
+    color:var(--azul2);
+}
+
+/* ================= DESTACADAS ================= */
+
+.featured{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:18px;
+}
+
+.featured-main{
+    background:linear-gradient(135deg,var(--azul),var(--azul2));
+    color:white;
+    border-radius:17px;
+    padding:25px;
+    min-height:230px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+
+.featured-main .news-source{
+    color:var(--amarillo);
+}
+
+.featured-main h3{
+    font-size:26px;
+    line-height:1.18;
+    margin:8px 0;
+}
+
+.featured-main p{
+    color:#dce7f8;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.featured-side{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.featured-small{
+    background:white;
+    border-radius:15px;
+    padding:18px;
+    border:1px solid var(--borde);
+}
+
+.featured-small h3{
+    font-size:17px;
+    line-height:1.3;
+    margin-top:7px;
+}
+
+/* ================= ESTADOS ================= */
+
+.loading{
+    background:white;
+    border-radius:15px;
+    padding:45px 20px;
+    text-align:center;
+    color:#667085;
+}
+
+.spinner{
+    width:30px;
+    height:30px;
+    border:4px solid #d9e1ed;
+    border-top-color:var(--azul);
+    border-radius:50%;
+    animation:girar .8s linear infinite;
+    margin:0 auto 15px;
+}
+
+@keyframes girar{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.error{
+    background:#fff1f1;
+    border:1px solid #ffcaca;
+    color:#a40000;
+    padding:22px;
+    border-radius:14px;
+}
+
+.empty{
+    background:white;
+    border-radius:14px;
+    padding:35px;
+    text-align:center;
+    color:#667085;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#001a46;
+    color:#dce5f2;
+    padding:35px 18px;
+    text-align:center;
+}
+
+.footer-logo{
+    color:white;
+    font-size:25px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:var(--amarillo);
+}
+
+footer p{
+    margin-top:8px;
+    font-size:13px;
+}
+
+.footer-copy{
+    margin-top:20px;
+    font-size:11px;
+    color:#9eb0c8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+    .news-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .featured{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .header-top{
+        min-height:70px;
+        padding:10px 13px;
+    }
+
+    .logo-boca{
+        width:46px;
+        height:46px;
+        font-size:12px;
+    }
+
+    .logo-text{
+        font-size:22px;
+    }
+
+    .live{
+        display:none;
+    }
+
+    .container{
+        padding:15px 12px 35px;
+    }
+
+    .hero{
+        min-height:280px;
+        padding:23px;
+        border-radius:16px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .hero::after{
+        font-size:60px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-head h2{
+        font-size:21px;
+    }
+
+    .info-bar{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+}
+</style>
 </head>
 
 <body>
 
-<header class="site-header">
+<header>
 
-    <div class="top-line">
-        <div class="container top-content">
-            <span>BOCA 24/7</span>
-            <span>TODO BOCA · TODO EL DÍA</span>
-        </div>
-    </div>
+    <div class="header-top">
 
-    <div class="header-main container">
+        <div class="logo">
 
-        <a href="#inicio" class="brand">
-
-            <div class="brand-shield">
+            <div class="logo-boca">
                 CABJ
-                <small>24/7</small>
             </div>
 
             <div>
-                <h1>BOCA <span>24/7</span></h1>
-                <p>Noticias · Pasión · Comunidad Xeneize</p>
+                <div class="logo-text">
+                    BOCA <span>24/7</span>
+                </div>
+
+                <div class="logo-sub">
+                    Todo Boca. Todo el día.
+                </div>
             </div>
 
-        </a>
+        </div>
 
-        <div class="header-status">
-            <span class="status-dot"></span>
-            INFORMACIÓN XENEIZE
+        <div class="live">
+            <span class="live-dot"></span>
+            Actualización automática
         </div>
 
     </div>
+
+    <nav class="nav">
+
+        <div class="nav-inner">
+
+            <button class="active"
+                    onclick="cambiarSeccion('Todas',this)">
+                ÚLTIMAS
+            </button>
+
+            <button onclick="cambiarSeccion('Boca',this)">
+                BOCA
+            </button>
+
+            <button onclick="cambiarSeccion('Mercado',this)">
+                MERCADO
+            </button>
+
+            <button onclick="cambiarSeccion('Partidos',this)">
+                PARTIDOS
+            </button>
+
+            <button onclick="cambiarSeccion('Plantel',this)">
+                PLANTEL
+            </button>
+
+            <button onclick="cambiarSeccion('Lesiones',this)">
+                LESIONES
+            </button>
+
+            <button onclick="cambiarSeccion('Básquet',this)">
+                BÁSQUET
+            </button>
+
+            <button onclick="cambiarSeccion('Futsal',this)">
+                FUTSAL
+            </button>
+
+            <button onclick="cambiarSeccion('Femenino',this)">
+                FEMENINO
+            </button>
+
+            <button onclick="cambiarSeccion('Reserva',this)">
+                RESERVA
+            </button>
+
+            <button onclick="cambiarSeccion('Inferiores',this)">
+                INFERIORES
+            </button>
+
+            <button onclick="cambiarSeccion('Bombonera',this)">
+                BOMBONERA
+            </button>
+
+        </div>
+
+    </nav>
 
 </header>
 
 
-<nav class="main-nav">
+<main class="container">
 
-    <div class="container nav-inner">
-
-        <a href="#inicio">Inicio</a>
-        <a href="#noticias">Noticias</a>
-        <a href="#partidos">Partidos</a>
-        <a href="#tabla">Tabla</a>
-        <a href="#agenda">Agenda</a>
-        <a href="#mercado">Mercado</a>
-        <a href="#obras">Obras</a>
-        <a href="#predio">Predio</a>
-        <a href="#videos">Videos</a>
-        <a href="#streaming">Streaming</a>
-        <a href="#hinchas">Hinchas</a>
-        <a href="#fotos">Fotos</a>
-        <a href="#historia">Historia</a>
-
-    </div>
-
-</nav>
-
-
-<main id="inicio">
-
-
-<section class="breaking-bar">
-
-    <strong>ÚLTIMO</strong>
-
-    <div id="tickerText">
-        Toda la actualidad de Boca Juniors en BOCA 24/7.
-    </div>
-
-</section>
-
-
-<section class="hero-section">
-
-    <article class="hero-main">
-
-        <div class="hero-overlay"></div>
+    <section class="hero">
 
         <div class="hero-content">
 
-            <span class="category yellow">
-                BOCA 24/7
-            </span>
+            <div class="hero-label">
+                BOCA JUNIORS
+            </div>
 
-            <h2>
-                Todo Boca.<br>
-                Todo el día.
-            </h2>
+            <h1>
+                Toda la información del Xeneize.
+            </h1>
 
             <p>
-                Noticias, partidos, resultados, mercado de pases,
-                Boca Predio, obras, videos, entrevistas y toda
-                la pasión Xeneize.
+                Noticias, mercado de pases, partidos,
+                plantel y toda la actualidad de Boca Juniors.
             </p>
-
-            <a href="#noticias" class="primary-button">
-                VER ÚLTIMAS NOTICIAS
-            </a>
 
         </div>
 
-    </article>
+    </section>
 
 
-    <aside class="hero-side">
+    <div class="info-bar">
 
-        <article class="side-news">
-
-            <span class="category">
-                ACTUALIDAD
+        <div class="info-left">
+            <span class="live-dot"></span>
+            <span id="estado">
+                Conectando con BOCA 24/7...
             </span>
+        </div>
 
-            <h3>
-                Boca y toda su actualidad en un solo lugar
-            </h3>
+        <div class="refresh" id="actualizacion">
+            Esperando noticias...
+        </div>
 
-            <p>
-                Información del plantel, protagonistas,
-                disciplinas y novedades institucionales.
-            </p>
-
-            <a href="#noticias">
-                VER NOTICIAS →
-            </a>
-
-        </article>
+    </div>
 
 
-        <article class="side-news blue-card">
+    <div class="search">
 
-            <span class="category yellow-text">
-                BOCA 24/7
-            </span>
+        <input
+            id="buscador"
+            type="search"
+            placeholder="Buscar noticias de Boca..."
+            autocomplete="off"
+        >
 
-            <h3>
-                La voz del hincha también tiene su lugar
-            </h3>
-
-            <p>
-                Opiniones, encuestas y participación de
-                la comunidad Xeneize.
-            </p>
-
-            <a href="#hinchas">
-                PARTICIPAR →
-            </a>
-
-        </article>
-
-    </aside>
-
-</section>
+    </div>
 
 
-<section class="quick-links">
+    <section>
 
-    <a href="#noticias">
-        <strong>NOTICIAS</strong>
-        <span>Fútbol y todas las disciplinas</span>
-    </a>
+        <div class="section-head">
 
-    <a href="#partidos">
-        <strong>PARTIDOS</strong>
-        <span>Resultados y próximos encuentros</span>
-    </a>
-
-    <a href="#videos">
-        <strong>VIDEOS</strong>
-        <span>Resúmenes y entrevistas</span>
-    </a>
-
-    <a href="#streaming">
-        <strong>STREAMING</strong>
-        <span>Los Bosteros de Tucumán</span>
-    </a>
-
-</section>
-
-
-<!-- =====================================================
-     NOTICIAS
-===================================================== -->
-
-<section id="noticias" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                ACTUALIDAD XENEIZE
-            </span>
-
-            <h2>
+            <h2 id="titulo-seccion">
                 Últimas noticias
             </h2>
 
-            <p>
-                Información de Boca Juniors y todas sus disciplinas.
-            </p>
-
         </div>
 
-        <button class="outline-button" id="reloadNews">
-            ACTUALIZAR
-        </button>
+        <div id="noticias">
 
-    </div>
+            <div class="loading">
 
+                <div class="spinner"></div>
 
-    <div class="news-categories">
+                Cargando noticias de Boca...
 
-        <button onclick="filtrarNoticias('Todas')">TODAS</button>
-        <button onclick="filtrarNoticias('Fútbol')">FÚTBOL</button>
-        <button onclick="filtrarNoticias('Reserva')">RESERVA</button>
-        <button onclick="filtrarNoticias('Juveniles')">JUVENILES</button>
-        <button onclick="filtrarNoticias('Femenino')">FEMENINO</button>
-        <button onclick="filtrarNoticias('Básquet')">BÁSQUET</button>
-        <button onclick="filtrarNoticias('Vóley')">VÓLEY</button>
-        <button onclick="filtrarNoticias('Futsal')">FUTSAL</button>
-        <button onclick="filtrarNoticias('Institucional')">INSTITUCIONAL</button>
-
-    </div>
-
-
-    <div id="newsGrid" class="news-grid">
-        <!-- Se inyecta dinámicamente mediante app.js -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PARTIDOS
-===================================================== -->
-
-<section id="partidos" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                FÚTBOL
-            </span>
-
-            <h2>
-                Partidos
-            </h2>
-
-            <p>
-                Resultados y próximos encuentros de Boca.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div id="partidosContainer">
-        <!-- Render dinámico de tarjetas de partidos -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TABLA
-===================================================== -->
-
-<section id="tabla" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                TORNEO
-            </span>
-
-            <h2>
-                Tabla de posiciones
-            </h2>
-
-            <p>
-                Seguimiento de la posición de Boca.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="table-wrapper" id="tablaContainer">
-        <!-- Render dinámico de la tabla -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     AGENDA
-===================================================== -->
-
-<section id="agenda" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                AGENDA XENEIZE
-            </span>
-
-            <h2>
-                Agenda de Boca
-            </h2>
-
-            <p>
-                Próximos compromisos y actividades.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="agenda-grid">
-
-        <article class="agenda-card">
-            <span>FÚTBOL</span>
-            <strong>PRÓXIMO PARTIDO</strong>
-            <p>Boca Juniors<br>vs. próximo rival</p>
-            <small>Fecha y horario a confirmar</small>
-        </article>
-
-        <article class="agenda-card">
-            <span>JUVENILES</span>
-            <strong>BOCA PREDIO</strong>
-            <p>Actividad de las divisiones juveniles.</p>
-            <small>Consultar programación</small>
-        </article>
-
-        <article class="agenda-card">
-            <span>FEMENINO</span>
-            <strong>FÚTBOL FEMENINO</strong>
-            <p>Próximos compromisos de Las Gladiadoras.</p>
-            <small>Consultar programación</small>
-        </article>
-
-        <article class="agenda-card">
-            <span>DISCIPLINAS</span>
-            <strong>BÁSQUET · VÓLEY · FUTSAL</strong>
-            <p>Toda la actividad deportiva del club.</p>
-            <small>Agenda Xeneize</small>
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     MERCADO
-===================================================== -->
-
-<section id="mercado" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                MERCADO DE PASES
-            </span>
-
-            <h2>
-                Mercado Xeneize
-            </h2>
-
-            <p>
-                Altas, bajas y negociaciones.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="market-grid">
-
-        <article class="market-card arrivals">
-            <div class="market-title"><span>●</span> LLEGADAS</div>
-            <h3>Altas</h3>
-            <p>Información sobre incorporaciones confirmadas oficialmente.</p>
-            <small>CONFIRMADO</small>
-        </article>
-
-        <article class="market-card negotiations">
-            <div class="market-title"><span>●</span> NEGOCIACIONES</div>
-            <h3>Operaciones</h3>
-            <p>Seguimiento de nombres y negociaciones informadas por fuentes confiables.</p>
-            <small>EN SEGUIMIENTO</small>
-        </article>
-
-        <article class="market-card departures">
-            <div class="market-title"><span>●</span> SALIDAS</div>
-            <h3>Bajas</h3>
-            <p>Transferencias, préstamos y movimientos del plantel.</p>
-            <small>INFORMACIÓN</small>
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     OBRAS
-===================================================== -->
-
-<section id="obras" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                INFRAESTRUCTURA
-            </span>
-
-            <h2>
-                Obras y remodelaciones
-            </h2>
-
-            <p>
-                Seguimiento de las obras del mundo Boca.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <div class="works-grid">
-
-        <article class="work-card">
-            <div class="work-image bombonera-work"><span>BOMBONERA</span></div>
-            <div class="work-content">
-                <h3>La Bombonera</h3>
-                <p>Información sobre proyectos, mejoras y remodelaciones del estadio.</p>
             </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image puerta3"><span>PUERTA 3</span></div>
-            <div class="work-content">
-                <h3>Puerta 3</h3>
-                <p>Seguimiento de trabajos y mejoras en los accesos.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image puerta21"><span>PUERTA 21</span></div>
-            <div class="work-content">
-                <h3>Puerta 21</h3>
-                <p>Información y novedades relacionadas con el estadio.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image casa-amarilla"><span>CASA AMARILLA</span></div>
-            <div class="work-content">
-                <h3>Casa Amarilla</h3>
-                <p>Obras y mejoras en instalaciones del club.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image predio-work"><span>PREDIO</span></div>
-            <div class="work-content">
-                <h3>Predio de Ezeiza</h3>
-                <p>Infraestructura, instalaciones y mejoras del predio.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image bombonerita"><span>BOMBONERITA</span></div>
-            <div class="work-content">
-                <h3>Bombonerita</h3>
-                <p>Novedades de las instalaciones del básquet Xeneize.</p>
-            </div>
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     BOCA PREDIO
-===================================================== -->
-
-<section id="predio" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                CENTRO DE ENTRENAMIENTO
-            </span>
-
-            <h2>
-                Boca Predio
-            </h2>
-
-            <p>
-                El trabajo diario en Ezeiza, formación y juveniles.
-            </p>
 
         </div>
 
-    </div>
-
-    <div class="works-grid">
-
-        <article class="work-card">
-            <div class="work-image predio-work"><span>EZEIZA</span></div>
-            <div class="work-content">
-                <h3>Evolución y Entrenamientos</h3>
-                <p>Seguimiento diario de los trabajos del plantel profesional en Ezeiza.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image training"><span>JUVENILES</span></div>
-            <div class="work-content">
-                <h3>Cantera Xeneize</h3>
-                <p>El desarrollo de las divisiones inferiores del club.</p>
-            </div>
-        </article>
-
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =====================================================
-     VIDEOS
-===================================================== -->
+    <section id="destacadas-section">
 
-<section id="videos" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                MULTIMEDIA
-            </span>
+        <div class="section-head">
 
             <h2>
-                Videos y Resúmenes
+                Información destacada
             </h2>
-
-            <p>
-                Compactos de partidos, goles, conferencias y entrevistas.
-            </p>
 
         </div>
 
-    </div>
+        <div id="destacadas"></div>
 
-    <div id="videosGrid" class="news-grid">
-        <!-- Render dinámico desde app.js -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     STREAMING
-===================================================== -->
-
-<section id="streaming" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                EN VIVO
-            </span>
-
-            <h2>
-                Streaming Xeneize
-            </h2>
-
-            <p>
-                Los Bosteros de Tucumán y transmisiones de la comunidad.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div id="streamingContainer">
-        <!-- Render dinámico desde app.js -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HINCHAS
-===================================================== -->
-
-<section id="hinchas" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                COMUNIDAD
-            </span>
-
-            <h2>
-                El Hincha Xeneize
-            </h2>
-
-            <p>
-                La voz de la hinchada, filiales y comunidad bostera.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div id="hinchaContainer">
-        <!-- Render dinámico desde app.js -->
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOTOS
-===================================================== -->
-
-<section id="fotos" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                GALERÍA
-            </span>
-
-            <h2>
-                Fotos Xeneizes
-            </h2>
-
-            <p>
-                Imágenes de la hinchada, La Bombonera y partidos.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="works-grid">
-
-        <article class="work-card">
-            <div class="work-image image-bombonera"><span>ESTADIO</span></div>
-            <div class="work-content">
-                <h3>La Bombonera de Noche</h3>
-                <p>Las mejores postales del Alberto J. Armando.</p>
-            </div>
-        </article>
-
-        <article class="work-card">
-            <div class="work-image image-camiseta"><span>COLORES</span></div>
-            <div class="work-content">
-                <h3>Pasión Azul y Oro</h3>
-                <p>La hinchada más grande del mundo en imágenes.</p>
-            </div>
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     HISTORIA
-===================================================== -->
-
-<section id="historia" class="section">
-
-    <div class="section-heading">
-
-        <div>
-
-            <span class="eyebrow">
-                GLORIA XENEIZE
-            </span>
-
-            <h2>
-                Historia de Boca
-            </h2>
-
-            <p>
-                Los hitos, ídolos y copas que hacen gigante a este club.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="market-grid">
-
-        <article class="market-card arrivals">
-            <div class="market-title"><span>★</span> TÍTULOS</div>
-            <h3>Rey de Copas</h3>
-            <p>Repaso por las 6 Copas Libertadores, las 3 Intercontinentales y todos los logros.</p>
-        </article>
-
-        <article class="market-card negotiations">
-            <div class="market-title"><span>★</span> LEYENDAS</div>
-            <h3>Nuestros Ídolos</h3>
-            <p>Historias de los hombres que dejaron la vida por la camiseta xeneize.</p>
-        </article>
-
-    </div>
-
-</section>
+    </section>
 
 </main>
 
 
-<footer class="site-footer" style="background:#000b14; border-top:1px solid #002244; padding:30px 0; text-align:center; color:#888;">
+<footer>
 
-    <div class="container">
+    <div class="footer-logo">
+        BOCA <span>24/7</span>
+    </div>
 
-        <p style="margin-bottom:10px; font-weight:bold; color:#f39c12;">BOCA 24/7</p>
-        <p style="font-size:13px;">Toda la información del Club Atlético Boca Juniors al instante.</p>
-        <p style="font-size:11px; margin-top:15px; color:#555;">© BOCA 24/7 — Todos los derechos reservados.</p>
+    <p>
+        Todo Boca. Todo el día.
+    </p>
 
+    <div class="footer-copy">
+        BOCA 24/7 · Información y actualidad del Xeneize
     </div>
 
 </footer>
 
 
-<script src="app.js"></script>
+<script>
+
+/* =====================================================
+   CONFIGURACIÓN
+===================================================== */
+
+const API =
+"https://tucumanbosteros.spascual8819.workers.dev";
+
+let todasLasNoticias = [];
+
+let seccionActual = "Todas";
+
+
+/* =====================================================
+   CARGAR NOTICIAS
+===================================================== */
+
+async function cargarNoticias(){
+
+    const contenedor =
+        document.getElementById("noticias");
+
+    const estado =
+        document.getElementById("estado");
+
+    try{
+
+        estado.textContent =
+            "Actualizando noticias...";
+
+        const respuesta =
+            await fetch(
+                API + "/noticias?ts=" + Date.now(),
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+            );
+
+        if(!respuesta.ok){
+
+            throw new Error(
+                "Servidor respondió HTTP " +
+                respuesta.status
+            );
+
+        }
+
+        const datos =
+            await respuesta.json();
+
+        if(!Array.isArray(datos)){
+
+            throw new Error(
+                "El servidor no devolvió noticias."
+            );
+
+        }
+
+        todasLasNoticias =
+            normalizarNoticias(datos);
+
+        estado.textContent =
+            "Noticias actualizadas correctamente";
+
+        document.getElementById(
+            "actualizacion"
+        ).textContent =
+            "Última actualización: " +
+            horaActual();
+
+        mostrarNoticias();
+
+        mostrarDestacadas();
+
+    }catch(error){
+
+        console.error(error);
+
+        estado.textContent =
+            "No se pudieron actualizar las noticias";
+
+        contenedor.innerHTML = `
+
+            <div class="error">
+
+                <strong>
+                    No pudimos cargar las noticias.
+                </strong>
+
+                <br><br>
+
+                Verificá que el servidor de BOCA 24/7
+                esté funcionando correctamente.
+
+                <br><br>
+
+                <small>
+                    ${escapeHTML(error.message)}
+                </small>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   NORMALIZAR
+===================================================== */
+
+function normalizarNoticias(datos){
+
+    return datos.map(n=>({
+
+        titulo:
+            n.titulo ||
+            n.title ||
+            "Noticias de Boca Juniors",
+
+        fuente:
+            n.fuente ||
+            n.source ||
+            "BOCA 24/7",
+
+        contenido:
+            n.contenido ||
+            n.descripcion ||
+            n.description ||
+            "Toda la información de Boca Juniors.",
+
+        link:
+            n.link ||
+            n.url ||
+            "#",
+
+        fecha:
+            n.fecha_iso ||
+            n.fecha ||
+            n.pubDate ||
+            ""
+
+    }));
+
+}
+
+
+/* =====================================================
+   MOSTRAR NOTICIAS
+===================================================== */
+
+function mostrarNoticias(){
+
+    const contenedor =
+        document.getElementById("noticias");
+
+    const buscador =
+        document
+        .getElementById("buscador")
+        .value
+        .toLowerCase()
+        .trim();
+
+    let lista =
+        filtrarPorSeccion(
+            todasLasNoticias,
+            seccionActual
+        );
+
+    if(buscador){
+
+        lista =
+            lista.filter(n=>{
+
+                const texto = (
+
+                    n.titulo +
+                    " " +
+                    n.fuente +
+                    " " +
+                    n.contenido
+
+                ).toLowerCase();
+
+                return texto.includes(
+                    buscador
+                );
+
+            });
+
+    }
+
+    if(!lista.length){
+
+        contenedor.innerHTML = `
+
+            <div class="empty">
+
+                No encontramos noticias
+                para esta sección.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    contenedor.innerHTML = `
+
+        <div class="news-grid">
+
+            ${lista.map(
+                crearTarjeta
+            ).join("")}
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+function filtrarPorSeccion(lista,seccion){
+
+    if(seccion === "Todas"){
+        return lista;
+    }
+
+    if(seccion === "Boca"){
+        return lista;
+    }
+
+    return lista.filter(n=>{
+
+        const texto = (
+
+            n.titulo +
+            " " +
+            n.contenido +
+            " " +
+            n.fuente
+
+        ).toLowerCase();
+
+        const palabras = {
+
+            Mercado:[
+                "mercado",
+                "refuerzo",
+                "fichaje",
+                "transferencia",
+                "pase",
+                "incorporación",
+                "incorporacion"
+            ],
+
+            Partidos:[
+                "partido",
+                "juega",
+                "jugó",
+                "jugo",
+                "copa",
+                "fecha",
+                "fixture",
+                "sudamericana"
+            ],
+
+            Plantel:[
+                "plantel",
+                "jugador",
+                "equipo",
+                "entrenamiento"
+            ],
+
+            Lesiones:[
+                "lesión",
+                "lesion",
+                "lesionado",
+                "desgarro",
+                "molestia"
+            ],
+
+            "Básquet":[
+                "básquet",
+                "basquet"
+            ],
+
+            Futsal:[
+                "futsal"
+            ],
+
+            Femenino:[
+                "femenino",
+                "femenina"
+            ],
+
+            Reserva:[
+                "reserva"
+            ],
+
+            Inferiores:[
+                "inferiores",
+                "juveniles",
+                "juvenil"
+            ],
+
+            Bombonera:[
+                "bombonera",
+                "estadio"
+            ]
+
+        };
+
+        return (
+            palabras[seccion] || []
+        ).some(
+            palabra =>
+                texto.includes(palabra)
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   CAMBIAR SECCIÓN
+===================================================== */
+
+function cambiarSeccion(seccion,boton){
+
+    seccionActual =
+        seccion;
+
+    document
+        .querySelectorAll(".nav button")
+        .forEach(b=>{
+            b.classList.remove(
+                "active"
+            );
+        });
+
+    boton.classList.add("active");
+
+    document.getElementById(
+        "titulo-seccion"
+    ).textContent =
+        seccion === "Todas"
+        ? "Últimas noticias"
+        : seccion;
+
+    mostrarNoticias();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   TARJETA
+===================================================== */
+
+function crearTarjeta(n){
+
+    const titulo =
+        escapeHTML(n.titulo);
+
+    const fuente =
+        escapeHTML(n.fuente);
+
+    const contenido =
+        escapeHTML(n.contenido);
+
+    const fecha =
+        formatearFecha(n.fecha);
+
+    const link =
+        validarLink(n.link);
+
+    return `
+        <article class="news-card">
+
+            <div class="news-image">
+                BOCA 24/7
+            </div>
+
+            <div class="news-body">
+
+                <div class="news-source">
+                    ${fuente}
+                </div>
+
+                <h3 class="news-title">
+                    ${titulo}
+                </h3>
+
+                <p class="news-description">
+                    ${contenido}
+                </p>
+
+                <div class="news-meta">
+
+                    <span class="news-date">
+                        ${fecha}
+                    </span>
+
+                    ${
+                        link !== "#"
+                        ? `
+                        <a
+                            class="read"
+                            href="${link}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Ver fuente →
+                        </a>
+                        `
+                        : ""
+                    }
+
+                </div>
+
+            </div>
+
+        </article>
+    `;
+}
+
+
+function mostrarDestacadas(){
+
+    const contenedor =
+        document.getElementById("destacadas");
+
+    if(!todasLasNoticias.length){
+
+        contenedor.innerHTML = "";
+        return;
+
+    }
+
+    const lista =
+        todasLasNoticias.slice(0,3);
+
+    const principal =
+        lista[0];
+
+    const secundarias =
+        lista.slice(1);
+
+    contenedor.innerHTML = `
+
+        <div class="featured">
+
+            <div class="featured-main">
+
+                <div class="news-source">
+                    ${escapeHTML(principal.fuente)}
+                </div>
+
+                <h3>
+                    ${escapeHTML(principal.titulo)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(principal.contenido)}
+                </p>
+
+            </div>
+
+            <div class="featured-side">
+
+                ${secundarias.map(n => `
+
+                    <div class="featured-small">
+
+                        <div class="news-source">
+                            ${escapeHTML(n.fuente)}
+                        </div>
+
+                        <h3>
+                            ${escapeHTML(n.titulo)}
+                        </h3>
+
+                    </div>
+
+                `).join("")}
+
+            </div>
+
+        </div>
+    `;
+}
+
+
+function formatearFecha(fecha){
+
+    if(!fecha){
+        return "";
+    }
+
+    try{
+
+        const d =
+            new Date(fecha);
+
+        if(isNaN(d.getTime())){
+            return escapeHTML(
+                String(fecha)
+            );
+        }
+
+        return d.toLocaleString(
+            "es-AR",
+            {
+                day:"2-digit",
+                month:"2-digit",
+                year:"numeric",
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        );
+
+    }catch(error){
+
+        return "";
+
+    }
+}
+
+
+function horaActual(){
+
+    return new Date().toLocaleTimeString(
+        "es-AR",
+        {
+            hour:"2-digit",
+            minute:"2-digit"
+        }
+    );
+
+}
+
+
+function escapeHTML(valor){
+
+    return String(valor || "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function validarLink(link){
+
+    if(!link){
+        return "#";
+    }
+
+    try{
+
+        const url =
+            new URL(link);
+
+        if(
+            url.protocol !== "http:" &&
+            url.protocol !== "https:"
+        ){
+            return "#";
+        }
+
+        return escapeHTML(url.href);
+
+    }catch(error){
+
+        return "#";
+
+    }
+}
+
+
+document
+    .getElementById("buscador")
+    .addEventListener(
+        "input",
+        mostrarNoticias
+    );
+
+
+cargarNoticias();
+
+
+setInterval(
+    cargarNoticias,
+    5 * 60 * 1000
+);
+
+</script>
 
 </body>
-    </html>
-
-    
+</html>
