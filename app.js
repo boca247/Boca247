@@ -1,9 +1,10 @@
+
 /* =========================================================
    BOCA 24/7 - APP.JS
    Sistema principal
    Noticias + partidos + tabla + agenda + mercado +
-   obras + videos + disciplinas + historia + galería +
-   encuesta + ticker
+   obras + videos + disciplinas + predio + historia +
+   galería + encuesta + ticker
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         obras: "obras.json",
         videos: "videos.json",
         disciplinas: "disciplinas.json",
+        predio: "predio.json",
         historia: "historia.json",
         galeria: "galeria.json"
     };
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (!respuesta.ok) {
                 throw new Error(
-                    `No se pudo cargar ${archivo}`
+                    `No se pudo cargar ${archivo} (${respuesta.status})`
                 );
             }
 
@@ -65,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function escaparHTML(valor) {
 
-        if (valor === null || valor === undefined) {
+        if (
+            valor === null ||
+            valor === undefined
+        ) {
             return "";
         }
 
@@ -79,7 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    function obtener(objeto, propiedades, defecto = "") {
+    function obtener(
+        objeto,
+        propiedades,
+        defecto = ""
+    ) {
 
         for (const propiedad of propiedades) {
 
@@ -88,7 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 objeto[propiedad] !== undefined &&
                 objeto[propiedad] !== null
             ) {
+
                 return objeto[propiedad];
+
             }
 
         }
@@ -104,11 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
             return datos;
         }
 
-        if (datos && Array.isArray(datos.items)) {
+        if (
+            datos &&
+            Array.isArray(datos.items)
+        ) {
             return datos.items;
         }
 
-        if (datos && Array.isArray(datos.data)) {
+        if (
+            datos &&
+            Array.isArray(datos.data)
+        ) {
             return datos.data;
         }
 
@@ -128,11 +145,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!resultado) return;
 
-        const votos = JSON.parse(
-            localStorage.getItem(
-                "boca247_encuesta"
-            ) || "{}"
-        );
+        let votos = {};
+
+        try {
+
+            votos = JSON.parse(
+                localStorage.getItem(
+                    "boca247_encuesta"
+                ) || "{}"
+            );
+
+        } catch (error) {
+
+            votos = {};
+
+        }
 
         votos[opcion] =
             (votos[opcion] || 0) + 1;
@@ -141,19 +168,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "boca247_encuesta",
             JSON.stringify(votos)
         );
-
-        const total =
-            Object.values(votos).reduce(
-                (a, b) => a + b,
-                0
-            );
-
-        resultado.innerHTML = `
-            <strong>Gracias por votar.</strong><br>
-            Tu respuesta fue:
-            <strong>${escaparHTML(opcion)}</strong><br><br>
-            <span>Total de votos: ${total}</span>
-        `;
 
         mostrarResultadosEncuesta();
 
@@ -167,11 +181,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!resultado) return;
 
-        const votos = JSON.parse(
-            localStorage.getItem(
-                "boca247_encuesta"
-            ) || "{}"
-        );
+        let votos = {};
+
+        try {
+
+            votos = JSON.parse(
+                localStorage.getItem(
+                    "boca247_encuesta"
+                ) || "{}"
+            );
+
+        } catch (error) {
+
+            votos = {};
+
+        }
 
         const opciones = [
             "Muy bien",
@@ -180,11 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
             "Mal"
         ];
 
-        const total = opciones.reduce(
-            (suma, opcion) =>
-                suma + (votos[opcion] || 0),
-            0
-        );
+        const total =
+            opciones.reduce(
+                (suma, opcion) =>
+                    suma + (votos[opcion] || 0),
+                0
+            );
 
         if (total === 0) {
 
@@ -197,6 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let html = `
             <strong>Resultados de la encuesta</strong>
+
             <div style="margin-top:12px;">
         `;
 
@@ -219,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         font-size:12px;
                         font-weight:800;
                     ">
+
                         <span>
                             ${escaparHTML(opcion)}
                         </span>
@@ -226,6 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span>
                             ${porcentaje}%
                         </span>
+
                     </div>
 
                     <div style="
@@ -250,7 +278,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         html += `
             </div>
-            <small>Total de votos: ${total}</small>
+
+            <small>
+                Total de votos: ${total}
+            </small>
         `;
 
         resultado.innerHTML = html;
@@ -272,15 +303,19 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
         const newsGrid =
-            document.getElementById("newsGrid");
+            document.getElementById(
+                "newsGrid"
+            );
 
         if (!newsGrid) return;
 
         if (!noticias.length) {
 
-            console.warn(
-                "BOCA 24/7: no hay noticias disponibles."
-            );
+            newsGrid.innerHTML = `
+                <div class="empty-state">
+                    No hay noticias disponibles.
+                </div>
+            `;
 
             return;
 
@@ -304,36 +339,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const contenido = obtener(
                 noticia,
-                ["contenido", "texto", "description"],
+                [
+                    "contenido",
+                    "texto",
+                    "description",
+                    "descripcion"
+                ],
                 ""
             );
 
             const fecha = obtener(
                 noticia,
-                ["fecha", "date"],
+                [
+                    "fecha",
+                    "date",
+                    "fecha_iso"
+                ],
                 ""
             );
 
             const fuente = obtener(
                 noticia,
-                ["fuente", "source"],
+                [
+                    "fuente",
+                    "source"
+                ],
                 ""
             );
 
             const link = obtener(
                 noticia,
-                ["link", "url"],
+                [
+                    "link",
+                    "url"
+                ],
                 "#"
             );
 
-            const article =
-                document.createElement("article");
+            const imagen = obtener(
+                noticia,
+                [
+                    "imagen",
+                    "image",
+                    "thumbnail"
+                ],
+                ""
+            );
 
-            article.className = "news-card";
+            const article =
+                document.createElement(
+                    "article"
+                );
+
+            article.className =
+                "news-card";
+
+            let estiloImagen = "";
+
+            if (imagen) {
+
+                estiloImagen = `
+                    background-image:
+                    linear-gradient(
+                        180deg,
+                        transparent,
+                        rgba(0,15,45,.85)
+                    ),
+                    url('${escaparHTML(imagen)}');
+                    background-size:cover;
+                    background-position:center;
+                `;
+
+            }
 
             article.innerHTML = `
 
-                <div class="news-image image-team">
+                <div
+                    class="news-image image-team"
+                    style="${estiloImagen}"
+                >
 
                     <span>
                         ${escaparHTML(categoria)}
@@ -351,17 +435,33 @@ document.addEventListener("DOMContentLoaded", () => {
                         ${escaparHTML(titulo)}
                     </h3>
 
-                    <p>
-                        ${escaparHTML(contenido)}
-                    </p>
+                    ${
+                        contenido
+                        ?
+                        `
+                        <p>
+                            ${escaparHTML(contenido)}
+                        </p>
+                        `
+                        :
+                        ""
+                    }
 
                     <span class="news-date">
                         ${escaparHTML(fecha)}
-                        ${fuente ? " · " + escaparHTML(fuente) : ""}
+                        ${
+                            fuente
+                            ?
+                            " · " +
+                            escaparHTML(fuente)
+                            :
+                            ""
+                        }
                     </span>
 
                     ${
-                        link && link !== "#"
+                        link &&
+                        link !== "#"
                         ?
                         `
                         <a
@@ -418,84 +518,115 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedor.innerHTML = "";
 
         datos.forEach(partido => {
-                       const rival = obtener(
+
+            const rival = obtener(
                 partido,
-                ["rival", "oponente", "equipo"],
+                [
+                    "rival",
+                    "oponente",
+                    "equipo"
+                ],
                 "Rival"
             );
 
             const fecha = obtener(
                 partido,
-                ["fecha", "date"],
+                [
+                    "fecha",
+                    "date"
+                ],
                 ""
             );
 
             const hora = obtener(
                 partido,
-                ["hora", "time"],
+                [
+                    "hora",
+                    "time"
+                ],
                 ""
             );
 
             const competencia = obtener(
                 partido,
-                ["competencia", "torneo", "liga"],
+                [
+                    "competencia",
+                    "torneo",
+                    "liga"
+                ],
                 "Partido"
             );
 
             const resultado = obtener(
                 partido,
-                ["resultado", "score"],
+                [
+                    "resultado",
+                    "score"
+                ],
                 ""
             );
 
             const localia = obtener(
                 partido,
-                ["localia", "condicion"],
+                [
+                    "localia",
+                    "condicion"
+                ],
                 "Boca"
             );
 
             const article =
-                document.createElement("article");
+                document.createElement(
+                    "article"
+                );
 
-            article.className = "fixtures";
+            article.className =
+                "fixture";
 
             article.innerHTML = `
 
-                <article>
+                <span>
+                    ${escaparHTML(competencia)}
+                </span>
 
-                    <span>
-                        ${escaparHTML(competencia)}
-                    </span>
+                <strong>
+                    Boca Juniors
+                    vs.
+                    ${escaparHTML(rival)}
+                </strong>
 
-                    <strong>
-                        Boca Juniors
-                        vs.
-                        ${escaparHTML(rival)}
-                    </strong>
+                ${
+                    resultado
+                    ?
+                    `
+                    <b>
+                        ${escaparHTML(resultado)}
+                    </b>
+                    `
+                    :
+                    ""
+                }
 
+                <small>
+                    ${escaparHTML(fecha)}
                     ${
-                        resultado
+                        hora
                         ?
-                        `<b>${escaparHTML(resultado)}</b>`
+                        " · " +
+                        escaparHTML(hora)
                         :
                         ""
                     }
+                </small>
 
-                    <small>
-                        ${escaparHTML(fecha)}
-                        ${hora ? " · " + escaparHTML(hora) : ""}
-                    </small>
-
-                    <small>
-                        ${escaparHTML(localia)}
-                    </small>
-
-                </article>
+                <small>
+                    ${escaparHTML(localia)}
+                </small>
 
             `;
 
             contenedor.appendChild(
-                article.firstElementChild
+                article
             );
 
         });
@@ -546,7 +677,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const tabla =
             document.createElement("div");
 
-        tabla.style.overflowX = "auto";
+        tabla.style.overflowX =
+            "auto";
 
         tabla.innerHTML = `
 
@@ -598,8 +730,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 </thead>
 
-                <tbody id="tablaBody">
-                </tbody>
+                <tbody id="tablaBody"></tbody>
 
             </table>
 
@@ -614,1632 +745,129 @@ document.addEventListener("DOMContentLoaded", () => {
                 "#tablaBody"
             );
 
-        datos.forEach((equipo, indice) => {
-
-            const posicion = obtener(
-                equipo,
-                ["posicion", "puesto", "pos"],
-                indice + 1
-            );
-
-            const nombre = obtener(
-                equipo,
-                ["equipo", "nombre", "club"],
-                ""
-            );
-
-            const pj = obtener(
-                equipo,
-                ["pj", "jugados", "partidos"],
-                0
-            );
-
-            const ganados = obtener(
-                equipo,
-                ["g", "ganados", "victorias"],
-                0
-            );
-
-            const empatados = obtener(
-                equipo,
-                ["e", "empatados", "empates"],
-                0
-            );
-
-            const perdidos = obtener(
-                equipo,
-                ["p", "perdidos", "derrotas"],
-                0
-            );
-
-            const puntos = obtener(
-                equipo,
-                ["pts", "puntos"],
-                0
-            );
-
-            const tr =
-                document.createElement("tr");
-
-            tr.style.borderBottom =
-                "1px solid #e5e8ed";
-
-            if (
-                String(nombre)
-                    .toLowerCase()
-                    .includes("boca")
-            ) {
-
-                tr.style.fontWeight = "900";
-                tr.style.background =
-                    "#fff8c7";
-
-            }
-
-            tr.innerHTML = `
-
-                <td style="padding:13px;">
-                    ${escaparHTML(posicion)}
-                </td>
-
-                <td style="
-                    padding:13px;
-                    font-weight:800;
-                ">
-                    ${escaparHTML(nombre)}
-                </td>
-
-                <td style="padding:13px;">
-                    ${escaparHTML(pj)}
-                </td>
-
-                <td style="padding:13px;">
-                    ${escaparHTML(ganados)}
-                </td>
-
-                <td style="padding:13px;">
-                    ${escaparHTML(empatados)}
-                </td>
-
-                <td style="padding:13px;">
-                    ${escaparHTML(perdidos)}
-                </td>
-
-                <td style="
-                    padding:13px;
-                    font-weight:900;
-                ">
-                    ${escaparHTML(puntos)}
-                </td>
-
-            `;
-
-            tbody.appendChild(tr);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       AGENDA DE BOCA
-       ===================================================== */
-
-    async function cargarAgenda() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.agenda
-                )
-            );
-
-        if (!datos.length) return;
-
-        const contenedor =
-            document.getElementById("agenda") ||
-            document.getElementById("agendaGrid");
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(evento => {
-
-            const titulo = obtener(
-                evento,
-                ["titulo", "nombre", "evento"],
-                ""
-            );
-
-            const fecha = obtener(
-                evento,
-                ["fecha", "date"],
-                ""
-            );
-
-            const hora = obtener(
-                evento,
-                ["hora", "time"],
-                ""
-            );
-
-            const categoria = obtener(
-                evento,
-                ["categoria", "category", "tipo"],
-                "AGENDA"
-            );
-
-            const lugar = obtener(
-                evento,
-                ["lugar", "estadio", "venue"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "market-card";
-
-            article.innerHTML = `
-
-                <span class="market-title">
-                    ${escaparHTML(categoria)}
-                </span>
-
-                <h3>
-                    ${escaparHTML(titulo)}
-                </h3>
-
-                <p>
-                    ${escaparHTML(fecha)}
-                    ${hora ? " · " + escaparHTML(hora) : ""}
-                </p>
-
-                ${
-                    lugar
-                    ?
-                    `
-                    <small>
-                        ${escaparHTML(lugar)}
-                    </small>
-                    `
-                    :
-                    ""
-                }
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       MERCADO DE PASES
-       ===================================================== */
-
-    async function cargarMercado() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.mercado
-                )
-            );
-
-        if (!datos.length) return;
-
-        const contenedor =
-            document.getElementById("mercado") ||
-            document.getElementById("marketGrid");
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(item => {
-
-            const tipo = obtener(
-                item,
-                ["tipo", "operacion"],
-                "MERCADO"
-            );
-
-            const jugador = obtener(
-                item,
-                ["jugador", "nombre"],
-                ""
-            );
-
-            const detalle = obtener(
-                item,
-                ["detalle", "contenido", "descripcion"],
-                ""
-            );
-
-            const estado = obtener(
-                item,
-                ["estado", "status"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "market-card";
-
-            article.innerHTML = `
-
-                <span class="market-title">
-                    ${escaparHTML(tipo)}
-                </span>
-
-                <h3>
-                    ${escaparHTML(jugador)}
-                </h3>
-
-                <p>
-                    ${escaparHTML(detalle)}
-                </p>
-
-                ${
-                    estado
-                    ?
-                    `
-                    <small>
-                        ${escaparHTML(estado)}
-                    </small>
-                    `
-                    :
-                    ""
-                }
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       OBRAS Y REMODELACIONES
-       ===================================================== */
-
-    async function cargarObras() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.obras
-                )
-            );
-
-        if (!datos.length) return;
-
-        const posibles = [
-            "obras",
-            "obrasGrid",
-            "remodelaciones"
-        ];
-
-        let contenedor = null;
-
-        for (const id of posibles) {
-
-            const elemento =
-                document.getElementById(id);
-
-            if (elemento) {
-
-                contenedor = elemento;
-                break;
-
-            }
-
-        }
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(obra => {
-
-            const nombre = obtener(
-                obra,
-                ["titulo", "nombre", "obra"],
-                ""
-            );
-
-            const descripcion = obtener(
-                obra,
-                ["contenido", "descripcion", "texto"],
-                ""
-            );
-
-            const estado = obtener(
-                obra,
-                ["estado", "status"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "market-card";
-
-            article.innerHTML = `
-
-                <span class="market-title">
-                    OBRAS Y REMODELACIONES
-                </span>
-
-                <h3>
-                    ${escaparHTML(nombre)}
-                </h3>
-
-                <p>
-                    ${escaparHTML(descripcion)}
-                </p>
-
-                ${
-                    estado
-                    ?
-                    `
-                    <small>
-                        ${escaparHTML(estado)}
-                    </small>
-                    `
-                    :
-                    ""
-                }
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       VIDEOS
-       ===================================================== */
-
-    async function cargarVideos() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.videos
-                )
-            );
-
-        if (!datos.length) return;
-
-        const contenedor =
-            document.getElementById("videoGrid") ||
-            document.getElementById("videos");
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(video => {
-
-            const titulo = obtener(
-                video,
-                ["titulo", "title"],
-                "Video de Boca"
-            );
-
-            const categoria = obtener(
-                video,
-                ["categoria", "category"],
-                "VIDEOS"
-            );
-
-            const descripcion = obtener(
-                video,
-                ["contenido", "descripcion", "texto"],
-                ""
-            );
-
-            const link = obtener(
-                video,
-                ["link", "url"],
-                "#"
-            );
-
-            const imagen = obtener(
-                video,
-                ["imagen", "image", "thumbnail"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "video-card";
-
-            let fondo = "";
-
-            if (imagen) {
-
-                fondo = `
-                    background-image:
-                    linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0,10,30,.85)
-                    ),
-                    url('${escaparHTML(imagen)}');
-                    background-size:cover;
-                    background-position:center;
-                `;
-
-            }
-
-            article.innerHTML = `
-
-                <div
-                    class="video-cover video-lanus"
-                    style="${fondo}"
-                >
-
-                    <div class="play">
-                        ▶
-                    </div>
-
-                    <span>
-                        ${escaparHTML(categoria)}
-                    </span>
-
-                </div>
-
-                <div class="video-info">
-
-                    <small>
-                        ${escaparHTML(categoria)}
-                    </small>
-
-                    <h3>
-                        ${escaparHTML(titulo)}
-                    </h3>
-
-                    <p>
-                        ${escaparHTML(descripcion)}
-                    </p>
-
-                    ${
-                        link && link !== "#"
-                        ?
-                        `
-                        <a
-                            href="${escaparHTML(link)}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            VER VIDEO →
-                        </a>
-                        `
-                        :
-                        ""
-                    }
-
-                </div>
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-        activarAnimaciones();
-
-                      }
-       /* =====================================================
-       DISCIPLINAS DE BOCA
-       ===================================================== */
-
-    async function cargarDisciplinas() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.disciplinas
-                )
-            );
-
-        if (!datos.length) return;
-
-        const posibles = [
-            "disciplinas",
-            "disciplinasGrid",
-            "sportsGrid"
-        ];
-
-        let contenedor = null;
-
-        for (const id of posibles) {
-
-            const elemento =
-                document.getElementById(id);
-
-            if (elemento) {
-
-                contenedor = elemento;
-                break;
-
-            }
-
-        }
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(disciplina => {
-
-            const nombre = obtener(
-                disciplina,
-                ["titulo", "nombre", "disciplina"],
-                "Boca"
-            );
-
-            const descripcion = obtener(
-                disciplina,
-                ["contenido", "descripcion", "texto"],
-                ""
-            );
-
-            const categoria = obtener(
-                disciplina,
-                ["categoria", "category"],
-                "DISCIPLINA"
-            );
-
-            const imagen = obtener(
-                disciplina,
-                ["imagen", "image"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "news-card";
-
-            let estiloImagen = "";
-
-            if (imagen) {
-
-                estiloImagen = `
-                    background-image:
-                    linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0,15,45,.85)
-                    ),
-                    url('${escaparHTML(imagen)}');
-                    background-size:cover;
-                    background-position:center;
-                `;
-
-            }
-
-            article.innerHTML = `
-
-                <div
-                    class="news-image image-team"
-                    style="${estiloImagen}"
-                >
-                    <span>
-                        ${escaparHTML(categoria)}
-                    </span>
-                </div>
-
-                <div class="news-content">
-
-                    <span class="category">
-                        ${escaparHTML(categoria)}
-                    </span>
-
-                    <h3>
-                        ${escaparHTML(nombre)}
-                    </h3>
-
-                    <p>
-                        ${escaparHTML(descripcion)}
-                    </p>
-
-                </div>
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       BOCA PREDIO / INFERIORES
-       ===================================================== */
-
-    async function cargarPredio() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.predio ||
-                    "predio.json"
-                )
-            );
-
-        if (!datos.length) return;
-
-        const posibles = [
-            "predio",
-            "predioGrid",
-            "inferiores"
-        ];
-
-        let contenedor = null;
-
-        for (const id of posibles) {
-
-            const elemento =
-                document.getElementById(id);
-
-            if (elemento) {
-
-                contenedor = elemento;
-                break;
-
-            }
-
-        }
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach(item => {
-
-            const titulo = obtener(
-                item,
-                ["titulo", "nombre", "categoria"],
-                "Boca Predio"
-            );
-
-            const contenido = obtener(
-                item,
-                ["contenido", "descripcion", "texto"],
-                ""
-            );
-
-            const fecha = obtener(
-                item,
-                ["fecha", "date"],
-                ""
-            );
-
-            const imagen = obtener(
-                item,
-                ["imagen", "image"],
-                ""
-            );
-
-            const article =
-                document.createElement("article");
-
-            article.className =
-                "news-card";
-
-            let estilo = "";
-
-            if (imagen) {
-
-                estilo = `
-                    background-image:
-                    linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0,15,45,.9)
-                    ),
-                    url('${escaparHTML(imagen)}');
-                    background-size:cover;
-                    background-position:center;
-                `;
-
-            }
-
-            article.innerHTML = `
-
-                <div
-                    class="news-image image-team"
-                    style="${estilo}"
-                >
-                    <span>
-                        BOCA PREDIO
-                    </span>
-                </div>
-
-                <div class="news-content">
-
-                    <span class="category">
-                        BOCA PREDIO
-                    </span>
-
-                    <h3>
-                        ${escaparHTML(titulo)}
-                    </h3>
-
-                    <p>
-                        ${escaparHTML(contenido)}
-                    </p>
-
-                    ${
-                        fecha
-                        ?
-                        `
-                        <span class="news-date">
-                            ${escaparHTML(fecha)}
-                        </span>
-                        `
-                        :
-                        ""
-                    }
-
-                </div>
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       HISTORIA + UN DÍA COMO HOY
-       ===================================================== */
-
-    async function cargarHistoria() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.historia
-                )
-            );
-
-        if (!datos.length) return;
-
-        const posibles = [
-            "historia",
-            "unDiaComoHoy",
-            "history"
-        ];
-
-        let contenedor = null;
-
-        for (const id of posibles) {
-
-            const elemento =
-                document.getElementById(id);
-
-            if (elemento) {
-
-                contenedor = elemento;
-                break;
-
-            }
-
-        }
-
-        if (!contenedor) return;
-
-        const ahora = new Date();
-
-        const dia =
-            String(
-                ahora.getDate()
-            ).padStart(2, "0");
-
-        const mes =
-            String(
-                ahora.getMonth() + 1
-            ).padStart(2, "0");
-
-        const encontrado =
-            datos.find(item => {
-
-                const fecha = String(
-                    obtener(
-                        item,
-                        ["fecha", "date"],
-                        ""
-                    )
+        datos.forEach(
+            (equipo, indice) => {
+
+                const posicion = obtener(
+                    equipo,
+                    [
+                        "posicion",
+                        "puesto",
+                        "pos"
+                    ],
+                    indice + 1
                 );
 
-                return (
-                    fecha.includes(`${dia}/${mes}`) ||
-                    fecha.includes(`${dia}-${mes}`) ||
-                    fecha.includes(`${mes}/${dia}`)
+                const nombre = obtener(
+                    equipo,
+                    [
+                        "equipo",
+                        "nombre",
+                        "club"
+                    ],
+                    ""
                 );
 
-            });
-
-        const item =
-            encontrado || datos[0];
-
-        const titulo = obtener(
-            item,
-            ["titulo", "title", "nombre"],
-            "Un día como hoy"
-        );
-
-        const contenido = obtener(
-            item,
-            ["contenido", "descripcion", "texto"],
-            ""
-        );
-
-        const fecha = obtener(
-            item,
-            ["fecha", "date"],
-            ""
-        );
-
-        contenedor.innerHTML = `
-
-            <div class="history-heading">
-
-                <span class="eyebrow yellow">
-                    UN DÍA COMO HOY
-                </span>
-
-                <h2>
-                    ${escaparHTML(titulo)}
-                </h2>
-
-                <p>
-                    ${escaparHTML(contenido)}
-                </p>
-
-                ${
-                    fecha
-                    ?
-                    `
-                    <small>
-                        ${escaparHTML(fecha)}
-                    </small>
-                    `
-                    :
-                    ""
-                }
-
-            </div>
-
-        `;
-
-    }
-
-
-    /* =====================================================
-       GALERÍA
-       ===================================================== */
-
-    async function cargarGaleria() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.galeria
-                )
-            );
-
-        if (!datos.length) return;
-
-        const posibles = [
-            "galeria",
-            "photoGrid",
-            "galeriaGrid",
-            "fotos"
-        ];
-
-        let contenedor = null;
-
-        for (const id of posibles) {
-
-            const elemento =
-                document.getElementById(id);
-
-            if (elemento) {
-
-                contenedor = elemento;
-                break;
-
-            }
-
-        }
-
-        if (!contenedor) return;
-
-        contenedor.innerHTML = "";
-
-        datos.forEach((foto, indice) => {
-
-            const imagen = obtener(
-                foto,
-                ["imagen", "image", "url"],
-                ""
-            );
-
-            const titulo = obtener(
-                foto,
-                ["titulo", "title", "nombre"],
-                "Boca Juniors"
-            );
-
-            const article =
-                document.createElement("div");
-
-            article.className =
-                `photo-card photo-${(indice % 4) + 1}`;
-
-            if (imagen) {
-
-                article.style.backgroundImage = `
-                    linear-gradient(
-                        180deg,
-                        transparent,
-                        rgba(0,20,55,.9)
-                    ),
-                    url('${escaparHTML(imagen)}')
-                `;
-
-                article.style.backgroundSize =
-                    "cover";
-
-                article.style.backgroundPosition =
-                    "center";
-
-            }
-
-            article.innerHTML = `
-
-                <span>
-                    ${escaparHTML(titulo)}
-                </span>
-
-            `;
-
-            contenedor.appendChild(article);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       ACTUALIZAR NOTICIAS
-       ===================================================== */
-
-    const reloadNews =
-        document.getElementById(
-            "reloadNews"
-        );
-
-    if (reloadNews) {
-
-        reloadNews.addEventListener(
-            "click",
-            async () => {
-
-                const original =
-                    reloadNews.textContent;
-
-                reloadNews.disabled = true;
-
-                reloadNews.textContent =
-                    "ACTUALIZANDO...";
-
-                try {
-
-                    await cargarNoticias();
-
-                    reloadNews.textContent =
-                        "ACTUALIZADO ✓";
-
-                } catch (error) {
-
-                    console.error(error);
-
-                    reloadNews.textContent =
-                        "ERROR";
-
-                }
-
-                setTimeout(() => {
-
-                    reloadNews.textContent =
-                        original;
-
-                    reloadNews.disabled =
-                        false;
-
-                }, 1800);
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       VER MÁS NOTICIAS
-       ===================================================== */
-
-    const loadMore =
-        document.getElementById(
-            "loadMore"
-        );
-
-    if (loadMore) {
-
-        loadMore.addEventListener(
-            "click",
-            async () => {
-
-                const newsGrid =
-                    document.getElementById(
-                        "newsGrid"
+                const pj = obtener(
+                    equipo,
+                    [
+                        "pj",
+                        "jugados",
+                        "partidos"
+                    ],
+                    0
+                );
+
+                const ganados = obtener(
+                    equipo,
+                    [
+                        "g",
+                        "ganados",
+                        "victorias"
+                    ],
+                    0
+                );
+
+                const empatados = obtener(
+                    equipo,
+                    [
+                        "e",
+                        "empatados",
+                        "empates"
+                    ],
+                    0
+                );
+
+                const perdidos = obtener(
+                    equipo,
+                    [
+                        "p",
+                        "perdidos",
+                        "derrotas"
+                    ],
+                    0
+                );
+
+                const puntos = obtener(
+                    equipo,
+                    [
+                        "pts",
+                        "puntos"
+                    ],
+                    0
+                );
+
+                const tr =
+                    document.createElement(
+                        "tr"
                     );
 
-                if (!newsGrid) return;
-
-                const noticias =
-                    normalizarArray(
-                        await cargarJSON(
-                            ARCHIVOS.noticias
-                        )
-                    );
-
-                const actuales =
-                    newsGrid.children.length;
-
-                const siguientes =
-                    noticias.slice(
-                        actuales,
-                        actuales + 6
-                    );
-
-                siguientes.forEach(noticia => {
-
-                    const article =
-                        document.createElement(
-                            "article"
-                        );
-
-                    article.className =
-                        "news-card";
-
-                    const titulo = obtener(
-                        noticia,
-                        ["titulo", "title"],
-                        "Noticias de Boca"
-                    );
-
-                    const categoria = obtener(
-                        noticia,
-                        ["categoria", "category"],
-                        "BOCA"
-                    );
-
-                    const contenido = obtener(
-                        noticia,
-                        ["contenido", "texto"],
-                        ""
-                    );
-
-                    const fecha = obtener(
-                        noticia,
-                        ["fecha", "date"],
-                        ""
-                    );
-
-                    const link = obtener(
-                        noticia,
-                        ["link", "url"],
-                        "#"
-                    );
-
-                    article.innerHTML = `
-
-                        <div class="news-image image-team">
-
-                            <span>
-                                ${escaparHTML(categoria)}
-                            </span>
-
-                        </div>
-
-                        <div class="news-content">
-
-                            <span class="category">
-                                ${escaparHTML(categoria)}
-                            </span>
-
-                            <h3>
-                                ${escaparHTML(titulo)}
-                            </h3>
-
-                            <p>
-                                ${escaparHTML(contenido)}
-                            </p>
-
-                            <span class="news-date">
-                                ${escaparHTML(fecha)}
-                            </span>
-
-                            ${
-                                link !== "#"
-                                ?
-                                `
-                                <a
-                                    class="news-read"
-                                    href="${escaparHTML(link)}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    LEER NOTICIA →
-                                </a>
-                                `
-                                :
-                                ""
-                            }
-
-                        </div>
-
-                    `;
-
-                    newsGrid.appendChild(article);
-
-                });
+                tr.style.borderBottom =
+                    "1px solid #e5e8ed";
 
                 if (
-                    actuales + siguientes.length
-                    >= noticias.length
+                    String(nombre)
+                        .toLowerCase()
+                        .includes("boca")
                 ) {
 
-                    loadMore.textContent =
-                        "NO HAY MÁS NOTICIAS";
+                    tr.style.fontWeight =
+                        "900";
 
-                    loadMore.disabled =
-                        true;
-
-                }
-
-                activarAnimaciones();
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       TICKER
-       ===================================================== */
-
-    const ticker =
-        document.getElementById(
-            "tickerText"
-        );
-
-    if (ticker) {
-
-        const mensajes = [
-            "Toda la actualidad de Boca en BOCA 24/7.",
-            "Noticias de fútbol y todas las disciplinas.",
-            "Partidos, tabla, agenda y mercado de pases.",
-            "Boca Predio, obras, videos y entrevistas.",
-            "Streaming Los Bosteros de Tucumán.",
-            "Todo Boca. Todo el día."
-        ];
-
-        let posicion = 0;
-
-        setInterval(() => {
-
-            posicion++;
-
-            if (
-                posicion >= mensajes.length
-            ) {
-                posicion = 0;
-            }
-
-            ticker.textContent =
-                mensajes[posicion];
-
-        }, 5000);
-       }
-       /* =====================================================
-       SCROLL SUAVE
-       ===================================================== */
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(enlace => {
-
-            enlace.addEventListener(
-                "click",
-                function (e) {
-
-                    const destino =
-                        this.getAttribute("href");
-
-                    if (
-                        !destino ||
-                        destino === "#"
-                    ) {
-                        return;
-                    }
-
-                    const elemento =
-                        document.querySelector(
-                            destino
-                        );
-
-                    if (elemento) {
-
-                        e.preventDefault();
-
-                        elemento.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-
-                    }
+                    tr.style.background =
+                        "#fff8c7";
 
                 }
-            );
 
-        });
-
-
-    /* =====================================================
-       ANIMACIONES
-       ===================================================== */
-
-    function activarAnimaciones() {
-
-        const elementos =
-            document.querySelectorAll(
-                ".news-card, " +
-                ".video-card, " +
-                ".market-card, " +
-                ".fixtures article, " +
-                ".photo-card, " +
-                ".fan-card, " +
-                ".poll-card"
-            );
-
-        if (
-            !("IntersectionObserver" in window)
-        ) {
-
-            elementos.forEach(elemento => {
-
-                elemento.style.opacity = "1";
-
-                elemento.style.transform =
-                    "translateY(0)";
-
-            });
-
-            return;
-
-        }
-
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.style.opacity =
-                                "1";
-
-                            entry.target.style.transform =
-                                "translateY(0)";
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.08
-                }
-            );
-
-        elementos.forEach(elemento => {
-
-            elemento.style.opacity = "0";
-
-            elemento.style.transform =
-                "translateY(15px)";
-
-            elemento.style.transition =
-                "opacity .5s ease, transform .5s ease";
-
-            observer.observe(elemento);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       INICIO DE LA APLICACIÓN
-       ===================================================== */
-
-    async function iniciarBoca247() {
-
-        console.log(
-            "BOCA 24/7: iniciando aplicación..."
-        );
-
-        try {
-
-            await Promise.allSettled([
-
-                cargarNoticias(),
-
-                cargarPartidos(),
-
-                cargarTabla(),
-
-                cargarAgenda(),
-
-                cargarMercado(),
-
-                cargarObras(),
-
-                cargarVideos(),
-
-                cargarDisciplinas(),
-
-                cargarPredio(),
-
-                cargarHistoria(),
-
-                cargarGaleria()
-
-            ]);
-
-        } catch (error) {
-
-            console.error(
-                "BOCA 24/7: error general:",
-                error
-            );
-
-        }
-    /* =====================================================
-       SCROLL SUAVE
-       ===================================================== */
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(enlace => {
-
-            enlace.addEventListener(
-                "click",
-                function (e) {
-
-                    const destino =
-                        this.getAttribute("href");
-
-                    if (
-                        !destino ||
-                        destino === "#"
-                    ) {
-                        return;
-                    }
-
-                    const elemento =
-                        document.querySelector(
-                            destino
-                        );
-
-                    if (elemento) {
-
-                        e.preventDefault();
-
-                        elemento.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start"
-                        });
-
-                    }
-
-                }
-            );
-
-        });
-
-
-    /* =====================================================
-       ANIMACIONES
-       ===================================================== */
-
-    function activarAnimaciones() {
-
-        const elementos =
-            document.querySelectorAll(
-                ".news-card, " +
-                ".video-card, " +
-                ".market-card, " +
-                ".fixtures article, " +
-                ".photo-card, " +
-                ".fan-card, " +
-                ".poll-card"
-            );
-
-        if (
-            !("IntersectionObserver" in window)
-        ) {
-
-            elementos.forEach(elemento => {
-
-                elemento.style.opacity = "1";
-
-                elemento.style.transform =
-                    "translateY(0)";
-
-            });
-
-            return;
-
-        }
-
-        const observer =
-            new IntersectionObserver(
-                entries => {
-
-                    entries.forEach(entry => {
-
-                        if (
-                            entry.isIntersecting
-                        ) {
-
-                            entry.target.style.opacity =
-                                "1";
-
-                            entry.target.style.transform =
-                                "translateY(0)";
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-                {
-                    threshold: 0.08
-                }
-            );
-
-        elementos.forEach(elemento => {
-
-            elemento.style.opacity = "0";
-
-            elemento.style.transform =
-                "translateY(15px)";
-
-            elemento.style.transition =
-                "opacity .5s ease, transform .5s ease";
-
-            observer.observe(elemento);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       INICIO DE LA APLICACIÓN
-       ===================================================== */
-
-    async function iniciarBoca247() {
-
-        console.log(
-            "BOCA 24/7: iniciando aplicación..."
-        );
-
-        try {
-
-            await Promise.allSettled([
-
-                cargarNoticias(),
-
-                cargarPartidos(),
-
-                cargarTabla(),
-
-                cargarAgenda(),
-
-                cargarMercado(),
-
-                cargarObras(),
-
-                cargarVideos(),
-
-                cargarDisciplinas(),
-
-                cargarPredio(),
-
-                cargarHistoria(),
-
-                cargarGaleria()
-
-            ]);
-
-        } catch (error) {
-
-            console.error(
-                "BOCA 24/7: error general:",
-                error
-            );
-
-        }
-
-        activarAnimaciones();
-
-        mostrarResultadosEncuesta();
-
-        console.log(
-            "BOCA 24/7: aplicación cargada."
-        );
-
-    }
-
-
-    /* =====================================================
-       ARRANCAR
-       ===================================================== */
-
-    iniciarBoca247();
-       });
-
-});
-      
+                tr.innerHTML = `
+
+                    <td style="padding:13px;">
+                        ${escaparHTML(posicion)}
+                    </td>
+
+                    <td style="
+                        padding:13px;
+                        font-weight:800;
+                    ">
+                        ${escaparHTML(nombre)}
+                    </td>
+
+                    <td style="padding:13px;">
+                        ${escaparHTML(pj)}
+                    </td>
+
+                    <td style="padding:13px;">
+                        ${escaparHTML(ganados)}
+                    </td>
+
+                    <td style="padding:13px;">
+                        ${escaparHTML(empatados)}
+                    </td>
+
+                    <td style="padding:13px;">
+                        ${escaparHTML(perdidos)}
+                    </td>
+
+                    <td style="
+                        padding:13px;
+                        font-weight:9
