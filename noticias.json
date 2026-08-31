@@ -184,14 +184,6 @@
     "fecha_iso": "2026-08-30T16:11:58+00:00"
   },
   {
-    "titulo": "Con un regreso y una duda: el probable equipo de Boca para enfrentar a Vélez en Copa Argentina - Planeta Boca Juniors",
-    "fuente": "Planeta Boca Juniors",
-    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
-    "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVlRyU0pBY0g0YTZSbUNFVmpMdlVKSEpfWGJoWFRBZ2c5YVpaMkV4LXlJdjdXZGo3YWkxQk5fV0VUaVRuZ2lNRzFPUzI1eldIR2d1ajE0QzRyanp5TS1oTE1vbFpPbTZKNjZvaTNJUS1VNDk0SFFtdnh1UGc5eTRUaHlLTnNNWDhiMTVTOGJ4NVcyenJFMU9KdU1NNEFGU3VqT0R0TDRwVEZ1Qjd5cjVkVE8wamc1LUprdlFtYzlyNEFZMFd2WktKSNIBzAFBVV95cUxQbkZsb3VXVHBaVHl6NWRSTkhMYVI4YlRtNTBGOGd3VXFHb2VsaGplbGtxOFVoNGprWjJ5aVZUbTR6Yl9oOGdoZkpGenJiUjVWd09Kay05SEdMdGlHcVd4NnB6aERWZlR4MXRWMTNzRzVrUFJaSXlWUlVwQVZPd21uRkJKbkphZG1ieVpDSE05cVRTeFJsWEs3WUtCdlBELTBoYmlOOUVjM0hZUG1aaE04b2FVa0ozc3JmWF9NRjYxV0JISGFydHZIZnhVVUM?oc=5",
-    "categoria": "Boca",
-    "fecha_iso": "2026-08-30T15:36:35+00:00"
-  },
-  {
     "titulo": "Ezequiel Sosa reveló más refuerzos para Boca: «Dos jugadores» - El Intransigente",
     "fuente": "El Intransigente",
     "contenido": "Las últimas novedades del mercado de pases de Boca Juniors: refuerzos, negociaciones, altas y bajas.",
@@ -298,10 +290,18 @@
   {
     "titulo": "Boca festejó el triunfo agónico con un llamativo cantito con chicana para River - MDZ Online",
     "fuente": "MDZ Online",
-    "contenido": "Toda la información sobre La Bombonera, sus novedades, obras y actualidad.",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
     "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOHN1MHlfODVtYUxjUXh4QlBSZFV2ZlMyS2lFdC1oa21SU01ySHo0eTE5Z3VKMU9PSm9WYXFSZGhYODY4Vy1MQ0NlNzZRSmtlWWVLZ1RVMGd1STBFTWN1OGtqOW8waEJ0V3FMOUlEaDZWVGF1MURPMDFDYWlZQXNpelhsb295YTMtMmg0aWxyRXFaRXdfcUQ5VEpJX3BZaEt4a3hqTE1VcFlMd9IBrwFBVV95cUxPMGlJZldXaUtvU1MzZDRyQ0taV1lLNmI0S1ZTWHFkN3pwOEpSdnYxQkpyUUhZRHE0ZWFpckxORmhXM3NnMWxFTlV0UzJSZkotWldJeWM0cmNlRTM1YzFDdkdEQlpkX29xVVZXekZXVklSZ1dGLUx6a2dkNll3Uk9xcWVOU2k5eHFHUUV5eFl2UGhJVU0xYWRqZUd6Vkd5dGlNMGgyZjNPdEItcVgwV2xZ?oc=5",
-    "categoria": "La Bombonera",
+    "categoria": "Sudamericana",
     "fecha_iso": "2026-08-29T12:13:00+00:00"
+  },
+  {
+    "titulo": "Una jugadora de Boca y la Selección Argentina se aleja del fútbol para priorizar su salud mental - Olé",
+    "fuente": "Olé",
+    "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
+    "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNYnBZY1hjNmdPNEF3Z0dKN3Z0ck5fNm9FQmpoeE1ZVHBwTUNZbTJLa215UE90V1NGc1lJN0wtbFltZncxR180Q2dQWmMzUHNERE1oMmRlSnQ0c1dnZnhlMktZXzRHRTdqM3F2R1ZnNnZxZHdjX3dHazAxVU5CWDJuYmFOWjNFVU5MNXByZDFVSE9sM2Z4ZDRwNUQ4Zzc1b2NXaDN3RXRrdFBoZkd0SnBDY0wxTlduVDBhbFVHZ0d0TGdvUV96dnBwT0RlemVhNGswT1Vjczh1czBUT2xXeTZfcFlWUGcwajRqVVA1V0lR0gHzAUFVX3lxTE9fNkN6cGNxOGNuS2praUM2TnNjanI0bzJtMU1WaU96UmwzalRpNTMxc2FRcXozRVBRTlFrZUlJWmE5andscXdBbklqc2xpMVhnYWNRTHZjSXNxdHVKeF81MVVqTWE4cU9sM0gtaXVPcTJxQTdiUjQ1Q1p2SWVaUDJDaFFjRVRFdnRaQlNRYzhpMEhnN2hIRC1WZUwwbDdGVy1vdkUwV1doNG1ON2RKdmFnTEI1YXJ4eXBQeGZ0NW5VaGR5eGZ3UlZGZ0JhdVdhYlN1amJsaGg1eVZ2TmV2cFNITXBWSkVxZWJ3YmVPSVk4cldscw?oc=5",
+    "categoria": "Fútbol femenino",
+    "fecha_iso": "2026-08-29T04:45:13+00:00"
   },
   {
     "titulo": "La historia de Alma Almaraz, la jugadora de 14 años que juega en Boca Juniors y se hizo viral por su habilidad - Infobae",
@@ -440,12 +440,12 @@
     "fecha_iso": "2026-08-28T13:24:05+00:00"
   },
   {
-    "titulo": "Boca chicaneó a River en sus redes por la sorpresiva eliminación de la Copa Sudamericana - MDZ Online",
-    "fuente": "MDZ Online",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
-    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONGVIZjZQRDV3c3ppR1hpZ2ZabFV5SXZwdXdxdnAwWUI5eUxEdENrbldzVUVFdWRYYzh3bFhTVHl2a0ZIUmJjQU14bHZ4REMtejh0VWFwYWstTk8tVTlIZnB4ZzV2MkJ3OXcxRmRtTzR5djJpLXltY2gzT0hyS0UzWThFOTBSUHhmcHliaXUyM2RUeUdYWFFUYnQ0UTVUeTVObkY3Q21YMDdESE5VNTZTeDZDWVp6VXfSAbwBQVVfeXFMT0dqbURTRzlhQ2R2SXp1eXppNjdGMno2bkVrZ2VpTmFDSXQ1cHBlWWRZTkxxY3laMXNOMF9tLVFib0RwWnh3Mnc3TUhOSVlNT21tMXpVMWVZaFRBcGFxS0UwVUNjN0t6YWNPR3BkUFl6cGhrQXVrdlFrUmtfRW4wOEV3NjhoS09jUnpMWTRDbFVBMDhLUXcyZWVtTlpUb3hyakJ4UzZ0RFFPNndRODdtNkhpeUdNU0dYUkdfQkQ?oc=5",
-    "categoria": "Sudamericana",
-    "fecha_iso": "2026-08-28T11:30:41+00:00"
+    "titulo": "Entre 1.500 y 1.800 chicos buscan llegar a jugar en Boca Juniors - SI SAN JUAN",
+    "fuente": "SI SAN JUAN",
+    "contenido": "Todas las novedades de Boca Juniors, la actualidad del plantel y la información más importante del mundo Xeneize.",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbXh1VlctNldJMWFaR0VZYVhTbF9PaW5STlA5MnNNX19HUlNBOVotRkl0akVjNGNROXdhUXZHeG1scm1xQkR6bkF4bmZ0a2MwQUxUWGZRSnJsTVJ6TDdpdklXUUJadG5fdHVMbG9lTW9IeGtZWXNCczRzUXhtOE1xbm95bVNPUjA0TW93eUpjcDA2NVBNdW54ZXRHbnBUQnhiUkRUZTZ4RlE5eWs2TGFFTkNwSkZVczI2bFdqVzctTdIBvwFBVV95cUxPbXh1VlctNldJMWFaR0VZYVhTbF9PaW5STlA5MnNNX19HUlNBOVotRkl0akVjNGNROXdhUXZHeG1scm1xQkR6bkF4bmZ0a2MwQUxUWGZRSnJsTVJ6TDdpdklXUUJadG5fdHVMbG9lTW9IeGtZWXNCczRzUXhtOE1xbm95bVNPUjA0TW93eUpjcDA2NVBNdW54ZXRHbnBUQnhiUkRUZTZ4RlE5eWs2TGFFTkNwSkZVczI2bFdqVzctTQ?oc=5",
+    "categoria": "Boca",
+    "fecha_iso": "2026-08-28T12:09:00+00:00"
   },
   {
     "titulo": "Boca campeón con presencia tandilense entre las titulares - El diario de Tandil",
@@ -478,6 +478,14 @@
     "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQWXFrd1BWcUpUdTB4YklDemNxMkN4clhXZjJoLUgxRGVQY2NTdHRHUGIzQ2NMZ21YS2FlMVEyeUZpZFpBcmpfcWN0Z0pqVWxvNEdBcU9OUnFjZTgtMDBPNUxadnR6Wm9SOHFaUmdwTlVRTWZqU0hiSXAzT252QnIycUstQjloekg2WkJPQXZkdWlPQmhIaFJHRUhHZTVmSUJ5Y29JaEp1YVlZQzRNekcwQi1WQUlIelJnS3h5ek9qRFJScFIySkV2b1ZTM2Zpb3fSAdQBQVVfeXFMUEZsYU1hRnhsWEk3TEVranF3dlRNLWhHb3VKYjdQSWs1YkxPLVA3UXdqYkNVSUZ0Zk15RXJYQkx3TkUwNTB4NFQtWkJrbkZoVVdKejg4MHM5UGZ1S0JMQ2JpQUxQb2tSamN4dk9Zblc2eW8zbXU3SlB0YXphNlFvQVZYSkplMmx6WTFMVDJfemNFaGRpMnNhcFBhM1R4YVpYZnVxeE52cC01REllM2dNSVlqckxZUjJCXzJ3djhKUmFNTnR6NFJIWlBrdGlBNklmWHpWaWs?oc=5",
     "categoria": "La Bombonera",
     "fecha_iso": "2026-08-28T03:07:57+00:00"
+  },
+  {
+    "titulo": "El sutil dardo de Boca Juniors en las redes luego de la histórica eliminación de River Plate de la Copa Sudamericana - Infobae",
+    "fuente": "Infobae",
+    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
+    "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQktCRXl4R0lYRWYtYXgzd0JvU3hPRWd2VzlWSkV0WFV5OEdfQk15WlpneFRITTNmWHM2emxCUnNUNXJyYmlkWEdJTXBZME1XUElOZkhVZnRtT25hM05CVHBtLWplMy01XzVLM2pwOXJSblhkUEZsZ1NQQ0NhZnIxTEUxcUFsRjc3YnFnSGkwRWhGTFE5UWdGdVAyRXFTQUViZDdlb2pUaExKRzFVbjNQM0REdk9fbEI5a2RMV19zZjJjdWNvdlphWVgzWmZlR3loSmgzeUJuMVNEc3cwc3hUUVJ0Vjk1cDBZak1Cd25UTDNyclHSAY4CQVVfeXFMTjJTX05taXVUQjlVTEQwdnREOHI0cHVoRkJmM1IzRXByblM3V21vX2w0VThRYXBJVElFbXhaRk1Qb3Z4T2l4R0RmbENMZlFmMHhMWFR6OTdoc2ZGcmJMRm9KRUlDRktmOGlWYzRVcnlqV2szTWpaVjZlcXdKU1Z5UEtmOUkzYUtrcDg3M0F0d2JXTXR5MXRMWmdLb1R3eTJPengtcUxYMU5BaU9aSmp2QTZPZlBxTHhhMURhVkpmRzAtMlNUVTY1d0V2TmY4eS1DNDBUVk10LVJjbmRqbDZZV3lwN0V6Vk92aHA4NlVNNVdLeUdWODdnUVh0VXZrdC1qUjVlbUpUd05CcjI5Xy1n?oc=5",
+    "categoria": "Sudamericana",
+    "fecha_iso": "2026-08-28T01:11:00+00:00"
   },
   {
     "titulo": "Una jornada especial en La Bombonerita - Liga Nacional de Básquet",
@@ -552,14 +560,6 @@
     "fecha_iso": "2026-08-27T15:56:09+00:00"
   },
   {
-    "titulo": "Cómo quedó el cuadro de Boca en la Copa Sudamericana y ¿hay motivos para ilusionarse? - Planeta Boca Juniors",
-    "fuente": "Planeta Boca Juniors",
-    "contenido": "Toda la información de Boca Juniors en la Copa Sudamericana, con las últimas novedades, partidos y protagonistas.",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOc1JVNGpGOXZuT0Q3WTRLTG9jdWRsdzZ3a0lwb2tKQ0FVd1BfX1hoM3lmVnplcGh3RmoweUpHTUktU0FlTURZRC13bWhfeXdXZW9sTWQ2MzM3cGJNVzAzU1JtaEs1dllXNk5xLW1pdlRic3k5TlF2Y0ZDOWM5REhvVTRFSkRkOVl1RUVpTzVNUVlPcUJERVVMUlFuNk9yR0FFVGFSY2YtcVZUV0ZZNDlmc3Z3eDlEOFgxWkxz0gG_AUFVX3lxTE1tSGZtTlVkRzRidjdKRFk0b3VmYkFGRS14VXdkNndfMC1FMDhWVjN3SV96N2I2UDRHbXhyTEROVVA3Qi1CYi0ybUNwSWZNT1dhclBub0dVbnB3cDF6V000cGYzVGQtaVBkQnZfTGxHTmE5MUw3bktJVFFZVTVQUHlOeDdxdDZVdWVUdWE0V2o5NHVqWXJmZm4yUHpOUzMwYTNuVFlOVG9xYWJnbW0yWlpySFN0U3QwaGI3UEFMa2JF?oc=5",
-    "categoria": "Sudamericana",
-    "fecha_iso": "2026-08-27T15:53:34+00:00"
-  },
-  {
     "titulo": "La enfermería de Boca: todos los lesionados y cuándo volverían - TyC Sports",
     "fuente": "TyC Sports",
     "contenido": "Últimas novedades sobre el estado físico de los jugadores de Boca Juniors y sus respectivas recuperaciones.",
@@ -606,6 +606,14 @@
     "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPa1VMVTJOQTdKYmNEdFFVQjc1dnk5NzlaMFVZdlhScEdyNmh5andPblRDcEZHaXl6ekVFSlY2VDlETzlTOHp2YS1sWmdfcDdJc3lYZ0hUalFfcFYzUG5WTm9yOFpKV1hPN1Rpb1NUSVlSX2IzbU9DaTJ0SFZPejJORGJGRE0zWjdTTUhSRHoybVdfWm5rc213a0h4UTcwY09ESm9xVlJDQV82WWZ1TEhQNk9CTVZOVmJKSU03NWpBZGYwNnRlOGR0dklxU29Rc1VGQWNqS09nd2cwcFlTR05KckRMcEI4N0Y2d1pwWQ?oc=5",
     "categoria": "Inferiores",
     "fecha_iso": "2026-08-26T22:04:33+00:00"
+  },
+  {
+    "titulo": "Lautaro Bianco le dedicó unas palabras a Tomás Aranda tras el triunfo ante Estudiantes - TyC Sports",
+    "fuente": "TyC Sports",
+    "contenido": "Toda la actualidad de las divisiones juveniles e inferiores de Boca Juniors.",
+    "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdmhXNExMWFZNNzNzb0cxOWZmWTJKaEhEX0R0UXFGcXc4WE5fMlVSVkJfOFJwWGc1eE8zNTBENEJzWC1mZGJFYXJyUUs0SENkQ0dSTmw0cXN6c05OZU9aWHNhcnl6cTU2N1dDR0ZtaUxZX0lmR1JTZzVRbk1Ga0tFS0VQWFJiTmNxMGttV29vNml3WVdObE0waWRWMTFKWHA1ZC1tTFc2QkZBTndyNkRTUzRUYjBVWWVMS0c1ZXRXNFBaM2ZSYkZlUFJBb0RDY3VxRkNqbkFxd2NTOUVFSGc?oc=5",
+    "categoria": "Inferiores",
+    "fecha_iso": "2026-08-26T20:49:54+00:00"
   },
   {
     "titulo": "La Reserva de Estudiantes cayó ante Boca y perdió el invicto en City Bell - Infocielo",
@@ -784,19 +792,11 @@
     "fecha_iso": "2026-08-23T15:00:00+00:00"
   },
   {
-    "titulo": "Malena Cánepa llegó a Boca y ya fue convocada para integrar el plantel de Primera - La Razon de Chivilcoy",
-    "fuente": "La Razon de Chivilcoy",
-    "contenido": "Malena Cánepa llegó a Boca y ya fue convocada para integrar el plantel de Primera",
-    "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNbXdYb3RabFVIX25RWXpBcWtRaE9laXJSblpkNF84WnZFS2ZpRnVVNzhfWHEyNFc0TVpCRU40SVFadVNzcWd0RzBlbDk0UkpacnFRUFBucUlEWkkyOC1mUndsVEY1X29IYmR5RlpJUmlkU2lHazN6NWhiRkc0R3d5ZlRkM2UwLVpJd210NFBIRWxlY2dTaHh3dVJHOEUxRVh3RXFTT2x6LTRyN3dFYzFtZWVGd1lTTFhJN25zRUJBXzU0ZmFfTHpXQ19Ld1VZbmptUFBHT3NPN0hfeERwUmZz0gHLAUFVX3lxTE9Dd0pPdlpGZFBmcWtwd19RalBKSEZZOFduZmg3WEpSUnhxa2pXZVpaNngtemVFbkRRekoxT0ZydV9HemU3ZWN2MGNySTd2QzBHZ3pweEFmZVg1TmtnWTFNWWxRSmI2WlZpSWVxdWpEY1VzZjVNeGxJZXdNRU1zWUozN2lCbnRDc2xpeVRqcG5ZVUMyTW0yX25Uc0dxT25KaVA1SmZTWHU3X1ZqZUx5Q1UwbjJjTmZULTc4VHdCZkJvMnYtZmhNb3VWQlRZ?oc=5",
-    "categoria": "Vóley",
-    "fecha_iso": "2026-08-21T07:00:00+00:00"
-  },
-  {
-    "titulo": "La Reserva Boca perdió ante Central Córdoba y sufrió la primera derrota del torneo - Olé",
-    "fuente": "Olé",
-    "contenido": "Toda la información de la Reserva de Boca Juniors y las futuras figuras del club.",
-    "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOYndLa3RwaUtySW5Vb2VCZWJadEJNYU8wdnh2bEFaNnl6RFQxTWNmQUZEY1hGTDU4TDBmU0U2VWM0dG5oNmk2THdzYTJXMjE0bFdpUzlseUpLaVkwbnpTejIwNEJwYU5BNFB5cFItZ1ptMkpoeFZtZDR4cDdWaTlkWE9lVlgwQWdkX1hPaThVUXJjZ0tIc1hRTUVlUldDa0FnamdVV1dtb3h6TjFrRS01R056SnpZNUNFU0dHR3dtbktFQ3M2UFI0U0FURGk3WGJlamRFRDBwamUzcnlmdW5kVnJRVkhYb0FZUWVwbUoyT2ZlWW9ha0dwLXBTQmI2Z0FQaXfSAYcCQVVfeXFMT3pwNTBLMVdCQlE5aE1mZklDT2R0R3U3SXZXMXRyQXpJd083ZGJ0djItX3lrck03eURVLUlNSjBuVzhUbW4xNGoxWVJyOUpjQ2NRZHdBRWRlTW9WMkcxM0dtYzRyNkd1bF8wRnhBakYzeHlUeXBJXzkwMFJkMzRsYnBKM2sxdmJLNHUyekJtX01jTlBfaHN4LTZiY1ExRmNBM1A5RXRtUzNXWTA5Tk5sSWp0bkpGZmZuWkpDTGZpUnhYOVlVV2ctbWdXTFM2R0Rzbi1BOFJPWkJBeEhYN3BwQXJnUm13ckpZaDI3TU1HS0pldjdfbUJGb3VicWRmdUpyUWc5eGtnSzg?oc=5",
-    "categoria": "Reserva",
-    "fecha_iso": "2026-08-21T00:03:31+00:00"
+    "titulo": "Boca y Banfield no se sacaron ventaja pero mandan - DeporTV",
+    "fuente": "DeporTV",
+    "contenido": "Las últimas novedades del fútbol femenino de Boca Juniors y Las Gladiadoras.",
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNR25qbE5QeEVnVWhlMllPb1RiZ1pYSGVNVU41dUNvZDlVSmFlNTlMdnlhQlRzRnoxeWctOWJnaU45QlR1TVFTXy1FN003RzlySGQybGNCLVE0bkVvaW9BWm9IT0VqRmpQVHoxa2FhMFRqc0EyeXJWWVpyX01EV3RCMlFB?oc=5",
+    "categoria": "Fútbol femenino",
+    "fecha_iso": "2026-08-22T22:43:00+00:00"
   }
 ]
