@@ -418,8 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contenedor.innerHTML = "";
 
         datos.forEach(partido => {
-
-            const rival = obtener(
+                       const rival = obtener(
                 partido,
                 ["rival", "oponente", "equipo"],
                 "Rival"
@@ -439,14 +438,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const competencia = obtener(
                 partido,
-                ["competencia", "torneo"],
-                ""
-            );
-
-            const estadio = obtener(
-                partido,
-                ["estadio", "venue"],
-                ""
+                ["competencia", "torneo", "liga"],
+                "Partido"
             );
 
             const resultado = obtener(
@@ -455,59 +448,55 @@ document.addEventListener("DOMContentLoaded", () => {
                 ""
             );
 
-            const estado = obtener(
+            const localia = obtener(
                 partido,
-                ["estado", "status"],
-                ""
+                ["localia", "condicion"],
+                "Boca"
             );
 
             const article =
                 document.createElement("article");
 
-            article.className = "fixtures article";
+            article.className = "fixtures";
 
             article.innerHTML = `
 
-                <span>
-                    ${escaparHTML(competencia)}
-                </span>
+                <article>
 
-                <strong>
-                    Boca vs. ${escaparHTML(rival)}
-                </strong>
+                    <span>
+                        ${escaparHTML(competencia)}
+                    </span>
 
-                ${
-                    resultado
-                    ?
-                    `<b>${escaparHTML(resultado)}</b>`
-                    :
-                    ""
-                }
+                    <strong>
+                        Boca Juniors
+                        vs.
+                        ${escaparHTML(rival)}
+                    </strong>
 
-                <small>
-                    ${escaparHTML(fecha)}
-                    ${hora ? " · " + escaparHTML(hora) : ""}
-                </small>
+                    ${
+                        resultado
+                        ?
+                        `<b>${escaparHTML(resultado)}</b>`
+                        :
+                        ""
+                    }
 
-                ${
-                    estadio
-                    ?
-                    `<small>${escaparHTML(estadio)}</small>`
-                    :
-                    ""
-                }
+                    <small>
+                        ${escaparHTML(fecha)}
+                        ${hora ? " · " + escaparHTML(hora) : ""}
+                    </small>
 
-                ${
-                    estado
-                    ?
-                    `<small>${escaparHTML(estado)}</small>`
-                    :
-                    ""
-                }
+                    <small>
+                        ${escaparHTML(localia)}
+                    </small>
+
+                </article>
 
             `;
 
-            contenedor.appendChild(article);
+            contenedor.appendChild(
+                article.firstElementChild
+            );
 
         });
 
@@ -529,192 +518,211 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!datos.length) return;
 
-        const contenedor =
-            document.getElementById("tabla") ||
-            document.getElementById("tablaPosiciones") ||
-            document.getElementById("standings");
+        const posibles = [
+            "tabla",
+            "tablaGrid",
+            "standings",
+            "positions"
+        ];
+
+        let contenedor = null;
+
+        for (const id of posibles) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                contenedor = elemento;
+                break;
+
+            }
+
+        }
 
         if (!contenedor) return;
 
-        const filas =
-            datos
-                .map((equipo, indice) => {
+        const tabla =
+            document.createElement("div");
 
-                    const posicion =
-                        obtener(
-                            equipo,
-                            ["posicion", "position", "puesto"],
-                            indice + 1
-                        );
+        tabla.style.overflowX = "auto";
 
-                    const nombre =
-                        obtener(
-                            equipo,
-                            ["equipo", "nombre", "team"],
-                            ""
-                        );
+        tabla.innerHTML = `
 
-                    const puntos =
-                        obtener(
-                            equipo,
-                            ["puntos", "points", "pts"],
-                            0
-                        );
+            <table style="
+                width:100%;
+                border-collapse:collapse;
+                background:white;
+                border:1px solid #e0e5eb;
+                min-width:600px;
+            ">
 
-                    const pj =
-                        obtener(
-                            equipo,
-                            ["pj", "jugados", "partidos"],
-                            0
-                        );
+                <thead>
 
-                    const pg =
-                        obtener(
-                            equipo,
-                            ["pg", "ganados"],
-                            0
-                        );
+                    <tr style="
+                        background:#001b4d;
+                        color:white;
+                        text-align:left;
+                    ">
 
-                    const pe =
-                        obtener(
-                            equipo,
-                            ["pe", "empatados"],
-                            0
-                        );
+                        <th style="padding:14px;">
+                            POS
+                        </th>
 
-                    const pp =
-                        obtener(
-                            equipo,
-                            ["pp", "perdidos"],
-                            0
-                        );
+                        <th style="padding:14px;">
+                            EQUIPO
+                        </th>
 
-                    const dg =
-                        obtener(
-                            equipo,
-                            ["dg", "diferencia"],
-                            0
-                        );
+                        <th style="padding:14px;">
+                            PJ
+                        </th>
 
-                    return `
+                        <th style="padding:14px;">
+                            G
+                        </th>
 
-                        <tr>
+                        <th style="padding:14px;">
+                            E
+                        </th>
 
-                            <td>
-                                ${escaparHTML(posicion)}
-                            </td>
+                        <th style="padding:14px;">
+                            P
+                        </th>
 
-                            <td>
-                                <strong>
-                                    ${escaparHTML(nombre)}
-                                </strong>
-                            </td>
+                        <th style="padding:14px;">
+                            PTS
+                        </th>
 
-                            <td>
-                                ${escaparHTML(pj)}
-                            </td>
+                    </tr>
 
-                            <td>
-                                ${escaparHTML(pg)}
-                            </td>
+                </thead>
 
-                            <td>
-                                ${escaparHTML(pe)}
-                            </td>
+                <tbody id="tablaBody">
+                </tbody>
 
-                            <td>
-                                ${escaparHTML(pp)}
-                            </td>
-
-                            <td>
-                                ${escaparHTML(dg)}
-                            </td>
-
-                            <td>
-                                <strong>
-                                    ${escaparHTML(puntos)}
-                                </strong>
-                            </td>
-
-                        </tr>
-
-                    `;
-
-                })
-                .join("");
-
-        contenedor.innerHTML = `
-
-            <div style="overflow-x:auto;">
-
-                <table
-                    style="
-                        width:100%;
-                        border-collapse:collapse;
-                        background:white;
-                    "
-                >
-
-                    <thead>
-
-                        <tr
-                            style="
-                                background:#001b4d;
-                                color:white;
-                            "
-                        >
-
-                            <th style="padding:12px;">
-                                #
-                            </th>
-
-                            <th style="padding:12px;text-align:left;">
-                                Equipo
-                            </th>
-
-                            <th style="padding:12px;">
-                                PJ
-                            </th>
-
-                            <th style="padding:12px;">
-                                PG
-                            </th>
-
-                            <th style="padding:12px;">
-                                PE
-                            </th>
-
-                            <th style="padding:12px;">
-                                PP
-                            </th>
-
-                            <th style="padding:12px;">
-                                DG
-                            </th>
-
-                            <th style="padding:12px;">
-                                PTS
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-                        ${filas}
-                    </tbody>
-
-                </table>
-
-            </div>
+            </table>
 
         `;
+
+        contenedor.innerHTML = "";
+
+        contenedor.appendChild(tabla);
+
+        const tbody =
+            tabla.querySelector(
+                "#tablaBody"
+            );
+
+        datos.forEach((equipo, indice) => {
+
+            const posicion = obtener(
+                equipo,
+                ["posicion", "puesto", "pos"],
+                indice + 1
+            );
+
+            const nombre = obtener(
+                equipo,
+                ["equipo", "nombre", "club"],
+                ""
+            );
+
+            const pj = obtener(
+                equipo,
+                ["pj", "jugados", "partidos"],
+                0
+            );
+
+            const ganados = obtener(
+                equipo,
+                ["g", "ganados", "victorias"],
+                0
+            );
+
+            const empatados = obtener(
+                equipo,
+                ["e", "empatados", "empates"],
+                0
+            );
+
+            const perdidos = obtener(
+                equipo,
+                ["p", "perdidos", "derrotas"],
+                0
+            );
+
+            const puntos = obtener(
+                equipo,
+                ["pts", "puntos"],
+                0
+            );
+
+            const tr =
+                document.createElement("tr");
+
+            tr.style.borderBottom =
+                "1px solid #e5e8ed";
+
+            if (
+                String(nombre)
+                    .toLowerCase()
+                    .includes("boca")
+            ) {
+
+                tr.style.fontWeight = "900";
+                tr.style.background =
+                    "#fff8c7";
+
+            }
+
+            tr.innerHTML = `
+
+                <td style="padding:13px;">
+                    ${escaparHTML(posicion)}
+                </td>
+
+                <td style="
+                    padding:13px;
+                    font-weight:800;
+                ">
+                    ${escaparHTML(nombre)}
+                </td>
+
+                <td style="padding:13px;">
+                    ${escaparHTML(pj)}
+                </td>
+
+                <td style="padding:13px;">
+                    ${escaparHTML(ganados)}
+                </td>
+
+                <td style="padding:13px;">
+                    ${escaparHTML(empatados)}
+                </td>
+
+                <td style="padding:13px;">
+                    ${escaparHTML(perdidos)}
+                </td>
+
+                <td style="
+                    padding:13px;
+                    font-weight:900;
+                ">
+                    ${escaparHTML(puntos)}
+                </td>
+
+            `;
+
+            tbody.appendChild(tr);
+
+        });
 
     }
 
 
     /* =====================================================
-       AGENDA
+       AGENDA DE BOCA
        ===================================================== */
 
     async function cargarAgenda() {
@@ -730,77 +738,73 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const contenedor =
             document.getElementById("agenda") ||
-            document.getElementById("bocaAgenda");
+            document.getElementById("agendaGrid");
 
         if (!contenedor) return;
 
         contenedor.innerHTML = "";
 
-        datos.forEach(item => {
+        datos.forEach(evento => {
 
-            const fecha =
-                obtener(
-                    item,
-                    ["fecha", "date"],
-                    ""
-                );
+            const titulo = obtener(
+                evento,
+                ["titulo", "nombre", "evento"],
+                ""
+            );
 
-            const hora =
-                obtener(
-                    item,
-                    ["hora", "time"],
-                    ""
-                );
+            const fecha = obtener(
+                evento,
+                ["fecha", "date"],
+                ""
+            );
 
-            const titulo =
-                obtener(
-                    item,
-                    ["titulo", "title", "evento"],
-                    ""
-                );
+            const hora = obtener(
+                evento,
+                ["hora", "time"],
+                ""
+            );
 
-            const competencia =
-                obtener(
-                    item,
-                    ["competencia", "torneo"],
-                    ""
-                );
+            const categoria = obtener(
+                evento,
+                ["categoria", "category", "tipo"],
+                "AGENDA"
+            );
 
-            const lugar =
-                obtener(
-                    item,
-                    ["lugar", "estadio", "venue"],
-                    ""
-                );
+            const lugar = obtener(
+                evento,
+                ["lugar", "estadio", "venue"],
+                ""
+            );
 
             const article =
                 document.createElement("article");
 
-            article.className = "fixtures";
+            article.className =
+                "market-card";
 
             article.innerHTML = `
 
-                <span>
-                    ${escaparHTML(fecha)}
-                    ${hora ? " · " + escaparHTML(hora) : ""}
+                <span class="market-title">
+                    ${escaparHTML(categoria)}
                 </span>
 
-                <strong>
+                <h3>
                     ${escaparHTML(titulo)}
-                </strong>
+                </h3>
 
-                ${
-                    competencia
-                    ?
-                    `<small>${escaparHTML(competencia)}</small>`
-                    :
-                    ""
-                }
+                <p>
+                    ${escaparHTML(fecha)}
+                    ${hora ? " · " + escaparHTML(hora) : ""}
+                </p>
 
                 ${
                     lugar
                     ?
-                    `<small>${escaparHTML(lugar)}</small>`
+                    `
+                    <small>
+                        ${escaparHTML(lugar)}
+                    </small>
+                    `
                     :
                     ""
                 }
@@ -825,13 +829,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 await cargarJSON(
                     ARCHIVOS.mercado
                 )
-       async function cargarMercado() {
-
-        const datos =
-            normalizarArray(
-                await cargarJSON(
-                    ARCHIVOS.mercado
-                )
             );
 
         if (!datos.length) return;
@@ -846,38 +843,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
         datos.forEach(item => {
 
-            const tipo =
-                obtener(
-                    item,
-                    ["tipo", "operacion"],
-                    "MERCADO"
-                );
+            const tipo = obtener(
+                item,
+                ["tipo", "operacion"],
+                "MERCADO"
+            );
 
-            const jugador =
-                obtener(
-                    item,
-                    ["jugador", "nombre"],
-                    ""
-                );
+            const jugador = obtener(
+                item,
+                ["jugador", "nombre"],
+                ""
+            );
 
-            const detalle =
-                obtener(
-                    item,
-                    ["detalle", "contenido", "descripcion"],
-                    ""
-                );
+            const detalle = obtener(
+                item,
+                ["detalle", "contenido", "descripcion"],
+                ""
+            );
 
-            const estado =
-                obtener(
-                    item,
-                    ["estado", "status"],
-                    ""
-                );
+            const estado = obtener(
+                item,
+                ["estado", "status"],
+                ""
+            );
 
             const article =
                 document.createElement("article");
 
-            article.className = "market-card";
+            article.className =
+                "market-card";
 
             article.innerHTML = `
 
@@ -896,7 +890,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${
                     estado
                     ?
-                    `<small>${escaparHTML(estado)}</small>`
+                    `
+                    <small>
+                        ${escaparHTML(estado)}
+                    </small>
+                    `
                     :
                     ""
                 }
@@ -939,8 +937,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById(id);
 
             if (elemento) {
+
                 contenedor = elemento;
                 break;
+
             }
 
         }
@@ -951,31 +951,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
         datos.forEach(obra => {
 
-            const nombre =
-                obtener(
-                    obra,
-                    ["titulo", "nombre", "obra"],
-                    ""
-                );
+            const nombre = obtener(
+                obra,
+                ["titulo", "nombre", "obra"],
+                ""
+            );
 
-            const descripcion =
-                obtener(
-                    obra,
-                    ["contenido", "descripcion", "texto"],
-                    ""
-                );
+            const descripcion = obtener(
+                obra,
+                ["contenido", "descripcion", "texto"],
+                ""
+            );
 
-            const estado =
-                obtener(
-                    obra,
-                    ["estado", "status"],
-                    ""
-                );
+            const estado = obtener(
+                obra,
+                ["estado", "status"],
+                ""
+            );
 
             const article =
                 document.createElement("article");
 
-            article.className = "market-card";
+            article.className =
+                "market-card";
 
             article.innerHTML = `
 
@@ -994,7 +992,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${
                     estado
                     ?
-                    `<small>${escaparHTML(estado)}</small>`
+                    `
+                    <small>
+                        ${escaparHTML(estado)}
+                    </small>
+                    `
                     :
                     ""
                 }
@@ -1033,45 +1035,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
         datos.forEach(video => {
 
-            const titulo =
-                obtener(
-                    video,
-                    ["titulo", "title"],
-                    "Video de Boca"
-                );
+            const titulo = obtener(
+                video,
+                ["titulo", "title"],
+                "Video de Boca"
+            );
 
-            const categoria =
-                obtener(
-                    video,
-                    ["categoria", "category"],
-                    "VIDEOS"
-                );
+            const categoria = obtener(
+                video,
+                ["categoria", "category"],
+                "VIDEOS"
+            );
 
-            const descripcion =
-                obtener(
-                    video,
-                    ["contenido", "descripcion", "texto"],
-                    ""
-                );
+            const descripcion = obtener(
+                video,
+                ["contenido", "descripcion", "texto"],
+                ""
+            );
 
-            const link =
-                obtener(
-                    video,
-                    ["link", "url"],
-                    "#"
-                );
+            const link = obtener(
+                video,
+                ["link", "url"],
+                "#"
+            );
 
-            const imagen =
-                obtener(
-                    video,
-                    ["imagen", "image", "thumbnail"],
-                    ""
-                );
+            const imagen = obtener(
+                video,
+                ["imagen", "image", "thumbnail"],
+                ""
+            );
 
             const article =
                 document.createElement("article");
 
-            article.className = "video-card";
+            article.className =
+                "video-card";
 
             let fondo = "";
 
@@ -1148,11 +1146,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         activarAnimaciones();
 
-    }
-
-
-    /* =====================================================
-       DISCIPLINAS
+                      }
+       /* =====================================================
+       DISCIPLINAS DE BOCA
        ===================================================== */
 
     async function cargarDisciplinas() {
@@ -1166,9 +1162,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!datos.length) return;
 
-        const contenedor =
-            document.getElementById("disciplinas") ||
-            document.getElementById("disciplinasGrid");
+        const posibles = [
+            "disciplinas",
+            "disciplinasGrid",
+            "sportsGrid"
+        ];
+
+        let contenedor = null;
+
+        for (const id of posibles) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                contenedor = elemento;
+                break;
+
+            }
+
+        }
 
         if (!contenedor) return;
 
@@ -1176,31 +1190,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
         datos.forEach(disciplina => {
 
-            const nombre =
-                obtener(
-                    disciplina,
-                    ["titulo", "nombre", "disciplina"],
-                    ""
-                );
+            const nombre = obtener(
+                disciplina,
+                ["titulo", "nombre", "disciplina"],
+                "Boca"
+            );
 
-            const descripcion =
-                obtener(
-                    disciplina,
-                    ["contenido", "descripcion", "texto"],
-                    ""
-                );
+            const descripcion = obtener(
+                disciplina,
+                ["contenido", "descripcion", "texto"],
+                ""
+            );
+
+            const categoria = obtener(
+                disciplina,
+                ["categoria", "category"],
+                "DISCIPLINA"
+            );
+
+            const imagen = obtener(
+                disciplina,
+                ["imagen", "image"],
+                ""
+            );
 
             const article =
                 document.createElement("article");
 
-            article.className = "news-card";
+            article.className =
+                "news-card";
+
+            let estiloImagen = "";
+
+            if (imagen) {
+
+                estiloImagen = `
+                    background-image:
+                    linear-gradient(
+                        180deg,
+                        transparent,
+                        rgba(0,15,45,.85)
+                    ),
+                    url('${escaparHTML(imagen)}');
+                    background-size:cover;
+                    background-position:center;
+                `;
+
+            }
 
             article.innerHTML = `
+
+                <div
+                    class="news-image image-team"
+                    style="${estiloImagen}"
+                >
+                    <span>
+                        ${escaparHTML(categoria)}
+                    </span>
+                </div>
 
                 <div class="news-content">
 
                     <span class="category">
-                        BOCA
+                        ${escaparHTML(categoria)}
                     </span>
 
                     <h3>
@@ -1210,6 +1262,146 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p>
                         ${escaparHTML(descripcion)}
                     </p>
+
+                </div>
+
+            `;
+
+            contenedor.appendChild(article);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       BOCA PREDIO / INFERIORES
+       ===================================================== */
+
+    async function cargarPredio() {
+
+        const datos =
+            normalizarArray(
+                await cargarJSON(
+                    ARCHIVOS.predio ||
+                    "predio.json"
+                )
+            );
+
+        if (!datos.length) return;
+
+        const posibles = [
+            "predio",
+            "predioGrid",
+            "inferiores"
+        ];
+
+        let contenedor = null;
+
+        for (const id of posibles) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                contenedor = elemento;
+                break;
+
+            }
+
+        }
+
+        if (!contenedor) return;
+
+        contenedor.innerHTML = "";
+
+        datos.forEach(item => {
+
+            const titulo = obtener(
+                item,
+                ["titulo", "nombre", "categoria"],
+                "Boca Predio"
+            );
+
+            const contenido = obtener(
+                item,
+                ["contenido", "descripcion", "texto"],
+                ""
+            );
+
+            const fecha = obtener(
+                item,
+                ["fecha", "date"],
+                ""
+            );
+
+            const imagen = obtener(
+                item,
+                ["imagen", "image"],
+                ""
+            );
+
+            const article =
+                document.createElement("article");
+
+            article.className =
+                "news-card";
+
+            let estilo = "";
+
+            if (imagen) {
+
+                estilo = `
+                    background-image:
+                    linear-gradient(
+                        180deg,
+                        transparent,
+                        rgba(0,15,45,.9)
+                    ),
+                    url('${escaparHTML(imagen)}');
+                    background-size:cover;
+                    background-position:center;
+                `;
+
+            }
+
+            article.innerHTML = `
+
+                <div
+                    class="news-image image-team"
+                    style="${estilo}"
+                >
+                    <span>
+                        BOCA PREDIO
+                    </span>
+                </div>
+
+                <div class="news-content">
+
+                    <span class="category">
+                        BOCA PREDIO
+                    </span>
+
+                    <h3>
+                        ${escaparHTML(titulo)}
+                    </h3>
+
+                    <p>
+                        ${escaparHTML(contenido)}
+                    </p>
+
+                    ${
+                        fecha
+                        ?
+                        `
+                        <span class="news-date">
+                            ${escaparHTML(fecha)}
+                        </span>
+                        `
+                        :
+                        ""
+                    }
 
                 </div>
 
@@ -1237,38 +1429,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!datos.length) return;
 
-        const contenedor =
-            document.getElementById("historia") ||
-            document.getElementById("unDiaComoHoy");
+        const posibles = [
+            "historia",
+            "unDiaComoHoy",
+            "history"
+        ];
+
+        let contenedor = null;
+
+        for (const id of posibles) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                contenedor = elemento;
+                break;
+
+            }
+
+        }
 
         if (!contenedor) return;
 
-        const hoy = new Date();
+        const ahora = new Date();
 
         const dia =
             String(
-                hoy.getDate()
+                ahora.getDate()
             ).padStart(2, "0");
 
         const mes =
             String(
-                hoy.getMonth() + 1
+                ahora.getMonth() + 1
             ).padStart(2, "0");
 
         const encontrado =
             datos.find(item => {
 
-                const fecha =
+                const fecha = String(
                     obtener(
                         item,
                         ["fecha", "date"],
                         ""
-                    );
+                    )
+                );
 
                 return (
                     fecha.includes(`${dia}/${mes}`) ||
-                    fecha.includes(`${mes}/${dia}`) ||
-                    fecha.includes(`${dia}-${mes}`)
+                    fecha.includes(`${dia}-${mes}`) ||
+                    fecha.includes(`${mes}/${dia}`)
                 );
 
             });
@@ -1276,26 +1487,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const item =
             encontrado || datos[0];
 
-        const titulo =
-            obtener(
-                item,
-                ["titulo", "title"],
-                "Un día como hoy"
-            );
+        const titulo = obtener(
+            item,
+            ["titulo", "title", "nombre"],
+            "Un día como hoy"
+        );
 
-        const contenido =
-            obtener(
-                item,
-                ["contenido", "descripcion", "texto"],
-                ""
-            );
+        const contenido = obtener(
+            item,
+            ["contenido", "descripcion", "texto"],
+            ""
+        );
 
-        const fecha =
-            obtener(
-                item,
-                ["fecha", "date"],
-                ""
-            );
+        const fecha = obtener(
+            item,
+            ["fecha", "date"],
+            ""
+        );
 
         contenedor.innerHTML = `
 
@@ -1316,7 +1524,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 ${
                     fecha
                     ?
-                    `<small>${escaparHTML(fecha)}</small>`
+                    `
+                    <small>
+                        ${escaparHTML(fecha)}
+                    </small>
+                    `
                     :
                     ""
                 }
@@ -1329,7 +1541,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       GALERÍA DE IMÁGENES
+       GALERÍA
        ===================================================== */
 
     async function cargarGaleria() {
@@ -1343,9 +1555,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!datos.length) return;
 
-        const contenedor =
-            document.getElementById("galeria") ||
-            document.getElementById("photoGrid");
+        const posibles = [
+            "galeria",
+            "photoGrid",
+            "galeriaGrid",
+            "fotos"
+        ];
+
+        let contenedor = null;
+
+        for (const id of posibles) {
+
+            const elemento =
+                document.getElementById(id);
+
+            if (elemento) {
+
+                contenedor = elemento;
+                break;
+
+            }
+
+        }
 
         if (!contenedor) return;
 
@@ -1353,25 +1584,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
         datos.forEach((foto, indice) => {
 
-            const imagen =
-                obtener(
-                    foto,
-                    ["imagen", "image", "url"],
-                    ""
-                );
+            const imagen = obtener(
+                foto,
+                ["imagen", "image", "url"],
+                ""
+            );
 
-            const titulo =
-                obtener(
-                    foto,
-                    ["titulo", "title", "nombre"],
-                    "Boca Juniors"
-                );
+            const titulo = obtener(
+                foto,
+                ["titulo", "title", "nombre"],
+                "Boca Juniors"
+            );
 
             const article =
                 document.createElement("div");
 
             article.className =
-                `photo-card photo-${indice + 1}`;
+                `photo-card photo-${(indice % 4) + 1}`;
 
             if (imagen) {
 
@@ -1393,9 +1622,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             article.innerHTML = `
+
                 <span>
                     ${escaparHTML(titulo)}
                 </span>
+
             `;
 
             contenedor.appendChild(article);
@@ -1406,25 +1637,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       BOTÓN ACTUALIZAR NOTICIAS
+       ACTUALIZAR NOTICIAS
        ===================================================== */
 
     const reloadNews =
-        document.getElementById("reloadNews");
+        document.getElementById(
+            "reloadNews"
+        );
 
     if (reloadNews) {
 
         reloadNews.addEventListener(
             "click",
-            async function () {
+            async () => {
 
-                const textoOriginal =
+                const original =
                     reloadNews.textContent;
+
+                reloadNews.disabled = true;
 
                 reloadNews.textContent =
                     "ACTUALIZANDO...";
-
-                reloadNews.disabled = true;
 
                 try {
 
@@ -1445,12 +1678,164 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(() => {
 
                     reloadNews.textContent =
-                        textoOriginal;
+                        original;
 
                     reloadNews.disabled =
                         false;
 
-                }, 1500);
+                }, 1800);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       VER MÁS NOTICIAS
+       ===================================================== */
+
+    const loadMore =
+        document.getElementById(
+            "loadMore"
+        );
+
+    if (loadMore) {
+
+        loadMore.addEventListener(
+            "click",
+            async () => {
+
+                const newsGrid =
+                    document.getElementById(
+                        "newsGrid"
+                    );
+
+                if (!newsGrid) return;
+
+                const noticias =
+                    normalizarArray(
+                        await cargarJSON(
+                            ARCHIVOS.noticias
+                        )
+                    );
+
+                const actuales =
+                    newsGrid.children.length;
+
+                const siguientes =
+                    noticias.slice(
+                        actuales,
+                        actuales + 6
+                    );
+
+                siguientes.forEach(noticia => {
+
+                    const article =
+                        document.createElement(
+                            "article"
+                        );
+
+                    article.className =
+                        "news-card";
+
+                    const titulo = obtener(
+                        noticia,
+                        ["titulo", "title"],
+                        "Noticias de Boca"
+                    );
+
+                    const categoria = obtener(
+                        noticia,
+                        ["categoria", "category"],
+                        "BOCA"
+                    );
+
+                    const contenido = obtener(
+                        noticia,
+                        ["contenido", "texto"],
+                        ""
+                    );
+
+                    const fecha = obtener(
+                        noticia,
+                        ["fecha", "date"],
+                        ""
+                    );
+
+                    const link = obtener(
+                        noticia,
+                        ["link", "url"],
+                        "#"
+                    );
+
+                    article.innerHTML = `
+
+                        <div class="news-image image-team">
+
+                            <span>
+                                ${escaparHTML(categoria)}
+                            </span>
+
+                        </div>
+
+                        <div class="news-content">
+
+                            <span class="category">
+                                ${escaparHTML(categoria)}
+                            </span>
+
+                            <h3>
+                                ${escaparHTML(titulo)}
+                            </h3>
+
+                            <p>
+                                ${escaparHTML(contenido)}
+                            </p>
+
+                            <span class="news-date">
+                                ${escaparHTML(fecha)}
+                            </span>
+
+                            ${
+                                link !== "#"
+                                ?
+                                `
+                                <a
+                                    class="news-read"
+                                    href="${escaparHTML(link)}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    LEER NOTICIA →
+                                </a>
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+                    `;
+
+                    newsGrid.appendChild(article);
+
+                });
+
+                if (
+                    actuales + siguientes.length
+                    >= noticias.length
+                ) {
+
+                    loadMore.textContent =
+                        "NO HAY MÁS NOTICIAS";
+
+                    loadMore.disabled =
+                        true;
+
+                }
+
+                activarAnimaciones();
 
             }
         );
@@ -1463,7 +1848,9 @@ document.addEventListener("DOMContentLoaded", () => {
        ===================================================== */
 
     const ticker =
-        document.getElementById("tickerText");
+        document.getElementById(
+            "tickerText"
+        );
 
     if (ticker) {
 
@@ -1472,6 +1859,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Noticias de fútbol y todas las disciplinas.",
             "Partidos, tabla, agenda y mercado de pases.",
             "Boca Predio, obras, videos y entrevistas.",
+            "Streaming Los Bosteros de Tucumán.",
             "Todo Boca. Todo el día."
         ];
 
@@ -1491,10 +1879,178 @@ document.addEventListener("DOMContentLoaded", () => {
                 mensajes[posicion];
 
         }, 5000);
+       }
+       /* =====================================================
+       SCROLL SUAVE
+       ===================================================== */
+
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(enlace => {
+
+            enlace.addEventListener(
+                "click",
+                function (e) {
+
+                    const destino =
+                        this.getAttribute("href");
+
+                    if (
+                        !destino ||
+                        destino === "#"
+                    ) {
+                        return;
+                    }
+
+                    const elemento =
+                        document.querySelector(
+                            destino
+                        );
+
+                    if (elemento) {
+
+                        e.preventDefault();
+
+                        elemento.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* =====================================================
+       ANIMACIONES
+       ===================================================== */
+
+    function activarAnimaciones() {
+
+        const elementos =
+            document.querySelectorAll(
+                ".news-card, " +
+                ".video-card, " +
+                ".market-card, " +
+                ".fixtures article, " +
+                ".photo-card, " +
+                ".fan-card, " +
+                ".poll-card"
+            );
+
+        if (
+            !("IntersectionObserver" in window)
+        ) {
+
+            elementos.forEach(elemento => {
+
+                elemento.style.opacity = "1";
+
+                elemento.style.transform =
+                    "translateY(0)";
+
+            });
+
+            return;
+
+        }
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.style.opacity =
+                                "1";
+
+                            entry.target.style.transform =
+                                "translateY(0)";
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+        elementos.forEach(elemento => {
+
+            elemento.style.opacity = "0";
+
+            elemento.style.transform =
+                "translateY(15px)";
+
+            elemento.style.transition =
+                "opacity .5s ease, transform .5s ease";
+
+            observer.observe(elemento);
+
+        });
 
     }
 
 
+    /* =====================================================
+       INICIO DE LA APLICACIÓN
+       ===================================================== */
+
+    async function iniciarBoca247() {
+
+        console.log(
+            "BOCA 24/7: iniciando aplicación..."
+        );
+
+        try {
+
+            await Promise.allSettled([
+
+                cargarNoticias(),
+
+                cargarPartidos(),
+
+                cargarTabla(),
+
+                cargarAgenda(),
+
+                cargarMercado(),
+
+                cargarObras(),
+
+                cargarVideos(),
+
+                cargarDisciplinas(),
+
+                cargarPredio(),
+
+                cargarHistoria(),
+
+                cargarGaleria()
+
+            ]);
+
+        } catch (error) {
+
+            console.error(
+                "BOCA 24/7: error general:",
+                error
+            );
+
+        }
     /* =====================================================
        SCROLL SUAVE
        ===================================================== */
@@ -1621,54 +2177,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       INICIALIZAR TODO
+       INICIO DE LA APLICACIÓN
        ===================================================== */
 
     async function iniciarBoca247() {
 
         console.log(
-            "BOCA 24/7: cargando información..."
+            "BOCA 24/7: iniciando aplicación..."
         );
 
-        await Promise.allSettled([
+        try {
 
-            cargarNoticias(),
+            await Promise.allSettled([
 
-            cargarPartidos(),
+                cargarNoticias(),
 
-            cargarTabla(),
+                cargarPartidos(),
 
-            cargarAgenda(),
+                cargarTabla(),
 
-            cargarMercado(),
+                cargarAgenda(),
 
-            cargarObras(),
+                cargarMercado(),
 
-            cargarVideos(),
+                cargarObras(),
 
-            cargarDisciplinas(),
+                cargarVideos(),
 
-            cargarHistoria(),
+                cargarDisciplinas(),
 
-            cargarGaleria()
+                cargarPredio(),
 
-        ]);
+                cargarHistoria(),
+
+                cargarGaleria()
+
+            ]);
+
+        } catch (error) {
+
+            console.error(
+                "BOCA 24/7: error general:",
+                error
+            );
+
+        }
 
         activarAnimaciones();
 
         mostrarResultadosEncuesta();
 
         console.log(
-            "BOCA 24/7: sistema cargado correctamente."
+            "BOCA 24/7: aplicación cargada."
         );
 
     }
 
 
     /* =====================================================
-       ARRANQUE
+       ARRANCAR
        ===================================================== */
 
     iniciarBoca247();
+       });
 
 });
+      
