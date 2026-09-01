@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
 <meta charset="UTF-8">
@@ -16,49 +17,69 @@
 
 <meta
     name="description"
-    content="BOCA 24/7 - Todo Boca. Todo el día."
+    content="BOCA 24/7 - Toda la actualidad de Boca Juniors."
 >
 
-<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
+<title>
+    BOCA 24/7 | Todo Boca. Todo el día.
+</title>
 
 
 <style>
 
-/* =========================================================
+/* ==========================================================
    BOCA 24/7
    DISEÑO PRINCIPAL
-========================================================= */
+========================================================== */
 
 :root{
 
-    --azul:#00245f;
-    --azul-profundo:#001536;
-    --azul2:#0047a8;
-    --amarillo:#f5c400;
+    --azul:
+        #00245f;
 
-    --fondo:#eef2f7;
-    --blanco:#ffffff;
+    --azul-oscuro:
+        #001536;
 
-    --texto:#101828;
-    --gris:#667085;
-    --gris-claro:#98a2b3;
+    --azul-medio:
+        #0047a8;
 
-    --borde:#e4e7ec;
+    --amarillo:
+        #f5c400;
 
-    --sombra:
-        0 10px 30px rgba(0,0,0,.10);
+    --amarillo-claro:
+        #ffd51a;
+
+    --blanco:
+        #ffffff;
+
+    --fondo:
+        #eef2f7;
+
+    --texto:
+        #101828;
+
+    --gris:
+        #667085;
+
+    --borde:
+        #e4e7ec;
+
+    --verde:
+        #12b76a;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    RESET
-========================================================= */
+========================================================== */
 
 *{
 
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
 
 }
@@ -66,12 +87,15 @@
 
 html{
 
-    scroll-behavior:smooth;
+    scroll-behavior:
+        smooth;
 
 }
 
 
 body{
+
+    min-height:100vh;
 
     font-family:
         Arial,
@@ -84,19 +108,17 @@ body{
     color:
         var(--texto);
 
-    min-height:
-        100vh;
-
 }
 
 
-/* =========================================================
+/* ==========================================================
    HEADER
-========================================================= */
+========================================================== */
 
 header{
 
-    position:sticky;
+    position:
+        sticky;
 
     top:0;
 
@@ -106,221 +128,126 @@ header{
         var(--azul);
 
     box-shadow:
-        0 4px 20px rgba(0,0,0,.25);
+        0 4px 20px
+        rgba(0,0,0,.25);
 
 }
 
 
-/* =========================================================
-   HEADER SUPERIOR
-========================================================= */
+.header-main{
 
-.header-top{
+    width:
+        min(1280px,100%);
 
-    max-width:1300px;
+    min-height:
+        82px;
 
-    min-height:82px;
-
-    margin:auto;
+    margin:
+        auto;
 
     padding:
-        12px 20px;
+        12px 18px;
 
-    display:flex;
+    display:
+        flex;
 
-    align-items:center;
+    align-items:
+        center;
 
-    justify-content:space-between;
+    justify-content:
+        space-between;
 
-    gap:20px;
+    gap:
+        20px;
 
 }
 
+
+/* ==========================================================
+   LOGO
+========================================================== */
 
 .logo{
 
-    display:flex;
+    display:
+        flex;
 
-    align-items:center;
+    align-items:
+        center;
 
-    gap:12px;
+    gap:
+        12px;
+
+    min-width:
+        max-content;
 
 }
 
 
-.logo-boca{
+.logo-circle{
 
-    width:56px;
+    width:
+        56px;
 
-    height:56px;
-
-    border-radius:50%;
+    height:
+        56px;
 
     border:
         4px solid
         var(--amarillo);
 
+    border-radius:
+        50%;
+
     background:
         var(--azul);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
 
     color:
         var(--amarillo);
 
-    display:flex;
+    font-size:
+        14px;
 
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:14px;
-
-    font-weight:900;
-
-    letter-spacing:-1px;
+    font-weight:
+        900;
 
     box-shadow:
-        0 0 0 3px
+        0 0 0 4px
         rgba(245,196,0,.08);
 
 }
 
 
-.logo-text{
-
-    color:
-        var(--blanco);
-
-    font-size:29px;
-
-    font-weight:900;
-
-    line-height:1;
-
-    letter-spacing:-1px;
-
-}
-
-
-.logo-text span{
-
-    color:
-        var(--amarillo);
-
-}
-
-
-.logo-sub{
-
-    color:
-        #d8e3f5;
-
-    font-size:12px;
-
-    margin-top:6px;
-
-}
-
-
-.header-live{
+.logo-name{
 
     color:
         white;
 
-    font-size:13px;
+    font-size:
+        29px;
 
-    font-weight:700;
+    line-height:
+        1;
 
-    display:flex;
+    font-weight:
+        900;
 
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-.live-dot{
-
-    width:9px;
-
-    height:9px;
-
-    border-radius:50%;
-
-    background:#36d399;
-
-    box-shadow:
-        0 0 0 5px
-        rgba(54,211,153,.12);
+    letter-spacing:
+        -1px;
 
 }
 
 
-/* =========================================================
-   NAVEGACIÓN
-========================================================= */
-
-.nav{
-
-    background:
-        var(--azul-profundo);
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
-
-}
-
-
-.nav::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-
-.nav-inner{
-
-    max-width:1300px;
-
-    margin:auto;
-
-    display:flex;
-
-}
-
-
-.nav button{
-
-    flex:
-        0 0 auto;
-
-    border:0;
-
-    background:
-        transparent;
-
-    color:white;
-
-    padding:
-        15px 18px;
-
-    font-size:12px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:
-        .2s ease;
-
-}
-
-
-.nav button:hover{
-
-    background:
-        rgba(245,196,0,.15);
+.logo-name span{
 
     color:
         var(--amarillo);
@@ -328,7 +255,178 @@ header{
 }
 
 
-.nav button.active{
+.logo-subtitle{
+
+    margin-top:
+        5px;
+
+    color:
+        #d5e0ef;
+
+    font-size:
+        12px;
+
+}
+
+
+/* ==========================================================
+   ESTADO EN VIVO
+========================================================== */
+
+.live-status{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        white;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+.live-indicator{
+
+    width:
+        9px;
+
+    height:
+        9px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--verde);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(18,183,106,.15);
+
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN
+========================================================== */
+
+.navigation{
+
+    background:
+        var(--azul-oscuro);
+
+    overflow-x:
+        auto;
+
+    scrollbar-width:
+        none;
+
+}
+
+
+.navigation::-webkit-scrollbar{
+
+    display:
+        none;
+
+}
+
+
+.navigation-inner{
+
+    width:
+        min(1280px,100%);
+
+    margin:
+        auto;
+
+    display:
+        flex;
+
+}
+
+
+.navigation button{
+
+    position:
+        relative;
+
+    flex:
+        0 0 auto;
+
+    border:
+        0;
+
+    background:
+        transparent;
+
+    color:
+        white;
+
+    padding:
+        15px 18px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        900;
+
+    cursor:
+        pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+
+}
+
+
+.navigation button::after{
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        0;
+
+    width:
+        0;
+
+    height:
+        3px;
+
+    background:
+        var(--amarillo);
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width .2s ease;
+
+}
+
+
+.navigation button:hover,
+.navigation button.active{
 
     background:
         var(--amarillo);
@@ -339,61 +437,73 @@ header{
 }
 
 
-/* =========================================================
-   CONTENEDOR
-========================================================= */
-
-.container{
+.navigation button:hover::after,
+.navigation button.active::after{
 
     width:
-        min(1300px,100%);
-
-    margin:auto;
-
-    padding:
-        24px 20px 60px;
+        70%;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
+   CONTENEDOR
+========================================================== */
+
+.container{
+
+    width:
+        min(1280px,100%);
+
+    margin:
+        auto;
+
+    padding:
+        24px 18px 50px;
+
+}
+
+
+/* ==========================================================
    HERO
-========================================================= */
+========================================================== */
 
 .hero{
 
-    position:relative;
+    position:
+        relative;
 
-    overflow:hidden;
+    min-height:
+        340px;
 
-    min-height:360px;
+    overflow:
+        hidden;
 
-    border-radius:24px;
+    border-radius:
+        24px;
 
-    padding:40px;
+    padding:
+        36px;
 
-    display:flex;
+    margin-bottom:
+        22px;
 
-    align-items:flex-end;
+    display:
+        flex;
 
-    margin-bottom:22px;
+    align-items:
+        flex-end;
 
     background:
-
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(245,196,0,.25),
-            transparent 25%
-        ),
-
         linear-gradient(
             120deg,
-            #001b4d,
-            #0047a8
+            #001d50,
+            #003c8f 55%,
+            #0055bd
         );
 
     box-shadow:
-        0 14px 40px
+        0 12px 35px
         rgba(0,36,95,.22);
 
 }
@@ -401,70 +511,113 @@ header{
 
 .hero::before{
 
-    content:"";
+    content:
+        "";
 
-    position:absolute;
+    position:
+        absolute;
 
-    width:320px;
+    width:
+        480px;
 
-    height:320px;
+    height:
+        480px;
 
-    right:-100px;
+    right:
+        -150px;
 
-    bottom:-150px;
-
-    border-radius:50%;
+    top:
+        -190px;
 
     border:
-        45px solid
-        rgba(245,196,0,.10);
+        70px solid
+        rgba(255,255,255,.06);
+
+    border-radius:
+        50%;
+
+    animation:
+        girarHero
+        18s linear infinite;
 
 }
 
 
 .hero::after{
 
-    content:"BOCA";
+    content:
+        "BOCA";
 
-    position:absolute;
+    position:
+        absolute;
 
-    right:25px;
+    right:
+        30px;
 
-    top:25px;
+    bottom:
+        5px;
 
     color:
-        rgba(255,255,255,.06);
+        rgba(255,255,255,.05);
 
-    font-size:110px;
+    font-size:
+        110px;
 
-    line-height:1;
+    font-weight:
+        900;
 
-    font-weight:900;
+}
+
+
+@keyframes girarHero{
+
+    from{
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
 
 }
 
 
 .hero-content{
 
-    position:relative;
+    position:
+        relative;
 
-    z-index:2;
+    z-index:
+        2;
 
-    max-width:800px;
+    max-width:
+        800px;
+
+    color:
+        white;
 
 }
 
 
-.hero-label{
+.hero-tag{
 
-    display:inline-block;
+    display:
+        inline-block;
 
     padding:
         8px 12px;
 
-    margin-bottom:15px;
+    margin-bottom:
+        15px;
 
-    border-radius:6px;
+    border-radius:
+        7px;
 
     background:
         var(--amarillo);
@@ -472,127 +625,160 @@ header{
     color:
         var(--azul);
 
-    font-size:12px;
+    font-size:
+        12px;
 
-    font-weight:900;
+    font-weight:
+        900;
 
 }
 
 
 .hero h1{
 
-    color:white;
+    font-size:
+        clamp(30px,5vw,48px);
 
-    font-size:44px;
+    line-height:
+        1.05;
 
-    line-height:1.05;
+    margin-bottom:
+        14px;
 
-    margin-bottom:14px;
-
-    letter-spacing:-1px;
+    letter-spacing:
+        -1px;
 
 }
 
 
 .hero p{
 
+    max-width:
+        700px;
+
     color:
-        #e4ecf8;
+        #dce7f7;
 
-    font-size:16px;
+    font-size:
+        15px;
 
-    line-height:1.55;
-
-    max-width:700px;
+    line-height:
+        1.6;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    BARRA DE ESTADO
-========================================================= */
+========================================================== */
 
-.info-bar{
+.status-bar{
 
-    background:white;
+    background:
+        white;
 
     border:
         1px solid
         var(--borde);
 
-    border-radius:15px;
+    border-radius:
+        15px;
 
     padding:
-        14px 18px;
+        15px 18px;
 
-    display:flex;
+    margin-bottom:
+        20px;
 
-    align-items:center;
+    display:
+        flex;
 
-    justify-content:space-between;
+    align-items:
+        center;
 
-    gap:15px;
+    justify-content:
+        space-between;
 
-    margin-bottom:28px;
+    gap:
+        15px;
 
     box-shadow:
-        0 4px 14px
+        0 4px 15px
         rgba(0,0,0,.05);
 
 }
 
 
-.info-left{
+.status-left{
 
-    display:flex;
+    display:
+        flex;
 
-    align-items:center;
+    align-items:
+        center;
 
-    gap:9px;
+    gap:
+        9px;
 
     color:
         #344054;
 
-    font-size:13px;
+    font-size:
+        13px;
 
-    font-weight:800;
+    font-weight:
+        800;
 
 }
 
 
-.refresh{
+.status-time{
 
     color:
         var(--gris);
 
-    font-size:12px;
+    font-size:
+        12px;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    ÚLTIMA HORA
-========================================================= */
+========================================================== */
 
 .breaking{
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    min-height:
+        58px;
+
+    padding:
+        9px 14px;
+
+    margin-bottom:
+        24px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        14px;
 
     background:
         var(--amarillo);
 
-    border-radius:14px;
-
-    padding:
-        12px 15px;
-
-    margin-bottom:28px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    overflow:hidden;
+    box-shadow:
+        0 5px 16px
+        rgba(245,196,0,.22);
 
 }
 
@@ -602,143 +788,146 @@ header{
     flex:
         0 0 auto;
 
+    padding:
+        8px 11px;
+
+    border-radius:
+        6px;
+
     background:
         var(--azul);
 
-    color:white;
+    color:
+        white;
 
-    border-radius:6px;
+    font-size:
+        11px;
 
-    padding:
-        7px 10px;
-
-    font-size:11px;
-
-    font-weight:900;
+    font-weight:
+        900;
 
 }
 
 
 .breaking-text{
 
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
     color:
         var(--azul);
 
-    font-size:13px;
+    font-size:
+        14px;
 
-    font-weight:800;
+    font-weight:
+        800;
 
-    transition:
-        opacity .25s ease;
+    white-space:
+        nowrap;
+
+    overflow:
+        hidden;
+
+    text-overflow:
+        ellipsis;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    BUSCADOR
-========================================================= */
+========================================================== */
 
-.search{
+.search-box{
 
-    margin-bottom:25px;
+    margin-bottom:
+        28px;
 
 }
 
 
-.search input{
+.search-box input{
 
-    width:100%;
+    width:
+        100%;
+
+    padding:
+        16px 18px;
 
     border:
         1px solid
         var(--borde);
 
-    background:white;
+    border-radius:
+        13px;
 
-    border-radius:12px;
+    outline:
+        none;
 
-    padding:
-        15px 17px;
-
-    outline:none;
-
-    font-size:14px;
+    background:
+        white;
 
     color:
         var(--texto);
+
+    font-size:
+        15px;
 
     box-shadow:
         0 3px 12px
         rgba(0,0,0,.04);
 
+    transition:
+        border .2s ease,
+        box-shadow .2s ease;
+
 }
 
 
-.search input:focus{
+.search-box input:focus{
 
     border-color:
-        var(--azul2);
+        var(--azul-medio);
 
     box-shadow:
-        0 0 0 3px
+        0 0 0 4px
         rgba(0,71,168,.10);
 
 }
 
 
-/* =========================================================
-   TÍTULOS DE SECCIÓN
-========================================================= */
+/* ==========================================================
+   TÍTULO DE SECCIÓN
+========================================================== */
 
-.section-head{
+.section-title{
 
-    display:flex;
+    display:
+        flex;
 
-    align-items:center;
+    align-items:
+        center;
 
-    justify-content:space-between;
-
-    gap:15px;
+    gap:
+        10px;
 
     margin:
-        30px 0 17px;
+        28px 0 17px;
 
 }
 
 
-.section-head h2{
+.section-title::before{
 
-    color:
-        var(--azul);
+    content:
+        "";
 
-    font-size:25px;
+    width:
+        6px;
 
-    line-height:1.1;
+    height:
+        27px;
 
-}
-
-
-.section-head h2::before{
-
-    content:"";
-
-    display:inline-block;
-
-    width:5px;
-
-    height:24px;
-
-    margin-right:10px;
-
-    vertical-align:-4px;
-
-    border-radius:4px;
+    border-radius:
+        5px;
 
     background:
         var(--amarillo);
@@ -746,48 +935,72 @@ header{
 }
 
 
-/* =========================================================
-   GRID DE NOTICIAS
-========================================================= */
+.section-title h2{
 
-.news-grid{
+    color:
+        var(--azul);
 
-    display:grid;
+    font-size:
+        27px;
 
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
+    font-weight:
+        900;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
+   CONTENEDOR NOTICIAS
+========================================================== */
+
+#noticias{
+
+    min-height:
+        150px;
+
+}
+
+
+.news-grid{
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        18px;
+
+}
+
+
+/* ==========================================================
    TARJETA
-========================================================= */
+========================================================== */
 
 .news-card{
 
-    background:white;
+    overflow:
+        hidden;
+
+    background:
+        white;
 
     border:
         1px solid
         var(--borde);
 
-    border-radius:17px;
-
-    overflow:hidden;
+    border-radius:
+        16px;
 
     box-shadow:
-        0 4px 15px
+        0 4px 14px
         rgba(0,0,0,.06);
 
     transition:
         transform .25s ease,
         box-shadow .25s ease;
-
-    animation:
-        aparecer .45s ease both;
 
 }
 
@@ -798,125 +1011,173 @@ header{
         translateY(-6px);
 
     box-shadow:
-        0 14px 32px
+        0 14px 30px
         rgba(0,0,0,.13);
 
 }
 
 
-/* =========================================================
-   IMAGEN DE NOTICIA
-========================================================= */
-
 .news-image{
 
-    height:180px;
+    position:
+        relative;
 
-    display:flex;
+    height:
+        175px;
 
-    align-items:center;
+    overflow:
+        hidden;
 
-    justify-content:center;
+    display:
+        flex;
 
-    position:relative;
+    align-items:
+        center;
 
-    overflow:hidden;
+    justify-content:
+        center;
 
     background:
-
-        radial-gradient(
-            circle at 70% 20%,
-            rgba(245,196,0,.25),
-            transparent 25%
-        ),
-
         linear-gradient(
             135deg,
             var(--azul),
-            var(--azul2)
+            var(--azul-medio)
         );
 
 }
 
 
-.news-image::after{
+.news-image::before{
 
-    content:"";
+    content:
+        "";
 
-    position:absolute;
+    position:
+        absolute;
 
-    width:150px;
+    width:
+        190px;
 
-    height:150px;
+    height:
+        190px;
 
-    border-radius:50%;
+    right:
+        -70px;
+
+    top:
+        -80px;
 
     border:
-        20px solid
-        rgba(245,196,0,.08);
+        35px solid
+        rgba(245,196,0,.10);
 
-    right:-40px;
-
-    bottom:-60px;
+    border-radius:
+        50%;
 
 }
 
 
-.news-image span{
+.news-image-content{
 
-    position:relative;
+    position:
+        relative;
 
-    z-index:2;
+    z-index:
+        2;
+
+    color:
+        white;
+
+    font-size:
+        27px;
+
+    font-weight:
+        900;
+
+}
+
+
+.news-image-content span{
 
     color:
         var(--amarillo);
 
-    font-size:24px;
-
-    font-weight:900;
-
-    letter-spacing:-1px;
-
 }
 
 
-/* =========================================================
-   CUERPO DE TARJETA
-========================================================= */
-
 .news-body{
 
-    padding:18px;
+    padding:
+        17px;
 
 }
 
 
 .news-source{
 
+    margin-bottom:
+        8px;
+
     color:
-        var(--azul2);
+        var(--azul-medio);
 
-    font-size:11px;
+    font-size:
+        11px;
 
-    font-weight:900;
+    font-weight:
+        900;
 
-    text-transform:uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom:8px;
+}
+
+
+.news-category{
+
+    display:
+        inline-block;
+
+    padding:
+        4px 7px;
+
+    margin-bottom:
+        9px;
+
+    border-radius:
+        5px;
+
+    background:
+        #eef4ff;
+
+    color:
+        var(--azul);
+
+    font-size:
+        10px;
+
+    font-weight:
+        900;
+
+    text-transform:
+        uppercase;
 
 }
 
 
 .news-title{
 
+    margin-bottom:
+        10px;
+
     color:
         var(--texto);
 
-    font-size:18px;
+    font-size:
+        18px;
 
-    line-height:1.28;
-
-    margin-bottom:10px;
+    line-height:
+        1.3;
 
 }
 
@@ -926,30 +1187,38 @@ header{
     color:
         var(--gris);
 
-    font-size:13px;
+    font-size:
+        13px;
 
-    line-height:1.55;
+    line-height:
+        1.55;
 
 }
 
 
-.news-meta{
+.news-footer{
 
-    display:flex;
+    margin-top:
+        15px;
 
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:10px;
-
-    margin-top:16px;
-
-    padding-top:13px;
+    padding-top:
+        12px;
 
     border-top:
         1px solid
         var(--borde);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
 
 }
 
@@ -957,48 +1226,56 @@ header{
 .news-date{
 
     color:
-        var(--gris-claro);
+        #98a2b3;
 
-    font-size:11px;
+    font-size:
+        11px;
 
 }
 
 
-.read{
+.read-news{
 
     color:
         var(--azul);
 
-    font-size:12px;
+    text-decoration:
+        none;
 
-    font-weight:900;
+    font-size:
+        12px;
 
-    text-decoration:none;
+    font-weight:
+        900;
 
 }
 
 
-.read:hover{
+.read-news:hover{
 
     color:
-        var(--azul2);
+        var(--azul-medio);
 
 }
 
 
-/* =========================================================
-   ESTADOS
-========================================================= */
+/* ==========================================================
+   CARGANDO / ERROR / VACÍO
+========================================================== */
 
 .loading{
 
-    background:white;
+    padding:
+        50px 20px;
 
-    border-radius:16px;
+    text-align:
+        center;
 
-    padding:55px 20px;
+    background:
+        white;
 
-    text-align:center;
+    border-radius:
+        16px;
 
     color:
         var(--gris);
@@ -1008,12 +1285,14 @@ header{
 
 .spinner{
 
-    width:34px;
+    width:
+        35px;
 
-    height:34px;
+    height:
+        35px;
 
     margin:
-        0 auto 16px;
+        0 auto 15px;
 
     border:
         4px solid
@@ -1022,42 +1301,41 @@ header{
     border-top-color:
         var(--azul);
 
-    border-radius:50%;
+    border-radius:
+        50%;
 
     animation:
-        girar .8s linear infinite;
+        girar
+        .8s linear infinite;
 
 }
 
 
-.error{
+@keyframes girar{
 
-    background:
-        #fff1f1;
+    to{
 
-    border:
-        1px solid
-        #ffcaca;
+        transform:
+            rotate(360deg);
 
-    color:
-        #a40000;
-
-    padding:25px;
-
-    border-radius:15px;
+    }
 
 }
 
 
 .empty{
 
-    background:white;
+    padding:
+        40px 20px;
 
-    border-radius:15px;
+    background:
+        white;
 
-    padding:40px;
+    border-radius:
+        16px;
 
-    text-align:center;
+    text-align:
+        center;
 
     color:
         var(--gris);
@@ -1065,151 +1343,230 @@ header{
 }
 
 
-/* =========================================================
+.error{
+
+    padding:
+        25px;
+
+    border:
+        1px solid
+        #f5c2c2;
+
+    border-radius:
+        15px;
+
+    background:
+        #fff5f5;
+
+    color:
+        #9b1c1c;
+
+}
+
+
+/* ==========================================================
    DESTACADAS
-========================================================= */
+========================================================== */
 
 .featured{
 
-    display:grid;
+    display:
+        grid;
 
     grid-template-columns:
         2fr 1fr;
 
-    gap:20px;
+    gap:
+        18px;
 
 }
 
 
 .featured-main{
 
-    min-height:250px;
+    position:
+        relative;
 
-    border-radius:18px;
+    overflow:
+        hidden;
 
-    padding:27px;
+    min-height:
+        250px;
 
-    display:flex;
+    padding:
+        27px;
 
-    flex-direction:column;
+    border-radius:
+        18px;
 
-    justify-content:flex-end;
+    display:
+        flex;
 
-    color:white;
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-end;
 
     background:
         linear-gradient(
             135deg,
             var(--azul),
-            var(--azul2)
+            var(--azul-medio)
         );
 
-    box-shadow:
-        var(--sombra);
+    color:
+        white;
 
 }
 
 
-.featured-main .news-source{
+.featured-main::after{
+
+    content:
+        "CABJ";
+
+    position:
+        absolute;
+
+    right:
+        20px;
+
+    top:
+        10px;
 
     color:
-        var(--amarillo);
+        rgba(255,255,255,.05);
+
+    font-size:
+        75px;
+
+    font-weight:
+        900;
 
 }
 
 
 .featured-main h3{
 
-    font-size:27px;
+    position:
+        relative;
 
-    line-height:1.18;
+    z-index:
+        2;
 
     margin:
-        8px 0 10px;
+        7px 0;
+
+    font-size:
+        26px;
+
+    line-height:
+        1.2;
 
 }
 
 
 .featured-main p{
 
+    position:
+        relative;
+
+    z-index:
+        2;
+
     color:
-        #dce7f8;
+        #dce7f7;
 
-    font-size:13px;
+    font-size:
+        13px;
 
-    line-height:1.5;
+    line-height:
+        1.55;
 
 }
 
 
 .featured-side{
 
-    display:flex;
+    display:
+        flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
-    gap:18px;
+    gap:
+        18px;
 
 }
 
 
 .featured-small{
 
-    background:white;
+    padding:
+        19px;
 
     border:
         1px solid
         var(--borde);
 
-    border-radius:16px;
+    border-radius:
+        16px;
 
-    padding:19px;
-
-    box-shadow:
-        0 4px 14px
-        rgba(0,0,0,.05);
+    background:
+        white;
 
 }
 
 
 .featured-small h3{
 
-    font-size:17px;
+    margin-top:
+        7px;
 
-    line-height:1.3;
+    font-size:
+        17px;
 
-    margin-top:7px;
+    line-height:
+        1.35;
 
 }
 
 
-/* =========================================================
+/* ==========================================================
    FOOTER
-========================================================= */
+========================================================== */
 
 footer{
 
+    margin-top:
+        20px;
+
+    padding:
+        35px 18px;
+
     background:
-        var(--azul-profundo);
+        var(--azul-oscuro);
 
     color:
         #dce5f2;
 
-    padding:
-        38px 20px;
-
-    text-align:center;
+    text-align:
+        center;
 
 }
 
 
 .footer-logo{
 
-    color:white;
+    color:
+        white;
 
-    font-size:26px;
+    font-size:
+        26px;
 
-    font-weight:900;
+    font-weight:
+        900;
 
 }
 
@@ -1224,74 +1581,32 @@ footer{
 
 footer p{
 
-    margin-top:8px;
+    margin-top:
+        8px;
 
-    font-size:13px;
+    font-size:
+        13px;
 
 }
 
 
 .footer-copy{
 
-    margin-top:20px;
+    margin-top:
+        18px;
 
-    color:#9eb0c8;
+    color:
+        #91a4bf;
 
-    font-size:11px;
-
-}
-
-
-/* =========================================================
-   ANIMACIONES
-========================================================= */
-
-@keyframes girar{
-
-    to{
-
-        transform:
-            rotate(360deg);
-
-    }
+    font-size:
+        11px;
 
 }
 
 
-@keyframes aparecer{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(18px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-.reveal{
-
-    animation:
-        aparecer .5s ease both;
-
-}
-
-
-/* =========================================================
+/* ==========================================================
    RESPONSIVE
-========================================================= */
+========================================================== */
 
 @media(max-width:950px){
 
@@ -1301,7 +1616,6 @@ footer p{
             repeat(2,1fr);
 
     }
-
 
     .featured{
 
@@ -1315,9 +1629,10 @@ footer p{
 
 @media(max-width:650px){
 
-    .header-top{
+    .header-main{
 
-        min-height:70px;
+        min-height:
+            70px;
 
         padding:
             10px 13px;
@@ -1325,34 +1640,40 @@ footer p{
     }
 
 
-    .logo-boca{
+    .logo-circle{
 
-        width:46px;
+        width:
+            47px;
 
-        height:46px;
+        height:
+            47px;
 
-        font-size:11px;
-
-    }
-
-
-    .logo-text{
-
-        font-size:22px;
+        font-size:
+            12px;
 
     }
 
 
-    .logo-sub{
+    .logo-name{
 
-        font-size:10px;
+        font-size:
+            22px;
 
     }
 
 
-    .header-live{
+    .logo-subtitle{
 
-        display:none;
+        font-size:
+            10px;
+
+    }
+
+
+    .live-status{
+
+        display:
+            none;
 
     }
 
@@ -1360,39 +1681,45 @@ footer p{
     .container{
 
         padding:
-            14px 12px 40px;
+            14px 12px 35px;
 
     }
 
 
     .hero{
 
-        min-height:285px;
+        min-height:
+            285px;
 
-        padding:24px;
+        padding:
+            23px;
 
-        border-radius:17px;
+        border-radius:
+            17px;
 
     }
 
 
     .hero h1{
 
-        font-size:30px;
+        font-size:
+            30px;
 
     }
 
 
     .hero p{
 
-        font-size:14px;
+        font-size:
+            14px;
 
     }
 
 
     .hero::after{
 
-        font-size:65px;
+        font-size:
+            65px;
 
     }
 
@@ -1405,25 +1732,48 @@ footer p{
     }
 
 
-    .section-head h2{
+    .status-bar{
 
-        font-size:21px;
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
 
     }
 
 
-    .info-bar{
+    .breaking{
 
-        flex-direction:column;
+        min-height:
+            58px;
 
-        align-items:flex-start;
+    }
+
+
+    .section-title h2{
+
+        font-size:
+            23px;
+
+    }
+
+
+    .featured-main{
+
+        min-height:
+            275px;
+
+        padding:
+            21px;
 
     }
 
 
     .featured-main h3{
 
-        font-size:23px;
+        font-size:
+            22px;
 
     }
 
@@ -1437,23 +1787,27 @@ footer p{
 <body>
 
 
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
 <header>
 
-    <div class="header-top">
+    <div class="header-main">
 
         <div class="logo">
 
-            <div class="logo-boca">
+            <div class="logo-circle">
                 CABJ
             </div>
 
             <div>
 
-                <div class="logo-text">
+                <div class="logo-name">
                     BOCA <span>24/7</span>
                 </div>
 
-                <div class="logo-sub">
+                <div class="logo-subtitle">
                     Todo Boca. Todo el día.
                 </div>
 
@@ -1462,22 +1816,20 @@ footer p{
         </div>
 
 
-        <div class="header-live">
+        <div class="live-status">
 
-            <span class="live-dot"></span>
+            <span class="live-indicator"></span>
 
-            <span>
-                BOCA 24/7 EN VIVO
-            </span>
+            Información actualizada
 
         </div>
 
     </div>
 
 
-    <nav class="nav">
+    <nav class="navigation">
 
-        <div class="nav-inner">
+        <div class="navigation-inner">
 
             <button
                 class="active"
@@ -1505,451 +1857,74 @@ footer p{
             </button>
 
             <button
-                onclick="cambiarSeccion('Plantel',this)"
-            >
-                PLANTEL
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Lesiones',this)"
-            >
-                LESIONES
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Básquet',this)"
-            >
-                BÁSQUET
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Futsal',this)"
-            >
-                FUTSAL
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Fútbol femenino',this)"
-            >
-                FEMENINO
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Reserva',this)"
-            >
-                RESERVA
-            </button>
-
-            <button
-                onclick="cambiarSeccion('Inferiores',this)"
-            >
-                INFERIORES
-            </button>
-
-            <button
-                onclick="cambiarSeccion('La Bombonera',this)"
-            >
-                BOMBONERA
-            </button>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
-<main class="container">
-
-
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="hero-label">
-                BOCA JUNIORS
-            </div>
-
-            <h1>
-                Toda la información del Xeneize.
-            </h1>
-
-            <p>
-                Noticias, mercado de pases, partidos,
-                plantel y toda la actualidad de Boca Juniors
-                en un solo lugar.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <div class="info-bar">
-
-        <div class="info-left">
-
-            <span class="live-dot"></span>
-
-            <span id="estado">
-                Conectando con BOCA 24/7...
-            </span>
-
-        </div>
-
-
-        <div
-            class="refresh"
-            id="actualizacion"
-        >
-            Esperando noticias...
-        </div>
-
-    </div>
-
-
-    <div class="breaking">
-
-        <div class="breaking-label">
-            ÚLTIMA HORA
-        </div>
-
-        <div
-            class="breaking-text"
-            id="ultima-noticia"
-        >
-            Cargando actualidad de Boca...
-        </div>
-
-    </div>
-
-
-    <div class="search">
-
-        <input
-            id="buscador"
-            type="search"
-            placeholder="Buscar noticias de Boca..."
-            autocomplete="off"
-        >
-
-    </div>
-
-
-    <section>
-
-        <div class="section-head">
-
-            <h2 id="titulo-seccion">
-                Últimas noticias
-            </h2>
-
-        </div>
-
-
-        <div id="noticias">
-
-            <div class="loading">
-
-                <div class="spinner"></div>
-
-                Cargando las últimas noticias...
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="destacadas-section"
-    >
-
-        <div class="section-head">
-
-            <h2>
-                Información destacada
-            </h2>
-
-        </div>
-
-
-        <div id="destacadas"></div>
-
-    </section>
-
-
-</main>
-
-
-<footer>
-
-    <div class="footer-logo">
-        BOCA <span>24/7</span>
-    </div>
-
-    <p>
-        Todo Boca. Todo el día.
-    </p>
-
-    <div class="footer-copy">
-        BOCA 24/7 · Información y actualidad del Xeneize
-    </div>
-
-</footer>
-    <script>
+                o
+                <script>
 
 /* ============================================================
-   MOTOR DE NOTICIAS BOCA 24/7
+   BOCA 24/7 — BLOQUE 2
+   CARGA Y LIMPIEZA DE NOTICIAS
 ============================================================ */
 
-const ARCHIVO_NOTICIAS = "./noticias.json";
+
+/* ============================================================
+   VARIABLES
+============================================================ */
 
 let todasLasNoticias = [];
-let noticiasVisibles = [];
+
 let seccionActual = "Todas";
 
-
-/* ============================================================
-   ELEMENTOS
-============================================================ */
-
-const contenedorNoticias =
-    document.getElementById("noticias");
-
-const contenedorDestacadas =
-    document.getElementById("destacadas");
-
-const buscador =
-    document.getElementById("buscador");
-
-const tituloSeccion =
-    document.getElementById("titulo-seccion");
-
-const ultimaNoticia =
-    document.getElementById("ultima-noticia");
-
-const estado =
-    document.getElementById("estado");
-
-const actualizacion =
-    document.getElementById("actualizacion");
+let cargandoNoticias = false;
 
 
 /* ============================================================
-   LIMPIAR HTML DE LAS NOTICIAS
+   NORMALIZAR TEXTO PARA COMPARAR
 ============================================================ */
 
-function limpiarHTML(texto){
+function normalizarTitulo(texto){
 
     return String(texto || "")
-        .replace(
-            /<script[\s\S]*?<\/script>/gi,
-            ""
-        )
-        .replace(
-            /<style[\s\S]*?<\/style>/gi,
-            ""
-        )
-        .replace(
-            /<[^>]+>/g,
-            " "
-        )
-        .replace(
-            /&nbsp;/gi,
-            " "
-        )
-        .replace(
-            /&amp;/gi,
-            "&"
-        )
-        .replace(
-            /&quot;/gi,
-            '"'
-        )
-        .replace(
-            /&#39;/gi,
-            "'"
-        )
-        .replace(
-            /&apos;/gi,
-            "'"
-        )
-        .replace(
-            /&lt;/gi,
-            "<"
-        )
-        .replace(
-            /&gt;/gi,
-            ">"
-        )
-        .replace(
-            /\s+/g,
-            " "
-        )
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9\s]/g, " ")
+        .replace(/\s+/g, " ")
         .trim();
 
 }
 
 
 /* ============================================================
-   ESCAPAR HTML
-============================================================ */
-
-function escapeHTML(texto){
-
-    return String(texto || "")
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* ============================================================
-   NORMALIZAR NOTICIAS
-============================================================ */
-
-function normalizarNoticia(noticia){
-
-    return {
-
-        titulo:
-            limpiarHTML(
-                noticia.titulo ||
-                noticia.title ||
-                ""
-            ),
-
-        fuente:
-            limpiarHTML(
-                noticia.fuente ||
-                noticia.source ||
-                "BOCA 24/7"
-            ),
-
-        contenido:
-            limpiarHTML(
-                noticia.contenido ||
-                noticia.descripcion ||
-                noticia.description ||
-                ""
-            ),
-
-        link:
-            String(
-                noticia.link ||
-                noticia.url ||
-                ""
-            ).trim(),
-
-        categoria:
-            limpiarHTML(
-                noticia.categoria ||
-                "Boca"
-            ),
-
-        fecha_iso:
-            String(
-                noticia.fecha_iso ||
-                noticia.fecha ||
-                noticia.pubDate ||
-                ""
-            ).trim()
-
-    };
-
-}
-
-
-/* ============================================================
-   VALIDAR LINK
-============================================================ */
-
-function linkSeguro(link){
-
-    if(!link){
-
-        return "";
-
-    }
-
-
-    try{
-
-        const url =
-            new URL(link);
-
-
-        if(
-            url.protocol !== "http:" &&
-            url.protocol !== "https:"
-        ){
-
-            return "";
-
-        }
-
-
-        return url.href;
-
-    }catch(error){
-
-        return "";
-
-    }
-
-}
-
-
-/* ============================================================
-   CREAR CLAVE ÚNICA
+   GENERAR CLAVE ÚNICA
 ============================================================ */
 
 function claveNoticia(noticia){
 
-    return limpiarHTML(
-        noticia.titulo
-    )
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(
-        /[\u0300-\u036f]/g,
-        ""
-    )
-    .replace(
-        /[^a-z0-9\s]/g,
-        " "
-    )
-    .replace(
-        /\s+/g,
-        " "
-    )
-    .trim();
+    const titulo =
+        normalizarTitulo(
+            noticia.titulo
+        );
+
+    const fuente =
+        normalizarTitulo(
+            noticia.fuente
+        );
+
+    /*
+       El título es lo principal.
+
+       La fuente ayuda cuando dos notas tienen
+       títulos muy parecidos pero pertenecen
+       a fuentes diferentes.
+    */
+
+    return titulo + "|" + fuente;
 
 }
 
 
 /* ============================================================
-   SIMILITUD ENTRE TÍTULOS
+   MEDIR SIMILITUD ENTRE DOS TÍTULOS
 ============================================================ */
 
 function similitudTitulos(
@@ -1958,34 +1933,30 @@ function similitudTitulos(
 ){
 
     const palabrasA =
-        new Set(
-            claveNoticia({
-                titulo:tituloA
-            })
-            .split(" ")
-            .filter(
-                palabra =>
-                    palabra.length > 3
-            )
+        normalizarTitulo(
+            tituloA
+        )
+        .split(" ")
+        .filter(
+            palabra =>
+                palabra.length >= 4
         );
 
 
     const palabrasB =
-        new Set(
-            claveNoticia({
-                titulo:tituloB
-            })
-            .split(" ")
-            .filter(
-                palabra =>
-                    palabra.length > 3
-            )
+        normalizarTitulo(
+            tituloB
+        )
+        .split(" ")
+        .filter(
+            palabra =>
+                palabra.length >= 4
         );
 
 
     if(
-        !palabrasA.size ||
-        !palabrasB.size
+        palabrasA.length === 0 ||
+        palabrasB.length === 0
     ){
 
         return 0;
@@ -1993,62 +1964,64 @@ function similitudTitulos(
     }
 
 
+    const conjuntoB =
+        new Set(
+            palabrasB
+        );
+
+
     let coincidencias = 0;
 
 
-    palabrasA.forEach(
-        palabra => {
+    for(
+        const palabra
+        of palabrasA
+    ){
 
-            if(
-                palabrasB.has(
-                    palabra
-                )
-            ){
+        if(
+            conjuntoB.has(
+                palabra
+            )
+        ){
 
-                coincidencias++;
-
-            }
+            coincidencias++;
 
         }
-    );
+
+    }
 
 
-    return (
-        coincidencias /
+    return coincidencias /
         Math.max(
-            palabrasA.size,
-            palabrasB.size
-        )
-    );
+            palabrasA.length,
+            palabrasB.length
+        );
 
 }
 
 
 /* ============================================================
-   ELIMINAR DUPLICADAS
+   ELIMINAR NOTICIAS REPETIDAS
 ============================================================ */
 
-function eliminarDuplicados(
-    lista
+function eliminarDuplicadas(
+    noticias
 ){
 
     const resultado = [];
 
-    const clavesExactas =
-        new Set();
+    const claves = new Set();
 
 
     for(
-        const noticia of lista
+        const noticia
+        of noticias
     ){
 
-        const titulo =
-            limpiarHTML(
-                noticia.titulo
-            );
-
-
-        if(!titulo){
+        if(
+            !noticia ||
+            !noticia.titulo
+        ){
 
             continue;
 
@@ -2061,17 +2034,12 @@ function eliminarDuplicados(
             );
 
 
-        if(!clave){
-
-            continue;
-
-        }
-
-
-        /* DUPLICADO EXACTO */
+        /*
+           REPETICIÓN EXACTA
+        */
 
         if(
-            clavesExactas.has(
+            claves.has(
                 clave
             )
         ){
@@ -2081,9 +2049,19 @@ function eliminarDuplicados(
         }
 
 
-        /* DUPLICADO MUY PARECIDO */
+        /*
+           REPETICIÓN CASI IGUAL
 
-        let repetida = false;
+           Esto es importante para casos como:
+
+           "Boca confirmó la salida del Changuito..."
+           "Boca confirmó la salida del Changuito Zeballos..."
+
+           que pueden venir varias veces
+           desde Google Noticias.
+        */
+
+        let esDuplicada = false;
 
 
         for(
@@ -2093,16 +2071,16 @@ function eliminarDuplicados(
 
             const similitud =
                 similitudTitulos(
-                    titulo,
+                    noticia.titulo,
                     anterior.titulo
                 );
 
 
             if(
-                similitud >= 0.82
+                similitud >= 0.78
             ){
 
-                repetida = true;
+                esDuplicada = true;
 
                 break;
 
@@ -2111,14 +2089,16 @@ function eliminarDuplicados(
         }
 
 
-        if(repetida){
+        if(
+            esDuplicada
+        ){
 
             continue;
 
         }
 
 
-        clavesExactas.add(
+        claves.add(
             clave
         );
 
@@ -2136,29 +2116,138 @@ function eliminarDuplicados(
 
 
 /* ============================================================
-   ORDENAR POR FECHA
+   CONVERTIR NOTICIA A FORMATO ÚNICO
+============================================================ */
+
+function prepararNoticia(
+    noticia
+){
+
+    if(
+        !noticia ||
+        typeof noticia !== "object"
+    ){
+
+        return null;
+
+    }
+
+
+    const titulo =
+        limpiarTexto(
+            noticia.titulo ||
+            noticia.title ||
+            ""
+        );
+
+
+    if(!titulo){
+
+        return null;
+
+    }
+
+
+    let contenido =
+        limpiarTexto(
+            noticia.contenido ||
+            noticia.descripcion ||
+            noticia.description ||
+            ""
+        );
+
+
+    let fuente =
+        limpiarTexto(
+            noticia.fuente ||
+            noticia.source ||
+            "Google Noticias"
+        );
+
+
+    let categoria =
+        limpiarTexto(
+            noticia.categoria ||
+            "Boca"
+        );
+
+
+    let link =
+        String(
+            noticia.link ||
+            ""
+        ).trim();
+
+
+    let fecha =
+        String(
+            noticia.fecha_iso ||
+            noticia.fecha ||
+            ""
+        ).trim();
+
+
+    return {
+
+        titulo:
+            titulo,
+
+        fuente:
+            fuente,
+
+        contenido:
+            contenido,
+
+        link:
+            link,
+
+        categoria:
+            categoria,
+
+        fecha_iso:
+            fecha
+
+    };
+
+}
+
+
+/* ============================================================
+   ORDENAR NOTICIAS POR FECHA
 ============================================================ */
 
 function ordenarPorFecha(
-    lista
+    noticias
 ){
 
-    return [...lista].sort(
-        (a,b) => {
+    return noticias.sort(
+        function(a,b){
 
             const fechaA =
                 new Date(
                     a.fecha_iso
-                ).getTime() || 0;
+                ).getTime();
 
 
             const fechaB =
                 new Date(
                     b.fecha_iso
-                ).getTime() || 0;
+                ).getTime();
 
 
-            return fechaB - fechaA;
+            const valorA =
+                isNaN(fechaA)
+                ? 0
+                : fechaA;
+
+
+            const valorB =
+                isNaN(fechaB)
+                ? 0
+                : fechaB;
+
+
+            return valorB - valorA;
 
         }
     );
@@ -2167,42 +2256,54 @@ function ordenarPorFecha(
 
 
 /* ============================================================
-   CARGAR NOTICIAS
+   CARGAR NOTICIAS.JSON
 ============================================================ */
 
 async function cargarNoticias(){
 
-    try{
+    if(
+        cargandoNoticias
+    ){
+
+        return;
+
+    }
+
+
+    cargandoNoticias = true;
+
+
+    if(estado){
 
         estado.textContent =
-            "Actualizando noticias...";
+            "Cargando noticias de Boca...";
+
+    }
 
 
-        actualizacion.textContent =
-            "Conectando con GitHub...";
+    try{
 
+        /*
+           IMPORTANTE:
 
-        contenedorNoticias.innerHTML = `
+           La página lee DIRECTAMENTE
+           el archivo noticias.json.
 
-            <div class="loading">
-
-                <div class="spinner"></div>
-
-                Cargando las últimas noticias...
-
-            </div>
-
-        `;
-
+           No Vercel.
+           No API externa.
+        */
 
         const respuesta =
             await fetch(
                 ARCHIVO_NOTICIAS +
-                "?v=" +
+                "?t=" +
                 Date.now(),
                 {
-                    method:"GET",
-                    cache:"no-store"
+                    method:
+                        "GET",
+
+                    cache:
+                        "no-store"
                 }
             );
 
@@ -2212,7 +2313,8 @@ async function cargarNoticias(){
         ){
 
             throw new Error(
-                "No se pudo cargar noticias.json"
+                "HTTP " +
+                respuesta.status
             );
 
         }
@@ -2222,99 +2324,194 @@ async function cargarNoticias(){
             await respuesta.json();
 
 
+        /*
+           Aceptamos tanto:
+
+           [
+              {...},
+              {...}
+           ]
+
+           como:
+
+           {
+              noticias: [...]
+           }
+        */
+
+        let lista;
+
+
         if(
-            !Array.isArray(
+            Array.isArray(
                 datos
             )
         ){
 
+            lista =
+                datos;
+
+        }else if(
+            datos &&
+            Array.isArray(
+                datos.noticias
+            )
+        ){
+
+            lista =
+                datos.noticias;
+
+        }else{
+
             throw new Error(
-                "noticias.json no contiene una lista válida"
+                "El archivo noticias.json no contiene una lista válida"
             );
 
         }
 
 
-        const normalizadas =
-            datos
-            .map(
-                normalizarNoticia
-            )
-            .filter(
-                noticia =>
-                    noticia.titulo
-            );
+        /*
+           Convertimos todas las noticias
+           al mismo formato.
+        */
 
+        const preparadas =
+            lista
+                .map(
+                    prepararNoticia
+                )
+                .filter(
+                    noticia =>
+                        noticia !== null
+                );
+
+
+        /*
+           ORDENAMOS ANTES DE ELIMINAR.
+
+           Así, si existen varias versiones
+           de una misma noticia, conservamos
+           la más reciente.
+        */
+
+        ordenarPorFecha(
+            preparadas
+        );
+
+
+        /*
+           ELIMINAMOS DUPLICADAS.
+        */
 
         todasLasNoticias =
-            eliminarDuplicados(
-                normalizadas
+            eliminarDuplicadas(
+                preparadas
             );
 
 
-        todasLasNoticias =
-            ordenarPorFecha(
-                todasLasNoticias
-            );
+        /*
+           Volvemos a ordenar por seguridad.
+        */
 
+        ordenarPorFecha(
+            todasLasNoticias
+        );
+
+
+        /*
+           Actualizamos la interfaz.
+        */
 
         mostrarNoticias();
 
         mostrarDestacadas();
 
-        actualizarUltimaNoticia();
+        actualizarUltimaHora();
 
 
-        estado.textContent =
-            "Noticias actualizadas correctamente";
+        if(estado){
+
+            estado.textContent =
+                todasLasNoticias.length +
+                " noticias disponibles";
+
+        }
 
 
-        actualizacion.textContent =
-            "Actualizado: " +
-            horaActual();
+        if(actualizacion){
+
+            actualizacion.textContent =
+                "Actualizado: " +
+                horaActual();
+
+        }
+
+
+        console.log(
+            "BOCA 24/7:",
+            preparadas.length,
+            "noticias recibidas."
+        );
+
+
+        console.log(
+            "BOCA 24/7:",
+            todasLasNoticias.length,
+            "noticias únicas."
+        );
 
 
     }catch(error){
 
         console.error(
-            "Error BOCA 24/7:",
+            "BOCA 24/7:",
             error
         );
 
 
-        estado.textContent =
-            "Error al cargar noticias";
+        if(estado){
+
+            estado.textContent =
+                "No se pudieron cargar las noticias";
+
+        }
 
 
-        actualizacion.textContent =
-            "No se pudo actualizar";
+        if(actualizacion){
+
+            actualizacion.textContent =
+                "Revisá noticias.json";
+
+        }
 
 
-        contenedorNoticias.innerHTML = `
+        if(contenedorNoticias){
 
-            <div class="error">
+            contenedorNoticias.innerHTML = `
 
-                <strong>
-                    No pudimos cargar las noticias.
-                </strong>
+                <div class="error">
 
-                <br><br>
+                    <strong>
+                        No pudimos cargar las noticias.
+                    </strong>
 
-                Verificá que
-                <strong>noticias.json</strong>
-                esté publicado en GitHub.
+                    <br><br>
 
-                <br><br>
+                    Verificá que el archivo
+                    <strong>noticias.json</strong>
+                    esté en la misma carpeta que
+                    <strong>index.html</strong>.
 
-                <small>
-                    ${escapeHTML(
-                        error.message
-                    )}
-                </small>
+                </div>
 
-            </div>
+            `;
 
-        `;
+        }
+
+    }finally{
+
+        cargandoNoticias =
+            false;
 
     }
 
@@ -2322,56 +2519,77 @@ async function cargarNoticias(){
 
 
 /* ============================================================
-   FILTRAR
+   FILTRAR POR SECCIÓN
 ============================================================ */
 
-function filtrarNoticias(){
+function obtenerNoticiasFiltradas(){
 
-    let lista =
+    const texto =
+        buscador
+            ? buscador.value
+                .toLowerCase()
+                .trim()
+            : "";
+
+
+    let noticias =
         [...todasLasNoticias];
 
+
+    /*
+       FILTRO DE CATEGORÍA
+    */
 
     if(
         seccionActual !== "Todas"
     ){
 
-        lista =
-            lista.filter(
-                noticia =>
-                    noticia.categoria
-                    .toLowerCase()
-                    ===
-                    seccionActual
-                    .toLowerCase()
+        noticias =
+            noticias.filter(
+                noticia => {
+
+                    const categoria =
+                        normalizarTitulo(
+                            noticia.categoria
+                        );
+
+
+                    const seccion =
+                        normalizarTitulo(
+                            seccionActual
+                        );
+
+
+                    return
+                        categoria === seccion;
+
+                }
             );
 
     }
 
 
-    const texto =
-        buscador
-        .value
-        .toLowerCase()
-        .trim();
-
+    /*
+       FILTRO DEL BUSCADOR
+    */
 
     if(texto){
 
-        lista =
-            lista.filter(
+        noticias =
+            noticias.filter(
                 noticia => {
 
-                    const contenido = (
-
-                        noticia.titulo +
-                        " " +
-                        noticia.fuente +
-                        " " +
-                        noticia.contenido +
-                        " " +
-                        noticia.categoria
-
-                    ).toLowerCase();
+                    const contenido =
+                        (
+                            noticia.titulo +
+                            " " +
+                            noticia.fuente +
+                            " " +
+                            noticia.contenido +
+                            " " +
+                            noticia.categoria
+                        )
+                        .toLowerCase();
 
 
                     return contenido.includes(
@@ -2384,60 +2602,7 @@ function filtrarNoticias(){
     }
 
 
-    return lista;
-
-}
-
-
-/* ============================================================
-   MOSTRAR NOTICIAS
-============================================================ */
-
-function mostrarNoticias(){
-
-    const lista =
-        filtrarNoticias();
-
-
-    noticiasVisibles =
-        lista;
-
-
-    if(
-        !lista.length
-    ){
-
-        contenedorNoticias.innerHTML = `
-
-            <div class="empty">
-
-                No encontramos noticias
-                para esta sección.
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    contenedorNoticias.innerHTML = `
-
-        <div class="news-grid">
-
-            ${
-                lista
-                .map(
-                    crearTarjeta
-                )
-                .join("")
-            }
-
-        </div>
-
-    `;
+    return noticias;
 
 }
 
@@ -2457,12 +2622,12 @@ function cambiarSeccion(
 
     document
         .querySelectorAll(
-            ".nav button"
+            ".navigation button"
         )
         .forEach(
-            botonNav => {
+            elemento => {
 
-                botonNav.classList.remove(
+                elemento.classList.remove(
                     "active"
                 );
 
@@ -2470,26 +2635,31 @@ function cambiarSeccion(
         );
 
 
-    boton.classList.add(
-        "active"
-    );
+    if(boton){
+
+        boton.classList.add(
+            "active"
+        );
+
+    }
 
 
-    tituloSeccion.textContent =
-        seccion === "Todas"
-        ? "Últimas noticias"
-        : seccion;
+    if(tituloSeccion){
+
+        tituloSeccion.textContent =
+            seccion === "Todas"
+            ? "Últimas noticias"
+            : seccion;
+
+    }
 
 
     mostrarNoticias();
 
 
     window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
+        top: 0,
+        behavior: "smooth"
     });
 
 }
@@ -2499,14 +2669,22 @@ function cambiarSeccion(
    BUSCADOR
 ============================================================ */
 
-buscador.addEventListener(
-    "input",
-    mostrarNoticias
-);
+if(buscador){
+
+    buscador.addEventListener(
+        "input",
+        function(){
+
+            mostrarNoticias();
+
+        }
+    );
+
+}
 
 
 /* ============================================================
-   HORA
+   FECHA ACTUAL
 ============================================================ */
 
 function horaActual(){
@@ -2515,1085 +2693,818 @@ function horaActual(){
         .toLocaleTimeString(
             "es-AR",
             {
-                hour:"2-digit",
-                minute:"2-digit"
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit"
             }
         );
 
 }
-
-    </script>
-    <script>
+                <script>
 
 /* ============================================================
-   TARJETA DE NOTICIA
+   BOCA 24/7 — BLOQUE 2
+   CARGA Y LIMPIEZA DE NOTICIAS
 ============================================================ */
 
-function crearTarjeta(noticia){
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+let todasLasNoticias = [];
+
+let seccionActual = "Todas";
+
+let cargandoNoticias = false;
+
+
+/* ============================================================
+   NORMALIZAR TEXTO PARA COMPARAR
+============================================================ */
+
+function normalizarTitulo(texto){
+
+    return String(texto || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+
+/* ============================================================
+   GENERAR CLAVE ÚNICA
+============================================================ */
+
+function claveNoticia(noticia){
 
     const titulo =
-        escapeHTML(
+        normalizarTitulo(
             noticia.titulo
         );
 
     const fuente =
-        escapeHTML(
+        normalizarTitulo(
             noticia.fuente
         );
 
-    const contenido =
-        escapeHTML(
-            noticia.contenido
-        );
+    /*
+       El título es lo principal.
 
-    const categoria =
-        escapeHTML(
-            noticia.categoria
-        );
+       La fuente ayuda cuando dos notas tienen
+       títulos muy parecidos pero pertenecen
+       a fuentes diferentes.
+    */
 
-    const fecha =
-        formatearFecha(
-            noticia.fecha_iso
-        );
-
-    const link =
-        linkSeguro(
-            noticia.link
-        );
-
-
-    return `
-
-        <article
-            class="news-card"
-            data-categoria="${categoria}"
-        >
-
-            <div class="news-image">
-
-                <div class="news-image-overlay">
-
-                    <span>
-                        BOCA
-                    </span>
-
-                    <strong>
-                        24/7
-                    </strong>
-
-                </div>
-
-            </div>
-
-
-            <div class="news-body">
-
-                <div class="news-source">
-
-                    ${fuente}
-
-                </div>
-
-
-                <div class="news-category">
-
-                    ${categoria}
-
-                </div>
-
-
-                <h3 class="news-title">
-
-                    ${titulo}
-
-                </h3>
-
-
-                <p class="news-description">
-
-                    ${
-                        contenido ||
-                        "Toda la información de Boca Juniors."
-                    }
-
-                </p>
-
-
-                <div class="news-meta">
-
-                    <span class="news-date">
-
-                        ${fecha}
-
-                    </span>
-
-
-                    ${
-                        link
-                        ?
-                        `
-
-                        <a
-                            class="read"
-                            href="${escapeHTML(link)}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-
-                            Leer noticia
-                            <span>→</span>
-
-                        </a>
-
-                        `
-                        :
-                        ""
-                    }
-
-                </div>
-
-            </div>
-
-        </article>
-
-    `;
+    return titulo + "|" + fuente;
 
 }
 
 
 /* ============================================================
-   FECHA
+   MEDIR SIMILITUD ENTRE DOS TÍTULOS
 ============================================================ */
 
-function formatearFecha(
-    fecha
+function similitudTitulos(
+    tituloA,
+    tituloB
 ){
 
-    if(!fecha){
-
-        return "Fecha no disponible";
-
-    }
-
-
-    const d =
-        new Date(
-            fecha
-        );
-
-
-    if(
-        isNaN(
-            d.getTime()
+    const palabrasA =
+        normalizarTitulo(
+            tituloA
         )
+        .split(" ")
+        .filter(
+            palabra =>
+                palabra.length >= 4
+        );
+
+
+    const palabrasB =
+        normalizarTitulo(
+            tituloB
+        )
+        .split(" ")
+        .filter(
+            palabra =>
+                palabra.length >= 4
+        );
+
+
+    if(
+        palabrasA.length === 0 ||
+        palabrasB.length === 0
     ){
 
-        return escapeHTML(
-            String(fecha)
-        );
+        return 0;
 
     }
 
 
-    return d.toLocaleString(
-        "es-AR",
-        {
-            day:"2-digit",
-            month:"2-digit",
-            year:"numeric",
-            hour:"2-digit",
-            minute:"2-digit"
+    const conjuntoB =
+        new Set(
+            palabrasB
+        );
+
+
+    let coincidencias = 0;
+
+
+    for(
+        const palabra
+        of palabrasA
+    ){
+
+        if(
+            conjuntoB.has(
+                palabra
+            )
+        ){
+
+            coincidencias++;
+
         }
-    );
+
+    }
+
+
+    return coincidencias /
+        Math.max(
+            palabrasA.length,
+            palabrasB.length
+        );
 
 }
 
 
 /* ============================================================
-   ÚLTIMA NOTICIA
+   ELIMINAR NOTICIAS REPETIDAS
 ============================================================ */
 
-function actualizarUltimaNoticia(){
+function eliminarDuplicadas(
+    noticias
+){
 
-    if(
-        !ultimaNoticia
+    const resultado = [];
+
+    const claves = new Set();
+
+
+    for(
+        const noticia
+        of noticias
     ){
 
-        return;
+        if(
+            !noticia ||
+            !noticia.titulo
+        ){
 
-    }
+            continue;
 
+        }
 
-    if(
-        !todasLasNoticias.length
-    ){
 
-        ultimaNoticia.textContent =
-            "Esperando noticias...";
-
-        return;
-
-    }
-
-
-    const noticia =
-        todasLasNoticias[0];
-
-
-    ultimaNoticia.innerHTML = `
-
-        <span class="breaking-label">
-            ÚLTIMA HORA
-        </span>
-
-        <span class="breaking-title">
-            ${escapeHTML(
-                noticia.titulo
-            )}
-        </span>
-
-    `;
-
-}
-
-
-/* ============================================================
-   DESTACADAS
-============================================================ */
-
-function mostrarDestacadas(){
-
-    if(
-        !contenedorDestacadas
-    ){
-
-        return;
-
-    }
-
-
-    if(
-        !todasLasNoticias.length
-    ){
-
-        contenedorDestacadas.innerHTML =
-            "";
-
-        return;
-
-    }
-
-
-    const destacadas =
-        todasLasNoticias
-        .slice(
-            0,
-            3
-        );
-
-
-    const principal =
-        destacadas[0];
-
-
-    const secundarias =
-        destacadas.slice(
-            1
-        );
-
-
-    const linkPrincipal =
-        linkSeguro(
-            principal.link
-        );
-
-
-    contenedorDestacadas.innerHTML = `
-
-        <div class="featured">
-
-            <div class="featured-main">
-
-                <div class="featured-label">
-
-                    NOTICIA DESTACADA
-
-                </div>
-
-
-                <div class="news-source">
-
-                    ${escapeHTML(
-                        principal.fuente
-                    )}
-
-                </div>
-
-
-                <h3>
-
-                    ${escapeHTML(
-                        principal.titulo
-                    )}
-
-                </h3>
-
-
-                <p>
-
-                    ${escapeHTML(
-                        principal.contenido
-                    )}
-
-                </p>
-
-
-                ${
-                    linkPrincipal
-                    ?
-                    `
-
-                    <a
-                        href="${escapeHTML(
-                            linkPrincipal
-                        )}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="featured-link"
-                    >
-
-                        Leer noticia
-                        →
-
-                    </a>
-
-                    `
-                    :
-                    ""
-                }
-
-            </div>
-
-
-            <div class="featured-side">
-
-                ${
-                    secundarias
-                    .map(
-                        noticia => {
-
-                            const link =
-                                linkSeguro(
-                                    noticia.link
-                                );
-
-
-                            return `
-
-                                <article
-                                    class="featured-small"
-                                >
-
-                                    <div
-                                        class="news-source"
-                                    >
-
-                                        ${escapeHTML(
-                                            noticia.fuente
-                                        )}
-
-                                    </div>
-
-
-                                    <h3>
-
-                                        ${escapeHTML(
-                                            noticia.titulo
-                                        )}
-
-                                    </h3>
-
-
-                                    ${
-                                        link
-                                        ?
-                                        `
-
-                                        <a
-                                            href="${escapeHTML(
-                                                link
-                                            )}"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            class="small-link"
-                                        >
-
-                                            Ver nota →
-
-                                        </a>
-
-                                        `
-                                        :
-                                        ""
-                                    }
-
-                                </article>
-
-                            `;
-
-                        }
-                    )
-                    .join("")
-                }
-
-            </div>
-
-        </div>
-
-    `;
-
-}
-
-
-/* ============================================================
-   ANIMACIÓN DE ENTRADA
-============================================================ */
-
-function animarNoticias(){
-
-    const tarjetas =
-        document.querySelectorAll(
-            ".news-card"
-        );
-
-
-    tarjetas.forEach(
-        (tarjeta, indice) => {
-
-            tarjeta.style.opacity =
-                "0";
-
-            tarjeta.style.transform =
-                "translateY(18px)";
-
-
-            setTimeout(
-                () => {
-
-                    tarjeta.style.transition =
-                        "opacity .45s ease, transform .45s ease";
-
-                    tarjeta.style.opacity =
-                        "1";
-
-                    tarjeta.style.transform =
-                        "translateY(0)";
-
-                },
-                Math.min(
-                    indice * 45,
-                    500
-                )
+        const clave =
+            claveNoticia(
+                noticia
             );
 
+
+        /*
+           REPETICIÓN EXACTA
+        */
+
+        if(
+            claves.has(
+                clave
+            )
+        ){
+
+            continue;
+
         }
-    );
-
-}
 
 
-/* ============================================================
-   OBSERVADOR PARA ANIMACIONES
-============================================================ */
+        /*
+           REPETICIÓN CASI IGUAL
 
-function prepararAnimaciones(){
+           Esto es importante para casos como:
 
-    const elementos =
-        document.querySelectorAll(
-            ".section-head, .featured, .info-bar"
+           "Boca confirmó la salida del Changuito..."
+           "Boca confirmó la salida del Changuito Zeballos..."
+
+           que pueden venir varias veces
+           desde Google Noticias.
+        */
+
+        let esDuplicada = false;
+
+
+        for(
+            const anterior
+            of resultado
+        ){
+
+            const similitud =
+                similitudTitulos(
+                    noticia.titulo,
+                    anterior.titulo
+                );
+
+
+            if(
+                similitud >= 0.78
+            ){
+
+                esDuplicada = true;
+
+                break;
+
+            }
+
+        }
+
+
+        if(
+            esDuplicada
+        ){
+
+            continue;
+
+        }
+
+
+        claves.add(
+            clave
         );
 
 
-    if(
-        !("IntersectionObserver" in window)
-    ){
-
-        return;
+        resultado.push(
+            noticia
+        );
 
     }
 
 
-    const observer =
-        new IntersectionObserver(
-            entradas => {
-
-                entradas.forEach(
-                    entrada => {
-
-                        if(
-                            entrada.isIntersecting
-                        ){
-
-                            entrada.target.classList.add(
-                                "visible"
-                            );
-
-                            observer.unobserve(
-                                entrada.target
-                            );
-
-                        }
-
-                    }
-                );
-
-            },
-            {
-                threshold:0.12
-            }
-        );
-
-
-    elementos.forEach(
-        elemento =>
-            observer.observe(
-                elemento
-            )
-    );
+    return resultado;
 
 }
 
 
 /* ============================================================
-   ACTUALIZAR MOSTRADO
+   CONVERTIR NOTICIA A FORMATO ÚNICO
 ============================================================ */
 
-const mostrarNoticiasOriginal =
-    mostrarNoticias;
+function prepararNoticia(
+    noticia
+){
+
+    if(
+        !noticia ||
+        typeof noticia !== "object"
+    ){
+
+        return null;
+
+    }
 
 
-mostrarNoticias =
-    function(){
-
-        mostrarNoticiasOriginal();
-
-        requestAnimationFrame(
-            () => {
-
-                animarNoticias();
-
-            }
+    const titulo =
+        limpiarTexto(
+            noticia.titulo ||
+            noticia.title ||
+            ""
         );
+
+
+    if(!titulo){
+
+        return null;
+
+    }
+
+
+    let contenido =
+        limpiarTexto(
+            noticia.contenido ||
+            noticia.descripcion ||
+            noticia.description ||
+            ""
+        );
+
+
+    let fuente =
+        limpiarTexto(
+            noticia.fuente ||
+            noticia.source ||
+            "Google Noticias"
+        );
+
+
+    let categoria =
+        limpiarTexto(
+            noticia.categoria ||
+            "Boca"
+        );
+
+
+    let link =
+        String(
+            noticia.link ||
+            ""
+        ).trim();
+
+
+    let fecha =
+        String(
+            noticia.fecha_iso ||
+            noticia.fecha ||
+            ""
+        ).trim();
+
+
+    return {
+
+        titulo:
+            titulo,
+
+        fuente:
+            fuente,
+
+        contenido:
+            contenido,
+
+        link:
+            link,
+
+        categoria:
+            categoria,
+
+        fecha_iso:
+            fecha
 
     };
 
-
-/* ============================================================
-   INICIO
-============================================================ */
-
-prepararAnimaciones();
-
-cargarNoticias();
+}
 
 
 /* ============================================================
-   ACTUALIZACIÓN AUTOMÁTICA
+   ORDENAR NOTICIAS POR FECHA
 ============================================================ */
 
-setInterval(
-    () => {
+function ordenarPorFecha(
+    noticias
+){
 
-        cargarNoticias();
+    return noticias.sort(
+        function(a,b){
 
-    },
-    5 * 60 * 1000
-);
+            const fechaA =
+                new Date(
+                    a.fecha_iso
+                ).getTime();
+
+
+            const fechaB =
+                new Date(
+                    b.fecha_iso
+                ).getTime();
+
+
+            const valorA =
+                isNaN(fechaA)
+                ? 0
+                : fechaA;
+
+
+            const valorB =
+                isNaN(fechaB)
+                ? 0
+                : fechaB;
+
+
+            return valorB - valorA;
+
+        }
+    );
+
+}
 
 
 /* ============================================================
-   RECARGAR AL VOLVER A LA PÁGINA
+   CARGAR NOTICIAS.JSON
 ============================================================ */
 
-document.addEventListener(
-    "visibilitychange",
-    () => {
+async function cargarNoticias(){
+
+    if(
+        cargandoNoticias
+    ){
+
+        return;
+
+    }
+
+
+    cargandoNoticias = true;
+
+
+    if(estado){
+
+        estado.textContent =
+            "Cargando noticias de Boca...";
+
+    }
+
+
+    try{
+
+        /*
+           IMPORTANTE:
+
+           La página lee DIRECTAMENTE
+           el archivo noticias.json.
+
+           No Vercel.
+           No API externa.
+        */
+
+        const respuesta =
+            await fetch(
+                ARCHIVO_NOTICIAS +
+                "?t=" +
+                Date.now(),
+                {
+                    method:
+                        "GET",
+
+                    cache:
+                        "no-store"
+                }
+            );
+
 
         if(
-            document.visibilityState ===
-            "visible"
+            !respuesta.ok
         ){
 
-            cargarNoticias();
+            throw new Error(
+                "HTTP " +
+                respuesta.status
+            );
 
         }
 
+
+        const datos =
+            await respuesta.json();
+
+
+        /*
+           Aceptamos tanto:
+
+           [
+              {...},
+              {...}
+           ]
+
+           como:
+
+           {
+              noticias: [...]
+           }
+        */
+
+        let lista;
+
+
+        if(
+            Array.isArray(
+                datos
+            )
+        ){
+
+            lista =
+                datos;
+
+        }else if(
+            datos &&
+            Array.isArray(
+                datos.noticias
+            )
+        ){
+
+            lista =
+                datos.noticias;
+
+        }else{
+
+            throw new Error(
+                "El archivo noticias.json no contiene una lista válida"
+            );
+
+        }
+
+
+        /*
+           Convertimos todas las noticias
+           al mismo formato.
+        */
+
+        const preparadas =
+            lista
+                .map(
+                    prepararNoticia
+                )
+                .filter(
+                    noticia =>
+                        noticia !== null
+                );
+
+
+        /*
+           ORDENAMOS ANTES DE ELIMINAR.
+
+           Así, si existen varias versiones
+           de una misma noticia, conservamos
+           la más reciente.
+        */
+
+        ordenarPorFecha(
+            preparadas
+        );
+
+
+        /*
+           ELIMINAMOS DUPLICADAS.
+        */
+
+        todasLasNoticias =
+            eliminarDuplicadas(
+                preparadas
+            );
+
+
+        /*
+           Volvemos a ordenar por seguridad.
+        */
+
+        ordenarPorFecha(
+            todasLasNoticias
+        );
+
+
+        /*
+           Actualizamos la interfaz.
+        */
+
+        mostrarNoticias();
+
+        mostrarDestacadas();
+
+        actualizarUltimaHora();
+
+
+        if(estado){
+
+            estado.textContent =
+                todasLasNoticias.length +
+                " noticias disponibles";
+
+        }
+
+
+        if(actualizacion){
+
+            actualizacion.textContent =
+                "Actualizado: " +
+                horaActual();
+
+        }
+
+
+        console.log(
+            "BOCA 24/7:",
+            preparadas.length,
+            "noticias recibidas."
+        );
+
+
+        console.log(
+            "BOCA 24/7:",
+            todasLasNoticias.length,
+            "noticias únicas."
+        );
+
+
+    }catch(error){
+
+        console.error(
+            "BOCA 24/7:",
+            error
+        );
+
+
+        if(estado){
+
+            estado.textContent =
+                "No se pudieron cargar las noticias";
+
+        }
+
+
+        if(actualizacion){
+
+            actualizacion.textContent =
+                "Revisá noticias.json";
+
+        }
+
+
+        if(contenedorNoticias){
+
+            contenedorNoticias.innerHTML = `
+
+                <div class="error">
+
+                    <strong>
+                        No pudimos cargar las noticias.
+                    </strong>
+
+                    <br><br>
+
+                    Verificá que el archivo
+                    <strong>noticias.json</strong>
+                    esté en la misma carpeta que
+                    <strong>index.html</strong>.
+
+                </div>
+
+            `;
+
+        }
+
+    }finally{
+
+        cargandoNoticias =
+            false;
+
     }
-);
 
-    </script>
-    <style>
+}
+
 
 /* ============================================================
-   ANIMACIONES BOCA 24/7
+   FILTRAR POR SECCIÓN
 ============================================================ */
 
-@keyframes aparecer {
+function obtenerNoticiasFiltradas(){
 
-    from {
-        opacity:0;
-        transform:translateY(20px);
+    const texto =
+        buscador
+            ? buscador.value
+                .toLowerCase()
+                .trim()
+            : "";
+
+
+    let noticias =
+        [...todasLasNoticias];
+
+
+    /*
+       FILTRO DE CATEGORÍA
+    */
+
+    if(
+        seccionActual !== "Todas"
+    ){
+
+        noticias =
+            noticias.filter(
+                noticia => {
+
+                    const categoria =
+                        normalizarTitulo(
+                            noticia.categoria
+                        );
+
+
+                    const seccion =
+                        normalizarTitulo(
+                            seccionActual
+                        );
+
+
+                    return
+                        categoria === seccion;
+
+                }
+            );
+
     }
 
-    to {
-        opacity:1;
-        transform:translateY(0);
+
+    /*
+       FILTRO DEL BUSCADOR
+    */
+
+    if(texto){
+
+        noticias =
+            noticias.filter(
+                noticia => {
+
+                    const contenido =
+                        (
+                            noticia.titulo +
+                            " " +
+                            noticia.fuente +
+                            " " +
+                            noticia.contenido +
+                            " " +
+                            noticia.categoria
+                        )
+                        .toLowerCase();
+
+
+                    return contenido.includes(
+                        texto
+                    );
+
+                }
+            );
+
     }
 
+
+    return noticias;
+
 }
 
 
-@keyframes brillo {
+/* ============================================================
+   CAMBIAR SECCIÓN
+============================================================ */
 
-    0% {
-        box-shadow:
-            0 0 0 0
-            rgba(245,196,0,.45);
+function cambiarSeccion(
+    seccion,
+    boton
+){
+
+    seccionActual =
+        seccion;
+
+
+    document
+        .querySelectorAll(
+            ".navigation button"
+        )
+        .forEach(
+            elemento => {
+
+                elemento.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    if(boton){
+
+        boton.classList.add(
+            "active"
+        );
+
     }
 
-    70% {
-        box-shadow:
-            0 0 0 10px
-            rgba(245,196,0,0);
+
+    if(tituloSeccion){
+
+        tituloSeccion.textContent =
+            seccion === "Todas"
+            ? "Últimas noticias"
+            : seccion;
+
     }
 
-    100% {
-        box-shadow:
-            0 0 0 0
-            rgba(245,196,0,0);
-    }
 
-}
+    mostrarNoticias();
 
 
-@keyframes pulso {
-
-    0%,100% {
-        opacity:1;
-    }
-
-    50% {
-        opacity:.45;
-    }
-
-}
-
-
-/* ============================================================
-   TARJETAS
-============================================================ */
-
-.news-card {
-
-    animation:
-        aparecer
-        .55s
-        ease
-        both;
-
-}
-
-
-.news-card:nth-child(2) {
-    animation-delay:.05s;
-}
-
-
-.news-card:nth-child(3) {
-    animation-delay:.10s;
-}
-
-
-.news-card:nth-child(4) {
-    animation-delay:.15s;
-}
-
-
-.news-card:nth-child(5) {
-    animation-delay:.20s;
-}
-
-
-.news-card:nth-child(6) {
-    animation-delay:.25s;
-}
-
-
-/* ============================================================
-   IMAGEN DE NOTICIA
-============================================================ */
-
-.news-image {
-
-    position:relative;
-    overflow:hidden;
-
-}
-
-
-.news-image::before {
-
-    content:"";
-
-    position:absolute;
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    background:
-        rgba(245,196,0,.12);
-
-    top:-70px;
-    right:-50px;
-
-}
-
-
-.news-image::after {
-
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    border-radius:50%;
-
-    border:2px solid
-        rgba(245,196,0,.15);
-
-    bottom:-55px;
-    left:-35px;
-
-}
-
-
-.news-image-overlay {
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    font-size:26px;
-
-    letter-spacing:-1px;
-
-}
-
-
-.news-image-overlay span {
-
-    color:white;
-
-}
-
-
-.news-image-overlay strong {
-
-    color:var(--amarillo);
-
-}
-
-
-/* ============================================================
-   CATEGORÍA
-============================================================ */
-
-.news-category {
-
-    display:inline-block;
-
-    margin-bottom:9px;
-
-    padding:4px 8px;
-
-    border-radius:5px;
-
-    background:
-        rgba(0,36,95,.08);
-
-    color:var(--azul);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-}
-
-
-/* ============================================================
-   DESTACADAS
-============================================================ */
-
-.featured-main {
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-.featured-main::before {
-
-    content:"CABJ";
-
-    position:absolute;
-
-    right:20px;
-    top:10px;
-
-    font-size:80px;
-
-    font-weight:900;
-
-    color:
-        rgba(255,255,255,.05);
-
-}
-
-
-.featured-label {
-
-    display:inline-block;
-
-    width:max-content;
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--azul);
-
-    padding:6px 9px;
-
-    border-radius:5px;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    margin-bottom:10px;
-
-}
-
-
-.featured-link {
-
-    display:inline-block;
-
-    margin-top:16px;
-
-    color:var(--amarillo);
-
-    text-decoration:none;
-
-    font-size:13px;
-
-    font-weight:900;
-
-}
-
-
-.featured-link:hover {
-
-    text-decoration:underline;
-
-}
-
-
-.small-link {
-
-    display:inline-block;
-
-    margin-top:12px;
-
-    color:var(--azul2);
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    font-weight:900;
-
-}
-
-
-.small-link:hover {
-
-    text-decoration:underline;
-
-}
-
-
-/* ============================================================
-   BARRA ÚLTIMA HORA
-============================================================ */
-
-.breaking-news {
-
-    background:
-        var(--azul);
-
-    color:white;
-
-    border-radius:12px;
-
-    margin-bottom:22px;
-
-    padding:12px 16px;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    overflow:hidden;
-
-}
-
-
-.breaking-label {
-
-    flex:0 0 auto;
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--azul);
-
-    padding:6px 9px;
-
-    border-radius:5px;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    animation:
-        pulso
-        1.8s
-        infinite;
-
-}
-
-
-.breaking-title {
-
-    font-size:13px;
-
-    font-weight:700;
-
-    white-space:nowrap;
-
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
-}
-
-
-/* ============================================================
-   INFO BAR
-============================================================ */
-
-.info-bar {
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-
-}
-
-
-.info-bar:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 22px
-        rgba(0,0,0,.10);
-
-}
-
-
-/* ============================================================
-   PUNTO EN VIVO
-============================================================ */
-
-.live-dot {
-
-    animation:
-        brillo
-        2s
-        infinite;
-
-}
-
-
-/* ============================================================
-   BOTONES DE NAVEGACIÓN
-============================================================ */
-
-.nav button {
-
-    position:relative;
-
-}
-
-
-.nav button::after {
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    bottom:0;
-
-    width:0;
-    height:3px;
-
-    background:
-        var(--amarillo);
-
-    transform:
-        translateX(-50%);
-
-    transition:
-        width .25s ease;
-
-}
-
-
-.nav button:hover::after,
-.nav button.active::after {
-
-    width:70%;
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
@@ -3602,245 +3513,41 @@ document.addEventListener(
    BUSCADOR
 ============================================================ */
 
-.search {
+if(buscador){
 
-    position:relative;
+    buscador.addEventListener(
+        "input",
+        function(){
 
-}
-
-
-.search input {
-
-    transition:
-        box-shadow .2s ease,
-        border-color .2s ease;
-
-}
-
-
-.search input:focus {
-
-    box-shadow:
-        0 0 0 4px
-        rgba(0,71,168,.10);
-
-}
-
-
-/* ============================================================
-   SECCIONES
-============================================================ */
-
-.section-head {
-
-    opacity:0;
-
-    transform:
-        translateY(15px);
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease;
-
-}
-
-
-.section-head.visible {
-
-    opacity:1;
-
-    transform:
-        translateY(0);
-
-}
-
-
-.featured,
-.info-bar {
-
-    opacity:1;
-
-}
-
-
-/* ============================================================
-   HOVER TARJETAS
-============================================================ */
-
-.news-card {
-
-    cursor:default;
-
-}
-
-
-.news-card:hover
-.news-image-overlay {
-
-    transform:
-        scale(1.05);
-
-}
-
-
-.news-image-overlay {
-
-    transition:
-        transform .3s ease;
-
-}
-
-
-/* ============================================================
-   ERROR
-============================================================ */
-
-.error strong {
-
-    color:#8b0000;
-
-}
-
-
-/* ============================================================
-   MÓVIL
-============================================================ */
-
-@media(max-width:650px){
-
-    .breaking-news {
-
-        padding:10px 12px;
-
-        gap:8px;
-
-    }
-
-
-    .breaking-label {
-
-        font-size:9px;
-
-        padding:5px 7px;
-
-    }
-
-
-    .breaking-title {
-
-        font-size:11px;
-
-    }
-
-
-    .news-image {
-
-        height:160px;
-
-    }
-
-
-    .news-title {
-
-        font-size:17px;
-
-    }
-
-
-    .news-description {
-
-        font-size:13px;
-
-    }
-
-
-    .featured-main {
-
-        min-height:280px;
-
-        padding:20px;
-
-    }
-
-
-    .featured-main h3 {
-
-        font-size:22px;
-
-    }
-
-}
-
-
-/* ============================================================
-   PANTALLAS GRANDES
-============================================================ */
-
-@media(min-width:1200px){
-
-    .news-card:hover {
-
-        transform:
-            translateY(-7px)
-            scale(1.01);
-
-    }
-
-}
-
-
-/* ============================================================
-   RESPETAR REDUCCIÓN DE MOVIMIENTO
-============================================================ */
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after {
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-
-    }
-
-}
-
-</style>
-
-<script>
-
-/* ============================================================
-   COMPATIBILIDAD FINAL
-============================================================ */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        if(
-            typeof cargarNoticias ===
-            "function"
-        ){
-
-            cargarNoticias();
+            mostrarNoticias();
 
         }
+    );
 
-    }
-);
+}
 
-</script>
+
+/* ============================================================
+   FECHA ACTUAL
+============================================================ */
+
+function horaActual(){
+
+    return new Date()
+        .toLocaleTimeString(
+            "es-AR",
+            {
+                hour:
+                    "2-digit",
+
+                minute:
+                    "2-digit"
+            }
+        );
+    </script>
 
 </body>
+
 </html>
 
+}
