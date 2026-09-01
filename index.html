@@ -1,556 +1,1430 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#00245f">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="theme-color"
+    content="#00245f"
+>
+
+<meta
+    name="description"
+    content="BOCA 24/7 - Todo Boca. Todo el día."
+>
 
 <title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
+
 <style>
 
+/* =========================================================
+   BOCA 24/7
+   DISEÑO PRINCIPAL
+========================================================= */
+
 :root{
+
     --azul:#00245f;
+    --azul-profundo:#001536;
     --azul2:#0047a8;
     --amarillo:#f5c400;
-    --fondo:#eef1f5;
+
+    --fondo:#eef2f7;
     --blanco:#ffffff;
+
     --texto:#101828;
     --gris:#667085;
+    --gris-claro:#98a2b3;
+
     --borde:#e4e7ec;
+
+    --sombra:
+        0 10px 30px rgba(0,0,0,.10);
+
 }
 
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
+
     margin:0;
     padding:0;
     box-sizing:border-box;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
+
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--fondo);
-    color:var(--texto);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--fondo);
+
+    color:
+        var(--texto);
+
+    min-height:
+        100vh;
+
 }
+
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
-    background:var(--azul);
-    box-shadow:0 4px 18px rgba(0,0,0,.25);
+
+    background:
+        var(--azul);
+
+    box-shadow:
+        0 4px 20px rgba(0,0,0,.25);
+
 }
+
+
+/* =========================================================
+   HEADER SUPERIOR
+========================================================= */
 
 .header-top{
-    max-width:1250px;
-    margin:auto;
+
+    max-width:1300px;
+
     min-height:82px;
-    padding:12px 18px;
+
+    margin:auto;
+
+    padding:
+        12px 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
+
 }
+
 
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
 }
+
 
 .logo-boca{
-    width:55px;
-    height:55px;
+
+    width:56px;
+
+    height:56px;
+
     border-radius:50%;
-    border:4px solid var(--amarillo);
-    background:var(--azul);
-    color:var(--amarillo);
+
+    border:
+        4px solid
+        var(--amarillo);
+
+    background:
+        var(--azul);
+
+    color:
+        var(--amarillo);
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
+    font-size:14px;
+
     font-weight:900;
-    font-size:15px;
+
+    letter-spacing:-1px;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(245,196,0,.08);
+
 }
+
 
 .logo-text{
-    color:white;
+
+    color:
+        var(--blanco);
+
     font-size:29px;
+
     font-weight:900;
+
+    line-height:1;
+
     letter-spacing:-1px;
+
 }
+
 
 .logo-text span{
-    color:var(--amarillo);
+
+    color:
+        var(--amarillo);
+
 }
+
 
 .logo-sub{
-    color:#d8e3f5;
+
+    color:
+        #d8e3f5;
+
     font-size:12px;
-    margin-top:3px;
+
+    margin-top:6px;
+
 }
 
-.live{
-    color:white;
+
+.header-live{
+
+    color:
+        white;
+
     font-size:13px;
+
+    font-weight:700;
+
     display:flex;
+
     align-items:center;
-    gap:7px;
+
+    gap:8px;
+
 }
+
 
 .live-dot{
+
     width:9px;
+
     height:9px;
+
     border-radius:50%;
+
     background:#36d399;
-    box-shadow:0 0 0 4px rgba(54,211,153,.15);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(54,211,153,.12);
+
 }
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
 
 .nav{
-    background:#001a46;
+
+    background:
+        var(--azul-profundo);
+
     overflow-x:auto;
+
     scrollbar-width:none;
+
 }
+
 
 .nav::-webkit-scrollbar{
+
     display:none;
+
 }
+
 
 .nav-inner{
-    max-width:1250px;
+
+    max-width:1300px;
+
     margin:auto;
+
     display:flex;
+
 }
+
 
 .nav button{
-    flex:0 0 auto;
+
+    flex:
+        0 0 auto;
+
     border:0;
-    background:transparent;
+
+    background:
+        transparent;
+
     color:white;
-    padding:15px 17px;
-    font-size:13px;
-    font-weight:800;
+
+    padding:
+        15px 18px;
+
+    font-size:12px;
+
+    font-weight:900;
+
     cursor:pointer;
-    transition:.2s;
+
+    transition:
+        .2s ease;
+
 }
 
-.nav button:hover,
-.nav button.active{
-    background:var(--amarillo);
-    color:var(--azul);
+
+.nav button:hover{
+
+    background:
+        rgba(245,196,0,.15);
+
+    color:
+        var(--amarillo);
+
 }
+
+
+.nav button.active{
+
+    background:
+        var(--amarillo);
+
+    color:
+        var(--azul);
+
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
 
 .container{
-    width:min(1250px,100%);
+
+    width:
+        min(1300px,100%);
+
     margin:auto;
-    padding:24px 18px 50px;
+
+    padding:
+        24px 20px 60px;
+
 }
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-    border-radius:22px;
-    overflow:hidden;
-    min-height:330px;
-    padding:35px;
-    display:flex;
-    align-items:flex-end;
+
     position:relative;
+
+    overflow:hidden;
+
+    min-height:360px;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    margin-bottom:22px;
+
     background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(245,196,0,.25),
+            transparent 25%
+        ),
+
         linear-gradient(
-            90deg,
-            rgba(0,36,95,.98),
-            rgba(0,36,95,.75),
-            rgba(0,36,95,.35)
+            120deg,
+            #001b4d,
+            #0047a8
         );
-    box-shadow:0 8px 28px rgba(0,0,0,.18);
-    margin-bottom:28px;
+
+    box-shadow:
+        0 14px 40px
+        rgba(0,36,95,.22);
+
 }
+
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    right:-100px;
+
+    bottom:-150px;
+
+    border-radius:50%;
+
+    border:
+        45px solid
+        rgba(245,196,0,.10);
+
+}
+
 
 .hero::after{
+
     content:"BOCA";
+
     position:absolute;
-    right:30px;
-    top:30px;
-    font-size:90px;
+
+    right:25px;
+
+    top:25px;
+
+    color:
+        rgba(255,255,255,.06);
+
+    font-size:110px;
+
+    line-height:1;
+
     font-weight:900;
-    color:rgba(255,255,255,.06);
+
 }
+
 
 .hero-content{
+
     position:relative;
+
     z-index:2;
-    max-width:780px;
-    color:white;
+
+    max-width:800px;
+
 }
+
 
 .hero-label{
+
     display:inline-block;
-    background:var(--amarillo);
-    color:var(--azul);
-    padding:7px 11px;
+
+    padding:
+        8px 12px;
+
+    margin-bottom:15px;
+
     border-radius:6px;
+
+    background:
+        var(--amarillo);
+
+    color:
+        var(--azul);
+
     font-size:12px;
+
     font-weight:900;
-    margin-bottom:14px;
+
 }
+
 
 .hero h1{
-    font-size:40px;
-    line-height:1.08;
-    margin-bottom:12px;
+
+    color:white;
+
+    font-size:44px;
+
+    line-height:1.05;
+
+    margin-bottom:14px;
+
+    letter-spacing:-1px;
+
 }
+
 
 .hero p{
-    color:#e5ecf7;
-    font-size:15px;
-    line-height:1.5;
+
+    color:
+        #e4ecf8;
+
+    font-size:16px;
+
+    line-height:1.55;
+
+    max-width:700px;
+
 }
+
+
+/* =========================================================
+   BARRA DE ESTADO
+========================================================= */
 
 .info-bar{
+
     background:white;
-    border-radius:14px;
-    padding:14px 18px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:15px;
+
+    padding:
+        14px 18px;
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
+
+    justify-content:space-between;
+
     gap:15px;
+
     margin-bottom:28px;
-    box-shadow:0 3px 12px rgba(0,0,0,.06);
+
+    box-shadow:
+        0 4px 14px
+        rgba(0,0,0,.05);
+
 }
+
 
 .info-left{
+
     display:flex;
+
     align-items:center;
+
     gap:9px;
-    color:#344054;
+
+    color:
+        #344054;
+
     font-size:13px;
-    font-weight:bold;
+
+    font-weight:800;
+
 }
+
 
 .refresh{
-    color:var(--gris);
+
+    color:
+        var(--gris);
+
     font-size:12px;
+
 }
 
-.section-head{
+
+/* =========================================================
+   ÚLTIMA HORA
+========================================================= */
+
+.breaking{
+
+    background:
+        var(--amarillo);
+
+    border-radius:14px;
+
+    padding:
+        12px 15px;
+
+    margin-bottom:28px;
+
     display:flex;
+
     align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    margin:30px 0 16px;
+
+    gap:12px;
+
+    overflow:hidden;
+
 }
 
-.section-head h2{
-    color:var(--azul);
-    font-size:25px;
+
+.breaking-label{
+
+    flex:
+        0 0 auto;
+
+    background:
+        var(--azul);
+
+    color:white;
+
+    border-radius:6px;
+
+    padding:
+        7px 10px;
+
+    font-size:11px;
+
+    font-weight:900;
+
 }
 
-.section-head h2::before{
-    content:"";
-    display:inline-block;
-    width:5px;
-    height:23px;
-    background:var(--amarillo);
-    margin-right:10px;
-    vertical-align:-3px;
-    border-radius:3px;
+
+.breaking-text{
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    color:
+        var(--azul);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    transition:
+        opacity .25s ease;
+
 }
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
 
 .search{
-    display:flex;
-    gap:8px;
-    margin-bottom:22px;
+
+    margin-bottom:25px;
+
 }
+
 
 .search input{
+
     width:100%;
-    border:1px solid var(--borde);
+
+    border:
+        1px solid
+        var(--borde);
+
     background:white;
-    border-radius:10px;
-    padding:13px 15px;
+
+    border-radius:12px;
+
+    padding:
+        15px 17px;
+
     outline:none;
+
     font-size:14px;
+
+    color:
+        var(--texto);
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,.04);
+
 }
+
 
 .search input:focus{
-    border-color:var(--azul2);
+
+    border-color:
+        var(--azul2);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0,71,168,.10);
+
 }
-    .news-grid{
+
+
+/* =========================================================
+   TÍTULOS DE SECCIÓN
+========================================================= */
+
+.section-head{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin:
+        30px 0 17px;
+
+}
+
+
+.section-head h2{
+
+    color:
+        var(--azul);
+
+    font-size:25px;
+
+    line-height:1.1;
+
+}
+
+
+.section-head h2::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:5px;
+
+    height:24px;
+
+    margin-right:10px;
+
+    vertical-align:-4px;
+
+    border-radius:4px;
+
+    background:
+        var(--amarillo);
+
+}
+
+
+/* =========================================================
+   GRID DE NOTICIAS
+========================================================= */
+
+.news-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
 }
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
 
 .news-card{
+
     background:white;
-    border-radius:15px;
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:17px;
+
     overflow:hidden;
-    border:1px solid var(--borde);
-    box-shadow:0 3px 12px rgba(0,0,0,.06);
-    transition:transform .2s,box-shadow .2s;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    animation:
+        aparecer .45s ease both;
+
 }
+
 
 .news-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 9px 25px rgba(0,0,0,.12);
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 14px 32px
+        rgba(0,0,0,.13);
+
 }
+
+
+/* =========================================================
+   IMAGEN DE NOTICIA
+========================================================= */
 
 .news-image{
-    height:175px;
+
+    height:180px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
     background:
+
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(245,196,0,.25),
+            transparent 25%
+        ),
+
         linear-gradient(
             135deg,
             var(--azul),
             var(--azul2)
         );
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--amarillo);
-    font-weight:900;
-    font-size:25px;
+
 }
+
+
+.news-image::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:150px;
+
+    height:150px;
+
+    border-radius:50%;
+
+    border:
+        20px solid
+        rgba(245,196,0,.08);
+
+    right:-40px;
+
+    bottom:-60px;
+
+}
+
+
+.news-image span{
+
+    position:relative;
+
+    z-index:2;
+
+    color:
+        var(--amarillo);
+
+    font-size:24px;
+
+    font-weight:900;
+
+    letter-spacing:-1px;
+
+}
+
+
+/* =========================================================
+   CUERPO DE TARJETA
+========================================================= */
 
 .news-body{
-    padding:17px;
+
+    padding:18px;
+
 }
+
 
 .news-source{
-    color:var(--azul2);
+
+    color:
+        var(--azul2);
+
     font-size:11px;
+
     font-weight:900;
+
     text-transform:uppercase;
+
     margin-bottom:8px;
+
 }
+
 
 .news-title{
+
+    color:
+        var(--texto);
+
     font-size:18px;
+
     line-height:1.28;
+
     margin-bottom:10px;
+
 }
+
 
 .news-description{
-    color:#667085;
+
+    color:
+        var(--gris);
+
     font-size:13px;
-    line-height:1.5;
+
+    line-height:1.55;
+
 }
+
 
 .news-meta{
+
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
+
+    justify-content:space-between;
+
     gap:10px;
-    margin-top:15px;
-    padding-top:12px;
-    border-top:1px solid var(--borde);
+
+    margin-top:16px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid
+        var(--borde);
+
 }
+
 
 .news-date{
-    color:#98a2b3;
+
+    color:
+        var(--gris-claro);
+
     font-size:11px;
+
 }
+
 
 .read{
-    color:var(--azul);
+
+    color:
+        var(--azul);
+
     font-size:12px;
+
     font-weight:900;
+
     text-decoration:none;
+
 }
+
 
 .read:hover{
-    color:var(--azul2);
+
+    color:
+        var(--azul2);
+
 }
+
+
+/* =========================================================
+   ESTADOS
+========================================================= */
+
+.loading{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:55px 20px;
+
+    text-align:center;
+
+    color:
+        var(--gris);
+
+}
+
+
+.spinner{
+
+    width:34px;
+
+    height:34px;
+
+    margin:
+        0 auto 16px;
+
+    border:
+        4px solid
+        #dce3ed;
+
+    border-top-color:
+        var(--azul);
+
+    border-radius:50%;
+
+    animation:
+        girar .8s linear infinite;
+
+}
+
+
+.error{
+
+    background:
+        #fff1f1;
+
+    border:
+        1px solid
+        #ffcaca;
+
+    color:
+        #a40000;
+
+    padding:25px;
+
+    border-radius:15px;
+
+}
+
+
+.empty{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:40px;
+
+    text-align:center;
+
+    color:
+        var(--gris);
+
+}
+
+
+/* =========================================================
+   DESTACADAS
+========================================================= */
 
 .featured{
+
     display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:18px;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap:20px;
+
 }
 
+
 .featured-main{
+
+    min-height:250px;
+
+    border-radius:18px;
+
+    padding:27px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    color:white;
+
     background:
         linear-gradient(
             135deg,
             var(--azul),
             var(--azul2)
         );
-    color:white;
-    border-radius:17px;
-    padding:25px;
-    min-height:230px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
+
+    box-shadow:
+        var(--sombra);
+
 }
+
 
 .featured-main .news-source{
-    color:var(--amarillo);
+
+    color:
+        var(--amarillo);
+
 }
+
 
 .featured-main h3{
-    font-size:26px;
+
+    font-size:27px;
+
     line-height:1.18;
-    margin:8px 0;
+
+    margin:
+        8px 0 10px;
+
 }
+
 
 .featured-main p{
-    color:#dce7f8;
+
+    color:
+        #dce7f8;
+
     font-size:13px;
+
     line-height:1.5;
+
 }
+
 
 .featured-side{
+
     display:flex;
+
     flex-direction:column;
+
     gap:18px;
+
 }
+
 
 .featured-small{
+
     background:white;
-    border-radius:15px;
-    padding:18px;
-    border:1px solid var(--borde);
+
+    border:
+        1px solid
+        var(--borde);
+
+    border-radius:16px;
+
+    padding:19px;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0,0,0,.05);
+
 }
+
 
 .featured-small h3{
+
     font-size:17px;
+
     line-height:1.3;
+
     margin-top:7px;
+
 }
 
-.loading{
-    background:white;
-    border-radius:15px;
-    padding:45px 20px;
-    text-align:center;
-    color:#667085;
-}
 
-.spinner{
-    width:30px;
-    height:30px;
-    border:4px solid #d9e1ed;
-    border-top-color:var(--azul);
-    border-radius:50%;
-    animation:girar .8s linear infinite;
-    margin:0 auto 15px;
-}
-
-@keyframes girar{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-.error{
-    background:#fff1f1;
-    border:1px solid #ffcaca;
-    color:#a40000;
-    padding:22px;
-    border-radius:14px;
-}
-
-.empty{
-    background:white;
-    border-radius:14px;
-    padding:35px;
-    text-align:center;
-    color:#667085;
-}
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
-    background:#001a46;
-    color:#dce5f2;
-    padding:35px 18px;
+
+    background:
+        var(--azul-profundo);
+
+    color:
+        #dce5f2;
+
+    padding:
+        38px 20px;
+
     text-align:center;
+
 }
+
 
 .footer-logo{
+
     color:white;
-    font-size:25px;
+
+    font-size:26px;
+
     font-weight:900;
+
 }
+
 
 .footer-logo span{
-    color:var(--amarillo);
+
+    color:
+        var(--amarillo);
+
 }
+
 
 footer p{
+
     margin-top:8px;
+
     font-size:13px;
+
 }
 
+
 .footer-copy{
+
     margin-top:20px;
-    font-size:11px;
+
     color:#9eb0c8;
+
+    font-size:11px;
+
 }
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes girar{
+
+    to{
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+.reveal{
+
+    animation:
+        aparecer .5s ease both;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 
 @media(max-width:950px){
 
     .news-grid{
-        grid-template-columns:repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
 
+
     .featured{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
 
 }
 
+
 @media(max-width:650px){
 
     .header-top{
+
         min-height:70px;
-        padding:10px 13px;
+
+        padding:
+            10px 13px;
+
     }
+
 
     .logo-boca{
+
         width:46px;
+
         height:46px;
-        font-size:12px;
+
+        font-size:11px;
+
     }
+
 
     .logo-text{
+
         font-size:22px;
+
     }
 
-    .live{
-        display:none;
+
+    .logo-sub{
+
+        font-size:10px;
+
     }
+
+
+    .header-live{
+
+        display:none;
+
+    }
+
 
     .container{
-        padding:15px 12px 35px;
+
+        padding:
+            14px 12px 40px;
+
     }
+
 
     .hero{
-        min-height:280px;
-        padding:23px;
-        border-radius:16px;
+
+        min-height:285px;
+
+        padding:24px;
+
+        border-radius:17px;
+
     }
+
 
     .hero h1{
-        font-size:29px;
+
+        font-size:30px;
+
     }
+
+
+    .hero p{
+
+        font-size:14px;
+
+    }
+
 
     .hero::after{
-        font-size:60px;
+
+        font-size:65px;
+
     }
+
 
     .news-grid{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .section-head h2{
+
         font-size:21px;
+
     }
 
+
     .info-bar{
-        align-items:flex-start;
+
         flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .featured-main h3{
+
+        font-size:23px;
+
     }
 
 }
@@ -559,1104 +1433,268 @@ footer p{
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="header-top">
+    <div class="header-top">
 
-<div class="logo">
+        <div class="logo">
 
-<div class="logo-boca">
-CABJ
-</div>
+            <div class="logo-boca">
+                CABJ
+            </div>
 
-<div>
+            <div>
 
-<div class="logo-text">
-BOCA <span>24/7</span>
-</div>
+                <div class="logo-text">
+                    BOCA <span>24/7</span>
+                </div>
 
-<div class="logo-sub">
-Todo Boca. Todo el día.
-</div>
+                <div class="logo-sub">
+                    Todo Boca. Todo el día.
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div class="live">
 
-<span class="live-dot"></span>
+        <div class="header-live">
 
-Actualización automática
+            <span class="live-dot"></span>
 
-</div>
+            <span>
+                BOCA 24/7 EN VIVO
+            </span>
 
-</div>
+        </div>
 
-<nav class="nav">
+    </div>
 
-<div class="nav-inner">
 
-<button class="active"
-onclick="cambiarSeccion('Todas',this)">
-ÚLTIMAS
-</button>
+    <nav class="nav">
 
-<button onclick="cambiarSeccion('Boca',this)">
-BOCA
-</button>
+        <div class="nav-inner">
 
-<button onclick="cambiarSeccion('Mercado de pases',this)">
-MERCADO
-</button>
+            <button
+                class="active"
+                onclick="cambiarSeccion('Todas',this)"
+            >
+                ÚLTIMAS
+            </button>
 
-<button onclick="cambiarSeccion('Partidos',this)">
-PARTIDOS
-</button>
+            <button
+                onclick="cambiarSeccion('Boca',this)"
+            >
+                BOCA
+            </button>
 
-<button onclick="cambiarSeccion('Plantel',this)">
-PLANTEL
-</button>
+            <button
+                onclick="cambiarSeccion('Mercado de pases',this)"
+            >
+                MERCADO
+            </button>
 
-<button onclick="cambiarSeccion('Lesiones',this)">
-LESIONES
-</button>
+            <button
+                onclick="cambiarSeccion('Partidos',this)"
+            >
+                PARTIDOS
+            </button>
 
-<button onclick="cambiarSeccion('Básquet',this)">
-BÁSQUET
-</button>
+            <button
+                onclick="cambiarSeccion('Plantel',this)"
+            >
+                PLANTEL
+            </button>
 
-<button onclick="cambiarSeccion('Futsal',this)">
-FUTSAL
-</button>
+            <button
+                onclick="cambiarSeccion('Lesiones',this)"
+            >
+                LESIONES
+            </button>
 
-<button onclick="cambiarSeccion('Fútbol femenino',this)">
-FEMENINO
-</button>
+            <button
+                onclick="cambiarSeccion('Básquet',this)"
+            >
+                BÁSQUET
+            </button>
 
-<button onclick="cambiarSeccion('Reserva',this)">
-RESERVA
-</button>
+            <button
+                onclick="cambiarSeccion('Futsal',this)"
+            >
+                FUTSAL
+            </button>
 
-<button onclick="cambiarSeccion('Inferiores',this)">
-INFERIORES
-</button>
+            <button
+                onclick="cambiarSeccion('Fútbol femenino',this)"
+            >
+                FEMENINO
+            </button>
 
-<button onclick="cambiarSeccion('La Bombonera',this)">
-BOMBONERA
-</button>
+            <button
+                onclick="cambiarSeccion('Reserva',this)"
+            >
+                RESERVA
+            </button>
 
-</div>
+            <button
+                onclick="cambiarSeccion('Inferiores',this)"
+            >
+                INFERIORES
+            </button>
 
-</nav>
+            <button
+                onclick="cambiarSeccion('La Bombonera',this)"
+            >
+                BOMBONERA
+            </button>
+
+        </div>
+
+    </nav>
 
 </header>
+
+
 <main class="container">
 
-<section class="hero">
 
-<div class="hero-content">
+    <section class="hero">
 
-<div class="hero-label">
-BOCA JUNIORS
-</div>
+        <div class="hero-content">
 
-<h1>
-Toda la información del Xeneize.
-</h1>
+            <div class="hero-label">
+                BOCA JUNIORS
+            </div>
 
-<p>
-Noticias, mercado de pases, partidos,
-plantel y toda la actualidad de Boca Juniors.
-</p>
+            <h1>
+                Toda la información del Xeneize.
+            </h1>
 
-</div>
+            <p>
+                Noticias, mercado de pases, partidos,
+                plantel y toda la actualidad de Boca Juniors
+                en un solo lugar.
+            </p>
 
-</section>
+        </div>
 
-
-<div class="info-bar">
-
-<div class="info-left">
-
-<span class="live-dot"></span>
-
-<span id="estado">
-Conectando con BOCA 24/7...
-</span>
-
-</div>
-
-<div class="refresh" id="actualizacion">
-Esperando noticias...
-</div>
-
-</div>
+    </section>
 
 
-<div class="search">
+    <div class="info-bar">
 
-<input
-id="buscador"
-type="search"
-placeholder="Buscar noticias de Boca..."
-autocomplete="off"
->
+        <div class="info-left">
 
-</div>
+            <span class="live-dot"></span>
 
+            <span id="estado">
+                Conectando con BOCA 24/7...
+            </span>
 
-<section>
-
-<div class="section-head">
-
-<h2 id="titulo-seccion">
-Últimas noticias
-</h2>
-
-</div>
-
-<div id="noticias">
-
-<div class="loading">
-
-<div class="spinner"></div>
-
-Cargando noticias de Boca...
-
-</div>
-
-</div>
-
-</section>
+        </div>
 
 
-<section id="destacadas-section">
+        <div
+            class="refresh"
+            id="actualizacion"
+        >
+            Esperando noticias...
+        </div>
 
-<div class="section-head">
+    </div>
 
-<h2>
-Información destacada
-</h2>
 
-</div>
+    <div class="breaking">
 
-<div id="destacadas"></div>
+        <div class="breaking-label">
+            ÚLTIMA HORA
+        </div>
 
-</section>
+        <div
+            class="breaking-text"
+            id="ultima-noticia"
+        >
+            Cargando actualidad de Boca...
+        </div>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            id="buscador"
+            type="search"
+            placeholder="Buscar noticias de Boca..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <section>
+
+        <div class="section-head">
+
+            <h2 id="titulo-seccion">
+                Últimas noticias
+            </h2>
+
+        </div>
+
+
+        <div id="noticias">
+
+            <div class="loading">
+
+                <div class="spinner"></div>
+
+                Cargando las últimas noticias...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="destacadas-section"
+    >
+
+        <div class="section-head">
+
+            <h2>
+                Información destacada
+            </h2>
+
+        </div>
+
+
+        <div id="destacadas"></div>
+
+    </section>
+
 
 </main>
 
 
 <footer>
 
-<div class="footer-logo">
-BOCA <span>24/7</span>
-</div>
+    <div class="footer-logo">
+        BOCA <span>24/7</span>
+    </div>
 
-<p>
-Todo Boca. Todo el día.
-</p>
+    <p>
+        Todo Boca. Todo el día.
+    </p>
 
-<div class="footer-copy">
-BOCA 24/7 · Información y actualidad del Xeneize
-</div>
+    <div class="footer-copy">
+        BOCA 24/7 · Información y actualidad del Xeneize
+    </div>
 
 </footer>
-
-
-<script>
-
-const API = "./noticias.json";
-
-let todasLasNoticias = [];
-
-let seccionActual = "Todas";
-
-
-async function cargarNoticias(){
-
-const contenedor =
-document.getElementById("noticias");
-
-const estado =
-document.getElementById("estado");
-
-try{
-
-estado.textContent =
-"Actualizando noticias...";
-
-
-const respuesta =
-await fetch(
-API + "?ts=" + Date.now(),
-{
-method:"GET",
-cache:"no-store"
-}
-);
-
-
-if(!respuesta.ok){
-
-throw new Error(
-"No se pudo cargar noticias.json"
-);
-
-}
-
-
-const datos =
-await respuesta.json();
-
-
-if(!Array.isArray(datos)){
-
-throw new Error(
-"noticias.json no tiene un formato válido."
-);
-
-}
-
-
-/*
-NORMALIZAMOS Y ELIMINAMOS
-REPETIDAS
-*/
-
-todasLasNoticias =
-eliminarDuplicados(datos);
-
-
-todasLasNoticias.sort(
-(a,b)=>{
-
-const fechaA =
-new Date(
-a.fecha_iso ||
-a.fecha ||
-a.pubDate ||
-0
-).getTime();
-
-
-const fechaB =
-new Date(
-b.fecha_iso ||
-b.fecha ||
-b.pubDate ||
-0
-).getTime();
-
-
-return fechaB - fechaA;
-
-}
-);
-
-
-estado.textContent =
-"Noticias actualizadas correctamente";
-
-
-document.getElementById(
-"actualizacion"
-).textContent =
-"Última actualización: " +
-horaActual();
-
-
-mostrarNoticias();
-
-mostrarDestacadas();
-
-
-}catch(error){
-
-console.error(error);
-
-
-estado.textContent =
-"Error al cargar las noticias";
-
-
-contenedor.innerHTML = `
-
-<div class="error">
-
-<strong>
-No pudimos cargar las noticias.
-</strong>
-
-<br><br>
-
-Verificá que el archivo
-<strong>noticias.json</strong>
-esté publicado junto al index.html.
-
-<br><br>
-
-<small>
-${escapeHTML(error.message)}
-</small>
-
-</div>
-
-`;
-
-}
-
-}
-
-
-/*
-=====================================================
-ELIMINAR REPETIDAS
-=====================================================
-*/
-
-function eliminarDuplicados(lista){
-
-const mapa = new Map();
-
-
-for(
-const noticia of lista
-){
-
-if(!noticia){
-continue;
-}
-
-
-const titulo =
-noticia.titulo ||
-noticia.title ||
-"";
-
-
-if(!titulo.trim()){
-continue;
-}
-
-
-const clave =
-normalizarTitulo(titulo);
-
-
-if(!clave){
-continue;
-}
-
-
-/*
-SI YA EXISTE EL MISMO TÍTULO,
-NO LO VOLVEMOS A MOSTRAR.
-*/
-
-if(!mapa.has(clave)){
-
-mapa.set(
-clave,
-noticia
-);
-
-}
-
-}
-
-
-return Array.from(
-mapa.values()
-);
-
-}
-
-
-/*
-=====================================================
-NORMALIZAR TÍTULO
-=====================================================
-*/
-
-function normalizarTitulo(titulo){
-
-let texto =
-String(titulo || "")
-.toLowerCase()
-.trim();
-
-
-/*
-QUITAR FUENTE AL FINAL
-
-Ejemplo:
-
-Boca confirmó ... - Todo Jujuy
-
-queda:
-
-Boca confirmó ...
-*/
-
-texto =
-texto.replace(
-/\s+-\s+[^-]+$/,
-""
-);
-
-
-/*
-QUITAR ACENTOS
-*/
-
-texto =
-texto.normalize("NFD")
-.replace(
-/[\u0300-\u036f]/g,
-""
-);
-
-
-/*
-QUITAR SIGNOS
-*/
-
-texto =
-texto.replace(
-/[^a-z0-9\s]/g,
-" "
-);
-
-
-/*
-NORMALIZAR ESPACIOS
-*/
-
-texto =
-texto.replace(
-/\s+/g,
-" "
-)
-.trim();
-
-
-return texto;
-
-}
-
-
-/*
-=====================================================
-NORMALIZAR NOTICIA
-=====================================================
-*/
-
-function normalizarNoticia(n){
-
-return {
-
-titulo:
-n.titulo ||
-n.title ||
-"Noticias de Boca Juniors",
-
-fuente:
-n.fuente ||
-n.source ||
-"BOCA 24/7",
-
-contenido:
-n.contenido ||
-n.descripcion ||
-n.description ||
-"Últimas novedades de Boca Juniors.",
-
-link:
-n.link ||
-n.url ||
-"#",
-
-categoria:
-n.categoria ||
-"Boca",
-
-fecha_iso:
-n.fecha_iso ||
-n.fecha ||
-n.pubDate ||
-""
-
-};
-
-}
-
-
-/*
-=====================================================
-MOSTRAR NOTICIAS
-=====================================================
-*/
-
-function mostrarNoticias(){
-
-const contenedor =
-document.getElementById(
-"noticias"
-);
-
-
-const buscador =
-document.getElementById(
-"buscador"
-)
-.value
-.toLowerCase()
-.trim();
-
-
-let lista =
-todasLasNoticias.map(
-normalizarNoticia
-);
-
-
-/*
-FILTRO CATEGORÍA
-*/
-
-if(
-seccionActual !== "Todas"
-){
-
-lista =
-lista.filter(
-n => {
-
-return (
-n.categoria
-.toLowerCase()
-===
-seccionActual
-.toLowerCase()
-);
-
-}
-);
-
-}
-
-
-/*
-FILTRO BUSCADOR
-*/
-
-if(buscador){
-
-lista =
-lista.filter(
-n => {
-
-const texto = (
-
-n.titulo +
-" " +
-n.fuente +
-" " +
-n.contenido
-
-)
-.toLowerCase();
-
-
-return texto.includes(
-buscador
-);
-
-}
-);
-
-}
-
-
-if(!lista.length){
-
-contenedor.innerHTML = `
-
-<div class="empty">
-
-No encontramos noticias
-para esta sección.
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-contenedor.innerHTML = `
-
-<div class="news-grid">
-
-${lista
-.map(crearTarjeta)
-.join("")
-}
-
-</div>
-
-`;
-
-}
-
-
-/*
-=====================================================
-CAMBIAR SECCIÓN
-=====================================================
-*/
-
-function cambiarSeccion(
-seccion,
-boton
-){
-
-seccionActual =
-seccion;
-
-
-document
-.querySelectorAll(
-".nav button"
-)
-.forEach(
-b =>
-b.classList.remove(
-"active"
-)
-);
-
-
-boton.classList.add(
-"active"
-);
-
-
-document.getElementById(
-"titulo-seccion"
-).textContent =
-
-seccion === "Todas"
-? "Últimas noticias"
-: seccion;
-
-
-mostrarNoticias();
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-    /*
-=====================================================
-CREAR TARJETA
-=====================================================
-*/
-
-function crearTarjeta(n){
-
-const noticia =
-normalizarNoticia(n);
-
-
-const titulo =
-escapeHTML(
-noticia.titulo
-);
-
-
-const fuente =
-escapeHTML(
-noticia.fuente
-);
-
-
-const contenido =
-escapeHTML(
-noticia.contenido
-);
-
-
-const fecha =
-formatearFecha(
-noticia.fecha_iso
-);
-
-
-const link =
-validarLink(
-noticia.link
-);
-
-
-return `
-
-<article class="news-card">
-
-<div class="news-image">
-BOCA 24/7
-</div>
-
-
-<div class="news-body">
-
-<div class="news-source">
-${fuente}
-</div>
-
-
-<h3 class="news-title">
-${titulo}
-</h3>
-
-
-<p class="news-description">
-${contenido}
-</p>
-
-
-<div class="news-meta">
-
-<span class="news-date">
-${fecha}
-</span>
-
-
-${
-link !== "#"
-?
-`
-
-<a
-class="read"
-href="${link}"
-target="_blank"
-rel="noopener noreferrer"
->
-Ver fuente →
-</a>
-
-`
-:
-""
-}
-
-</div>
-
-</div>
-
-</article>
-
-`;
-
-}
-
-
-/*
-=====================================================
-DESTACADAS
-=====================================================
-*/
-
-function mostrarDestacadas(){
-
-const contenedor =
-document.getElementById(
-"destacadas"
-);
-
-
-if(
-!todasLasNoticias.length
-){
-
-contenedor.innerHTML =
-"";
-
-return;
-
-}
-
-
-const lista =
-todasLasNoticias
-.map(normalizarNoticia)
-.slice(0,3);
-
-
-const principal =
-lista[0];
-
-
-const secundarias =
-lista.slice(1);
-
-
-contenedor.innerHTML = `
-
-<div class="featured">
-
-
-<div class="featured-main">
-
-<div class="news-source">
-
-${escapeHTML(
-principal.fuente
-)}
-
-</div>
-
-
-<h3>
-
-${escapeHTML(
-principal.titulo
-)}
-
-</h3>
-
-
-<p>
-
-${escapeHTML(
-principal.contenido
-)}
-
-</p>
-
-</div>
-
-
-<div class="featured-side">
-
-${secundarias
-.map(
-n => `
-
-<div class="featured-small">
-
-<div class="news-source">
-${escapeHTML(n.fuente)}
-</div>
-
-<h3>
-${escapeHTML(n.titulo)}
-</h3>
-
-</div>
-
-`
-)
-.join("")
-}
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/*
-=====================================================
-FECHA
-=====================================================
-*/
-
-function formatearFecha(fecha){
-
-if(!fecha){
-return "";
-}
-
-
-const d =
-new Date(fecha);
-
-
-if(
-isNaN(
-d.getTime()
-)
-){
-
-return escapeHTML(
-String(fecha)
-);
-
-}
-
-
-return d.toLocaleString(
-"es-AR",
-{
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit"
-}
-);
-
-}
-
-
-/*
-=====================================================
-HORA
-=====================================================
-*/
-
-function horaActual(){
-
-return new Date()
-.toLocaleTimeString(
-"es-AR",
-{
-hour:"2-digit",
-minute:"2-digit"
-}
-);
-
-}
-
-
-/*
-=====================================================
-SEGURIDAD HTML
-=====================================================
-*/
-
-function escapeHTML(valor){
-
-return String(
-valor || ""
-)
-.replace(
-/&/g,
-"&amp;"
-)
-.replace(
-/</g,
-"&lt;"
-)
-.replace(
-/>/g,
-"&gt;"
-)
-.replace(
-/"/g,
-"&quot;"
-)
-.replace(
-/'/g,
-"&#039;"
-);
-
-}
-
-
-/*
-=====================================================
-VALIDAR LINK
-=====================================================
-*/
-
-function validarLink(link){
-
-if(!link){
-return "#";
-}
-
-
-try{
-
-const url =
-new URL(link);
-
-
-if(
-url.protocol !== "http:" &&
-url.protocol !== "https:"
-){
-
-return "#";
-
-}
-
-
-return escapeHTML(
-url.href
-);
-
-
-}catch(error){
-
-return "#";
-
-}
-
-}
-
-
-/*
-=====================================================
-BUSCADOR
-=====================================================
-*/
-
-document
-.getElementById(
-"buscador"
-)
-.addEventListener(
-"input",
-mostrarNoticias
-);
-
-
-/*
-=====================================================
-INICIAR
-=====================================================
-*/
-
-cargarNoticias();
-
-
-/*
-ACTUALIZAR CADA 5 MINUTOS
-*/
-
-setInterval(
-cargarNoticias,
-5 * 60 * 1000
-);
-
-</script>
-
-</body>
-
-</html>
