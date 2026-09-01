@@ -8,7 +8,8 @@ Genera noticias.json con datos de Boca Juniors
 
 import json
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
 import os
 
@@ -27,10 +28,15 @@ def limpiar_texto(texto):
     """Limpia HTML y entidades XML del texto"""
     if not texto:
         return ""
-    
+
     # Remover tags HTML
-    texto = ET.fromstring(f"<root>{texto}</root>").text or ""
-    
+    try:
+        texto = ET.fromstring(f"<root>{texto}</root>").text or ""
+    except ET.ParseError:
+        # Si el texto trae caracteres que rompen el XML (& sueltos, etc.)
+        # lo dejamos tal cual y solo limpiamos entidades más abajo.
+        pass
+
     # Decodificar entidades
     entidades = {
         "&amp;": "&",
@@ -43,10 +49,10 @@ def limpiar_texto(texto):
         "&#8211;": "–",
         "&#8230;": "…"
     }
-    
+
     for entidad, caracter in entidades.items():
         texto = texto.replace(entidad, caracter)
-    
+
     return texto.strip()
 
 def extraer_de_xml(texto, etiqueta):
@@ -65,22 +71,21 @@ def extraer_de_xml(texto, etiqueta):
 def obtener_noticias():
     """Obtiene noticias de Google News RSS"""
     noticias = []
-    
+
     try:
         headers = {"User-Agent": "Mozilla/5.0 BOCA247"}
         response = requests.get(URL_GOOGLE_NEWS, headers=headers, timeout=10)
         response.encoding = 'utf-8'
-        
+
         if response.status_code != 200:
             print(f"⚠️ Error al obtener noticias: {response.status_code}")
             return []
-        
+
         # Parsear RSS
         root = ET.fromstring(response.content)
-        namespace = {'': 'http://www.rss.org/version/2.0/'}
-        
+
         items = root.findall('.//item')
-        
+
         for item in items[:30]:  # Límite de 30 noticias
             try:
                 titulo_elem = item.find('title')
@@ -88,22 +93,22 @@ def obtener_noticias():
                 desc_elem = item.find('description')
                 pubdate_elem = item.find('pubDate')
                 source_elem = item.find('source')
-                
+
                 titulo = limpiar_texto(titulo_elem.text if titulo_elem is not None else "")
                 link = link_elem.text if link_elem is not None else ""
                 descripcion = limpiar_texto(desc_elem.text if desc_elem is not None else "")
                 fecha_pub = pubdate_elem.text if pubdate_elem is not None else ""
                 fuente = limpiar_texto(source_elem.text if source_elem is not None else "Google Noticias")
-                
+
                 if not titulo:
                     continue
-                
+
                 # Clasificar por categoría
                 categoria = clasificar_noticia(titulo.lower())
-                
+
                 # Convertir fecha
                 fecha_iso = convertir_fecha_rss(fecha_pub)
-                
+
                 noticia = {
                     "titulo": titulo,
                     "fuente": fuente or "Google Noticias",
@@ -112,16 +117,16 @@ def obtener_noticias():
                     "categoria": categoria,
                     "fecha_iso": fecha_iso
                 }
-                
+
                 noticias.append(noticia)
-                
+
             except Exception as e:
                 print(f"⚠️ Error procesando item: {e}")
                 continue
-        
+
         print(f"✅ Obtenidas {len(noticias)} noticias de Google News")
         return noticias
-    
+
     except requests.exceptions.RequestException as e:
         print(f"❌ Error de conexión: {e}")
         return []
@@ -129,89 +134,128 @@ def obtener_noticias():
 def clasificar_noticia(titulo):
     """Clasifica la noticia por categoría"""
     palabras_clave = {
-        "FÚTBOL": ["futbol", "partido", "gol", "campeonato", "liga", "torneo", "entrenamiento"],
+        "COPA ARGENTINA": ["copa argentina", "velez", "vélez"],
+        "COPA SUDAMERICANA": ["sudamericana", "sao paulo", "são paulo", "san pablo"],
+        "MERCADO DE PASES": ["mercado", "fichaje", "refuerzo", "venta", "transferencia", "monza", "zeballos"],
+        "PLANTEL": ["lesion", "lesión", "operado", "operación", "baja", "bareiro"],
         "FEMENINO": ["femenino", "mujeres", "damas", "gladiadoras"],
         "RESERVA": ["reserva", "reservistas"],
         "JUVENILES": ["juvenil", "juveniles", "sub-17", "sub-20", "cantera"],
-        "BÁSQUET": ["basquet", "básquet", "baloncesto", "bombonera"],
+        "BÁSQUET": ["basquet", "básquet", "baloncesto"],
         "VÓLEY": ["voleibol", "voley", "vóley"],
         "FUTSAL": ["futsal", "futsala"],
-        "INSTITUCIONAL": ["boca", "club", "directiva", "presidente", "comunicado"]
+        "TORNEO CLAUSURA": ["clausura", "torneo", "liga profesional", "playoffs"],
+        "INSTITUCIONAL": ["club", "directiva", "riquelme", "comunicado"]
     }
-    
+
     for categoria, palabras in palabras_clave.items():
         if any(palabra in titulo for palabra in palabras):
             return categoria
-    
+
     return "FÚTBOL"  # Por defecto
 
 def convertir_fecha_rss(fecha_str):
-    """Convierte fecha RSS a ISO 8601"""
+    """Convierte fecha RSS (RFC 2822, ej: 'Fri, 30 Aug 2024 15:30:00 GMT') a ISO 8601 UTC"""
     if not fecha_str:
-        return datetime.utcnow().isoformat() + "Z"
-    
+        return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
     try:
-        # Formato típico: "Fri, 30 Aug 2024 15:30:00 GMT"
-        fecha = datetime.strptime(fecha_str, "%a, %d %b %Y %H:%M:%S %Z")
-        return fecha.isoformat() + "Z"
-    except:
-        try:
-            # Otro formato posible
-            fecha = datetime.strptime(fecha_str.split("GMT")[0].strip(), "%a, %d %b %Y %H:%M:%S")
-            return fecha.isoformat() + "Z"
-        except:
-            return datetime.utcnow().isoformat() + "Z"
+        fecha = parsedate_to_datetime(fecha_str)
+        if fecha.tzinfo is None:
+            fecha = fecha.replace(tzinfo=timezone.utc)
+        fecha = fecha.astimezone(timezone.utc)
+        return fecha.isoformat().replace("+00:00", "Z")
+    except Exception:
+        return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
 
 # ============================================================
 # DATOS ESTÁTICOS (Para secciones sin fuente externa)
+# Actualizado manualmente al 01/09/2026 19:24 hs (ART)
 # ============================================================
 
 VIDEOS_DEFAULT = [
     {
-        "titulo": "Resumen del último partido de Boca",
-        "descripcion": "Compacto del encuentro con los goles y mejores jugadas.",
-        "link": "https://youtube.com/watch?v=boca",
-        "duracion": "12:34",
-        "fecha_iso": datetime.utcnow().isoformat() + "Z"
+        "titulo": "Así fue la emotiva despedida de Zeballos en Boca Predio",
+        "descripcion": "El video institucional con el que el club se despidió del Changuito tras su venta al Monza de Italia.",
+        "link": "https://twitter.com/BocaJrsOficial",
+        "duracion": "01:45",
+        "fecha_iso": "2026-09-01T17:40:00-03:00"
     },
     {
-        "titulo": "Entrevista con el técnico",
-        "descripcion": "Análisis de la campaña y próximos objetivos.",
-        "link": "https://youtube.com/watch?v=tecnico",
-        "duracion": "18:45",
-        "fecha_iso": (datetime.utcnow()).isoformat() + "Z"
+        "titulo": "La probable formación de Arruabarrena para enfrentar a Vélez",
+        "descripcion": "Análisis del equipo pensado para los octavos de final de la Copa Argentina en Córdoba.",
+        "link": "https://www.tycsports.com",
+        "duracion": "08:20",
+        "fecha_iso": "2026-09-01T15:00:00-03:00"
     }
 ]
 
 PARTIDOS_DEFAULT = [
     {
-        "fecha_iso": "2024-09-08T19:00:00Z",
-        "hora": "19:00",
+        "fecha_iso": "2026-09-02T21:15:00-03:00",
+        "hora": "21:15",
         "equipo_local": "Boca",
-        "equipo_visitante": "Independiente",
+        "equipo_visitante": "Vélez Sarsfield",
         "goles_local": None,
         "goles_visitante": None,
         "estado": "PROGRAMADO",
-        "torneo": "CAMPEONATO",
-        "estadio": "La Bombonera",
-        "arbitro": "Arbitro confirmado",
+        "torneo": "COPA ARGENTINA - OCTAVOS DE FINAL",
+        "estadio": "Estadio Mario Alberto Kempes",
+        "ciudad": "Córdoba",
+        "arbitro": "Sebastián Zunino",
+        "asistencia": None
+    },
+    {
+        "fecha_iso": "2026-09-06T15:00:00-03:00",
+        "hora": "15:00",
+        "equipo_local": "Gimnasia (Mendoza)",
+        "equipo_visitante": "Boca",
+        "goles_local": None,
+        "goles_visitante": None,
+        "estado": "PROGRAMADO",
+        "torneo": "TORNEO CLAUSURA",
+        "estadio": "Estadio Víctor Antonio Legrotaglie",
+        "ciudad": "Mendoza",
+        "arbitro": None,
+        "asistencia": None
+    },
+    {
+        "fecha_iso": "2026-09-08T21:30:00-03:00",
+        "hora": "21:30",
+        "equipo_local": "Boca",
+        "equipo_visitante": "São Paulo",
+        "goles_local": None,
+        "goles_visitante": None,
+        "estado": "PROGRAMADO",
+        "torneo": "COPA SUDAMERICANA - CUARTOS DE FINAL (IDA)",
+        "estadio": "La Bombonera (Alberto J. Armando)",
+        "ciudad": "Buenos Aires",
+        "arbitro": None,
         "asistencia": None
     }
 ]
 
-TABLA_DEFAULT = [
+# Último resultado real: Boca 1-0 Lanús, Torneo Clausura, Fecha 7 (28/08/2026), gol de Tomás Belmonte
+RESULTADOS_DEFAULT = [
     {
-        "posicion": 1,
-        "equipo": "Boca",
-        "pj": 15, "g": 10, "e": 3, "p": 2,
-        "gf": 28, "gc": 12, "dif": 16, "pts": 33
-    },
-    {
-        "posicion": 2,
-        "equipo": "River",
-        "pj": 15, "g": 9, "e": 4, "p": 2,
-        "gf": 26, "gc": 10, "dif": 16, "pts": 31
+        "fecha_iso": "2026-08-28T21:00:00-03:00",
+        "equipo_local": "Boca",
+        "equipo_visitante": "Lanús",
+        "goles_local": 1,
+        "goles_visitante": 0,
+        "estado": "FINALIZADO",
+        "torneo": "TORNEO CLAUSURA - FECHA 7",
+        "estadio": "La Bombonera (Alberto J. Armando)",
+        "goleador": "Tomás Belmonte (90'+3)"
     }
+]
+
+# Tabla de posiciones real: Torneo Clausura 2026, Zona A, tras la Fecha 7
+TABLA_DEFAULT = [
+    {"posicion": 1, "equipo": "Instituto", "pts": 16},
+    {"posicion": 2, "equipo": "Gimnasia (Mendoza)", "pts": 15},
+    {"posicion": 7, "equipo": "Independiente", "pts": 10},
+    {"posicion": 8, "equipo": "Boca", "pts": 10}
 ]
 
 STREAMING_DEFAULT = [
@@ -225,9 +269,9 @@ STREAMING_DEFAULT = [
 
 HINCHAS_DEFAULT = [
     {
-        "titulo": "¿Quién debería ser el próximo refuerzo?",
-        "opciones": ["Delantero", "Mediocampista", "Defensor", "Arquero"],
-        "resultado": "57% Delantero | 23% Mediocampista | 15% Defensor | 5% Arquero"
+        "titulo": "¿Cómo te imaginás a Boca-Vélez por la Copa Argentina?",
+        "opciones": ["Gana Boca", "Empate (define penales)", "Gana Vélez"],
+        "resultado": "Encuesta abierta - se actualiza en vivo"
     }
 ]
 
@@ -237,33 +281,34 @@ HINCHAS_DEFAULT = [
 
 def generar_json_completo():
     """Genera el archivo noticias.json completo"""
-    
+
     print("🔄 Sincronizando BOCA 24/7...")
-    
+
     noticias = obtener_noticias()
-    
+
     data = {
-        "actualizado": datetime.utcnow().isoformat() + "Z",
+        "actualizado": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "noticias": noticias,
         "videos": VIDEOS_DEFAULT,
         "partidos": PARTIDOS_DEFAULT,
+        "resultados": RESULTADOS_DEFAULT,
         "tabla": TABLA_DEFAULT,
         "streaming": STREAMING_DEFAULT,
         "hinchas": HINCHAS_DEFAULT
     }
-    
+
     # Guardar JSON
     try:
         with open(ARCHIVO_SALIDA, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        
+
         print(f"✅ noticias.json actualizado con éxito")
         print(f"   - {len(noticias)} noticias")
         print(f"   - {len(VIDEOS_DEFAULT)} videos")
         print(f"   - {len(PARTIDOS_DEFAULT)} partidos")
         print(f"   - {len(TABLA_DEFAULT)} equipos en tabla")
         return True
-        
+
     except Exception as e:
         print(f"❌ Error al guardar: {e}")
         return False
@@ -274,4 +319,3 @@ def generar_json_completo():
 
 if __name__ == "__main__":
     generar_json_completo()
-    
