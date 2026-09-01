@@ -1,767 +1,277 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+BOCA 24/7 - Actualizador de Noticias
+Genera noticias.json con datos de Boca Juniors
+"""
+
 import json
-import re
-import html
-import feedparser
-
-from datetime import datetime, timezone
-from urllib.parse import quote
-
+import requests
+from datetime import datetime
+from xml.etree import ElementTree as ET
+import os
 
 # ============================================================
-# CONFIGURACIÓN DE BÚSQUEDAS
+# CONFIGURACIÓN
 # ============================================================
 
-CATEGORIAS = {
-
-    "Boca": [
-        "Boca Juniors"
-    ],
-
-    "Sudamericana": [
-        "Boca Juniors Copa Sudamericana"
-    ],
-
-    "Mercado de pases": [
-        "Boca Juniors mercado de pases"
-    ],
-
-    "Lesiones": [
-        "Boca Juniors lesiones"
-    ],
-
-    "Básquet": [
-        "Boca Juniors básquet"
-    ],
-
-    "Futsal": [
-        "Boca Juniors futsal"
-    ],
-
-    "Reserva": [
-        "Boca Juniors Reserva"
-    ],
-
-    "Fútbol femenino": [
-        "Boca Juniors fútbol femenino"
-    ],
-
-    "Inferiores": [
-        "Boca Juniors inferiores"
-    ],
-
-    "Vóley": [
-        "Boca Juniors vóley"
-    ],
-
-    "La Bombonera": [
-        "Boca Juniors Bombonera"
-    ]
-}
-
+URL_GOOGLE_NEWS = "https://news.google.com/rss/search?q=Boca+Juniors&hl=es-419&gl=AR&ceid=AR:es-419"
+ARCHIVO_SALIDA = "noticias.json"
 
 # ============================================================
-# CANTIDAD MÁXIMA
-# ============================================================
-
-MAX_NOTICIAS_POR_BUSQUEDA = 20
-
-MAX_NOTICIAS_FINALES = 80
-
-
-# ============================================================
-# LIMPIAR TEXTO
+# FUNCIONES AUXILIARES
 # ============================================================
 
 def limpiar_texto(texto):
-
+    """Limpia HTML y entidades XML del texto"""
     if not texto:
         return ""
-
-    texto = html.unescape(
-        str(texto)
-    )
-
-    texto = re.sub(
-        r"<[^>]+>",
-        " ",
-        texto
-    )
-
-    texto = re.sub(
-        r"https?://\S+",
-        "",
-        texto
-    )
-
-    texto = re.sub(
-        r"\s+",
-        " ",
-        texto
-    )
-
-    return texto.strip()
-
-
-# ============================================================
-# NORMALIZAR TEXTO PARA COMPARAR
-# ============================================================
-
-def normalizar_texto(texto):
-
-    texto = limpiar_texto(
-        texto
-    ).lower()
-
-    reemplazos = {
-
-        "á": "a",
-        "é": "e",
-        "í": "i",
-        "ó": "o",
-        "ú": "u",
-        "ü": "u",
-        "ñ": "n"
+    
+    # Remover tags HTML
+    texto = ET.fromstring(f"<root>{texto}</root>").text or ""
+    
+    # Decodificar entidades
+    entidades = {
+        "&amp;": "&",
+        "&quot;": '"',
+        "&#39;": "'",
+        "&apos;": "'",
+        "&lt;": "<",
+        "&gt;": ">",
+        "&#8217;": "'",
+        "&#8211;": "–",
+        "&#8230;": "…"
     }
-
-    for original, nuevo in reemplazos.items():
-
-        texto = texto.replace(
-            original,
-            nuevo
-        )
-
-    texto = re.sub(
-        r"[^a-z0-9\s]",
-        " ",
-        texto
-    )
-
-    texto = re.sub(
-        r"\s+",
-        " ",
-        texto
-    )
-
+    
+    for entidad, caracter in entidades.items():
+        texto = texto.replace(entidad, caracter)
+    
     return texto.strip()
 
+def extraer_de_xml(texto, etiqueta):
+    """Extrae contenido de una etiqueta XML"""
+    try:
+        raiz = ET.fromstring(f"<root>{texto}</root>")
+        elem = raiz.find(f".//{{{raiz.tag.split('}')[0][1:]}}}{etiqueta}" if '}' in raiz.tag else f".//{etiqueta}")
+        return elem.text if elem is not None else ""
+    except:
+        # Fallback con regex si hay error en parsing
+        import re
+        patron = f"<{etiqueta}(?:[^>]*)>([\\s\\S]*?)<\\/{etiqueta}>"
+        resultado = re.search(patron, texto, re.IGNORECASE)
+        return resultado.group(1) if resultado else ""
 
-# ============================================================
-# NORMALIZAR TÍTULO
-# ============================================================
+def obtener_noticias():
+    """Obtiene noticias de Google News RSS"""
+    noticias = []
+    
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 BOCA247"}
+        response = requests.get(URL_GOOGLE_NEWS, headers=headers, timeout=10)
+        response.encoding = 'utf-8'
+        
+        if response.status_code != 200:
+            print(f"⚠️ Error al obtener noticias: {response.status_code}")
+            return []
+        
+        # Parsear RSS
+        root = ET.fromstring(response.content)
+        namespace = {'': 'http://www.rss.org/version/2.0/'}
+        
+        items = root.findall('.//item')
+        
+        for item in items[:30]:  # Límite de 30 noticias
+            try:
+                titulo_elem = item.find('title')
+                link_elem = item.find('link')
+                desc_elem = item.find('description')
+                pubdate_elem = item.find('pubDate')
+                source_elem = item.find('source')
+                
+                titulo = limpiar_texto(titulo_elem.text if titulo_elem is not None else "")
+                link = link_elem.text if link_elem is not None else ""
+                descripcion = limpiar_texto(desc_elem.text if desc_elem is not None else "")
+                fecha_pub = pubdate_elem.text if pubdate_elem is not None else ""
+                fuente = limpiar_texto(source_elem.text if source_elem is not None else "Google Noticias")
+                
+                if not titulo:
+                    continue
+                
+                # Clasificar por categoría
+                categoria = clasificar_noticia(titulo.lower())
+                
+                # Convertir fecha
+                fecha_iso = convertir_fecha_rss(fecha_pub)
+                
+                noticia = {
+                    "titulo": titulo,
+                    "fuente": fuente or "Google Noticias",
+                    "contenido": descripcion[:200] if descripcion else "Información del mundo Xeneize",
+                    "link": link,
+                    "categoria": categoria,
+                    "fecha_iso": fecha_iso
+                }
+                
+                noticias.append(noticia)
+                
+            except Exception as e:
+                print(f"⚠️ Error procesando item: {e}")
+                continue
+        
+        print(f"✅ Obtenidas {len(noticias)} noticias de Google News")
+        return noticias
+    
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error de conexión: {e}")
+        return []
 
-def normalizar_titulo(titulo):
+def clasificar_noticia(titulo):
+    """Clasifica la noticia por categoría"""
+    palabras_clave = {
+        "FÚTBOL": ["futbol", "partido", "gol", "campeonato", "liga", "torneo", "entrenamiento"],
+        "FEMENINO": ["femenino", "mujeres", "damas", "gladiadoras"],
+        "RESERVA": ["reserva", "reservistas"],
+        "JUVENILES": ["juvenil", "juveniles", "sub-17", "sub-20", "cantera"],
+        "BÁSQUET": ["basquet", "básquet", "baloncesto", "bombonera"],
+        "VÓLEY": ["voleibol", "voley", "vóley"],
+        "FUTSAL": ["futsal", "futsala"],
+        "INSTITUCIONAL": ["boca", "club", "directiva", "presidente", "comunicado"]
+    }
+    
+    for categoria, palabras in palabras_clave.items():
+        if any(palabra in titulo for palabra in palabras):
+            return categoria
+    
+    return "FÚTBOL"  # Por defecto
 
-    titulo = normalizar_texto(
-        titulo
-    )
-
-    # Quitar fuentes habituales al final.
-    # Ejemplo:
-    #
-    # Boca confirmó la salida de Zeballos - Todo Jujuy
-    #
-    # queda:
-    #
-    # boca confirmo la salida de zeballos
-
-    titulo = re.sub(
-        r"\s+-\s+[^-]+$",
-        "",
-        titulo
-    ).strip()
-
-    return titulo
-
-
-# ============================================================
-# EXTRAER FUENTE
-# ============================================================
-
-def obtener_fuente(entrada):
-
-    fuente = ""
-
-    source = entrada.get(
-        "source"
-    )
-
-    if source:
-
+def convertir_fecha_rss(fecha_str):
+    """Convierte fecha RSS a ISO 8601"""
+    if not fecha_str:
+        return datetime.utcnow().isoformat() + "Z"
+    
+    try:
+        # Formato típico: "Fri, 30 Aug 2024 15:30:00 GMT"
+        fecha = datetime.strptime(fecha_str, "%a, %d %b %Y %H:%M:%S %Z")
+        return fecha.isoformat() + "Z"
+    except:
         try:
-
-            fuente = source.get(
-                "title",
-                ""
-            )
-
-        except Exception:
-            
-
-            fuente = ""
-
-    if not fuente:
-
-        fuente = "Google Noticias"
-
-    return limpiar_texto(
-        fuente
-    )
-    # ============================================================
-# OBTENER FECHA
-# ============================================================
-
-def obtener_fecha(entrada):
-
-    publicado = entrada.get(
-        "published_parsed"
-    )
-
-    if publicado:
-
-        try:
-
-            fecha = datetime(
-                *publicado[:6],
-                tzinfo=timezone.utc
-            )
-
-            return fecha.isoformat()
-
-        except Exception:
-
-            pass
-
-    return ""
-
+            # Otro formato posible
+            fecha = datetime.strptime(fecha_str.split("GMT")[0].strip(), "%a, %d %b %Y %H:%M:%S")
+            return fecha.isoformat() + "Z"
+        except:
+            return datetime.utcnow().isoformat() + "Z"
 
 # ============================================================
-# CREAR RESUMEN
+# DATOS ESTÁTICOS (Para secciones sin fuente externa)
 # ============================================================
 
-def crear_resumen(
-    entrada,
-    categoria
-):
+VIDEOS_DEFAULT = [
+    {
+        "titulo": "Resumen del último partido de Boca",
+        "descripcion": "Compacto del encuentro con los goles y mejores jugadas.",
+        "link": "https://youtube.com/watch?v=boca",
+        "duracion": "12:34",
+        "fecha_iso": datetime.utcnow().isoformat() + "Z"
+    },
+    {
+        "titulo": "Entrevista con el técnico",
+        "descripcion": "Análisis de la campaña y próximos objetivos.",
+        "link": "https://youtube.com/watch?v=tecnico",
+        "duracion": "18:45",
+        "fecha_iso": (datetime.utcnow()).isoformat() + "Z"
+    }
+]
 
-    resumen = entrada.get(
-        "summary",
-        ""
-    )
+PARTIDOS_DEFAULT = [
+    {
+        "fecha_iso": "2024-09-08T19:00:00Z",
+        "hora": "19:00",
+        "equipo_local": "Boca",
+        "equipo_visitante": "Independiente",
+        "goles_local": None,
+        "goles_visitante": None,
+        "estado": "PROGRAMADO",
+        "torneo": "CAMPEONATO",
+        "estadio": "La Bombonera",
+        "arbitro": "Arbitro confirmado",
+        "asistencia": None
+    }
+]
 
-    resumen = limpiar_texto(
-        resumen
-    )
+TABLA_DEFAULT = [
+    {
+        "posicion": 1,
+        "equipo": "Boca",
+        "pj": 15, "g": 10, "e": 3, "p": 2,
+        "gf": 28, "gc": 12, "dif": 16, "pts": 33
+    },
+    {
+        "posicion": 2,
+        "equipo": "River",
+        "pj": 15, "g": 9, "e": 4, "p": 2,
+        "gf": 26, "gc": 10, "dif": 16, "pts": 31
+    }
+]
 
-    if len(resumen) > 350:
+STREAMING_DEFAULT = [
+    {
+        "titulo": "Los Bosteros de Tucumán",
+        "descripcion": "Canal de streaming oficial de la comunidad.",
+        "link": "https://twitch.tv/losbosterosdetucuman",
+        "tipo": "EN VIVO"
+    }
+]
 
-        resumen = (
-            resumen[:350]
-            .rsplit(" ", 1)[0]
-            + "..."
-        )
-
-    # Google News muchas veces entrega
-    # un resumen prácticamente vacío.
-    # En ese caso usamos uno propio.
-
-    if len(resumen) < 60:
-
-        respaldos = {
-
-            "Boca":
-                "Todas las novedades de Boca Juniors, "
-                "la actualidad del plantel y la información "
-                "más importante del mundo Xeneize.",
-
-            "Sudamericana":
-                "Toda la información de Boca Juniors "
-                "en la Copa Sudamericana, sus partidos, "
-                "protagonistas y últimas novedades.",
-
-            "Mercado de pases":
-                "Las últimas novedades del mercado de pases "
-                "de Boca Juniors: refuerzos, negociaciones, "
-                "altas y bajas.",
-
-            "Lesiones":
-                "Últimas novedades sobre el estado físico "
-                "de los jugadores de Boca Juniors y sus "
-                "respectivas recuperaciones.",
-
-            "Básquet":
-                "Toda la actualidad del básquet de Boca "
-                "Juniors, sus partidos, resultados y "
-                "protagonistas.",
-
-            "Futsal":
-                "Las últimas noticias del futsal de Boca "
-                "Juniors, partidos, resultados y novedades.",
-
-            "Reserva":
-                "Toda la información de la Reserva de Boca "
-                "Juniors y las futuras figuras del club.",
-
-            "Fútbol femenino":
-                "Las últimas novedades del fútbol femenino "
-                "de Boca Juniors y Las Gladiadoras.",
-
-            "Inferiores":
-                "Toda la actualidad de las divisiones "
-                "juveniles e inferiores de Boca Juniors.",
-
-            "Vóley":
-                "Noticias y novedades del vóley de Boca "
-                "Juniors.",
-
-            "La Bombonera":
-                "Toda la información sobre La Bombonera, "
-                "sus novedades, obras y actualidad."
-        }
-
-        return respaldos.get(
-            categoria,
-            "Últimas novedades de Boca Juniors."
-        )
-
-    return resumen
-
+HINCHAS_DEFAULT = [
+    {
+        "titulo": "¿Quién debería ser el próximo refuerzo?",
+        "opciones": ["Delantero", "Mediocampista", "Defensor", "Arquero"],
+        "resultado": "57% Delantero | 23% Mediocampista | 15% Defensor | 5% Arquero"
+    }
+]
 
 # ============================================================
-# OBTENER NOTICIAS DE UNA BÚSQUEDA
+# GENERAR Y GUARDAR JSON
 # ============================================================
 
-def obtener_noticias(
-    busqueda,
-    categoria
-):
-
-    url = (
-        "https://news.google.com/rss/search?"
-        "q=" +
-        quote(busqueda) +
-        "&hl=es-419"
-        "&gl=AR"
-        "&ceid=AR:es-419"
-    )
-
-    print(
-        "Buscando: "
-        + busqueda
-    )
-
-    feed = feedparser.parse(
-        url
-    )
-
-    resultados = []
-
-    for entrada in feed.entries[
-        :MAX_NOTICIAS_POR_BUSQUEDA
-    ]:
-
-        titulo = limpiar_texto(
-            entrada.get(
-                "title",
-                ""
-            )
-        )
-
-        link = entrada.get(
-            "link",
-            ""
-        ).strip()
-
-        if not titulo:
-            continue
-
-        if not link:
-            continue
-
-        fuente = obtener_fuente(
-            entrada
-        )
-
-        fecha_iso = obtener_fecha(
-            entrada
-        )
-
-        contenido = crear_resumen(
-            entrada,
-            categoria
-        )
-
-        resultados.append({
-
-            "titulo": titulo,
-
-            "fuente": fuente,
-
-            "contenido": contenido,
-
-            "link": link,
-
-            "categoria": categoria,
-
-            "fecha_iso": fecha_iso
-        })
-
-    return resultados
-
+def generar_json_completo():
+    """Genera el archivo noticias.json completo"""
+    
+    print("🔄 Sincronizando BOCA 24/7...")
+    
+    noticias = obtener_noticias()
+    
+    data = {
+        "actualizado": datetime.utcnow().isoformat() + "Z",
+        "noticias": noticias,
+        "videos": VIDEOS_DEFAULT,
+        "partidos": PARTIDOS_DEFAULT,
+        "tabla": TABLA_DEFAULT,
+        "streaming": STREAMING_DEFAULT,
+        "hinchas": HINCHAS_DEFAULT
+    }
+    
+    # Guardar JSON
+    try:
+        with open(ARCHIVO_SALIDA, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        
+        print(f"✅ noticias.json actualizado con éxito")
+        print(f"   - {len(noticias)} noticias")
+        print(f"   - {len(VIDEOS_DEFAULT)} videos")
+        print(f"   - {len(PARTIDOS_DEFAULT)} partidos")
+        print(f"   - {len(TABLA_DEFAULT)} equipos en tabla")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error al guardar: {e}")
+        return False
 
 # ============================================================
-# CLAVE ÚNICA DE UNA NOTICIA
+# MAIN
 # ============================================================
 
-def clave_noticia(noticia):
-
-    titulo = normalizar_titulo(
-        noticia.get(
-            "titulo",
-            ""
-        )
-    )
-
-    if not titulo:
-        return ""
-
-    return titulo
-
-
-# ============================================================
-# CALCULAR SIMILITUD ENTRE TÍTULOS
-# ============================================================
-
-def similitud_titulos(
-    titulo1,
-    titulo2
-):
-
-    palabras1 = set(
-        normalizar_titulo(
-            titulo1
-        ).split()
-    )
-
-    palabras2 = set(
-        normalizar_titulo(
-            titulo2
-        ).split()
-    )
-
-    if not palabras1 or not palabras2:
-        return 0
-
-    interseccion = (
-        palabras1
-        .intersection(
-            palabras2
-        )
-    )
-
-    union = (
-        palabras1
-        .union(
-            palabras2
-        )
-    )
-
-    if not union:
-        return 0
-
-    return (
-        len(interseccion)
-        /
-        len(union)
-        )
-    # ============================================================
-# ELIMINAR NOTICIAS DUPLICADAS O MUY PARECIDAS
-# ============================================================
-
-def eliminar_duplicadas(lista):
-
-    resultado = []
-
-    claves = set()
-
-    for noticia in lista:
-
-        titulo = noticia.get(
-            "titulo",
-            ""
-        ).strip()
-
-        if not titulo:
-            continue
-
-
-        # ----------------------------------------------------
-        # DUPLICADO EXACTO NORMALIZADO
-        # ----------------------------------------------------
-
-        clave = clave_noticia(
-            noticia
-        )
-
-        if not clave:
-            continue
-
-        if clave in claves:
-            continue
-
-
-        # ----------------------------------------------------
-        # DUPLICADO MUY PARECIDO
-        # ----------------------------------------------------
-
-        repetida = False
-
-        for existente in resultado:
-
-            titulo_existente = existente.get(
-                "titulo",
-                ""
-            )
-
-            similitud = similitud_titulos(
-                titulo,
-                titulo_existente
-            )
-
-            # 75% o más de palabras compartidas
-            # significa que probablemente es
-            # la misma noticia publicada por
-            # otra fuente.
-
-            if similitud >= 0.75:
-
-                repetida = True
-                break
-
-
-        if repetida:
-            continue
-
-
-        claves.add(
-            clave
-        )
-
-        resultado.append(
-            noticia
-        )
-
-
-    return resultado
-
-
-# ============================================================
-# ORDENAR POR FECHA
-# ============================================================
-
-def ordenar_por_fecha(lista):
-
-    def fecha_para_ordenar(noticia):
-
-        fecha = noticia.get(
-            "fecha_iso",
-            ""
-        )
-
-        if not fecha:
-            return datetime(
-                1970,
-                1,
-                1,
-                tzinfo=timezone.utc
-            )
-
-        try:
-
-            return datetime.fromisoformat(
-                fecha.replace(
-                    "Z",
-                    "+00:00"
-                )
-            )
-
-        except Exception:
-
-            return datetime(
-                1970,
-                1,
-                1,
-                tzinfo=timezone.utc
-            )
-
-
-    return sorted(
-        lista,
-        key=fecha_para_ordenar,
-        reverse=True
-    )
-
-
-# ============================================================
-# COMENZAR RECOLECCIÓN
-# ============================================================
-
-todas = []
-
-print("")
-print("============================================")
-print("       BOCA 24/7 - ACTUALIZANDO NOTICIAS")
-print("============================================")
-print("")
-
-
-for categoria, busquedas in CATEGORIAS.items():
-
-    print(
-        "Categoría: "
-        + categoria
-    )
-
-    for busqueda in busquedas:
-
-        try:
-
-            noticias = obtener_noticias(
-                busqueda,
-                categoria
-            )
-
-            todas.extend(
-                noticias
-            )
-
-            print(
-                "  Noticias encontradas: "
-                + str(
-                    len(noticias)
-                )
-            )
-
-        except Exception as error:
-
-            print(
-                "  ERROR: "
-                + str(error)
-            )
-
-
-print("")
-print(
-    "Total antes de eliminar repetidas: "
-    + str(
-        len(todas)
-    )
-)
-
-
-# ============================================================
-# ELIMINAR DUPLICADAS
-# ============================================================
-
-noticias_finales = eliminar_duplicadas(
-    todas
-)
-
-
-print(
-    "Total después de eliminar repetidas: "
-    + str(
-        len(noticias_finales)
-    )
-)
-
-
-# ============================================================
-# ORDENAR
-# ============================================================
-
-noticias_finales = ordenar_por_fecha(
-    noticias_finales
-)
-
-
-# ============================================================
-# LIMITAR CANTIDAD
-# ============================================================
-
-noticias_finales = noticias_finales[
-    :MAX_NOTICIAS_FINALES
-]# ============================================================
-# GUARDAR NOTICIAS.JSON
-# ============================================================
-
-with open(
-    "noticias.json",
-    "w",
-    encoding="utf-8"
-) as archivo:
-
-    json.dump(
-        noticias_finales,
-        archivo,
-        ensure_ascii=False,
-        indent=2
-    )
-
-
-# ============================================================
-# INFORMACIÓN FINAL
-# ============================================================
-
-print("")
-print("============================================")
-print("        ACTUALIZACIÓN COMPLETADA")
-print("============================================")
-
-print(
-    "Noticias guardadas: "
-    + str(
-        len(noticias_finales)
-    )
-)
-
-print("Archivo generado: noticias.json")
-
-print("============================================")
-print("")
-
-
-# ============================================================
-# MOSTRAR LAS PRIMERAS NOTICIAS
-# ============================================================
-
-for numero, noticia in enumerate(
-    noticias_finales[:10],
-    start=1
-):
-
-    print(
-        str(numero)
-        + ". "
-        + noticia.get(
-            "titulo",
-            ""
-        )
-    )
-
-    print(
-        "   Fuente: "
-        + noticia.get(
-            "fuente",
-            ""
-        )
-    )
-
-    print(
-        "   Categoría: "
-        + noticia.get(
-            "categoria",
-            ""
-        )
-    )
-
-    print("")
+if __name__ == "__main__":
+    generar_json_completo()
+    
