@@ -17,69 +17,42 @@
 
 <meta
     name="description"
-    content="BOCA 24/7 - Toda la actualidad de Boca Juniors."
+    content="BOCA 24/7 - Todo Boca. Todo el día."
 >
 
-<title>
-    BOCA 24/7 | Todo Boca. Todo el día.
-</title>
-
+<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
 <style>
 
-/* ==========================================================
+/* =========================================================
    BOCA 24/7
-   DISEÑO PRINCIPAL
-========================================================== */
+   DISEÑO COMPLETO
+========================================================= */
 
 :root{
 
-    --azul:
-        #00245f;
+    --azul:#00245f;
+    --azul2:#003b8f;
+    --azul3:#00183f;
+    --amarillo:#f5c400;
+    --amarillo2:#ffd51a;
 
-    --azul-oscuro:
-        #001536;
+    --fondo:#eef2f7;
+    --blanco:#ffffff;
+    --texto:#101828;
+    --gris:#667085;
+    --gris2:#98a2b3;
+    --borde:#e4e7ec;
 
-    --azul-medio:
-        #0047a8;
-
-    --amarillo:
-        #f5c400;
-
-    --amarillo-claro:
-        #ffd51a;
-
-    --blanco:
-        #ffffff;
-
-    --fondo:
-        #eef2f7;
-
-    --texto:
-        #101828;
-
-    --gris:
-        #667085;
-
-    --borde:
-        #e4e7ec;
-
-    --verde:
-        #12b76a;
+    --verde:#12b76a;
 
 }
 
 
-/* ==========================================================
-   RESET
-========================================================== */
-
 *{
 
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
 
 }
@@ -87,8 +60,7 @@
 
 html{
 
-    scroll-behavior:
-        smooth;
+    scroll-behavior:smooth;
 
 }
 
@@ -97,25 +69,92 @@ body{
 
     min-height:100vh;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
     background:
         var(--fondo);
 
     color:
         var(--texto);
 
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
 }
 
 
-/* ==========================================================
-   HEADER
-========================================================== */
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
 
-header{
+.topbar{
+
+    background:
+        var(--azul3);
+
+    color:
+        white;
+
+    font-size:
+        12px;
+
+}
+
+
+.topbar-inner{
+
+    width:
+        min(1240px,100%);
+
+    margin:auto;
+
+    padding:
+        7px 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+.punto{
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--verde);
+
+}
+
+
+/* =========================================================
+   HEADER PRINCIPAL
+========================================================= */
+
+.header{
+
+    background:
+        var(--azul);
+
+    color:
+        white;
 
     position:
         sticky;
@@ -124,130 +163,99 @@ header{
 
     z-index:1000;
 
-    background:
-        var(--azul);
-
     box-shadow:
-        0 4px 20px
-        rgba(0,0,0,.25);
+        0 4px 20px rgba(0,0,0,.25);
 
 }
 
 
-.header-main{
+.header-inner{
 
     width:
-        min(1280px,100%);
+        min(1240px,100%);
 
     min-height:
         82px;
 
-    margin:
-        auto;
+    margin:auto;
 
     padding:
-        12px 18px;
+        10px 18px;
 
-    display:
-        flex;
+    display:flex;
 
-    align-items:
-        center;
+    align-items:center;
 
-    justify-content:
-        space-between;
+    justify-content:space-between;
 
-    gap:
-        20px;
+    gap:20px;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    LOGO
-========================================================== */
+========================================================= */
 
 .logo{
 
-    display:
-        flex;
+    display:flex;
 
-    align-items:
-        center;
+    align-items:center;
 
-    gap:
-        12px;
-
-    min-width:
-        max-content;
+    gap:12px;
 
 }
 
 
-.logo-circle{
+.escudo{
 
-    width:
-        56px;
+    width:56px;
+    height:56px;
 
-    height:
-        56px;
+    flex:0 0 56px;
 
     border:
-        4px solid
+        4px solid var(--amarillo);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:
         var(--amarillo);
 
-    border-radius:
-        50%;
+    font-size:12px;
+
+    font-weight:900;
 
     background:
-        var(--azul);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    color:
-        var(--amarillo);
-
-    font-size:
-        14px;
-
-    font-weight:
-        900;
+        #001c4c;
 
     box-shadow:
-        0 0 0 4px
-        rgba(245,196,0,.08);
+        0 0 0 4px rgba(245,196,0,.08);
 
 }
 
 
-.logo-name{
+.logo-text{
 
-    color:
-        white;
+    font-size:29px;
 
-    font-size:
-        29px;
+    font-weight:900;
 
-    line-height:
-        1;
+    line-height:1;
 
-    font-weight:
-        900;
-
-    letter-spacing:
-        -1px;
+    letter-spacing:-1px;
 
 }
 
 
-.logo-name span{
+.logo-text span{
 
     color:
         var(--amarillo);
@@ -255,178 +263,89 @@ header{
 }
 
 
-.logo-subtitle{
+.logo-sub{
 
-    margin-top:
-        5px;
+    margin-top:5px;
 
-    color:
-        #d5e0ef;
+    color:#c9d7eb;
 
-    font-size:
-        12px;
+    font-size:12px;
 
 }
 
 
-/* ==========================================================
-   ESTADO EN VIVO
-========================================================== */
-
-.live-status{
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        8px;
-
-    color:
-        white;
-
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-
-}
-
-
-.live-indicator{
-
-    width:
-        9px;
-
-    height:
-        9px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--verde);
-
-    box-shadow:
-        0 0 0 5px
-        rgba(18,183,106,.15);
-
-}
-
-
-/* ==========================================================
+/* =========================================================
    NAVEGACIÓN
-========================================================== */
+========================================================= */
 
-.navigation{
+.nav{
 
     background:
-        var(--azul-oscuro);
+        var(--azul3);
 
-    overflow-x:
-        auto;
+    overflow-x:auto;
 
-    scrollbar-width:
-        none;
+    scrollbar-width:none;
 
 }
 
 
-.navigation::-webkit-scrollbar{
+.nav::-webkit-scrollbar{
 
-    display:
-        none;
+    display:none;
 
 }
 
 
-.navigation-inner{
+.nav-inner{
 
     width:
-        min(1280px,100%);
+        min(1240px,100%);
 
-    margin:
-        auto;
+    margin:auto;
 
-    display:
-        flex;
+    display:flex;
 
 }
 
 
-.navigation button{
+.nav button{
 
-    position:
-        relative;
+    position:relative;
 
-    flex:
-        0 0 auto;
+    flex:0 0 auto;
 
-    border:
-        0;
+    border:0;
 
     background:
         transparent;
 
-    color:
-        white;
+    color:white;
 
     padding:
-        15px 18px;
+        16px 18px;
 
-    font-size:
-        13px;
+    font-size:12px;
 
-    font-weight:
-        900;
+    font-weight:900;
 
-    cursor:
-        pointer;
+    cursor:pointer;
 
     transition:
-        background .2s ease,
-        color .2s ease;
+        .2s ease;
 
 }
 
 
-.navigation button::after{
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    left:
-        50%;
-
-    bottom:
-        0;
-
-    width:
-        0;
-
-    height:
-        3px;
+.nav button:hover{
 
     background:
-        var(--amarillo);
-
-    transform:
-        translateX(-50%);
-
-    transition:
-        width .2s ease;
+        rgba(245,196,0,.15);
 
 }
 
 
-.navigation button:hover,
-.navigation button.active{
+.nav button.active{
 
     background:
         var(--amarillo);
@@ -437,152 +356,129 @@ header{
 }
 
 
-.navigation button:hover::after,
-.navigation button.active::after{
+.nav button.active::after{
 
-    width:
-        70%;
+    content:"";
+
+    position:absolute;
+
+    left:15px;
+
+    right:15px;
+
+    bottom:0;
+
+    height:3px;
+
+    background:
+        var(--azul);
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    CONTENEDOR
-========================================================== */
+========================================================= */
 
 .container{
 
     width:
-        min(1280px,100%);
+        min(1240px,100%);
 
-    margin:
-        auto;
+    margin:auto;
 
     padding:
-        24px 18px 50px;
+        24px 18px 60px;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    HERO
-========================================================== */
+========================================================= */
 
 .hero{
 
-    position:
-        relative;
+    min-height:430px;
 
-    min-height:
-        340px;
+    position:relative;
 
-    overflow:
-        hidden;
+    overflow:hidden;
 
-    border-radius:
-        24px;
-
-    padding:
-        36px;
-
-    margin-bottom:
-        22px;
-
-    display:
-        flex;
-
-    align-items:
-        flex-end;
+    border-radius:0 0 24px 24px;
 
     background:
         linear-gradient(
-            120deg,
-            #001d50,
-            #003c8f 55%,
-            #0055bd
+            125deg,
+            #001941 0%,
+            #003d91 55%,
+            #0059bc 100%
         );
 
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:42px;
+
     box-shadow:
-        0 12px 35px
-        rgba(0,36,95,.22);
+        0 16px 35px rgba(0,36,95,.18);
 
 }
 
 
 .hero::before{
 
-    content:
-        "";
+    content:"";
 
-    position:
-        absolute;
+    position:absolute;
 
-    width:
-        480px;
+    width:560px;
+    height:560px;
 
-    height:
-        480px;
-
-    right:
-        -150px;
-
-    top:
-        -190px;
+    right:-170px;
+    top:-220px;
 
     border:
-        70px solid
-        rgba(255,255,255,.06);
+        85px solid rgba(255,255,255,.045);
 
-    border-radius:
-        50%;
+    border-radius:50%;
 
     animation:
-        girarHero
-        18s linear infinite;
+        giro 22s linear infinite;
 
 }
 
 
 .hero::after{
 
-    content:
-        "BOCA";
+    content:"BOCA";
 
-    position:
-        absolute;
+    position:absolute;
 
-    right:
-        30px;
+    right:20px;
 
-    bottom:
-        5px;
+    bottom:-20px;
 
     color:
-        rgba(255,255,255,.05);
+        rgba(255,255,255,.045);
 
     font-size:
-        110px;
+        150px;
 
-    font-weight:
-        900;
+    font-weight:900;
 
 }
 
 
-@keyframes girarHero{
+@keyframes giro{
 
     from{
-
-        transform:
-            rotate(0deg);
-
+        transform:rotate(0deg);
     }
 
     to{
-
-        transform:
-            rotate(360deg);
-
+        transform:rotate(360deg);
     }
 
 }
@@ -590,34 +486,20 @@ header{
 
 .hero-content{
 
-    position:
-        relative;
+    position:relative;
 
-    z-index:
-        2;
+    z-index:2;
 
-    max-width:
-        800px;
+    max-width:780px;
 
-    color:
-        white;
+    color:white;
 
 }
 
 
-.hero-tag{
+.hero-label{
 
-    display:
-        inline-block;
-
-    padding:
-        8px 12px;
-
-    margin-bottom:
-        15px;
-
-    border-radius:
-        7px;
+    display:inline-block;
 
     background:
         var(--amarillo);
@@ -625,11 +507,16 @@ header{
     color:
         var(--azul);
 
-    font-size:
-        12px;
+    padding:
+        8px 12px;
 
-    font-weight:
-        900;
+    border-radius:5px;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    margin-bottom:16px;
 
 }
 
@@ -637,645 +524,1118 @@ header{
 .hero h1{
 
     font-size:
-        clamp(30px,5vw,48px);
+        clamp(34px,6vw,58px);
 
-    line-height:
-        1.05;
+    line-height:1;
 
-    margin-bottom:
-        14px;
+    letter-spacing:-2px;
 
-    letter-spacing:
-        -1px;
+    margin-bottom:18px;
 
 }
 
 
 .hero p{
 
-    max-width:
-        700px;
+    max-width:680px;
 
-    color:
-        #dce7f7;
+    color:#dce7f7;
 
-    font-size:
-        15px;
+    font-size:16px;
 
-    line-height:
-        1.6;
+    line-height:1.6;
 
 }
 
 
-/* ==========================================================
-   BARRA DE ESTADO
-========================================================== */
+/* =========================================================
+   ULTIMA HORA
+========================================================= */
 
-.status-bar{
+.ultima{
 
-    background:
-        white;
-
-    border:
-        1px solid
-        var(--borde);
-
-    border-radius:
-        15px;
-
-    padding:
-        15px 18px;
-
-    margin-bottom:
-        20px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        15px;
-
-    box-shadow:
-        0 4px 15px
-        rgba(0,0,0,.05);
-
-}
-
-
-.status-left{
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
-
-    color:
-        #344054;
-
-    font-size:
-        13px;
-
-    font-weight:
-        800;
-
-}
-
-
-.status-time{
-
-    color:
-        var(--gris);
-
-    font-size:
-        12px;
-
-}
-
-
-/* ==========================================================
-   ÚLTIMA HORA
-========================================================== */
-
-.breaking{
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        12px;
-
-    min-height:
-        58px;
-
-    padding:
-        9px 14px;
-
-    margin-bottom:
-        24px;
-
-    overflow:
-        hidden;
-
-    border-radius:
-        14px;
+    margin-top:20px;
 
     background:
         var(--amarillo);
 
-    box-shadow:
-        0 5px 16px
-        rgba(245,196,0,.22);
+    min-height:62px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
 
 }
 
 
-.breaking-label{
+.ultima-label{
 
-    flex:
-        0 0 auto;
-
-    padding:
-        8px 11px;
-
-    border-radius:
-        6px;
+    flex:0 0 auto;
 
     background:
         var(--azul);
 
-    color:
-        white;
+    color:white;
 
-    font-size:
-        11px;
+    padding:
+        12px 17px;
 
-    font-weight:
-        900;
+    font-size:11px;
+
+    font-weight:900;
 
 }
 
 
-.breaking-text{
+.ultima-text{
+
+    padding:
+        0 18px;
+
+    color:
+        var(--azul);
+
+    font-size:14px;
+
+    font-weight:900;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+/* =========================================================
+   ESTADO
+========================================================= */
+
+.estado{
+
+    margin-top:18px;
+
+    background:white;
+
+    border:1px solid var(--borde);
+
+    border-radius:14px;
+
+    padding:13px 16px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.04);
+
+}
+
+
+.estado-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    color:#344054;
+
+}
+
+
+.estado-punto{
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:
+        var(--verde);
+
+    box-shadow:
+        0 0 0 5px rgba(18,183,106,.12);
+
+}
+
+
+.estado-hora{
+
+    color:
+        var(--gris);
+
+    font-size:11px;
+
+}
+
+
+/* =========================================================
+   SECCIÓN
+========================================================= */
+
+.seccion{
+
+    margin-top:38px;
+
+}
+
+
+.seccion-header{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:17px;
+
+}
+
+
+.seccion-titulo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.seccion-titulo::before{
+
+    content:"";
+
+    width:6px;
+
+    height:29px;
+
+    border-radius:5px;
+
+    background:
+        var(--amarillo);
+
+}
+
+
+.seccion-titulo h2{
 
     color:
         var(--azul);
 
     font-size:
-        14px;
-
-    font-weight:
-        800;
-
-    white-space:
-        nowrap;
-
-    overflow:
-        hidden;
-
-    text-overflow:
-        ellipsis;
-
-}
-
-
-/* ==========================================================
-   BUSCADOR
-========================================================== */
-
-.search-box{
-
-    margin-bottom:
         28px;
 
+    font-weight:900;
+
+    letter-spacing:-.5px;
+
 }
 
 
-.search-box input{
+.ver-mas{
 
-    width:
-        100%;
+    border:0;
 
-    padding:
-        16px 18px;
-
-    border:
-        1px solid
-        var(--borde);
-
-    border-radius:
-        13px;
-
-    outline:
-        none;
-
-    background:
-        white;
+    background:transparent;
 
     color:
-        var(--texto);
+        var(--azul2);
 
-    font-size:
-        15px;
+    font-size:12px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.buscar{
+
+    margin-top:25px;
+
+}
+
+
+.buscar input{
+
+    width:100%;
+
+    height:56px;
+
+    padding:
+        0 18px;
+
+    background:white;
+
+    border:
+        1px solid var(--borde);
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:var(--texto);
 
     box-shadow:
-        0 3px 12px
-        rgba(0,0,0,.04);
+        0 4px 15px rgba(0,0,0,.04);
+
+}
+
+
+.buscar input:focus{
+
+    border-color:
+        var(--azul2);
+
+    box-shadow:
+        0 0 0 4px rgba(0,71,168,.08);
+
+}
+
+
+/* =========================================================
+   DESTACADAS
+========================================================= */
+
+.destacadas{
+
+    display:grid;
+
+    grid-template-columns:
+        1.6fr 1fr;
+
+    gap:16px;
+
+}
+
+
+.destacada-principal{
+
+    min-height:390px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    background:
+        linear-gradient(
+            135deg,
+            #001d50,
+            #004da8
+        );
+
+    color:white;
+
+}
+
+
+.destacada-principal::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-120px;
+    top:-120px;
+
+    border:
+        55px solid rgba(245,196,0,.09);
+
+    border-radius:50%;
+
+}
+
+
+.destacada-contenido{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.etiqueta{
+
+    display:inline-block;
+
+    padding:
+        6px 9px;
+
+    border-radius:4px;
+
+    background:
+        var(--amarillo);
+
+    color:
+        var(--azul);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+}
+
+
+.destacada-principal h3{
+
+    margin-top:12px;
+
+    font-size:
+        clamp(24px,4vw,38px);
+
+    line-height:1.12;
+
+}
+
+
+.destacada-principal p{
+
+    margin-top:12px;
+
+    color:#dbe7f7;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+}
+
+
+.destacadas-lateral{
+
+    display:grid;
+
+    gap:16px;
+
+}
+
+
+.destacada-mini{
+
+    min-height:187px;
+
+    padding:20px;
+
+    background:white;
+
+    border-radius:18px;
+
+    border:1px solid var(--borde);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.05);
 
     transition:
-        border .2s ease,
+        transform .2s ease,
         box-shadow .2s ease;
 
 }
 
 
-.search-box input:focus{
-
-    border-color:
-        var(--azul-medio);
-
-    box-shadow:
-        0 0 0 4px
-        rgba(0,71,168,.10);
-
-}
-
-
-/* ==========================================================
-   TÍTULO DE SECCIÓN
-========================================================== */
-
-.section-title{
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    gap:
-        10px;
-
-    margin:
-        28px 0 17px;
-
-}
-
-
-.section-title::before{
-
-    content:
-        "";
-
-    width:
-        6px;
-
-    height:
-        27px;
-
-    border-radius:
-        5px;
-
-    background:
-        var(--amarillo);
-
-}
-
-
-.section-title h2{
-
-    color:
-        var(--azul);
-
-    font-size:
-        27px;
-
-    font-weight:
-        900;
-
-}
-
-
-/* ==========================================================
-   CONTENEDOR NOTICIAS
-========================================================== */
-
-#noticias{
-
-    min-height:
-        150px;
-
-}
-
-
-.news-grid{
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        18px;
-
-}
-
-
-/* ==========================================================
-   TARJETA
-========================================================== */
-
-.news-card{
-
-    overflow:
-        hidden;
-
-    background:
-        white;
-
-    border:
-        1px solid
-        var(--borde);
-
-    border-radius:
-        16px;
-
-    box-shadow:
-        0 4px 14px
-        rgba(0,0,0,.06);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-
-}
-
-
-.news-card:hover{
+.destacada-mini:hover{
 
     transform:
-        translateY(-6px);
+        translateY(-4px);
 
     box-shadow:
-        0 14px 30px
-        rgba(0,0,0,.13);
+        0 12px 25px rgba(0,0,0,.10);
 
 }
 
 
-.news-image{
+.destacada-mini h3{
 
-    position:
-        relative;
+    margin-top:9px;
 
-    height:
-        175px;
+    font-size:17px;
 
-    overflow:
-        hidden;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--azul),
-            var(--azul-medio)
-        );
-
-}
-
-
-.news-image::before{
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        190px;
-
-    height:
-        190px;
-
-    right:
-        -70px;
-
-    top:
-        -80px;
-
-    border:
-        35px solid
-        rgba(245,196,0,.10);
-
-    border-radius:
-        50%;
-
-}
-
-
-.news-image-content{
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    color:
-        white;
-
-    font-size:
-        27px;
-
-    font-weight:
-        900;
-
-}
-
-
-.news-image-content span{
-
-    color:
-        var(--amarillo);
-
-}
-
-
-.news-body{
-
-    padding:
-        17px;
-
-}
-
-
-.news-source{
-
-    margin-bottom:
-        8px;
-
-    color:
-        var(--azul-medio);
-
-    font-size:
-        11px;
-
-    font-weight:
-        900;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.news-category{
-
-    display:
-        inline-block;
-
-    padding:
-        4px 7px;
-
-    margin-bottom:
-        9px;
-
-    border-radius:
-        5px;
-
-    background:
-        #eef4ff;
-
-    color:
-        var(--azul);
-
-    font-size:
-        10px;
-
-    font-weight:
-        900;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-.news-title{
-
-    margin-bottom:
-        10px;
+    line-height:1.3;
 
     color:
         var(--texto);
 
-    font-size:
-        18px;
+}
 
-    line-height:
-        1.3;
+
+/* =========================================================
+   NOTICIAS
+========================================================= */
+
+.noticias-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:17px;
 
 }
 
 
-.news-description{
+.noticia{
+
+    background:white;
+
+    border:
+        1px solid var(--borde);
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 4px 13px rgba(0,0,0,.05);
+
+    transition:
+        transform .22s ease,
+        box-shadow .22s ease;
+
+}
+
+
+.noticia:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 14px 28px rgba(0,0,0,.12);
+
+}
+
+
+.noticia-top{
+
+    height:130px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00245f,
+            #0050a8
+        );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.noticia-top::after{
+
+    content:"CABJ";
+
+    position:absolute;
+
+    right:-5px;
+
+    bottom:-28px;
 
     color:
-        var(--gris);
+        rgba(255,255,255,.06);
 
-    font-size:
-        13px;
+    font-size:80px;
 
-    line-height:
-        1.55;
+    font-weight:900;
 
 }
 
 
-.news-footer{
+.noticia-marca{
 
-    margin-top:
-        15px;
+    position:relative;
 
-    padding-top:
-        12px;
+    z-index:2;
 
-    border-top:
-        1px solid
-        var(--borde);
+    color:white;
 
-    display:
-        flex;
+    font-size:24px;
 
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        10px;
+    font-weight:900;
 
 }
 
 
-.news-date{
+.noticia-marca span{
 
     color:
-        #98a2b3;
-
-    font-size:
-        11px;
+        var(--amarillo);
 
 }
 
 
-.read-news{
+.noticia-body{
+
+    padding:17px;
+
+}
+
+
+.noticia-fuente{
+
+    color:
+        var(--azul2);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+
+}
+
+
+.noticia-cat{
+
+    display:inline-block;
+
+    background:#edf3ff;
 
     color:
         var(--azul);
 
-    text-decoration:
-        none;
+    padding:
+        4px 7px;
 
-    font-size:
-        12px;
+    border-radius:4px;
 
-    font-weight:
-        900;
+    font-size:9px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    margin-bottom:9px;
 
 }
 
 
-.read-news:hover{
+.noticia h3{
+
+    font-size:18px;
+
+    line-height:1.3;
+
+    margin-bottom:9px;
+
+}
+
+
+.noticia p{
 
     color:
-        var(--azul-medio);
+        var(--gris);
+
+    font-size:13px;
+
+    line-height:1.55;
 
 }
 
 
-/* ==========================================================
-   CARGANDO / ERROR / VACÍO
-========================================================== */
+.noticia-footer{
 
-.loading{
+    margin-top:15px;
 
-    padding:
-        50px 20px;
+    padding-top:11px;
 
-    text-align:
-        center;
+    border-top:
+        1px solid var(--borde);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+
+.fecha{
+
+    color:
+        var(--gris2);
+
+    font-size:10px;
+
+}
+
+
+.leer{
+
+    color:
+        var(--azul);
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   PARTIDOS
+========================================================= */
+
+.partidos{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+
+.partido{
 
     background:
         white;
 
-    border-radius:
-        16px;
+    border:
+        1px solid var(--borde);
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.05);
+
+}
+
+
+.partido-torneo{
+
+    background:
+        var(--azul);
+
+    color:white;
+
+    padding:
+        10px 14px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+
+.partido-body{
+
+    padding:20px;
+
+    text-align:center;
+
+}
+
+
+.partido-fecha{
+
+    color:
+        var(--gris);
+
+    font-size:11px;
+
+    margin-bottom:14px;
+
+}
+
+
+.equipos{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+}
+
+
+.equipo{
+
+    width:95px;
+
+    font-weight:900;
+
+    font-size:13px;
+
+    color:
+        var(--azul);
+
+}
+
+
+.vs{
+
+    color:
+        var(--amarillo);
+
+    font-size:13px;
+
+    font-weight:900;
+
+}
+
+
+.partido-hora{
+
+    margin-top:17px;
+
+    padding-top:13px;
+
+    border-top:
+        1px solid var(--borde);
+
+    color:
+        var(--azul2);
+
+    font-size:12px;
+
+    font-weight:900;
+
+}
+
+
+/* =========================================================
+   BLOQUES DE DISCIPLINAS
+========================================================= */
+
+.disciplinas{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+
+}
+
+
+.disciplina{
+
+    min-height:145px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    background:
+        var(--azul);
+
+    color:white;
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.disciplina:hover{
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.disciplina::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    right:-45px;
+    top:-45px;
+
+    border:
+        25px solid rgba(245,196,0,.12);
+
+    border-radius:50%;
+
+}
+
+
+.disciplina small{
+
+    position:relative;
+
+    z-index:2;
+
+    color:
+        var(--amarillo);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+}
+
+
+.disciplina h3{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:5px;
+
+    font-size:18px;
+
+}
+
+
+/* =========================================================
+   OBRAS
+========================================================= */
+
+.obras{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:16px;
+
+}
+
+
+.obra{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    border:
+        1px solid var(--borde);
+
+}
+
+
+.obra-tag{
+
+    color:
+        var(--azul2);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+}
+
+
+.obra h3{
+
+    margin-top:9px;
+
+    font-size:18px;
+
+    line-height:1.3;
+
+}
+
+
+.obra p{
+
+    margin-top:8px;
+
+    color:
+        var(--gris);
+
+    font-size:12px;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   STREAMING
+========================================================= */
+
+.streaming{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #00183f,
+            #003b8f
+        );
+
+    color:white;
+
+}
+
+
+.streaming::after{
+
+    content:"▶";
+
+    position:absolute;
+
+    right:30px;
+
+    top:50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        rgba(255,255,255,.06);
+
+    font-size:130px;
+
+}
+
+
+.streaming h2{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    font-size:27px;
+
+}
+
+
+.streaming h2 span{
+
+    color:
+        var(--amarillo);
+
+}
+
+
+.streaming p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:600px;
+
+    margin-top:9px;
+
+    color:#cbd9ec;
+
+    font-size:13px;
+
+    line-height:1.55;
+
+}
+
+
+/* =========================================================
+   CARGANDO
+========================================================= */
+
+.cargando{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:50px 20px;
+
+    text-align:center;
 
     color:
         var(--gris);
@@ -1285,57 +1645,60 @@ header{
 
 .spinner{
 
-    width:
-        35px;
-
-    height:
-        35px;
+    width:38px;
+    height:38px;
 
     margin:
         0 auto 15px;
 
     border:
-        4px solid
-        #dce3ed;
+        4px solid #e2e8f0;
 
     border-top-color:
         var(--azul);
 
-    border-radius:
-        50%;
+    border-radius:50%;
 
     animation:
-        girar
-        .8s linear infinite;
+        spin .8s linear infinite;
 
 }
 
 
-@keyframes girar{
+@keyframes spin{
 
     to{
-
-        transform:
-            rotate(360deg);
-
+        transform:rotate(360deg);
     }
 
 }
 
 
-.empty{
+.error{
 
-    padding:
-        40px 20px;
+    padding:25px;
 
-    background:
-        white;
+    background:#fff5f5;
 
-    border-radius:
-        16px;
+    border:
+        1px solid #f2b8b8;
 
-    text-align:
-        center;
+    border-radius:15px;
+
+    color:#9b1c1c;
+
+}
+
+
+.vacio{
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:16px;
 
     color:
         var(--gris);
@@ -1343,235 +1706,47 @@ header{
 }
 
 
-.error{
-
-    padding:
-        25px;
-
-    border:
-        1px solid
-        #f5c2c2;
-
-    border-radius:
-        15px;
-
-    background:
-        #fff5f5;
-
-    color:
-        #9b1c1c;
-
-}
-
-
-/* ==========================================================
-   DESTACADAS
-========================================================== */
-
-.featured{
-
-    display:
-        grid;
-
-    grid-template-columns:
-        2fr 1fr;
-
-    gap:
-        18px;
-
-}
-
-
-.featured-main{
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    min-height:
-        250px;
-
-    padding:
-        27px;
-
-    border-radius:
-        18px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        flex-end;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--azul),
-            var(--azul-medio)
-        );
-
-    color:
-        white;
-
-}
-
-
-.featured-main::after{
-
-    content:
-        "CABJ";
-
-    position:
-        absolute;
-
-    right:
-        20px;
-
-    top:
-        10px;
-
-    color:
-        rgba(255,255,255,.05);
-
-    font-size:
-        75px;
-
-    font-weight:
-        900;
-
-}
-
-
-.featured-main h3{
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    margin:
-        7px 0;
-
-    font-size:
-        26px;
-
-    line-height:
-        1.2;
-
-}
-
-
-.featured-main p{
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    color:
-        #dce7f7;
-
-    font-size:
-        13px;
-
-    line-height:
-        1.55;
-
-}
-
-
-.featured-side{
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        18px;
-
-}
-
-
-.featured-small{
-
-    padding:
-        19px;
-
-    border:
-        1px solid
-        var(--borde);
-
-    border-radius:
-        16px;
-
-    background:
-        white;
-
-}
-
-
-.featured-small h3{
-
-    margin-top:
-        7px;
-
-    font-size:
-        17px;
-
-    line-height:
-        1.35;
-
-}
-
-
-/* ==========================================================
+/* =========================================================
    FOOTER
-========================================================== */
+========================================================= */
 
-footer{
+.footer{
 
-    margin-top:
-        20px;
-
-    padding:
-        35px 18px;
+    margin-top:20px;
 
     background:
-        var(--azul-oscuro);
+        var(--azul3);
 
-    color:
-        #dce5f2;
+    color:#c5d2e5;
 
-    text-align:
-        center;
-
-}
-
-
-.footer-logo{
-
-    color:
-        white;
-
-    font-size:
-        26px;
-
-    font-weight:
-        900;
+    padding:
+        45px 18px 25px;
 
 }
 
 
-.footer-logo span{
+.footer-inner{
+
+    width:
+        min(1240px,100%);
+
+    margin:auto;
+
+}
+
+
+.footer-brand{
+
+    color:white;
+
+    font-size:27px;
+
+    font-weight:900;
+
+}
+
+
+.footer-brand span{
 
     color:
         var(--amarillo);
@@ -1579,48 +1754,79 @@ footer{
 }
 
 
-footer p{
+.footer-sub{
 
-    margin-top:
-        8px;
+    margin-top:7px;
 
-    font-size:
-        13px;
+    font-size:12px;
+
+}
+
+
+.footer-line{
+
+    height:1px;
+
+    background:
+        rgba(255,255,255,.1);
+
+    margin:
+        25px 0 17px;
 
 }
 
 
 .footer-copy{
 
-    margin-top:
-        18px;
+    color:#8094b0;
 
-    color:
-        #91a4bf;
-
-    font-size:
-        11px;
+    font-size:10px;
 
 }
 
 
-/* ==========================================================
+/* =========================================================
    RESPONSIVE
-========================================================== */
+========================================================= */
 
 @media(max-width:950px){
 
-    .news-grid{
+    .noticias-grid{
 
         grid-template-columns:
             repeat(2,1fr);
 
     }
 
-    .featured{
+
+    .destacadas{
 
         grid-template-columns:
             1fr;
+
+    }
+
+
+    .disciplinas{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .partidos{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .obras{
+
+        grid-template-columns:
+            repeat(2,1fr);
 
     }
 
@@ -1629,51 +1835,45 @@ footer p{
 
 @media(max-width:650px){
 
-    .header-main{
+    .topbar{
 
-        min-height:
-            70px;
+        display:none;
+
+    }
+
+
+    .header-inner{
+
+        min-height:72px;
 
         padding:
-            10px 13px;
+            9px 12px;
 
     }
 
 
-    .logo-circle{
+    .escudo{
 
-        width:
-            47px;
+        width:47px;
+        height:47px;
 
-        height:
-            47px;
+        flex-basis:47px;
 
-        font-size:
-            12px;
+        font-size:10px;
 
     }
 
 
-    .logo-name{
+    .logo-text{
 
-        font-size:
-            22px;
-
-    }
-
-
-    .logo-subtitle{
-
-        font-size:
-            10px;
+        font-size:22px;
 
     }
 
 
-    .live-status{
+    .logo-sub{
 
-        display:
-            none;
+        font-size:9px;
 
     }
 
@@ -1681,50 +1881,77 @@ footer p{
     .container{
 
         padding:
-            14px 12px 35px;
+            0 10px 45px;
 
     }
 
 
     .hero{
 
-        min-height:
-            285px;
-
-        padding:
-            23px;
+        min-height:330px;
 
         border-radius:
-            17px;
+            0 0 18px 18px;
+
+        padding:23px;
 
     }
 
 
     .hero h1{
 
-        font-size:
-            30px;
+        font-size:34px;
 
     }
 
 
     .hero p{
 
-        font-size:
-            14px;
+        font-size:13px;
 
     }
 
 
-    .hero::after{
+    .ultima{
 
-        font-size:
-            65px;
+        margin-top:12px;
 
     }
 
 
-    .news-grid{
+    .estado{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+
+    .seccion{
+
+        margin-top:30px;
+
+    }
+
+
+    .seccion-titulo h2{
+
+        font-size:23px;
+
+    }
+
+
+    .destacada-principal{
+
+        min-height:300px;
+
+        padding:22px;
+
+    }
+
+
+    .noticias-grid{
 
         grid-template-columns:
             1fr;
@@ -1732,48 +1959,40 @@ footer p{
     }
 
 
-    .status-bar{
+    .partidos{
 
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
+        grid-template-columns:
+            1fr;
 
     }
 
 
-    .breaking{
+    .disciplinas{
 
-        min-height:
-            58px;
-
-    }
-
-
-    .section-title h2{
-
-        font-size:
-            23px;
+        grid-template-columns:
+            1fr 1fr;
 
     }
 
 
-    .featured-main{
+    .obras{
 
-        min-height:
-            275px;
-
-        padding:
-            21px;
+        grid-template-columns:
+            1fr;
 
     }
 
 
-    .featured-main h3{
+    .streaming{
 
-        font-size:
-            22px;
+        padding:24px;
+
+    }
+
+
+    .streaming h2{
+
+        font-size:23px;
 
     }
 
@@ -1787,27 +2006,54 @@ footer p{
 <body>
 
 
-<!-- ==========================================================
+<!-- ========================================================
+     TOPBAR
+========================================================= -->
+
+<div class="topbar">
+
+    <div class="topbar-inner">
+
+        <div class="topbar-left">
+
+            <span class="punto"></span>
+
+            BOCA 24/7 EN VIVO
+
+        </div>
+
+        <div>
+
+            Todo Boca. Todo el día.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ========================================================
      HEADER
-========================================================== -->
+========================================================= -->
 
-<header>
+<header class="header">
 
-    <div class="header-main">
+    <div class="header-inner">
 
         <div class="logo">
 
-            <div class="logo-circle">
+            <div class="escudo">
                 CABJ
             </div>
 
             <div>
 
-                <div class="logo-name">
+                <div class="logo-text">
                     BOCA <span>24/7</span>
                 </div>
 
-                <div class="logo-subtitle">
+                <div class="logo-sub">
                     Todo Boca. Todo el día.
                 </div>
 
@@ -1815,127 +2061,864 @@ footer p{
 
         </div>
 
-
-        <div class="live-status">
-
-            <span class="live-indicator"></span>
-
-            Información actualizada
-
-        </div>
-
     </div>
 
 
-    <nav class="navigation">
+    <nav class="nav">
 
-        <div class="navigation-inner">
+        <div class="nav-inner">
 
             <button
                 class="active"
-                onclick="cambiarSeccion('Todas',this)"
+                onclick="seleccionar('Todas',this)"
             >
-                ÚLTIMAS
+                INICIO
             </button>
 
             <button
-                onclick="cambiarSeccion('Boca',this)"
+                onclick="seleccionar('Boca',this)"
             >
                 BOCA
             </button>
 
             <button
-                onclick="cambiarSeccion('Mercado de pases',this)"
+                onclick="seleccionar('Mercado de pases',this)"
             >
                 MERCADO
             </button>
 
             <button
-                onclick="cambiarSeccion('Partidos',this)"
+                onclick="seleccionar('Partidos',this)"
             >
                 PARTIDOS
             </button>
 
             <button
-                o
-                <script>
+                onclick="seleccionar('Lesiones',this)"
+            >
+                LESIONES
+            </button>
 
-/* ============================================================
-   BOCA 24/7 — BLOQUE 2
-   CARGA Y LIMPIEZA DE NOTICIAS
-============================================================ */
+            <button
+                onclick="seleccionar('Sudamericana',this)"
+            >
+                SUDAMERICANA
+            </button>
+
+            <button
+                onclick="seleccionar('Básquet',this)"
+            >
+                BÁSQUET
+            </button>
+
+            <button
+                onclick="seleccionar('Futsal',this)"
+            >
+                FUTSAL
+            </button>
+
+            <button
+                onclick="seleccionar('Fútbol femenino',this)"
+            >
+                FEMENINO
+            </button>
+
+            <button
+                onclick="seleccionar('Reserva',this)"
+            >
+                RESERVA
+            </button>
+
+            <button
+                onclick="seleccionar('Inferiores',this)"
+            >
+                INFERIORES
+            </button>
+
+            <button
+                onclick="seleccionar('La Bombonera',this)"
+            >
+                BOMBONERA
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
 
 
-/* ============================================================
-   VARIABLES
-============================================================ */
+<!-- ========================================================
+     CONTENIDO
+========================================================= -->
 
-let todasLasNoticias = [];
-
-let seccionActual = "Todas";
-
-let cargandoNoticias = false;
+<main class="container">
 
 
-/* ============================================================
-   NORMALIZAR TEXTO PARA COMPARAR
-============================================================ */
+    <!-- HERO -->
 
-function normalizarTitulo(texto){
+    <section class="hero">
 
-    return String(texto || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9\s]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
+        <div class="hero-content">
+
+            <div class="hero-label">
+                BOCA JUNIORS
+            </div>
+
+            <h1>
+                Todo Boca.<br>
+                Todo el día.
+            </h1>
+
+            <p>
+                Las últimas noticias del Xeneize,
+                mercado de pases, partidos,
+                plantel, disciplinas, La Bombonera
+                y toda la actualidad de Boca Juniors.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ULTIMA HORA -->
+
+    <div class="ultima">
+
+        <div class="ultima-label">
+            ÚLTIMA HORA
+        </div>
+
+        <div
+            class="ultima-text"
+            id="ultimaTexto"
+        >
+            Cargando actualidad de Boca...
+        </div>
+
+    </div>
+
+
+    <!-- ESTADO -->
+
+    <div class="estado">
+
+        <div class="estado-left">
+
+            <span class="estado-punto"></span>
+
+            <span id="estado">
+                Conectando con BOCA 24/7...
+            </span>
+
+        </div>
+
+        <div
+            class="estado-hora"
+            id="hora"
+        >
+            Esperando actualización...
+        </div>
+
+    </div>
+
+
+    <!-- BUSCADOR -->
+
+    <div class="buscar">
+
+        <input
+            id="buscador"
+            type="search"
+            placeholder="Buscar una noticia de Boca..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- DESTACADAS -->
+
+    <section class="seccion">
+
+        <div class="seccion-header">
+
+            <div class="seccion-titulo">
+
+                <h2>
+                    Noticias destacadas
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="destacadas"
+            class="destacadas"
+        >
+
+            <div class="cargando">
+
+                <div class="spinner"></div>
+
+                Cargando noticias...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ULTIMAS -->
+
+    <section
+        class="seccion"
+        id="ultimas"
+    >
+
+        <div class="seccion-header">
+
+            <div class="seccion-titulo">
+
+                <h2 id="tituloNoticias">
+                    Últimas noticias
+                </h2>
+
+            </div>
+
+            <button
+                class="ver-mas"
+                onclick="mostrarTodas()"
+            >
+                VER TODAS →
+            </button>
+
+        </div>
+
+
+        <div
+            id="noticias"
+        >
+
+            <div class="cargando">
+
+                <div class="spinner"></div>
+
+                Cargando noticias...
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTIDOS -->
+
+    <section class="seccion">
+
+        <div class="seccion-header">
+
+            <div class="seccion-titulo">
+
+                <h2>
+                    Próximos partidos
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="partidos">
+
+
+            <article class="partido">
+
+                <div class="partido-torneo">
+                    TORNEO CLAUSURA
+                </div>
+
+                <div class="partido-body">
+
+                    <div class="partido-fecha">
+                        Próximo partido
+                    </div>
+
+                    <div class="equipos">
+
+                        <div class="equipo">
+                            BOCA
+                        </div>
+
+                        <div class="vs">
+                            VS
+                        </div>
+
+                        <div class="equipo">
+                            RIVAL
+                        </div>
+
+                    </div>
+
+                    <div class="partido-hora">
+                        Próximamente
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="partido">
+
+                <div class="partido-torneo">
+                    COPA SUDAMERICANA
+                </div>
+
+                <div class="partido-body">
+
+                    <div class="partido-fecha">
+                        Próximo partido
+                    </div>
+
+                    <div class="equipos">
+
+                        <div class="equipo">
+                            BOCA
+                        </div>
+
+                        <div class="vs">
+                            VS
+                        </div>
+
+                        <div class="equipo">
+                            RIVAL
+                        </div>
+
+                    </div>
+
+                    <div class="partido-hora">
+                        Próximamente
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="partido">
+
+                <div class="partido-torneo">
+                    COPA ARGENTINA
+                </div>
+
+                <div class="partido-body">
+
+                    <div class="partido-fecha">
+                        Próximo partido
+                    </div>
+
+                    <div class="equipos">
+
+                        <div class="equipo">
+                            BOCA
+                        </div>
+
+                        <div class="vs">
+                            VS
+                        </div>
+
+                        <div class="equipo">
+                            RIVAL
+                        </div>
+
+                    </div>
+
+                    <div class="partido-hora">
+                        Próximamente
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- DISCIPLINAS -->
+
+    <section class="seccion">
+
+        <div class="seccion-header">
+
+            <div class="seccion-titulo">
+
+                <h2>
+                    Boca en todas sus disciplinas
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="disciplinas">
+
+
+            <article class="disciplina">
+
+                <small>
+                    Fútbol
+                </small>
+
+                <h3>
+                    Primera
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Fútbol
+                </small>
+
+                <h3>
+                    Reserva
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Fútbol femenino
+                </small>
+
+                <h3>
+                    Las Gladiadoras
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Juveniles
+                </small>
+
+                <h3>
+                    Inferiores
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Básquet
+                </small>
+
+                <h3>
+                    Básquet Xeneize
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Futsal
+                </small>
+
+                <h3>
+                    Futsal Boca
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Vóley
+                </small>
+
+                <h3>
+                    Vóley Xeneize
+                </h3>
+
+            </article>
+
+
+            <article class="disciplina">
+
+                <small>
+                    Club
+                </small>
+
+                <h3>
+                    Todas las disciplinas
+                </h3>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- BOMBONERA -->
+
+    <section class="seccion">
+
+        <div class="seccion-header">
+
+            <div class="seccion-titulo">
+
+                <h2>
+                    La Bombonera y las obras
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="obras">
+
+
+            <article class="obra">
+
+                <div class="obra-tag">
+                    LA BOMBONERA
+                </div>
+
+                <h3>
+                    Actualidad del estadio
+                </h3>
+
+                <p>
+                    Todas las novedades,
+                    trabajos y mejoras de
+                    La Bombonera.
+                </p>
+
+            </article>
+
+
+            <article class="obra">
+
+                <div class="obra-tag">
+                    INFRAESTRUCTURA
+                </div>
+
+                <h3>
+                    Boca Predio
+                </h3>
+
+                <p>
+                    Información sobre las
+                    instalaciones y el crecimiento
+                    del club.
+                </p>
+
+            </article>
+
+
+            <article class="obra">
+
+                <div class="obra-tag">
+                    PATRIMONIO
+                </div>
+
+                <h3>
+                    Casa Amarilla
+                </h3>
+
+                <p>
+                    Las novedades de las
+                    instalaciones del mundo Boca.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- STREAMING -->
+
+    <section class="seccion">
+
+        <div class="streaming">
+
+            <h2>
+                BOCA <span>24/7</span>
+                <br>
+                El canal de los Xeneizes
+            </h2>
+
+            <p>
+                Noticias, actualidad, análisis,
+                información y todo lo que pasa
+                alrededor de Boca Juniors.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            BOCA <span>24/7</span>
+        </div>
+
+        <div class="footer-sub">
+            Todo Boca. Todo el día.
+        </div>
+
+        <div class="footer-line"></div>
+
+        <div class="footer-copy">
+            BOCA 24/7 · Noticias y actualidad de Boca Juniors
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   CONFIGURACIÓN
+========================================================= */
+
+const ARCHIVO_NOTICIAS =
+    "noticias.json";
+
+
+let noticiasOriginales = [];
+
+let noticiasUnicas = [];
+
+let categoriaActual =
+    "Todas";
+
+
+/* =========================================================
+   ELEMENTOS
+========================================================= */
+
+const noticiasContenedor =
+    document.getElementById(
+        "noticias"
+    );
+
+
+const destacadasContenedor =
+    document.getElementById(
+        "destacadas"
+    );
+
+
+const buscador =
+    document.getElementById(
+        "buscador"
+    );
+
+
+const estado =
+    document.getElementById(
+        "estado"
+    );
+
+
+const hora =
+    document.getElementById(
+        "hora"
+    );
+
+
+const ultimaTexto =
+    document.getElementById(
+        "ultimaTexto"
+    );
+
+
+const tituloNoticias =
+    document.getElementById(
+        "tituloNoticias"
+    );
+
+
+/* =========================================================
+   NORMALIZAR
+========================================================= */
+
+function normalizar(texto){
+
+    return String(
+        texto || ""
+    )
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(
+        /[\u0300-\u036f]/g,
+        ""
+    )
+    .replace(
+        /[^a-z0-9\s]/g,
+        " "
+    )
+    .replace(
+        /\s+/g,
+        " "
+    )
+    .trim();
 
 }
 
 
-/* ============================================================
-   GENERAR CLAVE ÚNICA
-============================================================ */
+/* =========================================================
+   ESCAPAR HTML
+========================================================= */
 
-function claveNoticia(noticia){
+function escapar(texto){
 
-    const titulo =
-        normalizarTitulo(
-            noticia.titulo
-        );
-
-    const fuente =
-        normalizarTitulo(
-            noticia.fuente
-        );
-
-    /*
-       El título es lo principal.
-
-       La fuente ayuda cuando dos notas tienen
-       títulos muy parecidos pero pertenecen
-       a fuentes diferentes.
-    */
-
-    return titulo + "|" + fuente;
+    return String(
+        texto || ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
 
 }
 
 
-/* ============================================================
-   MEDIR SIMILITUD ENTRE DOS TÍTULOS
-============================================================ */
+/* =========================================================
+   FECHA
+========================================================= */
 
-function similitudTitulos(
-    tituloA,
-    tituloB
-){
+function fechaBonita(fecha){
 
-    const palabrasA =
-        normalizarTitulo(
-            tituloA
+    if(!fecha){
+
+        return "";
+
+    }
+
+
+    const d =
+        new Date(fecha);
+
+
+    if(
+        isNaN(
+            d.getTime()
         )
+    ){
+
+        return "";
+
+    }
+
+
+    return d.toLocaleString(
+        "es-AR",
+        {
+            day:"2-digit",
+            month:"2-digit",
+            year:"numeric",
+            hour:"2-digit",
+            minute:"2-digit"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   VALOR FECHA
+========================================================= */
+
+function valorFecha(noticia){
+
+    const fecha =
+        new Date(
+            noticia.fecha_iso ||
+            noticia.fecha ||
+            0
+        ).getTime();
+
+
+    if(
+        isNaN(fecha)
+    ){
+
+        return 0;
+
+    }
+
+
+    return fecha;
+
+}
+
+
+/* =========================================================
+   SIMILITUD
+========================================================= */
+
+function similitud(a,b){
+
+    const A =
+        normalizar(a)
         .split(" ")
         .filter(
             palabra =>
@@ -1943,10 +2926,8 @@ function similitudTitulos(
         );
 
 
-    const palabrasB =
-        normalizarTitulo(
-            tituloB
-        )
+    const B =
+        normalizar(b)
         .split(" ")
         .filter(
             palabra =>
@@ -1955,8 +2936,8 @@ function similitudTitulos(
 
 
     if(
-        palabrasA.length === 0 ||
-        palabrasB.length === 0
+        !A.length ||
+        !B.length
     ){
 
         return 0;
@@ -1964,83 +2945,93 @@ function similitudTitulos(
     }
 
 
-    const conjuntoB =
-        new Set(
-            palabrasB
-        );
+    const conjunto =
+        new Set(B);
 
 
-    let coincidencias = 0;
+    let iguales = 0;
 
 
-    for(
-        const palabra
-        of palabrasA
-    ){
+    A.forEach(
+        palabra => {
 
-        if(
-            conjuntoB.has(
-                palabra
-            )
-        ){
+            if(
+                conjunto.has(
+                    palabra
+                )
+            ){
 
-            coincidencias++;
+                iguales++;
+
+            }
 
         }
+    );
 
-    }
 
-
-    return coincidencias /
+    return
+        iguales /
         Math.max(
-            palabrasA.length,
-            palabrasB.length
+            A.length,
+            B.length
         );
 
 }
 
 
-/* ============================================================
-   ELIMINAR NOTICIAS REPETIDAS
-============================================================ */
+/* =========================================================
+   ELIMINAR REPETIDAS
+========================================================= */
 
-function eliminarDuplicadas(
-    noticias
-){
+function quitarDuplicadas(lista){
+
+    /*
+       Primero ordenamos por fecha.
+
+       Así conservamos la versión más
+       reciente de una noticia.
+    */
+
+    const ordenadas =
+        [...lista]
+        .sort(
+            (a,b) =>
+                valorFecha(b) -
+                valorFecha(a)
+        );
+
 
     const resultado = [];
 
-    const claves = new Set();
+    const claves =
+        new Set();
 
 
     for(
         const noticia
-        of noticias
+        of ordenadas
     ){
 
-        if(
-            !noticia ||
-            !noticia.titulo
-        ){
+        const titulo =
+            normalizar(
+                noticia.titulo
+            );
+
+
+        if(!titulo){
 
             continue;
 
         }
 
 
-        const clave =
-            claveNoticia(
-                noticia
-            );
-
-
         /*
-           REPETICIÓN EXACTA
+           Clave exacta.
         */
 
         if(
             claves.has(
-                clave
+                titulo
             )
         ){
 
@@ -2050,18 +3041,11 @@ function eliminarDuplicadas(
 
 
         /*
-           REPETICIÓN CASI IGUAL
-
-           Esto es importante para casos como:
-
-           "Boca confirmó la salida del Changuito..."
-           "Boca confirmó la salida del Changuito Zeballos..."
-
-           que pueden venir varias veces
-           desde Google Noticias.
+           Comparación con las
+           noticias que ya quedaron.
         */
 
-        let esDuplicada = false;
+        let repetida = false;
 
 
         for(
@@ -2069,18 +3053,18 @@ function eliminarDuplicadas(
             of resultado
         ){
 
-            const similitud =
-                similitudTitulos(
+            const parecido =
+                similitud(
                     noticia.titulo,
                     anterior.titulo
                 );
 
 
             if(
-                similitud >= 0.78
+                parecido >= 0.78
             ){
 
-                esDuplicada = true;
+                repetida = true;
 
                 break;
 
@@ -2089,9 +3073,7 @@ function eliminarDuplicadas(
         }
 
 
-        if(
-            esDuplicada
-        ){
+        if(repetida){
 
             continue;
 
@@ -2099,7 +3081,7 @@ function eliminarDuplicadas(
 
 
         claves.add(
-            clave
+            titulo
         );
 
 
@@ -2115,13 +3097,11 @@ function eliminarDuplicadas(
 }
 
 
-/* ============================================================
-   CONVERTIR NOTICIA A FORMATO ÚNICO
-============================================================ */
+/* =========================================================
+   PREPARAR NOTICIA
+========================================================= */
 
-function prepararNoticia(
-    noticia
-){
+function preparar(noticia){
 
     if(
         !noticia ||
@@ -2134,11 +3114,11 @@ function prepararNoticia(
 
 
     const titulo =
-        limpiarTexto(
+        String(
             noticia.titulo ||
             noticia.title ||
             ""
-        );
+        ).trim();
 
 
     if(!titulo){
@@ -2148,160 +3128,68 @@ function prepararNoticia(
     }
 
 
-    let contenido =
-        limpiarTexto(
-            noticia.contenido ||
-            noticia.descripcion ||
-            noticia.description ||
-            ""
-        );
-
-
-    let fuente =
-        limpiarTexto(
-            noticia.fuente ||
-            noticia.source ||
-            "Google Noticias"
-        );
-
-
-    let categoria =
-        limpiarTexto(
-            noticia.categoria ||
-            "Boca"
-        );
-
-
-    let link =
-        String(
-            noticia.link ||
-            ""
-        ).trim();
-
-
-    let fecha =
-        String(
-            noticia.fecha_iso ||
-            noticia.fecha ||
-            ""
-        ).trim();
-
-
     return {
 
         titulo:
             titulo,
 
         fuente:
-            fuente,
+            String(
+                noticia.fuente ||
+                noticia.source ||
+                "Google Noticias"
+            ).trim(),
 
         contenido:
-            contenido,
+            String(
+                noticia.contenido ||
+                noticia.descripcion ||
+                noticia.description ||
+                ""
+            ).trim(),
 
         link:
-            link,
+            String(
+                noticia.link ||
+                ""
+            ).trim(),
 
         categoria:
-            categoria,
+            String(
+                noticia.categoria ||
+                "Boca"
+            ).trim(),
 
         fecha_iso:
-            fecha
+            String(
+                noticia.fecha_iso ||
+                noticia.fecha ||
+                ""
+            ).trim()
 
     };
 
 }
 
 
-/* ============================================================
-   ORDENAR NOTICIAS POR FECHA
-============================================================ */
-
-function ordenarPorFecha(
-    noticias
-){
-
-    return noticias.sort(
-        function(a,b){
-
-            const fechaA =
-                new Date(
-                    a.fecha_iso
-                ).getTime();
-
-
-            const fechaB =
-                new Date(
-                    b.fecha_iso
-                ).getTime();
-
-
-            const valorA =
-                isNaN(fechaA)
-                ? 0
-                : fechaA;
-
-
-            const valorB =
-                isNaN(fechaB)
-                ? 0
-                : fechaB;
-
-
-            return valorB - valorA;
-
-        }
-    );
-
-}
-
-
-/* ============================================================
-   CARGAR NOTICIAS.JSON
-============================================================ */
+/* =========================================================
+   CARGAR JSON
+========================================================= */
 
 async function cargarNoticias(){
 
-    if(
-        cargandoNoticias
-    ){
-
-        return;
-
-    }
-
-
-    cargandoNoticias = true;
-
-
-    if(estado){
-
-        estado.textContent =
-            "Cargando noticias de Boca...";
-
-    }
-
-
     try{
 
-        /*
-           IMPORTANTE:
+        estado.textContent =
+            "Cargando noticias...";
 
-           La página lee DIRECTAMENTE
-           el archivo noticias.json.
-
-           No Vercel.
-           No API externa.
-        */
 
         const respuesta =
             await fetch(
                 ARCHIVO_NOTICIAS +
-                "?t=" +
+                "?v=" +
                 Date.now(),
                 {
-                    method:
-                        "GET",
-
                     cache:
                         "no-store"
                 }
@@ -2324,22 +3212,7 @@ async function cargarNoticias(){
             await respuesta.json();
 
 
-        /*
-           Aceptamos tanto:
-
-           [
-              {...},
-              {...}
-           ]
-
-           como:
-
-           {
-              noticias: [...]
-           }
-        */
-
-        let lista;
+        let lista = [];
 
 
         if(
@@ -2351,7 +3224,8 @@ async function cargarNoticias(){
             lista =
                 datos;
 
-        }else if(
+        }
+        else if(
             datos &&
             Array.isArray(
                 datos.noticias
@@ -2361,107 +3235,70 @@ async function cargarNoticias(){
             lista =
                 datos.noticias;
 
-        }else{
+        }
+        else{
 
             throw new Error(
-                "El archivo noticias.json no contiene una lista válida"
+                "Formato inválido de noticias.json"
             );
 
         }
 
 
-        /*
-           Convertimos todas las noticias
-           al mismo formato.
-        */
-
-        const preparadas =
+        noticiasOriginales =
             lista
-                .map(
-                    prepararNoticia
-                )
-                .filter(
-                    noticia =>
-                        noticia !== null
+            .map(
+                preparar
+            )
+            .filter(
+                Boolean
+            );
+
+
+        noticiasUnicas =
+            quitarDuplicadas(
+                noticiasOriginales
+            );
+
+
+        estado.textContent =
+            noticiasUnicas.length +
+            " noticias disponibles";
+
+
+        hora.textContent =
+            "Actualizado " +
+            new Date()
+                .toLocaleTimeString(
+                    "es-AR",
+                    {
+                        hour:"2-digit",
+                        minute:"2-digit"
+                    }
                 );
 
 
-        /*
-           ORDENAMOS ANTES DE ELIMINAR.
-
-           Así, si existen varias versiones
-           de una misma noticia, conservamos
-           la más reciente.
-        */
-
-        ordenarPorFecha(
-            preparadas
-        );
-
-
-        /*
-           ELIMINAMOS DUPLICADAS.
-        */
-
-        todasLasNoticias =
-            eliminarDuplicadas(
-                preparadas
-            );
-
-
-        /*
-           Volvemos a ordenar por seguridad.
-        */
-
-        ordenarPorFecha(
-            todasLasNoticias
-        );
-
-
-        /*
-           Actualizamos la interfaz.
-        */
-
-        mostrarNoticias();
+        mostrarUltima();
 
         mostrarDestacadas();
 
-        actualizarUltimaHora();
-
-
-        if(estado){
-
-            estado.textContent =
-                todasLasNoticias.length +
-                " noticias disponibles";
-
-        }
-
-
-        if(actualizacion){
-
-            actualizacion.textContent =
-                "Actualizado: " +
-                horaActual();
-
-        }
+        mostrarNoticias();
 
 
         console.log(
-            "BOCA 24/7:",
-            preparadas.length,
-            "noticias recibidas."
+            "Noticias recibidas:",
+            noticiasOriginales.length
         );
 
 
         console.log(
-            "BOCA 24/7:",
-            todasLasNoticias.length,
-            "noticias únicas."
+            "Noticias únicas:",
+            noticiasUnicas.length
         );
 
 
-    }catch(error){
+    }
+    catch(error){
 
         console.error(
             "BOCA 24/7:",
@@ -2469,943 +3306,233 @@ async function cargarNoticias(){
         );
 
 
-        if(estado){
-
-            estado.textContent =
-                "No se pudieron cargar las noticias";
-
-        }
+        estado.textContent =
+            "No se pudieron cargar las noticias";
 
 
-        if(actualizacion){
-
-            actualizacion.textContent =
-                "Revisá noticias.json";
-
-        }
+        hora.textContent =
+            "Error leyendo noticias.json";
 
 
-        if(contenedorNoticias){
+        noticiasContenedor.innerHTML = `
 
-            contenedorNoticias.innerHTML = `
+            <div class="error">
 
-                <div class="error">
+                <strong>
+                    No pudimos cargar las noticias.
+                </strong>
 
-                    <strong>
-                        No pudimos cargar las noticias.
-                    </strong>
+                <br><br>
 
-                    <br><br>
+                El archivo debe llamarse
+                <strong>noticias.json</strong>
+                y estar en la misma carpeta
+                que este index.html.
 
-                    Verificá que el archivo
-                    <strong>noticias.json</strong>
-                    esté en la misma carpeta que
-                    <strong>index.html</strong>.
+            </div>
 
-                </div>
+        `;
 
-            `;
 
-        }
-
-    }finally{
-
-        cargandoNoticias =
-            false;
+        destacadasContenedor.innerHTML = "";
 
     }
 
 }
 
 
-/* ============================================================
-   FILTRAR POR SECCIÓN
-============================================================ */
+/* =========================================================
+   ULTIMA HORA
+========================================================= */
 
-function obtenerNoticiasFiltradas(){
-
-    const texto =
-        buscador
-            ? buscador.value
-                .toLowerCase()
-                .trim()
-            : "";
-
-
-    let noticias =
-        [...todasLasNoticias];
-
-
-    /*
-       FILTRO DE CATEGORÍA
-    */
+function mostrarUltima(){
 
     if(
-        seccionActual !== "Todas"
+        !noticiasUnicas.length
     ){
 
-        noticias =
-            noticias.filter(
-                noticia => {
-
-                    const categoria =
-                        normalizarTitulo(
-                            noticia.categoria
-                        );
-
-
-                    const seccion =
-                        normalizarTitulo(
-                            seccionActual
-                        );
-
-
-                    return
-                        categoria === seccion;
-
-                }
-            );
-
-    }
-
-
-    /*
-       FILTRO DEL BUSCADOR
-    */
-
-    if(texto){
-
-        noticias =
-            noticias.filter(
-                noticia => {
-
-                    const contenido =
-                        (
-                            noticia.titulo +
-                            " " +
-                            noticia.fuente +
-                            " " +
-                            noticia.contenido +
-                            " " +
-                            noticia.categoria
-                        )
-                        .toLowerCase();
-
-
-                    return contenido.includes(
-                        texto
-                    );
-
-                }
-            );
-
-    }
-
-
-    return noticias;
-
-}
-
-
-/* ============================================================
-   CAMBIAR SECCIÓN
-============================================================ */
-
-function cambiarSeccion(
-    seccion,
-    boton
-){
-
-    seccionActual =
-        seccion;
-
-
-    document
-        .querySelectorAll(
-            ".navigation button"
-        )
-        .forEach(
-            elemento => {
-
-                elemento.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    if(boton){
-
-        boton.classList.add(
-            "active"
-        );
-
-    }
-
-
-    if(tituloSeccion){
-
-        tituloSeccion.textContent =
-            seccion === "Todas"
-            ? "Últimas noticias"
-            : seccion;
-
-    }
-
-
-    mostrarNoticias();
-
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
-}
-
-
-/* ============================================================
-   BUSCADOR
-============================================================ */
-
-if(buscador){
-
-    buscador.addEventListener(
-        "input",
-        function(){
-
-            mostrarNoticias();
-
-        }
-    );
-
-}
-
-
-/* ============================================================
-   FECHA ACTUAL
-============================================================ */
-
-function horaActual(){
-
-    return new Date()
-        .toLocaleTimeString(
-            "es-AR",
-            {
-                hour:
-                    "2-digit",
-
-                minute:
-                    "2-digit"
-            }
-        );
-
-}
-                <script>
-
-/* ============================================================
-   BOCA 24/7 — BLOQUE 2
-   CARGA Y LIMPIEZA DE NOTICIAS
-============================================================ */
-
-
-/* ============================================================
-   VARIABLES
-============================================================ */
-
-let todasLasNoticias = [];
-
-let seccionActual = "Todas";
-
-let cargandoNoticias = false;
-
-
-/* ============================================================
-   NORMALIZAR TEXTO PARA COMPARAR
-============================================================ */
-
-function normalizarTitulo(texto){
-
-    return String(texto || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9\s]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-}
-
-
-/* ============================================================
-   GENERAR CLAVE ÚNICA
-============================================================ */
-
-function claveNoticia(noticia){
-
-    const titulo =
-        normalizarTitulo(
-            noticia.titulo
-        );
-
-    const fuente =
-        normalizarTitulo(
-            noticia.fuente
-        );
-
-    /*
-       El título es lo principal.
-
-       La fuente ayuda cuando dos notas tienen
-       títulos muy parecidos pero pertenecen
-       a fuentes diferentes.
-    */
-
-    return titulo + "|" + fuente;
-
-}
-
-
-/* ============================================================
-   MEDIR SIMILITUD ENTRE DOS TÍTULOS
-============================================================ */
-
-function similitudTitulos(
-    tituloA,
-    tituloB
-){
-
-    const palabrasA =
-        normalizarTitulo(
-            tituloA
-        )
-        .split(" ")
-        .filter(
-            palabra =>
-                palabra.length >= 4
-        );
-
-
-    const palabrasB =
-        normalizarTitulo(
-            tituloB
-        )
-        .split(" ")
-        .filter(
-            palabra =>
-                palabra.length >= 4
-        );
-
-
-    if(
-        palabrasA.length === 0 ||
-        palabrasB.length === 0
-    ){
-
-        return 0;
-
-    }
-
-
-    const conjuntoB =
-        new Set(
-            palabrasB
-        );
-
-
-    let coincidencias = 0;
-
-
-    for(
-        const palabra
-        of palabrasA
-    ){
-
-        if(
-            conjuntoB.has(
-                palabra
-            )
-        ){
-
-            coincidencias++;
-
-        }
-
-    }
-
-
-    return coincidencias /
-        Math.max(
-            palabrasA.length,
-            palabrasB.length
-        );
-
-}
-
-
-/* ============================================================
-   ELIMINAR NOTICIAS REPETIDAS
-============================================================ */
-
-function eliminarDuplicadas(
-    noticias
-){
-
-    const resultado = [];
-
-    const claves = new Set();
-
-
-    for(
-        const noticia
-        of noticias
-    ){
-
-        if(
-            !noticia ||
-            !noticia.titulo
-        ){
-
-            continue;
-
-        }
-
-
-        const clave =
-            claveNoticia(
-                noticia
-            );
-
-
-        /*
-           REPETICIÓN EXACTA
-        */
-
-        if(
-            claves.has(
-                clave
-            )
-        ){
-
-            continue;
-
-        }
-
-
-        /*
-           REPETICIÓN CASI IGUAL
-
-           Esto es importante para casos como:
-
-           "Boca confirmó la salida del Changuito..."
-           "Boca confirmó la salida del Changuito Zeballos..."
-
-           que pueden venir varias veces
-           desde Google Noticias.
-        */
-
-        let esDuplicada = false;
-
-
-        for(
-            const anterior
-            of resultado
-        ){
-
-            const similitud =
-                similitudTitulos(
-                    noticia.titulo,
-                    anterior.titulo
-                );
-
-
-            if(
-                similitud >= 0.78
-            ){
-
-                esDuplicada = true;
-
-                break;
-
-            }
-
-        }
-
-
-        if(
-            esDuplicada
-        ){
-
-            continue;
-
-        }
-
-
-        claves.add(
-            clave
-        );
-
-
-        resultado.push(
-            noticia
-        );
-
-    }
-
-
-    return resultado;
-
-}
-
-
-/* ============================================================
-   CONVERTIR NOTICIA A FORMATO ÚNICO
-============================================================ */
-
-function prepararNoticia(
-    noticia
-){
-
-    if(
-        !noticia ||
-        typeof noticia !== "object"
-    ){
-
-        return null;
-
-    }
-
-
-    const titulo =
-        limpiarTexto(
-            noticia.titulo ||
-            noticia.title ||
-            ""
-        );
-
-
-    if(!titulo){
-
-        return null;
-
-    }
-
-
-    let contenido =
-        limpiarTexto(
-            noticia.contenido ||
-            noticia.descripcion ||
-            noticia.description ||
-            ""
-        );
-
-
-    let fuente =
-        limpiarTexto(
-            noticia.fuente ||
-            noticia.source ||
-            "Google Noticias"
-        );
-
-
-    let categoria =
-        limpiarTexto(
-            noticia.categoria ||
-            "Boca"
-        );
-
-
-    let link =
-        String(
-            noticia.link ||
-            ""
-        ).trim();
-
-
-    let fecha =
-        String(
-            noticia.fecha_iso ||
-            noticia.fecha ||
-            ""
-        ).trim();
-
-
-    return {
-
-        titulo:
-            titulo,
-
-        fuente:
-            fuente,
-
-        contenido:
-            contenido,
-
-        link:
-            link,
-
-        categoria:
-            categoria,
-
-        fecha_iso:
-            fecha
-
-    };
-
-}
-
-
-/* ============================================================
-   ORDENAR NOTICIAS POR FECHA
-============================================================ */
-
-function ordenarPorFecha(
-    noticias
-){
-
-    return noticias.sort(
-        function(a,b){
-
-            const fechaA =
-                new Date(
-                    a.fecha_iso
-                ).getTime();
-
-
-            const fechaB =
-                new Date(
-                    b.fecha_iso
-                ).getTime();
-
-
-            const valorA =
-                isNaN(fechaA)
-                ? 0
-                : fechaA;
-
-
-            const valorB =
-                isNaN(fechaB)
-                ? 0
-                : fechaB;
-
-
-            return valorB - valorA;
-
-        }
-    );
-
-}
-
-
-/* ============================================================
-   CARGAR NOTICIAS.JSON
-============================================================ */
-
-async function cargarNoticias(){
-
-    if(
-        cargandoNoticias
-    ){
+        ultimaTexto.textContent =
+            "No hay noticias disponibles.";
 
         return;
 
     }
 
 
-    cargandoNoticias = true;
-
-
-    if(estado){
-
-        estado.textContent =
-            "Cargando noticias de Boca...";
-
-    }
-
-
-    try{
-
-        /*
-           IMPORTANTE:
-
-           La página lee DIRECTAMENTE
-           el archivo noticias.json.
-
-           No Vercel.
-           No API externa.
-        */
-
-        const respuesta =
-            await fetch(
-                ARCHIVO_NOTICIAS +
-                "?t=" +
-                Date.now(),
-                {
-                    method:
-                        "GET",
-
-                    cache:
-                        "no-store"
-                }
-            );
-
-
-        if(
-            !respuesta.ok
-        ){
-
-            throw new Error(
-                "HTTP " +
-                respuesta.status
-            );
-
-        }
-
-
-        const datos =
-            await respuesta.json();
-
-
-        /*
-           Aceptamos tanto:
-
-           [
-              {...},
-              {...}
-           ]
-
-           como:
-
-           {
-              noticias: [...]
-           }
-        */
-
-        let lista;
-
-
-        if(
-            Array.isArray(
-                datos
-            )
-        ){
-
-            lista =
-                datos;
-
-        }else if(
-            datos &&
-            Array.isArray(
-                datos.noticias
-            )
-        ){
-
-            lista =
-                datos.noticias;
-
-        }else{
-
-            throw new Error(
-                "El archivo noticias.json no contiene una lista válida"
-            );
-
-        }
-
-
-        /*
-           Convertimos todas las noticias
-           al mismo formato.
-        */
-
-        const preparadas =
-            lista
-                .map(
-                    prepararNoticia
-                )
-                .filter(
-                    noticia =>
-                        noticia !== null
-                );
-
-
-        /*
-           ORDENAMOS ANTES DE ELIMINAR.
-
-           Así, si existen varias versiones
-           de una misma noticia, conservamos
-           la más reciente.
-        */
-
-        ordenarPorFecha(
-            preparadas
-        );
-
-
-        /*
-           ELIMINAMOS DUPLICADAS.
-        */
-
-        todasLasNoticias =
-            eliminarDuplicadas(
-                preparadas
-            );
-
-
-        /*
-           Volvemos a ordenar por seguridad.
-        */
-
-        ordenarPorFecha(
-            todasLasNoticias
-        );
-
-
-        /*
-           Actualizamos la interfaz.
-        */
-
-        mostrarNoticias();
-
-        mostrarDestacadas();
-
-        actualizarUltimaHora();
-
-
-        if(estado){
-
-            estado.textContent =
-                todasLasNoticias.length +
-                " noticias disponibles";
-
-        }
-
-
-        if(actualizacion){
-
-            actualizacion.textContent =
-                "Actualizado: " +
-                horaActual();
-
-        }
-
-
-        console.log(
-            "BOCA 24/7:",
-            preparadas.length,
-            "noticias recibidas."
-        );
-
-
-        console.log(
-            "BOCA 24/7:",
-            todasLasNoticias.length,
-            "noticias únicas."
-        );
-
-
-    }catch(error){
-
-        console.error(
-            "BOCA 24/7:",
-            error
-        );
-
-
-        if(estado){
-
-            estado.textContent =
-                "No se pudieron cargar las noticias";
-
-        }
-
-
-        if(actualizacion){
-
-            actualizacion.textContent =
-                "Revisá noticias.json";
-
-        }
-
-
-        if(contenedorNoticias){
-
-            contenedorNoticias.innerHTML = `
-
-                <div class="error">
-
-                    <strong>
-                        No pudimos cargar las noticias.
-                    </strong>
-
-                    <br><br>
-
-                    Verificá que el archivo
-                    <strong>noticias.json</strong>
-                    esté en la misma carpeta que
-                    <strong>index.html</strong>.
-
-                </div>
-
-            `;
-
-        }
-
-    }finally{
-
-        cargandoNoticias =
-            false;
-
-    }
+    ultimaTexto.textContent =
+        noticiasUnicas[0].titulo;
 
 }
 
 
-/* ============================================================
-   FILTRAR POR SECCIÓN
-============================================================ */
+/* =========================================================
+   DESTACADAS
+========================================================= */
 
-function obtenerNoticiasFiltradas(){
+function mostrarDestacadas(){
 
-    const texto =
-        buscador
-            ? buscador.value
-                .toLowerCase()
-                .trim()
-            : "";
+    const lista =
+        noticiasUnicas
+        .slice(0,3);
 
-
-    let noticias =
-        [...todasLasNoticias];
-
-
-    /*
-       FILTRO DE CATEGORÍA
-    */
 
     if(
-        seccionActual !== "Todas"
+        !lista.length
     ){
 
-        noticias =
-            noticias.filter(
+        destacadasContenedor.innerHTML = `
+
+            <div class="vacio">
+                No hay noticias disponibles.
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const principal =
+        lista[0];
+
+
+    const secundarias =
+        lista.slice(1);
+
+
+    let html = `
+
+        <article
+            class="destacada-principal"
+        >
+
+            <div
+                class="destacada-contenido"
+            >
+
+                <span class="etiqueta">
+
+                    ${escapar(
+                        principal.categoria ||
+                        "Boca"
+                    )}
+
+                </span>
+
+
+                <h3>
+
+                    ${escapar(
+                        principal.titulo
+                    )}
+
+                </h3>
+
+
+                <p>
+
+                    ${escapar(
+                        principal.contenido ||
+                        ""
+                    )}
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <div
+            class="destacadas-lateral"
+        >
+
+    `;
+
+
+    secundarias.forEach(
+        noticia => {
+
+            html += `
+
+                <article
+                    class="destacada-mini"
+                >
+
+                    <span class="etiqueta">
+
+                        ${escapar(
+                            noticia.categoria ||
+                            "Boca"
+                        )}
+
+                    </span>
+
+
+                    <h3>
+
+                        ${escapar(
+                            noticia.titulo
+                        )}
+
+                    </h3>
+
+                </article>
+
+            `;
+
+        }
+    );
+
+
+    html += `
+
+        </div>
+
+    `;
+
+
+    destacadasContenedor.innerHTML =
+        html;
+
+}
+
+
+/* =========================================================
+   FILTRAR
+========================================================= */
+
+function obtenerFiltradas(){
+
+    let lista =
+        [...noticiasUnicas];
+
+
+    if(
+        categoriaActual !==
+        "Todas"
+    ){
+
+        const categoriaBuscada =
+            normalizar(
+                categoriaActual
+            );
+
+
+        lista =
+            lista.filter(
                 noticia => {
 
                     const categoria =
-                        normalizarTitulo(
+                        normalizar(
                             noticia.categoria
                         );
 
 
-                    const seccion =
-                        normalizarTitulo(
-                            seccionActual
-                        );
-
-
                     return
-                        categoria === seccion;
+                        categoria ===
+                        categoriaBuscada;
 
                 }
             );
@@ -3413,17 +3540,20 @@ function obtenerNoticiasFiltradas(){
     }
 
 
-    /*
-       FILTRO DEL BUSCADOR
-    */
+    const texto =
+        buscador.value
+        .trim()
+        .toLowerCase();
+
 
     if(texto){
 
-        noticias =
-            noticias.filter(
+        lista =
+            lista.filter(
                 noticia => {
 
                     const contenido =
+
                         (
                             noticia.titulo +
                             " " +
@@ -3436,9 +3566,10 @@ function obtenerNoticiasFiltradas(){
                         .toLowerCase();
 
 
-                    return contenido.includes(
-                        texto
-                    );
+                    return
+                        contenido.includes(
+                            texto
+                        );
 
                 }
             );
@@ -3446,27 +3577,192 @@ function obtenerNoticiasFiltradas(){
     }
 
 
-    return noticias;
+    return lista;
 
 }
 
 
-/* ============================================================
-   CAMBIAR SECCIÓN
-============================================================ */
+/* =========================================================
+   MOSTRAR NOTICIAS
+========================================================= */
 
-function cambiarSeccion(
-    seccion,
+function mostrarNoticias(){
+
+    const lista =
+        obtenerFiltradas();
+
+
+    if(
+        !lista.length
+    ){
+
+        noticiasContenedor.innerHTML = `
+
+            <div class="vacio">
+
+                No encontramos noticias
+                para esta sección.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    let html =
+        '<div class="noticias-grid">';
+
+
+    lista.forEach(
+        noticia => {
+
+            const link =
+                noticia.link;
+
+
+            html += `
+
+                <article class="noticia">
+
+
+                    <div class="noticia-top">
+
+                        <div class="noticia-marca">
+
+                            BOCA
+                            <span>24/7</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="noticia-body">
+
+
+                        <div
+                            class="noticia-fuente"
+                        >
+
+                            ${escapar(
+                                noticia.fuente ||
+                                "Google Noticias"
+                            )}
+
+                        </div>
+
+
+                        <div
+                            class="noticia-cat"
+                        >
+
+                            ${escapar(
+                                noticia.categoria ||
+                                "Boca"
+                            )}
+
+                        </div>
+
+
+                        <h3>
+
+                            ${escapar(
+                                noticia.titulo
+                            )}
+
+                        </h3>
+
+
+                        <p>
+
+                            ${escapar(
+                                noticia.contenido ||
+                                "Toda la actualidad de Boca Juniors."
+                            )}
+
+                        </p>
+
+
+                        <div
+                            class="noticia-footer"
+                        >
+
+                            <span
+                                class="fecha"
+                            >
+
+                                ${escapar(
+                                    fechaBonita(
+                                        noticia.fecha_iso
+                                    )
+                                )}
+
+                            </span>
+
+
+                            ${
+                                link
+                                ?
+                                `
+
+                                <a
+                                    class="leer"
+                                    href="${escapar(link)}"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+
+                                    LEER →
+
+                                </a>
+
+                                `
+                                :
+                                ""
+                            }
+
+                        </div>
+
+
+                    </div>
+
+                </article>
+
+            `;
+
+        }
+    );
+
+
+    html +=
+        "</div>";
+
+
+    noticiasContenedor.innerHTML =
+        html;
+
+}
+
+
+/* =========================================================
+   CAMBIAR CATEGORÍA
+========================================================= */
+
+function seleccionar(
+    categoria,
     boton
 ){
 
-    seccionActual =
-        seccion;
+    categoriaActual =
+        categoria;
 
 
     document
         .querySelectorAll(
-            ".navigation button"
+            ".nav button"
         )
         .forEach(
             elemento => {
@@ -3479,75 +3775,139 @@ function cambiarSeccion(
         );
 
 
-    if(boton){
+    boton.classList.add(
+        "active"
+    );
 
-        boton.classList.add(
-            "active"
-        );
+
+    if(
+        categoria ===
+        "Todas"
+    ){
+
+        tituloNoticias.textContent =
+            "Últimas noticias";
+
+    }
+    else{
+
+        tituloNoticias.textContent =
+            categoria;
 
     }
 
 
-    if(tituloSeccion){
-
-        tituloSeccion.textContent =
-            seccion === "Todas"
-            ? "Últimas noticias"
-            : seccion;
-
-    }
+    buscador.value =
+        "";
 
 
     mostrarNoticias();
 
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+    document
+        .getElementById(
+            "ultimas"
+        )
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
 }
 
 
-/* ============================================================
-   BUSCADOR
-============================================================ */
+/* =========================================================
+   VER TODAS
+========================================================= */
 
-if(buscador){
+function mostrarTodas(){
 
-    buscador.addEventListener(
-        "input",
-        function(){
-
-            mostrarNoticias();
-
-        }
-    );
-
-}
+    categoriaActual =
+        "Todas";
 
 
-/* ============================================================
-   FECHA ACTUAL
-============================================================ */
+    document
+        .querySelectorAll(
+            ".nav button"
+        )
+        .forEach(
+            boton => {
 
-function horaActual(){
+                boton.classList.remove(
+                    "active"
+                );
 
-    return new Date()
-        .toLocaleTimeString(
-            "es-AR",
-            {
-                hour:
-                    "2-digit",
-
-                minute:
-                    "2-digit"
             }
         );
-    </script>
+
+
+    document
+        .querySelector(
+            ".nav button"
+        )
+        .classList.add(
+            "active"
+        );
+
+
+    tituloNoticias.textContent =
+        "Últimas noticias";
+
+
+    buscador.value =
+        "";
+
+
+    mostrarNoticias();
+
+
+    document
+        .getElementById(
+            "ultimas"
+        )
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+buscador.addEventListener(
+    "input",
+    function(){
+
+        mostrarNoticias();
+
+    }
+);
+
+
+/* =========================================================
+   CARGA INICIAL
+========================================================= */
+
+cargarNoticias();
+
+
+/* =========================================================
+   ACTUALIZAR CADA 5 MINUTOS
+========================================================= */
+
+setInterval(
+    function(){
+
+        cargarNoticias();
+
+    },
+    5 * 60 * 1000
+);
+
+
+</script>
 
 </body>
 
 </html>
-
-}
