@@ -1,47 +1,47 @@
 [
   {
-    "titulo": "Boca Juniors se prepara para su próximo partido",
+    "titulo": "Boca oficializó la venta de Zeballos al Monza de Italia",
     "fuente": "BOCA 24/7",
-    "contenido": "Toda la información y las novedades del Xeneize antes de su próximo compromiso.",
-    "categoria": "Boca",
-    "fecha": "01/09/2026",
-    "fecha_iso": "2026-09-01T13:00:00-03:00",
-    "link": "#"
-  },
-  {
-    "titulo": "Boca vs Vélez: todo listo para el próximo desafío",
-    "fuente": "BOCA 24/7",
-    "contenido": "El Xeneize enfrentará a Vélez Sarsfield por los octavos de final de la Copa Argentina.",
-    "categoria": "Partidos",
-    "fecha": "01/09/2026",
-    "fecha_iso": "2026-09-01T12:30:00-03:00",
-    "link": "#"
-  },
-  {
-    "titulo": "Boca ya tiene su agenda de próximos partidos",
-    "fuente": "BOCA 24/7",
-    "contenido": "El calendario xeneize incluye compromisos por Copa Argentina, Liga Profesional y Copa Sudamericana.",
-    "categoria": "Partidos",
-    "fecha": "01/09/2026",
-    "fecha_iso": "2026-09-01T12:00:00-03:00",
-    "link": "#"
-  },
-  {
-    "titulo": "Toda la actualidad del plantel Xeneize",
-    "fuente": "BOCA 24/7",
-    "contenido": "Noticias, novedades, formación y toda la información del plantel de Boca Juniors.",
-    "categoria": "Plantel",
-    "fecha": "01/09/2026",
-    "fecha_iso": "2026-09-01T11:30:00-03:00",
-    "link": "#"
-  },
-  {
-    "titulo": "Mercado de pases: las novedades de Boca",
-    "fuente": "BOCA 24/7",
-    "contenido": "Seguimos minuto a minuto todos los movimientos relacionados con el mercado de pases Xeneize.",
+    "contenido": "El club confirmó el traspaso del Changuito Zeballos al AC Monza por unos 5 millones de dólares, reteniendo el 40% de una futura venta. Firmó contrato hasta junio de 2030 y viaja a Italia para la revisión médica.",
     "categoria": "Mercado de pases",
     "fecha": "01/09/2026",
-    "fecha_iso": "2026-09-01T11:00:00-03:00",
+    "fecha_iso": "2026-09-01T17:33:00-03:00",
+    "link": "#"
+  },
+  {
+    "titulo": "Todo confirmado para Boca-Vélez por la Copa Argentina",
+    "fuente": "BOCA 24/7",
+    "contenido": "El Xeneize se mide mañana miércoles a las 21:15 hs ante Vélez en el estadio Mario Alberto Kempes de Córdoba, por los octavos de final. Dirige Sebastián Zunino y televisa TyC Sports; el ganador enfrentará a Racing en cuartos.",
+    "categoria": "Partidos",
+    "fecha": "01/09/2026",
+    "fecha_iso": "2026-09-01T16:10:00-03:00",
+    "link": "#"
+  },
+  {
+    "titulo": "Fechas confirmadas: Boca-San Pablo por los cuartos de la Sudamericana",
+    "fuente": "BOCA 24/7",
+    "contenido": "La ida será el martes 8 de septiembre a las 21:30 en la Bombonera y la revancha el 15 de septiembre en el Morumbí, ante uno de los rivales más duros que le quedan en el torneo.",
+    "categoria": "Partidos",
+    "fecha": "01/09/2026",
+    "fecha_iso": "2026-09-01T14:45:00-03:00",
+    "link": "#"
+  },
+  {
+    "titulo": "Boca necesita sumar de a tres para meterse en zona de playoffs",
+    "fuente": "BOCA 24/7",
+    "contenido": "El equipo de Arruabarrena marcha en la mitad de la tabla del Torneo Clausura, igualado en puntos con Lanús, y busca asegurar su lugar entre los ocho que avanzan a los octavos de final.",
+    "categoria": "Boca",
+    "fecha": "01/09/2026",
+    "fecha_iso": "2026-09-01T13:20:00-03:00",
+    "link": "#"
+  },
+  {
+    "titulo": "Operaron con éxito a Adam Bareiro: será baja hasta 2027",
+    "fuente": "BOCA 24/7",
+    "contenido": "El delantero paraguayo pasó por el quirófano por una hernia de disco lumbar que arrastraba desde hace meses. No volverá a jugar en lo que resta de 2026 y su regreso se proyecta para la pretemporada.",
+    "categoria": "Plantel",
+    "fecha": "01/09/2026",
+    "fecha_iso": "2026-09-01T12:15:00-03:00",
     "link": "#"
   }
 ]
