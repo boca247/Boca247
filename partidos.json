@@ -14,44 +14,51 @@
     {
       "rival": "Vélez Sarsfield",
       "competencia": "Copa Argentina",
+      "instancia": "Octavos de final",
       "fecha": "2026-09-02",
       "hora": "21:15",
-      "estadio": "Estadio Mario Alberto Kempes"
+      "estadio": "Estadio Mario Alberto Kempes",
+      "ciudad": "Córdoba"
     },
     {
       "rival": "Gimnasia de Mendoza",
       "competencia": "Liga Profesional",
       "fecha": "2026-09-05",
       "hora": "16:30",
-      "estadio": "A confirmar"
+      "estadio": "A confirmar",
+      "ciudad": "A confirmar"
     },
     {
       "rival": "São Paulo",
       "competencia": "Copa Sudamericana",
       "fecha": "2026-09-08",
       "hora": "21:30",
-      "estadio": "A confirmar"
+      "estadio": "A confirmar",
+      "ciudad": "A confirmar"
     },
     {
       "rival": "Central Córdoba",
       "competencia": "Liga Profesional",
       "fecha": "2026-09-11",
       "hora": "21:30",
-      "estadio": "A confirmar"
+      "estadio": "A confirmar",
+      "ciudad": "A confirmar"
     },
     {
       "rival": "São Paulo",
       "competencia": "Copa Sudamericana",
       "fecha": "2026-09-15",
       "hora": "21:30",
-      "estadio": "A confirmar"
+      "estadio": "A confirmar",
+      "ciudad": "A confirmar"
     },
     {
       "rival": "San Lorenzo",
       "competencia": "Liga Profesional",
       "fecha": "2026-09-20",
       "hora": "14:45",
-      "estadio": "A confirmar"
+      "estadio": "A confirmar",
+      "ciudad": "A confirmar"
     }
   ],
   "resultados": []
