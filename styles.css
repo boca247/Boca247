@@ -322,6 +322,11 @@ button {
     color: #001f5b;
 }
 
+.outline-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* =====================================================
    QUICK LINKS
 ===================================================== */
@@ -383,7 +388,40 @@ button {
 }
 
 /* =====================================================
-   NEWS
+   NEWS CATEGORIES BUTTONS
+===================================================== */
+
+.news-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.news-categories button {
+    padding: 8px 16px;
+    border: 2px solid #001f5b;
+    background: white;
+    color: #001f5b;
+    font-weight: 900;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.news-categories button:hover {
+    background: #001f5b;
+    color: white;
+}
+
+.news-categories button.activo {
+    background: #001f5b;
+    color: white;
+}
+
+/* =====================================================
+   NEWS GRID
 ===================================================== */
 
 .news-grid {
@@ -392,109 +430,115 @@ button {
     gap: 22px;
 }
 
-.news-card {
+/* =====================================================
+   CARD NOTICIA REFACTORIZADA
+===================================================== */
+
+.card-noticia {
     background: white;
     border: 1px solid #e1e6ed;
+    border-radius: 6px;
     overflow: hidden;
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.news-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(0,20,55,.10);
-}
-
-.news-image {
-    height: 220px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
-    align-items: flex-end;
-    padding: 17px;
-    color: white;
-    font-size: 11px;
-    font-weight: 900;
-    background-position: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-noticia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 20, 55, 0.12);
+}
+
+.card-imagen {
+    height: 200px;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 12px;
 }
 
-.news-image::after {
+.card-imagen::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
         180deg,
-        transparent 35%,
-        rgba(0,15,45,.9)
+        transparent 40%,
+        rgba(0, 15, 45, 0.85)
     );
+    z-index: 1;
 }
 
-.news-image span {
+.card-categoria {
     position: relative;
     z-index: 2;
-}
-
-/* IMÁGENES REALES */
-
-.image-bombonera {
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
-}
-
-.image-training {
-    background-image:
-        url("IMG-20260830-WA0004.jpg");
-}
-
-.image-camiseta {
-    background-image:
-        url("IMG-20260830-WA0006.jpg");
-}
-
-.image-paredes {
-    background-image:
-        url("IMG-20260830-WA0004.jpg");
-}
-
-.image-team {
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
-}
-
-.news-content {
-    padding: 23px;
-}
-
-.news-content h3 {
-    font-size: 21px;
-    line-height: 1.12;
-    margin: 9px 0;
-}
-
-.news-content p {
-    color: #667181;
-    font-size: 14px;
-}
-
-.news-date {
-    display: block;
-    margin-top: 18px;
+    background: #ffd400;
+    color: #001b4d;
+    padding: 4px 10px;
+    border-radius: 3px;
     font-size: 10px;
     font-weight: 900;
-    color: #8a93a0;
+    width: fit-content;
 }
 
-.news-read {
-    display: inline-block;
-    margin-top: 16px;
-    font-size: 11px;
+.card-cuerpo {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-fuente {
+    font-size: 10px;
     font-weight: 900;
-    color: #003a86;
+    color: #f39c12;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 }
 
-.center-button {
-    text-align: center;
-    margin-top: 30px;
+.card-titulo {
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #001b4d;
+}
+
+.card-resumen {
+    font-size: 14px;
+    color: #5b6677;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 1px solid #e5e8ed;
+    font-size: 11px;
+}
+
+.card-fecha {
+    color: #8a93a0;
+    font-weight: 700;
+}
+
+.card-link {
+    color: #003a86;
+    font-weight: 900;
+    transition: color 0.2s ease;
+}
+
+.card-link:hover {
+    color: #ffd400;
 }
 
 /* =====================================================
@@ -579,6 +623,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: 7px;
+    border-radius: 4px;
 }
 
 .fixtures span {
@@ -620,6 +665,7 @@ button {
     border-left: 1px solid #e0e5eb;
     border-right: 1px solid #e0e5eb;
     border-bottom: 1px solid #e0e5eb;
+    border-radius: 4px;
 }
 
 .market-title {
@@ -654,6 +700,7 @@ button {
     background: white;
     padding: 32px;
     border: 1px solid #e0e5eb;
+    border-radius: 4px;
 }
 
 .poll-card h3,
@@ -674,6 +721,7 @@ button {
     padding: 13px;
     cursor: pointer;
     font-weight: 800;
+    border-radius: 4px;
 }
 
 .poll-options button:hover {
@@ -707,6 +755,7 @@ button {
     background: #e5e8ed;
     margin: 12px 0 20px;
     overflow: hidden;
+    border-radius: 3px;
 }
 
 .progress span {
@@ -731,6 +780,7 @@ button {
     border: 1px solid #e0e5eb;
     overflow: hidden;
     transition: transform .2s ease, box-shadow .2s ease;
+    border-radius: 4px;
 }
 
 .video-card:hover {
@@ -762,36 +812,28 @@ button {
     );
 }
 
-/* PORTADAS DE VIDEO */
-
 .video-lanus {
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
+    background-image: url("IMG-20260830-WA0003.jpg");
 }
 
 .video-belmonte {
-    background-image:
-        url("IMG-20260830-WA0004.jpg");
+    background-image: url("IMG-20260830-WA0004.jpg");
 }
 
 .video-paredes {
-    background-image:
-        url("IMG-20260830-WA0004.jpg");
+    background-image: url("IMG-20260830-WA0004.jpg");
 }
 
 .video-canal {
-    background-image:
-        url("IMG-20260830-WA0006.jpg");
+    background-image: url("IMG-20260830-WA0006.jpg");
 }
 
 .video-predio {
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
+    background-image: url("IMG-20260830-WA0003.jpg");
 }
 
 .video-tucuman {
-    background-image:
-        url("IMG-20260830-WA0006.jpg");
+    background-image: url("IMG-20260830-WA0006.jpg");
 }
 
 .video-cover > span {
@@ -871,6 +913,7 @@ button {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 4px;
 }
 
 .photo-card::after {
@@ -891,23 +934,19 @@ button {
 
 .photo-one {
     grid-row: span 2;
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
+    background-image: url("IMG-20260830-WA0003.jpg");
 }
 
 .photo-two {
-    background-image:
-        url("IMG-20260830-WA0004.jpg");
+    background-image: url("IMG-20260830-WA0004.jpg");
 }
 
 .photo-three {
-    background-image:
-        url("IMG-20260830-WA0006.jpg");
+    background-image: url("IMG-20260830-WA0006.jpg");
 }
 
 .photo-four {
-    background-image:
-        url("IMG-20260830-WA0003.jpg");
+    background-image: url("IMG-20260830-WA0003.jpg");
 }
 
 /* =====================================================
@@ -918,6 +957,7 @@ button {
     background: #001b4d;
     color: white;
     padding: 50px;
+    border-radius: 4px;
 }
 
 .history-heading {
@@ -974,6 +1014,7 @@ button {
     color: white;
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
 }
 
 .streaming-card h2 {
@@ -1007,6 +1048,7 @@ button {
     padding: 25px;
     border: 1px solid #e0e5eb;
     transition: transform .2s ease, box-shadow .2s ease;
+    border-radius: 4px;
 }
 
 .sources-grid a:hover {
@@ -1037,6 +1079,7 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+    border-radius: 4px;
 }
 
 .subscribe-section h2 {
@@ -1113,142 +1156,4 @@ footer small {
 
 img {
     max-width: 100%;
-    height: auto;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 900px) {
-
-    .hero-section {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-side {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-
-    .quick-links,
-    .news-grid,
-    .video-grid,
-    .market-grid,
-    .sources-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .fixtures {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .photo-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .photo-one {
-        grid-row: span 1;
-    }
-}
-
-@media (max-width: 650px) {
-
-    .top-content span:last-child {
-        display: none;
-    }
-
-    .header-main {
-        min-height: 85px;
-    }
-
-    .brand h1 {
-        font-size: 24px;
-    }
-
-    .brand p,
-    .header-status {
-        display: none;
-    }
-
-    .hero-content {
-        padding: 38px 25px;
-    }
-
-    .hero-content h2 {
-        font-size: 48px;
-    }
-
-    .hero-section {
-        min-height: auto;
-    }
-
-    .hero-main {
-        min-height: 450px;
-    }
-
-    .hero-side {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-links,
-    .news-grid,
-    .video-grid,
-    .market-grid,
-    .fan-grid,
-    .sources-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 45px 0;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .section-heading h2 {
-        font-size: 32px;
-    }
-
-    .match-teams {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .match-footer {
-        flex-direction: column;
-    }
-
-    .photo-grid {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 200px;
-    }
-
-    .history {
-        padding: 35px 22px;
-    }
-
-    .timeline {
-        grid-template-columns: 1fr;
-    }
-
-    .streaming-card {
-        padding: 40px 25px;
-    }
-
-    .streaming-card h2 {
-        font-size: 36px;
-    }
-
-    .subscribe-section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+    heig
