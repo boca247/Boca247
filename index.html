@@ -1,2068 +1,1314 @@
-<!DOCTYPE html>
+PE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<meta
-    name="theme-color"
-    content="#00245f"
->
-
-<meta
-    name="description"
-    content="BOCA 24/7 - Todo Boca. Todo el día."
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
-<style>
+<meta name="description" content="BOCA 24/7 - Todas las noticias de Boca Juniors en un solo lugar.">
+<meta name="theme-color" content="#002b72">
 
+<style>
 /* =========================================================
-   BOCA 24/7
-   DISEÑO COMPLETO
-========================================================= */
+   BOCA 24/7 — DISEÑO PREMIUM
+   ========================================================= */
 
 :root{
-
-    --azul:#00245f;
-    --azul2:#003b8f;
-    --azul3:#00183f;
-    --amarillo:#f5c400;
-    --amarillo2:#ffd51a;
-
-    --fondo:#eef2f7;
+    --azul:#002b72;
+    --azul-oscuro:#001b49;
+    --azul-profundo:#00142f;
+    --azul-claro:#075dcc;
+    --amarillo:#f7c900;
+    --amarillo-claro:#ffd83d;
     --blanco:#ffffff;
-    --texto:#101828;
-    --gris:#667085;
-    --gris2:#98a2b3;
-    --borde:#e4e7ec;
-
-    --verde:#12b76a;
-
+    --gris:#eef2f7;
+    --gris-texto:#687386;
+    --texto:#10213d;
+    --borde:#e2e7ef;
+    --sombra:0 14px 40px rgba(0,25,65,.10);
+    --radio:22px;
 }
-
 
 *{
-
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
-
 }
-
 
 html{
-
     scroll-behavior:smooth;
-
 }
-
 
 body{
-
-    min-height:100vh;
-
-    background:
-        var(--fondo);
-
-    color:
-        var(--texto);
-
     font-family:
-        Arial,
-        Helvetica,
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         sans-serif;
 
-}
+    background:
+        linear-gradient(
+            180deg,
+            #eef3f9 0%,
+            #f7f9fc 45%,
+            #eef2f7 100%
+        );
 
+    color:var(--texto);
+    overflow-x:hidden;
+}
 
 /* =========================================================
-   BARRA SUPERIOR
-========================================================= */
-
-.topbar{
-
-    background:
-        var(--azul3);
-
-    color:
-        white;
-
-    font-size:
-        12px;
-
-}
-
-
-.topbar-inner{
-
-    width:
-        min(1240px,100%);
-
-    margin:auto;
-
-    padding:
-        7px 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.topbar-left{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-}
-
-
-.punto{
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:
-        var(--verde);
-
-}
-
-
-/* =========================================================
-   HEADER PRINCIPAL
-========================================================= */
+   HEADER
+   ========================================================= */
 
 .header{
-
-    background:
-        var(--azul);
-
-    color:
-        white;
-
-    position:
-        sticky;
-
+    position:sticky;
     top:0;
-
     z-index:1000;
 
-    box-shadow:
-        0 4px 20px rgba(0,0,0,.25);
-
-}
-
-
-.header-inner{
-
-    width:
-        min(1240px,100%);
-
-    min-height:
-        82px;
-
-    margin:auto;
-
-    padding:
-        10px 18px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-
-.escudo{
-
-    width:56px;
-    height:56px;
-
-    flex:0 0 56px;
-
-    border:
-        4px solid var(--amarillo);
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:
-        var(--amarillo);
-
-    font-size:12px;
-
-    font-weight:900;
-
     background:
-        #001c4c;
-
-    box-shadow:
-        0 0 0 4px rgba(245,196,0,.08);
-
-}
-
-
-.logo-text{
-
-    font-size:29px;
-
-    font-weight:900;
-
-    line-height:1;
-
-    letter-spacing:-1px;
-
-}
-
-
-.logo-text span{
-
-    color:
-        var(--amarillo);
-
-}
-
-
-.logo-sub{
-
-    margin-top:5px;
-
-    color:#c9d7eb;
-
-    font-size:12px;
-
-}
-
-
-/* =========================================================
-   NAVEGACIÓN
-========================================================= */
-
-.nav{
-
-    background:
-        var(--azul3);
-
-    overflow-x:auto;
-
-    scrollbar-width:none;
-
-}
-
-
-.nav::-webkit-scrollbar{
-
-    display:none;
-
-}
-
-
-.nav-inner{
-
-    width:
-        min(1240px,100%);
-
-    margin:auto;
-
-    display:flex;
-
-}
-
-
-.nav button{
-
-    position:relative;
-
-    flex:0 0 auto;
-
-    border:0;
-
-    background:
-        transparent;
+        linear-gradient(
+            135deg,
+            #002f7d,
+            #001e50
+        );
 
     color:white;
 
-    padding:
-        16px 18px;
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.20);
+}
 
-    font-size:12px;
+.header-main{
+    min-height:104px;
 
+    display:flex;
+    align-items:center;
+
+    padding:18px 22px;
+
+    max-width:1400px;
+    margin:auto;
+}
+
+.logo{
+    width:68px;
+    height:68px;
+
+    border-radius:50%;
+
+    border:5px solid var(--amarillo);
+
+    background:
+        radial-gradient(
+            circle,
+            #f7c900 0 33%,
+            #003b91 34% 65%,
+            #001d4f 66%
+        );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    box-shadow:
+        0 0 0 4px rgba(247,201,0,.15),
+        0 8px 20px rgba(0,0,0,.25);
+
+    animation:
+        logoEntrada .8s ease both;
+}
+
+.logo span{
+    color:var(--azul);
     font-weight:900;
+    font-size:14px;
+    letter-spacing:-.5px;
+}
+
+.brand{
+    margin-left:16px;
+}
+
+.brand h1{
+    font-size:34px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-1.5px;
+}
+
+.brand h1 span{
+    color:var(--amarillo);
+}
+
+.brand p{
+    margin-top:7px;
+    color:#cbd7e9;
+    font-size:15px;
+}
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.nav{
+    background:var(--azul-profundo);
+
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.nav::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-inner{
+    display:flex;
+    min-width:max-content;
+    max-width:1400px;
+    margin:auto;
+}
+
+.nav button{
+    border:0;
+    background:transparent;
+
+    color:white;
+
+    padding:19px 27px;
+
+    font-size:15px;
+    font-weight:850;
 
     cursor:pointer;
 
     transition:
-        .2s ease;
-
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
 }
-
 
 .nav button:hover{
-
-    background:
-        rgba(245,196,0,.15);
-
+    background:#063b88;
 }
-
 
 .nav button.active{
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--azul);
-
+    background:var(--amarillo);
+    color:var(--azul);
 }
 
-
-.nav button.active::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:15px;
-
-    right:15px;
-
-    bottom:0;
-
-    height:3px;
-
-    background:
-        var(--azul);
-
+.nav button:active{
+    transform:scale(.96);
 }
-
 
 /* =========================================================
    CONTENEDOR
-========================================================= */
+   ========================================================= */
 
 .container{
-
-    width:
-        min(1240px,100%);
-
+    width:min(1200px, calc(100% - 32px));
     margin:auto;
-
-    padding:
-        24px 18px 60px;
-
 }
-
 
 /* =========================================================
    HERO
-========================================================= */
+   ========================================================= */
 
 .hero{
-
-    min-height:430px;
-
     position:relative;
-
     overflow:hidden;
 
-    border-radius:0 0 24px 24px;
+    margin-top:30px;
+
+    min-height:380px;
+
+    border-radius:32px;
 
     background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0,130,255,.55),
+            transparent 38%
+        ),
         linear-gradient(
-            125deg,
-            #001941 0%,
-            #003d91 55%,
-            #0059bc 100%
+            135deg,
+            #003b91,
+            #00225c 58%,
+            #001b49
         );
 
-    display:flex;
-
-    align-items:flex-end;
-
-    padding:42px;
+    color:white;
 
     box-shadow:
-        0 16px 35px rgba(0,36,95,.18);
+        0 25px 55px rgba(0,35,95,.25);
 
-}
+    padding:52px;
 
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:560px;
-    height:560px;
-
-    right:-170px;
-    top:-220px;
-
-    border:
-        85px solid rgba(255,255,255,.045);
-
-    border-radius:50%;
+    display:flex;
+    align-items:center;
 
     animation:
-        giro 22s linear infinite;
-
+        aparecer .7s ease both;
 }
 
-
-.hero::after{
-
+.hero::before{
     content:"BOCA";
 
     position:absolute;
 
-    right:20px;
+    right:-30px;
+    bottom:-80px;
 
-    bottom:-20px;
+    font-size:190px;
+    font-weight:1000;
 
-    color:
-        rgba(255,255,255,.045);
+    color:rgba(255,255,255,.045);
 
-    font-size:
-        150px;
+    letter-spacing:-15px;
 
-    font-weight:900;
-
+    pointer-events:none;
 }
 
+.hero::after{
+    content:"";
 
-@keyframes giro{
+    position:absolute;
 
-    from{
-        transform:rotate(0deg);
-    }
+    width:330px;
+    height:330px;
 
-    to{
-        transform:rotate(360deg);
-    }
+    border-radius:50%;
 
+    right:-100px;
+    top:-100px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    box-shadow:
+        0 0 0 50px rgba(255,255,255,.025),
+        0 0 0 100px rgba(255,255,255,.015);
+
+    pointer-events:none;
 }
-
 
 .hero-content{
-
     position:relative;
-
     z-index:2;
 
-    max-width:780px;
-
-    color:white;
-
+    max-width:750px;
 }
 
-
-.hero-label{
-
-    display:inline-block;
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--azul);
-
-    padding:
-        8px 12px;
-
-    border-radius:5px;
-
-    font-size:11px;
-
-    font-weight:900;
-
-    margin-bottom:16px;
-
-}
-
-
-.hero h1{
-
-    font-size:
-        clamp(34px,6vw,58px);
-
-    line-height:1;
-
-    letter-spacing:-2px;
-
-    margin-bottom:18px;
-
-}
-
-
-.hero p{
-
-    max-width:680px;
-
-    color:#dce7f7;
-
-    font-size:16px;
-
-    line-height:1.6;
-
-}
-
-
-/* =========================================================
-   ULTIMA HORA
-========================================================= */
-
-.ultima{
-
-    margin-top:20px;
-
-    background:
-        var(--amarillo);
-
-    min-height:62px;
-
-    display:flex;
-
+.badge{
+    display:inline-flex;
     align-items:center;
 
-    overflow:hidden;
+    background:var(--amarillo);
+    color:var(--azul);
 
-}
+    padding:10px 17px;
 
-
-.ultima-label{
-
-    flex:0 0 auto;
-
-    background:
-        var(--azul);
-
-    color:white;
-
-    padding:
-        12px 17px;
-
-    font-size:11px;
-
-    font-weight:900;
-
-}
-
-
-.ultima-text{
-
-    padding:
-        0 18px;
-
-    color:
-        var(--azul);
+    border-radius:12px;
 
     font-size:14px;
-
     font-weight:900;
 
-    white-space:nowrap;
+    margin-bottom:22px;
 
-    overflow:hidden;
-
-    text-overflow:ellipsis;
-
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
 }
 
+.hero h2{
+    font-size:clamp(38px, 6vw, 68px);
+
+    line-height:.98;
+
+    letter-spacing:-3px;
+
+    font-weight:950;
+
+    max-width:760px;
+}
+
+.hero h2 span{
+    color:var(--amarillo);
+}
+
+.hero p{
+    margin-top:22px;
+
+    color:#d7e2f2;
+
+    font-size:19px;
+
+    line-height:1.55;
+
+    max-width:680px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+
+    margin-top:28px;
+}
+
+.hero-btn{
+    border:0;
+    border-radius:13px;
+
+    padding:13px 20px;
+
+    font-size:14px;
+    font-weight:850;
+
+    cursor:pointer;
+
+    background:white;
+    color:var(--azul);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.hero-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.hero-btn.yellow{
+    background:var(--amarillo);
+}
 
 /* =========================================================
    ESTADO
-========================================================= */
+   ========================================================= */
 
-.estado{
-
-    margin-top:18px;
+.status{
+    margin-top:20px;
 
     background:white;
 
     border:1px solid var(--borde);
 
-    border-radius:14px;
+    border-radius:20px;
 
-    padding:13px 16px;
+    padding:18px 20px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    box-shadow:
-        0 4px 14px rgba(0,0,0,.04);
-
-}
-
-
-.estado-left{
+    box-shadow:var(--sombra);
 
     display:flex;
-
     align-items:center;
-
-    gap:9px;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    color:#344054;
-
+    gap:13px;
 }
 
+.status-dot{
+    width:12px;
+    height:12px;
 
-.estado-punto{
-
-    width:9px;
-    height:9px;
+    background:#22c78a;
 
     border-radius:50%;
 
-    background:
-        var(--verde);
-
     box-shadow:
-        0 0 0 5px rgba(18,183,106,.12);
+        0 0 0 6px rgba(34,199,138,.12);
 
+    flex-shrink:0;
+
+    animation:pulso 1.8s infinite;
 }
 
-
-.estado-hora{
-
-    color:
-        var(--gris);
-
-    font-size:11px;
-
-}
-
-
-/* =========================================================
-   SECCIÓN
-========================================================= */
-
-.seccion{
-
-    margin-top:38px;
-
-}
-
-
-.seccion-header{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:17px;
-
-}
-
-
-.seccion-titulo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-}
-
-
-.seccion-titulo::before{
-
-    content:"";
-
-    width:6px;
-
-    height:29px;
-
-    border-radius:5px;
-
-    background:
-        var(--amarillo);
-
-}
-
-
-.seccion-titulo h2{
-
-    color:
-        var(--azul);
-
-    font-size:
-        28px;
-
-    font-weight:900;
-
-    letter-spacing:-.5px;
-
-}
-
-
-.ver-mas{
-
-    border:0;
-
-    background:transparent;
-
-    color:
-        var(--azul2);
-
-    font-size:12px;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-}
-
-
-/* =========================================================
-   BUSCADOR
-========================================================= */
-
-.buscar{
-
-    margin-top:25px;
-
-}
-
-
-.buscar input{
-
-    width:100%;
-
-    height:56px;
-
-    padding:
-        0 18px;
-
-    background:white;
-
-    border:
-        1px solid var(--borde);
-
-    border-radius:12px;
-
-    outline:none;
-
+.status strong{
     font-size:15px;
-
-    color:var(--texto);
-
-    box-shadow:
-        0 4px 15px rgba(0,0,0,.04);
-
 }
 
-
-.buscar input:focus{
-
-    border-color:
-        var(--azul2);
-
-    box-shadow:
-        0 0 0 4px rgba(0,71,168,.08);
-
+.status-text{
+    margin-left:auto;
+    color:var(--gris-texto);
+    font-size:14px;
 }
-
 
 /* =========================================================
-   DESTACADAS
-========================================================= */
+   ÚLTIMA HORA
+   ========================================================= */
 
-.destacadas{
-
-    display:grid;
-
-    grid-template-columns:
-        1.6fr 1fr;
-
-    gap:16px;
-
-}
-
-
-.destacada-principal{
-
-    min-height:390px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    padding:28px;
-
-    display:flex;
-
-    align-items:flex-end;
+.breaking{
+    margin-top:20px;
 
     background:
         linear-gradient(
-            135deg,
-            #001d50,
-            #004da8
+            100deg,
+            var(--amarillo),
+            #ffd92e
         );
 
-    color:white;
+    border-radius:20px;
 
-}
+    padding:15px 18px;
 
-
-.destacada-principal::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-    height:350px;
-
-    right:-120px;
-    top:-120px;
-
-    border:
-        55px solid rgba(245,196,0,.09);
-
-    border-radius:50%;
-
-}
-
-
-.destacada-contenido{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-.etiqueta{
-
-    display:inline-block;
-
-    padding:
-        6px 9px;
-
-    border-radius:4px;
-
-    background:
-        var(--amarillo);
-
-    color:
-        var(--azul);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-}
-
-
-.destacada-principal h3{
-
-    margin-top:12px;
-
-    font-size:
-        clamp(24px,4vw,38px);
-
-    line-height:1.12;
-
-}
-
-
-.destacada-principal p{
-
-    margin-top:12px;
-
-    color:#dbe7f7;
-
-    font-size:13px;
-
-    line-height:1.5;
-
-}
-
-
-.destacadas-lateral{
-
-    display:grid;
-
+    display:flex;
+    align-items:center;
     gap:16px;
 
+    box-shadow:
+        0 12px 30px rgba(247,201,0,.20);
+
+    overflow:hidden;
 }
 
+.breaking-label{
+    background:var(--azul);
+    color:white;
 
-.destacada-mini{
+    padding:10px 15px;
 
-    min-height:187px;
+    border-radius:10px;
 
-    padding:20px;
+    font-size:13px;
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+.breaking-content{
+    font-size:15px;
+    font-weight:850;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.search-box{
+    margin-top:22px;
+
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+
+    border:1px solid var(--borde);
 
     background:white;
 
     border-radius:18px;
 
-    border:1px solid var(--borde);
+    padding:19px 22px 19px 52px;
 
-    display:flex;
+    font-size:16px;
 
-    flex-direction:column;
+    outline:none;
 
-    justify-content:flex-end;
+    color:var(--texto);
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,.05);
+        0 8px 25px rgba(0,30,70,.06);
 
     transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-
+        border .25s ease,
+        box-shadow .25s ease;
 }
 
-
-.destacada-mini:hover{
-
-    transform:
-        translateY(-4px);
+.search-box input:focus{
+    border-color:var(--azul-claro);
 
     box-shadow:
-        0 12px 25px rgba(0,0,0,.10);
-
+        0 0 0 4px rgba(7,93,204,.10);
 }
 
+.search-icon{
+    position:absolute;
 
-.destacada-mini h3{
+    left:19px;
+    top:50%;
 
-    margin-top:9px;
+    transform:translateY(-50%);
 
-    font-size:17px;
+    font-size:21px;
 
-    line-height:1.3;
-
-    color:
-        var(--texto);
-
+    color:#8490a1;
 }
-
 
 /* =========================================================
-   NOTICIAS
-========================================================= */
+   TITULOS
+   ========================================================= */
 
-.noticias-grid{
+.section{
+    margin-top:38px;
+}
 
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:18px;
+}
+
+.section-title::before{
+    content:"";
+
+    width:7px;
+    height:38px;
+
+    background:var(--amarillo);
+
+    border-radius:20px;
+}
+
+.section-title h3{
+    color:var(--azul);
+
+    font-size:29px;
+
+    font-weight:950;
+
+    letter-spacing:-1px;
+}
+
+.section-title small{
+    margin-left:auto;
+
+    color:#8b96a6;
+
+    font-size:13px;
+}
+
+/* =========================================================
+   NOTICIA DESTACADA
+   ========================================================= */
+
+.featured{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        minmax(0, 1.5fr)
+        minmax(280px, .8fr);
 
-    gap:17px;
-
+    gap:18px;
 }
 
+.feature-main{
+    min-height:310px;
 
-.noticia{
+    border-radius:25px;
 
-    background:white;
-
-    border:
-        1px solid var(--borde);
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 4px 13px rgba(0,0,0,.05);
-
-    transition:
-        transform .22s ease,
-        box-shadow .22s ease;
-
-}
-
-
-.noticia:hover{
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 14px 28px rgba(0,0,0,.12);
-
-}
-
-
-.noticia-top{
-
-    height:130px;
+    padding:30px;
 
     position:relative;
-
     overflow:hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00245f,
-            #0050a8
-        );
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-.noticia-top::after{
-
-    content:"CABJ";
-
-    position:absolute;
-
-    right:-5px;
-
-    bottom:-28px;
-
-    color:
-        rgba(255,255,255,.06);
-
-    font-size:80px;
-
-    font-weight:900;
-
-}
-
-
-.noticia-marca{
-
-    position:relative;
-
-    z-index:2;
 
     color:white;
 
-    font-size:24px;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            #0967d8,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #002f7d,
+            #001b49
+        );
+
+    box-shadow:var(--sombra);
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.feature-main:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 24px 50px rgba(0,30,80,.20);
+}
+
+.feature-main::after{
+    content:"";
+
+    position:absolute;
+
+    right:-70px;
+    bottom:-100px;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    border:50px solid rgba(255,255,255,.035);
+}
+
+.feature-label{
+    display:inline-block;
+
+    background:var(--amarillo);
+    color:var(--azul);
+
+    padding:8px 12px;
+
+    border-radius:9px;
+
+    font-size:11px;
+    font-weight:900;
+
+    margin-bottom:22px;
+}
+
+.feature-main h4{
+    position:relative;
+    z-index:2;
+
+    font-size:clamp(25px,4vw,40px);
+
+    line-height:1.08;
+
+    letter-spacing:-1.5px;
+
+    max-width:700px;
+}
+
+.feature-main p{
+    position:relative;
+    z-index:2;
+
+    color:#d4e1f3;
+
+    margin-top:17px;
+
+    line-height:1.5;
+
+    max-width:650px;
+}
+
+.feature-date{
+    position:absolute;
+
+    bottom:24px;
+    left:30px;
+
+    font-size:12px;
+
+    color:#b8c8df;
+}
+
+.side-news{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.side-card{
+    flex:1;
+
+    background:white;
+
+    border:1px solid var(--borde);
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 8px 25px rgba(0,25,70,.06);
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.side-card:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--sombra);
+}
+
+.side-card .source{
+    color:var(--azul-claro);
+
+    font-size:11px;
 
     font-weight:900;
 
+    text-transform:uppercase;
 }
 
+.side-card h5{
+    color:var(--texto);
 
-.noticia-marca span{
+    font-size:17px;
 
-    color:
-        var(--amarillo);
+    line-height:1.25;
 
+    margin-top:9px;
 }
 
+/* =========================================================
+   GRILLA NOTICIAS
+   ========================================================= */
 
-.noticia-body{
+.news-grid{
+    display:grid;
 
-    padding:17px;
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
 
+    gap:18px;
 }
 
+.news-card{
+    background:white;
 
-.noticia-fuente{
+    border:1px solid var(--borde);
 
-    color:
-        var(--azul2);
+    border-radius:21px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0,25,70,.055);
+
+    cursor:pointer;
+
+    opacity:0;
+    transform:translateY(20px);
+
+    animation:
+        tarjetaEntrada .55s ease forwards;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.news-card:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 20px 42px rgba(0,25,70,.13);
+}
+
+.news-top{
+    height:7px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--azul),
+            var(--azul-claro),
+            var(--amarillo)
+        );
+}
+
+.news-body{
+    padding:21px;
+}
+
+.news-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:12px;
+}
+
+.news-source{
+    color:var(--azul-claro);
+
+    font-size:11px;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.news-date{
+    color:#98a2b1;
 
     font-size:10px;
 
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    margin-bottom:8px;
-
+    white-space:nowrap;
 }
 
-
-.noticia-cat{
-
-    display:inline-block;
-
-    background:#edf3ff;
-
-    color:
-        var(--azul);
-
-    padding:
-        4px 7px;
-
-    border-radius:4px;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    margin-bottom:9px;
-
-}
-
-
-.noticia h3{
+.news-card h4{
+    color:var(--texto);
 
     font-size:18px;
 
     line-height:1.3;
 
-    margin-bottom:9px;
-
+    letter-spacing:-.3px;
 }
 
+.news-card p{
+    color:#707b8c;
 
-.noticia p{
-
-    color:
-        var(--gris);
+    margin-top:11px;
 
     font-size:13px;
 
     line-height:1.55;
 
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+
+    overflow:hidden;
 }
 
-
-.noticia-footer{
-
-    margin-top:15px;
-
-    padding-top:11px;
-
-    border-top:
-        1px solid var(--borde);
-
+.news-footer{
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
 
-    gap:10px;
+    margin-top:17px;
 
+    padding-top:14px;
+
+    border-top:1px solid #edf0f4;
 }
 
+.category{
+    background:#eef4ff;
 
-.fecha{
+    color:var(--azul);
 
-    color:
-        var(--gris2);
+    border-radius:8px;
+
+    padding:6px 9px;
 
     font-size:10px;
 
+    font-weight:900;
 }
 
+.read{
+    color:var(--azul);
 
-.leer{
-
-    color:
-        var(--azul);
-
-    text-decoration:none;
-
-    font-size:11px;
+    font-size:12px;
 
     font-weight:900;
-
 }
-
 
 /* =========================================================
-   PARTIDOS
-========================================================= */
+   ESTADOS
+   ========================================================= */
 
-.partidos{
+.loading{
+    background:white;
 
-    display:grid;
+    border:1px solid var(--borde);
 
-    grid-template-columns:
-        repeat(3,1fr);
+    border-radius:22px;
 
-    gap:16px;
-
-}
-
-
-.partido{
-
-    background:
-        white;
-
-    border:
-        1px solid var(--borde);
-
-    border-radius:17px;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 5px 15px rgba(0,0,0,.05);
-
-}
-
-
-.partido-torneo{
-
-    background:
-        var(--azul);
-
-    color:white;
-
-    padding:
-        10px 14px;
-
-    font-size:10px;
-
-    font-weight:900;
-
-}
-
-
-.partido-body{
-
-    padding:20px;
+    padding:45px 20px;
 
     text-align:center;
 
+    color:#7c8796;
+
+    box-shadow:var(--sombra);
 }
 
+.spinner{
+    width:36px;
+    height:36px;
 
-.partido-fecha{
+    border:4px solid #e4eaf2;
 
-    color:
-        var(--gris);
-
-    font-size:11px;
-
-    margin-bottom:14px;
-
-}
-
-
-.equipos{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:14px;
-
-}
-
-
-.equipo{
-
-    width:95px;
-
-    font-weight:900;
-
-    font-size:13px;
-
-    color:
-        var(--azul);
-
-}
-
-
-.vs{
-
-    color:
-        var(--amarillo);
-
-    font-size:13px;
-
-    font-weight:900;
-
-}
-
-
-.partido-hora{
-
-    margin-top:17px;
-
-    padding-top:13px;
-
-    border-top:
-        1px solid var(--borde);
-
-    color:
-        var(--azul2);
-
-    font-size:12px;
-
-    font-weight:900;
-
-}
-
-
-/* =========================================================
-   BLOQUES DE DISCIPLINAS
-========================================================= */
-
-.disciplinas{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:14px;
-
-}
-
-
-.disciplina{
-
-    min-height:145px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    background:
-        var(--azul);
-
-    color:white;
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-.disciplina:hover{
-
-    transform:
-        translateY(-5px);
-
-}
-
-
-.disciplina::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:120px;
-    height:120px;
-
-    right:-45px;
-    top:-45px;
-
-    border:
-        25px solid rgba(245,196,0,.12);
+    border-top-color:var(--azul);
 
     border-radius:50%;
 
+    margin:0 auto 15px;
+
+    animation:girar .8s linear infinite;
 }
 
-
-.disciplina small{
-
-    position:relative;
-
-    z-index:2;
-
-    color:
-        var(--amarillo);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-}
-
-
-.disciplina h3{
-
-    position:relative;
-
-    z-index:2;
-
-    margin-top:5px;
-
-    font-size:18px;
-
-}
-
-
-/* =========================================================
-   OBRAS
-========================================================= */
-
-.obras{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:16px;
-
-}
-
-
-.obra{
+.empty{
+    grid-column:1/-1;
 
     background:white;
 
-    border-radius:16px;
+    border:1px solid var(--borde);
+
+    border-radius:22px;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    color:#7b8797;
+}
+
+.error{
+    background:#fff5f5;
+
+    border:1px solid #ffd6d6;
+
+    color:#a73737;
+
+    border-radius:18px;
 
     padding:22px;
 
-    border:
-        1px solid var(--borde);
+    text-align:center;
 
+    grid-column:1/-1;
 }
-
-
-.obra-tag{
-
-    color:
-        var(--azul2);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-}
-
-
-.obra h3{
-
-    margin-top:9px;
-
-    font-size:18px;
-
-    line-height:1.3;
-
-}
-
-
-.obra p{
-
-    margin-top:8px;
-
-    color:
-        var(--gris);
-
-    font-size:12px;
-
-    line-height:1.5;
-
-}
-
 
 /* =========================================================
-   STREAMING
-========================================================= */
+   FOOTER
+   ========================================================= */
 
-.streaming{
-
-    position:relative;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    padding:30px;
+.footer{
+    margin-top:60px;
 
     background:
         linear-gradient(
-            120deg,
-            #00183f,
-            #003b8f
+            135deg,
+            #001b49,
+            #002f7d
         );
 
     color:white;
 
-}
-
-
-.streaming::after{
-
-    content:"▶";
-
-    position:absolute;
-
-    right:30px;
-
-    top:50%;
-
-    transform:
-        translateY(-50%);
-
-    color:
-        rgba(255,255,255,.06);
-
-    font-size:130px;
-
-}
-
-
-.streaming h2{
-
-    position:relative;
-
-    z-index:2;
-
-    color:white;
-
-    font-size:27px;
-
-}
-
-
-.streaming h2 span{
-
-    color:
-        var(--amarillo);
-
-}
-
-
-.streaming p{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:600px;
-
-    margin-top:9px;
-
-    color:#cbd9ec;
-
-    font-size:13px;
-
-    line-height:1.55;
-
-}
-
-
-/* =========================================================
-   CARGANDO
-========================================================= */
-
-.cargando{
-
-    background:white;
-
-    border-radius:16px;
-
-    padding:50px 20px;
-
-    text-align:center;
-
-    color:
-        var(--gris);
-
-}
-
-
-.spinner{
-
-    width:38px;
-    height:38px;
-
-    margin:
-        0 auto 15px;
-
-    border:
-        4px solid #e2e8f0;
-
-    border-top-color:
-        var(--azul);
-
-    border-radius:50%;
-
-    animation:
-        spin .8s linear infinite;
-
-}
-
-
-@keyframes spin{
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
-
-
-.error{
-
-    padding:25px;
-
-    background:#fff5f5;
-
-    border:
-        1px solid #f2b8b8;
-
-    border-radius:15px;
-
-    color:#9b1c1c;
-
-}
-
-
-.vacio{
-
     padding:40px 20px;
 
     text-align:center;
-
-    background:white;
-
-    border-radius:16px;
-
-    color:
-        var(--gris);
-
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer{
-
-    margin-top:20px;
-
-    background:
-        var(--azul3);
-
-    color:#c5d2e5;
-
-    padding:
-        45px 18px 25px;
-
-}
-
-
-.footer-inner{
-
-    width:
-        min(1240px,100%);
-
-    margin:auto;
-
-}
-
-
-.footer-brand{
-
+.footer-logo{
     color:white;
 
-    font-size:27px;
+    font-size:25px;
+
+    font-weight:950;
+}
+
+.footer-logo span{
+    color:var(--amarillo);
+}
+
+.footer p{
+    color:#b8c8df;
+
+    font-size:13px;
+
+    margin-top:8px;
+}
+
+/* =========================================================
+   BOTON ARRIBA
+   ========================================================= */
+
+.top-button{
+    position:fixed;
+
+    right:18px;
+    bottom:20px;
+
+    width:48px;
+    height:48px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:var(--amarillo);
+
+    color:var(--azul);
+
+    font-size:21px;
 
     font-weight:900;
 
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+    cursor:pointer;
+
+    z-index:500;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
 }
 
-
-.footer-brand span{
-
-    color:
-        var(--amarillo);
-
+.top-button.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
 }
-
-
-.footer-sub{
-
-    margin-top:7px;
-
-    font-size:12px;
-
-}
-
-
-.footer-line{
-
-    height:1px;
-
-    background:
-        rgba(255,255,255,.1);
-
-    margin:
-        25px 0 17px;
-
-}
-
-
-.footer-copy{
-
-    color:#8094b0;
-
-    font-size:10px;
-
-}
-
 
 /* =========================================================
-   RESPONSIVE
-========================================================= */
+   ANIMACIONES
+   ========================================================= */
 
-@media(max-width:950px){
-
-    .noticias-grid{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
 
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-    .destacadas{
+@keyframes tarjetaEntrada{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-        grid-template-columns:
-            1fr;
-
+@keyframes logoEntrada{
+    from{
+        opacity:0;
+        transform:scale(.7) rotate(-15deg);
     }
 
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
 
-    .disciplinas{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+@keyframes pulso{
+    0%,100%{
+        transform:scale(1);
     }
 
+    50%{
+        transform:scale(1.25);
+    }
+}
 
-    .partidos{
+@keyframes girar{
+    to{
+        transform:rotate(360deg);
+    }
+}
 
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .news-grid{
         grid-template-columns:
-            repeat(2,1fr);
-
+            repeat(2,minmax(0,1fr));
     }
 
-
-    .obras{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+    .featured{
+        grid-template-columns:1fr;
     }
 
 }
 
+/* =========================================================
+   CELULAR
+   ========================================================= */
 
 @media(max-width:650px){
 
-    .topbar{
-
-        display:none;
-
+    .header-main{
+        min-height:92px;
+        padding:14px 16px;
     }
 
-
-    .header-inner{
-
-        min-height:72px;
-
-        padding:
-            9px 12px;
-
+    .logo{
+        width:58px;
+        height:58px;
+        border-width:4px;
     }
 
-
-    .escudo{
-
-        width:47px;
-        height:47px;
-
-        flex-basis:47px;
-
-        font-size:10px;
-
+    .brand{
+        margin-left:13px;
     }
 
-
-    .logo-text{
-
-        font-size:22px;
-
+    .brand h1{
+        font-size:27px;
     }
 
-
-    .logo-sub{
-
-        font-size:9px;
-
+    .brand p{
+        font-size:13px;
+        margin-top:5px;
     }
 
+    .nav button{
+        padding:17px 22px;
+        font-size:14px;
+    }
 
     .container{
-
-        padding:
-            0 10px 45px;
-
+        width:min(100% - 24px,1200px);
     }
-
 
     .hero{
+        margin-top:18px;
 
-        min-height:330px;
+        min-height:430px;
 
-        border-radius:
-            0 0 18px 18px;
+        padding:31px 24px;
 
-        padding:23px;
-
+        border-radius:25px;
     }
 
-
-    .hero h1{
-
-        font-size:34px;
-
+    .hero h2{
+        font-size:42px;
+        letter-spacing:-2px;
     }
-
 
     .hero p{
-
-        font-size:13px;
-
+        font-size:16px;
     }
 
-
-    .ultima{
-
-        margin-top:12px;
-
-    }
-
-
-    .estado{
-
-        flex-direction:column;
-
+    .status{
+        padding:16px;
         align-items:flex-start;
-
     }
 
+    .status-text{
+        display:none;
+    }
 
-    .seccion{
+    .breaking{
+        padding:12px;
+        gap:10px;
+    }
 
+    .breaking-label{
+        padding:9px 10px;
+        font-size:11px;
+    }
+
+    .breaking-content{
+        font-size:13px;
+    }
+
+    .section{
         margin-top:30px;
-
     }
 
-
-    .seccion-titulo h2{
-
-        font-size:23px;
-
+    .section-title h3{
+        font-size:25px;
     }
 
-
-    .destacada-principal{
-
-        min-height:300px;
-
-        padding:22px;
-
+    .section-title small{
+        display:none;
     }
 
-
-    .noticias-grid{
-
-        grid-template-columns:
-            1fr;
-
+    .feature-main{
+        min-height:340px;
+        padding:25px;
     }
 
-
-    .partidos{
-
-        grid-template-columns:
-            1fr;
-
+    .feature-main h4{
+        font-size:28px;
     }
 
-
-    .disciplinas{
-
-        grid-template-columns:
-            1fr 1fr;
-
+    .feature-date{
+        left:25px;
     }
 
-
-    .obras{
-
-        grid-template-columns:
-            1fr;
-
+    .news-grid{
+        grid-template-columns:1fr;
     }
 
-
-    .streaming{
-
-        padding:24px;
-
+    .news-card h4{
+        font-size:19px;
     }
 
-
-    .streaming h2{
-
-        font-size:23px;
-
+    .footer{
+        margin-top:40px;
     }
-
 }
 
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media(max-width:380px){
+
+    .brand h1{
+        font-size:24px;
+    }
+
+    .hero h2{
+        font-size:36px;
+    }
+
+    .hero{
+        min-height:410px;
+    }
+}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- ========================================================
-     TOPBAR
-========================================================= -->
-
-<div class="topbar">
-
-    <div class="topbar-inner">
-
-        <div class="topbar-left">
-
-            <span class="punto"></span>
-
-            BOCA 24/7 EN VIVO
-
-        </div>
-
-        <div>
-
-            Todo Boca. Todo el día.
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ========================================================
+<!-- ======================================================
      HEADER
-========================================================= -->
+     ====================================================== -->
 
 <header class="header">
 
-    <div class="header-inner">
+    <div class="header-main">
 
         <div class="logo">
+            <span>CABJ</span>
+        </div>
 
-            <div class="escudo">
-                CABJ
-            </div>
+        <div class="brand">
+            <h1>
+                BOCA <span>24/7</span>
+            </h1>
 
-            <div>
-
-                <div class="logo-text">
-                    BOCA <span>24/7</span>
-                </div>
-
-                <div class="logo-sub">
-                    Todo Boca. Todo el día.
-                </div>
-
-            </div>
-
+            <p>
+                Todo Boca. Todo el día.
+            </p>
         </div>
 
     </div>
-
 
     <nav class="nav">
 
@@ -2070,793 +1316,1343 @@ body{
 
             <button
                 class="active"
-                onclick="seleccionar('Todas',this)"
-            >
-                INICIO
+                data-category="Todas">
+                ÚLTIMAS
             </button>
 
-            <button
-                onclick="seleccionar('Boca',this)"
-            >
+            <button data-category="Boca">
                 BOCA
             </button>
 
-            <button
-                onclick="seleccionar('Mercado de pases',this)"
-            >
+            <button data-category="Mercado de pases">
                 MERCADO
             </button>
 
-            <button
-                onclick="seleccionar('Partidos',this)"
-            >
+            <button data-category="Partidos">
                 PARTIDOS
             </button>
 
-            <button
-                onclick="seleccionar('Lesiones',this)"
-            >
-                LESIONES
+            <button data-category="Plantel">
+                PLANTEL
             </button>
 
-            <button
-                onclick="seleccionar('Sudamericana',this)"
-            >
-                SUDAMERICANA
-            </button>
+            <button dat
+                a-section="ultimas">ÚLTIMAS</button>
 
-            <button
-                onclick="seleccionar('Básquet',this)"
-            >
-                BÁSQUET
-            </button>
+<button data-section="boca">
+    BOCA
+</button>
 
-            <button
-                onclick="seleccionar('Futsal',this)"
-            >
-                FUTSAL
-            </button>
+<button data-section="mercado">
+    MERCADO
+</button>
 
-            <button
-                onclick="seleccionar('Fútbol femenino',this)"
-            >
-                FEMENINO
-            </button>
+<button data-section="partidos">
+    PARTIDOS
+</button>
 
-            <button
-                onclick="seleccionar('Reserva',this)"
-            >
-                RESERVA
-            </button>
+<button data-section="plantel">
+    PLANTEL
+</button>
 
-            <button
-                onclick="seleccionar('Inferiores',this)"
-            >
-                INFERIORES
-            </button>
+<button data-section="sudamericana">
+    SUDAMERICANA
+</button>
 
-            <button
-                onclick="seleccionar('La Bombonera',this)"
-            >
-                BOMBONERA
-            </button>
+<button data-section="basquet">
+    BÁSQUET
+</button>
 
-        </div>
+<button data-section="femenino">
+    FÚTBOL FEMENINO
+</button>
 
-    </nav>
+<button data-section="inferiores">
+    INFERIORES
+</button>
 
-</header>
+</div>
 
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+     ===================================================== -->
 
-<!-- ========================================================
-     CONTENIDO
-========================================================= -->
-
-<main class="container">
-
-
-    <!-- HERO -->
+<main id="contenido">
 
     <section class="hero">
 
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
 
-            <div class="hero-label">
+            <span class="hero-badge">
                 BOCA JUNIORS
-            </div>
+            </span>
 
             <h1>
-                Todo Boca.<br>
-                Todo el día.
+                Toda la información
+                del Xeneize.
             </h1>
 
             <p>
-                Las últimas noticias del Xeneize,
-                mercado de pases, partidos,
-                plantel, disciplinas, La Bombonera
-                y toda la actualidad de Boca Juniors.
+                Noticias, mercado de pases,
+                partidos, plantel y toda la
+                actualidad de Boca Juniors.
             </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="hero-btn"
+                    data-scroll="noticias">
+                    VER ÚLTIMAS NOTICIAS
+                </button>
+
+                <button
+                    class="hero-btn secondary"
+                    data-scroll="partidos">
+                    PRÓXIMO PARTIDO
+                </button>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ULTIMA HORA -->
+    <!-- =================================================
+         BARRA DE ÚLTIMA HORA
+         ================================================= -->
 
-    <div class="ultima">
+    <section class="ultima-hora">
 
-        <div class="ultima-label">
-            ÚLTIMA HORA
+        <div class="ultima-icon">
+            🔥
         </div>
 
-        <div
-            class="ultima-text"
-            id="ultimaTexto"
-        >
-            Cargando actualidad de Boca...
-        </div>
+        <div class="ultima-text">
 
-    </div>
+            <strong>
+                ÚLTIMA HORA
+            </strong>
 
-
-    <!-- ESTADO -->
-
-    <div class="estado">
-
-        <div class="estado-left">
-
-            <span class="estado-punto"></span>
-
-            <span id="estado">
-                Conectando con BOCA 24/7...
+            <span id="tickerText">
+                Toda la actualidad de Boca
+                en BOCA 24/7.
             </span>
 
         </div>
 
-        <div
-            class="estado-hora"
-            id="hora"
-        >
-            Esperando actualización...
+        <button
+            id="reloadNews"
+            class="reload-btn">
+            ACTUALIZAR
+        </button>
+
+    </section>
+
+
+    <!-- =================================================
+         BUSCADOR
+         ================================================= -->
+
+    <section class="search-box">
+
+        <div class="search-icon">
+            🔎
         </div>
-
-    </div>
-
-
-    <!-- BUSCADOR -->
-
-    <div class="buscar">
 
         <input
-            id="buscador"
+            id="searchInput"
             type="search"
-            placeholder="Buscar una noticia de Boca..."
-            autocomplete="off"
-        >
-
-    </div>
-
-
-    <!-- DESTACADAS -->
-
-    <section class="seccion">
-
-        <div class="seccion-header">
-
-            <div class="seccion-titulo">
-
-                <h2>
-                    Noticias destacadas
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div
-            id="destacadas"
-            class="destacadas"
-        >
-
-            <div class="cargando">
-
-                <div class="spinner"></div>
-
-                Cargando noticias...
-
-            </div>
-
-        </div>
+            placeholder="Buscar noticias de Boca..."
+            autocomplete="off">
 
     </section>
 
 
-    <!-- ULTIMAS -->
+    <!-- =================================================
+         NOTICIAS
+         ================================================= -->
 
     <section
-        class="seccion"
-        id="ultimas"
-    >
+        class="section"
+        id="noticias">
 
-        <div class="seccion-header">
+        <div class="section-heading">
 
-            <div class="seccion-titulo">
-
-                <h2 id="tituloNoticias">
-                    Últimas noticias
-                </h2>
-
-            </div>
-
-            <button
-                class="ver-mas"
-                onclick="mostrarTodas()"
-            >
-                VER TODAS →
-            </button>
-
-        </div>
-
-
-        <div
-            id="noticias"
-        >
-
-            <div class="cargando">
-
-                <div class="spinner"></div>
-
-                Cargando noticias...
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PARTIDOS -->
-
-    <section class="seccion">
-
-        <div class="seccion-header">
-
-            <div class="seccion-titulo">
-
-                <h2>
-                    Próximos partidos
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="partidos">
-
-
-            <article class="partido">
-
-                <div class="partido-torneo">
-                    TORNEO CLAUSURA
-                </div>
-
-                <div class="partido-body">
-
-                    <div class="partido-fecha">
-                        Próximo partido
-                    </div>
-
-                    <div class="equipos">
-
-                        <div class="equipo">
-                            BOCA
-                        </div>
-
-                        <div class="vs">
-                            VS
-                        </div>
-
-                        <div class="equipo">
-                            RIVAL
-                        </div>
-
-                    </div>
-
-                    <div class="partido-hora">
-                        Próximamente
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="partido">
-
-                <div class="partido-torneo">
-                    COPA SUDAMERICANA
-                </div>
-
-                <div class="partido-body">
-
-                    <div class="partido-fecha">
-                        Próximo partido
-                    </div>
-
-                    <div class="equipos">
-
-                        <div class="equipo">
-                            BOCA
-                        </div>
-
-                        <div class="vs">
-                            VS
-                        </div>
-
-                        <div class="equipo">
-                            RIVAL
-                        </div>
-
-                    </div>
-
-                    <div class="partido-hora">
-                        Próximamente
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <article class="partido">
-
-                <div class="partido-torneo">
-                    COPA ARGENTINA
-                </div>
-
-                <div class="partido-body">
-
-                    <div class="partido-fecha">
-                        Próximo partido
-                    </div>
-
-                    <div class="equipos">
-
-                        <div class="equipo">
-                            BOCA
-                        </div>
-
-                        <div class="vs">
-                            VS
-                        </div>
-
-                        <div class="equipo">
-                            RIVAL
-                        </div>
-
-                    </div>
-
-                    <div class="partido-hora">
-                        Próximamente
-                    </div>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- DISCIPLINAS -->
-
-    <section class="seccion">
-
-        <div class="seccion-header">
-
-            <div class="seccion-titulo">
-
-                <h2>
-                    Boca en todas sus disciplinas
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="disciplinas">
-
-
-            <article class="disciplina">
-
-                <small>
-                    Fútbol
-                </small>
-
-                <h3>
-                    Primera
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Fútbol
-                </small>
-
-                <h3>
-                    Reserva
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Fútbol femenino
-                </small>
-
-                <h3>
-                    Las Gladiadoras
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Juveniles
-                </small>
-
-                <h3>
-                    Inferiores
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Básquet
-                </small>
-
-                <h3>
-                    Básquet Xeneize
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Futsal
-                </small>
-
-                <h3>
-                    Futsal Boca
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Vóley
-                </small>
-
-                <h3>
-                    Vóley Xeneize
-                </h3>
-
-            </article>
-
-
-            <article class="disciplina">
-
-                <small>
-                    Club
-                </small>
-
-                <h3>
-                    Todas las disciplinas
-                </h3>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- BOMBONERA -->
-
-    <section class="seccion">
-
-        <div class="seccion-header">
-
-            <div class="seccion-titulo">
-
-                <h2>
-                    La Bombonera y las obras
-                </h2>
-
-            </div>
-
-        </div>
-
-
-        <div class="obras">
-
-
-            <article class="obra">
-
-                <div class="obra-tag">
-                    LA BOMBONERA
-                </div>
-
-                <h3>
-                    Actualidad del estadio
-                </h3>
-
-                <p>
-                    Todas las novedades,
-                    trabajos y mejoras de
-                    La Bombonera.
-                </p>
-
-            </article>
-
-
-            <article class="obra">
-
-                <div class="obra-tag">
-                    INFRAESTRUCTURA
-                </div>
-
-                <h3>
-                    Boca Predio
-                </h3>
-
-                <p>
-                    Información sobre las
-                    instalaciones y el crecimiento
-                    del club.
-                </p>
-
-            </article>
-
-
-            <article class="obra">
-
-                <div class="obra-tag">
-                    PATRIMONIO
-                </div>
-
-                <h3>
-                    Casa Amarilla
-                </h3>
-
-                <p>
-                    Las novedades de las
-                    instalaciones del mundo Boca.
-                </p>
-
-            </article>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- STREAMING -->
-
-    <section class="seccion">
-
-        <div class="streaming">
+            <span>
+                BOCA 24/7
+            </span>
 
             <h2>
-                BOCA <span>24/7</span>
-                <br>
-                El canal de los Xeneizes
+                Últimas noticias
             </h2>
 
             <p>
-                Noticias, actualidad, análisis,
-                información y todo lo que pasa
-                alrededor de Boca Juniors.
+                La información más reciente
+                del mundo Xeneize.
             </p>
 
         </div>
 
+        <div
+            id="newsGrid"
+            class="news-grid">
+
+            <div class="loading-card">
+
+                <div class="spinner"></div>
+
+                <strong>
+                    Cargando noticias...
+                </strong>
+
+                <span>
+                    Estamos buscando la
+                    última información de Boca.
+                </span>
+
+            </div>
+
+        </div>
+
     </section>
 
+
+    <!-- =================================================
+         PARTIDOS
+         ================================================= -->
+
+    <section
+        class="section"
+        id="partidos">
+
+        <div class="section-heading">
+
+            <span>
+                CALENDARIO XENEIZE
+            </span>
+
+            <h2>
+                Próximos partidos
+            </h2>
+
+        </div>
+
+        <div
+            id="listaPartidos"
+            class="matches-grid">
+
+            <article class="match-card">
+
+                <div class="match-top">
+                    PRÓXIMO PARTIDO
+                </div>
+
+                <div class="match-teams">
+
+                    <strong>
+                        BOCA JUNIORS
+                    </strong>
+
+                    <span>
+                        VS
+                    </span>
+
+                    <strong>
+                        RIVAL
+                    </strong>
+
+                </div>
+
+                <div class="match-info">
+                    La información del próximo
+                    partido aparecerá aquí.
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MERCADO
+         ================================================= -->
+
+    <section
+        class="section"
+        id="mercado">
+
+        <div class="section-heading">
+
+            <span>
+                MERCADO DE PASES
+            </span>
+
+            <h2>
+                Movimientos de Boca
+            </h2>
+
+        </div>
+
+        <div class="market-grid">
+
+            <article class="market-card confirmed">
+
+                <div class="market-title">
+                    🟢 CONFIRMADOS
+                </div>
+
+                <div id="llegadas">
+                    Sin movimientos confirmados
+                    para mostrar.
+                </div>
+
+            </article>
+
+            <article class="market-card negotiation">
+
+                <div class="market-title">
+                    🟡 EN NEGOCIACIÓN
+                </div>
+
+                <div id="negociaciones">
+                    Operaciones en seguimiento.
+                </div>
+
+            </article>
+
+            <article class="market-card departures">
+
+                <div class="market-title">
+                    🔴 SALIDAS
+                </div>
+
+                <div id="salidas">
+                    Transferencias y préstamos.
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PLANTEL
+         ================================================= -->
+
+    <section
+        class="section"
+        id="plantel">
+
+        <div class="section-heading">
+
+            <span>
+                PRIMER EQUIPO
+            </span>
+
+            <h2>
+                Plantel de Boca
+            </h2>
+
+        </div>
+
+        <div class="plantel-grid">
+
+            <article class="player-card">
+                <div class="player-number">01</div>
+                <strong>ARQUEROS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">02</div>
+                <strong>DEFENSORES</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">03</div>
+                <strong>MEDIOCAMPISTAS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">04</div>
+                <strong>DELANTEROS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SUDAMERICANA
+         ================================================= -->
+
+    <section
+        class="section dark-section"
+        id="sudamericana">
+
+        <div class="section-heading light">
+
+            <span>
+                CONMEBOL
+            </span>
+
+            <h2>
+                Copa Sudamericana
+            </h2>
+
+            <p>
+                Toda la campaña internacional
+                de Boca.
+            </p>
+
+        </div>
+
+        <div class="competition-card">
+
+            <div class="competition-badge">
+                🏆
+            </div>
+
+            <div>
+                <strong>
+                    BOCA JUNIORS
+                </strong>
+
+                <p>
+                    Partidos, resultados y
+                    actualidad internacional.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         LA VOZ DEL HINCHA
+         ================================================= -->
+
+    <section
+        class="section"
+        id="encuesta">
+
+        <div class="section-heading">
+
+            <span>
+                PARTICIPÁ
+            </span>
+
+            <h2>
+                La voz del hincha
+            </h2>
+
+        </div>
+
+        <div class="poll-card">
+
+            <h3>
+                ¿Cómo ves a Boca?
+            </h3>
+
+            <p>
+                Elegí una opción.
+            </p>
+
+            <div class="poll-options">
+
+                <button
+                    onclick="vote('Muy bien')">
+                    🔵 Muy bien
+                </button>
+
+                <button
+                    onclick="vote('Bien')">
+                    🟡 Bien
+                </button>
+
+                <button
+                    onclick="vote('Regular')">
+                    ⚪ Regular
+                </button>
+
+                <button
+                    onclick="vote('Mal')">
+                    🔴 Mal
+                </button>
+
+            </div>
+
+            <div
+                id="pollResult"
+                class="poll-result">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         STREAMING
+         ================================================= -->
+
+    <section
+        class="section"
+        id="streaming">
+
+        <div class="streaming-card">
+
+            <div class="stream-live">
+                🔴 EN VIVO
+            </div>
+
+            <h2>
+                BOCA 24/7
+            </h2>
+
+            <p>
+                Información, opinión,
+                entrevistas y toda la pasión
+                Xeneize desde Tucumán.
+            </p>
+
+            <a
+                href="https://youtube.com/@movlosbosterosdetucuman"
+                target="_blank"
+                rel="noopener"
+                class="stream-button">
+
+                ▶ VER CANAL
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         REDES
+         ================================================= -->
+
+    <section
+        class="section"
+        id="redes">
+
+        <div class="social-card">
+
+            <span>
+                SEGUÍ BOCA 24/7
+            </span>
+
+            <h2>
+                Todo Boca.
+                Todo el día.
+            </h2>
+
+            <p>
+                Noticias, videos,
+                transmisiones y actualidad
+                Xeneize.
+            </p>
+
+            <div class="social-buttons">
+
+                <a
+                    href="#"
+                    class="social-btn">
+                    INSTAGRAM
+                </a>
+
+                <a
+                    href="https://youtube.com/@movlosbosterosdetucuman"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-btn">
+                    YOUTUBE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<!-- ========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+     ===================================================== -->
 
-<footer class="footer">
+<footer>
 
-    <div class="footer-inner">
+    <div class="footer-logo">
+        BOCA <span>24/7</span>
+    </div>
 
-        <div class="footer-brand">
-            BOCA <span>24/7</span>
-        </div>
+    <p>
+        Todo Boca. Todo el día.
+    </p>
 
-        <div class="footer-sub">
-            Todo Boca. Todo el día.
-        </div>
+    <div class="footer-links">
 
-        <div class="footer-line"></div>
+        <a href="#inicio">
+            Inicio
+        </a>
 
-        <div class="footer-copy">
-            BOCA 24/7 · Noticias y actualidad de Boca Juniors
-        </div>
+        <a href="#noticias">
+            Noticias
+        </a>
+
+        <a href="#partidos">
+            Partidos
+        </a>
+
+        <a href="#mercado">
+            Mercado
+        </a>
+
+        <a href="#streaming">
+            Streaming
+        </a>
 
     </div>
 
-</footer>
+    <div class="copyright">
+        © 2026 BOCA 24/7
+    </div>
 
+    </footer>
+    a-section="ultimas">ÚLTIMAS</button>
+
+<button data-section="boca">
+    BOCA
+</button>
+
+<button data-section="mercado">
+    MERCADO
+</button>
+
+<button data-section="partidos">
+    PARTIDOS
+</button>
+
+<button data-section="plantel">
+    PLANTEL
+</button>
+
+<button data-section="sudamericana">
+    SUDAMERICANA
+</button>
+
+<button data-section="basquet">
+    BÁSQUET
+</button>
+
+<button data-section="femenino">
+    FÚTBOL FEMENINO
+</button>
+
+<button data-section="inferiores">
+    INFERIORES
+</button>
+
+</div>
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+     ===================================================== -->
+
+<main id="contenido">
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                BOCA JUNIORS
+            </span>
+
+            <h1>
+                Toda la información
+                del Xeneize.
+            </h1>
+
+            <p>
+                Noticias, mercado de pases,
+                partidos, plantel y toda la
+                actualidad de Boca Juniors.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="hero-btn"
+                    data-scroll="noticias">
+                    VER ÚLTIMAS NOTICIAS
+                </button>
+
+                <button
+                    class="hero-btn secondary"
+                    data-scroll="partidos">
+                    PRÓXIMO PARTIDO
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BARRA DE ÚLTIMA HORA
+         ================================================= -->
+
+    <section class="ultima-hora">
+
+        <div class="ultima-icon">
+            🔥
+        </div>
+
+        <div class="ultima-text">
+
+            <strong>
+                ÚLTIMA HORA
+            </strong>
+
+            <span id="tickerText">
+                Toda la actualidad de Boca
+                en BOCA 24/7.
+            </span>
+
+        </div>
+
+        <button
+            id="reloadNews"
+            class="reload-btn">
+            ACTUALIZAR
+        </button>
+
+    </section>
+
+
+    <!-- =================================================
+         BUSCADOR
+         ================================================= -->
+
+    <section class="search-box">
+
+        <div class="search-icon">
+            🔎
+        </div>
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Buscar noticias de Boca..."
+            autocomplete="off">
+
+    </section>
+
+
+    <!-- =================================================
+         NOTICIAS
+         ================================================= -->
+
+    <section
+        class="section"
+        id="noticias">
+
+        <div class="section-heading">
+
+            <span>
+                BOCA 24/7
+            </span>
+
+            <h2>
+                Últimas noticias
+            </h2>
+
+            <p>
+                La información más reciente
+                del mundo Xeneize.
+            </p>
+
+        </div>
+
+        <div
+            id="newsGrid"
+            class="news-grid">
+
+            <div class="loading-card">
+
+                <div class="spinner"></div>
+
+                <strong>
+                    Cargando noticias...
+                </strong>
+
+                <span>
+                    Estamos buscando la
+                    última información de Boca.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PARTIDOS
+         ================================================= -->
+
+    <section
+        class="section"
+        id="partidos">
+
+        <div class="section-heading">
+
+            <span>
+                CALENDARIO XENEIZE
+            </span>
+
+            <h2>
+                Próximos partidos
+            </h2>
+
+        </div>
+
+        <div
+            id="listaPartidos"
+            class="matches-grid">
+
+            <article class="match-card">
+
+                <div class="match-top">
+                    PRÓXIMO PARTIDO
+                </div>
+
+                <div class="match-teams">
+
+                    <strong>
+                        BOCA JUNIORS
+                    </strong>
+
+                    <span>
+                        VS
+                    </span>
+
+                    <strong>
+                        RIVAL
+                    </strong>
+
+                </div>
+
+                <div class="match-info">
+                    La información del próximo
+                    partido aparecerá aquí.
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         MERCADO
+         ================================================= -->
+
+    <section
+        class="section"
+        id="mercado">
+
+        <div class="section-heading">
+
+            <span>
+                MERCADO DE PASES
+            </span>
+
+            <h2>
+                Movimientos de Boca
+            </h2>
+
+        </div>
+
+        <div class="market-grid">
+
+            <article class="market-card confirmed">
+
+                <div class="market-title">
+                    🟢 CONFIRMADOS
+                </div>
+
+                <div id="llegadas">
+                    Sin movimientos confirmados
+                    para mostrar.
+                </div>
+
+            </article>
+
+            <article class="market-card negotiation">
+
+                <div class="market-title">
+                    🟡 EN NEGOCIACIÓN
+                </div>
+
+                <div id="negociaciones">
+                    Operaciones en seguimiento.
+                </div>
+
+            </article>
+
+            <article class="market-card departures">
+
+                <div class="market-title">
+                    🔴 SALIDAS
+                </div>
+
+                <div id="salidas">
+                    Transferencias y préstamos.
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PLANTEL
+         ================================================= -->
+
+    <section
+        class="section"
+        id="plantel">
+
+        <div class="section-heading">
+
+            <span>
+                PRIMER EQUIPO
+            </span>
+
+            <h2>
+                Plantel de Boca
+            </h2>
+
+        </div>
+
+        <div class="plantel-grid">
+
+            <article class="player-card">
+                <div class="player-number">01</div>
+                <strong>ARQUEROS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">02</div>
+                <strong>DEFENSORES</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">03</div>
+                <strong>MEDIOCAMPISTAS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+            <article class="player-card">
+                <div class="player-number">04</div>
+                <strong>DELANTEROS</strong>
+                <span>Plantel Xeneize</span>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         SUDAMERICANA
+         ================================================= -->
+
+    <section
+        class="section dark-section"
+        id="sudamericana">
+
+        <div class="section-heading light">
+
+            <span>
+                CONMEBOL
+            </span>
+
+            <h2>
+                Copa Sudamericana
+            </h2>
+
+            <p>
+                Toda la campaña internacional
+                de Boca.
+            </p>
+
+        </div>
+
+        <div class="competition-card">
+
+            <div class="competition-badge">
+                🏆
+            </div>
+
+            <div>
+                <strong>
+                    BOCA JUNIORS
+                </strong>
+
+                <p>
+                    Partidos, resultados y
+                    actualidad internacional.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         LA VOZ DEL HINCHA
+         ================================================= -->
+
+    <section
+        class="section"
+        id="encuesta">
+
+        <div class="section-heading">
+
+            <span>
+                PARTICIPÁ
+            </span>
+
+            <h2>
+                La voz del hincha
+            </h2>
+
+        </div>
+
+        <div class="poll-card">
+
+            <h3>
+                ¿Cómo ves a Boca?
+            </h3>
+
+            <p>
+                Elegí una opción.
+            </p>
+
+            <div class="poll-options">
+
+                <button
+                    onclick="vote('Muy bien')">
+                    🔵 Muy bien
+                </button>
+
+                <button
+                    onclick="vote('Bien')">
+                    🟡 Bien
+                </button>
+
+                <button
+                    onclick="vote('Regular')">
+                    ⚪ Regular
+                </button>
+
+                <button
+                    onclick="vote('Mal')">
+                    🔴 Mal
+                </button>
+
+            </div>
+
+            <div
+                id="pollResult"
+                class="poll-result">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         STREAMING
+         ================================================= -->
+
+    <section
+        class="section"
+        id="streaming">
+
+        <div class="streaming-card">
+
+            <div class="stream-live">
+                🔴 EN VIVO
+            </div>
+
+            <h2>
+                BOCA 24/7
+            </h2>
+
+            <p>
+                Información, opinión,
+                entrevistas y toda la pasión
+                Xeneize desde Tucumán.
+            </p>
+
+            <a
+                href="https://youtube.com/@movlosbosterosdetucuman"
+                target="_blank"
+                rel="noopener"
+                class="stream-button">
+
+                ▶ VER CANAL
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         REDES
+         ================================================= -->
+
+    <section
+        class="section"
+        id="redes">
+
+        <div class="social-card">
+
+            <span>
+                SEGUÍ BOCA 24/7
+            </span>
+
+            <h2>
+                Todo Boca.
+                Todo el día.
+            </h2>
+
+            <p>
+                Noticias, videos,
+                transmisiones y actualidad
+                Xeneize.
+            </p>
+
+            <div class="social-buttons">
+
+                <a
+                    href="#"
+                    class="social-btn">
+                    INSTAGRAM
+                </a>
+
+                <a
+                    href="https://youtube.com/@movlosbosterosdetucuman"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-btn">
+                    YOUTUBE
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        BOCA <span>24/7</span>
+    </div>
+
+    <p>
+        Todo Boca. Todo el día.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#noticias">
+            Noticias
+        </a>
+
+        <a href="#partidos">
+            Partidos
+        </a>
+
+        <a href="#mercado">
+            Mercado
+        </a>
+
+        <a href="#streaming">
+            Streaming
+        </a>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 BOCA 24/7
+    </div>
+
+</footer>
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
 
 <script>
 
-/* =========================================================
-   CONFIGURACIÓN
-========================================================= */
-
-const ARCHIVO_NOTICIAS =
-    "noticias.json";
-
-
-let noticiasOriginales = [];
-
-let noticiasUnicas = [];
-
-let categoriaActual =
-    "Todas";
+const noticiasEstado = {
+    todas: [],
+    actuales: [],
+    categoria: "Todas",
+    busqueda: ""
+};
 
 
-/* =========================================================
-   ELEMENTOS
-========================================================= */
-
-const noticiasContenedor =
-    document.getElementById(
-        "noticias"
-    );
-
-
-const destacadasContenedor =
-    document.getElementById(
-        "destacadas"
-    );
-
-
-const buscador =
-    document.getElementById(
-        "buscador"
-    );
-
-
-const estado =
-    document.getElementById(
-        "estado"
-    );
-
-
-const hora =
-    document.getElementById(
-        "hora"
-    );
-
-
-const ultimaTexto =
-    document.getElementById(
-        "ultimaTexto"
-    );
-
-
-const tituloNoticias =
-    document.getElementById(
-        "tituloNoticias"
-    );
-
-
-/* =========================================================
-   NORMALIZAR
-========================================================= */
-
-function normalizar(texto){
-
-    return String(
-        texto || ""
-    )
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(
-        /[\u0300-\u036f]/g,
-        ""
-    )
-    .replace(
-        /[^a-z0-9\s]/g,
-        " "
-    )
-    .replace(
-        /\s+/g,
-        " "
-    )
-    .trim();
-
-}
-
-
-/* =========================================================
+/* =====================================================
    ESCAPAR HTML
-========================================================= */
+   ===================================================== */
 
-function escapar(texto){
+function escaparHTML(texto){
 
-    return String(
-        texto || ""
-    )
-    .replace(
-        /&/g,
-        "&amp;"
-    )
-    .replace(
-        /</g,
-        "&lt;"
-    )
-    .replace(
-        />/g,
-        "&gt;"
-    )
-    .replace(
-        /"/g,
-        "&quot;"
-    )
-    .replace(
-        /'/g,
-        "&#039;"
-    );
-
-}
-
-
-/* =========================================================
-   FECHA
-========================================================= */
-
-function fechaBonita(fecha){
-
-    if(!fecha){
-
+    if(texto === null || texto === undefined){
         return "";
-
     }
 
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =====================================================
+   NORMALIZAR TITULO
+   ===================================================== */
+
+function normalizarTitulo(titulo){
+
+    return String(titulo || "")
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\w\s]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+}
+
+
+/* =====================================================
+   ELIMINAR DUPLICADOS
+   ===================================================== */
+
+function eliminarDuplicadas(noticias){
+
+    const mapa = new Map();
+
+    noticias.forEach(noticia => {
+
+        if(!noticia || !noticia.titulo){
+            return;
+        }
+
+        const clave =
+            normalizarTitulo(
+                noticia.titulo
+            );
+
+        if(!clave){
+            return;
+        }
+
+        if(!mapa.has(clave)){
+
+            mapa.set(
+                clave,
+                noticia
+            );
+
+        }
+
+    });
+
+    return Array.from(
+        mapa.values()
+    );
+
+}
+
+
+/* =====================================================
+   FECHA
+   ===================================================== */
+
+function obtenerFecha(noticia){
+
+    return (
+        noticia.fecha_iso ||
+        noticia.fecha ||
+        noticia.date ||
+        noticia.pubDate ||
+        ""
+    );
+
+}
+
+
+function formatearFecha(fecha){
+
+    if(!fecha){
+        return "";
+    }
 
     const d =
         new Date(fecha);
-
 
     if(
         isNaN(
@@ -2864,675 +2660,246 @@ function fechaBonita(fecha){
         )
     ){
 
-        return "";
+        return escaparHTML(
+            String(fecha)
+        );
 
     }
 
-
-    return d.toLocaleString(
+    return d.toLocaleDateString(
         "es-AR",
         {
-            day:"2-digit",
-            month:"2-digit",
-            year:"numeric",
-            hour:"2-digit",
-            minute:"2-digit"
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
         }
     );
 
 }
 
 
-/* =========================================================
-   VALOR FECHA
-========================================================= */
-
-function valorFecha(noticia){
-
-    const fecha =
-        new Date(
-            noticia.fecha_iso ||
-            noticia.fecha ||
-            0
-        ).getTime();
-
-
-    if(
-        isNaN(fecha)
-    ){
-
-        return 0;
-
-    }
-
-
-    return fecha;
-
-}
-
-
-/* =========================================================
-   SIMILITUD
-========================================================= */
-
-function similitud(a,b){
-
-    const A =
-        normalizar(a)
-        .split(" ")
-        .filter(
-            palabra =>
-                palabra.length >= 4
-        );
-
-
-    const B =
-        normalizar(b)
-        .split(" ")
-        .filter(
-            palabra =>
-                palabra.length >= 4
-        );
-
-
-    if(
-        !A.length ||
-        !B.length
-    ){
-
-        return 0;
-
-    }
-
-
-    const conjunto =
-        new Set(B);
-
-
-    let iguales = 0;
-
-
-    A.forEach(
-        palabra => {
-
-            if(
-                conjunto.has(
-                    palabra
-                )
-            ){
-
-                iguales++;
-
-            }
-
-        }
-    );
-
-
-    return
-        iguales /
-        Math.max(
-            A.length,
-            B.length
-        );
-
-}
-
-
-/* =========================================================
-   ELIMINAR REPETIDAS
-========================================================= */
-
-function quitarDuplicadas(lista){
-
-    /*
-       Primero ordenamos por fecha.
-
-       Así conservamos la versión más
-       reciente de una noticia.
-    */
-
-    const ordenadas =
-        [...lista]
-        .sort(
-            (a,b) =>
-                valorFecha(b) -
-                valorFecha(a)
-        );
-
-
-    const resultado = [];
-
-    const claves =
-        new Set();
-
-
-    for(
-        const noticia
-        of ordenadas
-    ){
-
-        const titulo =
-            normalizar(
-                noticia.titulo
-            );
-
-
-        if(!titulo){
-
-            continue;
-
-        }
-
-
-        /*
-           Clave exacta.
-        */
-
-        if(
-            claves.has(
-                titulo
-            )
-        ){
-
-            continue;
-
-        }
-
-
-        /*
-           Comparación con las
-           noticias que ya quedaron.
-        */
-
-        let repetida = false;
-
-
-        for(
-            const anterior
-            of resultado
-        ){
-
-            const parecido =
-                similitud(
-                    noticia.titulo,
-                    anterior.titulo
-                );
-
-
-            if(
-                parecido >= 0.78
-            ){
-
-                repetida = true;
-
-                break;
-
-            }
-
-        }
-
-
-        if(repetida){
-
-            continue;
-
-        }
-
-
-        claves.add(
-            titulo
-        );
-
-
-        resultado.push(
-            noticia
-        );
-
-    }
-
-
-    return resultado;
-
-}
-
-
-/* =========================================================
-   PREPARAR NOTICIA
-========================================================= */
-
-function preparar(noticia){
-
-    if(
-        !noticia ||
-        typeof noticia !== "object"
-    ){
-
-        return null;
-
-    }
-
-
-    const titulo =
-        String(
-            noticia.titulo ||
-            noticia.title ||
-            ""
-        ).trim();
-
-
-    if(!titulo){
-
-        return null;
-
-    }
-
-
-    return {
-
-        titulo:
-            titulo,
-
-        fuente:
-            String(
-                noticia.fuente ||
-                noticia.source ||
-                "Google Noticias"
-            ).trim(),
-
-        contenido:
-            String(
-                noticia.contenido ||
-                noticia.descripcion ||
-                noticia.description ||
-                ""
-            ).trim(),
-
-        link:
-            String(
-                noticia.link ||
-                ""
-            ).trim(),
-
-        categoria:
-            String(
-                noticia.categoria ||
-                "Boca"
-            ).trim(),
-
-        fecha_iso:
-            String(
-                noticia.fecha_iso ||
-                noticia.fecha ||
-                ""
-            ).trim()
-
-    };
-
-}
-
-
-/* =========================================================
-   CARGAR JSON
-========================================================= */
+/* =====================================================
+   CARGAR NOTICIAS
+   ===================================================== */
 
 async function cargarNoticias(){
 
+    const grid =
+        document.getElementById(
+            "newsGrid"
+        );
+
+    if(!grid){
+        return;
+    }
+
+    grid.innerHTML = `
+        <div class="loading-card">
+            <div class="spinner"></div>
+
+            <strong>
+                Cargando noticias...
+            </strong>
+
+            <span>
+                Buscando la última información de Boca.
+            </span>
+        </div>
+    `;
+
     try{
-
-        estado.textContent =
-            "Cargando noticias...";
-
 
         const respuesta =
             await fetch(
-                ARCHIVO_NOTICIAS +
-                "?v=" +
+                "noticias.json?v=" +
                 Date.now(),
                 {
-                    cache:
-                        "no-store"
+                    cache: "no-store"
                 }
             );
 
-
-        if(
-            !respuesta.ok
-        ){
-
+        if(!respuesta.ok){
             throw new Error(
-                "HTTP " +
-                respuesta.status
+                "No se pudo cargar noticias.json"
             );
-
         }
-
 
         const datos =
             await respuesta.json();
 
+        let noticias = [];
 
-        let lista = [];
+        if(Array.isArray(datos)){
 
+            noticias = datos;
 
-        if(
-            Array.isArray(
-                datos
-            )
-        ){
-
-            lista =
-                datos;
-
-        }
-        else if(
+        }else if(
             datos &&
-            Array.isArray(
-                datos.noticias
-            )
+            Array.isArray(datos.noticias)
         ){
 
-            lista =
+            noticias =
                 datos.noticias;
 
         }
-        else{
 
-            throw new Error(
-                "Formato inválido de noticias.json"
+
+        noticias =
+            noticias.map(
+                noticia => {
+
+                    return {
+
+                        titulo:
+                            noticia.titulo ||
+                            noticia.title ||
+                            "",
+
+                        fuente:
+                            noticia.fuente ||
+                            noticia.source ||
+                            "Boca 24/7",
+
+                        contenido:
+                            noticia.contenido ||
+                            noticia.descripcion ||
+                            noticia.description ||
+                            "",
+
+                        categoria:
+                            noticia.categoria ||
+                            "Boca",
+
+                        link:
+                            noticia.link ||
+                            noticia.url ||
+                            "#",
+
+                        fecha_iso:
+                            obtenerFecha(
+                                noticia
+                            )
+
+                    };
+
+                }
             );
+
+
+        noticias =
+            eliminarDuplicadas(
+                noticias
+            );
+
+
+        noticias.sort(
+            (a, b) => {
+
+                const fechaA =
+                    new Date(
+                        a.fecha_iso
+                    ).getTime() || 0;
+
+                const fechaB =
+                    new Date(
+                        b.fecha_iso
+                    ).getTime() || 0;
+
+                return fechaB - fechaA;
+
+            }
+        );
+
+
+        noticiasEstado.todas =
+            noticias;
+
+        noticiasEstado.actuales =
+            [...noticias];
+
+
+        renderizarNoticias();
+
+
+        const ticker =
+            document.getElementById(
+                "tickerText"
+            );
+
+        if(
+            ticker &&
+            noticias.length
+        ){
+
+            ticker.textContent =
+                noticias[0].titulo;
 
         }
 
 
-        noticiasOriginales =
-            lista
-            .map(
-                preparar
-            )
-            .filter(
-                Boolean
-            );
-
-
-        noticiasUnicas =
-            quitarDuplicadas(
-                noticiasOriginales
-            );
-
-
-        estado.textContent =
-            noticiasUnicas.length +
-            " noticias disponibles";
-
-
-        hora.textContent =
-            "Actualizado " +
-            new Date()
-                .toLocaleTimeString(
-                    "es-AR",
-                    {
-                        hour:"2-digit",
-                        minute:"2-digit"
-                    }
-                );
-
-
-        mostrarUltima();
-
-        mostrarDestacadas();
-
-        mostrarNoticias();
-
-
-        console.log(
-            "Noticias recibidas:",
-            noticiasOriginales.length
-        );
-
-
-        console.log(
-            "Noticias únicas:",
-            noticiasUnicas.length
-        );
-
-
-    }
-    catch(error){
+    }catch(error){
 
         console.error(
             "BOCA 24/7:",
             error
         );
 
-
-        estado.textContent =
-            "No se pudieron cargar las noticias";
-
-
-        hora.textContent =
-            "Error leyendo noticias.json";
-
-
-        noticiasContenedor.innerHTML = `
-
-            <div class="error">
+        grid.innerHTML = `
+            <div class="error-card">
 
                 <strong>
                     No pudimos cargar las noticias.
                 </strong>
 
-                <br><br>
-
-                El archivo debe llamarse
-                <strong>noticias.json</strong>
-                y estar en la misma carpeta
-                que este index.html.
-
-            </div>
-
-        `;
-
-
-        destacadasContenedor.innerHTML = "";
-
-    }
-
-}
-
-
-/* =========================================================
-   ULTIMA HORA
-========================================================= */
-
-function mostrarUltima(){
-
-    if(
-        !noticiasUnicas.length
-    ){
-
-        ultimaTexto.textContent =
-            "No hay noticias disponibles.";
-
-        return;
-
-    }
-
-
-    ultimaTexto.textContent =
-        noticiasUnicas[0].titulo;
-
-}
-
-
-/* =========================================================
-   DESTACADAS
-========================================================= */
-
-function mostrarDestacadas(){
-
-    const lista =
-        noticiasUnicas
-        .slice(0,3);
-
-
-    if(
-        !lista.length
-    ){
-
-        destacadasContenedor.innerHTML = `
-
-            <div class="vacio">
-                No hay noticias disponibles.
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    const principal =
-        lista[0];
-
-
-    const secundarias =
-        lista.slice(1);
-
-
-    let html = `
-
-        <article
-            class="destacada-principal"
-        >
-
-            <div
-                class="destacada-contenido"
-            >
-
-                <span class="etiqueta">
-
-                    ${escapar(
-                        principal.categoria ||
-                        "Boca"
-                    )}
-
+                <span>
+                    Verificá que noticias.json
+                    esté junto a index.html.
                 </span>
 
-
-                <h3>
-
-                    ${escapar(
-                        principal.titulo
-                    )}
-
-                </h3>
-
-
-                <p>
-
-                    ${escapar(
-                        principal.contenido ||
-                        ""
-                    )}
-
-                </p>
-
             </div>
+        `;
 
-        </article>
-
-
-        <div
-            class="destacadas-lateral"
-        >
-
-    `;
-
-
-    secundarias.forEach(
-        noticia => {
-
-            html += `
-
-                <article
-                    class="destacada-mini"
-                >
-
-                    <span class="etiqueta">
-
-                        ${escapar(
-                            noticia.categoria ||
-                            "Boca"
-                        )}
-
-                    </span>
-
-
-                    <h3>
-
-                        ${escapar(
-                            noticia.titulo
-                        )}
-
-                    </h3>
-
-                </article>
-
-            `;
-
-        }
-    );
-
-
-    html += `
-
-        </div>
-
-    `;
-
-
-    destacadasContenedor.innerHTML =
-        html;
+    }
 
 }
 
 
-/* =========================================================
-   FILTRAR
-========================================================= */
+/* =====================================================
+   RENDERIZAR NOTICIAS
+   ===================================================== */
 
-function obtenerFiltradas(){
+function renderizarNoticias(){
 
-    let lista =
-        [...noticiasUnicas];
+    const grid =
+        document.getElementById(
+            "newsGrid"
+        );
+
+    if(!grid){
+        return;
+    }
+
+    let noticias =
+        [...noticiasEstado.todas];
 
 
     if(
-        categoriaActual !==
+        noticiasEstado.categoria !==
         "Todas"
     ){
 
-        const categoriaBuscada =
-            normalizar(
-                categoriaActual
-            );
-
-
-        lista =
-            lista.filter(
+        noticias =
+            noticias.filter(
                 noticia => {
 
-                    const categoria =
-                        normalizar(
-                            noticia.categoria
-                        );
-
-
-                    return
-                        categoria ===
-                        categoriaBuscada;
+                    return String(
+                        noticia.categoria
+                    )
+                    .toLowerCase()
+                    .includes(
+                        noticiasEstado.categoria
+                        .toLowerCase()
+                    );
 
                 }
             );
@@ -3540,36 +2907,33 @@ function obtenerFiltradas(){
     }
 
 
-    const texto =
-        buscador.value
-        .trim()
-        .toLowerCase();
+    const busqueda =
+        noticiasEstado.busqueda
+        .toLowerCase()
+        .trim();
 
 
-    if(texto){
+    if(busqueda){
 
-        lista =
-            lista.filter(
+        noticias =
+            noticias.filter(
                 noticia => {
 
-                    const contenido =
+                    const texto = (
 
-                        (
-                            noticia.titulo +
-                            " " +
-                            noticia.fuente +
-                            " " +
-                            noticia.contenido +
-                            " " +
-                            noticia.categoria
-                        )
-                        .toLowerCase();
+                        noticia.titulo +
+                        " " +
+                        noticia.fuente +
+                        " " +
+                        noticia.contenido +
+                        " " +
+                        noticia.categoria
 
+                    ).toLowerCase();
 
-                    return
-                        contenido.includes(
-                            texto
-                        );
+                    return texto.includes(
+                        busqueda
+                    );
 
                 }
             );
@@ -3577,34 +2941,25 @@ function obtenerFiltradas(){
     }
 
 
-    return lista;
-
-}
-
-
-/* =========================================================
-   MOSTRAR NOTICIAS
-========================================================= */
-
-function mostrarNoticias(){
-
-    const lista =
-        obtenerFiltradas();
+    noticiasEstado.actuales =
+        noticias;
 
 
-    if(
-        !lista.length
-    ){
+    if(!noticias.length){
 
-        noticiasContenedor.innerHTML = `
+        grid.innerHTML = `
+            <div class="empty-card">
 
-            <div class="vacio">
+                <strong>
+                    No encontramos noticias.
+                </strong>
 
-                No encontramos noticias
-                para esta sección.
+                <span>
+                    Probá con otra búsqueda
+                    o categoría.
+                </span>
 
             </div>
-
         `;
 
         return;
@@ -3612,302 +2967,531 @@ function mostrarNoticias(){
     }
 
 
-    let html =
-        '<div class="noticias-grid">';
+    grid.innerHTML =
+        noticias
+        .slice(0, 60)
+        .map(
+            (noticia, indice) => {
 
+                return `
 
-    lista.forEach(
-        noticia => {
-
-            const link =
-                noticia.link;
-
-
-            html += `
-
-                <article class="noticia">
-
-
-                    <div class="noticia-top">
-
-                        <div class="noticia-marca">
-
-                            BOCA
-                            <span>24/7</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="noticia-body">
-
+                    <article
+                        class="news-card"
+                        style="
+                            animation-delay:
+                            ${Math.min(
+                                indice * 0.04,
+                                0.7
+                            )}s
+                        ">
 
                         <div
-                            class="noticia-fuente"
-                        >
+                            class="news-image image-team">
 
-                            ${escapar(
-                                noticia.fuente ||
-                                "Google Noticias"
-                            )}
-
-                        </div>
-
-
-                        <div
-                            class="noticia-cat"
-                        >
-
-                            ${escapar(
-                                noticia.categoria ||
-                                "Boca"
-                            )}
-
-                        </div>
-
-
-                        <h3>
-
-                            ${escapar(
-                                noticia.titulo
-                            )}
-
-                        </h3>
-
-
-                        <p>
-
-                            ${escapar(
-                                noticia.contenido ||
-                                "Toda la actualidad de Boca Juniors."
-                            )}
-
-                        </p>
-
-
-                        <div
-                            class="noticia-footer"
-                        >
-
-                            <span
-                                class="fecha"
-                            >
-
-                                ${escapar(
-                                    fechaBonita(
-                                        noticia.fecha_iso
-                                    )
+                            <span>
+                                ${escaparHTML(
+                                    noticia.categoria
                                 )}
-
                             </span>
 
-
-                            ${
-                                link
-                                ?
-                                `
-
-                                <a
-                                    class="leer"
-                                    href="${escapar(link)}"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-
-                                    LEER →
-
-                                </a>
-
-                                `
-                                :
-                                ""
-                            }
-
                         </div>
 
 
-                    </div>
+                        <div class="news-content">
 
-                </article>
+                            <div class="news-meta">
 
-            `;
+                                <span>
+                                    ${escaparHTML(
+                                        noticia.fuente
+                                    )}
+                                </span>
+
+                                <small>
+                                    ${formatearFecha(
+                                        noticia.fecha_iso
+                                    )}
+                                </small>
+
+                            </div>
+
+
+                            <h3>
+                                ${escaparHTML(
+                                    noticia.titulo
+                                )}
+                            </h3>
+
+
+                            <p>
+                                ${escaparHTML(
+                                    noticia.contenido ||
+                                    "Toda la actualidad de Boca Juniors."
+                                )}
+                            </p>
+
+
+                            <div class="news-bottom">
+
+                                <span class="category">
+                                    ${escaparHTML(
+                                        noticia.categoria
+                                    )}
+                                </span>
+
+                                <button
+                                    class="btn"
+                                    onclick="
+                                        abrirNoticia(
+                                            ${indice}
+                                        )
+                                    ">
+
+                                    LEER NOTA →
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                `;
+
+            }
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   ABRIR NOTICIA
+   ===================================================== */
+
+function abrirNoticia(indice){
+
+    const noticia =
+        noticiasEstado.actuales[indice];
+
+    if(!noticia){
+        return;
+    }
+
+    if(
+        noticia.link &&
+        noticia.link !== "#"
+    ){
+
+        window.open(
+            noticia.link,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   BUSCADOR
+   ===================================================== */
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+
+if(searchInput){
+
+    searchInput.addEventListener(
+        "input",
+        function(){
+
+            noticiasEstado.busqueda =
+                this.value;
+
+            renderizarNoticias();
 
         }
     );
 
-
-    html +=
-        "</div>";
-
-
-    noticiasContenedor.innerHTML =
-        html;
-
 }
 
 
-/* =========================================================
-   CAMBIAR CATEGORÍA
-========================================================= */
+/* =====================================================
+   BOTÓN ACTUALIZAR
+   ===================================================== */
 
-function seleccionar(
-    categoria,
-    boton
-){
-
-    categoriaActual =
-        categoria;
-
-
-    document
-        .querySelectorAll(
-            ".nav button"
-        )
-        .forEach(
-            elemento => {
-
-                elemento.classList.remove(
-                    "active"
-                );
-
-            }
-        );
-
-
-    boton.classList.add(
-        "active"
+const reloadNews =
+    document.getElementById(
+        "reloadNews"
     );
 
 
-    if(
-        categoria ===
-        "Todas"
-    ){
+if(reloadNews){
 
-        tituloNoticias.textContent =
-            "Últimas noticias";
+    reloadNews.addEventListener(
+        "click",
+        async function(){
 
-    }
-    else{
+            this.disabled = true;
 
-        tituloNoticias.textContent =
-            categoria;
+            this.textContent =
+                "ACTUALIZANDO...";
 
-    }
+            await cargarNoticias();
 
+            this.textContent =
+                "ACTUALIZADO ✓";
 
-    buscador.value =
-        "";
+            setTimeout(
+                () => {
 
+                    this.textContent =
+                        "ACTUALIZAR";
 
-    mostrarNoticias();
+                    this.disabled =
+                        false;
 
+                },
+                1500
+            );
 
-    document
-        .getElementById(
-            "ultimas"
-        )
-        .scrollIntoView({
-            behavior:"smooth"
-        });
+        }
+    );
 
 }
 
 
-/* =========================================================
-   VER TODAS
-========================================================= */
+/* =====================================================
+   NAVEGACIÓN
+   ===================================================== */
 
-function mostrarTodas(){
+document
+.querySelectorAll(
+    "[data-scroll]"
+)
+.forEach(
+    boton => {
 
-    categoriaActual =
-        "Todas";
+        boton.addEventListener(
+            "click",
+            function(){
 
+                const destino =
+                    this.dataset.scroll;
 
-    document
-        .querySelectorAll(
-            ".nav button"
-        )
-        .forEach(
-            boton => {
+                const elemento =
+                    document.getElementById(
+                        destino
+                    );
 
-                boton.classList.remove(
-                    "active"
-                );
+                if(elemento){
+
+                    elemento.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
 
             }
         );
-
-
-    document
-        .querySelector(
-            ".nav button"
-        )
-        .classList.add(
-            "active"
-        );
-
-
-    tituloNoticias.textContent =
-        "Últimas noticias";
-
-
-    buscador.value =
-        "";
-
-
-    mostrarNoticias();
-
-
-    document
-        .getElementById(
-            "ultimas"
-        )
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-}
-
-
-/* =========================================================
-   BUSCADOR
-========================================================= */
-
-buscador.addEventListener(
-    "input",
-    function(){
-
-        mostrarNoticias();
 
     }
 );
 
 
-/* =========================================================
-   CARGA INICIAL
-========================================================= */
+/* =====================================================
+   MENÚ DE SECCIONES
+   ===================================================== */
 
-cargarNoticias();
+document
+.querySelectorAll(
+    "[data-section]"
+)
+.forEach(
+    boton => {
+
+        boton.addEventListener(
+            "click",
+            function(){
+
+                document
+                .querySelectorAll(
+                    "[data-section]"
+                )
+                .forEach(
+                    b => {
+
+                        b.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
 
 
-/* =========================================================
-   ACTUALIZAR CADA 5 MINUTOS
-========================================================= */
+                this.classList.add(
+                    "active"
+                );
 
-setInterval(
+
+                const texto =
+                    this.textContent
+                    .trim()
+                    .toLowerCase();
+
+
+                if(texto === "últimas"){
+
+                    noticiasEstado.categoria =
+                        "Todas";
+
+                }else if(
+                    texto === "mercado"
+                ){
+
+                    noticiasEstado.categoria =
+                        "Mercado";
+
+                }else if(
+                    texto === "básquet"
+                ){
+
+                    noticiasEstado.categoria =
+                        "Básquet";
+
+                }else if(
+                    texto === "femenino"
+                ){
+
+                    noticiasEstado.categoria =
+                        "Fútbol femenino";
+
+                }else{
+
+                    noticiasEstado.categoria =
+                        this.textContent.trim();
+
+                }
+
+
+                noticiasEstado.busqueda =
+                    "";
+
+                if(searchInput){
+
+                    searchInput.value =
+                        "";
+
+                }
+
+
+                renderizarNoticias();
+
+
+                document
+                .getElementById(
+                    "noticias"
+                )
+                ?.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   ENCUESTA
+   ===================================================== */
+
+function vote(opcion){
+
+    let votos = {};
+
+    try{
+
+        votos =
+            JSON.parse(
+                localStorage.getItem(
+                    "boca247_encuesta"
+                ) || "{}"
+            );
+
+    }catch(error){
+
+        votos = {};
+
+    }
+
+
+    votos[opcion] =
+        (votos[opcion] || 0) + 1;
+
+
+    localStorage.setItem(
+        "boca247_encuesta",
+        JSON.stringify(votos)
+    );
+
+
+    mostrarResultados();
+
+}
+
+
+/* =====================================================
+   RESULTADOS
+   ===================================================== */
+
+function mostrarResultados(){
+
+    const resultado =
+        document.getElementById(
+            "pollResult"
+        );
+
+    if(!resultado){
+        return;
+    }
+
+
+    let votos = {};
+
+    try{
+
+        votos =
+            JSON.parse(
+                localStorage.getItem(
+                    "boca247_encuesta"
+                ) || "{}"
+            );
+
+    }catch(error){
+
+        votos = {};
+
+    }
+
+
+    const opciones = [
+        "Muy bien",
+        "Bien",
+        "Regular",
+        "Mal"
+    ];
+
+
+    const total =
+        opciones.reduce(
+            (suma, opcion) => {
+
+                return suma +
+                    (votos[opcion] || 0);
+
+            },
+            0
+        );
+
+
+    if(!total){
+
+        resultado.innerHTML =
+            "";
+
+        return;
+
+    }
+
+
+    resultado.innerHTML = `
+
+        <strong>
+            RESULTADOS
+        </strong>
+
+        ${opciones.map(
+            opcion => {
+
+                const cantidad =
+                    votos[opcion] || 0;
+
+                const porcentaje =
+                    Math.round(
+                        cantidad /
+                        total *
+                        100
+                    );
+
+                return `
+
+                    <div class="poll-row">
+
+                        <div class="poll-label">
+
+                            <span>
+                                ${escaparHTML(
+                                    opcion
+                                )}
+                            </span>
+
+                            <b>
+                                ${porcentaje}%
+                            </b>
+
+                        </div>
+
+                        <div class="poll-bar">
+
+                            <div
+                                style="
+                                    width:
+                                    ${porcentaje}%
+                                ">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }
+        ).join("")}
+
+        <small>
+            Total de votos: ${total}
+        </small>
+
+    `;
+
+}
+
+
+/* =====================================================
+   ARRANQUE
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
     function(){
 
         cargarNoticias();
 
-    },
-    5 * 60 * 1000
-);
+        mostrarResultados();
 
+    }
+);
 
 </script>
 
 </body>
-
-</html>
+    </html>
