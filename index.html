@@ -1,19 +1,13 @@
-PE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#002b72">
+<meta name="description" content="BOCA 24/7 — Todo Boca. Todo el día. Noticias, partidos, mercado, videos, hinchas y Los Bosteros de Tucumán.">
 <title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 
-<meta name="description" content="BOCA 24/7 - Todas las noticias de Boca Juniors en un solo lugar.">
-<meta name="theme-color" content="#002b72">
-
 <style>
-/* =========================================================
-   BOCA 24/7 — DISEÑO PREMIUM
-   ========================================================= */
-
 :root{
     --azul:#002b72;
     --azul-oscuro:#001b49;
@@ -21,7 +15,7 @@ PE html>
     --azul-claro:#075dcc;
     --amarillo:#f7c900;
     --amarillo-claro:#ffd83d;
-    --blanco:#ffffff;
+    --blanco:#fff;
     --gris:#eef2f7;
     --gris-texto:#687386;
     --texto:#10213d;
@@ -30,67 +24,35 @@ PE html>
     --radio:22px;
 }
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
 body{
-    font-family:
-        Inter,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-
-    background:
-        linear-gradient(
-            180deg,
-            #eef3f9 0%,
-            #f7f9fc 45%,
-            #eef2f7 100%
-        );
-
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:linear-gradient(180deg,#eef3f9,#f7f9fc 45%,#eef2f7);
     color:var(--texto);
     overflow-x:hidden;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+a{text-decoration:none}
+button,input{font:inherit}
+
+/* ================= HEADER ================= */
 
 .header{
     position:sticky;
     top:0;
     z-index:1000;
-
-    background:
-        linear-gradient(
-            135deg,
-            #002f7d,
-            #001e50
-        );
-
     color:white;
-
-    box-shadow:
-        0 5px 25px rgba(0,0,0,.20);
+    background:linear-gradient(135deg,#002f7d,#001e50);
+    box-shadow:0 5px 25px rgba(0,0,0,.2);
 }
 
 .header-main{
     min-height:104px;
-
     display:flex;
     align-items:center;
-
     padding:18px 22px;
-
     max-width:1400px;
     margin:auto;
 }
@@ -98,38 +60,26 @@ body{
 .logo{
     width:68px;
     height:68px;
-
     border-radius:50%;
-
     border:5px solid var(--amarillo);
-
-    background:
-        radial-gradient(
-            circle,
-            #f7c900 0 33%,
-            #003b91 34% 65%,
-            #001d4f 66%
-        );
-
+    background:radial-gradient(
+        circle,
+        #f7c900 0 33%,
+        #003b91 34% 65%,
+        #001d4f 66%
+    );
     display:flex;
     align-items:center;
     justify-content:center;
-
-    flex-shrink:0;
-
     box-shadow:
         0 0 0 4px rgba(247,201,0,.15),
         0 8px 20px rgba(0,0,0,.25);
-
-    animation:
-        logoEntrada .8s ease both;
 }
 
 .logo span{
     color:var(--azul);
     font-weight:900;
     font-size:14px;
-    letter-spacing:-.5px;
 }
 
 .brand{
@@ -153,16 +103,12 @@ body{
     font-size:15px;
 }
 
-/* =========================================================
-   NAVEGACIÓN
-   ========================================================= */
+/* ================= NAVEGACIÓN ================= */
 
 .nav{
     background:var(--azul-profundo);
-
     border-top:1px solid rgba(255,255,255,.08);
     border-bottom:1px solid rgba(255,255,255,.08);
-
     overflow-x:auto;
     scrollbar-width:none;
 }
@@ -181,20 +127,12 @@ body{
 .nav button{
     border:0;
     background:transparent;
-
     color:white;
-
-    padding:19px 27px;
-
-    font-size:15px;
+    padding:18px 22px;
+    font-size:14px;
     font-weight:850;
-
     cursor:pointer;
-
-    transition:
-        background .25s ease,
-        color .25s ease,
-        transform .25s ease;
+    transition:.25s;
 }
 
 .nav button:hover{
@@ -206,32 +144,25 @@ body{
     color:var(--azul);
 }
 
-.nav button:active{
-    transform:scale(.96);
-}
-
-/* =========================================================
-   CONTENEDOR
-   ========================================================= */
+/* ================= CONTENEDOR ================= */
 
 .container{
-    width:min(1200px, calc(100% - 32px));
+    width:min(1200px,calc(100% - 32px));
     margin:auto;
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* ================= HERO ================= */
 
 .hero{
     position:relative;
     overflow:hidden;
-
     margin-top:30px;
-
-    min-height:380px;
-
+    min-height:390px;
     border-radius:32px;
+    color:white;
+    padding:52px;
+    display:flex;
+    align-items:center;
 
     background:
         radial-gradient(
@@ -246,168 +177,94 @@ body{
             #001b49
         );
 
-    color:white;
-
-    box-shadow:
-        0 25px 55px rgba(0,35,95,.25);
-
-    padding:52px;
-
-    display:flex;
-    align-items:center;
-
-    animation:
-        aparecer .7s ease both;
+    box-shadow:0 25px 55px rgba(0,35,95,.25);
 }
 
-.hero::before{
+.hero:before{
     content:"BOCA";
-
     position:absolute;
-
     right:-30px;
     bottom:-80px;
-
     font-size:190px;
     font-weight:1000;
-
     color:rgba(255,255,255,.045);
-
     letter-spacing:-15px;
-
-    pointer-events:none;
 }
 
-.hero::after{
+.hero:after{
     content:"";
-
     position:absolute;
-
     width:330px;
     height:330px;
-
     border-radius:50%;
-
     right:-100px;
     top:-100px;
-
-    border:1px solid rgba(255,255,255,.10);
-
-    box-shadow:
-        0 0 0 50px rgba(255,255,255,.025),
-        0 0 0 100px rgba(255,255,255,.015);
-
-    pointer-events:none;
+    border:1px solid rgba(255,255,255,.1);
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-
     max-width:750px;
 }
 
-.badge{
+.hero-badge{
     display:inline-flex;
-    align-items:center;
-
     background:var(--amarillo);
     color:var(--azul);
-
     padding:10px 17px;
-
     border-radius:12px;
-
     font-size:14px;
     font-weight:900;
-
     margin-bottom:22px;
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.15);
 }
 
-.hero h2{
-    font-size:clamp(38px, 6vw, 68px);
-
+.hero h1{
+    font-size:clamp(38px,6vw,68px);
     line-height:.98;
-
     letter-spacing:-3px;
-
     font-weight:950;
-
-    max-width:760px;
-}
-
-.hero h2 span{
-    color:var(--amarillo);
 }
 
 .hero p{
     margin-top:22px;
-
     color:#d7e2f2;
-
     font-size:19px;
-
     line-height:1.55;
-
     max-width:680px;
 }
 
-.hero-actions{
+.hero-buttons{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
-
     margin-top:28px;
 }
 
 .hero-btn{
     border:0;
     border-radius:13px;
-
     padding:13px 20px;
-
     font-size:14px;
     font-weight:850;
-
     cursor:pointer;
-
     background:white;
     color:var(--azul);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
 }
 
-.hero-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-
-.hero-btn.yellow{
+.hero-btn.secondary{
     background:var(--amarillo);
 }
 
-/* =========================================================
-   ESTADO
-   ========================================================= */
+/* ================= ESTADO ================= */
 
 .status{
     margin-top:20px;
-
     background:white;
-
     border:1px solid var(--borde);
-
     border-radius:20px;
-
     padding:18px 20px;
-
     box-shadow:var(--sombra);
-
     display:flex;
     align-items:center;
     gap:13px;
@@ -416,21 +273,10 @@ body{
 .status-dot{
     width:12px;
     height:12px;
-
     background:#22c78a;
-
     border-radius:50%;
-
-    box-shadow:
-        0 0 0 6px rgba(34,199,138,.12);
-
+    box-shadow:0 0 0 6px rgba(34,199,138,.12);
     flex-shrink:0;
-
-    animation:pulso 1.8s infinite;
-}
-
-.status strong{
-    font-size:15px;
 }
 
 .status-text{
@@ -439,580 +285,561 @@ body{
     font-size:14px;
 }
 
-/* =========================================================
-   ÚLTIMA HORA
-   ========================================================= */
+/* ================= ÚLTIMA HORA ================= */
 
-.breaking{
+.ultima-hora{
     margin-top:20px;
-
-    background:
-        linear-gradient(
-            100deg,
-            var(--amarillo),
-            #ffd92e
-        );
-
+    background:linear-gradient(
+        100deg,
+        var(--amarillo),
+        #ffd92e
+    );
     border-radius:20px;
-
     padding:15px 18px;
-
     display:flex;
     align-items:center;
     gap:16px;
-
-    box-shadow:
-        0 12px 30px rgba(247,201,0,.20);
-
-    overflow:hidden;
+    box-shadow:0 12px 30px rgba(247,201,0,.20);
 }
 
-.breaking-label{
-    background:var(--azul);
-    color:white;
+.ultima-icon{
+    font-size:22px;
+}
 
-    padding:10px 15px;
+.ultima-text{
+    min-width:0;
+    flex:1;
+}
 
-    border-radius:10px;
-
+.ultima-text strong{
+    display:block;
     font-size:13px;
-    font-weight:900;
-
-    white-space:nowrap;
+    color:var(--azul);
 }
 
-.breaking-content{
-    font-size:15px;
-    font-weight:850;
-
+.ultima-text span{
+    font-weight:800;
     white-space:nowrap;
-
     overflow:hidden;
     text-overflow:ellipsis;
+    display:block;
 }
 
-/* =========================================================
-   BUSCADOR
-   ========================================================= */
+.reload-btn{
+    border:0;
+    background:var(--azul);
+    color:white;
+    border-radius:11px;
+    padding:10px 14px;
+    font-size:12px;
+    font-weight:900;
+    cursor:pointer;
+}
+
+/* ================= BUSCADOR ================= */
 
 .search-box{
     margin-top:22px;
-
     position:relative;
 }
 
 .search-box input{
     width:100%;
-
     border:1px solid var(--borde);
-
     background:white;
-
     border-radius:18px;
-
     padding:19px 22px 19px 52px;
-
     font-size:16px;
-
     outline:none;
-
     color:var(--texto);
-
-    box-shadow:
-        0 8px 25px rgba(0,30,70,.06);
-
-    transition:
-        border .25s ease,
-        box-shadow .25s ease;
-}
-
-.search-box input:focus{
-    border-color:var(--azul-claro);
-
-    box-shadow:
-        0 0 0 4px rgba(7,93,204,.10);
+    box-shadow:0 8px 25px rgba(0,30,70,.06);
 }
 
 .search-icon{
     position:absolute;
-
     left:19px;
     top:50%;
-
     transform:translateY(-50%);
-
     font-size:21px;
-
     color:#8490a1;
 }
 
-/* =========================================================
-   TITULOS
-   ========================================================= */
+/* ================= SECCIONES ================= */
 
 .section{
-    margin-top:38px;
+    margin-top:42px;
 }
 
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    margin-bottom:18px;
+.section-heading{
+    margin-bottom:20px;
 }
 
-.section-title::before{
-    content:"";
-
-    width:7px;
-    height:38px;
-
-    background:var(--amarillo);
-
-    border-radius:20px;
-}
-
-.section-title h3{
-    color:var(--azul);
-
-    font-size:29px;
-
-    font-weight:950;
-
-    letter-spacing:-1px;
-}
-
-.section-title small{
-    margin-left:auto;
-
-    color:#8b96a6;
-
-    font-size:13px;
-}
-
-/* =========================================================
-   NOTICIA DESTACADA
-   ========================================================= */
-
-.featured{
-    display:grid;
-
-    grid-template-columns:
-        minmax(0, 1.5fr)
-        minmax(280px, .8fr);
-
-    gap:18px;
-}
-
-.feature-main{
-    min-height:310px;
-
-    border-radius:25px;
-
-    padding:30px;
-
-    position:relative;
-    overflow:hidden;
-
-    color:white;
-
-    background:
-        radial-gradient(
-            circle at 90% 10%,
-            #0967d8,
-            transparent 45%
-        ),
-        linear-gradient(
-            135deg,
-            #002f7d,
-            #001b49
-        );
-
-    box-shadow:var(--sombra);
-
-    cursor:pointer;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.feature-main:hover{
-    transform:translateY(-5px);
-
-    box-shadow:
-        0 24px 50px rgba(0,30,80,.20);
-}
-
-.feature-main::after{
-    content:"";
-
-    position:absolute;
-
-    right:-70px;
-    bottom:-100px;
-
-    width:260px;
-    height:260px;
-
-    border-radius:50%;
-
-    border:50px solid rgba(255,255,255,.035);
-}
-
-.feature-label{
-    display:inline-block;
-
-    background:var(--amarillo);
-    color:var(--azul);
-
-    padding:8px 12px;
-
-    border-radius:9px;
-
-    font-size:11px;
-    font-weight:900;
-
-    margin-bottom:22px;
-}
-
-.feature-main h4{
-    position:relative;
-    z-index:2;
-
-    font-size:clamp(25px,4vw,40px);
-
-    line-height:1.08;
-
-    letter-spacing:-1.5px;
-
-    max-width:700px;
-}
-
-.feature-main p{
-    position:relative;
-    z-index:2;
-
-    color:#d4e1f3;
-
-    margin-top:17px;
-
-    line-height:1.5;
-
-    max-width:650px;
-}
-
-.feature-date{
-    position:absolute;
-
-    bottom:24px;
-    left:30px;
-
-    font-size:12px;
-
-    color:#b8c8df;
-}
-
-.side-news{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.side-card{
-    flex:1;
-
-    background:white;
-
-    border:1px solid var(--borde);
-
-    border-radius:20px;
-
-    padding:20px;
-
-    box-shadow:0 8px 25px rgba(0,25,70,.06);
-
-    cursor:pointer;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-.side-card:hover{
-    transform:translateY(-4px);
-    box-shadow:var(--sombra);
-}
-
-.side-card .source{
+.section-heading>span{
     color:var(--azul-claro);
-
-    font-size:11px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
+    font-size:12px;
+    font-weight:950;
+    letter-spacing:1px;
 }
 
-.side-card h5{
-    color:var(--texto);
+.section-heading h2{
+    font-size:34px;
+    line-height:1.05;
+    letter-spacing:-1.5px;
+    margin-top:7px;
+}
 
-    font-size:17px;
-
-    line-height:1.25;
-
+.section-heading p{
+    color:var(--gris-texto);
     margin-top:9px;
+    line-height:1.5;
 }
 
-/* =========================================================
-   GRILLA NOTICIAS
-   ========================================================= */
+/* ================= NOTICIAS ================= */
 
-.news-grid{
+.news-grid,
+.video-grid,
+.fans-grid,
+.matches-grid,
+.market-grid,
+.plantel-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0,1fr));
-
+    grid-template-columns:repeat(3,minmax(0,1fr));
     gap:18px;
 }
 
-.news-card{
+.news-card,
+.video-card,
+.fan-card,
+.match-card,
+.market-card,
+.player-card{
     background:white;
-
     border:1px solid var(--borde);
-
     border-radius:21px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 8px 25px rgba(0,25,70,.055);
-
-    cursor:pointer;
-
-    opacity:0;
-    transform:translateY(20px);
-
-    animation:
-        tarjetaEntrada .55s ease forwards;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+    box-shadow:0 8px 25px rgba(0,25,70,.055);
+    transition:.3s;
 }
 
-.news-card:hover{
-    transform:translateY(-7px);
-
-    box-shadow:
-        0 20px 42px rgba(0,25,70,.13);
+.news-card:hover,
+.video-card:hover,
+.fan-card:hover,
+.match-card:hover,
+.market-card:hover,
+.player-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 42px rgba(0,25,70,.13);
 }
 
-.news-top{
-    height:7px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--azul),
-            var(--azul-claro),
-            var(--amarillo)
-        );
+.news-image,
+.video-placeholder{
+    min-height:145px;
+    display:flex;
+    align-items:flex-end;
+    padding:15px;
+    color:white;
+    background:linear-gradient(135deg,#003b91,#001b49);
+    position:relative;
+    overflow:hidden;
 }
 
-.news-body{
-    padding:21px;
+.news-image:before,
+.video-placeholder:before{
+    content:"BOCA";
+    position:absolute;
+    right:-10px;
+    bottom:-28px;
+    font-size:85px;
+    font-weight:1000;
+    color:rgba(255,255,255,.07);
+}
+
+.news-image span,
+.video-placeholder span{
+    position:relative;
+    z-index:2;
+    background:var(--amarillo);
+    color:var(--azul);
+    padding:6px 9px;
+    border-radius:8px;
+    font-size:10px;
+    font-weight:900;
+}
+
+.news-content,
+.video-card-content{
+    padding:20px;
 }
 
 .news-meta{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-
-    gap:10px;
-
-    margin-bottom:12px;
+    gap:8px;
+    margin-bottom:10px;
 }
 
-.news-source{
+.news-meta span{
     color:var(--azul-claro);
-
-    font-size:11px;
-
-    font-weight:900;
-
-    text-transform:uppercase;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.news-date{
-    color:#98a2b1;
-
     font-size:10px;
-
-    white-space:nowrap;
+    font-weight:900;
+    text-transform:uppercase;
 }
 
-.news-card h4{
-    color:var(--texto);
+.news-meta small{
+    color:#98a2b1;
+    font-size:10px;
+}
 
+.news-card h3,
+.video-card h3{
     font-size:18px;
-
     line-height:1.3;
-
-    letter-spacing:-.3px;
 }
 
-.news-card p{
+.news-card p,
+.video-card p{
     color:#707b8c;
-
-    margin-top:11px;
-
+    margin-top:10px;
     font-size:13px;
-
     line-height:1.55;
-
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
-
-    overflow:hidden;
 }
 
-.news-footer{
+.news-bottom{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
-
-    margin-top:17px;
-
+    margin-top:16px;
     padding-top:14px;
-
     border-top:1px solid #edf0f4;
 }
 
 .category{
     background:#eef4ff;
-
     color:var(--azul);
-
     border-radius:8px;
-
     padding:6px 9px;
-
     font-size:10px;
-
     font-weight:900;
 }
 
-.read{
-    color:var(--azul);
-
-    font-size:12px;
-
+.btn{
+    border:0;
+    background:var(--azul);
+    color:white;
+    border-radius:9px;
+    padding:8px 10px;
+    font-size:10px;
     font-weight:900;
+    cursor:pointer;
 }
 
-/* =========================================================
-   ESTADOS
-   ========================================================= */
+/* ================= ESTADOS ================= */
 
-.loading{
+.loading-card,
+.empty-card,
+.error-card{
+    grid-column:1/-1;
     background:white;
-
     border:1px solid var(--borde);
-
     border-radius:22px;
-
     padding:45px 20px;
-
     text-align:center;
-
-    color:#7c8796;
-
     box-shadow:var(--sombra);
+}
+
+.loading-card strong,
+.empty-card strong,
+.error-card strong{
+    display:block;
+}
+
+.loading-card span,
+.empty-card span,
+.error-card span{
+    display:block;
+    margin-top:7px;
+    color:var(--gris-texto);
 }
 
 .spinner{
     width:36px;
     height:36px;
-
     border:4px solid #e4eaf2;
-
     border-top-color:var(--azul);
-
     border-radius:50%;
-
     margin:0 auto 15px;
-
     animation:girar .8s linear infinite;
 }
 
-.empty{
-    grid-column:1/-1;
+/* ================= SECCIÓN BOCA ================= */
 
-    background:white;
-
-    border:1px solid var(--borde);
-
-    border-radius:22px;
-
-    padding:45px 20px;
-
-    text-align:center;
-
-    color:#7b8797;
+.dark-section{
+    background:linear-gradient(
+        135deg,
+        #001b49,
+        #003b91
+    );
+    border-radius:28px;
+    padding:34px;
+    box-shadow:0 20px 45px rgba(0,25,70,.16);
 }
 
-.error{
-    background:#fff5f5;
+.dark-section h2{
+    color:white;
+}
 
-    border:1px solid #ffd6d6;
+.dark-section p{
+    color:#cbd7e9;
+}
 
-    color:#a73737;
+/* ================= PARTIDOS ================= */
 
-    border-radius:18px;
-
+.match-card{
     padding:22px;
-
-    text-align:center;
-
-    grid-column:1/-1;
+    position:relative;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+.match-card:first-child{
+    border-top:6px solid var(--amarillo);
+}
 
-.footer{
-    margin-top:60px;
+.match-card h3{
+    margin-top:10px;
+    font-size:22px;
+}
 
+.match-info{
+    margin-top:14px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.match-location{
+    color:var(--gris-texto);
+    margin-top:13px;
+    font-size:13px;
+}
+
+.next-match{
     background:
         linear-gradient(
             135deg,
             #001b49,
-            #002f7d
+            #003b91
         );
-
     color:white;
+    border-radius:24px;
+    padding:30px;
+    margin-bottom:18px;
+    border-bottom:5px solid var(--amarillo);
+}
 
+.next-match-label{
+    color:var(--amarillo);
+    font-size:11px;
+    font-weight:950;
+    letter-spacing:1px;
+}
+
+.next-match h3{
+    margin-top:12px;
+    font-size:30px;
+}
+
+.next-match p{
+    color:#cbd7e9;
+    margin-top:8px;
+}
+
+/* ================= MERCADO ================= */
+
+.market-card{
+    padding:22px;
+}
+
+.market-title{
+    font-weight:950;
+    margin-bottom:15px;
+}
+
+.market-card>div:last-child{
+    color:var(--gris-texto);
+    font-size:14px;
+    line-height:1.55;
+}
+
+.market-card.confirmed{
+    border-top:6px solid #21b879;
+}
+
+.market-card.negotiation{
+    border-top:6px solid var(--amarillo);
+}
+
+.market-card.departures{
+    border-top:6px solid #d94a4a;
+}
+
+/* ================= PLANTEL ================= */
+
+.player-card{
+    padding:25px;
+    text-align:center;
+}
+
+.player-number{
+    font-size:44px;
+    font-weight:1000;
+    color:var(--azul);
+    opacity:.15;
+}
+
+.player-card strong{
+    display:block;
+    font-size:16px;
+}
+
+.player-card span{
+    color:var(--gris-texto);
+    font-size:13px;
+}
+
+/* ================= ENCUESTA ================= */
+
+.poll-card{
+    background:white;
+    border:1px solid var(--borde);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:var(--sombra);
+}
+
+.poll-card h3{
+    font-size:24px;
+}
+
+.poll-card p{
+    color:var(--gris-texto);
+    margin-top:6px;
+}
+
+.poll-options{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.poll-options button{
+    border:1px solid var(--borde);
+    background:#f8fafc;
+    border-radius:12px;
+    padding:13px;
+    cursor:pointer;
+    font-weight:800;
+}
+
+.poll-result{
+    margin-top:20px;
+}
+
+.poll-row{
+    margin-top:12px;
+}
+
+.poll-label{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+.poll-bar{
+    height:8px;
+    background:#e8edf4;
+    border-radius:20px;
+    overflow:hidden;
+    margin-top:5px;
+}
+
+.poll-bar div{
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        var(--azul),
+        var(--amarillo)
+    );
+}
+
+/* ================= STREAMING ================= */
+
+.streaming-card{
+    position:relative;
+    overflow:hidden;
+    background:
+        linear-gradient(
+            135deg,
+            #001b49,
+            #003b91
+        );
+    color:white;
+    border-radius:24px;
+    padding:30px;
+}
+
+.streaming-card:after{
+    content:"▶";
+    position:absolute;
+    right:30px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:90px;
+    color:rgba(247,201,0,.12);
+}
+
+.streaming-label{
+    color:var(--amarillo);
+    font-size:11px;
+    font-weight:950;
+    letter-spacing:1px;
+}
+
+.streaming-card h3{
+    margin-top:7px;
+    font-size:30px;
+}
+
+.streaming-card p{
+    color:#cbd7e9;
+    margin-top:8px;
+}
+
+.streaming-button{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 18px;
+    background:var(--amarillo);
+    color:var(--azul);
+    border-radius:11px;
+    font-weight:950;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:60px;
+    background:linear-gradient(
+        135deg,
+        #001b49,
+        #002f7d
+    );
+    color:white;
     padding:40px 20px;
-
     text-align:center;
 }
 
 .footer-logo{
-    color:white;
-
     font-size:25px;
-
     font-weight:950;
 }
 
@@ -1020,106 +847,33 @@ body{
     color:var(--amarillo);
 }
 
-.footer p{
+footer p{
     color:#b8c8df;
-
     font-size:13px;
-
     margin-top:8px;
 }
 
-/* =========================================================
-   BOTON ARRIBA
-   ========================================================= */
-
-.top-button{
-    position:fixed;
-
-    right:18px;
-    bottom:20px;
-
-    width:48px;
-    height:48px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:var(--amarillo);
-
-    color:var(--azul);
-
-    font-size:21px;
-
-    font-weight:900;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.20);
-
-    cursor:pointer;
-
-    z-index:500;
-
-    opacity:0;
-    visibility:hidden;
-
-    transform:translateY(15px);
-
-    transition:
-        opacity .25s ease,
-        transform .25s ease,
-        visibility .25s ease;
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:20px;
 }
 
-.top-button.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
+.footer-links a{
+    color:#dbeafe;
+    font-size:12px;
+    font-weight:800;
 }
 
-/* =========================================================
-   ANIMACIONES
-   ========================================================= */
-
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.copyright{
+    margin-top:22px;
+    color:#8fa5c1;
+    font-size:11px;
 }
 
-@keyframes tarjetaEntrada{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes logoEntrada{
-    from{
-        opacity:0;
-        transform:scale(.7) rotate(-15deg);
-    }
-
-    to{
-        opacity:1;
-        transform:scale(1) rotate(0);
-    }
-}
-
-@keyframes pulso{
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.25);
-    }
-}
+/* ================= ANIMACIONES ================= */
 
 @keyframes girar{
     to{
@@ -1127,26 +881,20 @@ body{
     }
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:900px){
 
-    .news-grid{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-    }
-
-    .featured{
-        grid-template-columns:1fr;
+    .news-grid,
+    .video-grid,
+    .fans-grid,
+    .matches-grid,
+    .market-grid,
+    .plantel-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
 }
-
-/* =========================================================
-   CELULAR
-   ========================================================= */
 
 @media(max-width:650px){
 
@@ -1171,12 +919,11 @@ body{
 
     .brand p{
         font-size:13px;
-        margin-top:5px;
     }
 
     .nav button{
-        padding:17px 22px;
-        font-size:14px;
+        padding:17px 20px;
+        font-size:13px;
     }
 
     .container{
@@ -1185,87 +932,45 @@ body{
 
     .hero{
         margin-top:18px;
-
         min-height:430px;
-
         padding:31px 24px;
-
         border-radius:25px;
     }
 
-    .hero h2{
+    .hero h1{
         font-size:42px;
-        letter-spacing:-2px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .status{
-        padding:16px;
-        align-items:flex-start;
-    }
-
     .status-text{
         display:none;
     }
 
-    .breaking{
-        padding:12px;
-        gap:10px;
-    }
-
-    .breaking-label{
-        padding:9px 10px;
-        font-size:11px;
-    }
-
-    .breaking-content{
-        font-size:13px;
-    }
-
-    .section{
-        margin-top:30px;
-    }
-
-    .section-title h3{
-        font-size:25px;
-    }
-
-    .section-title small{
-        display:none;
-    }
-
-    .feature-main{
-        min-height:340px;
-        padding:25px;
-    }
-
-    .feature-main h4{
-        font-size:28px;
-    }
-
-    .feature-date{
-        left:25px;
-    }
-
-    .news-grid{
+    .news-grid,
+    .video-grid,
+    .fans-grid,
+    .matches-grid,
+    .market-grid,
+    .plantel-grid{
         grid-template-columns:1fr;
     }
 
-    .news-card h4{
-        font-size:19px;
+    .poll-options{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .footer{
-        margin-top:40px;
+    .dark-section{
+        padding:22px;
     }
+
+    .streaming-card{
+        padding:24px;
+    }
+
 }
-
-/* =========================================================
-   PANTALLAS MUY PEQUEÑAS
-   ========================================================= */
 
 @media(max-width:380px){
 
@@ -1273,24 +978,17 @@ body{
         font-size:24px;
     }
 
-    .hero h2{
+    .hero h1{
         font-size:36px;
     }
 
-    .hero{
-        min-height:410px;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ======================================================
-     HEADER
-     ====================================================== -->
-
-<header class="header">
+<header class="header" id="inicio">
 
     <div class="header-main">
 
@@ -1299,13 +997,8 @@ body{
         </div>
 
         <div class="brand">
-            <h1>
-                BOCA <span>24/7</span>
-            </h1>
-
-            <p>
-                Todo Boca. Todo el día.
-            </p>
+            <h1>BOCA <span>24/7</span></h1>
+            <p>Todo Boca. Todo el día.</p>
         </div>
 
     </div>
@@ -1314,9 +1007,7 @@ body{
 
         <div class="nav-inner">
 
-            <button
-                class="active"
-                data-category="Todas">
+            <button class="active" data-category="Todas">
                 ÚLTIMAS
             </button>
 
@@ -1324,7 +1015,7 @@ body{
                 BOCA
             </button>
 
-            <button data-category="Mercado de pases">
+            <button data-category="Mercado">
                 MERCADO
             </button>
 
@@ -1336,1365 +1027,139 @@ body{
                 PLANTEL
             </button>
 
-            <button dat
-                a-section="ultimas">ÚLTIMAS</button>
+            <button data-category="Sudamericana">
+                SUDAMERICANA
+            </button>
 
-<button data-section="boca">
-    BOCA
-</button>
+            <button data-category="Videos">
+                VIDEOS
+            </button>
 
-<button data-section="mercado">
-    MERCADO
-</button>
+            <button data-category="Hinchas">
+                HINCHAS
+            </button>
 
-<button data-section="partidos">
-    PARTIDOS
-</button>
+        </div>
 
-<button data-section="plantel">
-    PLANTEL
-</button>
+    </nav>
 
-<button data-section="sudamericana">
-    SUDAMERICANA
-</button>
+</header>
 
-<button data-section="basquet">
-    BÁSQUET
-</button>
+<main class="container">
 
-<button data-section="femenino">
-    FÚTBOL FEMENINO
-</button>
+<section class="hero">
 
-<button data-section="inferiores">
-    INFERIORES
-</button>
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            🔵🟡 INFORMACIÓN XENEIZE
+        </div>
+
+        <h1>
+            TODO BOCA.<br>
+            <span style="color:var(--amarillo)">
+                TODO EL DÍA.
+            </span>
+        </h1>
+
+        <p>
+            Noticias, partidos, mercado de pases, plantel,
+            videos, entrevistas, hinchas y toda la actualidad
+            de Boca Juniors en un solo lugar.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="hero-btn secondary"
+                    data-scroll="partidos">
+                ⚽ PRÓXIMO PARTIDO
+            </button>
+
+            <button class="hero-btn"
+                    data-scroll="noticias">
+                📰 ÚLTIMAS NOTICIAS
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="status">
+
+    <div class="status-dot"></div>
+
+    <strong>
+        BOCA 24/7 EN LÍNEA
+    </strong>
+
+    <span class="status-text">
+        Información actualizada automáticamente
+    </span>
+
+</section>
+
+<section class="ultima-hora">
+
+    <div class="ultima-icon">
+        🚨
+    </div>
+
+    <div class="ultima-text">
+
+        <strong>
+            ÚLTIMA HORA
+        </strong>
+
+        <span id="tickerText">
+            Cargando información...
+        </span>
+
+    </div>
+
+    <button class="reload-btn" id="reloadNews">
+        ACTUALIZAR
+    </button>
+
+</section>
+
+<div class="search-box">
+
+    <span class="search-icon">
+        🔎
+    </span>
+
+    <input
+        id="searchInput"
+        type="search"
+        placeholder="Buscar noticias de Boca..."
+    >
 
 </div>
 
-<!-- =====================================================
-     CONTENIDO PRINCIPAL
-     ===================================================== -->
+<section class="section" id="noticias">
 
-<main id="contenido">
+    <div class="section-heading">
 
-    <section class="hero">
+        <span>INFORMACIÓN</span>
 
-        <div class="hero-overlay"></div>
+        <h2>
+            Últimas noticias
+        </h2>
 
-        <div class="hero-content">
-
-            <span class="hero-badge">
-                BOCA JUNIORS
-            </span>
-
-            <h1>
-                Toda la información
-                del Xeneize.
-            </h1>
-
-            <p>
-                Noticias, mercado de pases,
-                partidos, plantel y toda la
-                actualidad de Boca Juniors.
-            </p>
-
-            <div class="hero-buttons">
-
-                <button
-                    class="hero-btn"
-                    data-scroll="noticias">
-                    VER ÚLTIMAS NOTICIAS
-                </button>
-
-                <button
-                    class="hero-btn secondary"
-                    data-scroll="partidos">
-                    PRÓXIMO PARTIDO
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         BARRA DE ÚLTIMA HORA
-         ================================================= -->
-
-    <section class="ultima-hora">
-
-        <div class="ultima-icon">
-            🔥
-        </div>
-
-        <div class="ultima-text">
-
-            <strong>
-                ÚLTIMA HORA
-            </strong>
-
-            <span id="tickerText">
-                Toda la actualidad de Boca
-                en BOCA 24/7.
-            </span>
-
-        </div>
-
-        <button
-            id="reloadNews"
-            class="reload-btn">
-            ACTUALIZAR
-        </button>
-
-    </section>
-
-
-    <!-- =================================================
-         BUSCADOR
-         ================================================= -->
-
-    <section class="search-box">
-
-        <div class="search-icon">
-            🔎
-        </div>
-
-        <input
-            id="searchInput"
-            type="search"
-            placeholder="Buscar noticias de Boca..."
-            autocomplete="off">
-
-    </section>
-
-
-    <!-- =================================================
-         NOTICIAS
-         ================================================= -->
-
-    <section
-        class="section"
-        id="noticias">
-
-        <div class="section-heading">
-
-            <span>
-                BOCA 24/7
-            </span>
-
-            <h2>
-                Últimas noticias
-            </h2>
-
-            <p>
-                La información más reciente
-                del mundo Xeneize.
-            </p>
-
-        </div>
-
-        <div
-            id="newsGrid"
-            class="news-grid">
-
-            <div class="loading-card">
-
-                <div class="spinner"></div>
-
-                <strong>
-                    Cargando noticias...
-                </strong>
-
-                <span>
-                    Estamos buscando la
-                    última información de Boca.
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         PARTIDOS
-         ================================================= -->
-
-    <section
-        class="section"
-        id="partidos">
-
-        <div class="section-heading">
-
-            <span>
-                CALENDARIO XENEIZE
-            </span>
-
-            <h2>
-                Próximos partidos
-            </h2>
-
-        </div>
-
-        <div
-            id="listaPartidos"
-            class="matches-grid">
-
-            <article class="match-card">
-
-                <div class="match-top">
-                    PRÓXIMO PARTIDO
-                </div>
-
-                <div class="match-teams">
-
-                    <strong>
-                        BOCA JUNIORS
-                    </strong>
-
-                    <span>
-                        VS
-                    </span>
-
-                    <strong>
-                        RIVAL
-                    </strong>
-
-                </div>
-
-                <div class="match-info">
-                    La información del próximo
-                    partido aparecerá aquí.
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         MERCADO
-         ================================================= -->
-
-    <section
-        class="section"
-        id="mercado">
-
-        <div class="section-heading">
-
-            <span>
-                MERCADO DE PASES
-            </span>
-
-            <h2>
-                Movimientos de Boca
-            </h2>
-
-        </div>
-
-        <div class="market-grid">
-
-            <article class="market-card confirmed">
-
-                <div class="market-title">
-                    🟢 CONFIRMADOS
-                </div>
-
-                <div id="llegadas">
-                    Sin movimientos confirmados
-                    para mostrar.
-                </div>
-
-            </article>
-
-            <article class="market-card negotiation">
-
-                <div class="market-title">
-                    🟡 EN NEGOCIACIÓN
-                </div>
-
-                <div id="negociaciones">
-                    Operaciones en seguimiento.
-                </div>
-
-            </article>
-
-            <article class="market-card departures">
-
-                <div class="market-title">
-                    🔴 SALIDAS
-                </div>
-
-                <div id="salidas">
-                    Transferencias y préstamos.
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         PLANTEL
-         ================================================= -->
-
-    <section
-        class="section"
-        id="plantel">
-
-        <div class="section-heading">
-
-            <span>
-                PRIMER EQUIPO
-            </span>
-
-            <h2>
-                Plantel de Boca
-            </h2>
-
-        </div>
-
-        <div class="plantel-grid">
-
-            <article class="player-card">
-                <div class="player-number">01</div>
-                <strong>ARQUEROS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">02</div>
-                <strong>DEFENSORES</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">03</div>
-                <strong>MEDIOCAMPISTAS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">04</div>
-                <strong>DELANTEROS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         SUDAMERICANA
-         ================================================= -->
-
-    <section
-        class="section dark-section"
-        id="sudamericana">
-
-        <div class="section-heading light">
-
-            <span>
-                CONMEBOL
-            </span>
-
-            <h2>
-                Copa Sudamericana
-            </h2>
-
-            <p>
-                Toda la campaña internacional
-                de Boca.
-            </p>
-
-        </div>
-
-        <div class="competition-card">
-
-            <div class="competition-badge">
-                🏆
-            </div>
-
-            <div>
-                <strong>
-                    BOCA JUNIORS
-                </strong>
-
-                <p>
-                    Partidos, resultados y
-                    actualidad internacional.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         LA VOZ DEL HINCHA
-         ================================================= -->
-
-    <section
-        class="section"
-        id="encuesta">
-
-        <div class="section-heading">
-
-            <span>
-                PARTICIPÁ
-            </span>
-
-            <h2>
-                La voz del hincha
-            </h2>
-
-        </div>
-
-        <div class="poll-card">
-
-            <h3>
-                ¿Cómo ves a Boca?
-            </h3>
-
-            <p>
-                Elegí una opción.
-            </p>
-
-            <div class="poll-options">
-
-                <button
-                    onclick="vote('Muy bien')">
-                    🔵 Muy bien
-                </button>
-
-                <button
-                    onclick="vote('Bien')">
-                    🟡 Bien
-                </button>
-
-                <button
-                    onclick="vote('Regular')">
-                    ⚪ Regular
-                </button>
-
-                <button
-                    onclick="vote('Mal')">
-                    🔴 Mal
-                </button>
-
-            </div>
-
-            <div
-                id="pollResult"
-                class="poll-result">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         STREAMING
-         ================================================= -->
-
-    <section
-        class="section"
-        id="streaming">
-
-        <div class="streaming-card">
-
-            <div class="stream-live">
-                🔴 EN VIVO
-            </div>
-
-            <h2>
-                BOCA 24/7
-            </h2>
-
-            <p>
-                Información, opinión,
-                entrevistas y toda la pasión
-                Xeneize desde Tucumán.
-            </p>
-
-            <a
-                href="https://youtube.com/@movlosbosterosdetucuman"
-                target="_blank"
-                rel="noopener"
-                class="stream-button">
-
-                ▶ VER CANAL
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         REDES
-         ================================================= -->
-
-    <section
-        class="section"
-        id="redes">
-
-        <div class="social-card">
-
-            <span>
-                SEGUÍ BOCA 24/7
-            </span>
-
-            <h2>
-                Todo Boca.
-                Todo el día.
-            </h2>
-
-            <p>
-                Noticias, videos,
-                transmisiones y actualidad
-                Xeneize.
-            </p>
-
-            <div class="social-buttons">
-
-                <a
-                    href="#"
-                    class="social-btn">
-                    INSTAGRAM
-                </a>
-
-                <a
-                    href="https://youtube.com/@movlosbosterosdetucuman"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-btn">
-                    YOUTUBE
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-    <div class="footer-logo">
-        BOCA <span>24/7</span>
-    </div>
-
-    <p>
-        Todo Boca. Todo el día.
-    </p>
-
-    <div class="footer-links">
-
-        <a href="#inicio">
-            Inicio
-        </a>
-
-        <a href="#noticias">
-            Noticias
-        </a>
-
-        <a href="#partidos">
-            Partidos
-        </a>
-
-        <a href="#mercado">
-            Mercado
-        </a>
-
-        <a href="#streaming">
-            Streaming
-        </a>
+        <p>
+            Toda la actualidad de Boca Juniors.
+        </p>
 
     </div>
 
-    <div class="copyright">
-        © 2026 BOCA 24/7
-    </div>
+    <div
+        class="news-grid"
+        id="newsGrid">
 
-    </footer>
-    a-section="ultimas">ÚLTIMAS</button>
-
-<button data-section="boca">
-    BOCA
-</button>
-
-<button data-section="mercado">
-    MERCADO
-</button>
-
-<button data-section="partidos">
-    PARTIDOS
-</button>
-
-<button data-section="plantel">
-    PLANTEL
-</button>
-
-<button data-section="sudamericana">
-    SUDAMERICANA
-</button>
-
-<button data-section="basquet">
-    BÁSQUET
-</button>
-
-<button data-section="femenino">
-    FÚTBOL FEMENINO
-</button>
-
-<button data-section="inferiores">
-    INFERIORES
-</button>
-
-</div>
-
-<!-- =====================================================
-     CONTENIDO PRINCIPAL
-     ===================================================== -->
-
-<main id="contenido">
-
-    <section class="hero">
-
-        <div class="hero-overlay"></div>
-
-        <div class="hero-content">
-
-            <span class="hero-badge">
-                BOCA JUNIORS
-            </span>
-
-            <h1>
-                Toda la información
-                del Xeneize.
-            </h1>
-
-            <p>
-                Noticias, mercado de pases,
-                partidos, plantel y toda la
-                actualidad de Boca Juniors.
-            </p>
-
-            <div class="hero-buttons">
-
-                <button
-                    class="hero-btn"
-                    data-scroll="noticias">
-                    VER ÚLTIMAS NOTICIAS
-                </button>
-
-                <button
-                    class="hero-btn secondary"
-                    data-scroll="partidos">
-                    PRÓXIMO PARTIDO
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         BARRA DE ÚLTIMA HORA
-         ================================================= -->
-
-    <section class="ultima-hora">
-
-        <div class="ultima-icon">
-            🔥
-        </div>
-
-        <div class="ultima-text">
-
-            <strong>
-                ÚLTIMA HORA
-            </strong>
-
-            <span id="tickerText">
-                Toda la actualidad de Boca
-                en BOCA 24/7.
-            </span>
-
-        </div>
-
-        <button
-            id="reloadNews"
-            class="reload-btn">
-            ACTUALIZAR
-        </button>
-
-    </section>
-
-
-    <!-- =================================================
-         BUSCADOR
-         ================================================= -->
-
-    <section class="search-box">
-
-        <div class="search-icon">
-            🔎
-        </div>
-
-        <input
-            id="searchInput"
-            type="search"
-            placeholder="Buscar noticias de Boca..."
-            autocomplete="off">
-
-    </section>
-
-
-    <!-- =================================================
-         NOTICIAS
-         ================================================= -->
-
-    <section
-        class="section"
-        id="noticias">
-
-        <div class="section-heading">
-
-            <span>
-                BOCA 24/7
-            </span>
-
-            <h2>
-                Últimas noticias
-            </h2>
-
-            <p>
-                La información más reciente
-                del mundo Xeneize.
-            </p>
-
-        </div>
-
-        <div
-            id="newsGrid"
-            class="news-grid">
-
-            <div class="loading-card">
-
-                <div class="spinner"></div>
-
-                <strong>
-                    Cargando noticias...
-                </strong>
-
-                <span>
-                    Estamos buscando la
-                    última información de Boca.
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         PARTIDOS
-         ================================================= -->
-
-    <section
-        class="section"
-        id="partidos">
-
-        <div class="section-heading">
-
-            <span>
-                CALENDARIO XENEIZE
-            </span>
-
-            <h2>
-                Próximos partidos
-            </h2>
-
-        </div>
-
-        <div
-            id="listaPartidos"
-            class="matches-grid">
-
-            <article class="match-card">
-
-                <div class="match-top">
-                    PRÓXIMO PARTIDO
-                </div>
-
-                <div class="match-teams">
-
-                    <strong>
-                        BOCA JUNIORS
-                    </strong>
-
-                    <span>
-                        VS
-                    </span>
-
-                    <strong>
-                        RIVAL
-                    </strong>
-
-                </div>
-
-                <div class="match-info">
-                    La información del próximo
-                    partido aparecerá aquí.
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         MERCADO
-         ================================================= -->
-
-    <section
-        class="section"
-        id="mercado">
-
-        <div class="section-heading">
-
-            <span>
-                MERCADO DE PASES
-            </span>
-
-            <h2>
-                Movimientos de Boca
-            </h2>
-
-        </div>
-
-        <div class="market-grid">
-
-            <article class="market-card confirmed">
-
-                <div class="market-title">
-                    🟢 CONFIRMADOS
-                </div>
-
-                <div id="llegadas">
-                    Sin movimientos confirmados
-                    para mostrar.
-                </div>
-
-            </article>
-
-            <article class="market-card negotiation">
-
-                <div class="market-title">
-                    🟡 EN NEGOCIACIÓN
-                </div>
-
-                <div id="negociaciones">
-                    Operaciones en seguimiento.
-                </div>
-
-            </article>
-
-            <article class="market-card departures">
-
-                <div class="market-title">
-                    🔴 SALIDAS
-                </div>
-
-                <div id="salidas">
-                    Transferencias y préstamos.
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         PLANTEL
-         ================================================= -->
-
-    <section
-        class="section"
-        id="plantel">
-
-        <div class="section-heading">
-
-            <span>
-                PRIMER EQUIPO
-            </span>
-
-            <h2>
-                Plantel de Boca
-            </h2>
-
-        </div>
-
-        <div class="plantel-grid">
-
-            <article class="player-card">
-                <div class="player-number">01</div>
-                <strong>ARQUEROS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">02</div>
-                <strong>DEFENSORES</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">03</div>
-                <strong>MEDIOCAMPISTAS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-            <article class="player-card">
-                <div class="player-number">04</div>
-                <strong>DELANTEROS</strong>
-                <span>Plantel Xeneize</span>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         SUDAMERICANA
-         ================================================= -->
-
-    <section
-        class="section dark-section"
-        id="sudamericana">
-
-        <div class="section-heading light">
-
-            <span>
-                CONMEBOL
-            </span>
-
-            <h2>
-                Copa Sudamericana
-            </h2>
-
-            <p>
-                Toda la campaña internacional
-                de Boca.
-            </p>
-
-        </div>
-
-        <div class="competition-card">
-
-            <div class="competition-badge">
-                🏆
-            </div>
-
-            <div>
-                <strong>
-                    BOCA JUNIORS
-                </strong>
-
-                <p>
-                    Partidos, resultados y
-                    actualidad internacional.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         LA VOZ DEL HINCHA
-         ================================================= -->
-
-    <section
-        class="section"
-        id="encuesta">
-
-        <div class="section-heading">
-
-            <span>
-                PARTICIPÁ
-            </span>
-
-            <h2>
-                La voz del hincha
-            </h2>
-
-        </div>
-
-        <div class="poll-card">
-
-            <h3>
-                ¿Cómo ves a Boca?
-            </h3>
-
-            <p>
-                Elegí una opción.
-            </p>
-
-            <div class="poll-options">
-
-                <button
-                    onclick="vote('Muy bien')">
-                    🔵 Muy bien
-                </button>
-
-                <button
-                    onclick="vote('Bien')">
-                    🟡 Bien
-                </button>
-
-                <button
-                    onclick="vote('Regular')">
-                    ⚪ Regular
-                </button>
-
-                <button
-                    onclick="vote('Mal')">
-                    🔴 Mal
-                </button>
-
-            </div>
-
-            <div
-                id="pollResult"
-                class="poll-result">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         STREAMING
-         ================================================= -->
-
-    <section
-        class="section"
-        id="streaming">
-
-        <div class="streaming-card">
-
-            <div class="stream-live">
-                🔴 EN VIVO
-            </div>
-
-            <h2>
-                BOCA 24/7
-            </h2>
-
-            <p>
-                Información, opinión,
-                entrevistas y toda la pasión
-                Xeneize desde Tucumán.
-            </p>
-
-            <a
-                href="https://youtube.com/@movlosbosterosdetucuman"
-                target="_blank"
-                rel="noopener"
-                class="stream-button">
-
-                ▶ VER CANAL
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- =================================================
-         REDES
-         ================================================= -->
-
-    <section
-        class="section"
-        id="redes">
-
-        <div class="social-card">
-
-            <span>
-                SEGUÍ BOCA 24/7
-            </span>
-
-            <h2>
-                Todo Boca.
-                Todo el día.
-            </h2>
-
-            <p>
-                Noticias, videos,
-                transmisiones y actualidad
-                Xeneize.
-            </p>
-
-            <div class="social-buttons">
-
-                <a
-                    href="#"
-                    class="social-btn">
-                    INSTAGRAM
-                </a>
-
-                <a
-                    href="https://youtube.com/@movlosbosterosdetucuman"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-btn">
-                    YOUTUBE
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-     ===================================================== -->
-
-<footer>
-
-    <div class="footer-logo">
-        BOCA <span>24/7</span>
-    </div>
-
-    <p>
-        Todo Boca. Todo el día.
-    </p>
-
-    <div class="footer-links">
-
-        <a href="#inicio">
-            Inicio
-        </a>
-
-        <a href="#noticias">
-            Noticias
-        </a>
-
-        <a href="#partidos">
-            Partidos
-        </a>
-
-        <a href="#mercado">
-            Mercado
-        </a>
-
-        <a href="#streaming">
-            Streaming
-        </a>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 BOCA 24/7
-    </div>
-
-</footer>
-<!-- =====================================================
-     JAVASCRIPT
-     ===================================================== -->
-
-<script>
-
-const noticiasEstado = {
-    todas: [],
-    actuales: [],
-    categoria: "Todas",
-    busqueda: ""
-};
-
-
-/* =====================================================
-   ESCAPAR HTML
-   ===================================================== */
-
-function escaparHTML(texto){
-
-    if(texto === null || texto === undefined){
-        return "";
-    }
-
-    return String(texto)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-
-/* =====================================================
-   NORMALIZAR TITULO
-   ===================================================== */
-
-function normalizarTitulo(titulo){
-
-    return String(titulo || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^\w\s]/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
-
-}
-
-
-/* =====================================================
-   ELIMINAR DUPLICADOS
-   ===================================================== */
-
-function eliminarDuplicadas(noticias){
-
-    const mapa = new Map();
-
-    noticias.forEach(noticia => {
-
-        if(!noticia || !noticia.titulo){
-            return;
-        }
-
-        const clave =
-            normalizarTitulo(
-                noticia.titulo
-            );
-
-        if(!clave){
-            return;
-        }
-
-        if(!mapa.has(clave)){
-
-            mapa.set(
-                clave,
-                noticia
-            );
-
-        }
-
-    });
-
-    return Array.from(
-        mapa.values()
-    );
-
-}
-
-
-/* =====================================================
-   FECHA
-   ===================================================== */
-
-function obtenerFecha(noticia){
-
-    return (
-        noticia.fecha_iso ||
-        noticia.fecha ||
-        noticia.date ||
-        noticia.pubDate ||
-        ""
-    );
-
-}
-
-
-function formatearFecha(fecha){
-
-    if(!fecha){
-        return "";
-    }
-
-    const d =
-        new Date(fecha);
-
-    if(
-        isNaN(
-            d.getTime()
-        )
-    ){
-
-        return escaparHTML(
-            String(fecha)
-        );
-
-    }
-
-    return d.toLocaleDateString(
-        "es-AR",
-        {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
-        }
-    );
-
-}
-
-
-/* =====================================================
-   CARGAR NOTICIAS
-   ===================================================== */
-
-async function cargarNoticias(){
-
-    const grid =
-        document.getElementById(
-            "newsGrid"
-        );
-
-    if(!grid){
-        return;
-    }
-
-    grid.innerHTML = `
         <div class="loading-card">
+
             <div class="spinner"></div>
 
             <strong>
@@ -2704,1370 +1169,1582 @@ async function cargarNoticias(){
             <span>
                 Buscando la última información de Boca.
             </span>
+
         </div>
-    `;
+
+    </div>
+
+</section>
+
+<section class="section" id="partidos">
+
+    <div class="section-heading">
+
+        <span>FÚTBOL</span>
+
+        <h2>
+            Calendario Xeneize
+        </h2>
+
+        <p>
+            Próximos partidos, horarios, competencias y estadios.
+        </p>
+
+    </div>
+
+    <div
+        class="matches-grid"
+        id="listaPartidos"
+
+           id="listaPartidos"
+    >
+        <!-- Los partidos se cargan automáticamente desde partidos.json -->
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CENTRO XENEIZE — PRÓXIMO PARTIDO
+========================================================= -->
+
+<section class="section" id="proximo-partido">
+
+    <div class="section-title">
+        <h3>🏆 Próximo partido</h3>
+        <small>Información actualizada</small>
+    </div>
+
+    <div class="next-match-card" id="proximoPartido">
+
+        <div class="next-match-loading">
+            Cargando próximo partido...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AGENDA COMPLETA
+========================================================= -->
+
+<section class="section" id="agenda">
+
+    <div class="section-title">
+        <h3>📅 Agenda Xeneize</h3>
+        <small>Próximos compromisos</small>
+    </div>
+
+    <div
+        class="agenda-list"
+        id="agendaPartidos"
+    >
+
+        <div class="loading">
+            <div class="spinner"></div>
+            Cargando agenda...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESULTADOS
+========================================================= -->
+
+<section class="section" id="resultados">
+
+    <div class="section-title">
+        <h3>📊 Últimos resultados</h3>
+        <small>Partidos disputados</small>
+    </div>
+
+    <div
+        class="results-grid"
+        id="resultadosPartidos"
+    >
+
+        <div class="loading">
+            <div class="spinner"></div>
+            Cargando resultados...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INFORMACIÓN DEL PARTIDO
+========================================================= -->
+
+<section class="section">
+
+    <div class="section-title">
+        <h3>ℹ️ Información Xeneize</h3>
+        <small>BOCA 24/7</small>
+    </div>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="info-icon">⚽</div>
+            <strong>Partidos</strong>
+            <span>
+                Próximos encuentros, horarios,
+                competencias y estadios.
+            </span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📰</div>
+            <strong>Noticias</strong>
+            <span>
+                Toda la actualidad de Boca
+                en un solo lugar.
+            </span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">🔴</div>
+            <strong>En vivo</strong>
+            <span>
+                Seguimiento del partido,
+                minuto a minuto y resultado.
+            </span>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📅</div>
+            <strong>Agenda</strong>
+            <span>
+                Fechas y horarios de los
+                próximos partidos.
+            </span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STREAMING
+========================================================= -->
+
+<section class="section">
+
+    <div class="streaming-card">
+
+        <div class="streaming-live">
+            ● EN VIVO
+        </div>
+
+        <h3>
+            LOS BOSTEROS DE TUCUMÁN
+        </h3>
+
+        <p>
+            Streaming xeneize, información,
+            análisis y toda la pasión por Boca.
+        </p>
+
+        <a
+            href="#"
+            class="streaming-button"
+            target="_blank"
+            rel="noopener"
+        >
+            ▶ VER STREAMING
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        BOCA <span>24/7</span>
+    </div>
+
+    <p>
+        Todo Boca. Todo el día.
+    </p>
+
+    <p>
+        Información, partidos, resultados,
+        agenda y actualidad Xeneize.
+    </p>
+
+</footer>
+
+
+<!-- =========================================================
+     BOTÓN VOLVER ARRIBA
+========================================================= -->
+
+<button
+    class="top-button"
+    id="topButton"
+    onclick="window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    })"
+>
+    ↑
+</button>
+
+
+<!-- =========================================================
+     ESTILOS DEL CALENDARIO
+========================================================= -->
+
+<style>
+
+.matches-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+
+.match-card{
+    background:white;
+    border:1px solid var(--borde);
+    border-radius:20px;
+    padding:20px;
+    box-shadow:
+        0 8px 25px rgba(0,25,70,.06);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.match-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--sombra);
+}
+
+.match-card.next{
+    border-top:6px solid var(--amarillo);
+}
+
+.match-competition{
+    color:var(--azul-claro);
+    font-size:11px;
+    font-weight:900;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.match-date{
+    color:#7d8898;
+    font-size:12px;
+    margin-bottom:14px;
+}
+
+.match-teams{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    text-align:center;
+}
+
+.match-team{
+    flex:1;
+    font-size:14px;
+    font-weight:900;
+    color:var(--texto);
+}
+
+.match-badge{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:
+        linear-gradient(
+            135deg,
+            var(--azul),
+            var(--azul-claro)
+        );
+    border:3px solid var(--amarillo);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    font-weight:950;
+}
+
+.match-vs{
+    font-size:13px;
+    color:#8a95a5;
+    font-weight:900;
+}
+
+.match-time{
+    margin-top:16px;
+    text-align:center;
+    background:#f3f6fa;
+    border-radius:10px;
+    padding:10px;
+    color:var(--azul);
+    font-size:18px;
+    font-weight:950;
+}
+
+.match-stadium{
+    margin-top:10px;
+    text-align:center;
+    color:#7a8696;
+    font-size:11px;
+}
+
+.match-city{
+    margin-top:4px;
+    text-align:center;
+    color:#9aa4b2;
+    font-size:10px;
+}
+
+.match-status{
+    display:inline-block;
+    margin-top:12px;
+    background:var(--amarillo);
+    color:var(--azul);
+    padding:5px 9px;
+    border-radius:7px;
+    font-size:9px;
+    font-weight:950;
+}
+
+
+/* =========================================================
+   PRÓXIMO PARTIDO GRANDE
+========================================================= */
+
+.next-match-card{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:25px;
+
+    padding:30px 20px;
+
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(0,120,255,.45),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #003b91,
+            #001b49
+        );
+
+    color:white;
+
+    box-shadow:
+        0 20px 45px rgba(0,30,80,.20);
+
+    text-align:center;
+}
+
+.next-match-card::after{
+    content:"BOCA";
+
+    position:absolute;
+    right:-20px;
+    bottom:-65px;
+
+    font-size:130px;
+    font-weight:1000;
+
+    color:rgba(255,255,255,.035);
+}
+
+.next-match-label{
+    position:relative;
+    z-index:2;
+
+    display:inline-block;
+
+    background:var(--amarillo);
+    color:var(--azul);
+
+    padding:7px 12px;
+
+    border-radius:8px;
+
+    font-size:10px;
+    font-weight:950;
+
+    margin-bottom:18px;
+}
+
+.next-match-competition{
+    position:relative;
+    z-index:2;
+
+    font-size:13px;
+    color:#d6e2f3;
+
+    margin-bottom:20px;
+}
+
+.next-match-teams{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+
+    align-items:center;
+
+    max-width:700px;
+
+    margin:auto;
+
+    gap:20px;
+}
+
+.next-team{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:9px;
+}
+
+.next-team-badge{
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:white;
+
+    color:var(--azul);
+
+    border:4px solid var(--amarillo);
+
+    font-size:12px;
+    font-weight:950;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.25);
+}
+
+.next-team-name{
+    font-size:18px;
+    font-weight:950;
+}
+
+.next-vs{
+    color:var(--amarillo);
+    font-size:22px;
+    font-weight:950;
+}
+
+.next-info{
+    position:relative;
+    z-index:2;
+
+    margin-top:22px;
+
+    color:#d8e4f4;
+
+    font-size:13px;
+    line-height:1.6;
+}
+
+.next-time{
+    position:relative;
+    z-index:2;
+
+    display:inline-block;
+
+    margin-top:17px;
+
+    padding:10px 18px;
+
+    background:rgba(0,0,0,.22);
+
+    border-radius:10px;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:950;
+}
+
+
+/* =========================================================
+   AGENDA
+========================================================= */
+
+.agenda-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.agenda-item{
+    display:grid;
+
+    grid-template-columns:
+        90px
+        1fr
+        auto;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    background:white;
+
+    border:1px solid var(--borde);
+
+    border-radius:15px;
+
+    box-shadow:
+        0 6px 20px rgba(0,25,70,.05);
+}
+
+.agenda-date{
+    color:var(--azul);
+
+    font-size:12px;
+
+    font-weight:950;
+}
+
+.agenda-opponent{
+    color:var(--texto);
+
+    font-size:15px;
+
+    font-weight:900;
+}
+
+.agenda-comp{
+    margin-top:4px;
+
+    color:#8490a0;
+
+    font-size:10px;
+}
+
+.agenda-time{
+    color:var(--azul);
+
+    font-size:15px;
+
+    font-weight:950;
+
+    text-align:right;
+}
+
+.agenda-stadium{
+    margin-top:3px;
+
+    color:#9aa4b2;
+
+    font-size:10px;
+
+    text-align:right;
+}
+
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+
+.results-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:15px;
+}
+
+.result-card{
+    background:white;
+
+    border:1px solid var(--borde);
+
+    border-radius:16px;
+
+    padding:18px;
+
+    text-align:center;
+}
+
+.result-date{
+    color:#8a95a5;
+    font-size:10px;
+}
+
+.result-teams{
+    margin-top:10px;
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+.result-score{
+    margin-top:8px;
+
+    color:var(--azul);
+
+    font-size:25px;
+
+    font-weight:950;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.info-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:15px;
+}
+
+.info-card{
+    background:white;
+
+    border:1px solid var(--borde);
+
+    border-radius:17px;
+
+    padding:20px;
+
+    box-shadow:
+        0 7px 22px rgba(0,25,70,.05);
+}
+
+.info-icon{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#edf3ff;
+
+    border-radius:12px;
+
+    font-size:21px;
+
+    margin-bottom:12px;
+}
+
+.info-card strong{
+    display:block;
+
+    color:var(--azul);
+
+    font-size:15px;
+}
+
+.info-card span{
+    display:block;
+
+    margin-top:7px;
+
+    color:#7b8796;
+
+    font-size:11px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   STREAMING
+========================================================= */
+
+.streaming-card{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #001b49,
+            #003b91
+        );
+
+    color:white;
+
+    box-shadow:
+        0 18px 40px rgba(0,25,70,.18);
+}
+
+.streaming-card::after{
+    content:"▶";
+
+    position:absolute;
+
+    right:30px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:80px;
+
+    color:rgba(247,201,0,.12);
+}
+
+.streaming-live{
+    color:var(--amarillo);
+
+    font-size:10px;
+
+    font-weight:950;
+
+    margin-bottom:7px;
+}
+
+.streaming-card h3{
+    position:relative;
+    z-index:2;
+
+    font-size:26px;
+    font-weight:950;
+}
+
+.streaming-card p{
+    position:relative;
+    z-index:2;
+
+    margin-top:8px;
+
+    color:#d4e1f3;
+
+    font-size:13px;
+}
+
+.streaming-button{
+    position:relative;
+    z-index:2;
+
+    display:inline-block;
+
+    margin-top:17px;
+
+    padding:11px 17px;
+
+    background:var(--amarillo);
+
+    color:var(--azul);
+
+    border-radius:9px;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:950;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+    .matches-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .info-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .results-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+}
+
+@media(max-width:600px){
+
+    .matches-grid{
+        grid-template-columns:1fr;
+    }
+
+    .results-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .next-match-teams{
+        gap:8px;
+    }
+
+    .next-team-badge{
+        width:62px;
+        height:62px;
+        font-size:9px;
+    }
+
+    .next-team-name{
+        font-size:14px;
+    }
+
+    .agenda-item{
+        grid-template-columns:
+            65px
+            1fr
+            auto;
+    }
+
+}
+
+@media(max-width:420px){
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .agenda-item{
+        grid-template-columns:1fr;
+    }
+
+    .agenda-time,
+    .agenda-stadium{
+        text-align:left;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     JAVASCRIPT BOCA 24/7
+========================================================= -->
+
+<script>
+
+const PARTIDOS_URL = "partidos.json";
+
+
+/* =========================================================
+   FORMATEAR FECHA
+========================================================= */
+
+function formatearFecha(fecha){
+
+    if(!fecha) return "Fecha a confirmar";
+
+    const partes = fecha.split("-");
+
+    if(partes.length !== 3){
+        return fecha;
+    }
+
+    const año = partes[0];
+    const mes = parseInt(partes[1],10);
+    const dia = parseInt(partes[2],10);
+
+    const meses = [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+    ];
+
+    return `${dia} de ${meses[mes - 1]} de ${año}`;
+}
+
+
+/* =========================================================
+   CARGAR PARTIDOS
+========================================================= */
+
+async function cargarPartidos(){
 
     try{
 
-        const respuesta =
-            await fetch(
-                "noticias.json?v=" +
-                Date.now(),
-                {
-                    cache: "no-store"
-                }
-            );
+        const respuesta = await fetch(
+            PARTIDOS_URL + "?v=" + Date.now()
+        );
 
         if(!respuesta.ok){
             throw new Error(
-                "No se pudo cargar noticias.json"
+                "No se pudo cargar partidos.json"
             );
         }
 
-        const datos =
-            await respuesta.json();
+        const datos = await respuesta.json();
 
-        let noticias = [];
-
-        if(Array.isArray(datos)){
-
-            noticias = datos;
-
-        }else if(
-            datos &&
-            Array.isArray(datos.noticias)
-        ){
-
-            noticias =
-                datos.noticias;
-
-        }
-
-
-        noticias =
-            noticias.map(
-                noticia => {
-
-                    return {
-
-                        titulo:
-                            noticia.titulo ||
-                            noticia.title ||
-                            "",
-
-                        fuente:
-                            noticia.fuente ||
-                            noticia.source ||
-                            "Boca 24/7",
-
-                        contenido:
-                            noticia.contenido ||
-                            noticia.descripcion ||
-                            noticia.description ||
-                            "",
-
-                        categoria:
-                            noticia.categoria ||
-                            "Boca",
-
-                        link:
-                            noticia.link ||
-                            noticia.url ||
-                            "#",
-
-                        fecha_iso:
-                            obtenerFecha(
-                                noticia
-                            )
-
-                    };
-
-                }
-            );
-
-
-        noticias =
-            eliminarDuplicadas(
-                noticias
-            );
-
-
-        noticias.sort(
-            (a, b) => {
-
-                const fechaA =
-                    new Date(
-                        a.fecha_iso
-                    ).getTime() || 0;
-
-                const fechaB =
-                    new Date(
-                        b.fecha_iso
-                    ).getTime() || 0;
-
-                return fechaB - fechaA;
-
-            }
+        console.log(
+            "BOCA 24/7 — partidos cargados:",
+            datos
         );
 
-
-        noticiasEstado.todas =
-            noticias;
-
-        noticiasEstado.actuales =
-            [...noticias];
-
-
-        renderizarNoticias();
-
-
-        const ticker =
-            document.getElementById(
-                "tickerText"
-            );
-
-        if(
-            ticker &&
-            noticias.length
-        ){
-
-            ticker.textContent =
-                noticias[0].titulo;
-
-        }
-
+        mostrarPartidos(datos);
 
     }catch(error){
 
         console.error(
-            "BOCA 24/7:",
+            "Error cargando partidos:",
             error
         );
 
-        grid.innerHTML = `
-            <div class="error-card">
-
-                <strong>
-                    No pudimos cargar las noticias.
-                </strong>
-
-                <span>
-                    Verificá que noticias.json
-                    esté junto a index.html.
-                </span>
-
-            </div>
-        `;
+        mostrarErrorPartidos();
 
     }
 
 }
 
 
-/* =====================================================
-   RENDERIZAR NOTICIAS
-   ===================================================== */
+/* =========================================================
+   MOSTRAR PARTIDOS
+========================================================= */
 
-function renderizarNoticias(){
+function mostrarPartidos(datos){
 
-    const grid =
-        document.getElementById(
-            "newsGrid"
-        );
+    const lista =
+        document.getElementById("listaPartidos");
 
-    if(!grid){
-        return;
+    const agenda =
+        document.getElementById("agendaPartidos");
+
+    const proximo =
+        document.getElementById("proximoPartido");
+
+    const resultados =
+        document.getElementById("resultadosPartidos");
+
+
+    const proximos =
+        Array.isArray(datos.proximos)
+            ? datos.proximos
+            : [];
+
+
+    const resultadosData =
+        Array.isArray(datos.resultados)
+            ? datos.resultados
+            : [];
+
+
+    /* =====================================================
+       PRÓXIMO PARTIDO
+    ===================================================== */
+
+    if(datos.partido_actual){
+
+        const p = datos.partido_actual;
+
+        proximo.innerHTML = `
+
+            <div class="next-match-label">
+                🏆 PRÓXIMO PARTIDO
+            </div>
+
+            <div class="next-match-competition">
+                ${p.competencia || "Competencia a confirmar"}
+                ·
+                ${p.instancia || ""}
+            </div>
+
+            <div class="next-match-teams">
+
+                <div class="next-team">
+
+                    <div class="next-team-badge">
+                        CABJ
+                    </div>
+
+                    <div class="next-team-name">
+                        BOCA JUNIORS
+                    </div>
+
+                </div>
+
+                <div class="next-vs">
+                    VS
+                </div>
+
+                <div class="next-team">
+
+                    <div class="next-team-badge">
+                        ${p.rival || "RIVAL"}
+                    </div>
+
+                    <div class="next-team-name">
+                        ${p.rival || "RIVAL"}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="next-info">
+
+                📅 ${formatearFecha(p.fecha)}
+                <br>
+
+                🏟️ ${p.estadio || "Estadio a confirmar"}
+                ${p.ciudad ? " · " + p.ciudad : ""}
+
+            </div>
+
+            <div class="next-time">
+                ⏰ ${p.hora || "--:--"}
+            </div>
+
+        `;
+
     }
 
-    let noticias =
-        [...noticiasEstado.todas];
 
+    /* =====================================================
+       TARJETAS
+    ===================================================== */
 
-    if(
-        noticiasEstado.categoria !==
-        "Todas"
-    ){
+    if(proximos.length === 0){
 
-        noticias =
-            noticias.filter(
-                noticia => {
-
-                    return String(
-                        noticia.categoria
-                    )
-                    .toLowerCase()
-                    .includes(
-                        noticiasEstado.categoria
-                        .toLowerCase()
-                    );
-
-                }
-            );
-
-    }
-
-
-    const busqueda =
-        noticiasEstado.busqueda
-        .toLowerCase()
-        .trim();
-
-
-    if(busqueda){
-
-        noticias =
-            noticias.filter(
-                noticia => {
-
-                    const texto = (
-
-                        noticia.titulo +
-                        " " +
-                        noticia.fuente +
-                        " " +
-                        noticia.contenido +
-                        " " +
-                        noticia.categoria
-
-                    ).toLowerCase();
-
-                    return texto.includes(
-                        busqueda
-                    );
-
-                }
-            );
-
-    }
-
-
-    noticiasEstado.actuales =
-        noticias;
-
-
-    if(!noticias.length){
-
-        grid.innerHTML = `
-            <div class="empty-card">
-
-                <strong>
-                    No encontramos noticias.
-                </strong>
-
-                <span>
-                    Probá con otra búsqueda
-                    o categoría.
-                </span>
-
+        lista.innerHTML = `
+            <div class="empty">
+                No hay próximos partidos cargados.
             </div>
         `;
 
-        return;
+    }else{
+
+        lista.innerHTML =
+            proximos.map(
+                (p,index) => `
+
+                <article
+                    class="match-card ${index === 0 ? "next" : ""}"
+                >
+
+                    <div class="match-competition">
+                        ${p.competencia || "Competencia"}
+                    </div>
+
+                    <div class="match-date">
+                        ${formatearFecha(p.fecha)}
+                    </div>
+
+                    <div class="match-teams">
+
+                        <div class="match-team">
+                            BOCA
+                        </div>
+
+                        <div class="match-badge">
+                            CABJ
+                        </div>
+
+                        <div class="match-vs">
+                            VS
+                        </div>
+
+                        <div class="match-badge">
+                            RIVAL
+                        </div>
+
+                        <div class="match-team">
+                            ${p.rival || "Rival"}
+                        </div>
+
+                    </div>
+
+                    <div class="match-time">
+                        ${p.hora || "--:--"}
+                    </div>
+
+                    <div class="match-stadium">
+                        🏟️ ${p.estadio || "Estadio a confirmar"}
+                    </div>
+
+                    <div class="match-city">
+                        ${p.ciudad || ""}
+                    </div>
+
+                    ${
+                        index === 0
+                        ?
+                        `
+                        <div class="match-status">
+                            PRÓXIMO
+                        </div>
+                        `
+                        :
+                        ""
+                    }
+
+                </article>
+
+            article>
+article>
+
+            `
+            ).join("");
 
     }
 
 
-    grid.innerHTML =
-        noticias
-        .slice(0, 60)
-        .map(
-            (noticia, indice) => {
+    /* =========================================================
+       CARGAR PARTIDOS DESDE partidos.json
+    ========================================================= */
+
+    async function cargarPartidos() {
+
+        const lista = document.getElementById("listaPartidos");
+
+        if (!lista) return;
+
+        try {
+
+            const respuesta = await fetch("partidos.json?t=" + Date.now());
+
+            if (!respuesta.ok) {
+                throw new Error("No se pudo cargar partidos.json");
+            }
+
+            const datos = await respuesta.json();
+
+            const partidos = Array.isArray(datos)
+                ? datos
+                : (datos.proximos || []);
+
+            if (!partidos.length) {
+
+                lista.innerHTML = `
+                    <div class="empty">
+                        <div style="font-size:35px;">⚽</div>
+                        <strong>No hay próximos partidos cargados.</strong>
+                        <p>El calendario se actualizará cuando haya nueva información.</p>
+                    </div>
+                `;
+
+                return;
+            }
+
+            lista.innerHTML = partidos.map((partido, indice) => {
+
+                const fecha = formatearFecha(partido.fecha);
+
+                const esPrimero = indice === 0;
 
                 return `
+                    <article class="match-card ${esPrimero ? "match-next" : ""}">
 
-                    <article
-                        class="news-card"
-                        style="
-                            animation-delay:
-                            ${Math.min(
-                                indice * 0.04,
-                                0.7
-                            )}s
-                        ">
+                        <div class="match-card-top">
 
-                        <div
-                            class="news-image image-team">
-
-                            <span>
-                                ${escaparHTML(
-                                    noticia.categoria
-                                )}
+                            <span class="match-competition">
+                                🏆 ${escaparHTML(partido.competencia || "Competencia")}
                             </span>
+
+                            ${
+                                esPrimero
+                                ? `<span class="match-next-label">PRÓXIMO</span>`
+                                : ""
+                            }
 
                         </div>
 
+                        <div class="match-date">
+                            📅 ${fecha}
+                        </div>
 
-                        <div class="news-content">
+                        <div class="match-versus">
 
-                            <div class="news-meta">
+                            <div class="match-team boca-team">
 
-                                <span>
-                                    ${escaparHTML(
-                                        noticia.fuente
-                                    )}
-                                </span>
+                                <div class="team-crest">
+                                    CABJ
+                                </div>
+
+                                <strong>BOCA</strong>
+
+                            </div>
+
+                            <div class="match-center">
+
+                                <span>VS</span>
 
                                 <small>
-                                    ${formatearFecha(
-                                        noticia.fecha_iso
-                                    )}
+                                    ${escaparHTML(partido.hora || "--:--")}
                                 </small>
 
                             </div>
 
+                            <div class="match-team">
 
-                            <h3>
-                                ${escaparHTML(
-                                    noticia.titulo
-                                )}
-                            </h3>
+                                <div class="team-crest rival-crest">
+                                    ⚽
+                                </div>
 
-
-                            <p>
-                                ${escaparHTML(
-                                    noticia.contenido ||
-                                    "Toda la actualidad de Boca Juniors."
-                                )}
-                            </p>
-
-
-                            <div class="news-bottom">
-
-                                <span class="category">
-                                    ${escaparHTML(
-                                        noticia.categoria
-                                    )}
-                                </span>
-
-                                <button
-                                    class="btn"
-                                    onclick="
-                                        abrirNoticia(
-                                            ${indice}
-                                        )
-                                    ">
-
-                                    LEER NOTA →
-
-                                </button>
+                                <strong>
+                                    ${escaparHTML(partido.rival || "Rival")}
+                                </strong>
 
                             </div>
+
+                        </div>
+
+                        <div class="match-info">
+
+                            <span>
+                                🏟️ ${escaparHTML(partido.estadio || "Estadio a confirmar")}
+                            </span>
 
                         </div>
 
                     </article>
-
                 `;
 
-            }
-        )
-        .join("");
+            }).join("");
 
-}
+            actualizarProximoPartido(partidos[0]);
 
+        } catch (error) {
 
-/* =====================================================
-   ABRIR NOTICIA
-   ===================================================== */
+            console.error("Error cargando partidos:", error);
 
-function abrirNoticia(indice){
+            lista.innerHTML = `
+                <div class="error">
+                    <div style="font-size:35px;">⚠️</div>
 
-    const noticia =
-        noticiasEstado.actuales[indice];
+                    <strong>
+                        No pudimos cargar el calendario.
+                    </strong>
 
-    if(!noticia){
-        return;
-    }
-
-    if(
-        noticia.link &&
-        noticia.link !== "#"
-    ){
-
-        window.open(
-            noticia.link,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   BUSCADOR
-   ===================================================== */
-
-const searchInput =
-    document.getElementById(
-        "searchInput"
-    );
-
-
-if(searchInput){
-
-    searchInput.addEventListener(
-        "input",
-        function(){
-
-            noticiasEstado.busqueda =
-                this.value;
-
-            renderizarNoticias();
+                    <p style="margin-top:8px;">
+                        Verificá que <b>partidos.json</b> esté
+                        junto a <b>index.html</b>.
+                    </p>
+                </div>
+            `;
 
         }
-    );
 
-}
-
-
-/* =====================================================
-   BOTÓN ACTUALIZAR
-   ===================================================== */
-
-const reloadNews =
-    document.getElementById(
-        "reloadNews"
-    );
+    }
 
 
-if(reloadNews){
+    /* =========================================================
+       ACTUALIZAR PRÓXIMO PARTIDO
+    ========================================================= */
 
-    reloadNews.addEventListener(
-        "click",
-        async function(){
+    function actualizarProximoPartido(partido) {
 
-            this.disabled = true;
+        if (!partido) return;
 
-            this.textContent =
-                "ACTUALIZANDO...";
+        const rival = document.getElementById("proximoRival");
+        const competencia = document.getElementById("proximaCompetencia");
+        const fecha = document.getElementById("proximaFecha");
+        const hora = document.getElementById("proximaHora");
+        const estadio = document.getElementById("proximoEstadio");
 
-            await cargarNoticias();
-
-            this.textContent =
-                "ACTUALIZADO ✓";
-
-            setTimeout(
-                () => {
-
-                    this.textContent =
-                        "ACTUALIZAR";
-
-                    this.disabled =
-                        false;
-
-                },
-                1500
-            );
-
+        if (rival) {
+            rival.textContent = partido.rival || "Rival a confirmar";
         }
-    );
 
-}
+        if (competencia) {
+            competencia.textContent =
+                partido.competencia || "Competencia";
+        }
+
+        if (fecha) {
+            fecha.textContent =
+                formatearFecha(partido.fecha);
+        }
+
+        if (hora) {
+            hora.textContent =
+                partido.hora || "--:--";
+        }
+
+        if (estadio) {
+            estadio.textContent =
+                partido.estadio || "Estadio a confirmar";
+        }
+
+    }
 
 
-/* =====================================================
-   NAVEGACIÓN
-   ===================================================== */
+    /* =========================================================
+       FORMATEAR FECHAS
+    ========================================================= */
 
-document
-.querySelectorAll(
-    "[data-scroll]"
-)
-.forEach(
-    boton => {
+    function formatearFecha(fecha) {
 
-        boton.addEventListener(
-            "click",
-            function(){
+        if (!fecha) {
+            return "Fecha a confirmar";
+        }
 
-                const destino =
-                    this.dataset.scroll;
+        const partes = String(fecha).split("-");
 
-                const elemento =
-                    document.getElementById(
-                        destino
-                    );
+        if (partes.length !== 3) {
+            return fecha;
+        }
 
-                if(elemento){
+        const año = partes[0];
+        const mes = parseInt(partes[1], 10);
+        const dia = partes[2];
 
-                    elemento.scrollIntoView({
-                        behavior: "smooth"
-                    });
+        const meses = [
+            "",
+            "enero",
+            "febrero",
+            "marzo",
+            "abril",
+            "mayo",
+            "junio",
+            "julio",
+            "agosto",
+            "septiembre",
+            "octubre",
+            "noviembre",
+            "diciembre"
+        ];
+
+        return `${dia} de ${meses[mes]} de ${año}`;
+    }
+
+
+    /* =========================================================
+       SEGURIDAD PARA TEXTO DEL JSON
+    ========================================================= */
+
+    function escaparHTML(texto) {
+
+        return String(texto ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* =========================================================
+       NAVEGACIÓN
+    ========================================================= */
+
+    function irA(id) {
+
+        const elemento = document.getElementById(id);
+
+        if (!elemento) return;
+
+        elemento.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+
+    /* =========================================================
+       BOTONES DE NAVEGACIÓN
+    ========================================================= */
+
+    document.querySelectorAll("[data-scroll]").forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            const destino = boton.getAttribute("data-scroll");
+
+            irA(destino);
+
+        });
+
+    });
+
+
+    /* =========================================================
+       BUSCADOR DE NOTICIAS
+    ========================================================= */
+
+    const buscador = document.getElementById("buscador");
+
+    if (buscador) {
+
+        buscador.addEventListener("input", function () {
+
+            const texto = this.value
+                .toLowerCase()
+                .trim();
+
+            document.querySelectorAll(".news-card").forEach(card => {
+
+                const contenido =
+                    card.textContent.toLowerCase();
+
+                if (!texto || contenido.includes(texto)) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
 
                 }
 
-            }
-        );
+            });
+
+        });
 
     }
-);
 
 
-/* =====================================================
-   MENÚ DE SECCIONES
-   ===================================================== */
+    /* =========================================================
+       BOTÓN VOLVER ARRIBA
+    ========================================================= */
 
-document
-.querySelectorAll(
-    "[data-section]"
-)
-.forEach(
-    boton => {
+    const botonArriba =
+        document.getElementById("topButton");
 
-        boton.addEventListener(
-            "click",
-            function(){
+    if (botonArriba) {
 
-                document
-                .querySelectorAll(
-                    "[data-section]"
-                )
-                .forEach(
-                    b => {
+        window.addEventListener("scroll", () => {
 
-                        b.classList.remove(
-                            "active"
-                        );
+            if (window.scrollY > 500) {
 
-                    }
-                );
+                botonArriba.classList.add("show");
 
+            } else {
 
-                this.classList.add(
-                    "active"
-                );
-
-
-                const texto =
-                    this.textContent
-                    .trim()
-                    .toLowerCase();
-
-
-                if(texto === "últimas"){
-
-                    noticiasEstado.categoria =
-                        "Todas";
-
-                }else if(
-                    texto === "mercado"
-                ){
-
-                    noticiasEstado.categoria =
-                        "Mercado";
-
-                }else if(
-                    texto === "básquet"
-                ){
-
-                    noticiasEstado.categoria =
-                        "Básquet";
-
-                }else if(
-                    texto === "femenino"
-                ){
-
-                    noticiasEstado.categoria =
-                        "Fútbol femenino";
-
-                }else{
-
-                    noticiasEstado.categoria =
-                        this.textContent.trim();
-
-                }
-
-
-                noticiasEstado.busqueda =
-                    "";
-
-                if(searchInput){
-
-                    searchInput.value =
-                        "";
-
-                }
-
-
-                renderizarNoticias();
-
-
-                document
-                .getElementById(
-                    "noticias"
-                )
-                ?.scrollIntoView({
-                    behavior: "smooth"
-                });
+                botonArriba.classList.remove("show");
 
             }
-        );
 
-    }
-);
+        });
 
+        botonArriba.addEventListener("click", () => {
 
-/* =====================================================
-   ENCUESTA
-   ===================================================== */
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
-function vote(opcion){
-
-    let votos = {};
-
-    try{
-
-        votos =
-            JSON.parse(
-                localStorage.getItem(
-                    "boca247_encuesta"
-                ) || "{}"
-            );
-
-    }catch(error){
-
-        votos = {};
+        });
 
     }
 
 
-    votos[opcion] =
-        (votos[opcion] || 0) + 1;
+    /* =========================================================
+       CARGA INICIAL
+    ========================================================= */
+
+    cargarNoticias();
+
+    cargarPartidos();
 
 
-    localStorage.setItem(
-        "boca247_encuesta",
-        JSON.stringify(votos)
-    );
+    /* =========================================================
+       ACTUALIZACIÓN AUTOMÁTICA
+       Noticias: cada 5 minutos
+       Calendario: cada 5 minutos
+    ========================================================= */
 
-
-    mostrarResultados();
-
-}
-
-
-/* =====================================================
-   RESULTADOS
-   ===================================================== */
-
-function mostrarResultados(){
-
-    const resultado =
-        document.getElementById(
-            "pollResult"
-        );
-
-    if(!resultado){
-        return;
-    }
-
-
-    let votos = {};
-
-    try{
-
-        votos =
-            JSON.parse(
-                localStorage.getItem(
-                    "boca247_encuesta"
-                ) || "{}"
-            );
-
-    }catch(error){
-
-        votos = {};
-
-    }
-
-
-    const opciones = [
-        "Muy bien",
-        "Bien",
-        "Regular",
-        "Mal"
-    ];
-
-
-    const total =
-        opciones.reduce(
-            (suma, opcion) => {
-
-                return suma +
-                    (votos[opcion] || 0);
-
-            },
-            0
-        );
-
-
-    if(!total){
-
-        resultado.innerHTML =
-            "";
-
-        return;
-
-    }
-
-
-    resultado.innerHTML = `
-
-        <strong>
-            RESULTADOS
-        </strong>
-
-        ${opciones.map(
-            opcion => {
-
-                const cantidad =
-                    votos[opcion] || 0;
-
-                const porcentaje =
-                    Math.round(
-                        cantidad /
-                        total *
-                        100
-                    );
-
-                return `
-
-                    <div class="poll-row">
-
-                        <div class="poll-label">
-
-                            <span>
-                                ${escaparHTML(
-                                    opcion
-                                )}
-                            </span>
-
-                            <b>
-                                ${porcentaje}%
-                            </b>
-
-                        </div>
-
-                        <div class="poll-bar">
-
-                            <div
-                                style="
-                                    width:
-                                    ${porcentaje}%
-                                ">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-            }
-        ).join("")}
-
-        <small>
-            Total de votos: ${total}
-        </small>
-
-    `;
-
-}
-
-
-/* =====================================================
-   ARRANQUE
-   ===================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
+    setInterval(() => {
 
         cargarNoticias();
 
-        mostrarResultados();
+        cargarPartidos();
+
+    }, 5 * 60 * 1000);
+
+
+    /* =========================================================
+       FECHA / HORA DE ACTUALIZACIÓN
+    ========================================================= */
+
+    function mostrarActualizacion() {
+
+        const elementos =
+            document.querySelectorAll("[data-actualizado]");
+
+        if (!elementos.length) return;
+
+        const ahora = new Date();
+
+        const hora = ahora.toLocaleTimeString(
+            "es-AR",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+        elementos.forEach(elemento => {
+
+            elemento.textContent =
+                `Actualizado ${hora}`;
+
+        });
 
     }
-);
 
+    mostrarActualizacion();
+
+
+});
 </script>
 
-</body>
-       <!-- =========================================================
-     BOCA 24/7 - BLOQUE EXTRA DE INFORMACIÓN
-     NO MODIFICA EL CONTENIDO EXISTENTE
-========================================================= -->
 
-<style>
-.b247-extra {
-    width: 100%;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.b247-extra-title {
-    background: linear-gradient(135deg, #00245f, #064aa8);
-    color: #fff;
-    padding: 15px 18px;
-    border-radius: 14px 14px 0 0;
-    font-size: 21px;
-    font-weight: 900;
-    border-bottom: 4px solid #f5c400;
-}
-
-.b247-card {
-    background: #fff;
-    border-radius: 14px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0,0,0,.10);
-}
-
-.b247-card-body {
-    padding: 18px;
-}
-
-.b247-stream {
-    background: linear-gradient(135deg, #001b49, #003b86);
-    color: #fff;
-    padding: 22px;
-    border-radius: 14px;
-    text-align: center;
-}
-
-.b247-stream h3 {
-    margin: 0 0 8px;
-    font-size: 23px;
-}
-
-.b247-stream p {
-    margin: 5px 0 15px;
-    opacity: .9;
-}
-
-.b247-stream-btn {
-    display: inline-block;
-    background: #f5c400;
-    color: #001b49;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 9px;
-    font-weight: 900;
-}
-
-.b247-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-.b247-team {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 13px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.b247-team:last-child {
-    border-bottom: none;
-}
-
-.b247-position {
-    width: 38px;
-    height: 38px;
-    background: #00245f;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 900;
-    margin-right: 10px;
-}
-
-.b247-player {
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-}
-
-.b247-status {
-    font-size: 12px;
-    font-weight: 900;
-    padding: 5px 9px;
-    border-radius: 20px;
-    background: #eee;
-}
-
-.b247-status.probable {
-    background: #fff3b0;
-    color: #755d00;
-}
-
-.b247-status.confirmed {
-    background: #c9f7d5;
-    color: #17632d;
-}
-
-.b247-match {
-    text-align: center;
-    padding: 20px 10px;
-}
-
-.b247-match-status {
-    display: inline-block;
-    background: #00245f;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 900;
-    margin-bottom: 15px;
-}
-
-.b247-match-teams {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.b247-score {
-    font-size: 34px;
-    color: #00245f;
-}
-
-.b247-minute {
-    margin-top: 10px;
-    color: #d00000;
-    font-weight: 900;
-}
-
-.b247-events {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.b247-event {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.b247-event:last-child {
-    border-bottom: none;
-}
-
-.b247-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.b247-stat {
-    background: #f5f7fa;
-    padding: 14px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.b247-stat strong {
-    display: block;
-    font-size: 23px;
-    color: #00245f;
-}
-
-.b247-calendar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.b247-fixture {
-    display: grid;
-    grid-template-columns: 90px 1fr 90px;
-    align-items: center;
-    gap: 10px;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-}
-
-.b247-date {
-    font-weight: 900;
-    color: #00245f;
-}
-
-.b247-opponent {
-    font-weight: 800;
-}
-
-.b247-time {
-    text-align: right;
-    font-weight: 900;
-}
-
-.b247-empty {
-    text-align: center;
-    padding: 20px;
-    color: #666;
-}
-
-@media (max-width: 700px) {
-
-    .b247-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .b247-match-teams {
-        gap: 12px;
-        font-size: 16px;
-    }
-
-    .b247-fixture {
-        grid-template-columns: 75px 1fr 65px;
-        font-size: 13px;
-    }
-}
-</style>
-
-
-<section class="b247-extra">
-
-    <!-- =====================================================
-         STREAMING
-    ====================================================== -->
-
-    <div class="b247-card">
-        <div class="b247-extra-title">
-            📺 STREAMING
-        </div>
-
-        <div class="b247-card-body">
-            <div class="b247-stream">
-
-                <h3>Los Bosteros de Tucumán</h3>
-
-                <p>
-                    Toda la pasión de Boca desde Tucumán.
-                    Información, análisis y actualidad Xeneize.
-                </p>
-
-                <!--
-                REEMPLAZAR EL # POR EL LINK REAL DEL STREAMING
-                -->
-
-                <a
-                    href="#"
-                    target="_blank"
-                    class="b247-stream-btn">
-                    ▶ VER STREAMING
-                </a>
-
-            </div>
-        </div>
-    </div>
-
-
-    <!-- =====================================================
-         FORMACIONES
-    ====================================================== -->
-
-    <div class="b247-grid">
-
-        <div class="b247-card">
-
-            <div class="b247-extra-title">
-                ⚽ FORMACIÓN PROBABLE
-            </div>
-
-            <div class="b247-card-body">
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">1</span>
-                        Arquero
-                    </div>
-
-                    <span class="b247-status probable">
-                        PROBABLE
-                    </span>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">2</span>
-                        Defensor
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">3</span>
-                        Defensor
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">4</span>
-                        Defensor
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">5</span>
-                        Mediocampista
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">6</span>
-                        Mediocampista
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">7</span>
-                        Mediocampista
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">8</span>
-                        Delantero
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">9</span>
-                        Delantero
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">10</span>
-                        Delantero
-                    </div>
-                </div>
-
-                <div class="b247-team">
-                    <div class="b247-player">
-                        <span class="b247-position">11</span>
-                        Delantero
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="b247-card">
-
-            <div class="b247-extra-title">
-                ✅ FORMACIÓN CONFIRMADA
-            </div>
-
-            <div class="b247-card-body">
-
-                <div class="b247-empty">
-                    La formación oficial aparecerá
-                    cuando Boca la confirme.
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         PARTIDO EN VIVO
-    ====================================================== -->
-
-    <div class="b247-card">
-
-        <div class="b247-extra-title">
-            🔴 PARTIDO EN VIVO
-        </div>
-
-        <div class="b247-card-body">
-
-            <div class="b247-match">
-
-                <span class="b247-match-status">
-                    ESPERANDO PRÓXIMO PARTIDO
-                </span>
-
-                <div class="b247-match-teams">
-
-                    <span>BOCA</span>
-
-                    <span class="b247-score">
-                        -
-                    </span>
-
-                    <span>RIVAL</span>
-
-                </div>
-
-                <div class="b247-minute">
-                    ⏱ MINUTO A MINUTO
-                </div>
-
-                <div class="b247-events">
-
-                    <div class="b247-event">
-                        🕐 El minuto a minuto aparecerá
-                        durante el partido.
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         ESTADÍSTICAS
-    ====================================================== -->
-
-    <div class="b247-card">
-
-        <div class="b247-extra-title">
-            📊 ESTADÍSTICAS DEL PARTIDO
-        </div>
-
-        <div class="b247-card-body">
-
-            <div class="b247-stats">
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Posesión Boca
-                </div>
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Posesión Rival
-                </div>
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Remates Boca
-                </div>
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Remates Rival
-                </div>
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Tiros al arco Boca
-                </div>
-
-                <div class="b247-stat">
-                    <strong>0</strong>
-                    Tiros al arco Rival
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =====================================================
-         AGENDA BOCA
-    ====================================================== -->
-
-    <div class="b247-card">
-
-        <div class="b247-extra-title">
-            📅 PRÓXIMOS PARTIDOS DE BOCA
-        </div>
-
-        <div class="b247-card-body">
-
-            <div class="b247-calendar">
-
-                <div class="b247-fixture">
-
-                    <div class="b247-date">
-                        FECHA
-                    </div>
-
-                    <div class="b247-opponent">
-                        Boca Juniors
-                    </div>
-
-                    <div class="b247-time">
-                        HORA
-                    </div>
-
-                </div>
-
-                <div class="b247-fixture">
-
-                    <div class="b247-date">
-                        PRÓXIMO
-                    </div>
-
-                    <div class="b247-opponent">
-                        Rival a confirmar
-                    </div>
-
-                    <div class="b247-time">
-                        --:--
-                    </div>
-
-                </div>
-
-                <div class="b247-fixture">
-
-                    <div class="b247-date">
-                        PRÓXIMO
-                    </div>
-
-                    <div class="b247-opponent">
-                        Rival a confirmar
-                    </div>
-
-                    <div class="b247-time">
-                        --:--
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section
-   
-       <!-- =========================================================
-     FIN BLOQUE BOCA 24/7
+<!-- =========================================================
+     FIN BOCA 24/7
 ========================================================= -->
 
 </body>
-    </html>
-
+</html>
