@@ -3494,4 +3494,577 @@ document.addEventListener(
 </script>
 
 </body>
+       <!-- =========================================================
+     BOCA 24/7 - BLOQUE EXTRA DE INFORMACIÓN
+     NO MODIFICA EL CONTENIDO EXISTENTE
+========================================================= -->
+
+<style>
+.b247-extra {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.b247-extra-title {
+    background: linear-gradient(135deg, #00245f, #064aa8);
+    color: #fff;
+    padding: 15px 18px;
+    border-radius: 14px 14px 0 0;
+    font-size: 21px;
+    font-weight: 900;
+    border-bottom: 4px solid #f5c400;
+}
+
+.b247-card {
+    background: #fff;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,.10);
+}
+
+.b247-card-body {
+    padding: 18px;
+}
+
+.b247-stream {
+    background: linear-gradient(135deg, #001b49, #003b86);
+    color: #fff;
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.b247-stream h3 {
+    margin: 0 0 8px;
+    font-size: 23px;
+}
+
+.b247-stream p {
+    margin: 5px 0 15px;
+    opacity: .9;
+}
+
+.b247-stream-btn {
+    display: inline-block;
+    background: #f5c400;
+    color: #001b49;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-weight: 900;
+}
+
+.b247-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.b247-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.b247-team:last-child {
+    border-bottom: none;
+}
+
+.b247-position {
+    width: 38px;
+    height: 38px;
+    background: #00245f;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.b247-player {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.b247-status {
+    font-size: 12px;
+    font-weight: 900;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #eee;
+}
+
+.b247-status.probable {
+    background: #fff3b0;
+    color: #755d00;
+}
+
+.b247-status.confirmed {
+    background: #c9f7d5;
+    color: #17632d;
+}
+
+.b247-match {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.b247-match-status {
+    display: inline-block;
+    background: #00245f;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.b247-match-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.b247-score {
+    font-size: 34px;
+    color: #00245f;
+}
+
+.b247-minute {
+    margin-top: 10px;
+    color: #d00000;
+    font-weight: 900;
+}
+
+.b247-events {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.b247-event {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.b247-event:last-child {
+    border-bottom: none;
+}
+
+.b247-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.b247-stat {
+    background: #f5f7fa;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.b247-stat strong {
+    display: block;
+    font-size: 23px;
+    color: #00245f;
+}
+
+.b247-calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.b247-fixture {
+    display: grid;
+    grid-template-columns: 90px 1fr 90px;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.b247-date {
+    font-weight: 900;
+    color: #00245f;
+}
+
+.b247-opponent {
+    font-weight: 800;
+}
+
+.b247-time {
+    text-align: right;
+    font-weight: 900;
+}
+
+.b247-empty {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+@media (max-width: 700px) {
+
+    .b247-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .b247-match-teams {
+        gap: 12px;
+        font-size: 16px;
+    }
+
+    .b247-fixture {
+        grid-template-columns: 75px 1fr 65px;
+        font-size: 13px;
+    }
+}
+</style>
+
+
+<section class="b247-extra">
+
+    <!-- =====================================================
+         STREAMING
+    ====================================================== -->
+
+    <div class="b247-card">
+        <div class="b247-extra-title">
+            📺 STREAMING
+        </div>
+
+        <div class="b247-card-body">
+            <div class="b247-stream">
+
+                <h3>Los Bosteros de Tucumán</h3>
+
+                <p>
+                    Toda la pasión de Boca desde Tucumán.
+                    Información, análisis y actualidad Xeneize.
+                </p>
+
+                <!--
+                REEMPLAZAR EL # POR EL LINK REAL DEL STREAMING
+                -->
+
+                <a
+                    href="#"
+                    target="_blank"
+                    class="b247-stream-btn">
+                    ▶ VER STREAMING
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =====================================================
+         FORMACIONES
+    ====================================================== -->
+
+    <div class="b247-grid">
+
+        <div class="b247-card">
+
+            <div class="b247-extra-title">
+                ⚽ FORMACIÓN PROBABLE
+            </div>
+
+            <div class="b247-card-body">
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">1</span>
+                        Arquero
+                    </div>
+
+                    <span class="b247-status probable">
+                        PROBABLE
+                    </span>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">2</span>
+                        Defensor
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">3</span>
+                        Defensor
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">4</span>
+                        Defensor
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">5</span>
+                        Mediocampista
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">6</span>
+                        Mediocampista
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">7</span>
+                        Mediocampista
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">8</span>
+                        Delantero
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">9</span>
+                        Delantero
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">10</span>
+                        Delantero
+                    </div>
+                </div>
+
+                <div class="b247-team">
+                    <div class="b247-player">
+                        <span class="b247-position">11</span>
+                        Delantero
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="b247-card">
+
+            <div class="b247-extra-title">
+                ✅ FORMACIÓN CONFIRMADA
+            </div>
+
+            <div class="b247-card-body">
+
+                <div class="b247-empty">
+                    La formación oficial aparecerá
+                    cuando Boca la confirme.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PARTIDO EN VIVO
+    ====================================================== -->
+
+    <div class="b247-card">
+
+        <div class="b247-extra-title">
+            🔴 PARTIDO EN VIVO
+        </div>
+
+        <div class="b247-card-body">
+
+            <div class="b247-match">
+
+                <span class="b247-match-status">
+                    ESPERANDO PRÓXIMO PARTIDO
+                </span>
+
+                <div class="b247-match-teams">
+
+                    <span>BOCA</span>
+
+                    <span class="b247-score">
+                        -
+                    </span>
+
+                    <span>RIVAL</span>
+
+                </div>
+
+                <div class="b247-minute">
+                    ⏱ MINUTO A MINUTO
+                </div>
+
+                <div class="b247-events">
+
+                    <div class="b247-event">
+                        🕐 El minuto a minuto aparecerá
+                        durante el partido.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         ESTADÍSTICAS
+    ====================================================== -->
+
+    <div class="b247-card">
+
+        <div class="b247-extra-title">
+            📊 ESTADÍSTICAS DEL PARTIDO
+        </div>
+
+        <div class="b247-card-body">
+
+            <div class="b247-stats">
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Posesión Boca
+                </div>
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Posesión Rival
+                </div>
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Remates Boca
+                </div>
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Remates Rival
+                </div>
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Tiros al arco Boca
+                </div>
+
+                <div class="b247-stat">
+                    <strong>0</strong>
+                    Tiros al arco Rival
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         AGENDA BOCA
+    ====================================================== -->
+
+    <div class="b247-card">
+
+        <div class="b247-extra-title">
+            📅 PRÓXIMOS PARTIDOS DE BOCA
+        </div>
+
+        <div class="b247-card-body">
+
+            <div class="b247-calendar">
+
+                <div class="b247-fixture">
+
+                    <div class="b247-date">
+                        FECHA
+                    </div>
+
+                    <div class="b247-opponent">
+                        Boca Juniors
+                    </div>
+
+                    <div class="b247-time">
+                        HORA
+                    </div>
+
+                </div>
+
+                <div class="b247-fixture">
+
+                    <div class="b247-date">
+                        PRÓXIMO
+                    </div>
+
+                    <div class="b247-opponent">
+                        Rival a confirmar
+                    </div>
+
+                    <div class="b247-time">
+                        --:--
+                    </div>
+
+                </div>
+
+                <div class="b247-fixture">
+
+                    <div class="b247-date">
+                        PRÓXIMO
+                    </div>
+
+                    <div class="b247-opponent">
+                        Rival a confirmar
+                    </div>
+
+                    <div class="b247-time">
+                        --:--
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FIN BLOQUE BOCA 24/7
+========================================================= -->
     </html>
