@@ -1,6 +1,21 @@
+// ============================================================
+// BOCA 24/7 - App.js COMPLETO Y FUNCIONAL
+// ============================================================
+
 document.addEventListener('DOMContentLoaded', () => {
   cargarSitioBoca247();
+  inicializarFiltros();
+  inicializarBotones();
+  inicializarNavegacion();
 });
+
+let noticiasGlobal = [];
+let videosGlobal = [];
+let filtroActual = 'TODAS';
+
+// ============================================================
+// CARGAR DATOS
+// ============================================================
 
 async function cargarSitioBoca247() {
   try {
@@ -9,143 +24,395 @@ async function cargarSitioBoca247() {
 
     const data = await res.json();
 
-    if (data.noticias) renderNoticias(data.noticias);
-    if (data.partidoEnVivo) renderPartido(data.partidoEnVivo);
-    if (data.tablaPosiciones) renderTabla(data.tablaPosiciones);
-    if (data.streaming) renderStreaming(data.streaming);
-    if (data.resumenesYEntrevistas) renderResumenes(data.resumenesYEntrevistas);
-    if (data.elHincha) renderHincha(data.elHincha);
+    // Cargar noticias
+    if (data.noticias && Array.isArray(data.noticias)) {
+      noticiasGlobal = data.noticias;
+      renderNoticias(noticiasGlobal);
+    }
+
+    // Cargar videos
+    if (data.videos && Array.isArray(data.videos)) {
+      videosGlobal = data.videos;
+      renderVideos(videosGlobal);
+    }
+
+    // Cargar partidos
+    if (data.partidos && Array.isArray(data.partidos)) {
+      renderPartidos(data.partidos);
+    }
+
+    // Cargar tabla
+    if (data.tabla && Array.isArray(data.tabla)) {
+      renderTabla(data.tabla);
+    }
+
+    // Cargar streaming
+    if (data.streaming && Array.isArray(data.streaming)) {
+      renderStreaming(data.streaming);
+    }
+
+    // Cargar hinchas
+    if (data.hinchas && Array.isArray(data.hinchas)) {
+      renderHinchas(data.hinchas);
+    }
+
+    // Actualizar ticker
+    if (data.noticias && data.noticias.length > 0) {
+      document.getElementById('tickerText').textContent = 
+        data.noticias[0].titulo || 'Toda la actualidad de Boca';
+    }
 
   } catch (err) {
     console.error('Error al sincronizar Boca 24/7:', err);
   }
 }
 
+// ============================================================
+// RENDERIZAR NOTICIAS
+// ============================================================
+
 function renderNoticias(lista) {
-  const contenedor = document.querySelector('#noticias .grid-noticias') || document.querySelector('#noticias') || document.getElementById('noticias');
-  if (!contenedor || lista.length === 0) return;
+  const contenedor = document.getElementById('newsGrid');
+  if (!contenedor || !lista || lista.length === 0) return;
 
-  contenedor.innerHTML = lista.map(n => `
-    <article class="card-noticia" style="background:#001b3a; border:1px solid #003366; border-radius:8px; padding:15px; margin-bottom:15px; color:#fff;">
-      ${n.imagen ? `<div style="overflow:hidden; border-radius:6px; margin-bottom:10px;"><img src="${n.imagen}" alt="${n.titulo}" style="width:100%; height:auto;" loading="lazy"></div>` : ''}
-      <div style="color:#f39c12; font-size:12px; font-weight:bold; margin-bottom:5px;">${n.categoria || 'FÚTBOL'} · ${n.etiqueta || 'BOCA 24/7'}</div>
-      <h3 style="color:#fff; font-size:18px; margin:5px 0 10px 0;">${n.titulo}</h3>
-      <p style="color:#ccc; font-size:14px; margin-bottom:12px;">${n.resumen}</p>
-      <div style="display:flex; justify-content:space-between; border-top:1px solid rgba(255,255,255,0.1); padding-top:8px; font-size:12px; color:#888;">
-        <span>📅 ${n.fecha}</span>
-        <strong style="color:#f39c12;">BOCA 24/7</strong>
-      </div>
-    </article>
-  `).join('');
-}
+  contenedor.innerHTML = lista.map((noticia, idx) => {
+    const titulo = noticia.titulo || 'Sin título';
+    const fuente = noticia.fuente || 'BOCA 24/7';
+    const contenido = noticia.contenido || 'Información del mundo Xeneize';
+    const link = noticia.link || '#';
+    const categoria = noticia.categoria || 'Boca';
+    const fecha = formatearFecha(noticia.fecha_iso);
+    const imagen = obtenerImagenPorIndice(idx);
 
-function renderPartido(p) {
-  const contenedor = document.querySelector('#partidos') || document.querySelector('#partido');
-  if (!contenedor) return;
-
-  contenedor.innerHTML = `
-    <div style="background:#001b3a; border:2px solid ${p.enVivo ? '#ff0000' : '#003366'}; padding:15px; border-radius:8px; text-align:center; color:#fff; margin:15px 0;">
-      <span style="background:${p.enVivo ? '#ff0000' : '#f39c12'}; color:${p.enVivo ? '#fff' : '#000'}; font-weight:bold; padding:3px 8px; border-radius:4px; font-size:12px;">
-        ${p.enVivo ? '🔴 EN VIVO AHORA' : p.estado}
-      </span>
-      <div style="font-size:13px; color:#aaa; margin-top:8px;">${p.torneo}</div>
-      <div style="display:flex; justify-content:space-around; align-items:center; margin:15px 0;">
-        <strong style="font-size:18px;">${p.local}</strong>
-        <span style="font-size:24px; font-weight:bold; background:#003366; padding:5px 15px; border-radius:6px; color:#f39c12;">
-          ${p.golesLocal} - ${p.golesVisitante}
-        </span>
-        <strong style="font-size:18px;">${p.visitante}</strong>
-      </div>
-      <div style="font-size:13px; color:#ccc;">📍 ${p.estadio} | ⚽ ${p.detalle}</div>
-    </div>
-  `;
-}
-
-function renderTabla(tabla) {
-  const contenedor = document.querySelector('#tabla') || document.querySelector('#posiciones');
-  if (!contenedor) return;
-
-  contenedor.innerHTML = `
-    <h2 style="color:#f39c12; margin-bottom:10px;">Tabla de Posiciones</h2>
-    <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse:collapse; color:#fff; text-align:center; font-size:14px;">
-        <thead>
-          <tr style="background:#003366; color:#f39c12;">
-            <th style="padding:8px;">#</th>
-            <th style="padding:8px; text-align:left;">Equipo</th>
-            <th style="padding:8px;">PTS</th>
-            <th style="padding:8px;">PJ</th>
-            <th style="padding:8px;">DIF</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${tabla.map(r => `
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.05); background:${r.equipo.includes('Boca') ? 'rgba(243,156,18,0.15)' : 'transparent'};">
-              <td style="padding:8px; font-weight:bold; color:${r.equipo.includes('Boca') ? '#f39c12' : '#fff'};">${r.pos}</td>
-              <td style="padding:8px; text-align:left; color:${r.equipo.includes('Boca') ? '#f39c12' : '#fff'}; font-weight:${r.equipo.includes('Boca') ? 'bold' : 'normal'};">${r.equipo}</td>
-              <td style="padding:8px; font-weight:bold;">${r.pts}</td>
-              <td style="padding:8px;">${r.pj}</td>
-              <td style="padding:8px;">${r.dg}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `;
-}
-
-function renderStreaming(st) {
-  const contenedor = document.querySelector('#streaming');
-  if (!contenedor) return;
-
-  contenedor.innerHTML = `
-    <div style="background:#001b3a; border:2px solid #f39c12; padding:20px; border-radius:8px; text-align:center; color:#fff; margin:15px 0;">
-      <span style="background:#f39c12; color:#000; font-weight:bold; padding:3px 10px; border-radius:4px; font-size:12px;">
-        ${st.enVivo ? '🔴 EN VIVO AHORA' : 'STREAMING XENEIZE'}
-      </span>
-      <h3 style="color:#fff; font-size:22px; margin:15px 0 5px 0;">${st.programa}</h3>
-      <p style="color:#ccc; font-size:14px; max-width:600px; margin:0 auto 15px auto;">${st.descripcion}</p>
-      <a href="${st.linkYoutube}" target="_blank" style="display:inline-block; background:#ff0000; color:#fff; font-weight:bold; padding:10px 20px; border-radius:5px; text-decoration:none;">
-        ▶ Transmisión en YouTube
-      </a>
-      <div style="margin-top:10px; font-size:12px; color:#f39c12;">${st.horario}</div>
-    </div>
-  `;
-}
-
-function renderResumenes(items) {
-  const contenedor = document.querySelector('#videos') || document.querySelector('#resumenes');
-  if (!contenedor) return;
-
-  contenedor.innerHTML = `
-    <h2 style="color:#f39c12; margin-bottom:15px;">Resúmenes y Entrevistas Post Partido</h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:15px;">
-      ${items.map(v => `
-        <article style="background:#001b3a; border:1px solid #003366; padding:15px; border-radius:8px; color:#fff;">
-          <span style="background:#003366; color:#f39c12; padding:2px 6px; border-radius:3px; font-size:11px; font-weight:bold;">${v.tipo}</span>
-          <h4 style="color:#fff; margin:10px 0; font-size:15px;">${v.titulo}</h4>
-          <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px; color:#aaa; margin-top:10px;">
-            <span>⏱️ ${v.duracion}</span>
-            <a href="${v.link}" target="_blank" style="color:#f39c12; text-decoration:none; font-weight:bold;">Ver video ▶</a>
+    return `
+      <article class="card-noticia">
+        <div class="card-imagen" style="background-image: url('${imagen}')">
+          <span class="card-categoria">${categoria}</span>
+        </div>
+        <div class="card-cuerpo">
+          <div class="card-fuente">${fuente}</div>
+          <h3 class="card-titulo">${titulo}</h3>
+          <p class="card-resumen">${contenido}</p>
+          <div class="card-footer">
+            <span class="card-fecha">📅 ${fecha}</span>
+            <a href="${link}" target="_blank" class="card-link">Leer →</a>
           </div>
-        </article>
-      `).join('')}
-    </div>
-  `;
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
-function renderHincha(h) {
-  const contenedor = document.querySelector('#hinchas') || document.querySelector('#el-hincha');
-  if (!contenedor) return;
+// ============================================================
+// RENDERIZAR VIDEOS
+// ============================================================
 
-  contenedor.innerHTML = `
-    <div style="background:#001b3a; border:1px solid #003366; padding:20px; border-radius:8px; color:#fff; margin:15px 0;">
-      <span style="color:#f39c12; font-weight:bold; font-size:12px; text-transform:uppercase;">${h.comunidad}</span>
-      <h3 style="color:#fff; font-size:20px; margin:8px 0;">${h.titulo}</h3>
-      <p style="color:#ccc; font-size:14px; line-height:1.5;">${h.mensaje}</p>
-      <div style="margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px; color:#f39c12; font-weight:bold;">
-        📣 ${h.contacto}
+function renderVideos(lista) {
+  const contenedor = document.getElementById('videosGrid');
+  if (!contenedor || !lista || lista.length === 0) return;
+
+  contenedor.innerHTML = lista.map((video, idx) => {
+    const titulo = video.titulo || 'Video de Boca';
+    const descripcion = video.descripcion || 'Resumen y análisis';
+    const imagen = obtenerImagenPorIndice(idx);
+    const link = video.link || '#';
+    const duracion = video.duracion || '12:34';
+
+    return `
+      <article class="card-noticia">
+        <div class="card-imagen" style="background-image: url('${imagen}')">
+          <div style="position: absolute; bottom: 12px; left: 12px; z-index: 2; background: #ffd400; color: #001b4d; padding: 4px 8px; border-radius: 3px; font-size: 10px; font-weight: 900;">
+            ▶ ${duracion}
+          </div>
+        </div>
+        <div class="card-cuerpo">
+          <div class="card-fuente">VIDEO</div>
+          <h3 class="card-titulo">${titulo}</h3>
+          <p class="card-resumen">${descripcion}</p>
+          <div class="card-footer">
+            <span class="card-fecha">📹 Multimedia</span>
+            <a href="${link}" target="_blank" class="card-link">Ver →</a>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// RENDERIZAR PARTIDOS
+// ============================================================
+
+function renderPartidos(lista) {
+  const contenedor = document.getElementById('partidosContainer');
+  if (!contenedor || !lista || lista.length === 0) return;
+
+  contenedor.innerHTML = lista.map(partido => {
+    const fecha = formatearFecha(partido.fecha_iso);
+    const horaMinutos = partido.hora || 'TBD';
+    
+    return `
+      <div class="match-card">
+        <div class="match-top">
+          <span>${fecha}</span>
+          <span>${horaMinutos}</span>
+          <span>${partido.torneo || 'TORNEO'}</span>
+        </div>
+
+        <div class="match-teams">
+          <div class="team">
+            <div class="team-badge ${partido.equipo_local === 'Boca' ? 'boca' : ''}">
+              ${partido.equipo_local === 'Boca' ? '🔵' : '⚪'}
+            </div>
+            <strong>${partido.equipo_local}</strong>
+          </div>
+
+          <div class="match-center">
+            <small>VS</small>
+            <div class="score">
+              ${partido.goles_local !== undefined ? partido.goles_local : '-'}
+              <b>:</b>
+              ${partido.goles_visitante !== undefined ? partido.goles_visitante : '-'}
+            </div>
+            <strong>${partido.estado || 'PROGRAMADO'}</strong>
+          </div>
+
+          <div class="team">
+            <div class="team-badge">
+              ⚪
+            </div>
+            <strong>${partido.equipo_visitante}</strong>
+          </div>
+        </div>
+
+        <div class="match-footer">
+          <span>${partido.estadio || 'Estadio'}</span>
+          <span>${partido.arbitro || 'Arbitro'}</span>
+          <span>${partido.asistencia ? partido.asistencia + ' espectadores' : 'Capacidad'}</span>
+        </div>
       </div>
-    </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// RENDERIZAR TABLA
+// ============================================================
+
+function renderTabla(lista) {
+  const contenedor = document.getElementById('tablaContainer');
+  if (!contenedor || !lista || lista.length === 0) return;
+
+  let html = `
+    <table class="tabla-standings">
+      <thead>
+        <tr>
+          <th>POS</th>
+          <th>EQUIPO</th>
+          <th>PJ</th>
+          <th>G</th>
+          <th>E</th>
+          <th>P</th>
+          <th>GF</th>
+          <th>GC</th>
+          <th>DIF</th>
+          <th>PTS</th>
+        </tr>
+      </thead>
+      <tbody>
   `;
+
+  lista.forEach(equipo => {
+    const isBoca = equipo.equipo === 'Boca';
+    html += `
+      <tr ${isBoca ? 'class="boca-row"' : ''}>
+        <td class="posicion">${equipo.posicion}</td>
+        <td class="equipo">${equipo.equipo}</td>
+        <td>${equipo.pj}</td>
+        <td>${equipo.g}</td>
+        <td>${equipo.e}</td>
+        <td>${equipo.p}</td>
+        <td>${equipo.gf}</td>
+        <td>${equipo.gc}</td>
+        <td>${equipo.dif}</td>
+        <td class="puntos"><strong>${equipo.pts}</strong></td>
+      </tr>
+    `;
+  });
+
+  html += `
+      </tbody>
+    </table>
+  `;
+
+  contenedor.innerHTML = html;
+}
+
+// ============================================================
+// RENDERIZAR STREAMING
+// ============================================================
+
+function renderStreaming(lista) {
+  const contenedor = document.getElementById('streamingContainer');
+  if (!contenedor || !lista || lista.length === 0) return;
+
+  contenedor.innerHTML = lista.map(stream => {
+    return `
+      <div class="streaming-card">
+        <span class="eyebrow yellow">${stream.tipo || 'EN VIVO'}</span>
+        <h3>${stream.titulo || 'Los Bosteros de Tucumán'}</h3>
+        <p>${stream.descripcion || 'Transmisión en vivo de la comunidad Xeneize'}</p>
+        <a href="${stream.link || '#'}" target="_blank" class="primary-button">
+          VER AHORA →
+        </a>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// RENDERIZAR HINCHAS
+// ============================================================
+
+function renderHinchas(lista) {
+  const contenedor = document.getElementById('hinchaContainer');
+  if (!contenedor || !lista || lista.length === 0) return;
+
+  contenedor.innerHTML = lista.map(hincha => {
+    return `
+      <div class="poll-card">
+        <h3>${hincha.titulo || 'Pregunta'}</h3>
+        
+        <div class="poll-options">
+          ${hincha.opciones ? hincha.opciones.map((op, idx) => `
+            <button onclick="votarPoll(${idx})">${op}</button>
+          `).join('') : ''}
+        </div>
+
+        <div class="poll-result">
+          ${hincha.resultado || 'Participación de la hinchada'}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// FILTRAR NOTICIAS
+// ============================================================
+
+function inicializarFiltros() {
+  const botones = document.querySelectorAll('.news-categories button');
+  botones.forEach((btn, idx) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const categoria = btn.textContent.trim();
+      filtrarNoticias(categoria, btn);
+    });
+    // Activar primer botón por defecto
+    if (idx === 0) btn.classList.add('activo');
+  });
+}
+
+function filtrarNoticias(categoria, botonClickeado) {
+  filtroActual = categoria;
+
+  // Desactivar todos los botones
+  document.querySelectorAll('.news-categories button').forEach(btn => {
+    btn.classList.remove('activo');
+  });
+
+  // Activar botón clickeado
+  botonClickeado.classList.add('activo');
+
+  // Filtrar y renderizar
+  if (categoria === 'TODAS') {
+    renderNoticias(noticiasGlobal);
+  } else {
+    const noticiasFiltradas = noticiasGlobal.filter(n => 
+      n.categoria.toUpperCase() === categoria.toUpperCase()
+    );
+    renderNoticias(noticiasFiltradas);
+  }
+}
+
+// ============================================================
+// BOTONES
+// ============================================================
+
+function inicializarBotones() {
+  const btnReload = document.getElementById('reloadNews');
+  if (btnReload) {
+    btnReload.addEventListener('click', () => {
+      const textoOriginal = btnReload.textContent;
+      btnReload.textContent = '⟳ ACTUALIZANDO...';
+      btnReload.disabled = true;
+      
+      cargarSitioBoca247().finally(() => {
+        btnReload.textContent = textoOriginal;
+        btnReload.disabled = false;
+      });
+    });
+  }
+}
+
+// ============================================================
+// NAVEGACIÓN SUAVE
+// ============================================================
+
+function inicializarNavegacion() {
+  document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+    enlace.addEventListener('click', (e) => {
+      const href = enlace.getAttribute('href');
+      if (href === '#') return;
+      
+      e.preventDefault();
+      const elemento = document.querySelector(href);
+      if (elemento) {
+        elemento.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+// ============================================================
+// HELPERS
+// ============================================================
+
+function formatearFecha(fechaISO) {
+  if (!fechaISO) return 'Hoy';
+  
+  try {
+    const fecha = new Date(fechaISO);
+    const hoy = new Date();
+    const diferencia = hoy - fecha;
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    if (dias === 0) return 'Hoy';
+    if (dias === 1) return 'Ayer';
+    if (dias < 7) return `Hace ${dias}d`;
+    
+    return fecha.toLocaleDateString('es-AR', {
+      day: '2-digit',
+      month: '2-digit'
+    });
+  } catch (e) {
+    return 'Reciente';
+  }
+}
+
+function obtenerImagenPorIndice(idx) {
+  const imagenes = [
+    'IMG-20260829-WA0001.jpg',
+    'IMG-20260829-WA0003.jpg',
+    'IMG-20260830-WA0002.jpg',
+    'IMG-20260830-WA0004.jpg',
+    'IMG-20260830-WA0006.jpg',
+  ];
+  return imagenes[idx % imagenes.length];
+}
+
+function votarPoll(idx) {
+  alert('Voto registrado en la opción ' + (idx + 1));
+  // Aquí irían requests a backend para guardar votos
 }
