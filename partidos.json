@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-09-01T13:00:00-03:00",
+  "actualizado": "2026-09-01T19:24:00-03:00",
   "partido_actual": {
     "rival": "Vélez Sarsfield",
     "competencia": "Copa Argentina",
@@ -23,43 +23,60 @@
     {
       "rival": "Gimnasia de Mendoza",
       "competencia": "Liga Profesional",
-      "fecha": "2026-09-05",
-      "hora": "16:30",
-      "estadio": "A confirmar",
-      "ciudad": "A confirmar"
+      "instancia": "Torneo Clausura",
+      "fecha": "2026-09-06",
+      "hora": "15:00",
+      "estadio": "Estadio Víctor Antonio Legrotaglie",
+      "ciudad": "Mendoza"
     },
     {
       "rival": "São Paulo",
       "competencia": "Copa Sudamericana",
+      "instancia": "Cuartos de final - Ida",
       "fecha": "2026-09-08",
       "hora": "21:30",
-      "estadio": "A confirmar",
-      "ciudad": "A confirmar"
+      "estadio": "La Bombonera (Alberto J. Armando)",
+      "ciudad": "Buenos Aires"
     },
     {
       "rival": "Central Córdoba",
       "competencia": "Liga Profesional",
-      "fecha": "2026-09-11",
-      "hora": "21:30",
-      "estadio": "A confirmar",
-      "ciudad": "A confirmar"
+      "instancia": "Torneo Clausura",
+      "fecha": "2026-09-13",
+      "hora": "A confirmar",
+      "estadio": "La Bombonera (Alberto J. Armando)",
+      "ciudad": "Buenos Aires"
     },
     {
       "rival": "São Paulo",
       "competencia": "Copa Sudamericana",
+      "instancia": "Cuartos de final - Vuelta",
       "fecha": "2026-09-15",
       "hora": "21:30",
-      "estadio": "A confirmar",
-      "ciudad": "A confirmar"
+      "estadio": "Estadio Morumbí",
+      "ciudad": "São Paulo"
     },
     {
       "rival": "San Lorenzo",
       "competencia": "Liga Profesional",
+      "instancia": "Torneo Clausura",
       "fecha": "2026-09-20",
       "hora": "14:45",
       "estadio": "A confirmar",
       "ciudad": "A confirmar"
     }
   ],
-  "resultados": []
+  "resultados": [
+    {
+      "rival": "Lanús",
+      "competencia": "Liga Profesional",
+      "instancia": "Torneo Clausura - Fecha 7",
+      "fecha": "2026-08-28",
+      "estadio": "La Bombonera (Alberto J. Armando)",
+      "ciudad": "Buenos Aires",
+      "resultado": "Boca 1 - 0 Lanús",
+      "goleador": "Tomás Belmonte (90'+3)"
+    }
+  ]
 }
+
