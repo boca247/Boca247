@@ -1,0 +1,33 @@
+```yaml
+name: Actualizar noticias Boca 24/7
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install feedparser
+        run: pip install feedparser
+
+      - name: Run script
+        run: python actualizar_noticias.py
+
+      - name: Commit & push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add noticias.json
+          git commit -m "Actualizar noticias $(date)" || exit 0
+          git push
+```
