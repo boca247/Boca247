@@ -1,5 +1,3 @@
-```yaml
-name: Actualizar noticias Boca 24/7
 
 on:
   schedule:
