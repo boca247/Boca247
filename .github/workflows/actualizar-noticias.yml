@@ -1,47 +1,33 @@
-name: Actualizar noticias Boca 24/7
+name: Actualizar noticias.json
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
-
-  workflow_dispatch:
+    - cron: "*/30 * * * *"   # cada 30 minutos
+  workflow_dispatch:          # también permite correrlo manualmente desde la pestaña Actions
 
 permissions:
   contents: write
 
 jobs:
-
   actualizar:
-
     runs-on: ubuntu-latest
-
     steps:
+      - uses: actions/checkout@v4
 
-      - name: Descargar repositorio
-        uses: actions/checkout@v5
-
-      - name: Configurar Python
-        uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: "3.11"
 
       - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Correr el actualizador
+        run: python actualizador.py
+
+      - name: Commitear noticias.json si cambió
         run: |
-          pip install feedparser
-
-      - name: Actualizar noticias
-        run: |
-          python actualizar_noticias.py
-
-      - name: Guardar noticias
-        run: |
-
-          git config user.name "Boca 24/7 Bot"
-
-          git config user.email "boca247-bot@users.noreply.github.com"
-
+          git config user.name "boca247-bot"
+          git config user.email "actions@github.com"
           git add noticias.json
-
-          git diff --cached --quiet || git commit -m "Noticias actualizadas automáticamente"
-
+          git diff --staged --quiet || git commit -m "Actualizar noticias.json [bot]"
           git push
