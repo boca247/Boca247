@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BOCA 24/7 — Todo Boca. Todo el día.</title>
 <style>
-  /* (todo el CSS anterior queda igual) */
   :root{
     --navy-950:#0a1230;--navy-900:#0d1638;--navy-800:#111d47;
     --navy-700:#16255a;--navy-600:#1c2e6e;--gold:#ffc72c;
@@ -41,7 +40,7 @@
                     border:1px solid rgba(255,255,255,0.25);background:transparent;color:var(--white);font-size:14px;}
   .search-box input::placeholder{color:var(--muted);}
   .search-box svg{position:absolute;right:16px;top:50%;transform:translateY(-50%);
-                  width:16px;height:16px;stroke:var(--white);}
+                  width:16px;height:16px;stroke:var(--white);pointer-events:none;}
 
   .header-status{display:flex;align-items:center;gap:20px;flex-shrink:0;}
   .connected{font-size:13px;display:flex;align-items:center;gap:8px;color:var(--white);white-space:nowrap;}
@@ -82,7 +81,7 @@
                                  repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 40px);}
   .hero-card .content{position:relative;z-index:1;max-width:560px;}
   .eyebrow-gold{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px;margin-bottom:14px;display:block;}
-  .hero-card h1{font-size:44px;line-height:1.08;font-weight:800;margin-bottom:16px;}
+  .hero-card h1{font-size:40px;line-height:1.12;font-weight:800;margin-bottom:16px;}
   .hero-card h1 .accent{color:var(--gold);}
   .hero-card p{color:#e4e8f5;font-size:15px;max-width:480px;margin-bottom:22px;}
   .btn-gold{background:var(--gold);color:#1a1400;font-weight:800;font-size:13px;
@@ -92,7 +91,7 @@
                 display:flex;align-items:center;justify-content:center;z-index:2;font-size:16px;cursor:pointer;}
   .hero-nav-btn.prev{left:20px;}.hero-nav-btn.next{right:20px;}
   .hero-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2;}
-  .hero-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;}
+  .hero-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all .15s ease;}
   .hero-dots span.active{background:var(--gold);width:22px;border-radius:4px;}
 
   .match-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;}
@@ -127,12 +126,14 @@
   .news-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
              cursor:pointer;transition:transform .15s ease;}
   .news-card:hover{transform:translateY(-4px);}
-  .news-card .thumb{height:130px;position:relative;background-size:cover;background-position:center;}
+  .news-card .thumb{height:130px;position:relative;background-size:cover;background-position:center;
+                     background:radial-gradient(circle at 60% 20%, #1c3a8f, #0b1740 75%);}
   .news-card .tag{position:absolute;left:10px;bottom:10px;background:var(--gold);color:#1a1400;
                   font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:4px 8px;border-radius:4px;}
   .news-card .body{padding:14px;}
   .news-card h3{font-size:13.5px;line-height:1.35;font-weight:700;margin-bottom:8px;}
   .news-card .time{font-size:11px;color:var(--muted);}
+  .empty-msg{font-size:12.5px;color:var(--muted);padding:14px 0;}
 
   .result-card,.standings-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
   .score-row{display:flex;align-items:center;justify-content:center;gap:18px;margin:16px 0 20px;}
@@ -154,7 +155,7 @@
   .panel-head h4{font-size:14px;font-weight:800;letter-spacing:.3px;}
   .panel-head .see-all{font-size:11px;font-weight:700;color:var(--gold);}
 
-  .transfer-feature img.ph{height:170px;border-radius:8px;background:radial-gradient(circle at 60% 20%, #1c3a8f, #0b1740 70%);margin-bottom:14px;}
+  .transfer-feature .ph{height:170px;border-radius:8px;background:radial-gradient(circle at 60% 20%, #1c3a8f, #0b1740 70%);margin-bottom:14px;}
   .transfer-feature h5{font-size:14px;font-weight:700;margin-bottom:8px;line-height:1.3;}
   .transfer-feature p{font-size:12.5px;color:var(--muted);line-height:1.5;}
 
@@ -165,7 +166,8 @@
   .agenda-date .m{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.5px;}
   .agenda-info .t{font-size:12.5px;font-weight:700;margin-bottom:3px;}
   .agenda-info .c{font-size:11px;color:var(--muted);}
-  .agenda-crest{width:26px;height:26px;border-radius:50%;margin-left:auto;flex-shrink:0;align-self:center;}
+  .agenda-crest{width:26px;height:26px;border-radius:50%;margin-left:auto;flex-shrink:0;align-self:center;
+                display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;}
 
   .scorers-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);}
   .scorers-item:last-child{border-bottom:none;}
@@ -244,8 +246,8 @@
 <div class="breaking">
   <div class="wrap">
     <span class="tag">ÚLTIMA HORA ⚡</span>
-    <span class="text" id="breakingText">Boca entrenó en Ezeiza pensando en el próximo partido de la Copa Libertadores.</span>
-    <span class="time">🕒 Hace 8 min</span>
+    <span class="text" id="breakingText">Cargando última hora…</span>
+    <span class="time" id="breakingTime"></span>
     <button class="more" id="breakingMore">VER MÁS</button>
   </div>
 </div>
@@ -259,40 +261,38 @@
       <button class="hero-nav-btn prev" id="heroPrev">‹</button>
       <button class="hero-nav-btn next" id="heroNext">›</button>
       <div class="content">
-        <span class="eyebrow-gold">NOTICIA DESTACADA</span>
-        <h1>BOCA GANÓ Y ES <span class="accent">LÍDER</span> DE SU GRUPO</h1>
-        <p>Con goles de Cavani y Merentiel, el Xeneize derrotó a su rival y se afirmó en lo más alto de la tabla de su grupo en la Copa.</p>
-        <a href="#" class="btn-gold">LEER NOTA COMPLETA</a>
+        <span class="eyebrow-gold" id="heroEyebrow">NOTICIA DESTACADA</span>
+        <h1 id="heroTitle">Cargando…</h1>
+        <p id="heroText"></p>
+        <a href="#" class="btn-gold" id="heroLink">LEER NOTA COMPLETA</a>
       </div>
-      <div class="hero-dots" id="heroDots">
-        <span class="active"></span><span></span><span></span><span></span>
-      </div>
+      <div class="hero-dots" id="heroDots"></div>
     </div>
 
     <div class="match-card" id="proximo">
       <div class="card-title-gold">PRÓXIMO PARTIDO</div>
-      <div class="comp-name">COPA LIBERTADORES</div>
+      <div class="comp-name" id="matchComp">—</div>
       <div class="versus-row">
         <div class="team">
-          <div class="badge boca">CABJ</div>
-          <div class="team-name">BOCA JUNIORS</div>
+          <div class="badge" id="matchBadgeLocal">—</div>
+          <div class="team-name" id="matchNameLocal">—</div>
         </div>
         <div class="vs-label">VS</div>
         <div class="team">
-          <div class="badge rival">NOB</div>
-          <div class="team-name">NEWELL'S</div>
+          <div class="badge" id="matchBadgeVisit">—</div>
+          <div class="team-name" id="matchNameVisit">—</div>
         </div>
       </div>
       <div class="match-meta">
-        <div>📅 Miércoles 22 de mayo</div>
-        <div>🕗 21:30 hs.</div>
-        <div>🏟️ La Bombonera</div>
+        <div>📅 <span id="matchDate">—</span></div>
+        <div>🕗 <span id="matchHour">—</span></div>
+        <div>🏟️ <span id="matchStadium">—</span></div>
       </div>
       <div class="countdown" id="countdown">
-        <div class="box"><div class="num" id="cd-days">02</div><div class="lbl">DÍAS</div></div>
-        <div class="box"><div class="num" id="cd-hours">08</div><div class="lbl">HORAS</div></div>
-        <div class="box"><div class="num" id="cd-mins">45</div><div class="lbl">MIN</div></div>
-        <div class="box"><div class="num" id="cd-secs">31</div><div class="lbl">SEG</div></div>
+        <div class="box"><div class="num" id="cd-days">00</div><div class="lbl">DÍAS</div></div>
+        <div class="box"><div class="num" id="cd-hours">00</div><div class="lbl">HORAS</div></div>
+        <div class="box"><div class="num" id="cd-mins">00</div><div class="lbl">MIN</div></div>
+        <div class="box"><div class="num" id="cd-secs">00</div><div class="lbl">SEG</div></div>
       </div>
       <button class="btn-outline">VER PREVIA DEL PARTIDO</button>
     </div>
@@ -302,32 +302,29 @@
   <section class="news-block" id="noticias">
     <div>
       <div class="section-label">ÚLTIMAS NOTICIAS<span class="see-all"></span></div>
-      <div id="newsGrid" class="news-cards"></div>
+      <div id="newsGrid" class="news-cards"><p class="empty-msg">Cargando noticias…</p></div>
     </div>
 
     <div class="result-card" id="resultado">
       <div class="card-title">ÚLTIMO RESULTADO</div>
-      <div class="group-tag" style="text-align:center;">COPA LIBERTADORES</div>
+      <div class="group-tag" id="resultComp" style="text-align:center;">—</div>
       <div class="score-row">
-        <div class="team-mini"><div class="badge small boca">CABJ</div>BOCA</div>
-        <div class="score">2 - 1</div>
-        <div class="team-mini"><div class="badge small rival" style="background:linear-gradient(180deg,#d99a1f 0 50%, #1a1a1a 50% 100%);">DP</div>DEP. PEREIRA</div>
+        <div class="team-mini"><div class="badge small" id="resultBadgeLocal">—</div><span id="resultNameLocal">—</span></div>
+        <div class="score" id="resultScore">—</div>
+        <div class="team-mini"><div class="badge small" id="resultBadgeVisit">—</div><span id="resultNameVisit">—</span></div>
       </div>
       <button class="btn-outline">VER PARTIDO</button>
     </div>
 
     <div class="standings-card">
       <div class="card-title" style="text-align:left;">POSICIONES</div>
-      <div class="group-tag">GRUPO D</div>
+      <div class="group-tag">TORNEO CLAUSURA</div>
       <table class="standings-table">
         <thead>
           <tr><th>#</th><th>EQUIPO</th><th>PTS</th></tr>
         </thead>
-        <tbody>
-          <tr class="highlight"><td>1</td><td>BOCA JUNIORS</td><td>10</td></tr>
-          <tr><td>2</td><td>DEP. PEREIRA</td><td>5</td></tr>
-          <tr><td>3</td><td>COLO COLO</td><td>4</td></tr>
-          <tr><td>4</td><td>MONAGAS</td><td>1</td></tr>
+        <tbody id="standingsBody">
+          <tr><td colspan="3" class="empty-msg">Cargando tabla…</td></tr>
         </tbody>
       </table>
       <div style="margin-top:14px;">
@@ -342,36 +339,13 @@
     <div class="panel transfer-feature" id="mercado">
       <div class="panel-head"><h4>MERCADO DE PASES</h4><a class="see-all" href="#">VER TODO</a></div>
       <div class="ph"></div>
-      <h5>Boca negocia por un delantero de jerarquía</h5>
-      <p>El Consejo de Fútbol trabaja para reforzar el ataque de cara al segundo semestre del año.</p>
+      <h5 id="transferTitle">Cargando…</h5>
+      <p id="transferText"></p>
     </div>
 
     <div class="panel" id="agenda">
       <div class="panel-head"><h4>AGENDA XENEIZE</h4><a class="see-all" href="#">VER AGENDA</a></div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="d">22</div><div class="m">MAY</div></div>
-        <div class="agenda-info">
-          <div class="t">Boca Juniors vs Newell's</div>
-          <div class="c">Copa Libertadores - 21:30 hs.</div>
-        </div>
-        <div class="badge small rival agenda-crest">NOB</div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="d">26</div><div class="m">MAY</div></div>
-        <div class="agenda-info">
-          <div class="t">Boca Juniors vs Central Córdoba</div>
-          <div class="c">Liga Profesional - 19:00 hs.</div>
-        </div>
-        <div class="badge small boca agenda-crest">CC</div>
-      </div>
-      <div class="agenda-item">
-        <div class="agenda-date"><div class="d">02</div><div class="m">JUN</div></div>
-        <div class="agenda-info">
-          <div class="t">Boca Juniors vs Racing</div>
-          <div class="c">Copa Argentina - 18:00 hs.</div>
-        </div>
-        <div class="badge small rival agenda-crest" style="background:linear-gradient(180deg,#66c2ff 0 50%, #16192a 50% 100%);">RAC</div>
-      </div>
+      <div id="agendaList"><p class="empty-msg">Cargando agenda…</p></div>
     </div>
 
     <div class="panel" id="goleadores">
@@ -396,11 +370,7 @@
 
     <div class="panel" id="videos">
       <div class="panel-head"><h4>VIDEOS DESTACADOS</h4><a class="see-all" href="#">VER TODOS</a></div>
-      <div class="video-thumb"><div class="play"></div></div>
-      <div class="video-info">
-        <h5>La Bombonera explotó en la Libertadores</h5>
-        <div class="time">Hace 1 día</div>
-      </div>
+      <div id="videosList"><p class="empty-msg">Cargando videos…</p></div>
     </div>
 
   </section>
@@ -444,50 +414,336 @@
 </footer>
 
 <script>
-  const API_KEY = '65d04e1ee4a143f68a453f14de2d1b6d';
-  let seenTitles = new Set();
+(function(){
+  "use strict";
 
-  async function fetchNews() {
+  // ============================================================
+  // CONFIG
+  // ============================================================
+  const DATA_URL = 'noticias.json';       // generado por el script Python (actualizador.py)
+  const REFRESH_MS = 1000 * 60 * 15;      // re-consulta el JSON cada 15 min (no hace falta más seguido:
+                                           // GitHub Pages es estático, el archivo cambia cuando corre el workflow)
+  const TEAM_ABBR = {
+    "boca": "CABJ", "vélez sarsfield": "VEL", "velez sarsfield": "VEL",
+    "gimnasia (mendoza)": "GIM", "são paulo": "SAO", "sao paulo": "SAO",
+    "central córdoba": "CCO", "central cordoba": "CCO", "san lorenzo": "SLO",
+    "lanús": "LAN", "lanus": "LAN", "racing": "RAC", "newell's": "NOB",
+    "instituto": "INS", "independiente": "IND", "colo colo": "CCL",
+    "monagas": "MON", "dep. pereira": "DP", "deportivo pereira": "DP"
+  };
+
+  let DATA = null;
+  let heroSlides = [];
+  let heroIndex = 0;
+  let heroTimer = null;
+  let tickerTimer = null;
+  let tickerIndex = 0;
+  let countdownTimer = null;
+
+  // ============================================================
+  // HELPERS
+  // ============================================================
+  function isBoca(name){ return (name || '').toLowerCase().includes('boca'); }
+
+  function abbr(name){
+    if (!name) return '???';
+    const key = name.toLowerCase();
+    if (TEAM_ABBR[key]) return TEAM_ABBR[key];
+    return name.split(' ').map(w => w[0]).join('').substring(0,3).toUpperCase();
+  }
+
+  function badgeClass(name){ return isBoca(name) ? 'badge boca' : 'badge rival'; }
+
+  function relativeTime(iso){
+    if (!iso) return '';
+    const then = new Date(iso).getTime();
+    if (isNaN(then)) return '';
+    const diffMin = Math.round((Date.now() - then) / 60000);
+    if (diffMin < 1) return 'Ahora';
+    if (diffMin < 60) return `Hace ${diffMin} min`;
+    const diffH = Math.round(diffMin / 60);
+    if (diffH < 24) return `Hace ${diffH} h`;
+    const diffD = Math.round(diffH / 24);
+    return `Hace ${diffD} d`;
+  }
+
+  function formatFecha(iso){
+    if (!iso) return '—';
+    const d = new Date(iso);
+    if (isNaN(d)) return '—';
+    return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
+  }
+
+  function sortByFecha(arr, asc = true){
+    return [...arr].sort((a, b) => {
+      const da = new Date(a.fecha_iso).getTime() || 0;
+      const db = new Date(b.fecha_iso).getTime() || 0;
+      return asc ? da - db : db - da;
+    });
+  }
+
+  function escapeHtml(s){
+    return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // ============================================================
+  // RENDER: HERO (carrusel de noticias destacadas)
+  // ============================================================
+  function renderHero(){
+    heroSlides = (DATA.noticias || []).slice(0, 4);
+    if (!heroSlides.length) return;
+    const dots = document.getElementById('heroDots');
+    dots.innerHTML = heroSlides.map((_, i) => `<span data-i="${i}"></span>`).join('');
+    dots.querySelectorAll('span').forEach(s => s.addEventListener('click', () => setHero(+s.dataset.i)));
+    setHero(0);
+    if (heroTimer) clearInterval(heroTimer);
+    heroTimer = setInterval(() => setHero((heroIndex + 1) % heroSlides.length), 7000);
+  }
+
+  function setHero(i){
+    heroIndex = i;
+    const item = heroSlides[i];
+    if (!item) return;
+    document.getElementById('heroEyebrow').textContent = item.categoria || 'NOTICIA DESTACADA';
+    document.getElementById('heroTitle').textContent = item.titulo;
+    document.getElementById('heroText').textContent = item.contenido || '';
+    document.getElementById('heroLink').href = (item.link && item.link !== '#') ? item.link : '#';
+    document.querySelectorAll('#heroDots span').forEach((s, idx) => s.classList.toggle('active', idx === i));
+  }
+
+  document.getElementById('heroPrev').addEventListener('click', () => {
+    if (heroSlides.length) setHero((heroIndex - 1 + heroSlides.length) % heroSlides.length);
+  });
+  document.getElementById('heroNext').addEventListener('click', () => {
+    if (heroSlides.length) setHero((heroIndex + 1) % heroSlides.length);
+  });
+
+  // ============================================================
+  // RENDER: TICKER "ÚLTIMA HORA"
+  // ============================================================
+  function renderTicker(){
+    const noticias = DATA.noticias || [];
+    if (!noticias.length) return;
+    tickerIndex = 0;
+    setTicker();
+    if (tickerTimer) clearInterval(tickerTimer);
+    tickerTimer = setInterval(() => {
+      tickerIndex = (tickerIndex + 1) % noticias.length;
+      setTicker();
+    }, 6000);
+  }
+
+  function setTicker(){
+    const noticias = DATA.noticias || [];
+    const item = noticias[tickerIndex];
+    if (!item) return;
+    document.getElementById('breakingText').textContent = item.titulo;
+    document.getElementById('breakingTime').textContent = '🕒 ' + relativeTime(item.fecha_iso);
+  }
+
+  document.getElementById('breakingMore').addEventListener('click', () => {
+    document.getElementById('noticias').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // ============================================================
+  // RENDER: PRÓXIMO PARTIDO + COUNTDOWN
+  // ============================================================
+  function renderNextMatch(){
+    const partidos = sortByFecha(DATA.partidos || []);
+    const next = partidos[0];
+    if (!next) return;
+
+    document.getElementById('matchComp').textContent = next.torneo || '';
+    document.getElementById('matchNameLocal').textContent = next.equipo_local;
+    document.getElementById('matchNameVisit').textContent = next.equipo_visitante;
+    const badgeL = document.getElementById('matchBadgeLocal');
+    const badgeV = document.getElementById('matchBadgeVisit');
+    badgeL.className = badgeClass(next.equipo_local);
+    badgeV.className = badgeClass(next.equipo_visitante);
+    badgeL.textContent = abbr(next.equipo_local);
+    badgeV.textContent = abbr(next.equipo_visitante);
+    document.getElementById('matchDate').textContent = formatFecha(next.fecha_iso);
+    document.getElementById('matchHour').textContent = (next.hora || '') + ' hs.';
+    document.getElementById('matchStadium').textContent = next.estadio + (next.ciudad ? ` (${next.ciudad})` : '');
+
+    if (countdownTimer) clearInterval(countdownTimer);
+    const target = new Date(next.fecha_iso).getTime();
+    updateCountdown(target);
+    countdownTimer = setInterval(() => updateCountdown(target), 1000);
+  }
+
+  function updateCountdown(target){
+    let diff = target - Date.now();
+    if (diff < 0) diff = 0;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor(diff / 3600000) % 24;
+    const mins = Math.floor(diff / 60000) % 60;
+    const secs = Math.floor(diff / 1000) % 60;
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+
+  // ============================================================
+  // RENDER: ÚLTIMO RESULTADO
+  // ============================================================
+  function renderLastResult(){
+    const resultados = sortByFecha(DATA.resultados || [], false);
+    const r = resultados[0];
+    if (!r) return;
+    document.getElementById('resultComp').textContent = r.torneo || '';
+    document.getElementById('resultNameLocal').textContent = r.equipo_local;
+    document.getElementById('resultNameVisit').textContent = r.equipo_visitante;
+    document.getElementById('resultScore').textContent = `${r.goles_local} - ${r.goles_visitante}`;
+    const bl = document.getElementById('resultBadgeLocal');
+    const bv = document.getElementById('resultBadgeVisit');
+    bl.className = 'badge small ' + (isBoca(r.equipo_local) ? 'boca' : 'rival');
+    bv.className = 'badge small ' + (isBoca(r.equipo_visitante) ? 'boca' : 'rival');
+    bl.textContent = abbr(r.equipo_local);
+    bv.textContent = abbr(r.equipo_visitante);
+  }
+
+  // ============================================================
+  // RENDER: TABLA DE POSICIONES
+  // ============================================================
+  function renderStandings(){
+    const tabla = (DATA.tabla || []).slice().sort((a, b) => a.posicion - b.posicion);
+    const body = document.getElementById('standingsBody');
+    if (!tabla.length) { body.innerHTML = '<tr><td colspan="3" class="empty-msg">Sin datos.</td></tr>'; return; }
+    body.innerHTML = tabla.map(row => `
+      <tr class="${isBoca(row.equipo) ? 'highlight' : ''}">
+        <td>${row.posicion}</td><td>${escapeHtml(row.equipo)}</td><td>${row.pts}</td>
+      </tr>`).join('');
+  }
+
+  // ============================================================
+  // RENDER: GRILLA DE NOTICIAS (con buscador)
+  // ============================================================
+  function renderNewsGrid(filter){
     const container = document.getElementById('newsGrid');
-    if (!container) return;
+    let noticias = DATA.noticias || [];
+    if (filter) {
+      const f = filter.toLowerCase();
+      noticias = noticias.filter(n =>
+        (n.titulo || '').toLowerCase().includes(f) || (n.contenido || '').toLowerCase().includes(f));
+    }
+    if (!noticias.length) {
+      container.innerHTML = '<p class="empty-msg">No se encontraron noticias.</p>';
+      return;
+    }
+    container.innerHTML = noticias.map(n => `
+      <article class="news-card" data-link="${escapeHtml(n.link || '')}">
+        <div class="thumb"><span class="tag">${escapeHtml(n.categoria || n.fuente || 'BOCA 24/7')}</span></div>
+        <div class="body">
+          <h3>${escapeHtml(n.titulo)}</h3>
+          <div class="time">${relativeTime(n.fecha_iso)}</div>
+        </div>
+      </article>`).join('');
+    container.querySelectorAll('.news-card').forEach(card => {
+      const link = card.dataset.link;
+      if (link && link !== '#') card.addEventListener('click', () => window.open(link, '_blank'));
+    });
+  }
 
-    const url = `https://newsapi.org/v2/everything?q=Boca%20Juniors&language=es&sortBy=publishedAt&pageSize=12&apiKey=${API_KEY}`;
+  document.getElementById('searchInput').addEventListener('input', e => renderNewsGrid(e.target.value));
 
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      container.innerHTML = '';
+  // ============================================================
+  // RENDER: MERCADO DE PASES (destacado)
+  // ============================================================
+  function renderTransferFeature(){
+    const noticias = DATA.noticias || [];
+    const feature = noticias.find(n => (n.categoria || '').toUpperCase().includes('MERCADO')) || noticias[0];
+    if (!feature) return;
+    document.getElementById('transferTitle').textContent = feature.titulo;
+    document.getElementById('transferText').textContent = feature.contenido || '';
+  }
 
-      data.articles.forEach(article => {
-        if (seenTitles.has(article.title)) return;
-        seenTitles.add(article.title);
-
-        const card = document.createElement('article');
-        card.className = 'news-card';
-        card.innerHTML = `
-          <div class="thumb" style="background-image:url('${article.urlToImage || ''}')">
-            <span class="tag">${article.source.name || 'Boca 24/7'}</span>
+  // ============================================================
+  // RENDER: AGENDA XENEIZE
+  // ============================================================
+  function renderAgenda(){
+    const partidos = sortByFecha(DATA.partidos || []).slice(0, 3);
+    const list = document.getElementById('agendaList');
+    if (!partidos.length) { list.innerHTML = '<p class="empty-msg">Sin partidos agendados.</p>'; return; }
+    list.innerHTML = partidos.map(p => {
+      const d = new Date(p.fecha_iso);
+      const dia = isNaN(d) ? '--' : String(d.getDate()).padStart(2, '0');
+      const mes = isNaN(d) ? '---' : d.toLocaleDateString('es-AR', { month: 'short' }).toUpperCase().replace('.', '');
+      const rival = isBoca(p.equipo_local) ? p.equipo_visitante : p.equipo_local;
+      return `
+        <div class="agenda-item">
+          <div class="agenda-date"><div class="d">${dia}</div><div class="m">${mes}</div></div>
+          <div class="agenda-info">
+            <div class="t">${escapeHtml(p.equipo_local)} vs ${escapeHtml(p.equipo_visitante)}</div>
+            <div class="c">${escapeHtml(p.torneo || '')} - ${escapeHtml(p.hora || '')} hs.</div>
           </div>
-          <div class="body">
-            <h3>${article.title}</h3>
-            <div class="time">${new Date(article.publishedAt).toLocaleString('es-AR')}</div>
-          </div>`;
-        card.onclick = () => window.open(article.url, '_blank');
-        container.appendChild(card);
-      });
+          <div class="${badgeClass(rival)} agenda-crest">${abbr(rival)}</div>
+        </div>`;
+    }).join('');
+  }
+
+  // ============================================================
+  // RENDER: VIDEOS DESTACADOS
+  // ============================================================
+  function renderVideos(){
+    const videos = DATA.videos || [];
+    const list = document.getElementById('videosList');
+    if (!videos.length) { list.innerHTML = '<p class="empty-msg">Sin videos disponibles.</p>'; return; }
+    list.innerHTML = videos.slice(0, 1).map(v => `
+      <div class="video-thumb" data-link="${escapeHtml(v.link || '')}"><div class="play"></div></div>
+      <div class="video-info">
+        <h5>${escapeHtml(v.titulo)}</h5>
+        <div class="time">${relativeTime(v.fecha_iso)}</div>
+      </div>`).join('');
+    const thumb = list.querySelector('.video-thumb');
+    if (thumb && thumb.dataset.link) thumb.addEventListener('click', () => window.open(thumb.dataset.link, '_blank'));
+  }
+
+  // ============================================================
+  // CARGA DE DATOS
+  // ============================================================
+  async function loadData(){
+    try {
+      const res = await fetch(DATA_URL, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      DATA = await res.json();
+
+      renderHero();
+      renderTicker();
+      renderNextMatch();
+      renderLastResult();
+      renderStandings();
+      renderNewsGrid();
+      renderTransferFeature();
+      renderAgenda();
+      renderVideos();
     } catch (e) {
-      container.innerHTML = '<p style="color:#ff9">Error al cargar noticias.</p>';
+      console.error('No se pudo cargar noticias.json:', e);
+      document.getElementById('newsGrid').innerHTML =
+        '<p class="empty-msg">No se pudo cargar el contenido. Verificá que noticias.json esté publicado junto a esta página.</p>';
+      document.getElementById('heroTitle').textContent = 'Contenido no disponible';
     }
   }
 
-  // Carga inicial + cada 30 min
-  fetchNews();
-  setInterval(fetchNews, 1000 * 60 * 30);
+  // ============================================================
+  // NAVEGACIÓN (scroll suave con offset por el header sticky)
+  // ============================================================
+  document.querySelectorAll('nav.main-nav a[data-scroll]').forEach(link => {
+    link.addEventListener('click', () => {
+      const id = link.dataset.scroll;
+      document.querySelectorAll('nav.main-nav a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+      if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+      const target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
 
-  // === resto del código (contador, carrusel, navegación, etc.) ===
-  // (igual que en la versión anterior)
+  loadData();
+  setInterval(loadData, REFRESH_MS);
+})();
 </script>
 
 </body>
 </html>
-    ```
