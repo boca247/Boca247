@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantel y Formación — BOCA 24/7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker__track">
+    <span><b>DT:</b> Rodolfo Arruabarrena, al mando desde el 18 de junio</span>
+    <span><b>BAJA:</b> Leandro Paredes no llega para el partido de hoy</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="stripe-bar stripes"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="badge"><span>B</span></div>
+      <div class="wordmark">BOCA 24/7<small>TODO BOCA. TODO EL DÍA.</small></div>
+    </div>
+    <nav class="main">
+      <a href="index.html">Portada</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="plantel.html" class="active">Plantel</a>
+      <a href="plantel.html#formacion">Formación</a>
+      <a href="posiciones.html#agenda">Agenda</a>
+      <a href="posiciones.html#resultados">Resultados</a>
+      <a href="posiciones.html">Posiciones</a>
+      <a href="multimedia.html#streaming">Streaming</a>
+      <a href="multimedia.html#encuesta">Encuesta</a>
+      <a href="multimedia.html#hincha">El Hincha</a>
+      <a href="multimedia.html#disciplinas">Disciplinas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="updated-row">
+    <span>Actualizado al <b>5 de septiembre de 2026</b></span>
+    <span id="clock"></span>
+  </div>
+
+  <section id="plantel">
+    <div class="section-head"><h1>Plantel profesional</h1></div>
+    <div class="squad-grid">
+      <div class="squad-col">
+        <h3>Arqueros</h3>
+        <ul><li>Álvaro Montero</li></ul>
+      </div>
+      <div class="squad-col">
+        <h3>Defensores</h3>
+        <ul>
+          <li>Dylan Gorosito</li><li>Nicolás Figal</li><li>Marco Pellegrino</li>
+          <li>Lautaro Blanco</li><li>Matías Satas</li>
+        </ul>
+      </div>
+      <div class="squad-col">
+        <h3>Mediocampistas</h3>
+        <ul>
+          <li>Santiago Ascacibar</li><li>Camilo Rey Domenech</li><li>Williams Alarcón</li>
+          <li>Kevin Zenón</li><li>Tomás Belmonte</li>
+          <li class="out">Leandro Paredes</li>
+        </ul>
+      </div>
+      <div class="squad-col">
+        <h3>Delanteros</h3>
+        <ul>
+          <li>Carlos Palacios</li><li>Leonel Flores</li><li>Miguel Merentiel</li><li>Enner Valencia</li>
+        </ul>
+      </div>
+      <div class="squad-col">
+        <h3>Cuerpo técnico</h3>
+        <ul><li>Rodolfo Arruabarrena — DT</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="section-head"><h2>Formación probable — hoy vs. Gimnasia de Mendoza</h2></div>
+    <div class="pitch-wrap">
+      <div class="pitch">
+        <div class="p" style="left:50%; top:92%;"><div class="dot">1</div><div class="nm">Montero</div></div>
+        <div class="p" style="left:16%; top:75%;"><div class="dot">2</div><div class="nm">Gorosito</div></div>
+        <div class="p" style="left:38%; top:78%;"><div class="dot">3</div><div class="nm">Figal</div></div>
+        <div class="p" style="left:62%; top:78%;"><div class="dot">4</div><div class="nm">Pellegrino</div></div>
+        <div class="p" style="left:84%; top:75%;"><div class="dot">5</div><div class="nm">Satas</div></div>
+        <div class="p" style="left:28%; top:54%;"><div class="dot">6</div><div class="nm">Rey Domenech</div></div>
+        <div class="p" style="left:50%; top:50%;"><div class="dot">7</div><div class="nm">Alarcón</div></div>
+        <div class="p" style="left:72%; top:54%;"><div class="dot">8</div><div class="nm">Zenón</div></div>
+        <div class="p" style="left:50%; top:30%;"><div class="dot">9</div><div class="nm">Palacios</div></div>
+        <div class="p" style="left:32%; top:14%;"><div class="dot">10</div><div class="nm">Flores</div></div>
+        <div class="p" style="left:68%; top:14%;"><div class="dot">11</div><div class="nm">Valencia</div></div>
+      </div>
+      <div class="lineup-list">
+        <h3>Once probable (4-3-1-2)</h3>
+        <p>Montero; Gorosito, Figal, Pellegrino, Satas; Rey Domenech, Alarcón, Zenón; Palacios; Flores y Valencia. DT: Rodolfo Arruabarrena.</p>
+        <p>Enner Valencia asomaría como titular apenas días después de errar un penal ante Vélez, mientras que Matías Satas podría debutar oficialmente como lateral izquierdo.</p>
+        <p class="note">Baja confirmada: Leandro Paredes, por la molestia física sufrida frente a Vélez en Copa Argentina.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>BOCA 24/7</b> — sitio de aficionados, no oficial. Contenido informativo elaborado a partir de fuentes periodísticas públicas.
+</footer>
+
+<script>
+  function tick(){
+    const d = new Date();
+    document.getElementById('clock').textContent = 'Hora local: ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
+  }
+  tick(); setInterval(tick, 30000);
+</script>
+
+</body>
+</html>
