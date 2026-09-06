@@ -1,749 +1,141 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BOCA 24/7 — Todo Boca. Todo el día.</title>
-<style>
-  :root{
-    --navy-950:#0a1230;--navy-900:#0d1638;--navy-800:#111d47;
-    --navy-700:#16255a;--navy-600:#1c2e6e;--gold:#ffc72c;
-    --gold-dark:#e6ac00;--blue-text:#8fa3d9;--white:#ffffff;
-    --muted:#a7b3d6;--line:rgba(255,255,255,0.08);--radius:10px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--navy-950);color:var(--white);
-       font-family:'Segoe UI', Arial, Helvetica, sans-serif;line-height:1.4;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  ul{list-style:none;}
-  button{font-family:inherit;cursor:pointer;border:none;}
-
-  .wrap{max-width:1500px;margin:0 auto;padding:0 24px;}
-
-  header.site-header{background:var(--navy-950);padding:16px 0;
-                     border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100;}
-  .header-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-  .brand{display:flex;align-items:center;gap:14px;}
-  .crest{width:56px;height:56px;border-radius:50%;
-         background:linear-gradient(180deg,#1650b5 0 33%, #ffe14d 33% 66%, #1650b5 66% 100%);
-         display:flex;align-items:center;justify-content:center;
-         font-weight:800;font-size:13px;color:#0a1230;border:2px solid var(--gold);flex-shrink:0;}
-  .brand-text .name{font-size:26px;font-weight:800;letter-spacing:0.5px;}
-  .brand-text .name span{color:var(--gold);}
-  .brand-text .tagline{font-size:11px;letter-spacing:2px;color:var(--muted);font-weight:600;}
-
-  .search-box{flex:1;max-width:420px;min-width:220px;position:relative;}
-  .search-box input{width:100%;padding:11px 44px 11px 18px;border-radius:22px;
-                    border:1px solid rgba(255,255,255,0.25);background:transparent;color:var(--white);font-size:14px;}
-  .search-box input::placeholder{color:var(--muted);}
-  .search-box svg{position:absolute;right:16px;top:50%;transform:translateY(-50%);
-                  width:16px;height:16px;stroke:var(--white);pointer-events:none;}
-
-  .header-status{display:flex;align-items:center;gap:20px;flex-shrink:0;}
-  .connected{font-size:13px;display:flex;align-items:center;gap:8px;color:var(--white);white-space:nowrap;}
-  .connected .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);
-                  box-shadow:0 0 0 0 rgba(255,199,44,.7);animation:pulse 1.8s infinite;}
-  .connected b{color:var(--gold);font-weight:700;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,199,44,.55);}
-                   70%{box-shadow:0 0 0 8px rgba(255,199,44,0);}
-                   100%{box-shadow:0 0 0 0 rgba(255,199,44,0);}}
-  .live-btn{background:var(--gold);color:#1a1400;font-weight:800;font-size:13px;
-            padding:10px 18px;border-radius:22px;display:flex;align-items:center;gap:8px;white-space:nowrap;}
-  .live-btn::before{content:"";width:8px;height:8px;border-radius:50%;background:#1a1400;}
-
-  nav.main-nav{background:var(--navy-800);border-bottom:1px solid var(--line);
-               position:sticky;top:88px;z-index:99;}
-  nav.main-nav ul{display:flex;gap:34px;overflow-x:auto;padding:14px 0;}
-  nav.main-nav a{font-size:13.5px;font-weight:700;letter-spacing:0.4px;color:var(--muted);
-                 white-space:nowrap;padding-bottom:4px;border-bottom:2px solid transparent;transition:color .15s ease;cursor:pointer;}
-  nav.main-nav a:hover{color:var(--white);}
-  nav.main-nav a.active{color:var(--gold);border-bottom-color:var(--gold);}
-
-  .breaking{background:var(--gold);color:#1a1400;}
-  .breaking .wrap{display:flex;align-items:center;gap:16px;padding:11px 24px;}
-  .breaking .tag{font-weight:800;font-size:13px;display:flex;align-items:center;gap:6px;flex-shrink:0;}
-  .breaking .text{flex:1;font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .breaking .time{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:5px;flex-shrink:0;}
-  .breaking .more{font-weight:800;font-size:13px;flex-shrink:0;text-decoration:underline;cursor:pointer;
-                  background:none;color:#1a1400;}
-
-  main{padding:24px 0 40px;}
-  .hero-grid{display:grid;grid-template-columns:2.15fr 1fr;gap:20px;margin-bottom:20px;}
-  .hero-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:460px;
-             background:linear-gradient(0deg, rgba(6,10,28,0.94) 0%, rgba(6,10,28,0.55) 45%, rgba(6,10,28,0.15) 100%),
-                        radial-gradient(circle at 70% 30%, #1c3a8f 0%, #0b1740 60%);
-             display:flex;flex-direction:column;justify-content:flex-end;padding:38px;}
-  .hero-card .players{position:absolute;inset:0;z-index:0;opacity:0.55;
-                      background:radial-gradient(circle at 30% 35%, rgba(255,199,44,0.12), transparent 40%),
-                                 repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 40px);}
-  .hero-card .content{position:relative;z-index:1;max-width:560px;}
-  .eyebrow-gold{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px;margin-bottom:14px;display:block;}
-  .hero-card h1{font-size:40px;line-height:1.12;font-weight:800;margin-bottom:16px;}
-  .hero-card h1 .accent{color:var(--gold);}
-  .hero-card p{color:#e4e8f5;font-size:15px;max-width:480px;margin-bottom:22px;}
-  .btn-gold{background:var(--gold);color:#1a1400;font-weight:800;font-size:13px;
-            padding:13px 24px;border-radius:6px;display:inline-block;letter-spacing:.3px;border:none;cursor:pointer;}
-  .hero-nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;
-                background:rgba(10,16,40,0.55);border:1px solid rgba(255,255,255,0.25);color:var(--white);
-                display:flex;align-items:center;justify-content:center;z-index:2;font-size:16px;cursor:pointer;}
-  .hero-nav-btn.prev{left:20px;}.hero-nav-btn.next{right:20px;}
-  .hero-dots{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:2;}
-  .hero-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all .15s ease;}
-  .hero-dots span.active{background:var(--gold);width:22px;border-radius:4px;}
-
-  .match-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;}
-  .card-title-gold{text-align:center;color:var(--gold);font-weight:800;font-size:13px;letter-spacing:1px;
-                   padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:16px;}
-  .comp-name{text-align:center;font-size:11.5px;color:var(--muted);letter-spacing:1px;font-weight:700;margin-bottom:14px;}
-  .versus-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
-  .team{display:flex;flex-direction:column;align-items:center;gap:8px;width:36%;}
-  .badge{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-         font-weight:800;font-size:12px;border:2px solid var(--gold);}
-  .badge.boca{background:linear-gradient(180deg,#1650b5 0 33%, #ffe14d 33% 66%, #1650b5 66% 100%);color:#0a1230;}
-  .badge.rival{background:linear-gradient(180deg,#c11a1a 0 50%, #16192a 50% 100%);color:#fff;border-color:rgba(255,255,255,.4);}
-  .team .team-name{font-size:12.5px;font-weight:700;text-align:center;}
-  .vs-label{font-weight:800;color:var(--muted);font-size:14px;}
-  .match-meta{display:flex;flex-direction:column;gap:8px;font-size:12.5px;color:var(--muted);margin-bottom:18px;}
-  .match-meta div{display:flex;align-items:center;gap:8px;}
-  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;}
-  .countdown .box{background:var(--navy-700);border-radius:8px;padding:10px 4px;text-align:center;}
-  .countdown .num{font-size:22px;font-weight:800;color:var(--gold);}
-  .countdown .lbl{font-size:9.5px;letter-spacing:1px;color:var(--muted);font-weight:700;}
-  .btn-outline{border:1px solid var(--gold);color:var(--gold);background:transparent;font-weight:800;
-               font-size:12.5px;letter-spacing:.4px;padding:12px;border-radius:6px;text-align:center;width:100%;
-               transition:background .15s ease, color .15s ease;cursor:pointer;}
-  .btn-outline:hover{background:var(--gold);color:#1a1400;}
-
-  .section-label{font-size:15px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
-  .section-label::after{content:"";flex:1;height:1px;background:var(--line);}
-  .section-label .see-all{font-size:11.5px;font-weight:700;color:var(--gold);letter-spacing:.5px;flex:none;}
-
-  .news-block{display:grid;grid-template-columns:2.3fr 1fr 1fr;gap:20px;margin-bottom:20px;align-items:start;}
-  .news-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .news-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-             cursor:pointer;transition:transform .15s ease;}
-  .news-card:hover{transform:translateY(-4px);}
-  .news-card .thumb{height:130px;position:relative;background-size:cover;background-position:center;
-                     background:radial-gradient(circle at 60% 20%, #1c3a8f, #0b1740 75%);}
-  .news-card .tag{position:absolute;left:10px;bottom:10px;background:var(--gold);color:#1a1400;
-                  font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:4px 8px;border-radius:4px;}
-  .news-card .body{padding:14px;}
-  .news-card h3{font-size:13.5px;line-height:1.35;font-weight:700;margin-bottom:8px;}
-  .news-card .time{font-size:11px;color:var(--muted);}
-  .empty-msg{font-size:12.5px;color:var(--muted);padding:14px 0;}
-
-  .result-card,.standings-card{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
-  .score-row{display:flex;align-items:center;justify-content:center;gap:18px;margin:16px 0 20px;}
-  .score-row .team-mini{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:11.5px;font-weight:700;}
-  .badge.small{width:44px;height:44px;font-size:10px;}
-  .score-row .score{font-size:30px;font-weight:800;}
-  .standings-table{width:100%;border-collapse:collapse;font-size:12.5px;}
-  .standings-table th{text-align:left;color:var(--muted);font-weight:700;font-size:11px;padding-bottom:10px;border-bottom:1px solid var(--line);}
-  .standings-table th:last-child,.standings-table td:last-child{text-align:right;}
-  .standings-table td{padding:9px 0;border-bottom:1px solid var(--line);}
-  .standings-table tr:last-child td{border-bottom:none;}
-  .standings-table tr.highlight td{color:var(--gold);font-weight:700;}
-  .group-tag{font-size:11px;color:var(--muted);font-weight:700;margin-bottom:10px;}
-  .card-title{font-size:13px;font-weight:800;letter-spacing:.5px;text-align:center;color:var(--gold);margin-bottom:6px;}
-
-  .bottom-grid{display:grid;grid-template-columns:1.15fr 1fr 1fr 1.15fr;gap:20px;}
-  .panel{background:var(--navy-800);border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
-  .panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
-  .panel-head h4{font-size:14px;font-weight:800;letter-spacing:.3px;}
-  .panel-head .see-all{font-size:11px;font-weight:700;color:var(--gold);}
-
-  .transfer-feature .ph{height:170px;border-radius:8px;background:radial-gradient(circle at 60% 20%, #1c3a8f, #0b1740 70%);margin-bottom:14px;}
-  .transfer-feature h5{font-size:14px;font-weight:700;margin-bottom:8px;line-height:1.3;}
-  .transfer-feature p{font-size:12.5px;color:var(--muted);line-height:1.5;}
-
-  .agenda-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);}
-  .agenda-item:last-child{border-bottom:none;padding-bottom:0;}
-  .agenda-date{width:44px;flex-shrink:0;text-align:center;}
-  .agenda-date .d{font-size:18px;font-weight:800;color:var(--gold);line-height:1;}
-  .agenda-date .m{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.5px;}
-  .agenda-info .t{font-size:12.5px;font-weight:700;margin-bottom:3px;}
-  .agenda-info .c{font-size:11px;color:var(--muted);}
-  .agenda-crest{width:26px;height:26px;border-radius:50%;margin-left:auto;flex-shrink:0;align-self:center;
-                display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:800;}
-
-  .scorers-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);}
-  .scorers-item:last-child{border-bottom:none;}
-  .scorers-item .rank{width:18px;font-size:12.5px;color:var(--muted);font-weight:700;}
-  .scorers-item .face{width:34px;height:34px;border-radius:50%;background:linear-gradient(160deg,#1c3a8f,#0b1740);border:1px solid var(--line);flex-shrink:0;}
-  .scorers-item .who{flex:1;font-size:12.5px;font-weight:700;}
-  .scorers-item .goals{font-size:14px;font-weight:800;color:var(--gold);}
-
-  .video-thumb{height:150px;border-radius:8px;position:relative;margin-bottom:14px;cursor:pointer;
-               background:linear-gradient(180deg, rgba(6,10,28,0.1) 30%, rgba(6,10,28,0.9) 100%),
-                          radial-gradient(circle at 50% 30%, #1c3a8f, #0b1740 70%);}
-  .video-thumb .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;
-                     background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;}
-  .video-thumb .play::after{content:"";border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:4px;}
-  .video-info h5{font-size:13.5px;font-weight:700;margin-bottom:5px;}
-  .video-info .time{font-size:11px;color:var(--muted);}
-
-  footer{background:var(--navy-900);border-top:1px solid var(--line);margin-top:36px;padding:26px 0;}
-  .footer-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-  .footer-brand{display:flex;align-items:center;gap:14px;}
-  .footer-brand .crest{width:46px;height:46px;font-size:11px;}
-  .footer-brand .t1{font-size:14px;font-weight:800;}
-  .footer-brand .t2{font-size:11px;color:var(--muted);}
-  .footer-mid{font-size:12.5px;color:var(--muted);line-height:1.5;}
-  .footer-social{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-  .social-icons{display:flex;gap:10px;}
-  .social-icons a{width:36px;height:36px;border-radius:50%;background:var(--navy-700);display:flex;align-items:center;justify-content:center;font-size:14px;}
-  .footer-logo{text-align:right;font-weight:800;font-size:15px;}
-  .footer-logo span{color:var(--gold);}
-  .footer-logo small{display:block;font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.5px;}
-
-  @media (max-width:1180px){.news-block{grid-template-columns:1fr;}.news-cards{grid-template-columns:repeat(2,1fr);}.bottom-grid{grid-template-columns:1fr 1fr;}}
-  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;}.hero-card h1{font-size:32px;}.header-row{justify-content:center;}.search-box{order:3;max-width:100%;}nav.main-nav ul{gap:20px;}.news-cards{grid-template-columns:1fr 1fr;}.bottom-grid{grid-template-columns:1fr;}nav.main-nav{top:0;}header.site-header{position:static;}}
-  @media (max-width:480px){.news-cards{grid-template-columns:1fr;}.countdown{grid-template-columns:repeat(4,1fr);}.footer-row{flex-direction:column;align-items:flex-start;}.footer-logo{text-align:left;}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="wrap header-row">
-    <div class="brand">
-      <div class="crest">CABJ</div>
-      <div class="brand-text">
-        <div class="name">BOCA <span>24/7</span></div>
-        <div class="tagline">TODO BOCA. TODO EL DÍA.</div>
-      </div>
-    </div>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="Buscar noticias...">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-    </div>
-    <div class="header-status">
-      <div class="connected"><span class="dot"></span> CONECTADOS <b id="connectedCount">12.477</b></div>
-      <a class="live-btn" href="#">EN VIVO</a>
-    </div>
-  </div>
-</header>
-
-<nav class="main-nav">
-  <div class="wrap">
-    <ul>
-      <li><a class="active" data-scroll="top">INICIO</a></li>
-      <li><a data-scroll="noticias">NOTICIAS</a></li>
-      <li><a data-scroll="proximo">PARTIDOS</a></li>
-      <li><a data-scroll="agenda">AGENDA</a></li>
-      <li><a data-scroll="resultado">RESULTADOS</a></li>
-      <li><a data-scroll="mercado">MERCADO</a></li>
-      <li><a data-scroll="goleadores">PLANTEL</a></li>
-      <li><a data-scroll="videos">VIDEOS</a></li>
-      <li><a data-scroll="hinchada">HINCHADA</a></li>
-      <li><a data-scroll="hinchada">LOS BOSTEROS DE TUCUMÁN</a></li>
-    </ul>
-  </div>
-</nav>
-
-<div class="breaking">
-  <div class="wrap">
-    <span class="tag">ÚLTIMA HORA ⚡</span>
-    <span class="text" id="breakingText">Cargando última hora…</span>
-    <span class="time" id="breakingTime"></span>
-    <button class="more" id="breakingMore">VER MÁS</button>
+<div class="ticker">
+  <div class="ticker__track">
+    <span><b>COPA ARGENTINA:</b> Boca eliminó a Vélez por penales y avanzó a cuartos de final</span>
+    <span><b>HOY 16:30:</b> Gimnasia de Mendoza vs. Boca, por ESPN Premium</span>
+    <span><b>SUDAMERICANA:</b> Boca recibe a São Paulo el 9 de septiembre</span>
+    <span><b>FUTSAL:</b> goleada a San Lorenzo y clasificación a cuartos de Copa Argentina</span>
+    <span><b>DT:</b> Rodolfo Arruabarrena, al mando desde el 18 de junio</span>
   </div>
 </div>
 
-<main class="wrap" id="top">
-
-  <!-- HERO -->
-  <section class="hero-grid">
-    <div class="hero-card">
-      <div class="players"></div>
-      <button class="hero-nav-btn prev" id="heroPrev">‹</button>
-      <button class="hero-nav-btn next" id="heroNext">›</button>
-      <div class="content">
-        <span class="eyebrow-gold" id="heroEyebrow">NOTICIA DESTACADA</span>
-        <h1 id="heroTitle">Cargando…</h1>
-        <p id="heroText"></p>
-        <a href="#" class="btn-gold" id="heroLink">LEER NOTA COMPLETA</a>
-      </div>
-      <div class="hero-dots" id="heroDots"></div>
+<header class="site">
+  <div class="stripe-bar stripes"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="badge"><span>B</span></div>
+      <div class="wordmark">BOCA 24/7<small>TODO BOCA. TODO EL DÍA.</small></div>
     </div>
+    <nav class="main">
+      <a href="index.html" class="active">Portada</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="plantel.html">Plantel</a>
+      <a href="plantel.html#formacion">Formación</a>
+      <a href="posiciones.html#agenda">Agenda</a>
+      <a href="posiciones.html#resultados">Resultados</a>
+      <a href="posiciones.html">Posiciones</a>
+      <a href="multimedia.html#streaming">Streaming</a>
+      <a href="multimedia.html#encuesta">Encuesta</a>
+      <a href="multimedia.html#hincha">El Hincha</a>
+      <a href="multimedia.html#disciplinas">Disciplinas</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="match-card" id="proximo">
-      <div class="card-title-gold">PRÓXIMO PARTIDO</div>
-      <div class="comp-name" id="matchComp">—</div>
-      <div class="versus-row">
-        <div class="team">
-          <div class="badge" id="matchBadgeLocal">—</div>
-          <div class="team-name" id="matchNameLocal">—</div>
+<main>
+  <div class="updated-row">
+    <span>Actualizado al <b>5 de septiembre de 2026</b></span>
+    <span id="clock"></span>
+  </div>
+
+  <section class="hero" aria-label="Noticia principal">
+    <div class="hero__text">
+      <span class="kicker">COPA ARGENTINA</span>
+      <h1>Boca definió por penales ante Vélez y avanzó a cuartos de final</h1>
+      <p class="dek">El cruce de octavos se resolvió desde los doce pasos en el Estadio Kempes de Córdoba. Álvaro Montero fue determinante en la definición y el plantel llega con poco descanso al compromiso de hoy en Mendoza.</p>
+      <p class="byline">Redacción Boca 24/7 · 3 de septiembre de 2026</p>
+    </div>
+    <div class="hero__art stripes"></div>
+  </section>
+
+  <section id="noticias">
+    <div class="section-head"><h2>Lo más reciente</h2></div>
+    <div class="grid2">
+      <div>
+        <article class="card">
+          <div class="meta">CLAUSURA · FECHA 8 · HOY</div>
+          <h3>Con rotación, Boca visita a Gimnasia de Mendoza a las 16.30</h3>
+          <p>Arruabarrena prepara variantes por la acumulación de partidos y la cercanía de los cuartos de la Sudamericana. Enner Valencia asomaría como titular en ataque, mientras que Leandro Paredes es baja confirmada por una molestia arrastrada desde el cruce con Vélez.</p>
+        </article>
+        <article class="card">
+          <div class="meta">MERCADO / INSTITUCIONAL</div>
+          <h3>Riquelme habilitaría el partido despedida de Carlos Tevez en la Bombonera</h3>
+          <p>Trascendió en las últimas horas que la dirigencia dio luz verde a un homenaje para el histórico ídolo xeneize, aunque todavía no hay fecha oficial confirmada por el club.</p>
+        </article>
+        <article class="card">
+          <div class="meta">COPA SUDAMERICANA</div>
+          <h3>Se acerca el cruce de cuartos ante São Paulo</h3>
+          <p>Boca recibirá al equipo brasileño el martes 9 de septiembre por la ida de cuartos de final, con la revancha programada para la semana siguiente en Brasil.</p>
+        </article>
+        <p style="text-align:right;"><a href="noticias.html" style="color:var(--blue); font-weight:700; font-size:0.92rem;">Ver todas las noticias →</a></p>
+      </div>
+
+      <aside>
+        <div class="box">
+          <h3>Próximo partido</h3>
+          <div class="match-card"><div class="who">Gimnasia Mendoza vs. Boca</div><div class="when">Clausura F8<br>sáb. 5/9 · 16:30</div></div>
+          <div class="match-card"><div class="who">Boca vs. São Paulo</div><div class="when">Sudamericana<br>mar. 9/9</div></div>
+          <div class="match-card"><div class="who">Boca vs. Central Córdoba</div><div class="when">Clausura F9<br>dom. 13/9</div></div>
         </div>
-        <div class="vs-label">VS</div>
-        <div class="team">
-          <div class="badge" id="matchBadgeVisit">—</div>
-          <div class="team-name" id="matchNameVisit">—</div>
+        <div class="box">
+          <h3>Posiciones — Zona A</h3>
+          <table class="standings">
+            <thead><tr><th>#</th><th>Equipo</th><th>PJ</th><th class="pts">Pts</th></tr></thead>
+            <tbody>
+              <tr><td class="pos">1</td><td>Lanús</td><td>3</td><td class="pts">7</td></tr>
+              <tr><td class="pos">2</td><td>Platense</td><td>3</td><td class="pts">7</td></tr>
+              <tr><td class="pos">3</td><td>Vélez Sarsfield</td><td>3</td><td class="pts">7</td></tr>
+              <tr class="us"><td class="pos">4</td><td>Boca Juniors</td><td>3</td><td class="pts">6</td></tr>
+              <tr><td class="pos">5</td><td>San Lorenzo</td><td>3</td><td class="pts">6</td></tr>
+            </tbody>
+          </table>
+          <p style="text-align:right; margin-top:8px;"><a href="posiciones.html" style="color:var(--blue); font-weight:700; font-size:0.85rem;">Tabla completa →</a></p>
         </div>
-      </div>
-      <div class="match-meta">
-        <div>📅 <span id="matchDate">—</span></div>
-        <div>🕗 <span id="matchHour">—</span></div>
-        <div>🏟️ <span id="matchStadium">—</span></div>
-      </div>
-      <div class="countdown" id="countdown">
-        <div class="box"><div class="num" id="cd-days">00</div><div class="lbl">DÍAS</div></div>
-        <div class="box"><div class="num" id="cd-hours">00</div><div class="lbl">HORAS</div></div>
-        <div class="box"><div class="num" id="cd-mins">00</div><div class="lbl">MIN</div></div>
-        <div class="box"><div class="num" id="cd-secs">00</div><div class="lbl">SEG</div></div>
-      </div>
-      <button class="btn-outline">VER PREVIA DEL PARTIDO</button>
+      </aside>
     </div>
   </section>
 
-  <!-- NEWS + RESULT + STANDINGS -->
-  <section class="news-block" id="noticias">
-    <div>
-      <div class="section-label">ÚLTIMAS NOTICIAS<span class="see-all"></span></div>
-      <div id="newsGrid" class="news-cards"><p class="empty-msg">Cargando noticias…</p></div>
+  <section id="accesos">
+    <div class="section-head"><h2>Recorré el sitio</h2></div>
+    <div class="quick-grid">
+      <a class="quick-card" href="plantel.html"><h4>Plantel</h4><p>Arqueros, defensores, mediocampistas y delanteros, por línea.</p></a>
+      <a class="quick-card" href="plantel.html#formacion"><h4>Formación</h4><p>El probable 11 de hoy, con cancha y notas del armado.</p></a>
+      <a class="quick-card" href="posiciones.html#agenda"><h4>Agenda</h4><p>Todos los partidos que se vienen, en todas las disciplinas.</p></a>
+      <a class="quick-card" href="posiciones.html#resultados"><h4>Resultados</h4><p>Lo último de fútbol, femenino, futsal, básquet y más.</p></a>
+      <a class="quick-card" href="posiciones.html"><h4>Posiciones</h4><p>Tabla completa de la Zona A.</p></a>
+      <a class="quick-card" href="multimedia.html#streaming"><h4>Streaming</h4><p>Dónde ver a Boca hoy y el canal oficial del club.</p></a>
+      <a class="quick-card" href="multimedia.html#encuesta"><h4>Encuesta</h4><p>Votá el termómetro del hincha de la semana.</p></a>
+      <a class="quick-card" href="multimedia.html#hincha"><h4>El Hincha</h4><p>Editorial, la palabra del DT y socios.</p></a>
+      <a class="quick-card" href="multimedia.html#disciplinas"><h4>Otras disciplinas</h4><p>Femenino, reserva, básquet, hockey, futsal y vóley.</p></a>
     </div>
-
-    <div class="result-card" id="resultado">
-      <div class="card-title">ÚLTIMO RESULTADO</div>
-      <div class="group-tag" id="resultComp" style="text-align:center;">—</div>
-      <div class="score-row">
-        <div class="team-mini"><div class="badge small" id="resultBadgeLocal">—</div><span id="resultNameLocal">—</span></div>
-        <div class="score" id="resultScore">—</div>
-        <div class="team-mini"><div class="badge small" id="resultBadgeVisit">—</div><span id="resultNameVisit">—</span></div>
-      </div>
-      <button class="btn-outline">VER PARTIDO</button>
-    </div>
-
-    <div class="standings-card">
-      <div class="card-title" style="text-align:left;">POSICIONES</div>
-      <div class="group-tag">TORNEO CLAUSURA</div>
-      <table class="standings-table">
-        <thead>
-          <tr><th>#</th><th>EQUIPO</th><th>PTS</th></tr>
-        </thead>
-        <tbody id="standingsBody">
-          <tr><td colspan="3" class="empty-msg">Cargando tabla…</td></tr>
-        </tbody>
-      </table>
-      <div style="margin-top:14px;">
-        <button class="btn-outline">VER TABLA COMPLETA</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- BOTTOM GRID -->
-  <section class="bottom-grid">
-
-    <div class="panel transfer-feature" id="mercado">
-      <div class="panel-head"><h4>MERCADO DE PASES</h4><a class="see-all" href="#">VER TODO</a></div>
-      <div class="ph"></div>
-      <h5 id="transferTitle">Cargando…</h5>
-      <p id="transferText"></p>
-    </div>
-
-    <div class="panel" id="agenda">
-      <div class="panel-head"><h4>AGENDA XENEIZE</h4><a class="see-all" href="#">VER AGENDA</a></div>
-      <div id="agendaList"><p class="empty-msg">Cargando agenda…</p></div>
-    </div>
-
-    <div class="panel" id="goleadores">
-      <div class="panel-head"><h4>MEJORES GOLEADORES</h4><a class="see-all" href="#">VER TODO</a></div>
-      <div class="scorers-item">
-        <div class="rank">1</div><div class="face"></div>
-        <div class="who">Edinson Cavani</div><div class="goals">12</div>
-      </div>
-      <div class="scorers-item">
-        <div class="rank">2</div><div class="face"></div>
-        <div class="who">Miguel Merentiel</div><div class="goals">7</div>
-      </div>
-      <div class="scorers-item">
-        <div class="rank">3</div><div class="face"></div>
-        <div class="who">Darío Benedetto</div><div class="goals">5</div>
-      </div>
-      <div class="scorers-item">
-        <div class="rank">4</div><div class="face"></div>
-        <div class="who">Lucas Janson</div><div class="goals">3</div>
-      </div>
-    </div>
-
-    <div class="panel" id="videos">
-      <div class="panel-head"><h4>VIDEOS DESTACADOS</h4><a class="see-all" href="#">VER TODOS</a></div>
-      <div id="videosList"><p class="empty-msg">Cargando videos…</p></div>
-    </div>
-
   </section>
 </main>
 
-<footer id="hinchada">
-  <div class="wrap footer-row">
-    <div class="footer-brand">
-      <div class="crest">CABJ</div>
-      <div>
-        <div class="t1">LOS BOSTEROS DE TUCUMÁN</div>
-        <div class="t2">LA PEÑA OFICIAL DE BOCA EN TUCUMÁN</div>
-      </div>
-    </div>
-
-    <div class="footer-mid">
-      Sumate a la pasión xeneize<br>en Tucumán
-    </div>
-
-    <a href="#" class="btn-gold" style="padding:11px 20px;">+ INFO</a>
-
-    <div class="footer-social">
-      <div>
-        <div style="font-size:13px;font-weight:800;">SEGUINOS EN</div>
-        <div style="font-size:11px;color:var(--muted);">NUESTRAS REDES</div>
-      </div>
-      <div class="social-icons">
-        <a href="#">f</a>
-        <a href="#">◎</a>
-        <a href="#">𝕏</a>
-        <a href="#">▶</a>
-        <a href="#">♪</a>
-      </div>
-    </div>
-
-    <div class="footer-logo">
-      BOCA <span>24/7</span>
-      <small>TODO BOCA. TODO EL DÍA.</small>
-    </div>
-  </div>
+<footer>
+  <b>BOCA 24/7</b> — sitio de aficionados, no oficial. Contenido informativo elaborado a partir de fuentes periodísticas públicas.
+  <span class="fine">Esta página se recarga sola cada 30 minutos. El contenido corresponde a la fecha indicada arriba: para que se actualice solo con novedades reales después de esa fecha, hace falta conectarla a una fuente de datos en vivo.</span>
 </footer>
 
 <script>
-(function(){
-  "use strict";
-
-  // ============================================================
-  // CONFIG
-  // ============================================================
-  const DATA_URL = 'noticias.json';       // generado por el script Python (actualizador.py)
-  const REFRESH_MS = 1000 * 60 * 15;      // re-consulta el JSON cada 15 min (no hace falta más seguido:
-                                           // GitHub Pages es estático, el archivo cambia cuando corre el workflow)
-  const TEAM_ABBR = {
-    "boca": "CABJ", "vélez sarsfield": "VEL", "velez sarsfield": "VEL",
-    "gimnasia (mendoza)": "GIM", "são paulo": "SAO", "sao paulo": "SAO",
-    "central córdoba": "CCO", "central cordoba": "CCO", "san lorenzo": "SLO",
-    "lanús": "LAN", "lanus": "LAN", "racing": "RAC", "newell's": "NOB",
-    "instituto": "INS", "independiente": "IND", "colo colo": "CCL",
-    "monagas": "MON", "dep. pereira": "DP", "deportivo pereira": "DP"
-  };
-
-  let DATA = null;
-  let heroSlides = [];
-  let heroIndex = 0;
-  let heroTimer = null;
-  let tickerTimer = null;
-  let tickerIndex = 0;
-  let countdownTimer = null;
-
-  // ============================================================
-  // HELPERS
-  // ============================================================
-  function isBoca(name){ return (name || '').toLowerCase().includes('boca'); }
-
-  function abbr(name){
-    if (!name) return '???';
-    const key = name.toLowerCase();
-    if (TEAM_ABBR[key]) return TEAM_ABBR[key];
-    return name.split(' ').map(w => w[0]).join('').substring(0,3).toUpperCase();
+  function tick(){
+    const d = new Date();
+    document.getElementById('clock').textContent = 'Hora local: ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
   }
-
-  function badgeClass(name){ return isBoca(name) ? 'badge boca' : 'badge rival'; }
-
-  function relativeTime(iso){
-    if (!iso) return '';
-    const then = new Date(iso).getTime();
-    if (isNaN(then)) return '';
-    const diffMin = Math.round((Date.now() - then) / 60000);
-    if (diffMin < 1) return 'Ahora';
-    if (diffMin < 60) return `Hace ${diffMin} min`;
-    const diffH = Math.round(diffMin / 60);
-    if (diffH < 24) return `Hace ${diffH} h`;
-    const diffD = Math.round(diffH / 24);
-    return `Hace ${diffD} d`;
-  }
-
-  function formatFecha(iso){
-    if (!iso) return '—';
-    const d = new Date(iso);
-    if (isNaN(d)) return '—';
-    return d.toLocaleDateString('es-AR', { weekday: 'long', day: 'numeric', month: 'long' });
-  }
-
-  function sortByFecha(arr, asc = true){
-    return [...arr].sort((a, b) => {
-      const da = new Date(a.fecha_iso).getTime() || 0;
-      const db = new Date(b.fecha_iso).getTime() || 0;
-      return asc ? da - db : db - da;
-    });
-  }
-
-  function escapeHtml(s){
-    return (s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  }
-
-  // ============================================================
-  // RENDER: HERO (carrusel de noticias destacadas)
-  // ============================================================
-  function renderHero(){
-    heroSlides = (DATA.noticias || []).slice(0, 4);
-    if (!heroSlides.length) return;
-    const dots = document.getElementById('heroDots');
-    dots.innerHTML = heroSlides.map((_, i) => `<span data-i="${i}"></span>`).join('');
-    dots.querySelectorAll('span').forEach(s => s.addEventListener('click', () => setHero(+s.dataset.i)));
-    setHero(0);
-    if (heroTimer) clearInterval(heroTimer);
-    heroTimer = setInterval(() => setHero((heroIndex + 1) % heroSlides.length), 7000);
-  }
-
-  function setHero(i){
-    heroIndex = i;
-    const item = heroSlides[i];
-    if (!item) return;
-    document.getElementById('heroEyebrow').textContent = item.categoria || 'NOTICIA DESTACADA';
-    document.getElementById('heroTitle').textContent = item.titulo;
-    document.getElementById('heroText').textContent = item.contenido || '';
-    document.getElementById('heroLink').href = (item.link && item.link !== '#') ? item.link : '#';
-    document.querySelectorAll('#heroDots span').forEach((s, idx) => s.classList.toggle('active', idx === i));
-  }
-
-  document.getElementById('heroPrev').addEventListener('click', () => {
-    if (heroSlides.length) setHero((heroIndex - 1 + heroSlides.length) % heroSlides.length);
-  });
-  document.getElementById('heroNext').addEventListener('click', () => {
-    if (heroSlides.length) setHero((heroIndex + 1) % heroSlides.length);
-  });
-
-  // ============================================================
-  // RENDER: TICKER "ÚLTIMA HORA"
-  // ============================================================
-  function renderTicker(){
-    const noticias = DATA.noticias || [];
-    if (!noticias.length) return;
-    tickerIndex = 0;
-    setTicker();
-    if (tickerTimer) clearInterval(tickerTimer);
-    tickerTimer = setInterval(() => {
-      tickerIndex = (tickerIndex + 1) % noticias.length;
-      setTicker();
-    }, 6000);
-  }
-
-  function setTicker(){
-    const noticias = DATA.noticias || [];
-    const item = noticias[tickerIndex];
-    if (!item) return;
-    document.getElementById('breakingText').textContent = item.titulo;
-    document.getElementById('breakingTime').textContent = '🕒 ' + relativeTime(item.fecha_iso);
-  }
-
-  document.getElementById('breakingMore').addEventListener('click', () => {
-    document.getElementById('noticias').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  // ============================================================
-  // RENDER: PRÓXIMO PARTIDO + COUNTDOWN
-  // ============================================================
-  function renderNextMatch(){
-    const partidos = sortByFecha(DATA.partidos || []);
-    const next = partidos[0];
-    if (!next) return;
-
-    document.getElementById('matchComp').textContent = next.torneo || '';
-    document.getElementById('matchNameLocal').textContent = next.equipo_local;
-    document.getElementById('matchNameVisit').textContent = next.equipo_visitante;
-    const badgeL = document.getElementById('matchBadgeLocal');
-    const badgeV = document.getElementById('matchBadgeVisit');
-    badgeL.className = badgeClass(next.equipo_local);
-    badgeV.className = badgeClass(next.equipo_visitante);
-    badgeL.textContent = abbr(next.equipo_local);
-    badgeV.textContent = abbr(next.equipo_visitante);
-    document.getElementById('matchDate').textContent = formatFecha(next.fecha_iso);
-    document.getElementById('matchHour').textContent = (next.hora || '') + ' hs.';
-    document.getElementById('matchStadium').textContent = next.estadio + (next.ciudad ? ` (${next.ciudad})` : '');
-
-    if (countdownTimer) clearInterval(countdownTimer);
-    const target = new Date(next.fecha_iso).getTime();
-    updateCountdown(target);
-    countdownTimer = setInterval(() => updateCountdown(target), 1000);
-  }
-
-  function updateCountdown(target){
-    let diff = target - Date.now();
-    if (diff < 0) diff = 0;
-    const days = Math.floor(diff / 86400000);
-    const hours = Math.floor(diff / 3600000) % 24;
-    const mins = Math.floor(diff / 60000) % 60;
-    const secs = Math.floor(diff / 1000) % 60;
-    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
-    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
-    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
-  }
-
-  // ============================================================
-  // RENDER: ÚLTIMO RESULTADO
-  // ============================================================
-  function renderLastResult(){
-    const resultados = sortByFecha(DATA.resultados || [], false);
-    const r = resultados[0];
-    if (!r) return;
-    document.getElementById('resultComp').textContent = r.torneo || '';
-    document.getElementById('resultNameLocal').textContent = r.equipo_local;
-    document.getElementById('resultNameVisit').textContent = r.equipo_visitante;
-    document.getElementById('resultScore').textContent = `${r.goles_local} - ${r.goles_visitante}`;
-    const bl = document.getElementById('resultBadgeLocal');
-    const bv = document.getElementById('resultBadgeVisit');
-    bl.className = 'badge small ' + (isBoca(r.equipo_local) ? 'boca' : 'rival');
-    bv.className = 'badge small ' + (isBoca(r.equipo_visitante) ? 'boca' : 'rival');
-    bl.textContent = abbr(r.equipo_local);
-    bv.textContent = abbr(r.equipo_visitante);
-  }
-
-  // ============================================================
-  // RENDER: TABLA DE POSICIONES
-  // ============================================================
-  function renderStandings(){
-    const tabla = (DATA.tabla || []).slice().sort((a, b) => a.posicion - b.posicion);
-    const body = document.getElementById('standingsBody');
-    if (!tabla.length) { body.innerHTML = '<tr><td colspan="3" class="empty-msg">Sin datos.</td></tr>'; return; }
-    body.innerHTML = tabla.map(row => `
-      <tr class="${isBoca(row.equipo) ? 'highlight' : ''}">
-        <td>${row.posicion}</td><td>${escapeHtml(row.equipo)}</td><td>${row.pts}</td>
-      </tr>`).join('');
-  }
-
-  // ============================================================
-  // RENDER: GRILLA DE NOTICIAS (con buscador)
-  // ============================================================
-  function renderNewsGrid(filter){
-    const container = document.getElementById('newsGrid');
-    let noticias = DATA.noticias || [];
-    if (filter) {
-      const f = filter.toLowerCase();
-      noticias = noticias.filter(n =>
-        (n.titulo || '').toLowerCase().includes(f) || (n.contenido || '').toLowerCase().includes(f));
-    }
-    if (!noticias.length) {
-      container.innerHTML = '<p class="empty-msg">No se encontraron noticias.</p>';
-      return;
-    }
-    container.innerHTML = noticias.map(n => `
-      <article class="news-card" data-link="${escapeHtml(n.link || '')}">
-        <div class="thumb"><span class="tag">${escapeHtml(n.categoria || n.fuente || 'BOCA 24/7')}</span></div>
-        <div class="body">
-          <h3>${escapeHtml(n.titulo)}</h3>
-          <div class="time">${relativeTime(n.fecha_iso)}</div>
-        </div>
-      </article>`).join('');
-    container.querySelectorAll('.news-card').forEach(card => {
-      const link = card.dataset.link;
-      if (link && link !== '#') card.addEventListener('click', () => window.open(link, '_blank'));
-    });
-  }
-
-  document.getElementById('searchInput').addEventListener('input', e => renderNewsGrid(e.target.value));
-
-  // ============================================================
-  // RENDER: MERCADO DE PASES (destacado)
-  // ============================================================
-  function renderTransferFeature(){
-    const noticias = DATA.noticias || [];
-    const feature = noticias.find(n => (n.categoria || '').toUpperCase().includes('MERCADO')) || noticias[0];
-    if (!feature) return;
-    document.getElementById('transferTitle').textContent = feature.titulo;
-    document.getElementById('transferText').textContent = feature.contenido || '';
-  }
-
-  // ============================================================
-  // RENDER: AGENDA XENEIZE
-  // ============================================================
-  function renderAgenda(){
-    const partidos = sortByFecha(DATA.partidos || []).slice(0, 3);
-    const list = document.getElementById('agendaList');
-    if (!partidos.length) { list.innerHTML = '<p class="empty-msg">Sin partidos agendados.</p>'; return; }
-    list.innerHTML = partidos.map(p => {
-      const d = new Date(p.fecha_iso);
-      const dia = isNaN(d) ? '--' : String(d.getDate()).padStart(2, '0');
-      const mes = isNaN(d) ? '---' : d.toLocaleDateString('es-AR', { month: 'short' }).toUpperCase().replace('.', '');
-      const rival = isBoca(p.equipo_local) ? p.equipo_visitante : p.equipo_local;
-      return `
-        <div class="agenda-item">
-          <div class="agenda-date"><div class="d">${dia}</div><div class="m">${mes}</div></div>
-          <div class="agenda-info">
-            <div class="t">${escapeHtml(p.equipo_local)} vs ${escapeHtml(p.equipo_visitante)}</div>
-            <div class="c">${escapeHtml(p.torneo || '')} - ${escapeHtml(p.hora || '')} hs.</div>
-          </div>
-          <div class="${badgeClass(rival)} agenda-crest">${abbr(rival)}</div>
-        </div>`;
-    }).join('');
-  }
-
-  // ============================================================
-  // RENDER: VIDEOS DESTACADOS
-  // ============================================================
-  function renderVideos(){
-    const videos = DATA.videos || [];
-    const list = document.getElementById('videosList');
-    if (!videos.length) { list.innerHTML = '<p class="empty-msg">Sin videos disponibles.</p>'; return; }
-    list.innerHTML = videos.slice(0, 1).map(v => `
-      <div class="video-thumb" data-link="${escapeHtml(v.link || '')}"><div class="play"></div></div>
-      <div class="video-info">
-        <h5>${escapeHtml(v.titulo)}</h5>
-        <div class="time">${relativeTime(v.fecha_iso)}</div>
-      </div>`).join('');
-    const thumb = list.querySelector('.video-thumb');
-    if (thumb && thumb.dataset.link) thumb.addEventListener('click', () => window.open(thumb.dataset.link, '_blank'));
-  }
-
-  // ============================================================
-  // CARGA DE DATOS
-  // ============================================================
-  async function loadData(){
-    try {
-      const res = await fetch(DATA_URL, { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      DATA = await res.json();
-
-      renderHero();
-      renderTicker();
-      renderNextMatch();
-      renderLastResult();
-      renderStandings();
-      renderNewsGrid();
-      renderTransferFeature();
-      renderAgenda();
-      renderVideos();
-    } catch (e) {
-      console.error('No se pudo cargar noticias.json:', e);
-      document.getElementById('newsGrid').innerHTML =
-        '<p class="empty-msg">No se pudo cargar el contenido. Verificá que noticias.json esté publicado junto a esta página.</p>';
-      document.getElementById('heroTitle').textContent = 'Contenido no disponible';
-    }
-  }
-
-  // ============================================================
-  // NAVEGACIÓN (scroll suave con offset por el header sticky)
-  // ============================================================
-  document.querySelectorAll('nav.main-nav a[data-scroll]').forEach(link => {
-    link.addEventListener('click', () => {
-      const id = link.dataset.scroll;
-      document.querySelectorAll('nav.main-nav a').forEach(a => a.classList.remove('active'));
-      link.classList.add('active');
-      if (id === 'top') { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
-      const target = document.getElementById(id);
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  loadData();
-  setInterval(loadData, REFRESH_MS);
-})();
+  tick(); setInterval(tick, 30000);
+  setTimeout(()=>location.reload(), 30*60*1000);
 </script>
 
 </body>
 </html>
+
