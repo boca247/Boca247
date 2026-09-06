@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streaming, Encuesta y El Hincha — BOCA 24/7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker__track">
+    <span><b>HOY:</b> Gimnasia Mendoza vs. Boca por ESPN Premium, Flow, DGO y Movistar Play</span>
+    <span><b>EL CANAL DE BOCA:</b> canal digital oficial del club</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="stripe-bar stripes"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="badge"><span>B</span></div>
+      <div class="wordmark">BOCA 24/7<small>TODO BOCA. TODO EL DÍA.</small></div>
+    </div>
+    <nav class="main">
+      <a href="index.html">Portada</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="plantel.html">Plantel</a>
+      <a href="plantel.html#formacion">Formación</a>
+      <a href="posiciones.html#agenda">Agenda</a>
+      <a href="posiciones.html#resultados">Resultados</a>
+      <a href="posiciones.html">Posiciones</a>
+      <a href="multimedia.html#streaming" class="active">Streaming</a>
+      <a href="multimedia.html#encuesta">Encuesta</a>
+      <a href="multimedia.html#hincha">El Hincha</a>
+      <a href="multimedia.html#disciplinas">Disciplinas</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="updated-row">
+    <span>Actualizado al <b>5 de septiembre de 2026</b></span>
+    <span id="clock"></span>
+  </div>
+
+  <section id="streaming">
+    <div class="section-head"><h1>Streaming y videos</h1></div>
+    <div class="stream-card">
+      <div class="play">▶</div>
+      <div>
+        <h3>El Canal de Boca</h3>
+        <p>Canal digital oficial del club: transmisiones, entrevistas exclusivas y programas propios.</p>
+      </div>
+      <a class="btn" href="https://www.youtube.com/@ElCanaldeBoca" target="_blank" rel="noopener">Ver canal oficial</a>
+    </div>
+    <div class="broadcast-row">
+      <span class="chip">Hoy 16:30 · Gimnasia Mendoza vs. Boca — ESPN Premium</span>
+      <span class="chip">También por Flow, DGO y Movistar Play</span>
+      <span class="chip">9/9 · Boca vs. São Paulo — Sudamericana</span>
+    </div>
+  </section>
+
+  <section id="encuesta">
+    <div class="section-head"><h2>Encuesta</h2></div>
+    <div class="poll">
+      <h3>Termómetro del hincha</h3>
+      <p class="q">¿Qué necesita Boca para llegar bien a los cuartos de la Sudamericana?</p>
+      <div class="poll-opt"><button onclick="vote(this,0)"><span class="fill" style="width:0%"></span><span>Rotar bien el equipo en el torneo local</span></button><div class="pct" id="pct0">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,1)"><span class="fill" style="width:0%"></span><span>Que vuelvan los lesionados</span></button><div class="pct" id="pct1">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,2)"><span class="fill" style="width:0%"></span><span>Un delantero más contundente</span></button><div class="pct" id="pct2">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,3)"><span class="fill" style="width:0%"></span><span>Solidez defensiva ante rivales de nivel</span></button><div class="pct" id="pct3">0%</div></div>
+      <p class="poll-note">Encuesta orientativa, sin fines estadísticos. Los votos se cuentan solo en esta sesión del navegador.</p>
+    </div>
+  </section>
+
+  <section id="hincha">
+    <div class="section-head"><h2>El Hincha</h2></div>
+    <div class="hincha-grid">
+      <div class="opinion">
+        <h4>Editorial: pasar de página rápido</h4>
+        <p>Después del desgaste de Córdoba, la exigencia no baja: hoy en Mendoza, con muchos suplentes, Boca se juega sostener el envión anímico de cara a un semestre con Sudamericana y Clausura en simultáneo.</p>
+      </div>
+      <div class="opinion">
+        <h4>La palabra del DT</h4>
+        <p>Arruabarrena remarcó la entereza del plantel para sostener la serie de penales ante Vélez hasta el final, y adelantó variantes pensando en la carga de partidos que se viene.</p>
+      </div>
+      <div class="member-card">
+        <h4>Sé socio de Boca</h4>
+        <p>Toda la información sobre categorías, trámites y beneficios para hinchas está disponible en el sitio oficial del club.</p>
+        <a class="btn" href="https://www.bocajuniors.com.ar/" target="_blank" rel="noopener">Ir al sitio oficial</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="disciplinas">
+    <div class="section-head"><h2>Otras disciplinas</h2></div>
+    <div class="disc-grid">
+      <div class="disc-card"><h4>Femenino</h4><div class="d">5/9</div><p>Juega hoy ante Belgrano por la Primera A Femenino, tras vencer 2-0 a Gimnasia LP en su presentación anterior.</p></div>
+      <div class="disc-card"><h4>Reserva</h4><div class="d">4/9</div><p>El equipo de Reserva sostiene su buena racha de resultados.</p></div>
+      <div class="disc-card"><h4>Básquet</h4><div class="d">Reciente</div><p>Cayó 83-94 ante Quimsa en la Liga Nacional; el próximo desafío internacional será ante Beijing Royal Fighters el 22/9.</p></div>
+      <div class="disc-card"><h4>Hockey sobre césped</h4><div class="d">3/9</div><p>El club emitió un comunicado institucional vinculado a la disciplina.</p></div>
+      <div class="disc-card"><h4>Futsal</h4><div class="d">4/9</div><p>Goleada ante San Lorenzo que mantiene con vida al equipo en la Copa Argentina.</p></div>
+      <div class="disc-card"><h4>Futsal femenino</h4><div class="d">Reciente</div><p>Boca goleó 4-1 a San Lorenzo y clasificó a cuartos de final de la Copa Argentina de la disciplina.</p></div>
+      <div class="disc-card"><h4>Vóley</h4><div class="d">4/9</div><p>Triunfo cómodo ante UNO en la liga local.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>BOCA 24/7</b> — sitio de aficionados, no oficial. Contenido informativo elaborado a partir de fuentes periodísticas públicas.
+</footer>
+
+<script>
+  function tick(){
+    const d = new Date();
+    document.getElementById('clock').textContent = 'Hora local: ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
+  }
+  tick(); setInterval(tick, 30000);
+
+  let votes=[0,0,0,0];
+  function vote(btn,i){
+    votes[i]++;
+    const total=votes.reduce((a,b)=>a+b,0);
+    votes.forEach((v,idx)=>{
+      const pct= total? Math.round(v/total*100):0;
+      document.getElementById('pct'+idx).textContent=pct+'%';
+      document.querySelectorAll('.poll-opt')[idx].querySelector('.fill').style.width=pct+'%';
+    });
+  }
+</script>
+
+</body>
+</html>
