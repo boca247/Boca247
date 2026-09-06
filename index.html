@@ -1,141 +1,147 @@
-<!DOCTYPE html>
-<html lang="es-AR">
+<!doctype html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOCA 24/7 — Todo Boca. Todo el día.</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061b45">
+<meta name="description" content="BOCA 24/7 — portal independiente de actualidad xeneize. Noticias, partidos, resultados, streaming y comunidad.">
+<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="noise"></div>
+<div class="ticker"><div class="ticker-track" id="ticker">CARGANDO ACTUALIDAD XENEIZE...</div></div>
 
-<div class="ticker">
-  <div class="ticker__track">
-    <span><b>COPA ARGENTINA:</b> Boca eliminó a Vélez por penales y avanzó a cuartos de final</span>
-    <span><b>HOY 16:30:</b> Gimnasia de Mendoza vs. Boca, por ESPN Premium</span>
-    <span><b>SUDAMERICANA:</b> Boca recibe a São Paulo el 9 de septiembre</span>
-    <span><b>FUTSAL:</b> goleada a San Lorenzo y clasificación a cuartos de Copa Argentina</span>
-    <span><b>DT:</b> Rodolfo Arruabarrena, al mando desde el 18 de junio</span>
-  </div>
-</div>
-
-<header class="site">
-  <div class="stripe-bar stripes"></div>
-  <div class="header-inner">
-    <div class="brand">
-      <div class="badge"><span>B</span></div>
-      <div class="wordmark">BOCA 24/7<small>TODO BOCA. TODO EL DÍA.</small></div>
-    </div>
-    <nav class="main">
-      <a href="index.html" class="active">Portada</a>
-      <a href="noticias.html">Noticias</a>
-      <a href="plantel.html">Plantel</a>
-      <a href="plantel.html#formacion">Formación</a>
-      <a href="posiciones.html#agenda">Agenda</a>
-      <a href="posiciones.html#resultados">Resultados</a>
-      <a href="posiciones.html">Posiciones</a>
-      <a href="multimedia.html#streaming">Streaming</a>
-      <a href="multimedia.html#encuesta">Encuesta</a>
-      <a href="multimedia.html#hincha">El Hincha</a>
-      <a href="multimedia.html#disciplinas">Disciplinas</a>
+<header class="header">
+  <div class="nav-shell">
+    <a class="logo" href="#top" aria-label="Boca 24/7">
+      <span class="shield">B</span><span><b>BOCA 24/7</b><small>TODO BOCA. TODO EL DÍA.</small></span>
+    </a>
+    <nav>
+      <a class="on" href="#top">INICIO</a><a href="#noticias">NOTICIAS</a><a href="#partidos">PARTIDOS</a>
+      <a href="#club">EL CLUB</a><a href="#streaming">STREAMING</a><a href="#hincha">EL HINCHA</a>
     </nav>
+    <button class="hamb" aria-label="Menú">☰</button>
   </div>
 </header>
 
-<main>
-  <div class="updated-row">
-    <span>Actualizado al <b>5 de septiembre de 2026</b></span>
-    <span id="clock"></span>
-  </div>
-
-  <section class="hero" aria-label="Noticia principal">
-    <div class="hero__text">
-      <span class="kicker">COPA ARGENTINA</span>
-      <h1>Boca definió por penales ante Vélez y avanzó a cuartos de final</h1>
-      <p class="dek">El cruce de octavos se resolvió desde los doce pasos en el Estadio Kempes de Córdoba. Álvaro Montero fue determinante en la definición y el plantel llega con poco descanso al compromiso de hoy en Mendoza.</p>
-      <p class="byline">Redacción Boca 24/7 · 3 de septiembre de 2026</p>
-    </div>
-    <div class="hero__art stripes"></div>
-  </section>
-
-  <section id="noticias">
-    <div class="section-head"><h2>Lo más reciente</h2></div>
-    <div class="grid2">
-      <div>
-        <article class="card">
-          <div class="meta">CLAUSURA · FECHA 8 · HOY</div>
-          <h3>Con rotación, Boca visita a Gimnasia de Mendoza a las 16.30</h3>
-          <p>Arruabarrena prepara variantes por la acumulación de partidos y la cercanía de los cuartos de la Sudamericana. Enner Valencia asomaría como titular en ataque, mientras que Leandro Paredes es baja confirmada por una molestia arrastrada desde el cruce con Vélez.</p>
-        </article>
-        <article class="card">
-          <div class="meta">MERCADO / INSTITUCIONAL</div>
-          <h3>Riquelme habilitaría el partido despedida de Carlos Tevez en la Bombonera</h3>
-          <p>Trascendió en las últimas horas que la dirigencia dio luz verde a un homenaje para el histórico ídolo xeneize, aunque todavía no hay fecha oficial confirmada por el club.</p>
-        </article>
-        <article class="card">
-          <div class="meta">COPA SUDAMERICANA</div>
-          <h3>Se acerca el cruce de cuartos ante São Paulo</h3>
-          <p>Boca recibirá al equipo brasileño el martes 9 de septiembre por la ida de cuartos de final, con la revancha programada para la semana siguiente en Brasil.</p>
-        </article>
-        <p style="text-align:right;"><a href="noticias.html" style="color:var(--blue); font-weight:700; font-size:0.92rem;">Ver todas las noticias →</a></p>
+<main id="top">
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-kicker"><span class="live-dot"></span> BOCA 24/7 · ACTUALIZADO HOY</div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="micro">LA PASIÓN NO SE DESCONECTA</p>
+        <h1>TODO<br><span>BOCA.</span><br>TODO EL DÍA.</h1>
+        <p class="lead">Noticias, partidos, resultados y la voz del hincha. Una portada viva, pensada para entrar y saber qué está pasando.</p>
+        <div class="hero-buttons"><a class="gold-btn" href="#noticias">VER ACTUALIDAD</a><a class="line-btn" href="#partidos">PRÓXIMO PARTIDO →</a></div>
       </div>
-
-      <aside>
-        <div class="box">
-          <h3>Próximo partido</h3>
-          <div class="match-card"><div class="who">Gimnasia Mendoza vs. Boca</div><div class="when">Clausura F8<br>sáb. 5/9 · 16:30</div></div>
-          <div class="match-card"><div class="who">Boca vs. São Paulo</div><div class="when">Sudamericana<br>mar. 9/9</div></div>
-          <div class="match-card"><div class="who">Boca vs. Central Córdoba</div><div class="when">Clausura F9<br>dom. 13/9</div></div>
+      <div class="hero-stage">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="photo-card tilt" data-tilt>
+          <img src="IMG-20260830-WA0002.jpg" alt="Los Bosteros de Tucumán">
+          <div class="photo-overlay"></div>
+          <div class="photo-label"><span>LOS BOSTEROS</span><b>DE TUCUMÁN</b><small>CONDUCCIÓN · CHELO FERNÁNDEZ</small></div>
         </div>
-        <div class="box">
-          <h3>Posiciones — Zona A</h3>
-          <table class="standings">
-            <thead><tr><th>#</th><th>Equipo</th><th>PJ</th><th class="pts">Pts</th></tr></thead>
-            <tbody>
-              <tr><td class="pos">1</td><td>Lanús</td><td>3</td><td class="pts">7</td></tr>
-              <tr><td class="pos">2</td><td>Platense</td><td>3</td><td class="pts">7</td></tr>
-              <tr><td class="pos">3</td><td>Vélez Sarsfield</td><td>3</td><td class="pts">7</td></tr>
-              <tr class="us"><td class="pos">4</td><td>Boca Juniors</td><td>3</td><td class="pts">6</td></tr>
-              <tr><td class="pos">5</td><td>San Lorenzo</td><td>3</td><td class="pts">6</td></tr>
-            </tbody>
-          </table>
-          <p style="text-align:right; margin-top:8px;"><a href="posiciones.html" style="color:var(--blue); font-weight:700; font-size:0.85rem;">Tabla completa →</a></p>
-        </div>
-      </aside>
+        <div class="floating-badge"><b>24</b><span>/7</span></div>
+      </div>
     </div>
-  </section>
+  </div>
+  <div class="hero-bottom"><span>SCROLL PARA ENTRAR EN MODO BOCA</span><span>⌄</span></div>
+</section>
 
-  <section id="accesos">
-    <div class="section-head"><h2>Recorré el sitio</h2></div>
-    <div class="quick-grid">
-      <a class="quick-card" href="plantel.html"><h4>Plantel</h4><p>Arqueros, defensores, mediocampistas y delanteros, por línea.</p></a>
-      <a class="quick-card" href="plantel.html#formacion"><h4>Formación</h4><p>El probable 11 de hoy, con cancha y notas del armado.</p></a>
-      <a class="quick-card" href="posiciones.html#agenda"><h4>Agenda</h4><p>Todos los partidos que se vienen, en todas las disciplinas.</p></a>
-      <a class="quick-card" href="posiciones.html#resultados"><h4>Resultados</h4><p>Lo último de fútbol, femenino, futsal, básquet y más.</p></a>
-      <a class="quick-card" href="posiciones.html"><h4>Posiciones</h4><p>Tabla completa de la Zona A.</p></a>
-      <a class="quick-card" href="multimedia.html#streaming"><h4>Streaming</h4><p>Dónde ver a Boca hoy y el canal oficial del club.</p></a>
-      <a class="quick-card" href="multimedia.html#encuesta"><h4>Encuesta</h4><p>Votá el termómetro del hincha de la semana.</p></a>
-      <a class="quick-card" href="multimedia.html#hincha"><h4>El Hincha</h4><p>Editorial, la palabra del DT y socios.</p></a>
-      <a class="quick-card" href="multimedia.html#disciplinas"><h4>Otras disciplinas</h4><p>Femenino, reserva, básquet, hockey, futsal y vóley.</p></a>
-    </div>
-  </section>
+<section class="scoreboard" id="partidos">
+ <div class="section-shell">
+  <div class="section-head dark"><div><span class="eyebrow">FÚTBOL · AGENDA</span><h2>El próximo desafío</h2></div><span class="status">PRÓXIMO PARTIDO</span></div>
+  <div class="score-3d">
+    <div class="score-team home"><small>CLUB ATLÉTICO</small><strong>BOCA</strong><span>LA BOMBONERA</span></div>
+    <div class="score-center"><div class="competition" id="competition">COPA SUDAMERICANA</div><div class="vs">VS</div><div class="date" id="nextDate">08 SEP · 21:30</div><div class="countdown" id="countdown">--:--:--</div></div>
+    <div class="score-team away"><small>RIVAL</small><strong id="rival">SÃO PAULO</strong><span>CUARTOS · IDA</span></div>
+  </div>
+  <div class="result-strip"><span>ÚLTIMO RESULTADO</span><b>GIMNASIA MENDOZA <i>2 — 2</i> BOCA</b><small>5 SEP · CLAUSURA</small></div>
+ </div>
+</section>
+
+<section class="news-section" id="noticias">
+ <div class="section-shell">
+  <div class="section-head"><div><span class="eyebrow blue">ACTUALIDAD XENEIZE</span><h2>Lo último</h2></div><a class="all" href="noticias.html">VER TODAS →</a></div>
+  <div class="news-layout">
+    <article class="main-news tilt" data-tilt id="mainNews">
+      <div class="main-news-image"><img src="IMG-20260830-WA0004.jpg" alt="Actualidad Boca"><span class="tag">FÚTBOL</span></div>
+      <div class="main-news-copy"><small>05 SEP 2026 · BOCA 24/7</small><h3>Empate en Mendoza</h3><p>Boca y Gimnasia terminaron 2-2. Velasco y Zenón hicieron los goles xeneizes.</p><a href="https://www.bocajuniors.com.ar/noticias/empate-en-mendoza" target="_blank" rel="noopener">LEER NOTICIA →</a></div>
+    </article>
+    <div class="news-list" id="newsList"></div>
+  </div>
+ </div>
+</section>
+
+<section class="club-section" id="club">
+ <div class="section-shell">
+  <div class="section-head dark"><div><span class="eyebrow">MÁS QUE FÚTBOL</span><h2>El universo Boca</h2></div></div>
+  <div class="club-grid">
+   <a href="plantel.html" class="club-card big"><div class="num">01</div><div><span>FÚTBOL</span><h3>PLANTEL<br>Y EQUIPO</h3><p>Jugadores, formación y actualidad.</p></div></a>
+   <a href="posiciones.html" class="club-card"><div class="num">02</div><div><span>COMPETENCIA</span><h3>FIXTURE<br>Y TABLA</h3></div></a>
+   <a href="#streaming" class="club-card"><div class="num">03</div><div><span>CONTENIDO</span><h3>STREAMING<br>Y VIDEOS</h3></div></a>
+   <a href="#hincha" class="club-card gold"><div class="num">04</div><div><span>COMUNIDAD</span><h3>EL<br>HINCHA</h3></div></a>
+  </div>
+ </div>
+</section>
+
+<section class="stream-section" id="streaming">
+ <div class="section-shell stream-grid">
+  <div class="stream-art tilt" data-tilt><img src="IMG-20260829-WA0003.jpg" alt="Los Bosteros de Tucumán — canal de streaming"><div class="stream-shine"></div><div class="play">▶</div></div>
+  <div class="stream-copy"><span class="eyebrow blue">NUESTRO CANAL</span><h2>LOS BOSTEROS<br><em>DE TUCUMÁN</em></h2><p>Transmisiones, partidos en vivo, actualidad, opinión y toda la pasión xeneize. El canal de nuestra comunidad tiene su lugar en Boca 24/7.</p><a class="gold-btn dark-btn" href="https://www.youtube.com/" target="_blank" rel="noopener">IR AL CANAL →</a><small>El enlace queda listo para reemplazar por la URL exacta de tu canal.</small></div>
+ </div>
+</section>
+
+<section class="fan-section" id="hincha">
+ <div class="fan-bg"></div>
+ <div class="section-shell fan-grid">
+  <div><span class="eyebrow">LOS QUE SIEMPRE ESTÁN</span><h2>EL<br>HINCHA</h2><p>Porque Boca no termina en la cancha. Opinión, pasión, comunidad y la voz de quienes hacen grande esta historia.</p><a class="line-btn" href="multimedia.html#hincha">ENTRAR →</a></div>
+  <div class="fan-collage"><img src="IMG-20260830-WA0006.jpg" alt="La Bombonera y los Bosteros"><img src="IMG-20260830-WA0001.jpg" alt="Los Bosteros de Tucumán"><img src="IMG-20260830-WA0004.jpg" alt="Somos Boca Juniors"></div>
+ </div>
+</section>
+
+<section class="mini-news">
+ <div class="section-shell">
+  <div class="section-head"><div><span class="eyebrow blue">BOCA 24/7</span><h2>Siempre hay algo más</h2></div></div>
+  <div class="mini-grid">
+   <a href="plantel.html">PLANTEL <span>→</span></a><a href="posiciones.html">RESULTADOS <span>→</span></a><a href="posiciones.html#tabla">POSICIONES <span>→</span></a><a href="multimedia.html">MULTIMEDIA <span>→</span></a>
+  </div>
+ </div>
+</section>
 </main>
 
-<footer>
-  <b>BOCA 24/7</b> — sitio de aficionados, no oficial. Contenido informativo elaborado a partir de fuentes periodísticas públicas.
-  <span class="fine">Esta página se recarga sola cada 30 minutos. El contenido corresponde a la fecha indicada arriba: para que se actualice solo con novedades reales después de esa fecha, hace falta conectarla a una fuente de datos en vivo.</span>
-</footer>
+<footer><div class="footer-shell"><div class="footer-brand"><span class="shield">B</span><div><b>BOCA 24/7</b><small>TODO BOCA. TODO EL DÍA.</small></div></div><div class="footer-note">Portal independiente de información xeneize.<br>Contenido y marcas pertenecen a sus respectivos titulares.</div><div class="footer-links"><a href="#noticias">Noticias</a><a href="#partidos">Partidos</a><a href="#streaming">Streaming</a><a href="#hincha">El Hincha</a></div></div><div class="footer-bottom">BOCA 24/7 · 2026 · Hecho para vivir Boca todos los días.</div></footer>
 
 <script>
-  function tick(){
-    const d = new Date();
-    document.getElementById('clock').textContent = 'Hora local: ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
-  }
-  tick(); setInterval(tick, 30000);
-  setTimeout(()=>location.reload(), 30*60*1000);
-</script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+const fmtDate=s=>{const d=new Date(s);return isNaN(d)?'':d.toLocaleDateString('es-AR',{day:'2-digit',month:'short'}).toUpperCase()};
+const setTicker=(items)=>{const text=items.map(n=>`${n.categoria} · ${n.titulo}`).join('   ◆   ');$('#ticker').textContent=text+'   ◆   '+text};
 
+async function load(){
+ try{
+  const [nr,pr]=await Promise.all([fetch('noticias.json?v='+Date.now()),fetch('partidos.json?v='+Date.now())]);
+  const data=await nr.json(), games=await pr.json();
+  setTicker(data.noticias.slice(0,5));
+  const list=$('#newsList');
+  list.innerHTML=data.noticias.slice(1,5).map(n=>`<a class="news-row" href="${esc(n.link||'#')}" target="_blank" rel="noopener"><div class="row-date">${fmtDate(n.fecha_iso)}<span>${esc(n.categoria)}</span></div><div><h3>${esc(n.titulo)}</h3><p>${esc(n.contenido)}</p></div><b>→</b></a>`).join('');
+  const p=games.partido_actual; $('#rival').textContent=String(p.rival).toUpperCase(); $('#competition').textContent=String(p.competencia).toUpperCase(); $('#nextDate').textContent=new Date(p.fecha+'T'+p.hora+':00-03:00').toLocaleDateString('es-AR',{day:'2-digit',month:'short'}).toUpperCase()+' · '+p.hora;
+  startCountdown(p.fecha+'T'+p.hora+':00-03:00');
+ }catch(e){console.warn(e)}
+}
+function startCountdown(iso){
+ const target=new Date(iso);
+ const tick=()=>{let x=target-Date.now(); if(x<0){$('#countdown').textContent='EN VIVO / FINALIZADO';return} const d=Math.floor(x/864e5);x%=864e5;const h=Math.floor(x/36e5);x%=36e5;const m=Math.floor(x/6e4);const s=Math.floor(x/1e3);$('#countdown').textContent=`${String(d).padStart(2,'0')}D ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`};tick();setInterval(tick,1000)
+}
+document.querySelectorAll('[data-tilt]').forEach(el=>{el.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(1100px) rotateX(${y*-7}deg) rotateY(${x*7}deg) translateZ(6px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
+document.querySelector('.hamb').onclick=()=>document.querySelector('nav').classList.toggle('open');
+load();
+</script>
 </body>
 </html>
-
