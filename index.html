@@ -1,147 +1,164 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es-AR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#061b45">
-<meta name="description" content="BOCA 24/7 — portal independiente de actualidad xeneize. Noticias, partidos, resultados, streaming y comunidad.">
-<title>BOCA 24/7 | Todo Boca. Todo el día.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Streaming, Encuesta y El Hincha — BOCA 24/7</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="noise"></div>
-<div class="ticker"><div class="ticker-track" id="ticker">CARGANDO ACTUALIDAD XENEIZE...</div></div>
 
-<header class="header">
-  <div class="nav-shell">
-    <a class="logo" href="#top" aria-label="Boca 24/7">
-      <span class="shield">B</span><span><b>BOCA 24/7</b><small>TODO BOCA. TODO EL DÍA.</small></span>
-    </a>
-    <nav>
-      <a class="on" href="#top">INICIO</a><a href="#noticias">NOTICIAS</a><a href="#partidos">PARTIDOS</a>
-      <a href="#club">EL CLUB</a><a href="#streaming">STREAMING</a><a href="#hincha">EL HINCHA</a>
+<div class="ticker">
+  <div class="ticker__track">
+    <span><b>PRÓXIMO:</b> Boca vs. São Paulo, 8/9 21:30 hs (Cuartos de Final Ida, Copa Sudamericana) por ESPN Premium, Flow, DGO y Movistar Play</span>
+    <span><b>EL CANAL DE BOCA:</b> canal digital oficial del club</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="stripe-bar stripes"></div>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="badge"><span>B</span></div>
+      <div class="wordmark">BOCA 24/7<small>TODO BOCA. TODO EL DÍA.</small></div>
+    </div>
+    <nav class="main">
+      <a href="index.html">Portada</a>
+      <a href="noticias.html">Noticias</a>
+      <a href="plantel.html">Plantel</a>
+      <a href="plantel.html#formacion">Formación</a>
+      <a href="posiciones.html#agenda">Agenda</a>
+      <a href="posiciones.html#resultados">Resultados</a>
+      <a href="posiciones.html#tabla">Posiciones</a>
+      <a href="multimedia.html#streaming" class="active">Streaming</a>
+      <a href="multimedia.html#encuesta">Encuesta</a>
+      <a href="multimedia.html#hincha">El Hincha</a>
+      <a href="multimedia.html#disciplinas">Disciplinas</a>
     </nav>
-    <button class="hamb" aria-label="Menú">☰</button>
   </div>
 </header>
 
-<main id="top">
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-kicker"><span class="live-dot"></span> BOCA 24/7 · ACTUALIZADO HOY</div>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="micro">LA PASIÓN NO SE DESCONECTA</p>
-        <h1>TODO<br><span>BOCA.</span><br>TODO EL DÍA.</h1>
-        <p class="lead">Noticias, partidos, resultados y la voz del hincha. Una portada viva, pensada para entrar y saber qué está pasando.</p>
-        <div class="hero-buttons"><a class="gold-btn" href="#noticias">VER ACTUALIDAD</a><a class="line-btn" href="#partidos">PRÓXIMO PARTIDO →</a></div>
+<main>
+  <div class="updated-row">
+    <span>Actualizado al <b>5 de septiembre de 2026</b></span>
+    <span id="clock"></span>
+  </div>
+
+  <section id="streaming">
+    <div class="section-head"><h1>Streaming y videos</h1></div>
+    <div class="stream-card">
+      <div class="play">▶</div>
+      <div>
+        <h3>El Canal de Boca</h3>
+        <p>Canal digital oficial del club: transmisiones, entrevistas exclusivas y programas propios.</p>
       </div>
-      <div class="hero-stage">
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="photo-card tilt" data-tilt>
-          <img src="IMG-20260830-WA0002.jpg" alt="Los Bosteros de Tucumán">
-          <div class="photo-overlay"></div>
-          <div class="photo-label"><span>LOS BOSTEROS</span><b>DE TUCUMÁN</b><small>CONDUCCIÓN · CHELO FERNÁNDEZ</small></div>
-        </div>
-        <div class="floating-badge"><b>24</b><span>/7</span></div>
+      <a class="btn" href="https://www.youtube.com/@ElCanaldeBoca" target="_blank" rel="noopener">Ver canal oficial</a>
+    </div>
+    <div class="broadcast-row">
+      <span class="chip">Resultado 5/9 · Gimnasia Mendoza 2-2 Boca</span>
+      <span class="chip">8/9 · Boca vs. São Paulo — Cuartos Ida, Sudamericana</span>
+      <span class="chip">ESPN Premium, Flow, DGO y Movistar Play</span>
+    </div>
+    <div class="section-head" style="margin-top:34px;"><h2>Resúmenes, videos y entrevistas</h2></div>
+    <div id="videosDynamic" class="video-feed"><p>Cargando videos...</p></div>
+  </section>
+
+  <section id="encuesta">
+    <div class="section-head"><h2>Encuesta</h2></div>
+    <div class="poll">
+      <h3>Termómetro del hincha</h3>
+      <p class="q">¿Qué necesita Boca para llegar bien a los cuartos de la Sudamericana?</p>
+      <div class="poll-opt"><button onclick="vote(this,0)"><span class="fill" style="width:0%"></span><span>Rotar bien el equipo en el torneo local</span></button><div class="pct" id="pct0">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,1)"><span class="fill" style="width:0%"></span><span>Que vuelvan los lesionados</span></button><div class="pct" id="pct1">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,2)"><span class="fill" style="width:0%"></span><span>Un delantero más contundente</span></button><div class="pct" id="pct2">0%</div></div>
+      <div class="poll-opt"><button onclick="vote(this,3)"><span class="fill" style="width:0%"></span><span>Solidez defensiva ante rivales de nivel</span></button><div class="pct" id="pct3">0%</div></div>
+      <p class="poll-note">Encuesta orientativa, sin fines estadísticos. Los votos se cuentan solo en esta sesión del navegador.</p>
+    </div>
+  </section>
+
+  <section id="hincha">
+    <div class="section-head"><h2>El Hincha</h2></div>
+    <div class="hincha-grid">
+      <div class="opinion">
+        <h4>Editorial: pasar de página rápido</h4>
+        <p>Después del desgaste de Córdoba, la exigencia no baja: hoy en Mendoza, con muchos suplentes, Boca se juega sostener el envión anímico de cara a un semestre con Sudamericana y Clausura en simultáneo.</p>
+      </div>
+      <div class="opinion">
+        <h4>La palabra del DT</h4>
+        <p>Arruabarrena remarcó la entereza del plantel para sostener la serie de penales ante Vélez hasta el final, y adelantó variantes pensando en la carga de partidos que se viene.</p>
+      </div>
+      <div class="member-card">
+        <h4>Sé socio de Boca</h4>
+        <p>Toda la información sobre categorías, trámites y beneficios para hinchas está disponible en el sitio oficial del club.</p>
+        <a class="btn" href="https://www.bocajuniors.com.ar/" target="_blank" rel="noopener">Ir al sitio oficial</a>
       </div>
     </div>
-  </div>
-  <div class="hero-bottom"><span>SCROLL PARA ENTRAR EN MODO BOCA</span><span>⌄</span></div>
-</section>
+  </section>
 
-<section class="scoreboard" id="partidos">
- <div class="section-shell">
-  <div class="section-head dark"><div><span class="eyebrow">FÚTBOL · AGENDA</span><h2>El próximo desafío</h2></div><span class="status">PRÓXIMO PARTIDO</span></div>
-  <div class="score-3d">
-    <div class="score-team home"><small>CLUB ATLÉTICO</small><strong>BOCA</strong><span>LA BOMBONERA</span></div>
-    <div class="score-center"><div class="competition" id="competition">COPA SUDAMERICANA</div><div class="vs">VS</div><div class="date" id="nextDate">08 SEP · 21:30</div><div class="countdown" id="countdown">--:--:--</div></div>
-    <div class="score-team away"><small>RIVAL</small><strong id="rival">SÃO PAULO</strong><span>CUARTOS · IDA</span></div>
-  </div>
-  <div class="result-strip"><span>ÚLTIMO RESULTADO</span><b>GIMNASIA MENDOZA <i>2 — 2</i> BOCA</b><small>5 SEP · CLAUSURA</small></div>
- </div>
-</section>
-
-<section class="news-section" id="noticias">
- <div class="section-shell">
-  <div class="section-head"><div><span class="eyebrow blue">ACTUALIDAD XENEIZE</span><h2>Lo último</h2></div><a class="all" href="noticias.html">VER TODAS →</a></div>
-  <div class="news-layout">
-    <article class="main-news tilt" data-tilt id="mainNews">
-      <div class="main-news-image"><img src="IMG-20260830-WA0004.jpg" alt="Actualidad Boca"><span class="tag">FÚTBOL</span></div>
-      <div class="main-news-copy"><small>05 SEP 2026 · BOCA 24/7</small><h3>Empate en Mendoza</h3><p>Boca y Gimnasia terminaron 2-2. Velasco y Zenón hicieron los goles xeneizes.</p><a href="https://www.bocajuniors.com.ar/noticias/empate-en-mendoza" target="_blank" rel="noopener">LEER NOTICIA →</a></div>
-    </article>
-    <div class="news-list" id="newsList"></div>
-  </div>
- </div>
-</section>
-
-<section class="club-section" id="club">
- <div class="section-shell">
-  <div class="section-head dark"><div><span class="eyebrow">MÁS QUE FÚTBOL</span><h2>El universo Boca</h2></div></div>
-  <div class="club-grid">
-   <a href="plantel.html" class="club-card big"><div class="num">01</div><div><span>FÚTBOL</span><h3>PLANTEL<br>Y EQUIPO</h3><p>Jugadores, formación y actualidad.</p></div></a>
-   <a href="posiciones.html" class="club-card"><div class="num">02</div><div><span>COMPETENCIA</span><h3>FIXTURE<br>Y TABLA</h3></div></a>
-   <a href="#streaming" class="club-card"><div class="num">03</div><div><span>CONTENIDO</span><h3>STREAMING<br>Y VIDEOS</h3></div></a>
-   <a href="#hincha" class="club-card gold"><div class="num">04</div><div><span>COMUNIDAD</span><h3>EL<br>HINCHA</h3></div></a>
-  </div>
- </div>
-</section>
-
-<section class="stream-section" id="streaming">
- <div class="section-shell stream-grid">
-  <div class="stream-art tilt" data-tilt><img src="IMG-20260829-WA0003.jpg" alt="Los Bosteros de Tucumán — canal de streaming"><div class="stream-shine"></div><div class="play">▶</div></div>
-  <div class="stream-copy"><span class="eyebrow blue">NUESTRO CANAL</span><h2>LOS BOSTEROS<br><em>DE TUCUMÁN</em></h2><p>Transmisiones, partidos en vivo, actualidad, opinión y toda la pasión xeneize. El canal de nuestra comunidad tiene su lugar en Boca 24/7.</p><a class="gold-btn dark-btn" href="https://www.youtube.com/" target="_blank" rel="noopener">IR AL CANAL →</a><small>El enlace queda listo para reemplazar por la URL exacta de tu canal.</small></div>
- </div>
-</section>
-
-<section class="fan-section" id="hincha">
- <div class="fan-bg"></div>
- <div class="section-shell fan-grid">
-  <div><span class="eyebrow">LOS QUE SIEMPRE ESTÁN</span><h2>EL<br>HINCHA</h2><p>Porque Boca no termina en la cancha. Opinión, pasión, comunidad y la voz de quienes hacen grande esta historia.</p><a class="line-btn" href="multimedia.html#hincha">ENTRAR →</a></div>
-  <div class="fan-collage"><img src="IMG-20260830-WA0006.jpg" alt="La Bombonera y los Bosteros"><img src="IMG-20260830-WA0001.jpg" alt="Los Bosteros de Tucumán"><img src="IMG-20260830-WA0004.jpg" alt="Somos Boca Juniors"></div>
- </div>
-</section>
-
-<section class="mini-news">
- <div class="section-shell">
-  <div class="section-head"><div><span class="eyebrow blue">BOCA 24/7</span><h2>Siempre hay algo más</h2></div></div>
-  <div class="mini-grid">
-   <a href="plantel.html">PLANTEL <span>→</span></a><a href="posiciones.html">RESULTADOS <span>→</span></a><a href="posiciones.html#tabla">POSICIONES <span>→</span></a><a href="multimedia.html">MULTIMEDIA <span>→</span></a>
-  </div>
- </div>
-</section>
+  <section id="disciplinas">
+    <div class="section-head"><h2>Otras disciplinas</h2></div>
+    <div class="disc-grid">
+      <div class="disc-card"><h4>Femenino</h4><div class="d">5/9</div><p>Juega hoy ante Belgrano por la Primera A Femenino, tras vencer 2-0 a Gimnasia LP en su presentación anterior.</p></div>
+      <div class="disc-card"><h4>Reserva</h4><div class="d">4/9</div><p>El equipo de Reserva sostiene su buena racha de resultados.</p></div>
+      <div class="disc-card"><h4>Básquet</h4><div class="d">Reciente</div><p>Cayó 83-94 ante Quimsa en la Liga Nacional; el próximo desafío internacional será ante Beijing Royal Fighters el 22/9.</p></div>
+      <div class="disc-card"><h4>Hockey sobre césped</h4><div class="d">3/9</div><p>El club emitió un comunicado institucional vinculado a la disciplina.</p></div>
+      <div class="disc-card"><h4>Futsal</h4><div class="d">4/9</div><p>Goleada ante San Lorenzo que mantiene con vida al equipo en la Copa Argentina.</p></div>
+      <div class="disc-card"><h4>Futsal femenino</h4><div class="d">Reciente</div><p>Boca goleó 4-1 a San Lorenzo y clasificó a cuartos de final de la Copa Argentina de la disciplina.</p></div>
+      <div class="disc-card"><h4>Vóley</h4><div class="d">4/9</div><p>Triunfo cómodo ante UNO en la liga local.</p></div>
+    </div>
+  </section>
 </main>
 
-<footer><div class="footer-shell"><div class="footer-brand"><span class="shield">B</span><div><b>BOCA 24/7</b><small>TODO BOCA. TODO EL DÍA.</small></div></div><div class="footer-note">Portal independiente de información xeneize.<br>Contenido y marcas pertenecen a sus respectivos titulares.</div><div class="footer-links"><a href="#noticias">Noticias</a><a href="#partidos">Partidos</a><a href="#streaming">Streaming</a><a href="#hincha">El Hincha</a></div></div><div class="footer-bottom">BOCA 24/7 · 2026 · Hecho para vivir Boca todos los días.</div></footer>
+<footer>
+  <b>BOCA 24/7</b> — sitio de aficionados, no oficial. Contenido informativo elaborado a partir de fuentes periodísticas públicas.
+
+  <div class="social-title">Seguinos en nuestras redes</div>
+  <div class="social-links" aria-label="Redes sociales de la agrupación">
+    <a href="https://www.instagram.com/bosteros.tucuman/" target="_blank" rel="noopener noreferrer">Instagram · @bosteros.tucuman</a>
+    <a href="https://x.com/mbosterostuc" target="_blank" rel="noopener noreferrer">X · @mbosterostuc</a>
+    <a href="https://youtube.com/@movlosbosterosdetucuman" target="_blank" rel="noopener noreferrer">YouTube · Mov. Los Bosteros de Tucumán</a>
+  </div>
+
+</footer>
 
 <script>
-const $=s=>document.querySelector(s);
-const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-const fmtDate=s=>{const d=new Date(s);return isNaN(d)?'':d.toLocaleDateString('es-AR',{day:'2-digit',month:'short'}).toUpperCase()};
-const setTicker=(items)=>{const text=items.map(n=>`${n.categoria} · ${n.titulo}`).join('   ◆   ');$('#ticker').textContent=text+'   ◆   '+text};
+  function tick(){
+    const d = new Date();
+    document.getElementById('clock').textContent = 'Hora local: ' + d.toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'});
+  }
+  tick(); setInterval(tick, 30000);
 
-async function load(){
+  let votes=[0,0,0,0];
+  function vote(btn,i){
+    votes[i]++;
+    const total=votes.reduce((a,b)=>a+b,0);
+    votes.forEach((v,idx)=>{
+      const pct= total? Math.round(v/total*100):0;
+      document.getElementById('pct'+idx).textContent=pct+'%';
+      document.querySelectorAll('.poll-opt')[idx].querySelector('.fill').style.width=pct+'%';
+    });
+  }
+</script>
+
+<style>
+.video-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.video-item{background:#fff;border:1px solid #e5e9f0;padding:16px;display:flex;flex-direction:column;min-height:180px}
+.video-item .video-type{font-size:10px;font-weight:900;letter-spacing:.12em;color:#315c99;margin-bottom:8px}
+.video-item h3{margin:0 0 8px;font-size:19px;line-height:1.05}
+.video-item p{margin:0 0 14px;color:#657187;font-size:13px;line-height:1.45;flex:1}
+.video-item a{font-weight:900;color:#031431;text-decoration:none}
+@media(max-width:800px){.video-feed{grid-template-columns:1fr}}
+</style>
+<script>
+(async()=>{
  try{
-  const [nr,pr]=await Promise.all([fetch('noticias.json?v='+Date.now()),fetch('partidos.json?v='+Date.now())]);
-  const data=await nr.json(), games=await pr.json();
-  setTicker(data.noticias.slice(0,5));
-  const list=$('#newsList');
-  list.innerHTML=data.noticias.slice(1,5).map(n=>`<a class="news-row" href="${esc(n.link||'#')}" target="_blank" rel="noopener"><div class="row-date">${fmtDate(n.fecha_iso)}<span>${esc(n.categoria)}</span></div><div><h3>${esc(n.titulo)}</h3><p>${esc(n.contenido)}</p></div><b>→</b></a>`).join('');
-  const p=games.partido_actual; $('#rival').textContent=String(p.rival).toUpperCase(); $('#competition').textContent=String(p.competencia).toUpperCase(); $('#nextDate').textContent=new Date(p.fecha+'T'+p.hora+':00-03:00').toLocaleDateString('es-AR',{day:'2-digit',month:'short'}).toUpperCase()+' · '+p.hora;
-  startCountdown(p.fecha+'T'+p.hora+':00-03:00');
- }catch(e){console.warn(e)}
-}
-function startCountdown(iso){
- const target=new Date(iso);
- const tick=()=>{let x=target-Date.now(); if(x<0){$('#countdown').textContent='EN VIVO / FINALIZADO';return} const d=Math.floor(x/864e5);x%=864e5;const h=Math.floor(x/36e5);x%=36e5;const m=Math.floor(x/6e4);const s=Math.floor(x/1e3);$('#countdown').textContent=`${String(d).padStart(2,'0')}D ${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`};tick();setInterval(tick,1000)
-}
-document.querySelectorAll('[data-tilt]').forEach(el=>{el.addEventListener('pointermove',e=>{if(innerWidth<800)return;const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(1100px) rotateX(${y*-7}deg) rotateY(${x*7}deg) translateZ(6px)`});el.addEventListener('pointerleave',()=>el.style.transform='')});
-document.querySelector('.hamb').onclick=()=>document.querySelector('nav').classList.toggle('open');
-load();
+  const r=await fetch('noticias.json?v='+Date.now()); const d=await r.json();
+  const videos=(d.videos||[]).slice(0,9);
+  document.getElementById('videosDynamic').innerHTML=videos.length?videos.map(v=>`<article class="video-item"><div class="video-type">${v.tipo||'VIDEO'} · BOCA OFICIAL</div><h3>${String(v.titulo||'Video de Boca').replace(/[&<>]/g,'')}</h3><p>${String(v.descripcion||'Resumen, entrevista o contenido multimedia.').replace(/[&<>]/g,'')}</p><a href="${v.link||'#'}" target="_blank" rel="noopener">VER VIDEO →</a></article>`).join(''):'<p>No hay videos nuevos disponibles todavía.</p>';
+ }catch(e){console.error(e)}
+})();
 </script>
 </body>
 </html>
